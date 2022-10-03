@@ -6,11 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "lint:fix": "stylelint --ignore-path .gitignore '**/*.(css|tsx)' --fix",
-    "prettier": "prettier --write .",
-    "lint:css": "stylelint --ignore-path .gitignore '**/*.(css|tsx)'",
-    "prepare": "husky install",
+    "lint": "eslint --ignore-path .gitignore . && prettier --check .",
+    "format": "eslint --ignore-path .gitignore --fix . && prettier . --write",
     "test": "jest --watchAll --coverage",
     "test:ci": "jest --ci"
   },
@@ -86,9 +83,5 @@
       "eslint --fix",
       "prettier --write"
     ]
-  },
-  "*.+{json|css|md}": [
-    "eslint --fix",
-    "prettier --write"
-  ]
+  }
 }
