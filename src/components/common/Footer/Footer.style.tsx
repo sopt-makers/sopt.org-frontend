@@ -1,9 +1,5 @@
 import styled from '@emotion/styled';
 
-interface StyleProps {
-  src: string;
-}
-
 export const Root = styled.footer`
   background-color: #2a2a2a;
   width: 100vw;

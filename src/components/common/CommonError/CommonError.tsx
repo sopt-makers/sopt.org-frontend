@@ -1,6 +1,5 @@
 import 'react-toastify/dist/ReactToastify.css';
 
-import { AxiosError } from 'axios';
 import React, { useEffect } from 'react';
 import { toast, ToastContainer } from 'react-toastify';
 
@@ -9,7 +8,7 @@ interface CommonErrorProps {
   reset: () => void;
 }
 
-function CommonError({ error, reset }: CommonErrorProps) {
+function CommonError({ error }: CommonErrorProps) {
   const customId = error?.message;
 
   const notify = () =>

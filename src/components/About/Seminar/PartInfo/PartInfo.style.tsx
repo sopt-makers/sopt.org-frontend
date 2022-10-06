@@ -1,5 +1,4 @@
 import styled from '@emotion/styled';
-import theme from '@src/styles/theme';
 
 import { PartInfoStyle } from './PartInfo';
 

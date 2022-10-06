@@ -1,11 +1,8 @@
-import Logo from '@src/assets/replaceMe/branding/symbol(1).svg';
 import CommonError from '@src/components/common/CommonError';
 import ErrorBoundary from '@src/components/common/ErrorBoundary';
 import SSRSafeSuspense from '@src/components/common/SSRSafeSuspense';
 import { getMainLogo } from '@src/lib/api';
-import axios from 'axios';
 import Image from 'next/image';
-import { useEffect } from 'react';
 import Marquee from 'react-fast-marquee';
 import { useQuery } from 'react-query';
 import { useMediaQuery } from 'react-responsive';

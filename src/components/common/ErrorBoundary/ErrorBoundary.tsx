@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import { Component, ReactElement } from 'react';
 
 interface IErrorBoundaryState {
   hasError: boolean;
@@ -19,7 +19,7 @@ interface IProps extends IParentComponentProps {
   [x: string]: unknown;
 }
 
-class ErrorBoundary extends React.Component<IProps, IErrorBoundaryState> {
+class ErrorBoundary extends Component<IProps, IErrorBoundaryState> {
   initState: IErrorBoundaryState = { hasError: false, error: null };
 
   constructor(props: IProps) {

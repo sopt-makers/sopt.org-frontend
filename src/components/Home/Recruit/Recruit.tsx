@@ -1,14 +1,11 @@
 import Arrow from '@src/assets/icons/icArrowDown.svg';
 import RoundButton from '@src/components/common/RoundButton';
 import UnderlinedTitle from '@src/components/common/UnderlinedTitle';
-import { useRouter } from 'next/router';
-import React from 'react';
 import Fade from 'react-reveal/Fade';
 
 import * as S from './Recruit.style';
 
 function Recruit() {
-  const router = useRouter();
   const handleClick = () => {
     window.open('https://sopt-recruiting.web.app/recruiting/apply/yb');
   };
