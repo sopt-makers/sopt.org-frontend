@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint --ignore-path .gitignore . && prettier --check .",
+    "lint": "eslint --ignore-path .gitignore .",
     "format": "eslint --ignore-path .gitignore --fix . && prettier . --write",
     "test": "jest --watchAll --coverage",
     "test:ci": "jest --ci"
