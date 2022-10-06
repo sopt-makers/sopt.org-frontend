@@ -1,5 +1,5 @@
 {
-  "name": "src",
+  "name": "sopt.org",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -83,5 +83,9 @@
       "eslint --fix",
       "prettier --write"
     ]
+  },
+  "engines": {
+    "npm": "please-use-pnpm",
+    "yarn": "please-use-pnpm"
   }
 }
