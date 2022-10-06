@@ -1,4 +1,3 @@
-import TempImage from '@src/assets/images/Appjam.svg';
 import CommonError from '@src/components/common/CommonError';
 import ErrorBoundary from '@src/components/common/ErrorBoundary';
 import SSRSafeSuspense from '@src/components/common/SSRSafeSuspense';

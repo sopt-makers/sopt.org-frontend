@@ -1,4 +1,3 @@
-import { Item } from '@src/components/About/Sopkaton/Subjects/Subjects.style';
 import CommonError from '@src/components/common/CommonError';
 import ErrorBoundary from '@src/components/common/ErrorBoundary';
 import SSRSafeSuspense from '@src/components/common/SSRSafeSuspense';
@@ -7,7 +6,7 @@ import React, { Dispatch, useEffect } from 'react';
 import { useQuery } from 'react-query';
 import { ClipLoader } from 'react-spinners';
 
-import HistoryCard, { HistoryCardProps } from '../HistoryCard/HistoryCard';
+import HistoryCard from '../HistoryCard/HistoryCard';
 import * as S from './HistoryList.style';
 
 interface HistoryListProps {

@@ -1,11 +1,6 @@
 import 'react-loading-skeleton/dist/skeleton.css';
 
-import TempImage from '@src/assets/images/Appjam.svg';
-import CommonError from '@src/components/common/CommonError';
-import ErrorBoundary from '@src/components/common/ErrorBoundary';
-import SSRSafeSuspense from '@src/components/common/SSRSafeSuspense';
 import UnderlinedTitle from '@src/components/common/UnderlinedTitle';
-import PartnerCard from '@src/components/Partners/Partners/PartnerCard';
 import Skeleton from 'react-loading-skeleton';
 
 import * as S from '../Partners.style';

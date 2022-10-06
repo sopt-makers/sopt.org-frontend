@@ -1,5 +1,4 @@
 import SoptTermServices from '@src/assets/images/sopterm_service.png';
-import { NetworkingImage } from '@src/assets/replaceMe/imageList';
 import UnderlinedTitle from '@src/components/common/UnderlinedTitle';
 import { ABOUT_INFO } from '@src/constants/about';
 import Image from 'next/image';
