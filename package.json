@@ -94,5 +94,10 @@
     "prettier --write",
     "stylelint --ignore-path .gitignore '**/*.(css|tsx)' --fix",
     "git add"
-  ]
+  ],
+  "config": {
+    "commitizen": {
+      "path": "git-cz"
+    }
+  }
 }
