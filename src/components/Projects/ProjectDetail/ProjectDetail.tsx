@@ -7,6 +7,7 @@ import iInstagramLogo from '@src/assets/icons/instagram_logo.svg';
 import iKakaoLogo from '@src/assets/icons/kakao_logo.svg';
 import iMailLogo from '@src/assets/icons/mail_logo.svg';
 import media from '@src/assets/icons/media_icon.svg';
+import UpArrow from '@src/assets/icons/upArrow.svg';
 import website from '@src/assets/icons/website_icon.svg';
 import iYoutubeLogo from '@src/assets/icons/youtube_logo.svg';
 import IRightArrow from '@src/assets/images/rightArrow.svg';
@@ -79,6 +80,10 @@ function ProjectDetail() {
   return (
     <>
       <S.Root>
+        <S.UpButton onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+          <span>UP</span>
+          <Image src={UpArrow} alt="up arrow" />
+        </S.UpButton>
         <S.ProjectHeader>
           <S.LogoImageWrapper>
             <Image src={logoImageUrl} alt="logo" width="56" height="56" />
@@ -166,6 +171,7 @@ function ProjectDetail() {
           <p>{detail}</p>
         </S.ProjectDescription>
       </S.Root>
+
       <S.Footer>
         <S.Rule>
           <S.RuleLink>

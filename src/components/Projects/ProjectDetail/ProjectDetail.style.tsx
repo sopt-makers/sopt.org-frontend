@@ -8,6 +8,21 @@ export const Root = styled.div`
   font-family: 'SUIT';
 `;
 
+export const UpButton = styled.button`
+  position: fixed;
+  right: 20px;
+  bottom: 30px;
+  border-radius: 50%;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+  background: #242424;
+  width: 56px;
+  height: 56px;
+
+  & > span {
+    display: none;
+  }
+`;
+
 export const ProjectHeader = styled.div`
   display: flex;
   flex-direction: column;
