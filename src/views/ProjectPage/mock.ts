@@ -2,7 +2,7 @@ import type { ProjectType } from './types';
 
 const mockData: ProjectType = {
   id: 0,
-  name: 'string',
+  name: 'TAKEUS',
   semester: 0,
   isProvidingService: true,
   isBusinessing: true,

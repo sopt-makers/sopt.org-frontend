@@ -1,19 +1,14 @@
 import { useEffect, useReducer } from 'react';
 import { to } from 'await-to-js';
-import { useMediaQuery } from 'react-responsive';
 
-import Sopt404 from '@src/assets/images/sopt_404.png';
 import Header from '@src/components/common/Header';
-import Image from 'next/image';
 import { Condition } from '@src/lib';
 
 import { reducer } from './reducer';
-import { Styled } from './styles';
 import { getProjectList } from './mock';
 import { ProjectType } from './types';
 
 function Projects() {
-  const isDesktop = useMediaQuery({ query: '(min-width: 768px)' });
   const [state, dispatch] = useReducer(reducer, { _TAG: 'IDLE' });
   const fetchProjectList = async () => {
     dispatch({
@@ -41,16 +36,6 @@ function Projects() {
   return (
     <>
       <Header />
-      <Styled.Root>
-        <Image
-          src={Sopt404.src}
-          width={isDesktop ? 296 : 196}
-          height={isDesktop ? 78 : 52}
-          alt="솝트"
-          blurDataURL={Sopt404.src}
-          placeholder="blur"
-        />
-      </Styled.Root>
       <div>
         <section>
           {(() => {
@@ -77,8 +62,8 @@ function ProjectList({ list }: { list: ProjectType[] }) {
   return (
     <div>
       <Condition statement={listLength > 0}>
-        {list?.map((project) => (
-          <article key={project.id}>{project.name}</article>
+        {list?.map((project, index) => (
+          <article key={index}>{project.name}</article>
         ))}
       </Condition>
       <Condition statement={listLength === 0}>
