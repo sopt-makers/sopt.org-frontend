@@ -76,6 +76,7 @@
     "ts-loader": "^9.3.0",
     "ts-pattern": "^4.0.5",
     "typescript": "4.7.2",
+    "url-loader": "^4.1.1",
     "webpack": "^5.74.0"
   },
   "lint-staged": {
