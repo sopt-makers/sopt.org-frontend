@@ -24,6 +24,7 @@ specifiers:
   babel-jest: ^28.1.0
   babel-plugin-inline-react-svg: ^2.0.1
   babel-plugin-module-resolver: ^4.1.0
+  classcat: ^5.0.4
   emotion-reset: ^3.0.1
   eslint: ^8.16.0
   eslint-config-next: 12.1.6
@@ -66,6 +67,7 @@ dependencies:
   '@emotion/react': 11.10.0_rzzs4it3vc6zxnuyimlesjlbfm
   '@emotion/styled': 11.10.0_jq54skta57c72tr6wozaoukndu
   axios: 0.27.2
+  classcat: 5.0.4
   emotion-reset: 3.0.1_@emotion+react@11.10.0
   next: 12.1.6_oilcy444popke7cin4orzlm63e
   react: 18.1.0
@@ -2852,6 +2854,10 @@ packages:
   /cjs-module-lexer/1.2.2:
     resolution: {integrity: sha512-cOU9usZw8/dXIXKtwa8pM0OTJQuJkxMN6w30csNRUerHfeQ5R6U3kkU/FtJeIf3M202OHfY2U8ccInBG7/xogA==}
     dev: true
+
+  /classcat/5.0.4:
+    resolution: {integrity: sha512-sbpkOw6z413p+HDGcBENe498WM9woqWHiJxCq7nvmxe9WmrUmqfAcxpIwAiMtM5Q3AhYkzXcNQHqsWq0mND51g==}
+    dev: false
 
   /clean-stack/2.2.0:
     resolution: {integrity: sha512-4diC9HaTE+KRAMWhDhrGOECgWZxoevMc5TlkObMqNSsVU62PYzXZ/SMTjzyGAFF1YusgxGcSWTEXBhp0CPwQ1A==}
