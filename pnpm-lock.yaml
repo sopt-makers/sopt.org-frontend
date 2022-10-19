@@ -19,6 +19,7 @@ specifiers:
   '@types/react-test-renderer': ^18.0.0
   '@typescript-eslint/eslint-plugin': ^5.27.0
   '@typescript-eslint/parser': ^5.27.0
+  await-to-js: ^3.0.0
   axios: ^0.27.2
   babel-jest: ^28.1.0
   babel-plugin-inline-react-svg: ^2.0.1
@@ -96,6 +97,7 @@ devDependencies:
   '@types/react-test-renderer': 18.0.0
   '@typescript-eslint/eslint-plugin': 5.32.0_mjxvp6vknbs6aake53neguzoxy
   '@typescript-eslint/parser': 5.32.0_vop3wml3iobydwkmmjaboen3ki
+  await-to-js: 3.0.0
   babel-jest: 28.1.3_@babel+core@7.18.10
   babel-plugin-inline-react-svg: 2.0.1_@babel+core@7.18.10
   babel-plugin-module-resolver: 4.1.0
@@ -2544,6 +2546,11 @@ packages:
     resolution: {integrity: sha512-Wm6ukoaOGJi/73p/cl2GvLjTI5JM1k/O14isD73YML8StrH/7/lRFgmg8nICZgD3bZZvjwCGxtMOD3wWNAu8cg==}
     engines: {node: '>= 4.5.0'}
     hasBin: true
+    dev: true
+
+  /await-to-js/3.0.0:
+    resolution: {integrity: sha512-zJAaP9zxTcvTHRlejau3ZOY4V7SRpiByf3/dxx2uyKxxor19tpmpV2QRsTKikckwhaPmr2dVpxxMr7jOCYVp5g==}
+    engines: {node: '>=6.0.0'}
     dev: true
 
   /axe-core/4.4.3:
