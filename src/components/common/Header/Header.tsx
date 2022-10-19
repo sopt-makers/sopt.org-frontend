@@ -17,7 +17,6 @@ function Header() {
   };
 
   const handleCloseButton = () => {
-    console.log('>>눌림?');
     setIsMenuShown('true');
   };
 
