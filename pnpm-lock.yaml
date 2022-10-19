@@ -57,6 +57,7 @@ specifiers:
   shortid: ^2.2.16
   ts-jest: ^28.0.4
   ts-loader: ^9.3.0
+  ts-pattern: ^4.0.5
   typescript: 4.7.2
   webpack: ^5.74.0
 
@@ -119,6 +120,7 @@ devDependencies:
   prettier: 2.7.1
   ts-jest: 28.0.7_msa6ionlezcaadu427du3jqqru
   ts-loader: 9.3.1_fglgylnl2zxeyhdksezqmluszi
+  ts-pattern: 4.0.5
   typescript: 4.7.2
   webpack: 5.74.0
 
@@ -6483,6 +6485,10 @@ packages:
       semver: 7.3.7
       typescript: 4.7.2
       webpack: 5.74.0
+    dev: true
+
+  /ts-pattern/4.0.5:
+    resolution: {integrity: sha512-Bq44KCEt7JVaNLa148mBCJkcQf4l7jtLEBDuDdeuLynWDA+1a60P4D0rMkqSM9mOKLQbIWUddE9h3XKyKwBeqA==}
     dev: true
 
   /tsconfig-paths/3.14.1:
