@@ -27,7 +27,6 @@ function Channels({ isFooter = false }: ChannelsProps) {
   ];
 
   const handleClick = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-    console.log('>>e.currentTarget.id', e.currentTarget.id);
     switch (e.currentTarget.id) {
       case 'mail':
         window.location.href = 'mailto:president@sopt.org';

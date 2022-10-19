@@ -8,18 +8,6 @@ import React from 'react';
 import * as S from './AppjamBox.style';
 
 function AppjamBox() {
-  const handleClick = (e: React.MouseEvent<HTMLImageElement, MouseEvent>) => {
-    // switch (e.currentTarget.id) {
-    //   case 'playstore':
-    //     window.open('http://twitter.com/saigowthamr');
-    //     break;
-    //   default:
-    //     window.open('http://twitter.com/saigowthamr');
-    //     break;
-    // }
-    console.log(e.currentTarget.id);
-  };
-
   return (
     <S.AppjamBox>
       <S.AppjamInfoWrapper>
@@ -47,7 +35,6 @@ function AppjamBox() {
           role="button"
           tabIndex={0}
           id="playstore"
-          onClick={handleClick}
           blurDataURL={GooglePlayStoreBtn}
           placeholder="blur"
         />
@@ -59,7 +46,6 @@ function AppjamBox() {
           role="button"
           tabIndex={0}
           id="appstore"
-          onClick={handleClick}
           blurDataURL={AppStoreBtn}
           placeholder="blur"
         />

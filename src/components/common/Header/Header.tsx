@@ -21,10 +21,6 @@ function Header() {
     setIsMenuShown('true');
   };
 
-  useEffect(() => {
-    console.log('>>isMenuShown', isMenuShown);
-  }, [isMenuShown]);
-
   return (
     <>
       <S.Header>
