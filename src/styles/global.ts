@@ -8,6 +8,9 @@ export const global = css`
     /* -webkit-user-select:none; */
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   }
+  * {
+    box-sizing: border-box;
+  }
 
   h1,
   h2,
