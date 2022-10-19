@@ -32,11 +32,6 @@ export function reducer(
           _TAG: 'LOADING',
         };
       }
-      if (action._TAG === 'SUCCESS') {
-        return {
-          _TAG: 'IDLE',
-        };
-      }
       break;
     default:
       throw new Error(`Unknown action type: ${action._TAG}`);
