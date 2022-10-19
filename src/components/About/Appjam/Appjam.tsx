@@ -2,7 +2,6 @@ import AppjamBackgrouondPc from '@src/assets/images/appjam_background.svg';
 import UnderlinedTitle from '@src/components/common/UnderlinedTitle';
 import { ABOUT_INFO } from '@src/constants/about';
 import Image from 'next/image';
-import React from 'react';
 import { useMediaQuery } from 'react-responsive';
 
 import AboutWrapper from '../AboutWrapper';
@@ -19,7 +18,7 @@ function Appjam() {
     <S.AppjamWrapper>
       <S.ImageWrapper>
         {isDesktop && (
-          <Image src={AppjamBackgrouondPc.src} width={454} height={319} alt="background flower" />
+          <Image src={AppjamBackgrouondPc} width={454} height={319} alt="background flower" />
         )}
       </S.ImageWrapper>
       <AboutWrapper>

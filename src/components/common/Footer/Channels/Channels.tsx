@@ -1,8 +1,8 @@
-import FacebookLogo from '@src/assets/logo/facebook.svg';
-import InstagramLogo from '@src/assets/logo/instagram.svg';
-import KakaoLogo from '@src/assets/logo/kakao.svg';
-import MailLogo from '@src/assets/logo/mail.svg';
-import YoutubeLogo from '@src/assets/logo/youtube.svg';
+import { ReactComponent as FacebookLogo } from '@src/assets/logo/facebook.svg';
+import { ReactComponent as InstagramLogo } from '@src/assets/logo/instagram.svg';
+import { ReactComponent as KakaoLogo } from '@src/assets/logo/kakao.svg';
+import { ReactComponent as MailLogo } from '@src/assets/logo/mail.svg';
+import { ReactComponent as YoutubeLogo } from '@src/assets/logo/youtube.svg';
 
 import * as S from './Channels.style';
 
@@ -11,7 +11,7 @@ interface ChannelsProps {
 }
 
 function Channels({ isFooter = false }: ChannelsProps) {
-  const handleClick = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+  const handleClick = (e: React.MouseEvent<SVGSVGElement, MouseEvent>) => {
     switch (e.currentTarget.id) {
       case 'mail':
         window.location.href = 'mailto:president@sopt.org';

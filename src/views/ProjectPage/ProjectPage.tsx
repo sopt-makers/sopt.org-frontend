@@ -7,7 +7,7 @@ import Footer from '@src/components/common/Footer';
 import { EmptyContent } from './EmptyContent';
 
 import { Condition } from '@src/lib';
-import RightArrow from '@src/assets/icons/enroll_rightArrow.svg';
+import { ReactComponent as RightArrow } from '@src/assets/icons/enroll_rightArrow.svg';
 
 import { reducer } from './reducer';
 import { getProjectList } from './mock';

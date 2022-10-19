@@ -1,9 +1,9 @@
 import cc from 'classcat';
 
 import styles from './styles.module.scss';
-import Circle from '@src/assets/icons/circle.svg';
-import Diagonal from '@src/assets/icons/diagonal.svg';
-import Triangle from '@src/assets/icons/triangle.svg';
+import { ReactComponent as Circle } from '@src/assets/icons/circle.svg';
+import { ReactComponent as Diagonal } from '@src/assets/icons/diagonal.svg';
+import { ReactComponent as Triangle } from '@src/assets/icons/triangle.svg';
 
 export function EmptyContent() {
   return (

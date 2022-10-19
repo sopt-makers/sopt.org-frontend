@@ -1,16 +1,13 @@
 import appstore from '@src/assets/icons/appstore_icon.svg';
-import iFacebookLogo from '@src/assets/icons/facebook_logo.svg';
+
 import github from '@src/assets/icons/github_icon.svg';
 import googleplay from '@src/assets/icons/googleplay_icon.svg';
 import instagram from '@src/assets/icons/instagram_icon.svg';
-import iInstagramLogo from '@src/assets/icons/instagram_logo.svg';
-import iKakaoLogo from '@src/assets/icons/kakao_logo.svg';
-import iMailLogo from '@src/assets/icons/mail_logo.svg';
+
 import media from '@src/assets/icons/media_icon.svg';
 import UpArrow from '@src/assets/icons/upArrow.svg';
 import website from '@src/assets/icons/website_icon.svg';
-import iYoutubeLogo from '@src/assets/icons/youtube_logo.svg';
-import IRightArrow from '@src/assets/images/rightArrow.svg';
+
 import IToggle from '@src/assets/images/toggle.svg';
 import { getProjectDetail } from '@src/lib/project';
 import Image from 'next/image';
@@ -133,7 +130,7 @@ function ProjectDetail() {
                 return (
                   <Link href={url} key={type}>
                     <S.ProjectLink>
-                      <Image src={src} alt={type} width="56" height="56" />
+                      {/* <Image src={src} alt={type} width="56" height="56" /> */}
                       <span>{name}</span>
                     </S.ProjectLink>
                   </Link>
@@ -148,7 +145,7 @@ function ProjectDetail() {
             <S.Title>프로젝트 팀원</S.Title>
             <button type="button" onClick={() => setIsTeamMemberOpened((prev) => !prev)}>
               <S.TeamMemberToggleImage isTeamMemberOpened={isTeamMemberOpened}>
-                <Image src={IToggle} alt="toggle button" />
+                {/* <Image src={IToggle} alt="toggle button" /> */}
               </S.TeamMemberToggleImage>
             </button>
           </S.ToggleWrapper>
@@ -171,47 +168,6 @@ function ProjectDetail() {
           <p>{detail}</p>
         </S.ProjectDescription>
       </S.Root>
-
-      <S.Footer>
-        <S.Rule>
-          <S.RuleLink>
-            <Link href="https://sopt.org/rules">SOPT 회칙</Link>
-          </S.RuleLink>
-          <Image width="16" height="16" src={IRightArrow} alt="right arrow" />
-        </S.Rule>
-        <p>SOPT(솝트, 대학생연합IT벤처창업 동아리</p>
-        <p>Copyright&copy2022.SOPT.All rights reserved.</p>
-        <S.Channels>
-          <h1>SOPT 채널 바로가기</h1>
-          <div>
-            <S.Channel>
-              <Link href="mailto:president@sopt.org">
-                <Image src={iMailLogo} alt="mail logo" />
-              </Link>
-            </S.Channel>
-            <S.Channel>
-              <Link href="https://www.facebook.com/clubsopt/">
-                <Image src={iFacebookLogo} alt="facebook logo" />
-              </Link>
-            </S.Channel>
-            <S.Channel>
-              <Link href="https://www.instagram.com/sopt_timi_tmi/">
-                <Image src={iInstagramLogo} alt="instagram logo" />
-              </Link>
-            </S.Channel>
-            <S.Channel>
-              <Link href="https://www.youtube.com/c/SOPTMEDIA">
-                <Image src={iYoutubeLogo} alt="youtube logo" />
-              </Link>
-            </S.Channel>
-            <S.Channel>
-              <Link href="http://pf.kakao.com/_JdTKd">
-                <Image src={iKakaoLogo} alt="kakao logo" />
-              </Link>
-            </S.Channel>
-          </div>
-        </S.Channels>
-      </S.Footer>
     </>
   );
 }
