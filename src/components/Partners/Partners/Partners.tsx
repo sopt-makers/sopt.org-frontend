@@ -34,10 +34,6 @@ function Resolved() {
     suspense: true,
   });
 
-  useEffect(() => {
-    console.log('>>data', data);
-  }, [data]);
-
   return (
     <S.Root>
       <UnderlinedTitle>PARTNERS</UnderlinedTitle>

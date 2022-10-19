@@ -17,13 +17,8 @@ function Header() {
   };
 
   const handleCloseButton = () => {
-    console.log('>>눌림?');
     setIsMenuShown('true');
   };
-
-  useEffect(() => {
-    console.log('>>isMenuShown', isMenuShown);
-  }, [isMenuShown]);
 
   return (
     <>

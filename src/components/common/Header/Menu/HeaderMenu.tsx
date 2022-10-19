@@ -56,7 +56,7 @@ function HeaderMenu({ setIsMenuShown, isMenuShown }: HeaderMenuProps) {
               역대기수소개
             </S.MenuTitle>
             <S.MenuTitle
-              id="/projects"
+              id="/project"
               isSelected={router.pathname === '/projects'}
               onClick={handleClick}
             >
