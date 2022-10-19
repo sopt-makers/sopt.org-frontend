@@ -19,7 +19,7 @@ function AppjamStep() {
             </Fade>
             {idx < APPJAM_STEP.length - 1 && (
               <Fade left delay={item.delay + 100}>
-                <S.GrientArrowIcon src={GrientArrowIcon.src} alt="오른쪽 화살표" />
+                <S.GrientArrowIcon src={GrientArrowIcon} alt="오른쪽 화살표" />
               </Fade>
             )}
           </S.StepWrap>
@@ -31,7 +31,7 @@ function AppjamStep() {
               </S.PlainCircleText>
             </Fade>
             <Fade left delay={item.delay + 100}>
-              <S.ArrowIcon src={Arrow.src} alt="오른쪽 화살표" />
+              <S.ArrowIcon src={Arrow} alt="오른쪽 화살표" />
             </Fade>
           </S.StepWrap>
         );
