@@ -5,16 +5,9 @@ import RoundButton from '@src/components/common/RoundButton';
 import ProjectDetail from '@src/components/Projects/ProjectDetail';
 import theme from '@src/styles/theme';
 import Image from 'next/image';
-import { useRouter } from 'next/router';
-import React from 'react';
 import { useMediaQuery } from 'react-responsive';
 
 function Projects() {
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-  const router = useRouter();
-  const handleClick = () => {
-    router.push('/');
-  };
   const isDesktop = useMediaQuery({
     query: '(min-width: 768px)',
   });

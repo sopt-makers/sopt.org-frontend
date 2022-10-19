@@ -1,4 +1,4 @@
-import React, { HTMLAttributes, ReactElement, ReactNode } from 'react';
+import React, { HTMLAttributes, ReactNode } from 'react';
 
 import * as S from './BorderRoundButton.style';
 

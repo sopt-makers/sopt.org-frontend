@@ -2,8 +2,7 @@ import menuBar from '@src/assets/icons/menuBar.svg';
 import logoIcon from '@src/assets/replaceMe/branding/logo.png';
 import HeaderMenu from '@src/components/common/Header/Menu';
 import { useRouter } from 'next/router';
-import React, { useEffect, useState } from 'react';
-import Slide from 'react-reveal/Slide';
+import { useEffect, useState } from 'react';
 
 import * as S from './Header.style';
 
@@ -22,7 +21,7 @@ function Header() {
     setIsMenuShown('true');
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     console.log('>>isMenuShown', isMenuShown);
   }, [isMenuShown]);
 

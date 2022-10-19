@@ -1,23 +1,36 @@
 {
-  "plugins": [
-    "react",
-    "@typescript-eslint",
-    "react-hooks",
-    "import",
-    "simple-import-sort",
-    "prettier",
-    "jsx-a11y"
-  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "plugins": ["@typescript-eslint", "simple-import-sort", "prettier"],
   "extends": [
     "eslint:recommended",
-    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:jsx-a11y/recommended",
-    "prettier/prettier",
-    "plugin:import/recommended",
-    "next",
-    "next/core-web-vitals"
+    "plugin:import/typescript",
+    "prettier",
+    "next"
   ],
+  "settings": {
+    "import/resolver": {
+      "typescript": {}
+    },
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts", ".tsx"]
+    }
+  },
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "commonjs": true,
+    "jest": true
+  },
   "rules": {
     "jsx-a11y/no-static-element-interactions": "off",
     "jsx-a11y/click-events-have-key-events": "off",
@@ -50,27 +63,5 @@
       }
     ],
     "@typescript-eslint/explicit-module-boundary-types": "off"
-  },
-  "settings": {
-    "import/resolver": {
-      "typescript": {}
-    },
-    "import/parsers": {
-      "@typescript-eslint/parser": [".ts", ".tsx"]
-    }
-  },
-  "parser": "@typescript-eslint/parser",
-  "parserOptions": {
-    "ecmaFeatures": {
-      "jsx": true
-    },
-    "ecmaVersion": 12,
-    "sourceType": "module"
-  },
-  "env": {
-    "browser": true,
-    "es2021": true,
-    "commonjs": true,
-    "jest": true
   }
 }

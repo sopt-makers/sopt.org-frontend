@@ -1,16 +1,13 @@
 {
-  "name": "src",
+  "name": "sopt.org",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "lint:fix": "stylelint --ignore-path .gitignore '**/*.(css|tsx)' --fix",
-    "prettier": "prettier --write .",
-    "lint:css": "stylelint --ignore-path .gitignore '**/*.(css|tsx)'",
-    "prepare": "husky install",
+    "lint": "eslint --ignore-path .gitignore .",
+    "format": "eslint --ignore-path .gitignore --fix . && prettier . --write",
     "test": "jest --watchAll --coverage",
     "test:ci": "jest --ci"
   },
@@ -38,7 +35,6 @@
     "@babel/preset-env": "^7.18.2",
     "@babel/runtime": "^7.18.9",
     "@emotion/babel-plugin": "^11.9.2",
-    "@stylelint/postcss-css-in-js": "^0.38.0",
     "@testing-library/dom": "^8.13.0",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
@@ -62,6 +58,7 @@
     "eslint-plugin-react": "^7.30.0",
     "eslint-plugin-react-hooks": "^4.5.0",
     "eslint-plugin-simple-import-sort": "^7.0.0",
+    "git-cz": "^4.9.0",
     "husky": "^8.0.1",
     "jest": "^28.1.0",
     "jest-environment-jsdom": "^28.1.0",
@@ -71,33 +68,28 @@
     "postcss-html": "^1.4.1",
     "postcss-syntax": "^0.36.2",
     "prettier": "^2.6.2",
-    "stylelint": "^14.8.5",
-    "stylelint-config-concentric-order": "^5.0.0",
-    "stylelint-config-prettier": "^9.0.3",
-    "stylelint-config-standard": "^25.0.0",
-    "stylelint-config-styled-components": "^0.1.1",
     "ts-jest": "^28.0.4",
     "ts-loader": "^9.3.0",
     "typescript": "4.7.2",
     "webpack": "^5.74.0"
   },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/git-cz"
+    }
+  },
   "lint-staged": {
     "*.{ts,tsx}": [
       "eslint --fix",
-      "prettier --write",
-      "stylelint --ignore-path .gitignore '**/*.(css|tsx)' --fix",
-      "git add"
+      "prettier --write"
     ]
   },
-  "*.+{json|css|md}": [
-    "eslint --fix",
-    "prettier --write",
-    "stylelint --ignore-path .gitignore '**/*.(css|tsx)' --fix",
-    "git add"
-  ],
   "config": {
     "commitizen": {
       "path": "git-cz"
     }
+  "engines": {
+    "npm": "please-use-pnpm",
+    "yarn": "please-use-pnpm"
   }
 }

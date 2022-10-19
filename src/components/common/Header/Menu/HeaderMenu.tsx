@@ -2,7 +2,7 @@ import xButton from '@src/assets/icons/xButton.png';
 import Channels from '@src/components/common/Footer/Channels';
 import useNoScroll from '@src/hooks/useNoScroll';
 import { useRouter } from 'next/router';
-import React, { Dispatch, SetStateAction, useEffect } from 'react';
+import React, { Dispatch, SetStateAction } from 'react';
 
 import { MenuType } from '../Header';
 import * as S from './HeaderMenu.style';

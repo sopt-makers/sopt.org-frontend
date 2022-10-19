@@ -1,9 +1,8 @@
 import { LeaderType } from '@src/utils/history';
 import { useRouter } from 'next/router';
-import React from 'react';
-import { useMediaQuery } from 'react-responsive';
 
 import * as S from './Sidebar.style';
+
 interface SidebarProps {
   firstSection: LeaderType;
   secondSection?: Array<LeaderType>;
@@ -11,10 +10,6 @@ interface SidebarProps {
 }
 
 function Sidebar({ firstSection, secondSection, thirdSection }: SidebarProps) {
-  const isDesktop = useMediaQuery({
-    query: '(min-width: 1280px)',
-  });
-
   const router = useRouter();
 
   const handleClick = (e: React.MouseEvent<HTMLElement, MouseEvent>) => {
