@@ -84,6 +84,10 @@
       "prettier --write"
     ]
   },
+  "config": {
+    "commitizen": {
+      "path": "git-cz"
+    }
   "engines": {
     "npm": "please-use-pnpm",
     "yarn": "please-use-pnpm"
