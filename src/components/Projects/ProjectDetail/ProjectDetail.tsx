@@ -5,10 +5,10 @@ import googleplay from '@src/assets/icons/googleplay_icon.svg';
 import instagram from '@src/assets/icons/instagram_icon.svg';
 
 import media from '@src/assets/icons/media_icon.svg';
-import UpArrow from '@src/assets/icons/upArrow.svg';
+import { ReactComponent as UpArrow } from '@src/assets/icons/upArrow.svg';
 import website from '@src/assets/icons/website_icon.svg';
 
-import IToggle from '@src/assets/images/toggle.svg';
+import { ReactComponent as IToggle } from '@src/assets/images/toggle.svg';
 import { getProjectDetail } from '@src/lib/project';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -79,7 +79,7 @@ function ProjectDetail() {
       <S.Root>
         <S.UpButton onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
           <span>UP</span>
-          <Image src={UpArrow} alt="up arrow" />
+          <UpArrow />
         </S.UpButton>
         <S.ProjectHeader>
           <S.LogoImageWrapper>
@@ -94,7 +94,7 @@ function ProjectDetail() {
             <S.Title>프로젝트 요약</S.Title>
             <button type="button" onClick={() => setIsOverviewOpened((prev) => !prev)}>
               <S.OverviewToggleImage isOverviewOpened={isOverviewOpened}>
-                <Image src={IToggle} alt="toggle button" />
+                <IToggle />
               </S.OverviewToggleImage>
             </button>
           </S.ToggleWrapper>
