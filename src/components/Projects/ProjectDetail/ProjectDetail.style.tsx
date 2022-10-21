@@ -4,8 +4,13 @@ export const Root = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 320px;
   font-family: 'SUIT';
+  width: calc(100% - 360px);
+
+  /* 모바일 뷰 */
+  @media (max-width: 799px) {
+    width: 320px;
+  }
 `;
 
 export const UpButton = styled.button`
@@ -29,42 +34,87 @@ export const ProjectHeader = styled.div`
   margin-bottom: 16px;
   border-radius: 10px;
   background: #242424;
-  padding: 20px;
   width: 100%;
+  padding: 40px;
 
-  & > h1 {
-    margin-bottom: 8px;
-    color: #ffffff;
-    font-size: 22px;
-    font-weight: 700;
+  /* 데스크탑 뷰 */
+  @media (min-width: 800px) {
+    position: relative;
   }
-  & > p {
-    line-height: 24px;
-    color: #8e8e8e;
-    font-size: 15px;
-    font-weight: 500;
+
+  /* 모바일 뷰 */
+  @media (max-width: 799px) {
+    padding: 20px;
+  }
+
+  & > div {
+    & > h1 {
+      margin-bottom: 8px;
+      color: #ffffff;
+      font-size: 22px;
+      font-weight: 700;
+    }
+    & > p {
+      line-height: 24px;
+      color: #8e8e8e;
+      font-size: 15px;
+      font-weight: 500;
+    }
+  }
+`;
+
+export const ProjectWrapper = styled.div`
+  display: flex;
+  /* 모바일 뷰 */
+  @media (max-width: 799px) {
+    flex-direction: column;
+  }
+`;
+
+export const ToggleSection = styled.section`
+  display: flex;
+  flex-direction: column;
+  /* 데스크탑 뷰 */
+  @media (min-width: 800px) {
+    margin-right: 30px;
   }
 `;
 
 export const LogoImageWrapper = styled.div`
-  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 56px;
   height: 56px;
   object-fit: cover;
+  /* 데스크탑 뷰 */
+  @media (min-width: 800px) {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+  }
+  /* 모바일 뷰 */
+  @media (max-width: 799px) {
+    margin-bottom: 24px;
+  }
 `;
 
 const CommonWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  width: 100%;
+  height: fit-content;
   border-radius: 8px;
   background: #242424;
-  width: 320px;
 `;
 
 export const ProjectOverview = styled(CommonWrapper)<{ isOverviewOpened: boolean }>`
   margin-bottom: 16px;
-  padding: ${({ isOverviewOpened }) => (isOverviewOpened ? '28px' : '25px 28px 32px 28px')};
+  padding: 40px;
+  /* 모바일 뷰 */
+  @media (max-width: 799px) {
+    padding: ${({ isOverviewOpened }) => (isOverviewOpened ? '28px' : '25px 28px 32px 28px')};
+  }
 `;
 
 export const ToggleWrapper = styled.div`
@@ -154,7 +204,11 @@ export const ProjectLink = styled.div`
 
 export const ProjectTeam = styled(CommonWrapper)`
   margin-bottom: 16px;
-  padding: 28px;
+  padding: 40px;
+  /* 모바일 뷰 */
+  @media (max-width: 799px) {
+    padding: 28px;
+  }
 `;
 
 export const TeamMembers = styled.div<{ isTeamMemberOpened: boolean }>`
@@ -205,7 +259,11 @@ export const ProjectDescription = styled(CommonWrapper)`
   border: 2px solid #3e3e3e;
   border-radius: 10px;
   background-color: transparent;
-  padding: 28px;
+  padding: 40px;
+  /* 모바일 뷰 */
+  @media (max-width: 799px) {
+    padding: 28px;
+  }
 
   & > p {
     margin-top: 32px;

@@ -84,92 +84,99 @@ function ProjectDetail() {
           <span>UP</span>
           <Image src={UpArrow} alt="up arrow" />
         </S.UpButton>
+
         <S.ProjectHeader>
           <S.LogoImageWrapper>
             <Image src={logoImageUrl} alt="logo" width="56" height="56" />
           </S.LogoImageWrapper>
-          <h1>{name}</h1>
-          <p>{shortIntroduction}</p>
+          <div>
+            <h1>{name}</h1>
+            <p>{shortIntroduction}</p>
+          </div>
         </S.ProjectHeader>
 
-        <S.ProjectOverview isOverviewOpened={isOverviewOpened}>
-          <S.ToggleWrapper>
-            <S.Title>프로젝트 요약</S.Title>
-            <button type="button" onClick={() => setIsOverviewOpened((prev) => !prev)}>
-              <S.OverviewToggleImage isOverviewOpened={isOverviewOpened}>
-                <Image src={IToggle} alt="toggle button" />
-              </S.OverviewToggleImage>
-            </button>
-          </S.ToggleWrapper>
-          <S.ProjectOverviewDetail isOverviewOpened={isOverviewOpened}>
-            <S.ProjectInfo>
-              <div>
-                <h1>프로젝트 기간</h1>
-                <h1>진행 기수</h1>
-                <h1>프로젝트 형태</h1>
-                <h1>프로젝트 상태</h1>
-                <h1>프로젝트 링크</h1>
-              </div>
+        <S.ProjectWrapper>
+          <S.ToggleSection>
+            <S.ProjectOverview isOverviewOpened={isOverviewOpened}>
+              <S.ToggleWrapper>
+                <S.Title>프로젝트 요약</S.Title>
+                <button type="button" onClick={() => setIsOverviewOpened((prev) => !prev)}>
+                  <S.OverviewToggleImage isOverviewOpened={isOverviewOpened}>
+                    <Image src={IToggle} alt="toggle button" />
+                  </S.OverviewToggleImage>
+                </button>
+              </S.ToggleWrapper>
+              <S.ProjectOverviewDetail isOverviewOpened={isOverviewOpened}>
+                <S.ProjectInfo>
+                  <div>
+                    <h1>프로젝트 기간</h1>
+                    <h1>진행 기수</h1>
+                    <h1>프로젝트 형태</h1>
+                    <h1>프로젝트 상태</h1>
+                    <h1>프로젝트 링크</h1>
+                  </div>
 
-              <div>
-                <span>
-                  {dateFormat(startDate)} - {inProgress ? '진행중' : dateFormat(endDate)}
-                </span>
-                <span>{semester ? semester + '기' : '-'}</span>
-                <span>
-                  {serviceType.map((type: string) => (type === 'WEB' ? '웹' : '앱')).join(', ')}
-                </span>
-                <span>
-                  {isProvidingService && '운영중'}
-                  {isBusinessing && '창업중'}
-                </span>
-                <span>{link.length ? link.length + '개' : '-'}</span>
-              </div>
-            </S.ProjectInfo>
-            <S.ProjectLinkWrapper>
-              {link.map(({ type, url }: LinkType) => {
-                const { name, src } = getLinkNameAndSrcWithType(type);
+                  <div>
+                    <span>
+                      {dateFormat(startDate)} - {inProgress ? '진행중' : dateFormat(endDate)}
+                    </span>
+                    <span>{semester ? semester + '기' : '-'}</span>
+                    <span>
+                      {serviceType.map((type: string) => (type === 'WEB' ? '웹' : '앱')).join(', ')}
+                    </span>
+                    <span>
+                      {isProvidingService && '운영중'}
+                      {isBusinessing && '창업중'}
+                    </span>
+                    <span>{link.length ? link.length + '개' : '-'}</span>
+                  </div>
+                </S.ProjectInfo>
+                <S.ProjectLinkWrapper>
+                  {link.map(({ type, url }: LinkType) => {
+                    const { name, src } = getLinkNameAndSrcWithType(type);
 
-                return (
-                  <Link href={url} key={type}>
-                    <S.ProjectLink>
-                      <Image src={src} alt={type} width="56" height="56" />
-                      <span>{name}</span>
-                    </S.ProjectLink>
-                  </Link>
-                );
-              })}
-            </S.ProjectLinkWrapper>
-          </S.ProjectOverviewDetail>
-        </S.ProjectOverview>
+                    return (
+                      <Link href={url} key={type}>
+                        <S.ProjectLink>
+                          <Image src={src} alt={type} width="56" height="56" />
+                          <span>{name}</span>
+                        </S.ProjectLink>
+                      </Link>
+                    );
+                  })}
+                </S.ProjectLinkWrapper>
+              </S.ProjectOverviewDetail>
+            </S.ProjectOverview>
 
-        <S.ProjectTeam>
-          <S.ToggleWrapper>
-            <S.Title>프로젝트 팀원</S.Title>
-            <button type="button" onClick={() => setIsTeamMemberOpened((prev) => !prev)}>
-              <S.TeamMemberToggleImage isTeamMemberOpened={isTeamMemberOpened}>
-                <Image src={IToggle} alt="toggle button" />
-              </S.TeamMemberToggleImage>
-            </button>
-          </S.ToggleWrapper>
-          <S.TeamMembers isTeamMemberOpened={isTeamMemberOpened}>
-            {teamMembers.map(({ name, role, roleDetail }: TeamMembersType) => (
-              <S.Members key={name}>
-                <h1>{role}</h1>
+            <S.ProjectTeam>
+              <S.ToggleWrapper>
+                <S.Title>프로젝트 팀원</S.Title>
+                <button type="button" onClick={() => setIsTeamMemberOpened((prev) => !prev)}>
+                  <S.TeamMemberToggleImage isTeamMemberOpened={isTeamMemberOpened}>
+                    <Image src={IToggle} alt="toggle button" />
+                  </S.TeamMemberToggleImage>
+                </button>
+              </S.ToggleWrapper>
+              <S.TeamMembers isTeamMemberOpened={isTeamMemberOpened}>
+                {teamMembers.map(({ name, role, roleDetail }: TeamMembersType) => (
+                  <S.Members key={name}>
+                    <h1>{role}</h1>
 
-                <S.MemberDetail>
-                  <h1>{name}</h1>
-                  <p>{roleDetail}</p>
-                </S.MemberDetail>
-              </S.Members>
-            ))}
-          </S.TeamMembers>
-        </S.ProjectTeam>
+                    <S.MemberDetail>
+                      <h1>{name}</h1>
+                      <p>{roleDetail}</p>
+                    </S.MemberDetail>
+                  </S.Members>
+                ))}
+              </S.TeamMembers>
+            </S.ProjectTeam>
+          </S.ToggleSection>
 
-        <S.ProjectDescription>
-          <S.Title>프로젝트 설명</S.Title>
-          <p>{detail}</p>
-        </S.ProjectDescription>
+          <S.ProjectDescription>
+            <S.Title>프로젝트 설명</S.Title>
+            <p>{detail}</p>
+          </S.ProjectDescription>
+        </S.ProjectWrapper>
       </S.Root>
 
       <S.Footer>
