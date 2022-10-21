@@ -4,7 +4,6 @@ import SoptTermImage from '@src/assets/replaceMe/MainImg/img_sopt-term.png';
 import { appjamInfo, sopkathonInfo, soptTermInfo } from '@src/assets/replaceMe/statistics';
 import RoundButton from '@src/components/common/RoundButton';
 import { useRouter } from 'next/router';
-import React from 'react';
 import Fade from 'react-reveal/Fade';
 
 import SoptMarquee from '../SoptMarquee';

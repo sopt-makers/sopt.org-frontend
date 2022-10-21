@@ -22,13 +22,13 @@ function Recruit() {
               <S.PlainCircleText>1차 서류</S.PlainCircleText>
             </Fade>
             <Fade left delay={400}>
-              <S.ArrowIcon src={Arrow.src} alt="오른쪽 화살표" />
+              <S.ArrowIcon src={Arrow} alt="오른쪽 화살표" />
             </Fade>
             <Fade left delay={500}>
               <S.PlainCircleText>2차 면접</S.PlainCircleText>
             </Fade>
             <Fade left delay={600}>
-              <S.ArrowIcon src={Arrow.src} alt="오른쪽 화살표" />
+              <S.ArrowIcon src={Arrow} alt="오른쪽 화살표" />
             </Fade>
             <Fade left delay={700}>
               <S.GradientCircleText>최종 합격</S.GradientCircleText>

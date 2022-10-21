@@ -3,10 +3,10 @@ import github from '@src/assets/icons/github_icon.svg';
 import googleplay from '@src/assets/icons/googleplay_icon.svg';
 import instagram from '@src/assets/icons/instagram_icon.svg';
 import media from '@src/assets/icons/media_icon.svg';
-import UpArrow from '@src/assets/icons/upArrow.svg';
+import { ReactComponent as UpArrow } from '@src/assets/icons/upArrow.svg';
 import website from '@src/assets/icons/website_icon.svg';
-import IToggle from '@src/assets/images/toggle.svg';
-import Footer from '@src/components/common/Footer';
+import { ReactComponent as IToggle } from '@src/assets/images/toggle.svg';
+import Footer from '@src/components/common/Footer/Footer';
 import { getProjectDetail } from '@src/lib/project';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -26,7 +26,7 @@ interface LinkType {
   url: string;
 }
 
-function ProjectDetail() {
+function ProjectDetailPage() {
   const { data } = useQuery('projectDetail', () => getProjectDetail(0));
   const [isOverviewOpened, setIsOverviewOpened] = useState(false);
   const [isTeamMemberOpened, setIsTeamMemberOpened] = useState(false);
@@ -76,7 +76,7 @@ function ProjectDetail() {
     <S.Root>
       <S.UpButton onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
         <span>UP</span>
-        <Image src={UpArrow} alt="up arrow" />
+        <UpArrow />
       </S.UpButton>
 
       <S.Main>
@@ -97,7 +97,7 @@ function ProjectDetail() {
                 <S.Title>프로젝트 요약</S.Title>
                 <button type="button" onClick={() => setIsOverviewOpened((prev) => !prev)}>
                   <S.OverviewToggleImage isOverviewOpened={isOverviewOpened}>
-                    <Image src={IToggle} alt="toggle button" />
+                    <IToggle />
                   </S.OverviewToggleImage>
                 </button>
               </S.ToggleWrapper>
@@ -148,7 +148,7 @@ function ProjectDetail() {
                 <S.Title>프로젝트 팀원</S.Title>
                 <button type="button" onClick={() => setIsTeamMemberOpened((prev) => !prev)}>
                   <S.TeamMemberToggleImage isTeamMemberOpened={isTeamMemberOpened}>
-                    <Image src={IToggle} alt="toggle button" />
+                    <IToggle />
                   </S.TeamMemberToggleImage>
                 </button>
               </S.ToggleWrapper>
@@ -178,4 +178,4 @@ function ProjectDetail() {
   );
 }
 
-export default ProjectDetail;
+export default ProjectDetailPage;

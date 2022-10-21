@@ -48,7 +48,7 @@ function SoptTermImage() {
             width={50}
             height={5}
             alt="오른쪽 화살표"
-            blurDataURL={RightArrow.src}
+            blurDataURL={RightArrow}
             placeholder="blur"
           />
         </S.ButtonContents>

@@ -22,16 +22,16 @@ const IconBanner = () => {
 };
 
 function Resolved() {
-  const isDesktop = useMediaQuery({
-    query: '(min-width: 1280px)',
-  });
-  const { data } = useQuery('mainLogo', () => getMainLogo(), {
-    suspense: true,
-  });
+  // const isDesktop = useMediaQuery({
+  //   query: '(min-width: 1280px)',
+  // });
+  // const { data } = useQuery('mainLogo', () => getMainLogo(), {
+  //   suspense: true,
+  // });
 
   return (
     <Marquee pauseOnHover={true} gradient={false} speed={50}>
-      {data?.data?.map((imgSrc: any) => (
+      {/* {data?.data?.map((imgSrc: any) => (
         <>
           <Image
             key={imgSrc.id}
@@ -45,7 +45,7 @@ function Resolved() {
           />
           <S.dummyData size={isDesktop ? '55px' : '35px'} />
         </>
-      ))}
+      ))} */}
     </Marquee>
   );
 }

@@ -3,7 +3,6 @@ import GooglePlayStoreBtn from '@src/assets/icons/google_playstore.svg';
 import DotImg from '@src/assets/images/DotImg.svg';
 import { APPJAM_INFO } from '@src/constants/about';
 import Image from 'next/image';
-import React from 'react';
 
 import * as S from './AppjamBox.style';
 
