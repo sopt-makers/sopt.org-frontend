@@ -1,14 +1,18 @@
 import axios from 'axios';
 
-const BASE_URL = process.env.NEXT_PUBLIC_END;
-
 const client = axios.create({
-  baseURL: BASE_URL,
+  baseURL: 'http://43.201.19.221:3000',
   timeout: 3000,
 });
 
 export const getProjectDetail = async (projectId: number) => {
   const { data } = await client.get(`/projects/${projectId}`);
+
+  return data;
+};
+
+export const getProjectList = async () => {
+  const { data } = await client.get('/projects');
 
   return data;
 };

@@ -1,6 +1,4 @@
-import ArrowIcon from '@src/assets/icons/icArrowDown.svg';
-import Image from 'next/image';
-import React from 'react';
+import { ReactComponent as ArrowDown } from '@src/assets/icons/icArrowDown.svg';
 import Fade from 'react-reveal/Fade';
 
 import * as S from './Top.style';
@@ -30,13 +28,7 @@ function Top() {
         </S.TextWrap>
         <S.ScrollWrap>
           <S.ScrollText>Scroll</S.ScrollText>
-          <Image
-            src={ArrowIcon}
-            width="20px"
-            alt="아래 화살표"
-            blurDataURL={ArrowIcon}
-            placeholder="blur"
-          />
+          <ArrowDown />
         </S.ScrollWrap>
       </S.Wrap>
     </S.Root>

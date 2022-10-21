@@ -1,8 +1,8 @@
-import facebookLogo from '@src/assets/icons/facebook_logo.svg';
-import instagramLogo from '@src/assets/icons/instagram_logo.svg';
-import kakaoLogo from '@src/assets/icons/kakao_logo.svg';
-import mailLogo from '@src/assets/icons/mail_logo.svg';
-import youtubeLogo from '@src/assets/icons/youtube_logo.svg';
+import { ReactComponent as FacebookLogo } from '@src/assets/logo/facebook.svg';
+import { ReactComponent as InstagramLogo } from '@src/assets/logo/instagram.svg';
+import { ReactComponent as KakaoLogo } from '@src/assets/logo/kakao.svg';
+import { ReactComponent as MailLogo } from '@src/assets/logo/mail.svg';
+import { ReactComponent as YoutubeLogo } from '@src/assets/logo/youtube.svg';
 
 import * as S from './Channels.style';
 
@@ -11,22 +11,7 @@ interface ChannelsProps {
 }
 
 function Channels({ isFooter = false }: ChannelsProps) {
-  /**
-   *     mailLogo.src,
-    facebookLogo.src,
-    instagramLogo.src,
-    youtubeLogo.src,
-    kakaoLogo.src,
-   */
-  const channelsList = [
-    { image: mailLogo.src, id: 'mail' },
-    { image: facebookLogo.src, id: 'facebook' },
-    { image: instagramLogo.src, id: 'instagram' },
-    { image: youtubeLogo.src, id: 'youtube' },
-    { image: kakaoLogo.src, id: 'kakaotalk' },
-  ];
-
-  const handleClick = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+  const handleClick = (e: React.MouseEvent<SVGSVGElement, MouseEvent>) => {
     switch (e.currentTarget.id) {
       case 'mail':
         window.location.href = 'mailto:president@sopt.org';
@@ -48,9 +33,11 @@ function Channels({ isFooter = false }: ChannelsProps) {
 
   return (
     <S.ChannelButtonsWrap isFooter={isFooter}>
-      {channelsList.map((item) => (
-        <S.ChannelButton key={item.id} src={item.image} onClick={handleClick} id={item.id} />
-      ))}
+      <MailLogo id={'mail'} onClick={handleClick} />
+      <FacebookLogo id={'facebook'} onClick={handleClick} />
+      <InstagramLogo id={'instagram'} onClick={handleClick} />
+      <KakaoLogo id={'kakao'} onClick={handleClick} />
+      <YoutubeLogo id={'youtube'} onClick={handleClick} />
     </S.ChannelButtonsWrap>
   );
 }

@@ -1,7 +1,6 @@
 import DotImg from '@src/assets/images/DotImg.svg';
 import { PART_INFO } from '@src/constants/about';
 import Image from 'next/image';
-import React from 'react';
 import { useMediaQuery } from 'react-responsive';
 import Fade from 'react-reveal/Fade';
 

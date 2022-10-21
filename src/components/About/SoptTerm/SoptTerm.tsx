@@ -35,7 +35,7 @@ function SoptTerm() {
       <S.ImageWrapper>
         <S.Filter />
         <Image
-          src={SoptTermServices.src}
+          src={SoptTermServices}
           width={isDesktop ? 1020 : 485}
           height={isDesktop ? 165 : 80}
           alt="솝텀 서비스들"

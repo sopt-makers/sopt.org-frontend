@@ -44,7 +44,7 @@ function TeamImage() {
             width={isDesktop ? 24 : 18}
             height={isDesktop ? 24 : 18}
             alt="인스타 아이콘"
-            blurDataURL={InstagramIcon.src}
+            blurDataURL={InstagramIcon}
             placeholder="blur"
           />
           운영팀 일상 보기
@@ -67,7 +67,7 @@ function TeamImage() {
             width={isDesktop ? 26 : 18}
             height={isDesktop ? 18 : 13}
             alt="유튜브 아이콘"
-            blurDataURL={YoutubeIcon.src}
+            blurDataURL={YoutubeIcon}
             placeholder="blur"
           />
           미디어팀 콘텐츠 보기

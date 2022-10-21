@@ -2,7 +2,7 @@ import menuBar from '@src/assets/icons/menuBar.svg';
 import logoIcon from '@src/assets/replaceMe/branding/logo.png';
 import HeaderMenu from '@src/components/common/Header/Menu';
 import { useRouter } from 'next/router';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 import * as S from './Header.style';
 
@@ -27,7 +27,7 @@ function Header() {
           <S.CenterAligner>
             <S.Logo src={logoIcon.src} onClick={handleClick} />
           </S.CenterAligner>
-          <S.HamburgerBar src={menuBar.src} onClick={handleCloseButton} />
+          <S.HamburgerBar src={menuBar} onClick={handleCloseButton} />
         </S.Wrap>
       </S.Header>
       <HeaderMenu setIsMenuShown={setIsMenuShown} isMenuShown={isMenuShown} />
