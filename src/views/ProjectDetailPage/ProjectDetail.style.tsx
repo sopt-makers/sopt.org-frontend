@@ -8,6 +8,7 @@ export const Root = styled.div`
   font-family: 'SUIT';
   width: calc(100% - 360px);
   height: 100%;
+  margin: 0 auto;
 
   /* 모바일 뷰 */
   @media (max-width: 799px) {

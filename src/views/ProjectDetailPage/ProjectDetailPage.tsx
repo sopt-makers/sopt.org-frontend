@@ -7,6 +7,7 @@ import { ReactComponent as UpArrow } from '@src/assets/icons/upArrow.svg';
 import website from '@src/assets/icons/website_icon.svg';
 import { ReactComponent as IToggle } from '@src/assets/images/toggle.svg';
 import Footer from '@src/components/common/Footer/Footer';
+import Header from '@src/components/common/Header/Header';
 import { getProjectDetail } from '@src/lib/project';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -74,6 +75,8 @@ function ProjectDetailPage() {
 
   return (
     <S.Root>
+      <Header />
+
       <S.UpButton onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
         <span>UP</span>
         <UpArrow />

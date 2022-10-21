@@ -56,6 +56,7 @@ export const TitleButton = styled.button`
 `;
 
 export const CopyrightText = styled.p`
+  width: 278px;
   margin-top: 25px;
   line-height: 180%;
   font-family: 'SUIT', arial, sans-serif;
