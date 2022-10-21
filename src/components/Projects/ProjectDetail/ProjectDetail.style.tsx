@@ -3,9 +3,11 @@ import styled from '@emotion/styled';
 export const Root = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
   font-family: 'SUIT';
   width: calc(100% - 360px);
+  height: 100%;
 
   /* 모바일 뷰 */
   @media (max-width: 799px) {
@@ -26,6 +28,11 @@ export const UpButton = styled.button`
   & > span {
     display: none;
   }
+`;
+
+export const Main = styled.main`
+  display: flex;
+  flex-direction: column;
 `;
 
 export const ProjectHeader = styled.div`
@@ -65,6 +72,7 @@ export const ProjectHeader = styled.div`
 
 export const ProjectWrapper = styled.div`
   display: flex;
+  margin-bottom: 48px;
   /* 모바일 뷰 */
   @media (max-width: 799px) {
     flex-direction: column;
@@ -271,66 +279,5 @@ export const ProjectDescription = styled(CommonWrapper)`
     color: rgba(255, 255, 255, 0.8);
     font-size: 15px;
     font-weight: 500;
-  }
-`;
-
-export const Footer = styled.footer`
-  display: flex;
-  flex-direction: column;
-  margin-top: 120px;
-  background: linear-gradient(0deg, #202020, #202020), #292929;
-  padding: 48px 0 0 30px;
-  width: 100%;
-
-  & > p {
-    line-height: 20px;
-    color: #fcfcfc;
-    font-size: 12px;
-    font-weight: 400;
-  }
-`;
-
-export const Rule = styled.div`
-  display: flex;
-  align-items: center;
-  margin-bottom: 16px;
-`;
-
-export const RuleLink = styled.div`
-  display: flex;
-  align-items: center;
-  & > a {
-    text-decoration: none;
-    color: #fff;
-  }
-`;
-
-export const Channels = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin: 32px 0;
-  width: 100%;
-
-  & > h1 {
-    line-height: 17px;
-    color: #fcfcfc;
-    font-size: 14px;
-    font-weight: 500;
-  }
-  & > div {
-    display: flex;
-    margin-top: 16px;
-  }
-`;
-
-export const Channel = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 30px;
-  height: 30px;
-
-  &:not(:last-child) {
-    margin-right: 16px;
   }
 `;
