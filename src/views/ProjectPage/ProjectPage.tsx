@@ -5,12 +5,12 @@ import cc from 'classcat';
 import Header from '@src/components/common/Header';
 import Footer from '@src/components/common/Footer';
 import { EmptyContent } from './EmptyContent';
+import { getProjectList } from '@src/lib/project';
 
 import { Condition } from '@src/lib';
 import { ReactComponent as RightArrow } from '@src/assets/icons/enroll_rightArrow.svg';
 
 import { reducer } from './reducer';
-import { getProjectList } from './mock';
 import { ProjectType } from './types';
 import styles from './styles.module.scss';
 
@@ -31,7 +31,7 @@ function Projects() {
     }
 
     if (response) {
-      return dispatch({ _TAG: 'SUCCESS', data: response });
+      return dispatch({ _TAG: 'SUCCESS', data: response.projects });
     }
   };
 
@@ -62,7 +62,7 @@ function Projects() {
 }
 
 function ProjectList({ list }: { list: ProjectType[] }) {
-  const listLength = 0;
+  const listLength = list.length;
 
   return (
     <>
