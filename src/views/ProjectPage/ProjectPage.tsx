@@ -1,4 +1,4 @@
-import { useEffect, useReducer } from 'react';
+import { useEffect, useReducer, useState } from 'react';
 import { to } from 'await-to-js';
 import cc from 'classcat';
 
@@ -20,12 +20,14 @@ import styles from './styles.module.scss';
 import Image from 'next/image';
 
 function Projects() {
+  const [isModalOpen, toggleModalState] = useState(false);
+
   return (
     <>
       <Header />
       <ProjectList />
-      <MobileUtilityButtons />
-      <FilterModal />
+      {isModalOpen && <FilterModal />}
+      <MobileUtilityButtons prevState={isModalOpen} toggleModalState={toggleModalState} />
       <Footer />
     </>
   );
@@ -153,13 +155,28 @@ function ProjectEnrollSection() {
   );
 }
 
-function MobileUtilityButtons() {
+interface ModalUtilityButtonsType {
+  prevState: boolean;
+  toggleModalState: (arg: boolean) => void;
+}
+
+function MobileUtilityButtons({ toggleModalState, prevState }: ModalUtilityButtonsType) {
+  const preventScroll = () => (document.body.style.overflow = 'hidden');
+  const ableScroll = () => (document.body.style.overflow = 'scroll');
+
+  const handleFilterBtnClick = () => {
+    if (prevState) ableScroll();
+    else preventScroll();
+
+    toggleModalState(!prevState);
+  };
+
   return (
     <div className={styles.utility}>
       <button type="button" className={styles.up} onClick={() => window.scrollTo(0, 0)}>
         <UpArrow />
       </button>
-      <button type="button" className={styles.filter}>
+      <button type="button" className={styles.filter} onClick={() => handleFilterBtnClick()}>
         <MobileFilterBtn />
       </button>
     </div>
@@ -167,9 +184,6 @@ function MobileUtilityButtons() {
 }
 
 export function FilterModal() {
-  const preventScroll = () => (document.body.style.overflow = 'hidden');
-  const ableScroll = () => (document.body.style.overflow = 'scroll');
-
   return (
     <div className={styles.modal}>
       <div className={styles.overlay}></div>
