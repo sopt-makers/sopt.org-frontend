@@ -67,8 +67,11 @@ function ProjectList({ list }: { list: ProjectType[] }) {
   return (
     <>
       <Condition statement={listLength > 0}>
+        <div className={styles['total-count']}>
+          <p>{listLength}개의 프로젝트가 있어요.</p>
+        </div>
         {list?.map((project, index) => (
-          <article key={index}>{project.name}</article>
+          <Project project={project} key={index} />
         ))}
       </Condition>
       <Condition statement={listLength === 0}>
@@ -77,6 +80,10 @@ function ProjectList({ list }: { list: ProjectType[] }) {
       <ProjectEnrollSection />
     </>
   );
+}
+
+function Project({ project }: { project: ProjectType }) {
+  return <article>{project.name}</article>;
 }
 
 function ProjectEnrollSection() {
