@@ -12,7 +12,7 @@ import ProjectHeader from '@src/components/ProjectHeader';
 import { getProjectDetail } from '@src/lib/project';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useQuery } from 'react-query';
 
 import * as S from './ProjectDetail.style';
@@ -32,6 +32,10 @@ function ProjectDetailPage() {
   const { data } = useQuery('projectDetail', () => getProjectDetail(0));
   const [isOverviewOpened, setIsOverviewOpened] = useState(false);
   const [isTeamMemberOpened, setIsTeamMemberOpened] = useState(false);
+
+  useEffect(() => {
+    console.log(screen.height, document.body.clientHeight);
+  }, []);
 
   if (!data) return;
 

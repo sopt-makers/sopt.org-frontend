@@ -9,6 +9,7 @@ interface MenuTitleProps {
 }
 
 export const Header = styled.header`
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -23,6 +24,28 @@ export const Header = styled.header`
 export const CenterAligner = styled.div`
   display: flex;
   align-items: center;
+`;
+
+export const HamburgerBar = styled.button<StyleProps>`
+  position: absolute;
+  top: 50px;
+  right: 0px;
+
+  background: url(${(props) => props.src}) center no-repeat;
+  background-size: 100% 100%;
+
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+
+  /* 모바일 뷰 */
+  @media (max-width: 1279px) {
+    right: 10px;
+    bottom: 10px;
+
+    width: 16px;
+    height: 16px;
+  }
 `;
 
 export const Logo = styled.button<StyleProps>`
