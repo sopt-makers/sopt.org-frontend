@@ -33,10 +33,6 @@ function ProjectDetailPage() {
   const [isOverviewOpened, setIsOverviewOpened] = useState(false);
   const [isTeamMemberOpened, setIsTeamMemberOpened] = useState(false);
 
-  useEffect(() => {
-    console.log(screen.height, document.body.clientHeight);
-  }, []);
-
   if (!data) return;
 
   const {

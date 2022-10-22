@@ -176,7 +176,7 @@ export const ProjectInfo = styled.div`
     flex-direction: column;
   }
 
-  & > div:first-child {
+  & > div:first-of-type {
     margin-right: 32px;
 
     & > h1 {

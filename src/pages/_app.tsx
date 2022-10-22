@@ -5,6 +5,7 @@ import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import { useState } from 'react';
 import { QueryClient, QueryClientProvider } from 'react-query';
+import '../styles/font.css';
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [queryClient] = useState(() => new QueryClient());
