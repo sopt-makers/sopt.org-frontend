@@ -6,7 +6,7 @@ import Header from '@src/components/common/Header';
 import Footer from '@src/components/common/Footer';
 import { EmptyContent } from './EmptyContent';
 import { getProjectList } from '@src/lib/project';
-import { projectCategoryList } from './constants';
+import { projectCategoryList, CategoryType } from './constants';
 
 import { Condition } from '@src/lib';
 import { ReactComponent as RightArrow } from '@src/assets/icons/enroll_rightArrow.svg';
@@ -22,27 +22,28 @@ import styles from './styles.module.scss';
 import Image from 'next/image';
 
 function Projects() {
-  const [selectedCategory, setCategory] = useState<number | null>(null);
+  const [selectedCategory, setCategory] = useState<CategoryType | undefined>(undefined);
   const [isModalOpen, toggleModalState] = useState(false);
 
   return (
     <>
       <Header />
-      <ProjectList />
-      {isModalOpen && (
+      <ProjectList selectedCategory={selectedCategory} />
+      <Condition statement={isModalOpen}>
         <FilterModal
           toggleModalState={toggleModalState}
           selectedCategory={selectedCategory}
           setCategory={setCategory}
         />
-      )}
+      </Condition>
       <MobileUtilityButtons prevState={isModalOpen} toggleModalState={toggleModalState} />
       <Footer />
     </>
   );
 }
 
-function ProjectList() {
+// TODO project category must be inclueded in data from from server
+function ProjectList({ selectedCategory }: { selectedCategory: CategoryType | undefined }) {
   const [state, dispatch] = useReducer(reducer, { _TAG: 'IDLE' });
   const fetchProjectList = async () => {
     dispatch({
@@ -107,7 +108,7 @@ function ProjectList() {
 }
 
 // TODO all project link type should be applied to links switch-case
-// TODO proejct service type should be changed from array to string (also change project type)
+// TODO project service type should be changed from array to string (also change project type)
 // TODO thumbnail image should be applied to Image
 function Project({ project }: { project: ProjectType }) {
   return (
@@ -195,14 +196,14 @@ function MobileUtilityButtons({
 
 type ModalProps = {
   toggleModalState: (args: boolean) => void;
-  selectedCategory: number | null;
-  setCategory: (args: number) => void;
+  selectedCategory: CategoryType | undefined;
+  setCategory: (args: CategoryType) => void;
 };
 
 export function FilterModal({ toggleModalState, selectedCategory, setCategory }: ModalProps) {
   const [isCategoryOpen, toggleCategoryOpenState] = useState(false);
 
-  const handleSelect = (id: number) => {
+  const handleSelect = (id: CategoryType) => {
     setCategory(id);
     toggleModalState(false);
   };
@@ -220,11 +221,11 @@ export function FilterModal({ toggleModalState, selectedCategory, setCategory }:
         </div>
         <Condition statement={isCategoryOpen}>
           <div className={styles.categories}>
-            {projectCategoryList.map(({ id, name }) => (
+            {projectCategoryList.map(({ type, name }) => (
               <span
-                key={id}
-                className={cc([selectedCategory === id && styles.isClicked])}
-                onClick={() => handleSelect(id)}
+                key={type}
+                className={cc([selectedCategory === type && styles.isClicked])}
+                onClick={() => handleSelect(type)}
               >
                 {name}
               </span>
