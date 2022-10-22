@@ -6,6 +6,7 @@ import Header from '@src/components/common/Header';
 import Footer from '@src/components/common/Footer';
 import { EmptyContent } from './EmptyContent';
 import { getProjectList } from '@src/lib/project';
+import { projectCategoryList } from './constants';
 
 import { Condition } from '@src/lib';
 import { ReactComponent as RightArrow } from '@src/assets/icons/enroll_rightArrow.svg';
@@ -13,6 +14,7 @@ import { ReactComponent as GithubIcon } from '@src/assets/icons/github_icon.svg'
 import { ReactComponent as WebIcon } from '@src/assets/logo/website.svg';
 import { ReactComponent as UpArrow } from '@src/assets/icons/upArrow.svg';
 import { ReactComponent as MobileFilterBtn } from '@src/assets/icons/MobileFilterBtn.svg';
+import { ReactComponent as ToggleArrowBtn } from '@src/assets/icons/ToggleArrow.svg';
 
 import { reducer } from './reducer';
 import { ProjectType } from './types';
@@ -20,13 +22,20 @@ import styles from './styles.module.scss';
 import Image from 'next/image';
 
 function Projects() {
+  const [selectedCategory, setCategory] = useState<number | null>(null);
   const [isModalOpen, toggleModalState] = useState(false);
 
   return (
     <>
       <Header />
       <ProjectList />
-      {isModalOpen && <FilterModal />}
+      {isModalOpen && (
+        <FilterModal
+          toggleModalState={toggleModalState}
+          selectedCategory={selectedCategory}
+          setCategory={setCategory}
+        />
+      )}
       <MobileUtilityButtons prevState={isModalOpen} toggleModalState={toggleModalState} />
       <Footer />
     </>
@@ -155,12 +164,13 @@ function ProjectEnrollSection() {
   );
 }
 
-interface ModalUtilityButtonsType {
+function MobileUtilityButtons({
+  toggleModalState,
+  prevState,
+}: {
   prevState: boolean;
   toggleModalState: (arg: boolean) => void;
-}
-
-function MobileUtilityButtons({ toggleModalState, prevState }: ModalUtilityButtonsType) {
+}) {
   const preventScroll = () => (document.body.style.overflow = 'hidden');
   const ableScroll = () => (document.body.style.overflow = 'scroll');
 
@@ -183,11 +193,45 @@ function MobileUtilityButtons({ toggleModalState, prevState }: ModalUtilityButto
   );
 }
 
-export function FilterModal() {
+type ModalProps = {
+  toggleModalState: (args: boolean) => void;
+  selectedCategory: number | null;
+  setCategory: (args: number) => void;
+};
+
+export function FilterModal({ toggleModalState, selectedCategory, setCategory }: ModalProps) {
+  const [isCategoryOpen, toggleCategoryOpenState] = useState(false);
+
+  const handleSelect = (id: number) => {
+    setCategory(id);
+    toggleModalState(false);
+  };
+
   return (
     <div className={styles.modal}>
-      <div className={styles.overlay}></div>
-      <div className={styles['modal-content']}></div>
+      <div className={styles.overlay} onClick={() => toggleModalState(false)}></div>
+      <div className={styles['content']}>
+        <div className={styles['title']}>
+          <ToggleArrowBtn
+            className={cc([isCategoryOpen && styles.isRotated])}
+            onClick={() => toggleCategoryOpenState((prev) => !prev)}
+          />
+          <h4>프로젝트 유형</h4>
+        </div>
+        <Condition statement={isCategoryOpen}>
+          <div className={styles.categories}>
+            {projectCategoryList.map(({ id, name }) => (
+              <span
+                key={id}
+                className={cc([selectedCategory === id && styles.isClicked])}
+                onClick={() => handleSelect(id)}
+              >
+                {name}
+              </span>
+            ))}
+          </div>
+        </Condition>
+      </div>
     </div>
   );
 }
