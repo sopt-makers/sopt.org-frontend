@@ -11,6 +11,8 @@ import { Condition } from '@src/lib';
 import { ReactComponent as RightArrow } from '@src/assets/icons/enroll_rightArrow.svg';
 import { ReactComponent as GithubIcon } from '@src/assets/icons/github_icon.svg';
 import { ReactComponent as WebIcon } from '@src/assets/logo/website.svg';
+import { ReactComponent as UpArrow } from '@src/assets/icons/upArrow.svg';
+import { ReactComponent as MobileFilterBtn } from '@src/assets/icons/MobileFilterBtn.svg';
 
 import { reducer } from './reducer';
 import { ProjectType } from './types';
@@ -61,6 +63,7 @@ function Projects() {
           })()}
         </div>
       </div>
+      <MobileUtilityButtons />
       <Footer />
     </>
   );
@@ -146,6 +149,19 @@ function ProjectEnrollSection() {
         <RightArrow />
       </div>
     </section>
+  );
+}
+
+function MobileUtilityButtons() {
+  return (
+    <div className={styles.utility}>
+      <button type="button" className={styles.up}>
+        <UpArrow />
+      </button>
+      <button type="button" className={styles.filter}>
+        <MobileFilterBtn />
+      </button>
+    </div>
   );
 }
 
