@@ -15,7 +15,12 @@ export interface ProjectType {
   logoImageUrl: string;
   thumbnailImageUrl: string;
   projectImageUrl: string;
-  link: string[];
+  link: LinkType[];
+}
+
+interface LinkType {
+  type: string; // should be changed to specific linkType
+  url: string;
 }
 
 export type State<T> =
