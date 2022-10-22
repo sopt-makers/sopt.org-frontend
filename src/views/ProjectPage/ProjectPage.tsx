@@ -20,6 +20,18 @@ import styles from './styles.module.scss';
 import Image from 'next/image';
 
 function Projects() {
+  return (
+    <>
+      <Header />
+      <ProjectList />
+      <MobileUtilityButtons />
+      <FilterModal />
+      <Footer />
+    </>
+  );
+}
+
+function ProjectList() {
   const [state, dispatch] = useReducer(reducer, { _TAG: 'IDLE' });
   const fetchProjectList = async () => {
     dispatch({
@@ -45,51 +57,40 @@ function Projects() {
   }, []);
 
   return (
-    <>
-      <Header />
-      <div>
-        <div className={cc([styles['total-container']])}>
-          {(() => {
-            switch (state._TAG) {
-              case 'IDLE':
-                return <p>IDLE</p>;
-              case 'LOADING':
-                return <p>LOADING</p>;
-              case 'ERROR':
-                return <p>ERROR</p>;
-              case 'OK':
-                return <ProjectList list={state.data} />;
-            }
-          })()}
-        </div>
-      </div>
-      <MobileUtilityButtons />
-      <Footer />
-    </>
-  );
-}
-
-/* key should be changed from index to unique id*/
-function ProjectList({ list }: { list: ProjectType[] }) {
-  const listLength = list.length;
-
-  return (
-    <div className={styles['list-container']}>
-      <Condition statement={listLength > 0}>
-        <div className={styles['total-count']}>
-          <p>{listLength}개의 프로젝트가 있어요.</p>
-        </div>
-        <section>
-          {list?.map((project, index) => (
-            <Project project={project} key={index} />
-          ))}
-        </section>
-        <ProjectEnrollSection />
-      </Condition>
-      <Condition statement={listLength === 0}>
-        <EmptyContent />
-        <ProjectEnrollSection />
-      </Condition>
+    <div className={cc([styles['total-container']])}>
+      {(() => {
+        switch (state._TAG) {
+          case 'IDLE':
+            return <p>IDLE</p>;
+          case 'LOADING':
+            return <p>LOADING</p>;
+          case 'ERROR':
+            return <p>ERROR</p>;
+          case 'OK': {
+            const { data: list } = state;
+            const listLength = list.length;
+            return (
+              <div className={styles['list-container']}>
+                <Condition statement={listLength > 0}>
+                  <div className={styles['total-count']}>
+                    <p>{listLength}개의 프로젝트가 있어요.</p>
+                  </div>
+                  <section>
+                    {state.data.map((project, index) => (
+                      <Project project={project} key={index} />
+                    ))}
+                  </section>
+                  <ProjectEnrollSection />
+                </Condition>
+                <Condition statement={listLength === 0}>
+                  <EmptyContent />
+                  <ProjectEnrollSection />
+                </Condition>
+              </div>
+            );
+          }
+        }
+      })()}
     </div>
   );
 }
@@ -161,6 +162,18 @@ function MobileUtilityButtons() {
       <button type="button" className={styles.filter}>
         <MobileFilterBtn />
       </button>
+    </div>
+  );
+}
+
+export function FilterModal() {
+  const preventScroll = () => (document.body.style.overflow = 'hidden');
+  const ableScroll = () => (document.body.style.overflow = 'scroll');
+
+  return (
+    <div className={styles.modal}>
+      <div className={styles.overlay}></div>
+      <div className={styles['modal-content']}></div>
     </div>
   );
 }
