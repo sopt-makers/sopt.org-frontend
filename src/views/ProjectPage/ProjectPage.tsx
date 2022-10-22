@@ -155,7 +155,7 @@ function ProjectEnrollSection() {
 function MobileUtilityButtons() {
   return (
     <div className={styles.utility}>
-      <button type="button" className={styles.up}>
+      <button type="button" className={styles.up} onClick={() => window.scrollTo(0, 0)}>
         <UpArrow />
       </button>
       <button type="button" className={styles.filter}>
