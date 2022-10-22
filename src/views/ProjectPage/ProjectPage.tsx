@@ -13,6 +13,7 @@ import { ReactComponent as RightArrow } from '@src/assets/icons/enroll_rightArro
 import { reducer } from './reducer';
 import { ProjectType } from './types';
 import styles from './styles.module.scss';
+import ProjectHeader from '@src/components/ProjectHeader';
 
 function Projects() {
   const [state, dispatch] = useReducer(reducer, { _TAG: 'IDLE' });
@@ -41,7 +42,7 @@ function Projects() {
 
   return (
     <>
-      <Header />
+      <ProjectHeader />
       <div className={cc([styles.container])}>
         {(() => {
           switch (state._TAG) {

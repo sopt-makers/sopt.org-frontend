@@ -7,7 +7,7 @@ export const Root = styled.div`
   align-items: center;
   font-family: 'SUIT';
   width: calc(100% - 360px);
-  height: 100%;
+  height: 100vh;
   margin: 0 auto;
 
   /* 모바일 뷰 */
@@ -20,14 +20,25 @@ export const UpButton = styled.button`
   position: fixed;
   right: 20px;
   bottom: 30px;
-  border-radius: 50%;
+  border-radius: 52px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
   background: #242424;
-  width: 56px;
-  height: 56px;
+  padding: 16px 32px;
+  /* 모바일 뷰 */
+  @media (max-width: 799px) {
+    padding: 16px;
+  }
 
   & > span {
-    display: none;
+    font-family: 'SUIT';
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 48px;
+    color: #ffffff;
+    /* 모바일 뷰 */
+    @media (max-width: 799px) {
+      display: none;
+    }
   }
 `;
 
