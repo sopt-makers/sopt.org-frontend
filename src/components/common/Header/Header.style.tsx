@@ -6,9 +6,10 @@ interface StyleProps {
 
 export const Header = styled.header`
   display: flex;
-  /* position: fixed; */
   justify-content: center;
+
   z-index: 9;
+
   width: 100%;
   height: 100px;
 `;

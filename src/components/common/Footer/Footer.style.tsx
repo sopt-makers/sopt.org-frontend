@@ -1,9 +1,9 @@
 import styled from '@emotion/styled';
 
 export const Root = styled.footer`
-  background-color: #2a2a2a;
   width: 100vw;
   height: 163px;
+  background-color: #2a2a2a;
 
   /* 데스크탑 뷰 */
   @media (min-width: 1280px) {
@@ -12,9 +12,6 @@ export const Root = styled.footer`
 
   /* 모바일 뷰 */
   @media (max-width: 1279px) {
-    /* display: flex; */
-    /* justify-content: center; */
-    /* margin-right: 8%; */
     height: 192px;
   }
 `;
