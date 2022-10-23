@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
-
+import { css } from '@emotion/react';
+import { FadeIn, FadeOut } from '@src/lib/styles/animation';
 export const Root = styled.div`
   display: flex;
   flex-direction: column;
@@ -16,7 +17,7 @@ export const Root = styled.div`
   }
 `;
 
-export const UpButton = styled.button`
+export const UpButton = styled.button<{ isScrolled: boolean }>`
   position: fixed;
   right: 20px;
   bottom: 30px;
@@ -25,6 +26,18 @@ export const UpButton = styled.button`
   background: #242424;
   padding: 16px 32px;
   z-index: 9;
+  ${({ isScrolled }) =>
+    isScrolled
+      ? css`
+          ${FadeIn}
+          animation:fadein 0.4s;
+        `
+      : css`
+          ${FadeOut}
+          animation:fadeout 0.4s;
+          animation-fill-mode: forwards;
+        `}
+
   /* 모바일 뷰 */
   @media (max-width: 799px) {
     padding: 16px;

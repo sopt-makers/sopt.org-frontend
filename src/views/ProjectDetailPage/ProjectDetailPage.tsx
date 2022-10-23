@@ -7,9 +7,9 @@ import { ReactComponent as UpArrow } from '@src/assets/icons/upArrow.svg';
 import website from '@src/assets/icons/website_icon.svg';
 import { ReactComponent as IToggle } from '@src/assets/images/toggle.svg';
 import Footer from '@src/components/common/Footer/Footer';
-import Header from '@src/components/common/Header/Header';
 import ProjectHeader from '@src/components/ProjectHeader';
 import { getProjectDetail } from '@src/lib/project';
+import { debounce } from '@src/utils/scrollDebounce';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
@@ -32,6 +32,23 @@ function ProjectDetailPage() {
   const { data } = useQuery('projectDetail', () => getProjectDetail(0));
   const [isOverviewOpened, setIsOverviewOpened] = useState(false);
   const [isTeamMemberOpened, setIsTeamMemberOpened] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  const checkScroll = debounce(() => {
+    window.scrollY > 120 ? setIsScrolled(true) : setIsScrolled(false);
+  });
+
+  const scroll = () => {
+    window.addEventListener('scroll', checkScroll);
+
+    return () => {
+      window.removeEventListener('scroll', checkScroll);
+    };
+  };
+
+  useEffect(() => {
+    scroll();
+  }, []);
 
   if (!data) return;
 
@@ -79,7 +96,10 @@ function ProjectDetailPage() {
     <>
       <ProjectHeader />
       <S.Root>
-        <S.UpButton onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+        <S.UpButton
+          isScrolled={isScrolled}
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+        >
           <span>UP</span>
           <UpArrow />
         </S.UpButton>
