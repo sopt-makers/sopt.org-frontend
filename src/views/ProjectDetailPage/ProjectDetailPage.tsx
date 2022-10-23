@@ -34,6 +34,18 @@ function ProjectDetailPage() {
   const [isTeamMemberOpened, setIsTeamMemberOpened] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
+  const checkScroll = debounce(() => {
+    window.scrollY > 120 ? setIsScrolled(true) : setIsScrolled(false);
+  });
+
+  const scroll = () => {
+    window.addEventListener('scroll', checkScroll);
+
+    return () => {
+      window.removeEventListener('scroll', checkScroll);
+    };
+  };
+
   useEffect(() => {
     scroll();
   }, []);
@@ -78,18 +90,6 @@ function ProjectDetailPage() {
       default:
         return { name: '발표영상', src: media };
     }
-  };
-
-  const checkScroll = debounce(() => {
-    window.scrollY > 120 ? setIsScrolled(true) : setIsScrolled(false);
-  });
-
-  const scroll = () => {
-    window.addEventListener('scroll', checkScroll);
-
-    return () => {
-      window.removeEventListener('scroll', checkScroll);
-    };
   };
 
   return (
