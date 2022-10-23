@@ -1,8 +1,6 @@
 import { useEffect, useReducer } from 'react';
 import { to } from 'await-to-js';
 import cc from 'classcat';
-
-import Header from '@src/components/common/Header';
 import Footer from '@src/components/common/Footer';
 import { EmptyContent } from './EmptyContent';
 import { getProjectList } from '@src/lib/project';

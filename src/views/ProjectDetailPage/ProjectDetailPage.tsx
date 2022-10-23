@@ -36,6 +36,7 @@ function ProjectDetailPage() {
   if (!data) return;
 
   const {
+    projectImageUrl,
     logoImageUrl,
     name,
     shortIntroduction,
@@ -94,6 +95,11 @@ function ProjectDetailPage() {
             </div>
           </S.ProjectHeader>
 
+          {projectImageUrl && (
+            <S.ProjectImageWrapper>
+              <Image src={projectImageUrl} alt="project image" layout="fill" />
+            </S.ProjectImageWrapper>
+          )}
           <S.ProjectWrapper>
             <S.ToggleSection>
               <S.ProjectOverview isOverviewOpened={isOverviewOpened}>

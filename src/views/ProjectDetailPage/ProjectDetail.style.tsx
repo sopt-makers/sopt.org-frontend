@@ -24,6 +24,7 @@ export const UpButton = styled.button`
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
   background: #242424;
   padding: 16px 32px;
+  z-index: 9;
   /* 모바일 뷰 */
   @media (max-width: 799px) {
     padding: 16px;
@@ -79,6 +80,25 @@ export const ProjectHeader = styled.div`
       font-size: 15px;
       font-weight: 500;
     }
+  }
+`;
+
+export const ProjectImageWrapper = styled.div`
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 786px;
+  height: 443px;
+  margin: 0 auto 32px auto;
+  & > span {
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  /* 모바일 뷰 */
+  @media (max-width: 799px) {
+    width: 320px;
+    height: 216px;
   }
 `;
 
