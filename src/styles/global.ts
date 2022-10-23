@@ -8,6 +8,7 @@ export const global = css`
     /* -webkit-user-select:none; */
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     font-family: 'SUIT';
+    scroll-behavior: smooth;
   }
   * {
     box-sizing: border-box;
