@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 export const Root = styled.footer`
   background-color: #2a2a2a;
   width: 100vw;
-  height: 163px;
+  min-height: 163px;
 
   /* 데스크탑 뷰 */
   @media (min-width: 1280px) {
@@ -12,9 +12,6 @@ export const Root = styled.footer`
 
   /* 모바일 뷰 */
   @media (max-width: 1279px) {
-    /* display: flex; */
-    /* justify-content: center; */
-    /* margin-right: 8%; */
     height: 192px;
   }
 `;
@@ -56,7 +53,7 @@ export const TitleButton = styled.button`
 `;
 
 export const CopyrightText = styled.p`
-  width: 278px;
+  width: 500px;
   margin-top: 25px;
   line-height: 180%;
   font-family: 'SUIT', arial, sans-serif;
