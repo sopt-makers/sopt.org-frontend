@@ -84,14 +84,20 @@ export const ProjectHeader = styled.div`
     & > h1 {
       margin-bottom: 8px;
       color: #ffffff;
-      font-size: 22px;
+      font-size: 32px;
       font-weight: 700;
+      @media (max-width: 799px) {
+        font-size: 22px;
+      }
     }
     & > p {
       line-height: 24px;
       color: #8e8e8e;
-      font-size: 15px;
+      font-size: 22px;
       font-weight: 500;
+      @media (max-width: 799px) {
+        font-size: 15px;
+      }
     }
   }
 `;
@@ -183,16 +189,21 @@ export const ToggleWrapper = styled.div`
 `;
 export const OverviewToggleImage = styled.div<{ isOverviewOpened: boolean }>`
   transform: ${({ isOverviewOpened }) => (isOverviewOpened ? 'rotate(0deg)' : 'rotate(90deg)')};
+  cursor: pointer;
 `;
 
 export const TeamMemberToggleImage = styled.div<{ isTeamMemberOpened: boolean }>`
   transform: ${({ isTeamMemberOpened }) => (isTeamMemberOpened ? 'rotate(0deg)' : 'rotate(90deg)')};
+  cursor: pointer;
 `;
 
 export const Title = styled.h1`
   color: #fcfcfc;
-  font-size: 17px;
+  font-size: 22px;
   font-weight: 700;
+  @media (max-width: 799px) {
+    font-size: 17px;
+  }
 `;
 
 export const ProjectOverviewDetail = styled.div<{ isOverviewOpened: boolean }>`
@@ -279,8 +290,11 @@ export const Members = styled.div`
   }
   & > h1 {
     color: #ffffff;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 700;
+    @media (max-width: 799px) {
+      font-size: 16px;
+    }
   }
 `;
 
@@ -297,14 +311,21 @@ export const MemberDetail = styled.div`
     margin-bottom: 4px;
     line-height: 24px;
     color: #ffffff;
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 600;
+    /* 모바일 뷰 */
+    @media (max-width: 799px) {
+      font-size: 15px;
+    }
   }
   & > p {
     line-height: 22px;
     color: #cccccc;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 500;
+    @media (max-width: 799px) {
+      font-size: 14px;
+    }
   }
 `;
 
@@ -322,7 +343,10 @@ export const ProjectDescription = styled(CommonWrapper)`
     margin-top: 32px;
     line-height: 25px;
     color: rgba(255, 255, 255, 0.8);
-    font-size: 15px;
+    font-size: 18px;
     font-weight: 500;
+    @media (max-width: 799px) {
+      font-size: 15px;
+    }
   }
 `;

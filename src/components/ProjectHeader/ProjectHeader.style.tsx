@@ -75,6 +75,7 @@ export const MenuTitle = styled.a<MenuTitleProps>`
   line-height: 36px;
   font-weight: ${({ isSelected }) => (isSelected ? '700' : '500')};
   color: ${({ isSelected }) => (isSelected ? '#fff' : 'rgba(255, 255, 255, 0.5)')};
+  cursor: pointer;
   &:not(:last-child) {
     padding-right: 40px;
   }

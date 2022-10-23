@@ -50,7 +50,7 @@ function ProjectHeader() {
           </S.MenuTitle>
           <S.MenuTitle
             id="/project"
-            isSelected={router.pathname === '/project'}
+            isSelected={router.pathname.includes('/project')}
             onClick={handleClick}
           >
             프로젝트

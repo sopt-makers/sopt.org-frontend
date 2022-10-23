@@ -37,12 +37,8 @@ export const ContentWrap = styled.div`
     width: 327px;
   }
 `;
-
-export const InfoWrap = styled.div``;
-
 export const TitleButton = styled.button`
   cursor: pointer;
-  text-decoration-line: underline;
   line-height: 50px;
   line-height: 20px;
 
@@ -58,7 +54,7 @@ export const CopyrightText = styled.p`
   line-height: 180%;
   font-family: 'SUIT', arial, sans-serif;
   font-size: 14px;
-  font-weight: 400;
+  font-weight: 100;
 
   /* 모바일 뷰 */
   @media (max-width: 1279px) {
