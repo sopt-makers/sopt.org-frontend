@@ -28,6 +28,8 @@ interface LinkType {
   url: string;
 }
 
+const SCROLL_MINIMUM_VALUE = 120;
+
 function ProjectDetailPage() {
   const { data } = useQuery('projectDetail', () => getProjectDetail(0));
   const [isOverviewOpened, setIsOverviewOpened] = useState(false);
@@ -35,7 +37,7 @@ function ProjectDetailPage() {
   const [isScrolled, setIsScrolled] = useState(false);
 
   const checkScroll = debounce(() => {
-    window.scrollY > 120 ? setIsScrolled(true) : setIsScrolled(false);
+    window.scrollY > SCROLL_MINIMUM_VALUE ? setIsScrolled(true) : setIsScrolled(false);
   });
 
   const scroll = () => {
