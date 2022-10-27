@@ -9,6 +9,7 @@ import { ReactComponent as IToggle } from '@src/assets/images/toggle.svg';
 import Footer from '@src/components/common/Footer/Footer';
 import ProjectHeader from '@src/components/ProjectHeader';
 import { getProjectDetail } from '@src/lib/project';
+import { dateFormat } from '@src/utils/dateFormat';
 import { debounce } from '@src/utils/scrollDebounce';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -70,12 +71,6 @@ function ProjectDetailPage() {
     teamMembers,
     detail,
   } = data;
-
-  const dateFormat = (date: string) => {
-    const splitedDate = date.split('-');
-
-    return splitedDate[0] + '.' + splitedDate[1];
-  };
 
   const getLinkNameAndSrcWithType = (type: string) => {
     switch (type) {
