@@ -16,7 +16,7 @@ function ProjectHeader() {
   });
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
-    const currentMenu = '/' + e.currentTarget.id;
+    const currentMenu = e.currentTarget.id;
 
     if (currentMenu === '/recruit') {
       window.open('https://sopt-recruiting.web.app/recruiting/apply/yb');
