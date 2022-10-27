@@ -43,7 +43,6 @@ export const ContentWrap = styled.div`
 `;
 export const TitleButton = styled.button`
   cursor: pointer;
-  line-height: 50px;
   line-height: 20px;
 
   color: ${({ theme }) => theme.colors.soptWhite};
