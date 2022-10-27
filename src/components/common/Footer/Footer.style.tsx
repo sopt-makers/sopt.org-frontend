@@ -2,8 +2,12 @@ import styled from '@emotion/styled';
 
 export const Root = styled.footer`
   width: 100vw;
+<<<<<<< HEAD
+  min-height: 163px;
+=======
   height: 163px;
   background-color: #2a2a2a;
+>>>>>>> 379a444c24ad6acf1f856d703d3d37b483fa316f
 
   /* 데스크탑 뷰 */
   @media (min-width: 1280px) {
@@ -37,13 +41,8 @@ export const ContentWrap = styled.div`
     width: 327px;
   }
 `;
-
-export const InfoWrap = styled.div``;
-
 export const TitleButton = styled.button`
   cursor: pointer;
-  text-decoration-line: underline;
-  line-height: 50px;
   line-height: 20px;
 
   color: ${({ theme }) => theme.colors.soptWhite};
@@ -53,11 +52,12 @@ export const TitleButton = styled.button`
 `;
 
 export const CopyrightText = styled.p`
+  width: 500px;
   margin-top: 25px;
   line-height: 180%;
   font-family: 'SUIT', arial, sans-serif;
   font-size: 14px;
-  font-weight: 400;
+  font-weight: 100;
 
   /* 모바일 뷰 */
   @media (max-width: 1279px) {

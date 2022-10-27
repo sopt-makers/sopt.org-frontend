@@ -19,6 +19,7 @@ interface RootProps {
 
 export const Root = styled.div<RootProps>`
   position: fixed;
+  top: 0;
   right: 0;
 
   z-index: 10;

@@ -1,8 +1,6 @@
 import { useEffect, useReducer, useState } from 'react';
 import { to } from 'await-to-js';
 import cc from 'classcat';
-
-import Header from '@src/components/common/Header';
 import Footer from '@src/components/common/Footer';
 import { EmptyContent } from './EmptyContent';
 import { getProjectList } from '@src/lib/project';
@@ -19,7 +17,9 @@ import { ReactComponent as ToggleArrowBtn } from '@src/assets/icons/ToggleArrow.
 import { reducer } from './reducer';
 import { ProjectType } from './types';
 import styles from './styles.module.scss';
+import ProjectHeader from '@src/components/ProjectHeader';
 import Image from 'next/image';
+import Link from 'next/link';
 
 function Projects() {
   const [selectedCategory, setCategory] = useState<CategoryType | undefined>(undefined);
@@ -27,7 +27,6 @@ function Projects() {
 
   return (
     <>
-      <Header />
       <ProjectList selectedCategory={selectedCategory} />
       <Condition statement={isModalOpen}>
         <FilterModal
@@ -82,23 +81,26 @@ function ProjectList({ selectedCategory }: { selectedCategory: CategoryType | un
             const { data: list } = state;
             const listLength = list.length;
             return (
-              <div className={styles['list-container']}>
-                <Condition statement={listLength > 0}>
-                  <div className={styles['total-count']}>
-                    <p>{listLength}개의 프로젝트가 있어요.</p>
-                  </div>
-                  <section>
-                    {state.data.map((project, index) => (
-                      <Project project={project} key={index} />
-                    ))}
-                  </section>
-                  <ProjectEnrollSection />
-                </Condition>
-                <Condition statement={listLength === 0}>
-                  <EmptyContent />
-                  <ProjectEnrollSection />
-                </Condition>
-              </div>
+              <>
+                <ProjectHeader />
+                <div className={styles['list-container']}>
+                  <Condition statement={listLength > 0}>
+                    <div className={styles['total-count']}>
+                      <p>{listLength}개의 프로젝트가 있어요.</p>
+                    </div>
+                    <section>
+                      {state.data.map((project, index) => (
+                        <Project key={index} project={project} />
+                      ))}
+                    </section>
+                    <ProjectEnrollSection />
+                  </Condition>
+                  <Condition statement={listLength === 0}>
+                    <EmptyContent />
+                    <ProjectEnrollSection />
+                  </Condition>
+                </div>
+              </>
             );
           }
         }
@@ -112,44 +114,46 @@ function ProjectList({ selectedCategory }: { selectedCategory: CategoryType | un
 // TODO thumbnail image should be applied to Image
 function Project({ project }: { project: ProjectType }) {
   return (
-    <article className={styles.item}>
-      <div className={styles['image-wrapper']}>
-        <Image src={project.logoImageUrl} width={100} height={100} alt="logo" />
-      </div>
-      <div className={styles.content}>
-        <div className={styles.types}>
-          <div>{project.serviceType[0]}</div>
-          <div>{project.semester}기</div>
+    <Link href={`/project/${project.id}`}>
+      <article className={styles.item}>
+        <div className={styles['image-wrapper']}>
+          <Image src={project.logoImageUrl} width={100} height={100} alt="logo" />
         </div>
-        <div className={styles.text}>
-          <h5>{project.name}</h5>
-          <p>{project.shortIntroduction}</p>
+        <div className={styles.content}>
+          <div className={styles.types}>
+            <div>{project.serviceType[0]}</div>
+            <div>{project.semester}기</div>
+          </div>
+          <div className={styles.text}>
+            <h5>{project.name}</h5>
+            <p>{project.shortIntroduction}</p>
+          </div>
+          <div className={styles.links}>
+            {project.link?.map(({ type, url }, index) => (
+              <div key={index}>
+                {(() => {
+                  switch (type) {
+                    case 'github':
+                      return (
+                        <>
+                          <div className={styles['icon-wrapper']} onClick={() => window.open(url)}>
+                            <GithubIcon />
+                          </div>
+                          <div className={styles['icon-wrapper']} onClick={() => window.open(url)}>
+                            <WebIcon />
+                          </div>
+                        </>
+                      );
+                    case 'website':
+                      return <div>WEBSITE</div>;
+                  }
+                })()}
+              </div>
+            ))}
+          </div>
         </div>
-        <div className={styles.links}>
-          {project.link?.map(({ type, url }, index) => (
-            <div key={index}>
-              {(() => {
-                switch (type) {
-                  case 'github':
-                    return (
-                      <>
-                        <div className={styles['icon-wrapper']} onClick={() => window.open(url)}>
-                          <GithubIcon />
-                        </div>
-                        <div className={styles['icon-wrapper']} onClick={() => window.open(url)}>
-                          <WebIcon />
-                        </div>
-                      </>
-                    );
-                  case 'website':
-                    return <div>WEBSITE</div>;
-                }
-              })()}
-            </div>
-          ))}
-        </div>
-      </div>
-    </article>
+      </article>
+    </Link>
   );
 }
 

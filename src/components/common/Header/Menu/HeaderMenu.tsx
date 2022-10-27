@@ -3,6 +3,7 @@ import Channels from '@src/components/common/Footer/Channels';
 import useNoScroll from '@src/hooks/useNoScroll';
 import { useRouter } from 'next/router';
 import React, { Dispatch, SetStateAction } from 'react';
+import { menuTitle } from '@src/constants/headerMenu';
 
 import { MenuType } from '../Header';
 import * as S from './HeaderMenu.style';
@@ -26,6 +27,11 @@ function HeaderMenu({ setIsMenuShown, isMenuShown }: HeaderMenuProps) {
     router.push(currentMenu);
   };
 
+  const handleIsSelected = (path: string) => {
+    if (path.includes('project') && router.pathname.includes('project')) return true;
+    return router.pathname === path;
+  };
+
   useNoScroll(isMenuShown);
 
   return (
@@ -38,44 +44,11 @@ function HeaderMenu({ setIsMenuShown, isMenuShown }: HeaderMenuProps) {
         />
         <S.ContentsWrap>
           <S.MenuTitlesWrap>
-            <S.MenuTitle id="/" isSelected={router.pathname === '/'} onClick={handleClick}>
-              홈
-            </S.MenuTitle>
-            <S.MenuTitle
-              id="/about"
-              isSelected={router.pathname === '/about'}
-              onClick={handleClick}
-            >
-              SOPT소개
-            </S.MenuTitle>
-            <S.MenuTitle
-              id="/history"
-              isSelected={router.pathname === '/history'}
-              onClick={handleClick}
-            >
-              역대기수소개
-            </S.MenuTitle>
-            <S.MenuTitle
-              id="/project"
-              isSelected={router.pathname === '/projects'}
-              onClick={handleClick}
-            >
-              프로젝트
-            </S.MenuTitle>
-            <S.MenuTitle
-              id="/recruit"
-              isSelected={router.pathname === '/recruit'}
-              onClick={handleClick}
-            >
-              신입회원모집
-            </S.MenuTitle>
-            <S.MenuTitle
-              id="/partners"
-              isSelected={router.pathname === '/partners'}
-              onClick={handleClick}
-            >
-              협력사
-            </S.MenuTitle>
+            {menuTitle.map(({ id, title }) => (
+              <S.MenuTitle key={id} id={id} isSelected={handleIsSelected(id)} onClick={handleClick}>
+                {title}
+              </S.MenuTitle>
+            ))}
           </S.MenuTitlesWrap>
           <S.BottomWrap>
             <S.Rules id="/rules" onClick={handleClick}>
