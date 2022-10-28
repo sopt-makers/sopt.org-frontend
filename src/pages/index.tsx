@@ -1,6 +1,5 @@
 import styled from '@emotion/styled';
-import Footer from '@src/components/common/Footer';
-import Header from '@src/components/common/Header';
+import { Header, Footer } from '@src/components';
 import Branding from '@src/components/Home/Branding';
 import Events from '@src/components/Home/Events';
 import Introduce from '@src/components/Home/Introduce';
@@ -8,6 +7,7 @@ import Recruit from '@src/components/Home/Recruit';
 import Top from '@src/components/Home/Top';
 import type { NextPage } from 'next';
 import Head from 'next/head';
+
 const Home: NextPage = () => {
   return (
     <div>
@@ -21,8 +21,8 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Header />
       <Styled.Main>
+        <Header />
         <Top />
         <Introduce />
         <Events />

@@ -6,8 +6,7 @@ import media from '@src/assets/icons/media_icon.svg';
 import { ReactComponent as UpArrow } from '@src/assets/icons/upArrow.svg';
 import website from '@src/assets/icons/website_icon.svg';
 import { ReactComponent as IToggle } from '@src/assets/images/toggle.svg';
-import Footer from '@src/components/common/Footer/Footer';
-import ProjectHeader from '@src/components/ProjectHeader';
+import { Header, Footer, Layout } from '@src/components';
 import { getProjectDetail } from '@src/lib/project';
 import { dateFormat } from '@src/utils/dateFormat';
 import { debounce } from '@src/utils/scrollDebounce';
@@ -41,17 +40,13 @@ function ProjectDetailPage() {
     window.scrollY > SCROLL_MINIMUM_VALUE ? setIsScrolled(true) : setIsScrolled(false);
   });
 
-  const scroll = () => {
+  useEffect(() => {
     window.addEventListener('scroll', checkScroll);
 
     return () => {
       window.removeEventListener('scroll', checkScroll);
     };
-  };
-
-  useEffect(() => {
-    scroll();
-  }, []);
+  }, [checkScroll]);
 
   if (!data) return;
 
@@ -90,8 +85,8 @@ function ProjectDetailPage() {
   };
 
   return (
-    <>
-      <ProjectHeader />
+    <Layout>
+      <Header />
       <S.Root>
         <S.UpButton
           isScrolled={isScrolled}
@@ -202,9 +197,9 @@ function ProjectDetailPage() {
             </S.ProjectDescription>
           </S.ProjectWrapper>
         </S.Main>
-        <Footer />
       </S.Root>
-    </>
+      <Footer />
+    </Layout>
   );
 }
 

@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router';
 import styled from '@emotion/styled';
 import Sopt404 from '@src/assets/images/sopt_404.png';
-import Header from '@src/components/common/Header';
+import { Header } from '@src/components';
 import theme from '@src/styles/theme';
 import Image from 'next/image';
 import RoundButton from '@src/components/common/RoundButton';
@@ -10,7 +10,7 @@ function Recruit() {
   const router = useRouter();
 
   const handleClick = () => {
-    router.push('/projects');
+    router.push('/');
   };
 
   return (
