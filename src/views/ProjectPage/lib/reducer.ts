@@ -1,4 +1,4 @@
-import type { Action, ProjectType, State } from './types';
+import type { Action, ProjectType, State } from '../types';
 
 export function reducer(
   prevState: State<ProjectType>,

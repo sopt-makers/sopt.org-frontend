@@ -1,12 +1,29 @@
+import React, { useEffect, Dispatch, SetStateAction } from 'react';
 import xButton from '@src/assets/icons/xButton.png';
-import Channels from '@src/components/common/Footer/Channels';
-import useNoScroll from '@src/hooks/useNoScroll';
+import Channels from '@src/components/Footer/Channels';
+
 import { useRouter } from 'next/router';
-import React, { Dispatch, SetStateAction } from 'react';
 import { menuTitle } from '@src/constants/headerMenu';
 
-import { MenuType } from '../Header';
 import * as S from './HeaderMenu.style';
+
+type MenuType = 'idle' | 'open' | 'close';
+
+function useNoScroll(isMenuShown: MenuType) {
+  useEffect(() => {
+    if (isMenuShown === 'open') {
+      document.body.style.overflow = 'hidden';
+    } else {
+      return () => {
+        document.body.style.overflow = 'auto';
+      };
+    }
+
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, [isMenuShown]);
+}
 
 interface HeaderMenuProps {
   setIsMenuShown: Dispatch<SetStateAction<MenuType>>;
@@ -39,7 +56,7 @@ function HeaderMenu({ setIsMenuShown, isMenuShown }: HeaderMenuProps) {
       <S.MenuWrap>
         <S.CloseButton
           src={xButton.src}
-          onClick={() => setIsMenuShown('false')}
+          onClick={() => setIsMenuShown('close')}
           isMenuShown={isMenuShown}
         />
         <S.ContentsWrap>

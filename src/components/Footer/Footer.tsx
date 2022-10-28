@@ -1,11 +1,11 @@
-import Channels from '@src/components/common/Footer/Channels';
+import Channels from '@src/components/Footer/Channels';
 import { useRouter } from 'next/router';
 import React from 'react';
 import { useMediaQuery } from 'react-responsive';
 
 import * as S from './Footer.style';
 
-function Footer() {
+export function Footer() {
   const isDesktop = useMediaQuery({
     query: '(min-width: 1280px)',
   });
@@ -35,5 +35,3 @@ function Footer() {
     </S.Root>
   );
 }
-
-export default Footer;

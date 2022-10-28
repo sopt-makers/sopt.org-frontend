@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 import { FadeIn, FadeOut } from '@src/lib/styles/animation';
 import theme from '@src/styles/theme';
 
-import { MenuType } from '../Header';
+type MenuType = 'idle' | 'open' | 'close';
 
 interface CloseButtonProps extends RootProps {
   src: string;
@@ -31,7 +31,7 @@ export const Root = styled.div<RootProps>`
 
   ${(props) => {
     switch (props.isMenuShown) {
-      case 'true':
+      case 'open':
         return css`
           ${FadeIn}
           animation: fadein 0.2s;
@@ -39,7 +39,7 @@ export const Root = styled.div<RootProps>`
           -webkit-animation: fadein 0.2s; /* Safari and Chrome */
           -o-animation: fadein 0.2s; /* Opera */
         `;
-      case 'false':
+      case 'close':
         return css`
           ${FadeOut}
           animation: fadeout 0.2s;
@@ -95,7 +95,7 @@ export const CloseButton = styled.button<CloseButtonProps>`
 
   ${(props) => {
     switch (props.isMenuShown) {
-      case 'true':
+      case 'open':
         return css`
           ${FadeIn}
           animation: fadein 0.2s;
@@ -103,7 +103,7 @@ export const CloseButton = styled.button<CloseButtonProps>`
           -webkit-animation: fadein 0.2s; /* Safari and Chrome */
           -o-animation: fadein 0.2s; /* Opera */
         `;
-      case 'false':
+      case 'close':
         return css`
           ${FadeOut}
           animation: fadeout 0.2s;

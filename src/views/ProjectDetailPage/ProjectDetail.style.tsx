@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
 import { FadeIn, FadeOut } from '@src/lib/styles/animation';
+
 export const Root = styled.div`
   display: flex;
   flex-direction: column;
@@ -11,9 +12,12 @@ export const Root = styled.div`
   height: 100vh;
   margin: 0 auto;
 
+  margin-top: 130px;
+
   /* 모바일 뷰 */
-  @media (max-width: 799px) {
+  @media (max-width: 1279px) {
     width: 320px;
+    margin-top: 80px;
   }
 `;
 

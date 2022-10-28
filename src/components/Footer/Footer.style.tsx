@@ -2,12 +2,8 @@ import styled from '@emotion/styled';
 
 export const Root = styled.footer`
   width: 100vw;
-<<<<<<< HEAD
-  min-height: 163px;
-=======
   height: 163px;
   background-color: #2a2a2a;
->>>>>>> 379a444c24ad6acf1f856d703d3d37b483fa316f
 
   /* 데스크탑 뷰 */
   @media (min-width: 1280px) {
