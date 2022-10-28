@@ -1,0 +1,19 @@
+.blank {
+  width: 80%;
+  height: 140px;
+  margin-bottom: 150px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  font-size: 22px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.contour {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
