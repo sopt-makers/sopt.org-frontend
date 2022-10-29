@@ -9,7 +9,6 @@ export const Root = styled.div`
   align-items: center;
   font-family: 'SUIT';
   width: calc(100% - 360px);
-  height: 100vh;
   margin: 0 auto;
 
   margin-top: 130px;

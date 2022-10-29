@@ -9,9 +9,9 @@ const Main = styled.main`
   height: 100vh;
   overflow-y: scroll;
   overflow-x: hidden;
-  
+
   @media (max-width: 1279px) {
-    overflow-x:
+    overflow-x: hidden;
     display: flex;
     flex-direction: column;
     row-gap: 50px;
