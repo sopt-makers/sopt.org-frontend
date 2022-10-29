@@ -114,10 +114,13 @@ function ProjectDetailPage() {
           )}
           <S.ProjectWrapper>
             <S.ToggleSection>
-              <S.ProjectOverview isOverviewOpened={isOverviewOpened}>
+              <S.ProjectOverview
+                isOverviewOpened={isOverviewOpened}
+                onClick={() => setIsOverviewOpened((prev) => !prev)}
+              >
                 <S.ToggleWrapper>
                   <S.Title>프로젝트 요약</S.Title>
-                  <button type="button" onClick={() => setIsOverviewOpened((prev) => !prev)}>
+                  <button type="button">
                     <S.OverviewToggleImage isOverviewOpened={isOverviewOpened}>
                       <IToggle />
                     </S.OverviewToggleImage>
@@ -167,7 +170,7 @@ function ProjectDetailPage() {
                 </S.ProjectOverviewDetail>
               </S.ProjectOverview>
 
-              <S.ProjectTeam>
+              <S.ProjectTeam onClick={() => setIsTeamMemberOpened((prev) => !prev)}>
                 <S.ToggleWrapper>
                   <S.Title>프로젝트 팀원</S.Title>
                   <button type="button" onClick={() => setIsTeamMemberOpened((prev) => !prev)}>
