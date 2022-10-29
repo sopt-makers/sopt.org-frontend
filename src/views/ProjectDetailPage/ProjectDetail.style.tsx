@@ -168,7 +168,6 @@ const CommonWrapper = styled.div`
   height: fit-content;
   border-radius: 8px;
   background: #242424;
-  cursor: pointer;
 `;
 
 export const ProjectOverview = styled(CommonWrapper)<{ isOverviewOpened: boolean }>`
@@ -185,6 +184,7 @@ export const ToggleWrapper = styled.div`
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  cursor: pointer;
 
   & > button {
     width: 24px;
