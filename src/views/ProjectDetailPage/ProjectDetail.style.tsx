@@ -191,12 +191,12 @@ export const ToggleWrapper = styled.div`
   }
 `;
 export const OverviewToggleImage = styled.div<{ isOverviewOpened: boolean }>`
-  transform: ${({ isOverviewOpened }) => (isOverviewOpened ? 'rotate(0deg)' : 'rotate(90deg)')};
+  transform: ${({ isOverviewOpened }) => (isOverviewOpened ? 'rotate(90deg)' : 'rotate(0deg)')};
   cursor: pointer;
 `;
 
 export const TeamMemberToggleImage = styled.div<{ isTeamMemberOpened: boolean }>`
-  transform: ${({ isTeamMemberOpened }) => (isTeamMemberOpened ? 'rotate(0deg)' : 'rotate(90deg)')};
+  transform: ${({ isTeamMemberOpened }) => (isTeamMemberOpened ? 'rotate(90deg)' : 'rotate(0deg)')};
   cursor: pointer;
 `;
 
