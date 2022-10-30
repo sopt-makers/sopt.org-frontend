@@ -1,7 +1,5 @@
 import React, { useEffect, Dispatch, SetStateAction } from 'react';
 import xButton from '@src/assets/icons/xButton.png';
-import Channels from '@src/components/Footer/Channels';
-
 import { useRouter } from 'next/router';
 import { menuTitle } from '@src/constants/headerMenu';
 
@@ -54,11 +52,6 @@ function HeaderMenu({ setIsMenuShown, isMenuShown }: HeaderMenuProps) {
   return (
     <S.Root isMenuShown={isMenuShown}>
       <S.MenuWrap>
-        <S.CloseButton
-          src={xButton.src}
-          onClick={() => setIsMenuShown('close')}
-          isMenuShown={isMenuShown}
-        />
         <S.ContentsWrap>
           <S.MenuTitlesWrap>
             {menuTitle.map(({ id, title }) => (
@@ -67,15 +60,6 @@ function HeaderMenu({ setIsMenuShown, isMenuShown }: HeaderMenuProps) {
               </S.MenuTitle>
             ))}
           </S.MenuTitlesWrap>
-          <S.BottomWrap>
-            <S.Rules id="/rules" onClick={handleClick}>
-              SOPT 회칙
-            </S.Rules>
-            <S.ChannelWrap>
-              <S.ChannelTitle>SOPT 채널 바로가기</S.ChannelTitle>
-              <Channels />
-            </S.ChannelWrap>
-          </S.BottomWrap>
         </S.ContentsWrap>
       </S.MenuWrap>
     </S.Root>

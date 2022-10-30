@@ -1,7 +1,6 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { FadeIn, FadeOut } from '@src/lib/styles/animation';
-import theme from '@src/styles/theme';
 
 type MenuType = 'idle' | 'open' | 'close';
 
@@ -19,13 +18,14 @@ interface RootProps {
 
 export const Root = styled.div<RootProps>`
   position: fixed;
-  top: 0;
+  top: 50px;
   right: 0;
 
   z-index: 10;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
 
-  background: #232323;
+  background: #181818;
+  width: 100%;
 
   height: 100vh;
 
@@ -54,44 +54,24 @@ export const Root = styled.div<RootProps>`
         `;
     }
   }}
-
-  /* 데스크탑 뷰 */
-  @media (min-width: 1280px) {
-    width: calc((100vw - 1280px) / 2 + 400px);
-  }
-
-  /* 모바일 뷰 */
-  @media (max-width: 1279px) {
-    width: calc((100vw - 375px) / 2 + 250px);
-  }
 `;
 
 export const MenuWrap = styled.div`
-  padding: 0 60px;
+  padding: 0 30px;
   height: 100%;
-
-  /* 데스크탑 뷰 */
-  @media (min-width: 1280px) {
-    width: 400px;
-  }
-
-  /* 모바일 뷰 */
-  @media (max-width: 1279px) {
-    padding: 0 30px;
-  }
 `;
 
 export const CloseButton = styled.button<CloseButtonProps>`
   position: relative;
-  top: 35px;
-  right: -256px;
+  top: 12px;
+  left: 272px;
 
   background: url(${(props: CloseButtonProps) => props.src}) no-repeat;
   background-size: cover;
   cursor: pointer;
 
-  width: 24px;
-  height: 24px;
+  width: 28px;
+  height: 28px;
 
   ${(props) => {
     switch (props.isMenuShown) {
@@ -118,15 +98,6 @@ export const CloseButton = styled.button<CloseButtonProps>`
         `;
     }
   }}
-
-  /* 모바일 뷰 */
-  @media (max-width: 1279px) {
-    top: 47px;
-    right: -90%;
-    /* right: -170px; */
-    width: 16px;
-    height: 16px;
-  }
 `;
 
 export const ContentsWrap = styled.div`
@@ -134,18 +105,10 @@ export const ContentsWrap = styled.div`
   flex-direction: column;
   justify-content: space-between;
 
-  margin-top: 100px;
-  margin-bottom: 50px;
+  margin-top: 50px;
+  margin-bottom: 0px;
 
-  height: calc(100vh - 200px);
-
-  /* 모바일 세로 짧은 기종 뷰 */
-  @media (max-height: 700px) {
-    margin-top: 50px;
-    margin-bottom: 0px;
-
-    height: calc(100vh - 150px);
-  }
+  height: calc(100vh - 150px);
 `;
 
 export const MenuTitlesWrap = styled.div`
@@ -157,30 +120,19 @@ export const MenuTitlesWrap = styled.div`
 `;
 
 export const MenuTitle = styled.a<MenuTitleProps>`
-  border-bottom: ${(props: MenuTitleProps) =>
-    props.isSelected && `3px solid ${theme.colors.mainColor}`};
-  cursor: pointer;
-  padding-bottom: 4px;
-
-  width: max-content;
-
-  text-align: left;
-  line-height: 25px;
-  letter-spacing: -0.03em;
-
-  color: #a9a9a9;
-  font-family: 'SUIT', Arial;
-  font-size: 20px;
+  font-family: 'SUIT';
+  font-size: 16px;
   font-weight: 500;
+  line-height: 32px;
+  font-weight: ${({ isSelected }) => (isSelected ? '700' : '500')};
 
-  /* 모바일 뷰 */
-  @media (max-width: 1279px) {
-    font-size: 16px;
+  color: ${({ isSelected }) => (isSelected ? '#fff' : 'rgba(255, 255, 255, 0.5)')};
+  cursor: pointer;
+
+  &:not(:last-child) {
+    padding-right: 40px;
   }
 `;
-
-export const BottomWrap = styled.div``;
-
 export const Rules = styled.a`
   cursor: pointer;
   text-decoration-line: underline;
@@ -189,14 +141,9 @@ export const Rules = styled.a`
   letter-spacing: -0.04em;
 
   color: #a9a9a9;
-  font-family: 'SUIT', Arial;
-  font-size: 16px;
+  font-family: 'SUIT';
+  font-size: 15px;
   font-weight: 800;
-
-  /* 모바일 뷰 */
-  @media (max-width: 1279px) {
-    font-size: 15px;
-  }
 `;
 
 export const ChannelWrap = styled.div`
@@ -209,7 +156,7 @@ export const ChannelTitle = styled.p`
   letter-spacing: -0.04em;
 
   color: ${({ theme }) => theme.colors.soptWhite};
-  font-family: 'SUIT', arial, sans-serif;
+  font-family: 'SUIT';
   font-size: 14px;
   font-weight: 600;
 `;
