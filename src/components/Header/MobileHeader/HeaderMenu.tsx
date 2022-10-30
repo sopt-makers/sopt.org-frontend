@@ -1,5 +1,4 @@
 import React, { useEffect, Dispatch, SetStateAction } from 'react';
-import xButton from '@src/assets/icons/xButton.png';
 import { useRouter } from 'next/router';
 import { menuTitle } from '@src/constants/headerMenu';
 
@@ -24,11 +23,10 @@ function useNoScroll(isMenuShown: MenuType) {
 }
 
 interface HeaderMenuProps {
-  setIsMenuShown: Dispatch<SetStateAction<MenuType>>;
   isMenuShown: MenuType;
 }
 
-function HeaderMenu({ setIsMenuShown, isMenuShown }: HeaderMenuProps) {
+function HeaderMenu({ isMenuShown }: HeaderMenuProps) {
   const router = useRouter();
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
