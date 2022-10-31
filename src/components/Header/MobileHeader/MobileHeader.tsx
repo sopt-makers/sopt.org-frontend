@@ -22,14 +22,16 @@ function MobileHeader() {
 
   return (
     <>
-      <Logo src={logoIcon.src} onClick={() => router.push('/')} />
-      <ToggleButton onClick={handleHeaderToggleButton}>
-        <Image
-          src={isMenuShown === 'open' ? xButton.src : menuBar}
-          alt="header toggle button"
-          layout="fill"
-        />
-      </ToggleButton>
+      <StyledHeader>
+        <Logo src={logoIcon.src} onClick={() => router.push('/')} />
+        <ToggleButton onClick={handleHeaderToggleButton}>
+          <Image
+            src={isMenuShown === 'open' ? xButton.src : menuBar}
+            alt="header toggle button"
+            layout="fill"
+          />
+        </ToggleButton>
+      </StyledHeader>
       <Condition statement={isMenuShown === 'open' || isMenuShown === 'close'}>
         <HeaderMenu isMenuShown={isMenuShown} />
       </Condition>
@@ -40,6 +42,14 @@ function MobileHeader() {
 interface StyleProps {
   src: string;
 }
+
+export const StyledHeader = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  z-index: 10;
+`;
 
 export const Logo = styled.button<StyleProps>`
   width: 63px;

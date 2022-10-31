@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import { FadeIn, FadeOut } from '@src/lib/styles/animation';
+import { FadeIn, FadeOut, FadeInDown, FadeOutUp } from '@src/lib/styles/animation';
 
 type MenuType = 'idle' | 'open' | 'close';
 
@@ -21,7 +21,7 @@ export const Root = styled.div<RootProps>`
   top: 50px;
   right: 0;
 
-  z-index: 10;
+  z-index: 9;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
 
   background: #181818;
@@ -33,19 +33,19 @@ export const Root = styled.div<RootProps>`
     switch (props.isMenuShown) {
       case 'open':
         return css`
-          ${FadeIn}
-          animation: fadein 0.2s;
-          -moz-animation: fadein 0.2s; /* Firefox */
-          -webkit-animation: fadein 0.2s; /* Safari and Chrome */
-          -o-animation: fadein 0.2s; /* Opera */
+          ${FadeInDown}
+          animation: fadeindown 0.6s;
+          -moz-animation: fadeindown 0.6s; /* Firefox */
+          -webkit-animation: fadeindown 0.6s; /* Safari and Chrome */
+          -o-animation: fadeindown 0.6s; /* Opera */
         `;
       case 'close':
         return css`
-          ${FadeOut}
-          animation: fadeout 0.2s;
-          -moz-animation: fadeout 0.2s; /* Firefox */
-          -webkit-animation: fadeout 0.2s; /* Safari and Chrome */
-          -o-animation: fadeout 0.2s; /* Opera */
+          ${FadeOutUp}
+          animation: fadeoutup 0.6s;
+          -moz-animation: fadeoutup 0.6s; /* Firefox */
+          -webkit-animation: fadeoutup 0.6s; /* Safari and Chrome */
+          -o-animation: fadeoutup 0.6s; /* Opera */
           animation-fill-mode: forwards;
         `;
       default:

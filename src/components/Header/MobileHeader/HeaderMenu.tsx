@@ -1,4 +1,4 @@
-import React, { useEffect, Dispatch, SetStateAction } from 'react';
+import React, { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { menuTitle } from '@src/constants/headerMenu';
 
