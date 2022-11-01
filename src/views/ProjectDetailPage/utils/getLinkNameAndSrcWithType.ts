@@ -4,20 +4,17 @@ import googleplay from '@src/assets/icons/googleplay_icon.svg';
 import instagram from '@src/assets/icons/instagram_icon.svg';
 import media from '@src/assets/icons/media_icon.svg';
 import website from '@src/assets/icons/website_icon.svg';
+import { LinkDetailType } from '../types';
 
-export const getLinkNameAndSrcWithType = (type: string) => {
-  switch (type) {
-    case 'website':
-      return { name: '웹사이트', src: website };
-    case 'playstore':
-      return { name: '플레이스토어', src: googleplay };
-    case 'appstore':
-      return { name: '앱스토어', src: appstore };
-    case 'github':
-      return { name: 'Github', src: github };
-    case 'instagram':
-      return { name: '인스타그램', src: instagram };
-    default:
-      return { name: '발표영상', src: media };
-  }
+const LinkMap = {
+  website: { name: '웹사이트', src: website },
+  playstore: { name: '플레이스토어', src: googleplay },
+  appstore: { name: '앱스토어', src: appstore },
+  github: { name: 'Github', src: github },
+  instagram: { name: '인스타그램', src: instagram },
+  media: { name: '발표영상', src: media },
+};
+
+export const getLinkNameAndSrcWithType = (type: LinkDetailType) => {
+  return LinkMap[type];
 };

@@ -5,6 +5,8 @@ export interface TeamMembersType {
 }
 
 export interface LinkType {
-  type: string;
+  type: LinkDetailType;
   url: string;
 }
+
+export type LinkDetailType = 'website' | 'appstore' | 'github' | 'instagram' | 'media';
