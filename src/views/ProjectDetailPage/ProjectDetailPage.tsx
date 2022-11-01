@@ -1,10 +1,4 @@
-import appstore from '@src/assets/icons/appstore_icon.svg';
-import github from '@src/assets/icons/github_icon.svg';
-import googleplay from '@src/assets/icons/googleplay_icon.svg';
-import instagram from '@src/assets/icons/instagram_icon.svg';
-import media from '@src/assets/icons/media_icon.svg';
 import { ReactComponent as UpArrow } from '@src/assets/icons/upArrow.svg';
-import website from '@src/assets/icons/website_icon.svg';
 import { ReactComponent as IToggle } from '@src/assets/images/toggle.svg';
 import { Header, Footer, Layout } from '@src/components';
 import { getProjectDetail } from '@src/lib/project';
@@ -16,6 +10,7 @@ import { useEffect, useState } from 'react';
 import { useQuery } from 'react-query';
 
 import * as S from './ProjectDetail.style';
+import { getLinkNameAndSrcWithType } from './utils/getLinkNameAndSrcWithType';
 
 interface TeamMembersType {
   name: string;
@@ -40,13 +35,17 @@ function ProjectDetailPage() {
     window.scrollY > SCROLL_MINIMUM_VALUE ? setIsScrolled(true) : setIsScrolled(false);
   });
 
-  useEffect(() => {
+  const scroll = () => {
     window.addEventListener('scroll', checkScroll);
 
     return () => {
       window.removeEventListener('scroll', checkScroll);
     };
-  }, [checkScroll]);
+  };
+
+  useEffect(() => {
+    scroll();
+  }, []);
 
   if (!data) return;
 
@@ -66,23 +65,6 @@ function ProjectDetailPage() {
     teamMembers,
     detail,
   } = data;
-
-  const getLinkNameAndSrcWithType = (type: string) => {
-    switch (type) {
-      case 'website':
-        return { name: '웹사이트', src: website };
-      case 'playstore':
-        return { name: '플레이스토어', src: googleplay };
-      case 'appstore':
-        return { name: '앱스토어', src: appstore };
-      case 'github':
-        return { name: 'Github', src: github };
-      case 'instagram':
-        return { name: '인스타그램', src: instagram };
-      default:
-        return { name: '발표영상', src: media };
-    }
-  };
 
   return (
     <Layout>
