@@ -7,8 +7,8 @@ export const Root = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  font-family: 'SUIT';
   width: calc(100% - 360px);
+  height: 100%;
   margin: 0 auto;
 
   margin-top: 130px;
@@ -28,7 +28,7 @@ export const UpButton = styled.button<{ isScrolled: boolean }>`
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
   background: #242424;
   padding: 16px 32px;
-  z-index: 9;
+  z-index: 999;
   ${({ isScrolled }) =>
     isScrolled
       ? css`

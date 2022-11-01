@@ -179,8 +179,8 @@ function ProjectDetailPage() {
             </S.ProjectDescription>
           </S.ProjectWrapper>
         </S.Main>
+        <Footer />
       </S.Root>
-      <Footer />
     </Layout>
   );
 }
