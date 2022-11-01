@@ -10,18 +10,8 @@ import { useEffect, useState } from 'react';
 import { useQuery } from 'react-query';
 
 import * as S from './ProjectDetail.style';
+import { LinkType, TeamMembersType } from './types';
 import { getLinkNameAndSrcWithType } from './utils/getLinkNameAndSrcWithType';
-
-interface TeamMembersType {
-  name: string;
-  role: string;
-  roleDetail: string;
-}
-
-interface LinkType {
-  type: string;
-  url: string;
-}
 
 const SCROLL_MINIMUM_VALUE = 120;
 
@@ -32,18 +22,16 @@ function ProjectDetailPage() {
   const [isScrolled, setIsScrolled] = useState(false);
 
   const checkScroll = debounce(() => {
-    console.log('scrolled');
     window.scrollY > SCROLL_MINIMUM_VALUE ? setIsScrolled(true) : setIsScrolled(false);
   });
 
   useEffect(() => {
     window.addEventListener('scroll', checkScroll);
-    console.log('scrolled');
 
     return () => {
       window.removeEventListener('scroll', checkScroll);
     };
-  }, [checkScroll]);
+  }, []);
 
   if (!data) return;
 
@@ -67,15 +55,14 @@ function ProjectDetailPage() {
   return (
     <Layout>
       <Header />
+      <S.UpButton
+        isScrolled={isScrolled}
+        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+      >
+        <span>UP</span>
+        <UpArrow />
+      </S.UpButton>
       <S.Root>
-        <S.UpButton
-          isScrolled={isScrolled}
-          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-        >
-          <span>UP</span>
-          <UpArrow />
-        </S.UpButton>
-
         <S.Main>
           <S.ProjectHeader>
             <S.LogoImageWrapper>
