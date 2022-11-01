@@ -32,20 +32,18 @@ function ProjectDetailPage() {
   const [isScrolled, setIsScrolled] = useState(false);
 
   const checkScroll = debounce(() => {
+    console.log('scrolled');
     window.scrollY > SCROLL_MINIMUM_VALUE ? setIsScrolled(true) : setIsScrolled(false);
   });
 
-  const scroll = () => {
+  useEffect(() => {
     window.addEventListener('scroll', checkScroll);
+    console.log('scrolled');
 
     return () => {
       window.removeEventListener('scroll', checkScroll);
     };
-  };
-
-  useEffect(() => {
-    scroll();
-  }, []);
+  }, [checkScroll]);
 
   if (!data) return;
 
