@@ -1,15 +1,11 @@
 import styled from '@emotion/styled';
-import { css } from '@emotion/react';
-import { FadeIn, FadeOut } from '@src/lib/styles/animation';
 
 export const Root = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  font-family: 'SUIT';
   width: calc(100% - 360px);
-  height: 100vh;
   margin: 0 auto;
 
   margin-top: 130px;
@@ -20,51 +16,6 @@ export const Root = styled.div`
     margin-top: 80px;
   }
 `;
-
-export const UpButton = styled.button<{ isScrolled: boolean }>`
-  position: fixed;
-  right: 20px;
-  bottom: 30px;
-  border-radius: 52px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
-  background: #242424;
-  padding: 16px 32px;
-  z-index: 9;
-  ${({ isScrolled }) =>
-    isScrolled
-      ? css`
-          ${FadeIn}
-          animation:fadein 0.4s;
-        `
-      : css`
-          ${FadeOut}
-          animation:fadeout 0.4s;
-          animation-fill-mode: forwards;
-        `}
-
-  /* 모바일 뷰 */
-  @media (max-width: 799px) {
-    padding: 16px;
-  }
-
-  & > span {
-    font-family: 'SUIT';
-    font-weight: 600;
-    font-size: 24px;
-    line-height: 48px;
-    color: #ffffff;
-    /* 모바일 뷰 */
-    @media (max-width: 799px) {
-      display: none;
-    }
-  }
-`;
-
-export const Main = styled.main`
-  display: flex;
-  flex-direction: column;
-`;
-
 export const ProjectHeader = styled.div`
   display: flex;
   flex-direction: column;
@@ -127,7 +78,7 @@ export const ProjectImageWrapper = styled.div`
 
 export const ProjectWrapper = styled.div`
   display: flex;
-  margin-bottom: 48px;
+  margin-bottom: 240px;
   /* 모바일 뷰 */
   @media (max-width: 799px) {
     flex-direction: column;
@@ -185,6 +136,7 @@ export const ToggleWrapper = styled.div`
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  cursor: pointer;
 
   & > button {
     width: 24px;
@@ -192,12 +144,12 @@ export const ToggleWrapper = styled.div`
   }
 `;
 export const OverviewToggleImage = styled.div<{ isOverviewOpened: boolean }>`
-  transform: ${({ isOverviewOpened }) => (isOverviewOpened ? 'rotate(0deg)' : 'rotate(90deg)')};
+  transform: ${({ isOverviewOpened }) => (isOverviewOpened ? 'rotate(90deg)' : 'rotate(0deg)')};
   cursor: pointer;
 `;
 
 export const TeamMemberToggleImage = styled.div<{ isTeamMemberOpened: boolean }>`
-  transform: ${({ isTeamMemberOpened }) => (isTeamMemberOpened ? 'rotate(0deg)' : 'rotate(90deg)')};
+  transform: ${({ isTeamMemberOpened }) => (isTeamMemberOpened ? 'rotate(90deg)' : 'rotate(0deg)')};
   cursor: pointer;
 `;
 
