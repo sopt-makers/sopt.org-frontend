@@ -10,3 +10,7 @@ export interface LinkType {
 }
 
 export type LinkDetailType = 'website' | 'appstore' | 'github' | 'instagram' | 'media';
+
+export interface UpButtonProps {
+  isScrolled: boolean;
+}
