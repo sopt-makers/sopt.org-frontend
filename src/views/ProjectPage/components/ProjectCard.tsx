@@ -15,7 +15,7 @@ export function ProjectCard({ project }: { project: ProjectType }) {
     <Link href={`/project/${project.id}`}>
       <article className={styles.item}>
         <div className={styles['image-wrapper']}>
-          <Image src={project.logoImageUrl} width={100} height={100} alt="logo" />
+          <Image src={project.logoImage} width={100} height={100} alt="logo" />
         </div>
         <div className={styles.content}>
           <div className={styles.types}>
