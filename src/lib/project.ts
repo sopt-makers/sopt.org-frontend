@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const client = axios.create({
-  baseURL: 'http://43.201.19.221:3000',
+  baseURL: 'https://dev.dguchatbot.com',
   timeout: 3000,
 });
 
