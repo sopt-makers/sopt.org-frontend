@@ -10,7 +10,7 @@ import { ReactComponent as WebIcon } from '@src/assets/logo/website.svg';
 // TODO all project link type should be applied to links switch-case
 // TODO project service type should be changed from array to string (also change project type)
 // TODO thumbnail image should be applied to Image
-export function Project({ project }: { project: ProjectType }) {
+export function ProjectCard({ project }: { project: ProjectType }) {
   return (
     <Link href={`/project/${project.id}`}>
       <article className={styles.item}>

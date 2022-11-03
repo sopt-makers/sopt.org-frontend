@@ -1,26 +1,27 @@
 .item {
-  width: 328px;
-  height: 402px;
+  width: 380px;
+  height: 468px;
   display: flex;
   flex-direction: column;
   align-items: center;
 
   border: 1px solid #353535;
   border-radius: 10px;
-  margin-bottom: 20px;
+
   cursor: pointer;
 
   .image-wrapper {
-    width: 316px;
-    height: 180px;
+    width: 368px;
+    height: 208px;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #141414;
   }
 
   .content {
     width: 90%;
-    height: 220px;
+    height: 268px;
 
     display: flex;
     flex-direction: column;
