@@ -15,14 +15,18 @@
   p {
     padding-bottom: 10px;
     color: rgba(255, 255, 255, 0.5);
+    font-weight: 500;
+    font-size: 15px;
   }
 
-  span {
+  .content {
+    width: 55%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
     color: rgba(255, 255, 255, 0.5);
     font-weight: 700;
-  }
-
-  div {
+    font-size: 15px;
     cursor: pointer;
   }
 }
