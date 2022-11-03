@@ -32,6 +32,7 @@
       cursor: pointer;
       display: flex;
       align-items: center;
+      padding: 0;
 
       svg.isRotated {
         transform: rotate(90deg);

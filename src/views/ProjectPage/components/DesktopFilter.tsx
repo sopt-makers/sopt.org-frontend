@@ -23,11 +23,11 @@ export function DesktopFilter({ selectedCategory, setCategory }: ModalProps) {
         <h3>프로젝트 필터</h3>
       </div>
       <div className={styles['content']}>
-        <div className={styles['category-name']}>
-          <ToggleArrowBtn
-            className={cc([isCategoryOpen && styles.isRotated])}
-            onClick={() => toggleCategoryOpenState((prev) => !prev)}
-          />
+        <div
+          className={styles['category-name']}
+          onClick={() => toggleCategoryOpenState((prev) => !prev)}
+        >
+          <ToggleArrowBtn className={cc([isCategoryOpen && styles.isRotated])} />
           <h4>프로젝트 유형</h4>
         </div>
         <Condition statement={isCategoryOpen}>
