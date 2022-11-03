@@ -50,7 +50,7 @@ export function ProjectList({ selectedCategory }: { selectedCategory: CategoryTy
               <div className={styles['list-container']}>
                 <Condition statement={listLength > 0}>
                   <div className={styles['total-count']}>
-                    <p>3개의 프로젝트가 있어요.</p>
+                    <div>3개의 프로젝트가 있어요.</div>
                   </div>
                   <section className={styles['list-data-container']}>
                     {state.data.map((project, index) => (

@@ -20,17 +20,17 @@ export function ProjectCard({ project }: { project: ProjectType }) {
         <div className={styles.content}>
           <div className={styles.types}>
             <div>{project.serviceType[0]}</div>
-            <div>{project.semester}기</div>
+            <div>{project.generation}기</div>
           </div>
           <div className={styles.text}>
             <h5>{project.name}</h5>
-            <p>{project.shortIntroduction}</p>
+            <p>{project.summary}</p>
           </div>
           <div className={styles.links}>
-            {project.link?.map(({ type, url }, index) => (
+            {project.link?.map(({ title, url }, index) => (
               <div key={index}>
                 {(() => {
-                  switch (type) {
+                  switch (title) {
                     case 'github':
                       return (
                         <>
