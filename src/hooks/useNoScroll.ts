@@ -1,9 +1,9 @@
-import { MenuType } from '@src/components/common/Header/Header';
+import { MenuType } from '@src/components/Header/MobileHeader/MobileHeader';
 import { useEffect } from 'react';
 
 export default function useNoScroll(isMenuShown: MenuType) {
   useEffect(() => {
-    if (isMenuShown === 'true') {
+    if (isMenuShown === 'open') {
       document.body.style.overflow = 'hidden';
     } else {
       return () => {
