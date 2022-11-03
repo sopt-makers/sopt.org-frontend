@@ -45,7 +45,7 @@ interface MenuTitleProps {
 }
 
 export const Wrapper = styled.div`
-  width: 65%;
+  width: 70%;
   height: 100%;
 
   display: flex;
