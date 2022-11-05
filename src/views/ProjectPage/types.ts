@@ -20,7 +20,7 @@ export interface ProjectType {
   members: { name: string; role: string; description: string }[];
   name: string;
   projectImage: null;
-  serviceType: string[];
+  serviceType: string[] | string;
   startAt: string;
   summary: string;
   thumbnailImage?: string;

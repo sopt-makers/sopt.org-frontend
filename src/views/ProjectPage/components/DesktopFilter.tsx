@@ -1,20 +1,20 @@
 import { useState } from 'react';
 import styles from '../styles/desktop-filter.module.scss';
-import { projectCategoryList, CategoryType } from '../lib/constants';
+import { projectCategoryList, ProjectCategoryType } from '../lib/constants';
 import cc from 'classcat';
 import { Condition } from '@src/lib';
 import { ReactComponent as ToggleArrowBtn } from '@src/assets/icons/ToggleArrow.svg';
 
 type ModalProps = {
-  selectedCategory: CategoryType | undefined;
-  setCategory: (args: CategoryType) => void;
+  selectedCategory?: ProjectCategoryType;
+  setCategory: (args: ProjectCategoryType) => void;
 };
 
 export function DesktopFilter({ selectedCategory, setCategory }: ModalProps) {
   const [isCategoryOpen, toggleCategoryOpenState] = useState(false);
-  const handleSelect = (id: CategoryType) => {
-    console.log(id);
+  const handleSelect = (id: ProjectCategoryType) => {
     setCategory(id);
+    toggleCategoryOpenState((prev) => !prev);
   };
 
   return (

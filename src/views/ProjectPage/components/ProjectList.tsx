@@ -1,7 +1,7 @@
 import { useEffect, useReducer } from 'react';
 import { to } from 'await-to-js';
 import cc from 'classcat';
-import { SelectionType } from '../lib/constants';
+import { ProjectCategoryType } from '../lib/constants';
 import styles from '../styles/project-list.module.scss';
 import { reducer } from '../lib/reducer';
 import { getProjectList, getProjectByCategory } from '@src/lib/project';
@@ -9,7 +9,7 @@ import { Condition } from '@src/lib';
 import { EmptyContent, ProjectCard, ProjectEnrollSection } from '../components';
 
 // APPJAM | SOPKATHON | SOPTERM | STUDY | JOINTSEMINAR | ETC
-export function ProjectList({ selectedCategory }: { selectedCategory: SelectionType }) {
+export function ProjectList({ selectedCategory }: { selectedCategory?: ProjectCategoryType }) {
   const [state, dispatch] = useReducer(reducer, { _TAG: 'IDLE' });
   const fetchProjectList = async () => {
     dispatch({
@@ -41,7 +41,7 @@ export function ProjectList({ selectedCategory }: { selectedCategory: SelectionT
       {(() => {
         switch (state._TAG) {
           case 'IDLE':
-            return <p>HI</p>;
+            return <p>IDLE</p>;
           case 'LOADING':
             return <p>LOADING</p>;
           case 'ERROR':
@@ -56,7 +56,7 @@ export function ProjectList({ selectedCategory }: { selectedCategory: SelectionT
                     <div>{listLength} 개의 프로젝트가 있어요.</div>
                   </div>
                   <section className={styles['list-data-container']}>
-                    {state.data.map((project, index) => (
+                    {list.map((project, index) => (
                       <ProjectCard key={index} project={project} />
                     ))}
                   </section>

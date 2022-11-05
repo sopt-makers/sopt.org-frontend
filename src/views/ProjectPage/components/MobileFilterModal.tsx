@@ -1,20 +1,20 @@
 import { useState } from 'react';
 import { ReactComponent as ToggleArrowBtn } from '@src/assets/icons/ToggleArrow.svg';
-import { projectCategoryList, CategoryType } from '../lib/constants';
+import { projectCategoryList, ProjectCategoryType } from '../lib/constants';
 import styles from '../styles/mobile-filter.module.scss';
 import { Condition } from '@src/lib';
 import cc from 'classcat';
 
 type ModalProps = {
   toggleModalState: (args: boolean) => void;
-  selectedCategory: CategoryType | undefined;
-  setCategory: (args: CategoryType) => void;
+  selectedCategory: ProjectCategoryType | undefined;
+  setCategory: (args: ProjectCategoryType) => void;
 };
 
 export function MobileFilterModal({ toggleModalState, selectedCategory, setCategory }: ModalProps) {
   const [isCategoryOpen, toggleCategoryOpenState] = useState(false);
 
-  const handleSelect = (id: CategoryType) => {
+  const handleSelect = (id: ProjectCategoryType) => {
     setCategory(id);
     toggleModalState(false);
   };
