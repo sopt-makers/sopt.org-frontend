@@ -13,18 +13,14 @@ import { ReactComponent as Instagram } from '../assets/instagram-30x30.svg';
 import { ReactComponent as Youtube } from '../assets/youtube-30x30.svg';
 
 export function ProjectCard({ project }: { project: ProjectType }) {
-  console.log(project);
-
   return (
     <Link href={`/project/${project.id}`}>
       <article className={styles.item}>
-        <div className={styles['image-wrapper']}>
-          <Image src={project.logoImage} width={100} height={100} alt="logo" />
-        </div>
+        {RepresentativeImageRender(project.logoImage, project?.thumbnailImage)}
         <div className={styles.content}>
           <div className={styles.types}>
             {ServiceTypeRender(project.serviceType)}
-            {!project.generation && <div>{project.generation}기</div>}
+            {GenerationRender(project?.generation)}
           </div>
           <div className={styles.text}>
             <h5>{project.name}</h5>
@@ -41,12 +37,28 @@ export function ProjectCard({ project }: { project: ProjectType }) {
   );
 }
 
+function RepresentativeImageRender(logoImage: string, thumbnailImage?: string) {
+  return (
+    <div className={styles['image-wrapper']}>
+      {thumbnailImage && thumbnailImage?.length > 0 ? (
+        <Image src={thumbnailImage} width={380} height={208} alt="thumbnail" />
+      ) : (
+        <Image src={logoImage} width={100} height={100} alt="logo" placeholder="blur" />
+      )}
+    </div>
+  );
+}
+
 function ServiceTypeRender(serviceTypes: string[] | string) {
   if (!Array.isArray(serviceTypes)) return <div>{serviceTypes}</div>;
 
   return serviceTypes?.map((type) => {
     return <div key={shortid.generate()}>{type}</div>;
   });
+}
+
+function GenerationRender(generation?: number) {
+  return generation ? <div>{generation}기</div> : <></>;
 }
 
 function LinkRender(link: LinkType, url: string) {
