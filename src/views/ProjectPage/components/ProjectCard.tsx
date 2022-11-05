@@ -1,11 +1,16 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import shortid from 'shortid';
 
-import styles from '../styles/project.module.scss';
-import { ProjectType } from '../types';
+import styles from '../styles/project-card.module.scss';
+import { ProjectType, LinkType } from '../types';
 
-import { ReactComponent as GithubIcon } from '@src/assets/icons/github_icon.svg';
-import { ReactComponent as WebIcon } from '@src/assets/logo/website.svg';
+import { ReactComponent as PlayStore } from '../assets/play-store-40x40.svg';
+import { ReactComponent as AppStore } from '../assets/app-store-40x40.svg';
+import { ReactComponent as Github } from '../assets/github-40x40.svg';
+import { ReactComponent as Web } from '../assets/website-40x40.svg';
+import { ReactComponent as Instagram } from '../assets/instagram-30x30.svg';
+import { ReactComponent as Youtube } from '../assets/youtube-30x30.svg';
 
 export function ProjectCard({ project }: { project: ProjectType }) {
   console.log(project);
@@ -18,7 +23,7 @@ export function ProjectCard({ project }: { project: ProjectType }) {
         </div>
         <div className={styles.content}>
           <div className={styles.types}>
-            {serviceTypeRender(project.serviceType)}
+            {ServiceTypeRender(project.serviceType)}
             {!project.generation && <div>{project.generation}기</div>}
           </div>
           <div className={styles.text}>
@@ -26,39 +31,9 @@ export function ProjectCard({ project }: { project: ProjectType }) {
             <p>{project.summary}</p>
           </div>
           <div className={styles.links}>
-            {project.link?.map(({ title, url }, index) => (
-              <div key={index}>
-                {(() => {
-                  switch (title) {
-                    case 'github':
-                      return (
-                        <>
-                          <div
-                            className={styles['icon-wrapper']}
-                            onClick={(e) => {
-                              window.open(url);
-                              e.stopPropagation();
-                            }}
-                          >
-                            <GithubIcon />
-                          </div>
-                          <div
-                            className={styles['icon-wrapper']}
-                            onClick={(e) => {
-                              window.open(url);
-                              e.stopPropagation();
-                            }}
-                          >
-                            <WebIcon />
-                          </div>
-                        </>
-                      );
-                    case 'website':
-                      return <div>WEBSITE</div>;
-                  }
-                })()}
-              </div>
-            ))}
+            {project.link?.map(({ title, url }) => {
+              return <div key={shortid.generate()}>{LinkRender(title, url)}</div>;
+            })}
           </div>
         </div>
       </article>
@@ -66,10 +41,40 @@ export function ProjectCard({ project }: { project: ProjectType }) {
   );
 }
 
-function serviceTypeRender(serviceTypes: string[] | string) {
+function ServiceTypeRender(serviceTypes: string[] | string) {
   if (!Array.isArray(serviceTypes)) return <div>{serviceTypes}</div>;
 
-  return serviceTypes?.map((type, index) => {
-    return <div key={index}>{type}</div>;
+  return serviceTypes?.map((type) => {
+    return <div key={shortid.generate()}>{type}</div>;
   });
+}
+
+function LinkRender(link: LinkType, url: string) {
+  return (
+    <div
+      className={styles['icon-wrapper']}
+      onClick={(e) => {
+        window.open(url);
+        e.stopPropagation();
+      }}
+    >
+      {(() => {
+        switch (link) {
+          case LinkType.웹사이트:
+            return <Web />;
+          case LinkType['앱 스토어']:
+            return <AppStore />;
+          case LinkType['구글 플레이스토어']:
+            return <PlayStore />;
+          case LinkType.Github:
+            return <Github />;
+          case LinkType.instagram:
+            return <Instagram />;
+          case LinkType.발표영상:
+          case LinkType['기타 관련자료']:
+            return <Youtube />;
+        }
+      })()}
+    </div>
+  );
 }

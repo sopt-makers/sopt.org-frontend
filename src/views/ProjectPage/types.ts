@@ -1,12 +1,21 @@
+export enum LinkType {
+  웹사이트 = '웹사이트',
+  발표영상 = '발표영상',
+  Github = 'Github',
+  instagram = 'instagram',
+  '구글 플레이스토어' = '구글 플레이스토어',
+  '앱 스토어' = '앱 스토어',
+  '기타 관련자료' = '기타 관련자료',
+}
+
 export interface ProjectType {
-  category: CategoryType;
   detail: string;
   endAt: string;
   generation: number;
   id: number;
   isAvailable: boolean;
   isFounding: boolean;
-  link: LinkType[];
+  link: { title: LinkType; url: string }[];
   logoImage: string;
   members: { name: string; role: string; description: string }[];
   name: string;
@@ -17,15 +26,6 @@ export interface ProjectType {
   thumbnailImage: null | string;
   updatedAt: string;
   uploadedAt: string;
-}
-
-/* category type이 추가되면 반영되어야함 */
-interface CategoryType {
-  project: string;
-}
-interface LinkType {
-  title: string;
-  url: string;
 }
 
 export type State<T> =
