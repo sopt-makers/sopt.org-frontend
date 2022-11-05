@@ -11,13 +11,6 @@ import { useQuery } from 'react-query';
 import UpButton from './components/UpButton';
 import { projectOverviewTitle } from './constants/contants';
 
-import appstore from '@src/assets/icons/appstore_icon.svg';
-import github from '@src/assets/icons/github_icon.svg';
-import googleplay from '@src/assets/icons/googleplay_icon.svg';
-import instagram from '@src/assets/icons/instagram_icon.svg';
-import media from '@src/assets/icons/media_icon.svg';
-import website from '@src/assets/icons/website_icon.svg';
-
 import * as S from './ProjectDetail.style';
 import { LinkType, TeamMembersType } from './types';
 import { getLinkNameAndSrcWithType } from './utils/getLinkNameAndSrcWithType';
@@ -64,9 +57,6 @@ function ProjectDetailPage() {
     members,
     detail,
   } = data;
-
-  console.log(data);
-  console.log([...serviceType]);
 
   return (
     <Layout>
@@ -127,32 +117,7 @@ function ProjectDetailPage() {
                 </S.ProjectInfo>
                 <S.ProjectLinkWrapper>
                   {link.map(({ title, url }: LinkType) => {
-                    // const { src } = getLinkNameAndSrcWithType(title);
-                    let src = '';
-                    switch (title) {
-                      case '웹사이트':
-                        src = website;
-                        break;
-                      case '구글 플레이스토어':
-                        src = googleplay;
-                        break;
-
-                      case '앱 스토어':
-                        src = appstore;
-                        break;
-
-                      case 'Github':
-                        src = github;
-                        break;
-
-                      case 'instagram':
-                        src = instagram;
-                        break;
-
-                      case '발표영상':
-                        src = media;
-                        break;
-                    }
+                    const src = getLinkNameAndSrcWithType(title);
 
                     return (
                       <Link href={url} key={title}>

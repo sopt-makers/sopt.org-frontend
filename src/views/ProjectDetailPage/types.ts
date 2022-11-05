@@ -5,7 +5,7 @@ export interface TeamMembersType {
 }
 
 export interface LinkType {
-  title: string;
+  title: LinkDetailType;
   url: string;
 }
 

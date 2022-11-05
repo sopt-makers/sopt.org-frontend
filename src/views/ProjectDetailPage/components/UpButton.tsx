@@ -26,6 +26,7 @@ export const Root = styled.button<{ isScrolled: boolean }>`
   background: #242424;
   padding: 16px 32px;
   z-index: 999;
+  cursor: pointer;
   ${({ isScrolled }) =>
     isScrolled
       ? css`
@@ -39,18 +40,17 @@ export const Root = styled.button<{ isScrolled: boolean }>`
         `}
 
   /* 모바일 뷰 */
-  @media (max-width: 799px) {
+  @media (max-width: 767px) {
     padding: 16px;
   }
 
   & > span {
-    font-family: 'SUIT';
     font-weight: 600;
     font-size: 24px;
     line-height: 48px;
     color: #ffffff;
     /* 모바일 뷰 */
-    @media (max-width: 799px) {
+    @media (max-width: 767px) {
       display: none;
     }
   }
