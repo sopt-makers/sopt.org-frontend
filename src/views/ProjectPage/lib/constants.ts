@@ -1,21 +1,22 @@
+export enum ProjectCategoryType {
+  APPJAM = 'APPJAM',
+  SOPKATHON = 'SOPSOPKATHON',
+  SOPTERM = 'SOPTERM',
+  STUDY = 'STUDY',
+  JOINTSEMINAR = 'JOINTSEMINAR',
+  ETC = 'ETC',
+}
+
+export type SelectionType = 'NO_SELECT' | keyof typeof ProjectCategoryType;
+
 export const projectCategoryList: {
-  type: CategoryType;
+  type: ProjectCategoryType;
   name: string;
 }[] = [
-  { type: 'Whole', name: '전체' },
-  { type: 'Appjam', name: '🎊 앱잼' },
-  { type: 'Soptakon', name: '💡 솝커톤' },
-  { type: 'Sopterm', name: '🛎 솝텀 프로젝트' },
-  { type: 'Study', name: '📖 스터디' },
-  { type: 'Collaborate', name: '👥 합동 세미나' },
-  { type: 'Etc', name: '💬 기타' },
+  { type: ProjectCategoryType.APPJAM, name: '🎊 앱잼' },
+  { type: ProjectCategoryType.SOPKATHON, name: '💡 솝커톤' },
+  { type: ProjectCategoryType.SOPTERM, name: '🛎 솝텀 프로젝트' },
+  { type: ProjectCategoryType.STUDY, name: '📖 스터디' },
+  { type: ProjectCategoryType.JOINTSEMINAR, name: '👥 합동 세미나' },
+  { type: ProjectCategoryType.ETC, name: '💬 기타' },
 ];
-
-export type CategoryType =
-  | 'Whole'
-  | 'Appjam'
-  | 'Soptakon'
-  | 'Sopterm'
-  | 'Study'
-  | 'Collaborate'
-  | 'Etc';

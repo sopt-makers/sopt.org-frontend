@@ -11,7 +11,7 @@ export enum LinkType {
 export interface ProjectType {
   detail: string;
   endAt: string;
-  generation: number;
+  generation?: number;
   id: number;
   isAvailable: boolean;
   isFounding: boolean;
@@ -23,7 +23,7 @@ export interface ProjectType {
   serviceType: string[];
   startAt: string;
   summary: string;
-  thumbnailImage: null | string;
+  thumbnailImage?: string;
   updatedAt: string;
   uploadedAt: string;
 }

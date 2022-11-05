@@ -3,11 +3,11 @@ import { useMediaQuery } from 'react-responsive';
 
 import { Header, Footer, Layout } from '@src/components';
 import { DesktopFilter, MobileFilter, ProjectList } from './components';
-import { CategoryType } from './lib/constants';
+import { SelectionType } from './lib/constants';
 import { Condition } from '@src/lib';
 
 function Projects() {
-  const [selectedCategory, setCategory] = useState<CategoryType | undefined>(undefined);
+  const [selectedCategory, setCategory] = useState<SelectionType>('NO_SELECT');
   const isDesktop = useMediaQuery({
     query: '(min-width: 1280px)',
   });

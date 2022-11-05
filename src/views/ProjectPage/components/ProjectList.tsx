@@ -1,21 +1,24 @@
 import { useEffect, useReducer } from 'react';
 import { to } from 'await-to-js';
 import cc from 'classcat';
-import { CategoryType } from '../lib/constants';
+import { SelectionType } from '../lib/constants';
 import styles from '../styles/project-list.module.scss';
 import { reducer } from '../lib/reducer';
-import { getProjectList } from '@src/lib/project';
+import { getProjectList, getProjectByCategory } from '@src/lib/project';
 import { Condition } from '@src/lib';
 import { EmptyContent, ProjectCard, ProjectEnrollSection } from '../components';
 
-export function ProjectList({ selectedCategory }: { selectedCategory: CategoryType | undefined }) {
+// APPJAM | SOPKATHON | SOPTERM | STUDY | JOINTSEMINAR | ETC
+export function ProjectList({ selectedCategory }: { selectedCategory: SelectionType }) {
   const [state, dispatch] = useReducer(reducer, { _TAG: 'IDLE' });
   const fetchProjectList = async () => {
     dispatch({
       _TAG: 'FETCH',
     });
 
-    const [error, response] = await to(getProjectList());
+    // 분기 처리
+    // const [error, response] = await to(getProjectList());
+    const [error, response] = await to(getProjectByCategory('APPJAM'));
 
     if (error) {
       return dispatch({
@@ -25,7 +28,7 @@ export function ProjectList({ selectedCategory }: { selectedCategory: CategoryTy
     }
 
     if (response) {
-      return dispatch({ _TAG: 'SUCCESS', data: response.projects });
+      return dispatch({ _TAG: 'SUCCESS', data: response });
     }
   };
 
@@ -38,7 +41,7 @@ export function ProjectList({ selectedCategory }: { selectedCategory: CategoryTy
       {(() => {
         switch (state._TAG) {
           case 'IDLE':
-            return <p>IDLE</p>;
+            return <p>HI</p>;
           case 'LOADING':
             return <p>LOADING</p>;
           case 'ERROR':
@@ -50,16 +53,12 @@ export function ProjectList({ selectedCategory }: { selectedCategory: CategoryTy
               <div className={styles['list-container']}>
                 <Condition statement={listLength > 0}>
                   <div className={styles['total-count']}>
-                    <div>3개의 프로젝트가 있어요.</div>
+                    <div>{listLength} 개의 프로젝트가 있어요.</div>
                   </div>
                   <section className={styles['list-data-container']}>
                     {state.data.map((project, index) => (
                       <ProjectCard key={index} project={project} />
                     ))}
-                    {state.data.map(
-                      (project, index) =>
-                        index === 0 && <ProjectCard key={index} project={project} />,
-                    )}
                   </section>
                 </Condition>
                 <Condition statement={listLength === 0}>
