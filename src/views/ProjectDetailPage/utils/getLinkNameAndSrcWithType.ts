@@ -7,14 +7,28 @@ import website from '@src/assets/icons/website_icon.svg';
 import { LinkDetailType } from '../types';
 
 const LinkMap = {
-  website: { name: '웹사이트', src: website },
-  playstore: { name: '플레이스토어', src: googleplay },
-  appstore: { name: '앱스토어', src: appstore },
-  github: { name: 'Github', src: github },
-  instagram: { name: '인스타그램', src: instagram },
-  media: { name: '발표영상', src: media },
+  웹사이트: website,
+  '구글 플레이스토어': googleplay,
+  '앱 스토어': appstore,
+  Github: github,
+  instagram,
+  발표영상: media,
 };
 
-export const getLinkNameAndSrcWithType = (type: LinkDetailType) => {
-  return LinkMap[type];
+export const getLinkNameAndSrcWithType = (title: LinkDetailType) => {
+  switch (title) {
+    case '웹사이트':
+      return website;
+    case '구글 플레이스토어':
+      return googleplay;
+    case '앱 스토어':
+      return appstore;
+    case 'Github':
+      return github;
+    case 'instagram':
+      return instagram;
+    case '발표영상':
+      return media;
+  }
+  // return LinkMap[title];
 };

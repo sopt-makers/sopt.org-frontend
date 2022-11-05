@@ -101,6 +101,9 @@ export const LogoImageWrapper = styled.div`
   width: 56px;
   height: 56px;
   object-fit: cover;
+  & > span {
+    border-radius: 10px;
+  }
   /* 데스크탑 뷰 */
   @media (min-width: 800px) {
     position: absolute;
@@ -211,6 +214,10 @@ export const ProjectLink = styled.div`
   padding: 6px 4px;
   width: 80px;
   height: 94px;
+
+  &:not(:last-child) {
+    margin-right: 16px;
+  }
 
   & > span {
     margin-top: 7px;

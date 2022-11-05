@@ -5,10 +5,18 @@ import { dateFormat } from '@src/utils/dateFormat';
 import { debounce } from '@src/utils/scrollDebounce';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import { useQuery } from 'react-query';
 import UpButton from './components/UpButton';
 import { projectOverviewTitle } from './constants/contants';
+
+import appstore from '@src/assets/icons/appstore_icon.svg';
+import github from '@src/assets/icons/github_icon.svg';
+import googleplay from '@src/assets/icons/googleplay_icon.svg';
+import instagram from '@src/assets/icons/instagram_icon.svg';
+import media from '@src/assets/icons/media_icon.svg';
+import website from '@src/assets/icons/website_icon.svg';
 
 import * as S from './ProjectDetail.style';
 import { LinkType, TeamMembersType } from './types';
@@ -17,7 +25,12 @@ import { getLinkNameAndSrcWithType } from './utils/getLinkNameAndSrcWithType';
 const SCROLL_MINIMUM_VALUE = 120;
 
 function ProjectDetailPage() {
-  const { data } = useQuery('projectDetail', () => getProjectDetail(0));
+  const router = useRouter();
+  const id = router.query.id as string;
+
+  const { data } = useQuery('projectDetail', () => getProjectDetail(+id), {
+    enabled: !!id,
+  });
   const [isOverviewOpened, setIsOverviewOpened] = useState(false);
   const [isTeamMemberOpened, setIsTeamMemberOpened] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -37,21 +50,23 @@ function ProjectDetailPage() {
   if (!data) return;
 
   const {
-    projectImageUrl,
-    logoImageUrl,
+    projectImage,
+    logoImage,
     name,
-    shortIntroduction,
-    semester,
+    summary,
+    generation,
     serviceType,
-    startDate,
-    endDate,
-    inProgress,
-    isBusinessing,
-    isProvidingService,
+    startAt,
+    endAt,
+    isFounding,
+    isAvailable,
     link,
-    teamMembers,
+    members,
     detail,
   } = data;
+
+  console.log(data);
+  console.log([...serviceType]);
 
   return (
     <Layout>
@@ -61,17 +76,17 @@ function ProjectDetailPage() {
       <S.Root>
         <S.ProjectHeader>
           <S.LogoImageWrapper>
-            <Image src={logoImageUrl} alt="logo" width="56" height="56" />
+            <Image src={logoImage} alt="logo" width="56" height="56" />
           </S.LogoImageWrapper>
           <div>
             <h1>{name}</h1>
-            <p>{shortIntroduction}</p>
+            <p>{summary}</p>
           </div>
         </S.ProjectHeader>
 
-        {projectImageUrl && (
+        {projectImage && (
           <S.ProjectImageWrapper>
-            <Image src={projectImageUrl} alt="project image" layout="fill" />
+            <Image src={projectImage} alt="project image" layout="fill" />
           </S.ProjectImageWrapper>
         )}
         <S.ProjectWrapper>
@@ -95,27 +110,54 @@ function ProjectDetailPage() {
 
                   <div>
                     <span>
-                      {dateFormat(startDate)} - {inProgress ? '진행중' : dateFormat(endDate)}
+                      {dateFormat(startAt)} - {isAvailable ? '진행중' : dateFormat(endAt) || ''}
                     </span>
-                    <span>{semester ? semester + '기' : '-'}</span>
+                    <span>{generation ? generation + '기' : '-'}</span>
                     <span>
-                      {serviceType.map((type: string) => (type === 'WEB' ? '웹' : '앱')).join(', ')}
+                      {[serviceType]
+                        .map((type: string) => (type === 'WEB' ? '웹' : '앱'))
+                        .join(', ')}
                     </span>
                     <span>
-                      {isProvidingService && '운영중'}
-                      {isBusinessing && '창업중'}
+                      {isAvailable && '운영중'}
+                      {isFounding && '창업중'}
                     </span>
                     <span>{link.length ? link.length + '개' : '-'}</span>
                   </div>
                 </S.ProjectInfo>
                 <S.ProjectLinkWrapper>
-                  {link.map(({ type, url }: LinkType) => {
-                    const { name, src } = getLinkNameAndSrcWithType(type);
+                  {link.map(({ title, url }: LinkType) => {
+                    // const { src } = getLinkNameAndSrcWithType(title);
+                    let src = '';
+                    switch (title) {
+                      case '웹사이트':
+                        src = website;
+                        break;
+                      case '구글 플레이스토어':
+                        src = googleplay;
+                        break;
+
+                      case '앱 스토어':
+                        src = appstore;
+                        break;
+
+                      case 'Github':
+                        src = github;
+                        break;
+
+                      case 'instagram':
+                        src = instagram;
+                        break;
+
+                      case '발표영상':
+                        src = media;
+                        break;
+                    }
 
                     return (
-                      <Link href={url} key={type}>
+                      <Link href={url} key={title}>
                         <S.ProjectLink>
-                          <Image src={src} alt={type} width="56" height="56" />
+                          <Image src={src} alt={title} width="56" height="56" />
                           <span>{name}</span>
                         </S.ProjectLink>
                       </Link>
@@ -135,13 +177,13 @@ function ProjectDetailPage() {
                 </button>
               </S.ToggleWrapper>
               <S.TeamMembers isTeamMemberOpened={isTeamMemberOpened}>
-                {teamMembers.map(({ name, role, roleDetail }: TeamMembersType) => (
+                {members.map(({ name, role, description }: TeamMembersType) => (
                   <S.Members key={name}>
                     <h1>{role}</h1>
 
                     <S.MemberDetail>
                       <h1>{name}</h1>
-                      <p>{roleDetail}</p>
+                      <p>{description}</p>
                     </S.MemberDetail>
                   </S.Members>
                 ))}
