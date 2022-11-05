@@ -7,10 +7,9 @@ import { ProjectType } from '../types';
 import { ReactComponent as GithubIcon } from '@src/assets/icons/github_icon.svg';
 import { ReactComponent as WebIcon } from '@src/assets/logo/website.svg';
 
-// TODO all project link type should be applied to links switch-case
-// TODO project service type should be changed from array to string (also change project type)
-// TODO thumbnail image should be applied to Image
 export function ProjectCard({ project }: { project: ProjectType }) {
+  console.log(project);
+
   return (
     <Link href={`/project/${project.id}`}>
       <article className={styles.item}>
@@ -19,8 +18,8 @@ export function ProjectCard({ project }: { project: ProjectType }) {
         </div>
         <div className={styles.content}>
           <div className={styles.types}>
-            <div>{project.serviceType[0]}</div>
-            <div>{project.generation}기</div>
+            {serviceTypeRender(project.serviceType)}
+            {!project.generation && <div>{project.generation}기</div>}
           </div>
           <div className={styles.text}>
             <h5>{project.name}</h5>
@@ -65,4 +64,12 @@ export function ProjectCard({ project }: { project: ProjectType }) {
       </article>
     </Link>
   );
+}
+
+function serviceTypeRender(serviceTypes: string[] | string) {
+  if (!Array.isArray(serviceTypes)) return <div>{serviceTypes}</div>;
+
+  return serviceTypes?.map((type, index) => {
+    return <div key={index}>{type}</div>;
+  });
 }
