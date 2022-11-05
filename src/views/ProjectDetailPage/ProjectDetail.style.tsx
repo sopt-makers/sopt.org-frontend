@@ -75,7 +75,11 @@ export const ProjectImageWrapper = styled.div`
 
 export const ProjectWrapper = styled.div`
   display: flex;
-  margin-bottom: 240px;
+  height: 2050px;
+  /* 모바일 뷰 */
+  @media (max-width: 767px) {
+    height: 1696px;
+  }
 `;
 
 export const ToggleSection = styled.section`
