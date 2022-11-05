@@ -16,19 +16,5 @@ const LinkMap = {
 };
 
 export const getLinkNameAndSrcWithType = (title: LinkDetailType) => {
-  switch (title) {
-    case '웹사이트':
-      return website;
-    case '구글 플레이스토어':
-      return googleplay;
-    case '앱 스토어':
-      return appstore;
-    case 'Github':
-      return github;
-    case 'instagram':
-      return instagram;
-    case '발표영상':
-      return media;
-  }
-  // return LinkMap[title];
+  return LinkMap[title];
 };
