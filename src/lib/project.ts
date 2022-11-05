@@ -11,6 +11,12 @@ export const getProjectDetail = async (projectId: number) => {
   return data;
 };
 
+export const getProjectByCategory = async (category: string) => {
+  const { data } = await client.get(`/projects?filter=${category}`);
+
+  return data;
+};
+
 export const getProjectList = async () => {
   const { data } = await client.get('/projects');
 
