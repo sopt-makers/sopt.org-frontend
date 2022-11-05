@@ -10,27 +10,27 @@ import { ReactComponent as WebIcon } from '@src/assets/logo/website.svg';
 // TODO all project link type should be applied to links switch-case
 // TODO project service type should be changed from array to string (also change project type)
 // TODO thumbnail image should be applied to Image
-export function Project({ project }: { project: ProjectType }) {
+export function ProjectCard({ project }: { project: ProjectType }) {
   return (
     <Link href={`/project/${project.id}`}>
       <article className={styles.item}>
         <div className={styles['image-wrapper']}>
-          <Image src={project.logoImageUrl} width={100} height={100} alt="logo" />
+          <Image src={project.logoImage} width={100} height={100} alt="logo" />
         </div>
         <div className={styles.content}>
           <div className={styles.types}>
             <div>{project.serviceType[0]}</div>
-            <div>{project.semester}기</div>
+            <div>{project.generation}기</div>
           </div>
           <div className={styles.text}>
             <h5>{project.name}</h5>
-            <p>{project.shortIntroduction}</p>
+            <p>{project.summary}</p>
           </div>
           <div className={styles.links}>
-            {project.link?.map(({ type, url }, index) => (
+            {project.link?.map(({ title, url }, index) => (
               <div key={index}>
                 {(() => {
-                  switch (type) {
+                  switch (title) {
                     case 'github':
                       return (
                         <>

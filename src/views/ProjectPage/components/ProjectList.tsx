@@ -6,7 +6,7 @@ import styles from '../styles/project-list.module.scss';
 import { reducer } from '../lib/reducer';
 import { getProjectList } from '@src/lib/project';
 import { Condition } from '@src/lib';
-import { EmptyContent, Project, ProjectEnrollSection } from '../components';
+import { EmptyContent, ProjectCard, ProjectEnrollSection } from '../components';
 
 export function ProjectList({ selectedCategory }: { selectedCategory: CategoryType | undefined }) {
   const [state, dispatch] = useReducer(reducer, { _TAG: 'IDLE' });
@@ -50,14 +50,15 @@ export function ProjectList({ selectedCategory }: { selectedCategory: CategoryTy
               <div className={styles['list-container']}>
                 <Condition statement={listLength > 0}>
                   <div className={styles['total-count']}>
-                    <p>3개의 프로젝트가 있어요.</p>
+                    <div>3개의 프로젝트가 있어요.</div>
                   </div>
                   <section className={styles['list-data-container']}>
                     {state.data.map((project, index) => (
-                      <Project key={index} project={project} />
+                      <ProjectCard key={index} project={project} />
                     ))}
                     {state.data.map(
-                      (project, index) => index === 0 && <Project key={index} project={project} />,
+                      (project, index) =>
+                        index === 0 && <ProjectCard key={index} project={project} />,
                     )}
                   </section>
                 </Condition>
