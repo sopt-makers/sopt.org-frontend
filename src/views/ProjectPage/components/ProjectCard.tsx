@@ -43,7 +43,7 @@ function RepresentativeImageRender(logoImage: string, thumbnailImage?: string) {
       {thumbnailImage && thumbnailImage?.length > 0 ? (
         <Image src={thumbnailImage} width={380} height={208} alt="thumbnail" />
       ) : (
-        <Image src={logoImage} width={100} height={100} alt="logo" placeholder="blur" />
+        <Image src={logoImage} width={100} height={100} alt="logo" />
       )}
     </div>
   );
