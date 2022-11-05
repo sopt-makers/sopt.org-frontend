@@ -58,6 +58,8 @@ function ProjectDetailPage() {
     detail,
   } = data;
 
+  console.log(link);
+
   return (
     <Layout>
       <Header />
@@ -117,12 +119,12 @@ function ProjectDetailPage() {
                 </S.ProjectInfo>
                 <S.ProjectLinkWrapper>
                   {link.map(({ title, url }: LinkType) => {
-                    const src = getLinkNameAndSrcWithType(title);
+                    const { name, src } = getLinkNameAndSrcWithType(title);
 
                     return (
-                      <Link href={url} key={title}>
+                      <Link href={url} key={name}>
                         <S.ProjectLink>
-                          <Image src={src} alt={title} width="56" height="56" />
+                          <Image src={src} alt={name} width="56" height="56" />
                           <span>{name}</span>
                         </S.ProjectLink>
                       </Link>

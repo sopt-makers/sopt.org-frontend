@@ -75,10 +75,10 @@ export const ProjectImageWrapper = styled.div`
 
 export const ProjectWrapper = styled.div`
   display: flex;
-  height: 2050px;
+  margin-bottom: 240px;
   /* 모바일 뷰 */
   @media (max-width: 767px) {
-    height: 1696px;
+    margin-bottom: 160px;
   }
 `;
 
@@ -115,7 +115,7 @@ export const LogoImageWrapper = styled.div`
 const CommonWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 379px;
   height: fit-content;
   border-radius: 8px;
   background: #242424;
@@ -289,6 +289,7 @@ export const MemberDetail = styled.div`
 `;
 
 export const ProjectDescription = styled(CommonWrapper)`
+  width: fit-content;
   border: 2px solid #3e3e3e;
   border-radius: 10px;
   background-color: transparent;
