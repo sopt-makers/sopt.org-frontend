@@ -1,10 +1,14 @@
 import cc from 'classcat';
 import { ProjectCategoryType } from '../lib/constants';
 import styles from '../styles/project-list.module.scss';
+import { useState, useEffect, useRef } from 'react';
+import { useInView } from 'react-intersection-observer';
+import { Oval } from 'svg-loaders-react';
 
 import { Condition } from '@src/lib';
 import { EmptyContent, ProjectCard, ProjectEnrollSection } from '../components';
 import { ProjectType, State } from '../types';
+import useScroll from '../hooks/useScroll';
 
 interface ProjectListProp {
   state: State<ProjectType>;
@@ -33,6 +37,7 @@ export function ProjectList({ selectedCategory, state }: ProjectListProp) {
                   {ProjectCardList(projectList)}
                 </Condition>
                 <Condition statement={listLength === 0}>
+                  {ProjectCategoryDescription(selectedCategory)}
                   <EmptyContent />
                 </Condition>
                 <ProjectEnrollSection />
@@ -46,12 +51,44 @@ export function ProjectList({ selectedCategory, state }: ProjectListProp) {
 }
 
 function ProjectCardList(list: ProjectType[]) {
+  const [cardList, setCardList] = useState(list.slice(0, 15));
+  const [isFetching, setIsFetching] = useState<boolean>(false);
+  const isScrollMoveDown = useScroll();
+  const { ref, inView } = useInView({
+    threshold: 1,
+    triggerOnce: false,
+  });
+  const count = useRef<number | null>(1);
+
+  useEffect(() => {
+    if (count.current) {
+      const isComplete = Math.floor(list.length / 15) <= count.current;
+
+      if (inView && isScrollMoveDown && !isComplete) {
+        count.current = count.current + 1;
+        setIsFetching(true);
+        setTimeout(() => {
+          setCardList(list.slice(0, (count.current as number) * 15));
+          setIsFetching(false);
+        }, 600);
+      }
+    }
+  }, [inView, isScrollMoveDown, list]);
+
   return (
-    <section className={styles['card-list']}>
-      {list.map((project, index) => (
-        <ProjectCard key={index} project={project} />
-      ))}
-    </section>
+    <>
+      <section className={styles['card-list']}>
+        {cardList.map((project, index) => (
+          <ProjectCard key={index} project={project} />
+        ))}
+      </section>
+      <div className={styles['observered']} ref={ref} />
+      {isFetching && isScrollMoveDown && (
+        <div className={styles['spinner']}>
+          <Oval />
+        </div>
+      )}
+    </>
   );
 }
 

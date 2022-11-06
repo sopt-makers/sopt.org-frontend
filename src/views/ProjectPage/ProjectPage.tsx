@@ -9,9 +9,7 @@ import { Condition } from '@src/lib';
 import useFetch from './hooks/useFetch';
 
 function Projects() {
-  const [selectedCategory, setCategory] = useState<ProjectCategoryType | undefined>(
-    ProjectCategoryType.APPJAM,
-  );
+  const [selectedCategory, setCategory] = useState<ProjectCategoryType | undefined>();
   const state = useFetch(selectedCategory);
 
   const isDesktop = useMediaQuery({
