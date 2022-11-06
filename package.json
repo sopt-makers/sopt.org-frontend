@@ -29,7 +29,8 @@
     "react-spinners": "^0.13.4",
     "react-test-renderer": "^18.2.0",
     "react-toastify": "^9.0.8",
-    "shortid": "^2.2.16"
+    "shortid": "^2.2.16",
+    "svg-loaders-react": "^2.2.1"
   },
   "devDependencies": {
     "@babel/core": "^7.18.10",
