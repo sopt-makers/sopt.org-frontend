@@ -2,13 +2,17 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  justify-content: center;
+  align-items: center;
 
-  align-items: flex-end;
   @media (max-width: 1279px) {
     align-items: center;
   }
 }
+
+/* 
+list-container는 description, count, card-list 영역을 가짐.
+세 개의 영역 모두 65% 의 width를 가짐
+*/
 
 .list-container {
   height: 100%;
@@ -24,13 +28,97 @@
     margin-top: 90px;
   }
 
-  .total-count {
-    width: 100%;
+  .category-description {
+    display: flex;
+    flex-direction: column;
+    width: 65%;
+    height: 160px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: linear-gradient(90deg, #000000 1.33%, rgba(0, 0, 0, 0) 100%);
+    border-radius: 10px;
+
+    margin-bottom: 80px;
+
+    p {
+      display: flex;
+      justify-content: center;
+
+      color: rgba(255, 255, 255, 0.8);
+      font-family: 'SUIT';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 24px;
+    }
+
+    p:first-child {
+      padding-bottom: 10px;
+    }
+
+    span:nth-child(2) {
+      text-indent: 10px;
+      font-weight: 700;
+    }
+
+    @media screen and (max-width: 1280px) {
+      width: 80%;
+
+      p {
+        color: rgba(255, 255, 255, 0.8);
+        font-family: 'SUIT';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 20px;
+      }
+
+      span:nth-child(2) {
+        text-indent: 10px;
+        font-weight: 700;
+      }
+    }
+
+    @media screen and (max-width: 766px) {
+      width: 80%;
+      height: 124px;
+
+      p {
+        color: rgba(255, 255, 255, 0.8);
+        font-family: 'SUIT';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 15px;
+      }
+
+      p:nth-child(2) {
+        display: flex;
+        flex-direction: column;
+
+        span {
+          display: flex;
+          justify-content: center;
+        }
+
+        span:first-child {
+          padding-bottom: 10px;
+        }
+
+        span:nth-child(2) {
+          font-weight: 700;
+        }
+      }
+    }
+  }
+
+  .list-count {
+    width: 65%;
 
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 5px 0 50px 0;
+    margin-bottom: 80px;
 
     & > div {
       color: #8e8e8e;
@@ -50,17 +138,15 @@
     }
   }
 
-  .list-data-container {
-    width: 100%;
+  .card-list {
+    width: 65%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    padding: 0 270px;
     gap: 20px;
 
     @media screen and (max-width: 1280px) {
       grid-template-columns: 1fr 1fr;
       gap: 20px;
-      padding: 0 160px;
     }
 
     @media screen and (max-width: 766px) {
@@ -69,7 +155,6 @@
       align-items: center;
       justify-content: center;
       gap: 20px;
-      padding: 0;
     }
   }
 }
