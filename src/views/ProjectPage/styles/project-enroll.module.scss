@@ -14,9 +14,12 @@
 
   p {
     padding-bottom: 10px;
+
     color: rgba(255, 255, 255, 0.5);
+    font-family: 'SUIT';
+    font-style: normal;
     font-weight: 500;
-    font-size: 15px;
+    font-size: 18px;
   }
 
   .content {
@@ -28,5 +31,10 @@
     font-weight: 700;
     font-size: 15px;
     cursor: pointer;
+  }
+
+  @media (max-width: 1279px) {
+    font-weight: 500;
+    font-size: 15px;
   }
 }

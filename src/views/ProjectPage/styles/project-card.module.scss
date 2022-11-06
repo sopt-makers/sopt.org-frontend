@@ -16,16 +16,19 @@
   cursor: pointer;
 
   .image-wrapper {
-    width: 368px;
+    width: 380px;
     height: 208px;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #141414;
+    border-radius: 10px;
+    overflow: hidden;
 
     @media screen and (max-width: 1280px) {
-      width: 316px;
+      width: 328px;
       height: 176px;
+      border-radius: 10px;
     }
   }
 
@@ -75,9 +78,7 @@
     }
 
     .links {
-      & > div {
-        display: flex;
-      }
+      display: flex;
 
       .icon-wrapper {
         display: flex;

@@ -1,3 +1,4 @@
+import { ProjectCategoryType } from '@src/views/ProjectPage/lib/constants';
 import axios from 'axios';
 
 const client = axios.create({
@@ -7,6 +8,12 @@ const client = axios.create({
 
 export const getProjectDetail = async (projectId: number) => {
   const { data } = await client.get(`/projects/${projectId}`);
+
+  return data;
+};
+
+export const getProjectByCategory = async (category?: ProjectCategoryType) => {
+  const { data } = await client.get(`/projects?filter=${category}`);
 
   return data;
 };
