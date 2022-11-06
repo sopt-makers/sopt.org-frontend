@@ -14,20 +14,20 @@ type ModalProps = {
 export function MobileFilterModal({ toggleModalState, selectedCategory, setCategory }: ModalProps) {
   const [isCategoryOpen, toggleCategoryOpenState] = useState(false);
 
+  const ableScroll = () => (document.body.style.overflow = 'scroll');
+
   const handleSelect = (id: ProjectCategoryType) => {
     setCategory(id);
     toggleModalState(false);
+    ableScroll();
   };
 
   return (
     <div className={styles.modal}>
       <div className={styles.overlay} onClick={() => toggleModalState(false)}></div>
       <div className={styles['content']}>
-        <div className={styles['title']}>
-          <ToggleArrowBtn
-            className={cc([isCategoryOpen && styles.isRotated])}
-            onClick={() => toggleCategoryOpenState((prev) => !prev)}
-          />
+        <div className={styles['title']} onClick={() => toggleCategoryOpenState((prev) => !prev)}>
+          <ToggleArrowBtn className={cc([isCategoryOpen && styles.isRotated])} />
           <h4>프로젝트 유형</h4>
         </div>
         <Condition statement={isCategoryOpen}>
