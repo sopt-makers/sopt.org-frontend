@@ -60,7 +60,6 @@ specifiers:
   react-toastify: ^9.0.8
   sass: ^1.55.0
   shortid: ^2.2.16
-  svg-loaders-react: ^2.2.1
   ts-jest: ^28.0.4
   ts-loader: ^9.3.0
   ts-pattern: ^4.0.5
@@ -87,7 +86,6 @@ dependencies:
   react-test-renderer: 18.2.0_react@18.1.0
   react-toastify: 9.0.8_ef5jwxihqo6n7gxfmzogljlgcm
   shortid: 2.2.16
-  svg-loaders-react: 2.2.1
 
 devDependencies:
   '@babel/core': 7.18.10
@@ -6705,10 +6703,6 @@ packages:
   /supports-preserve-symlinks-flag/1.0.0:
     resolution: {integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==}
     engines: {node: '>= 0.4'}
-
-  /svg-loaders-react/2.2.1:
-    resolution: {integrity: sha512-ATfg5pAMOla2GqPcwGRDrNTLlTQzl2fMvfW290j20qH7qpB61C3SQAnu+T9t8Z+V4IKKN2Bm1d/SaCv5IR1DDA==}
-    dev: false
 
   /svg-parser/2.0.4:
     resolution: {integrity: sha512-e4hG1hRwoOdRb37cIMSgzNsxyzKfayW6VOflrwvR+/bzrkyxY/31WkbgnQpgtrNp1SdpJvpUAGTa/ZoiPNDuRQ==}
