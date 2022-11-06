@@ -3,11 +3,13 @@ import { useMediaQuery } from 'react-responsive';
 
 import { Header, Footer, Layout } from '@src/components';
 import { DesktopFilter, MobileFilter, ProjectList } from './components';
-import { ProjectCategoryType, ProjectCategoryDescription } from './lib/constants';
+import { ProjectCategoryType } from './lib/constants';
 import { Condition } from '@src/lib';
 
 function Projects() {
-  const [selectedCategory, setCategory] = useState<ProjectCategoryType | undefined>(undefined);
+  const [selectedCategory, setCategory] = useState<ProjectCategoryType | undefined>(
+    ProjectCategoryType.APPJAM,
+  );
   const isDesktop = useMediaQuery({
     query: '(min-width: 1280px)',
   });
