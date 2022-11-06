@@ -3,7 +3,8 @@ import { ProjectCategoryType } from '../lib/constants';
 import styles from '../styles/project-list.module.scss';
 import { useState, useEffect, useRef } from 'react';
 import { useInView } from 'react-intersection-observer';
-import { Oval } from 'svg-loaders-react';
+// import { Oval } from 'svg-loaders-react';
+import { OvalSpinner } from './OvalSpinner';
 
 import { Condition } from '@src/lib';
 import { EmptyContent, ProjectCard, ProjectEnrollSection } from '../components';
@@ -85,7 +86,7 @@ function ProjectCardList(list: ProjectType[]) {
       <div className={styles['observered']} ref={ref} />
       {isFetching && isScrollMoveDown && (
         <div className={styles['spinner']}>
-          <Oval />
+          <OvalSpinner />
         </div>
       )}
     </>
