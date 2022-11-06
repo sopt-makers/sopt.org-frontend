@@ -6,10 +6,14 @@ import { DesktopFilter, MobileFilter, ProjectList } from './components';
 import { ProjectCategoryType } from './lib/constants';
 import { Condition } from '@src/lib';
 
+import useFetch from './hooks/useFetch';
+
 function Projects() {
   const [selectedCategory, setCategory] = useState<ProjectCategoryType | undefined>(
     ProjectCategoryType.APPJAM,
   );
+  const state = useFetch(selectedCategory);
+
   const isDesktop = useMediaQuery({
     query: '(min-width: 1280px)',
   });
@@ -24,7 +28,7 @@ function Projects() {
       <Condition statement={isMobile}>
         <MobileFilter selectedCategory={selectedCategory} setCategory={setCategory} />
       </Condition>
-      <ProjectList selectedCategory={selectedCategory} />
+      <ProjectList state={state} selectedCategory={selectedCategory} />
       <Footer />
     </Layout>
   );

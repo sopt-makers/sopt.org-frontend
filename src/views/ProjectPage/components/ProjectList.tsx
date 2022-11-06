@@ -1,44 +1,17 @@
-import { useEffect, useReducer } from 'react';
-import { to } from 'await-to-js';
 import cc from 'classcat';
 import { ProjectCategoryType } from '../lib/constants';
 import styles from '../styles/project-list.module.scss';
-import { reducer } from '../lib/reducer';
-import { getProjectList, getProjectByCategory } from '@src/lib/project';
+
 import { Condition } from '@src/lib';
 import { EmptyContent, ProjectCard, ProjectEnrollSection } from '../components';
-import { ProjectType } from '../types';
+import { ProjectType, State } from '../types';
 
-// APPJAM | SOPKATHON | SOPTERM | STUDY | JOINTSEMINAR | ETC
-export function ProjectList({ selectedCategory }: { selectedCategory?: ProjectCategoryType }) {
-  const [state, dispatch] = useReducer(reducer, { _TAG: 'IDLE' });
-  const fetchProjectList = async () => {
-    dispatch({
-      _TAG: 'FETCH',
-    });
+interface ProjectListProp {
+  state: State<ProjectType>;
+  selectedCategory?: ProjectCategoryType;
+}
 
-    // 분기 처리
-    // const [error, response] = await to(getProjectList());
-    const [error, response] = await to(
-      getProjectByCategory(selectedCategory as ProjectCategoryType),
-    );
-
-    if (error) {
-      return dispatch({
-        _TAG: 'FAILED',
-        error,
-      });
-    }
-
-    if (response) {
-      return dispatch({ _TAG: 'SUCCESS', data: response });
-    }
-  };
-
-  useEffect(() => {
-    fetchProjectList();
-  }, []);
-
+export function ProjectList({ selectedCategory, state }: ProjectListProp) {
   return (
     <div className={cc([styles['total-container']])}>
       {(() => {
