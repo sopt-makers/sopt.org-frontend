@@ -10,9 +10,14 @@ export const Root = styled.div`
 
   margin-top: 130px;
 
-  /* 모바일 뷰 */
+  /* 태블릿 뷰 */
   @media (max-width: 767px) {
     width: calc(100% - 80px);
+    margin-top: 80px;
+  }
+  /* 모바일 뷰 */
+  @media (max-width: 361px) {
+    width: 320px;
     margin-top: 80px;
   }
 `;
@@ -27,7 +32,7 @@ export const ProjectHeader = styled.div`
   width: 100%;
   padding: 40px;
 
-  /* 모바일 뷰 */
+  /* 태블릿 뷰 */
   @media (max-width: 767px) {
     padding: 20px;
   }
@@ -66,7 +71,7 @@ export const ProjectImageWrapper = styled.div`
     border-radius: 5px;
     overflow: hidden;
   }
-  /* 모바일 뷰 */
+  /* 태블릿 뷰 */
   @media (max-width: 767px) {
     width: 320px;
     height: 216px;
@@ -76,9 +81,13 @@ export const ProjectImageWrapper = styled.div`
 export const ProjectWrapper = styled.div`
   display: flex;
   margin-bottom: 240px;
-  /* 모바일 뷰 */
+  /* 태블릿 뷰 */
   @media (max-width: 767px) {
     margin-bottom: 160px;
+  }
+  /* 모바일 뷰 */
+  @media (max-width: 361px) {
+    flex-direction: column;
   }
 `;
 
@@ -86,9 +95,13 @@ export const ToggleSection = styled.section`
   display: flex;
   flex-direction: column;
   margin-right: 30px;
-  /* 모바일 뷰 */
+  /* 태블릿 뷰 */
   @media (max-width: 767px) {
     margin-right: 20px;
+  }
+  /* 모바일 뷰 */
+  @media (max-width: 361px) {
+    margin: 0;
   }
 `;
 
@@ -105,17 +118,28 @@ export const LogoImageWrapper = styled.div`
   & > span {
     border-radius: 10px;
   }
-  /* 모바일 뷰 */
+  /* 데스크탑 뷰 */
+  @media (min-width: 800px) {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+  }
+  /* 태블릿 뷰 */
   @media (max-width: 767px) {
     top: 20px;
     right: 20px;
+  }
+  /* 모바일 뷰 */
+  @media (max-width: 361px) {
+    position: static;
+    margin-bottom: 24px;
   }
 `;
 
 const CommonWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  width: 379px;
+  width: 100%;
   height: fit-content;
   border-radius: 8px;
   background: #242424;
@@ -124,7 +148,7 @@ const CommonWrapper = styled.div`
 export const ProjectOverview = styled(CommonWrapper)<{ isOverviewOpened: boolean }>`
   margin-bottom: 16px;
   padding: 40px;
-  /* 모바일 뷰 */
+  /* 태블릿 뷰 */
   @media (max-width: 767px) {
     padding: ${({ isOverviewOpened }) => (isOverviewOpened ? '28px' : '25px 28px 32px 28px')};
   }
@@ -228,7 +252,7 @@ export const ProjectLink = styled.div`
 export const ProjectTeam = styled(CommonWrapper)`
   margin-bottom: 16px;
   padding: 40px;
-  /* 모바일 뷰 */
+  /* 태블릿 뷰 */
   @media (max-width: 767px) {
     padding: 28px;
   }
@@ -272,7 +296,7 @@ export const MemberDetail = styled.div`
     color: #ffffff;
     font-size: 16px;
     font-weight: 600;
-    /* 모바일 뷰 */
+    /* 태블릿 뷰 */
     @media (max-width: 767px) {
       font-size: 15px;
     }
@@ -294,7 +318,7 @@ export const ProjectDescription = styled(CommonWrapper)`
   border-radius: 10px;
   background-color: transparent;
   padding: 40px;
-  /* 모바일 뷰 */
+  /* 태블릿 뷰 */
   @media (max-width: 767px) {
     padding: 28px;
   }
