@@ -3,7 +3,6 @@ import styled from '@emotion/styled';
 export const Root = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
   width: calc(100% - 360px);
   min-height: calc(100vh - 243px);
