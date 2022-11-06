@@ -1,15 +1,21 @@
 export interface TeamMembersType {
   name: string;
   role: string;
-  roleDetail: string;
+  description: string;
 }
 
 export interface LinkType {
-  type: LinkDetailType;
+  title: LinkDetailType;
   url: string;
 }
 
-export type LinkDetailType = 'website' | 'appstore' | 'github' | 'instagram' | 'media';
+export type LinkDetailType =
+  | '웹사이트'
+  | '앱 스토어'
+  | '구글 플레이스토어'
+  | 'Github'
+  | 'instagram'
+  | '발표영상';
 
 export interface UpButtonProps {
   isScrolled: boolean;

@@ -3,20 +3,28 @@ import styled from '@emotion/styled';
 export const Root = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
   width: calc(100% - 360px);
+  min-height: calc(100vh - 243px);
+
   margin: 0 auto;
 
   margin-top: 130px;
 
+  /* 태블릿 뷰 */
+  @media (max-width: 767px) {
+    width: calc(100% - 80px);
+    margin-top: 80px;
+  }
   /* 모바일 뷰 */
-  @media (max-width: 1279px) {
+  @media (max-width: 361px) {
     width: 320px;
     margin-top: 80px;
   }
 `;
 export const ProjectHeader = styled.div`
+  position: relative;
+
   display: flex;
   flex-direction: column;
   margin-bottom: 16px;
@@ -25,13 +33,8 @@ export const ProjectHeader = styled.div`
   width: 100%;
   padding: 40px;
 
-  /* 데스크탑 뷰 */
-  @media (min-width: 800px) {
-    position: relative;
-  }
-
-  /* 모바일 뷰 */
-  @media (max-width: 799px) {
+  /* 태블릿 뷰 */
+  @media (max-width: 767px) {
     padding: 20px;
   }
 
@@ -41,7 +44,7 @@ export const ProjectHeader = styled.div`
       color: #ffffff;
       font-size: 32px;
       font-weight: 700;
-      @media (max-width: 799px) {
+      @media (max-width: 767px) {
         font-size: 22px;
       }
     }
@@ -50,7 +53,7 @@ export const ProjectHeader = styled.div`
       color: #8e8e8e;
       font-size: 22px;
       font-weight: 500;
-      @media (max-width: 799px) {
+      @media (max-width: 767px) {
         font-size: 15px;
       }
     }
@@ -69,8 +72,8 @@ export const ProjectImageWrapper = styled.div`
     border-radius: 5px;
     overflow: hidden;
   }
-  /* 모바일 뷰 */
-  @media (max-width: 799px) {
+  /* 태블릿 뷰 */
+  @media (max-width: 767px) {
     width: 320px;
     height: 216px;
   }
@@ -79,8 +82,12 @@ export const ProjectImageWrapper = styled.div`
 export const ProjectWrapper = styled.div`
   display: flex;
   margin-bottom: 240px;
+  /* 태블릿 뷰 */
+  @media (max-width: 767px) {
+    margin-bottom: 160px;
+  }
   /* 모바일 뷰 */
-  @media (max-width: 799px) {
+  @media (max-width: 361px) {
     flex-direction: column;
   }
 `;
@@ -88,27 +95,44 @@ export const ProjectWrapper = styled.div`
 export const ToggleSection = styled.section`
   display: flex;
   flex-direction: column;
-  /* 데스크탑 뷰 */
-  @media (min-width: 800px) {
-    margin-right: 30px;
+  margin-right: 30px;
+  /* 태블릿 뷰 */
+  @media (max-width: 767px) {
+    margin-right: 20px;
+  }
+  /* 모바일 뷰 */
+  @media (max-width: 361px) {
+    margin: 0;
   }
 `;
 
 export const LogoImageWrapper = styled.div`
+  position: absolute;
+  top: 40px;
+  right: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 56px;
   height: 56px;
   object-fit: cover;
+  & > span {
+    border-radius: 10px;
+  }
   /* 데스크탑 뷰 */
   @media (min-width: 800px) {
     position: absolute;
     top: 40px;
     right: 40px;
   }
+  /* 태블릿 뷰 */
+  @media (max-width: 767px) {
+    top: 20px;
+    right: 20px;
+  }
   /* 모바일 뷰 */
-  @media (max-width: 799px) {
+  @media (max-width: 361px) {
+    position: static;
     margin-bottom: 24px;
   }
 `;
@@ -125,8 +149,8 @@ const CommonWrapper = styled.div`
 export const ProjectOverview = styled(CommonWrapper)<{ isOverviewOpened: boolean }>`
   margin-bottom: 16px;
   padding: 40px;
-  /* 모바일 뷰 */
-  @media (max-width: 799px) {
+  /* 태블릿 뷰 */
+  @media (max-width: 767px) {
     padding: ${({ isOverviewOpened }) => (isOverviewOpened ? '28px' : '25px 28px 32px 28px')};
   }
 `;
@@ -157,7 +181,7 @@ export const Title = styled.h1`
   color: #fcfcfc;
   font-size: 22px;
   font-weight: 700;
-  @media (max-width: 799px) {
+  @media (max-width: 767px) {
     font-size: 17px;
   }
 `;
@@ -212,6 +236,10 @@ export const ProjectLink = styled.div`
   width: 80px;
   height: 94px;
 
+  &:not(:last-child) {
+    margin-right: 16px;
+  }
+
   & > span {
     margin-top: 7px;
     text-align: center;
@@ -225,8 +253,8 @@ export const ProjectLink = styled.div`
 export const ProjectTeam = styled(CommonWrapper)`
   margin-bottom: 16px;
   padding: 40px;
-  /* 모바일 뷰 */
-  @media (max-width: 799px) {
+  /* 태블릿 뷰 */
+  @media (max-width: 767px) {
     padding: 28px;
   }
 `;
@@ -248,7 +276,7 @@ export const Members = styled.div`
     color: #ffffff;
     font-size: 18px;
     font-weight: 700;
-    @media (max-width: 799px) {
+    @media (max-width: 767px) {
       font-size: 16px;
     }
   }
@@ -269,8 +297,8 @@ export const MemberDetail = styled.div`
     color: #ffffff;
     font-size: 16px;
     font-weight: 600;
-    /* 모바일 뷰 */
-    @media (max-width: 799px) {
+    /* 태블릿 뷰 */
+    @media (max-width: 767px) {
       font-size: 15px;
     }
   }
@@ -279,19 +307,20 @@ export const MemberDetail = styled.div`
     color: #cccccc;
     font-size: 16px;
     font-weight: 500;
-    @media (max-width: 799px) {
+    @media (max-width: 767px) {
       font-size: 14px;
     }
   }
 `;
 
 export const ProjectDescription = styled(CommonWrapper)`
+  width: fit-content;
   border: 2px solid #3e3e3e;
   border-radius: 10px;
   background-color: transparent;
   padding: 40px;
-  /* 모바일 뷰 */
-  @media (max-width: 799px) {
+  /* 태블릿 뷰 */
+  @media (max-width: 767px) {
     padding: 28px;
   }
 
@@ -301,7 +330,7 @@ export const ProjectDescription = styled(CommonWrapper)`
     color: rgba(255, 255, 255, 0.8);
     font-size: 18px;
     font-weight: 500;
-    @media (max-width: 799px) {
+    @media (max-width: 767px) {
       font-size: 15px;
     }
   }
