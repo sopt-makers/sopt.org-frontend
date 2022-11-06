@@ -6,6 +6,8 @@ export const Root = styled.div`
   justify-content: space-between;
   align-items: center;
   width: calc(100% - 360px);
+  min-height: calc(100vh - 243px);
+
   margin: 0 auto;
 
   margin-top: 130px;

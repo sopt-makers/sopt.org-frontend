@@ -58,8 +58,6 @@ function ProjectDetailPage() {
     detail,
   } = data;
 
-  console.log(link);
-
   return (
     <Layout>
       <Header />
