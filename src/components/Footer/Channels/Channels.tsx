@@ -20,7 +20,7 @@ function Channels({ isFooter = false }: ChannelsProps) {
         window.open('https://www.facebook.com/clubsopt/');
         break;
       case 'instagram':
-        window.open('https://www.instagram.com/sopt_timi_tmi/');
+        window.open('https://www.instagram.com/sopt_official/');
         break;
       case 'youtube':
         window.open('https://www.youtube.com/c/SOPTMEDIA');
