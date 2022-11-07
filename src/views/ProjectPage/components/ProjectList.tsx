@@ -3,7 +3,6 @@ import { ProjectCategoryType } from '../lib/constants';
 import styles from '../styles/project-list.module.scss';
 import { useState, useEffect, useRef } from 'react';
 import { useInView } from 'react-intersection-observer';
-// import { Oval } from 'svg-loaders-react';
 import { OvalSpinner } from './OvalSpinner';
 
 import { Condition } from '@src/lib';
