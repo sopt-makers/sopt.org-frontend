@@ -5,7 +5,7 @@ import { ProjectCategoryType } from '../../lib/constants';
 import { Condition } from '@src/lib';
 
 type MobileFilterProps = {
-  selectedCategory: ProjectCategoryType | undefined;
+  selectedCategory: ProjectCategoryType;
   setCategory: (args: ProjectCategoryType) => void;
 };
 

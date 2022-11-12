@@ -14,7 +14,7 @@ import useScroll from '../../hooks/useScroll';
 
 interface ProjectListProp {
   state: State<ProjectType>;
-  selectedCategory?: ProjectCategoryType;
+  selectedCategory: ProjectCategoryType;
 }
 
 export function ProjectList({ selectedCategory, state }: ProjectListProp) {
@@ -102,7 +102,7 @@ function ProjectListCount(count: number) {
   );
 }
 
-function ProjectCategoryDescription(category: ProjectCategoryType | undefined) {
+function ProjectCategoryDescription(category: ProjectCategoryType) {
   return (
     <>
       {(() => {
@@ -157,6 +157,7 @@ function ProjectCategoryDescription(category: ProjectCategoryType | undefined) {
                 </p>
               </div>
             );
+          case ProjectCategoryType.ALL:
           case ProjectCategoryType.ETC:
           default:
         }
