@@ -6,15 +6,14 @@
   align-items: center;
   justify-content: center;
   color: rgba(255, 255, 255, 0.5);
+  font-family: 'SUIT';
+  font-style: normal;
 
   .content {
     width: 60%;
     display: flex;
     justify-content: center;
     align-items: center;
-
-    font-family: 'SUIT';
-    font-style: normal;
 
     padding-top: 5px;
     cursor: pointer;
@@ -32,21 +31,22 @@
     span {
       font-size: 22px;
       font-weight: 700;
+      color: rgba(255, 255, 255, 0.5);
     }
   }
 
   @include mobile-tablet {
-    height: 250px;
+    height: 402px;
 
     p {
-      font-size: 18px;
+      font-size: 15px;
       font-weight: 500;
       color: rgba(255, 255, 255, 0.5);
       padding-bottom: 10px;
     }
 
     span {
-      font-size: 18px;
+      font-size: 15px;
       font-weight: 700;
       color: rgba(255, 255, 255, 0.5);
     }

@@ -13,7 +13,7 @@ function Projects() {
   const state = useFetch(selectedCategory);
 
   const isDesktop = useMediaQuery({
-    query: '(min-width: 1280px)',
+    query: '(min-width: 1920px)',
   });
   const isMobile = !isDesktop;
 
