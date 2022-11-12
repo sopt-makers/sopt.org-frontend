@@ -38,13 +38,11 @@ export function ProjectCard({ project }: { project: ProjectType }) {
 }
 
 function RepresentativeImageRender(logoImage: string, thumbnailImage?: string) {
+  const isCardThumbnail = thumbnailImage && thumbnailImage?.length > 0;
   return (
     <div className={styles['image-wrapper']}>
-      {thumbnailImage && thumbnailImage?.length > 0 ? (
-        <Image src={thumbnailImage} width={380} height={208} alt="thumbnail" />
-      ) : (
-        <Image src={logoImage} width={100} height={100} alt="logo" />
-      )}
+      {isCardThumbnail && <Image src={thumbnailImage} width={370} height={170} alt="thumbnail" />}
+      {!isCardThumbnail && <Image src={logoImage} width={100} height={100} alt="logo" />}
     </div>
   );
 }
