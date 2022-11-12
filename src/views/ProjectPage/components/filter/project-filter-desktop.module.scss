@@ -63,16 +63,16 @@
         justify-content: flex-start;
         align-items: center;
 
-        color: #ffffff;
-        font-size: 17px;
-
         width: 180px;
         height: 42px;
         border-radius: 10px;
         padding-left: 18px;
         cursor: pointer;
 
+        color: #cccccc;
+        font-size: 17px;
         &.isClicked {
+          color: #ffffff;
           background: rgba(255, 255, 255, 0.05);
         }
       }

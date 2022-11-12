@@ -30,7 +30,6 @@
   }
 }
 
-// Filter Modal
 .modal {
   position: fixed;
   top: 0;
@@ -62,10 +61,14 @@
       margin-bottom: 30px;
 
       h4 {
-        font-size: 18px;
         color: #ffffff;
         padding-top: 4px;
         padding-left: 10px;
+
+        font-family: 'SUIT';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 18px;
       }
 
       svg.isRotated {
@@ -83,15 +86,15 @@
         justify-content: flex-start;
         align-items: center;
 
-        color: #ffffff;
-        font-size: 16px;
-
         width: 140px;
         height: 40px;
         border-radius: 10px;
         padding-left: 18px;
 
+        color: #cccccc;
+        font-size: 16px;
         &.isClicked {
+          color: #ffffff;
           background: rgba(255, 255, 255, 0.05);
         }
       }
