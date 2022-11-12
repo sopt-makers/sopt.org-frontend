@@ -14,7 +14,7 @@
     height: 468px;
   }
 
-  @include media(mobile, tablet-small, tablet-medium) {
+  @include mobile-tablet {
     width: 328px;
     height: 402px;
   }
@@ -38,7 +38,7 @@
       padding: 6px;
     }
 
-    @include media(mobile, tablet-small, tablet-medium) {
+    @include mobile-tablet {
       width: 328px;
       height: 176px;
       padding: 6px;
