@@ -23,3 +23,18 @@
     @content;
   }
 }
+
+$breakpoints: (
+  mobile: 0px,
+  table-small: 766px,
+  table-medium: 1124px,
+  desktop: 1920px,
+);
+
+@mixin media($keys...) {
+  @each $key in $keys {
+    @media (min-width: map-get($breakpoints, $key)) {
+      @content;
+    }
+  }
+}
