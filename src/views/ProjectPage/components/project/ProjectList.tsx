@@ -1,14 +1,16 @@
-import cc from 'classcat';
-import { ProjectCategoryType } from '../lib/constants';
-import styles from '../styles/project-list.module.scss';
 import { useState, useEffect, useRef } from 'react';
+import cc from 'classcat';
+import { ProjectCategoryType } from '../../lib/constants';
+import styles from './project-list.module.scss';
+
 import { useInView } from 'react-intersection-observer';
-import { OvalSpinner } from './OvalSpinner';
+import { OvalSpinner } from '../common/OvalSpinner';
 
 import { Condition } from '@src/lib';
-import { EmptyContent, ProjectCard, ProjectEnrollSection } from '../components';
-import { ProjectType, State } from '../types';
-import useScroll from '../hooks/useScroll';
+import { EmptyContent } from '../common/EmptyContent';
+import { ProjectCard, ProjectEnrollSection } from '../project';
+import { ProjectType, State } from '../../types';
+import useScroll from '../../hooks/useScroll';
 
 interface ProjectListProp {
   state: State<ProjectType>;

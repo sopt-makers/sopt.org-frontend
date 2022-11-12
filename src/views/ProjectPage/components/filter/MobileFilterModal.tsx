@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { ReactComponent as ToggleArrowBtn } from '@src/assets/icons/ToggleArrow.svg';
-import { projectCategoryList, ProjectCategoryType } from '../lib/constants';
-import styles from '../styles/mobile-filter.module.scss';
+import { projectCategoryList, ProjectCategoryType } from '../../lib/constants';
+import styles from './project-filter-mobile.module.scss';
 import { Condition } from '@src/lib';
 import cc from 'classcat';
 

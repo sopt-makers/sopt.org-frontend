@@ -1,12 +1,15 @@
-.project-filter {
-  position: fixed;
-  left: 60px;
-  top: 180px;
-  width: 180px;
-  height: 500px;
+@import '@src/styles/mixins';
 
-  background: #181818;
-  border-radius: 10px 10px 0px 0px;
+@include desktop {
+  .project-filter {
+    position: fixed;
+    left: 60px;
+    top: 180px;
+    width: 180px;
+    height: 500px;
+    background: #181818;
+    border-radius: 10px 10px 0px 0px;
+  }
 
   .title {
     display: flex;

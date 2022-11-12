@@ -1,4 +1,4 @@
-import styles from '../styles/mobile-filter.module.scss';
+import styles from './project-filter-mobile.module.scss';
 import { ReactComponent as UpArrow } from '@src/assets/icons/upArrow.svg';
 import { ReactComponent as MobileFilterBtn } from '@src/assets/icons/MobileFilterBtn.svg';
 

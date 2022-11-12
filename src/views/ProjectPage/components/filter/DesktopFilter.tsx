@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import styles from '../styles/desktop-filter.module.scss';
-import { projectCategoryList, ProjectCategoryType } from '../lib/constants';
+import styles from './project-filter-desktop.module.scss';
+import { projectCategoryList, ProjectCategoryType } from '../../lib/constants';
 import cc from 'classcat';
 import { Condition } from '@src/lib';
 import { ReactComponent as ToggleArrowBtn } from '@src/assets/icons/ToggleArrow.svg';
