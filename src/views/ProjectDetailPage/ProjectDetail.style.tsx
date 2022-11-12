@@ -4,16 +4,15 @@ export const Root = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: calc(100% - 360px);
+  width: 1200px;
   min-height: calc(100vh - 243px);
 
   margin: 0 auto;
-
   margin-top: 130px;
 
   /* 태블릿 뷰 */
   @media (max-width: 1280px) {
-    width: calc(100% - 80px);
+    width: 686px;
     margin-top: 80px;
   }
   /* 모바일 뷰 */
@@ -24,7 +23,6 @@ export const Root = styled.div`
 `;
 export const ProjectHeader = styled.div`
   position: relative;
-
   display: flex;
   flex-direction: column;
   margin-bottom: 16px;
@@ -86,6 +84,7 @@ export const ProjectImageWrapper = styled.div`
 `;
 
 export const ProjectWrapper = styled.div`
+  width: 100%;
   display: flex;
   margin-bottom: 240px;
   /* 태블릿 뷰 */
@@ -146,9 +145,14 @@ export const LogoImageWrapper = styled.div`
 const CommonWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  width: 380px;
   height: fit-content;
   border-radius: 8px;
   background: #242424;
+  /* 태블릿 뷰 */
+  @media (max-width: 1280px) {
+    width: 320px;
+  }
 `;
 
 export const ProjectOverview = styled(CommonWrapper)<{ isOverviewOpened: boolean }>`
@@ -333,13 +337,14 @@ export const MemberDetail = styled.div`
 `;
 
 export const ProjectDescription = styled(CommonWrapper)`
-  width: fit-content;
+  width: 790px;
   border: 2px solid #3e3e3e;
   border-radius: 10px;
   background-color: transparent;
   padding: 40px;
   /* 태블릿 뷰 */
   @media (max-width: 1280px) {
+    width: 346px;
     padding: 28px;
   }
 
