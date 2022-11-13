@@ -5,10 +5,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
-  @media (max-width: 1279px) {
-    align-items: center;
-  }
 }
 
 /* 
@@ -17,143 +13,155 @@ list-container는 description, count, card-list 영역을 가짐.
 */
 
 .list-container {
-  height: 100%;
-  width: 100%;
-
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 130px;
 
-  @media (max-width: 1279px) {
-    margin-top: 90px;
+  @include desktop {
+    height: 100%;
+    width: 100%;
+    margin-top: 130px;
   }
 
-  .category-description {
+  @include mobile-tablet {
+    height: 100%;
+    width: 100%;
+    margin-top: 90px;
+  }
+}
+
+.category-description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 160px;
+  background: linear-gradient(90deg, #000000 1.33%, rgba(0, 0, 0, 0) 100%);
+  border-radius: 10px;
+  margin-bottom: 80px;
+
+  p {
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: center;
-    height: 160px;
-    background: linear-gradient(90deg, #000000 1.33%, rgba(0, 0, 0, 0) 100%);
-    border-radius: 10px;
-    margin-bottom: 80px;
 
+    color: rgba(255, 255, 255, 0.8);
+    font-family: 'SUIT';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+  }
+
+  p:first-child {
+    padding-bottom: 10px;
+  }
+
+  .category-summary {
+    text-indent: 10px;
+    font-weight: 700;
+  }
+
+  @include desktop {
+    width: 65%;
+  }
+
+  @include tablet {
+    width: 70%;
     p {
-      display: flex;
-      justify-content: center;
-
-      color: rgba(255, 255, 255, 0.8);
-      font-family: 'SUIT';
-      font-style: normal;
       font-weight: 500;
-      font-size: 24px;
+      font-size: 20px;
     }
-
-    p:first-child {
-      padding-bottom: 10px;
-    }
-
     .category-summary {
       text-indent: 10px;
       font-weight: 700;
     }
+  }
 
-    @include desktop {
-      width: 65%;
+  @include mobile {
+    width: 85%;
+    height: 130px;
+    p {
+      font-family: 'SUIT';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 15px;
     }
-
-    @include tablet {
-      width: 70%;
-      p {
-        font-weight: 500;
-        font-size: 20px;
-      }
-      .category-summary {
-        text-indent: 10px;
-        font-weight: 700;
-      }
-    }
-
-    @include mobile {
-      width: 85%;
-      height: 130px;
-      p {
+    p:nth-child(2) {
+      display: flex;
+      flex-direction: column;
+      span {
+        display: flex;
+        justify-content: center;
         font-family: 'SUIT';
         font-style: normal;
         font-weight: 500;
         font-size: 15px;
       }
-      p:nth-child(2) {
-        display: flex;
-        flex-direction: column;
-        span {
-          display: flex;
-          justify-content: center;
-          font-family: 'SUIT';
-          font-style: normal;
-          font-weight: 500;
-          font-size: 15px;
-        }
-        span:first-child {
-          padding-bottom: 10px;
-        }
-        .category-summary {
-          font-weight: 700;
-        }
+      span:first-child {
+        padding-bottom: 10px;
+      }
+      .category-summary {
+        font-weight: 700;
       }
     }
   }
+}
 
-  .list-count {
-    width: 90%;
+.list-count {
+  width: 90%;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 80px;
 
-    & > div {
-      color: #8e8e8e;
-      font-size: 24px;
+  & > div {
+    color: #8e8e8e;
+    font-size: 24px;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 100%;
+
+    @include tablet-small {
+      font-size: 22px;
+      padding-left: 0;
+    }
+
+    @include mobile {
+      font-family: 'SUIT';
+      font-style: normal;
       font-weight: 500;
-      font-size: 32px;
-      line-height: 100%;
-
-      @include tablet-small {
-        font-size: 22px;
-        padding-left: 0;
-      }
-
-      @include mobile {
-        font-family: 'SUIT';
-        font-style: normal;
-        font-weight: 500;
-        font-size: 18px;
-        padding: 0;
-      }
+      font-size: 18px;
+      padding: 0;
     }
   }
+}
 
-  .card-list {
-    width: 65%;
-    display: grid;
+.card-list {
+  width: 65%;
+  display: grid;
+
+  @include desktop {
     grid-template-columns: 1fr 1fr 1fr;
     gap: 20px;
+  }
 
-    @media screen and (max-width: 1280px) {
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-    }
+  @include tablet-medium {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+  }
 
-    @media screen and (max-width: 766px) {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 20px;
-    }
+  @include tablet-small {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  @include mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
   }
 }
 
