@@ -24,7 +24,7 @@ function ProjectDetailPage() {
   const { data } = useQuery('projectDetail', () => getProjectDetail(+id), {
     enabled: !!id,
   });
-  const [isOverviewOpened, setIsOverviewOpened] = useState(false);
+  const [isOverviewOpened, setIsOverviewOpened] = useState(true);
   const [isTeamMemberOpened, setIsTeamMemberOpened] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -91,7 +91,7 @@ function ProjectDetailPage() {
                 </button>
               </S.ToggleWrapper>
               <S.ProjectOverviewDetail isOverviewOpened={isOverviewOpened}>
-                <S.ProjectInfo>
+                <S.ProjectInfo isLinkExist={link.length !== 0}>
                   <div>
                     {projectOverviewTitle.map((title) => (
                       <h1 key={title}>{title}</h1>
@@ -100,7 +100,7 @@ function ProjectDetailPage() {
 
                   <div>
                     <span>
-                      {dateFormat(startAt)} - {isAvailable ? '진행중' : dateFormat(endAt) || ''}
+                      {dateFormat(startAt)} - {dateFormat(endAt) || '진행중'}
                     </span>
                     <span>{generation ? generation + '기' : '-'}</span>
                     <span>
@@ -109,8 +109,13 @@ function ProjectDetailPage() {
                         .join(', ')}
                     </span>
                     <span>
-                      {isAvailable && '운영중'}
-                      {isFounding && '창업중'}
+                      {!isAvailable && !isFounding
+                        ? '-'
+                        : isAvailable && !isFounding
+                        ? '운영중'
+                        : !isAvailable && isFounding
+                        ? '창업중'
+                        : '운영중, 창업중'}
                     </span>
                     <span>{link.length ? link.length + '개' : '-'}</span>
                   </div>
@@ -120,7 +125,7 @@ function ProjectDetailPage() {
                     const { name, src } = getLinkNameAndSrcWithType(title);
 
                     return (
-                      <Link href={url} key={name}>
+                      <Link href={url} key={title}>
                         <S.ProjectLink>
                           <Image src={src} alt={name} width="56" height="56" />
                           <span>{name}</span>
@@ -142,8 +147,8 @@ function ProjectDetailPage() {
                 </button>
               </S.ToggleWrapper>
               <S.TeamMembers isTeamMemberOpened={isTeamMemberOpened}>
-                {members.map(({ name, role, description }: TeamMembersType) => (
-                  <S.Members key={name}>
+                {members.map(({ name, role, description }: TeamMembersType, idx: number) => (
+                  <S.Members key={idx}>
                     <h1>{role}</h1>
 
                     <S.MemberDetail>

@@ -34,6 +34,7 @@ export const HeaderContainer = styled.header`
   margin: 0 auto;
 
   background: rgba(24, 24, 24, 0.9);
+  backdrop-filter: blur(20px);
 
   @media (max-width: 1279px) {
     width: calc(100%);
@@ -42,6 +43,6 @@ export const HeaderContainer = styled.header`
     justify-content: space-between;
     padding: 12px 20px;
 
-    backdrop-filter: none;
+    /* backdrop-filter: none; */
   }
 `;
