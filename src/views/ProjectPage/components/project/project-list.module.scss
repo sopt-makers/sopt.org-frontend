@@ -1,3 +1,5 @@
+@import '@src/styles/mixins';
+
 .total-container {
   display: flex;
   flex-direction: column;
@@ -31,16 +33,11 @@ list-container는 description, count, card-list 영역을 가짐.
   .category-description {
     display: flex;
     flex-direction: column;
-    width: 65%;
-    height: 160px;
-
-    display: flex;
     justify-content: center;
     align-items: center;
-
+    height: 160px;
     background: linear-gradient(90deg, #000000 1.33%, rgba(0, 0, 0, 0) 100%);
     border-radius: 10px;
-
     margin-bottom: 80px;
 
     p {
@@ -58,54 +55,51 @@ list-container는 description, count, card-list 영역을 가짐.
       padding-bottom: 10px;
     }
 
-    span:nth-child(2) {
+    .category-summary {
       text-indent: 10px;
       font-weight: 700;
     }
 
-    @media screen and (max-width: 1280px) {
-      width: 80%;
+    @include desktop {
+      width: 65%;
+    }
 
+    @include tablet {
+      width: 70%;
       p {
-        color: rgba(255, 255, 255, 0.8);
-        font-family: 'SUIT';
-        font-style: normal;
         font-weight: 500;
         font-size: 20px;
       }
-
-      span:nth-child(2) {
+      .category-summary {
         text-indent: 10px;
         font-weight: 700;
       }
     }
 
-    @media screen and (max-width: 766px) {
-      width: 80%;
-      height: 124px;
-
+    @include mobile {
+      width: 85%;
+      height: 130px;
       p {
-        color: rgba(255, 255, 255, 0.8);
         font-family: 'SUIT';
         font-style: normal;
         font-weight: 500;
         font-size: 15px;
       }
-
       p:nth-child(2) {
         display: flex;
         flex-direction: column;
-
         span {
           display: flex;
           justify-content: center;
+          font-family: 'SUIT';
+          font-style: normal;
+          font-weight: 500;
+          font-size: 15px;
         }
-
         span:first-child {
           padding-bottom: 10px;
         }
-
-        span:nth-child(2) {
+        .category-summary {
           font-weight: 700;
         }
       }
@@ -113,7 +107,7 @@ list-container는 description, count, card-list 영역을 가짐.
   }
 
   .list-count {
-    width: 65%;
+    width: 90%;
 
     display: flex;
     align-items: center;
@@ -127,12 +121,16 @@ list-container는 description, count, card-list 영역을 가짐.
       font-size: 32px;
       line-height: 100%;
 
-      @media screen and (max-width: 1280px) {
+      @include tablet-small {
         font-size: 22px;
         padding-left: 0;
       }
 
-      @media screen and (max-width: 766px) {
+      @include mobile {
+        font-family: 'SUIT';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
         padding: 0;
       }
     }
