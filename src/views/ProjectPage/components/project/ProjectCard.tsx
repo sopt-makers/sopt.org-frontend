@@ -55,7 +55,7 @@ function ProjectCardMobileImage(logoImage: string, thumbnailImage?: string) {
   const isCardThumbnail = thumbnailImage && thumbnailImage?.length > 0;
   return (
     <>
-      {isCardThumbnail && <Image src={thumbnailImage} width={368} height={208} alt="thumbnail" />}
+      {isCardThumbnail && <Image src={thumbnailImage} width={316} height={176} alt="thumbnail" />}
       {!isCardThumbnail && <Image src={logoImage} width={100} height={100} alt="logo" />}
     </>
   );
@@ -65,7 +65,7 @@ function ProjectCardDesktopImage(logoImage: string, thumbnailImage?: string) {
   const isCardThumbnail = thumbnailImage && thumbnailImage?.length > 0;
   return (
     <>
-      {isCardThumbnail && <Image src={thumbnailImage} width={316} height={176} alt="thumbnail" />}
+      {isCardThumbnail && <Image src={thumbnailImage} width={368} height={208} alt="thumbnail" />}
       {!isCardThumbnail && <Image src={logoImage} width={100} height={100} alt="logo" />}
     </>
   );

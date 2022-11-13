@@ -17,10 +17,9 @@ list-container는 description, count, card-list 영역을 가짐.
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  max-width: 1200px;
 
   @include desktop {
-    height: 100%;
-    width: 100%;
     margin-top: 130px;
   }
 
@@ -62,15 +61,30 @@ list-container는 description, count, card-list 영역을 가짐.
   }
 
   @include desktop {
-    width: 65%;
+    width: 100%;
   }
 
-  @include tablet {
-    width: 70%;
+  @include tablet-medium {
+    width: 90%;
+
     p {
       font-weight: 500;
       font-size: 20px;
     }
+
+    .category-summary {
+      text-indent: 10px;
+      font-weight: 700;
+    }
+  }
+
+  @include tablet-small {
+    width: 75%;
+    p {
+      font-weight: 500;
+      font-size: 20px;
+    }
+
     .category-summary {
       text-indent: 10px;
       font-weight: 700;
@@ -138,7 +152,7 @@ list-container는 description, count, card-list 영역을 가짐.
 }
 
 .card-list {
-  width: 65%;
+  width: 100%;
   display: grid;
 
   @include desktop {
@@ -148,11 +162,13 @@ list-container는 description, count, card-list 영역을 가짐.
 
   @include tablet-medium {
     grid-template-columns: 1fr 1fr 1fr;
+    width: 90%;
     gap: 20px;
   }
 
   @include tablet-small {
     grid-template-columns: 1fr 1fr;
+    width: 75%;
     gap: 20px;
   }
 
