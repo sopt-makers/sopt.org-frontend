@@ -1,2 +1,1 @@
-export * from './DesktopFilter';
-export * from './MobileFilter';
+export * from './ProjectFilter';
