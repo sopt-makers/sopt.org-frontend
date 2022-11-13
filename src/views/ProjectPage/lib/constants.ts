@@ -1,4 +1,5 @@
 export enum ProjectCategoryType {
+  ALL = 'ALL',
   APPJAM = 'APPJAM',
   SOPKATHON = 'SOPSOPKATHON',
   SOPTERM = 'SOPTERM',
@@ -11,6 +12,7 @@ export const projectCategoryList: {
   type: ProjectCategoryType;
   name: string;
 }[] = [
+  { type: ProjectCategoryType.ALL, name: '전체' },
   { type: ProjectCategoryType.APPJAM, name: '🎊 앱잼' },
   { type: ProjectCategoryType.SOPKATHON, name: '💡 솝커톤' },
   { type: ProjectCategoryType.SOPTERM, name: '🛎 솝텀 프로젝트' },

@@ -1,4 +1,4 @@
-import styles from '../styles/mobile-filter.module.scss';
+import styles from './utility.module.scss';
 import { ReactComponent as UpArrow } from '@src/assets/icons/upArrow.svg';
 import { ReactComponent as MobileFilterBtn } from '@src/assets/icons/MobileFilterBtn.svg';
 
@@ -20,7 +20,7 @@ export function MobileUtilityButtons({
   };
 
   return (
-    <div className={styles.utility}>
+    <div className={styles['mobile-utility']}>
       <button type="button" className={styles.up} onClick={() => window.scrollTo(0, 0)}>
         <UpArrow />
       </button>

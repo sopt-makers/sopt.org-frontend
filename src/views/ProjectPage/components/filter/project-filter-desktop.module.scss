@@ -1,12 +1,15 @@
-.project-filter {
-  position: fixed;
-  left: 60px;
-  top: 180px;
-  width: 180px;
-  height: 500px;
+@import '@src/styles/mixins';
 
-  background: #181818;
-  border-radius: 10px 10px 0px 0px;
+@include desktop {
+  .project-filter {
+    position: fixed;
+    left: 60px;
+    top: 180px;
+    width: 180px;
+    height: 500px;
+    background: #181818;
+    border-radius: 10px 10px 0px 0px;
+  }
 
   .title {
     display: flex;
@@ -60,16 +63,16 @@
         justify-content: flex-start;
         align-items: center;
 
-        color: #ffffff;
-        font-size: 17px;
-
         width: 180px;
         height: 42px;
         border-radius: 10px;
         padding-left: 18px;
         cursor: pointer;
 
+        color: #cccccc;
+        font-size: 17px;
         &.isClicked {
+          color: #ffffff;
           background: rgba(255, 255, 255, 0.05);
         }
       }

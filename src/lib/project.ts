@@ -12,7 +12,7 @@ export const getProjectDetail = async (projectId: number) => {
   return data;
 };
 
-export const getProjectByCategory = async (category?: ProjectCategoryType) => {
+export const getProjectByCategory = async (category: Omit<ProjectCategoryType, 'ALL'>) => {
   const { data } = await client.get(`/projects?filter=${category}`);
 
   return data;

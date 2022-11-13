@@ -1,32 +1,32 @@
 import { useState } from 'react';
-import styles from '../styles/desktop-filter.module.scss';
-import { projectCategoryList, ProjectCategoryType } from '../lib/constants';
-import cc from 'classcat';
-import { Condition } from '@src/lib';
 import { ReactComponent as ToggleArrowBtn } from '@src/assets/icons/ToggleArrow.svg';
+import { projectCategoryList, ProjectCategoryType } from '../../lib/constants';
+import styles from './project-filter-mobile.module.scss';
+import { Condition } from '@src/lib';
+import cc from 'classcat';
 
 type ModalProps = {
-  selectedCategory?: ProjectCategoryType;
+  toggleModalState: (args: boolean) => void;
+  selectedCategory: ProjectCategoryType | undefined;
   setCategory: (args: ProjectCategoryType) => void;
 };
 
-export function DesktopFilter({ selectedCategory, setCategory }: ModalProps) {
+export function MobileFilterModal({ toggleModalState, selectedCategory, setCategory }: ModalProps) {
   const [isCategoryOpen, toggleCategoryOpenState] = useState(false);
+
+  const ableScroll = () => (document.body.style.overflow = 'scroll');
+
   const handleSelect = (id: ProjectCategoryType) => {
     setCategory(id);
-    toggleCategoryOpenState((prev) => !prev);
+    toggleModalState(false);
+    ableScroll();
   };
 
   return (
-    <div className={styles['project-filter']}>
-      <div className={styles['title']}>
-        <h3>프로젝트 필터</h3>
-      </div>
+    <div className={styles.modal}>
+      <div className={styles.overlay} onClick={() => toggleModalState(false)}></div>
       <div className={styles['content']}>
-        <div
-          className={styles['category-name']}
-          onClick={() => toggleCategoryOpenState((prev) => !prev)}
-        >
+        <div className={styles['title']} onClick={() => toggleCategoryOpenState((prev) => !prev)}>
           <ToggleArrowBtn className={cc([isCategoryOpen && styles.isRotated])} />
           <h4>프로젝트 유형</h4>
         </div>

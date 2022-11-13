@@ -1,34 +1,53 @@
+@import '@src/styles/mixins';
+
 .item {
-  width: 380px;
-  height: 468px;
   display: flex;
   flex-direction: column;
   align-items: center;
 
   border: 1px solid #353535;
   border-radius: 10px;
+  cursor: pointer;
 
-  @media screen and (max-width: 1280px) {
+  @include desktop {
+    width: 380px;
+    height: 468px;
+  }
+
+  @include mobile-tablet {
     width: 328px;
     height: 402px;
   }
 
-  cursor: pointer;
-
   .image-wrapper {
-    width: 380px;
-    height: 208px;
     display: flex;
     justify-content: center;
     align-items: center;
+
     background-color: #141414;
-    border-radius: 10px;
+    border-radius: 5px;
     overflow: hidden;
 
-    @media screen and (max-width: 1280px) {
-      width: 328px;
+    @include desktop {
+      width: 368px;
+      height: 208px;
+      margin: 7px;
+      padding-bottom: 5px;
+
+      img {
+        border-radius: 10px;
+      }
+    }
+
+    @include mobile-tablet {
+      width: 316px;
       height: 176px;
-      border-radius: 10px;
+      margin: 5px;
+      padding-bottom: 5px;
+
+      img {
+        border-radius: 10px;
+      }
     }
   }
 
@@ -79,6 +98,7 @@
 
     .links {
       display: flex;
+      height: 50px;
 
       .icon-wrapper {
         display: flex;

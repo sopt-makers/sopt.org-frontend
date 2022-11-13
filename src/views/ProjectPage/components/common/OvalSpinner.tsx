@@ -1,13 +1,6 @@
 export function OvalSpinner() {
   return (
-    <svg
-      width={38}
-      height={38}
-      stroke="#fff"
-      viewBox="0 0 38 38"
-      // className={`svg-loaders-svg${className ? ` ${className}` : ''}`}
-      // {...props}
-    >
+    <svg width={38} height={38} stroke="#fff" viewBox="0 0 38 38">
       <g transform="translate(1 1)" strokeWidth={2} fill="none" fillRule="evenodd">
         <circle strokeOpacity={0.5} cx={18} cy={18} r={18} />
         <path d="M36 18c0-9.94-8.06-18-18-18">

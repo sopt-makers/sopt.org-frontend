@@ -1,32 +1,32 @@
 import { useState } from 'react';
-import { ReactComponent as ToggleArrowBtn } from '@src/assets/icons/ToggleArrow.svg';
-import { projectCategoryList, ProjectCategoryType } from '../lib/constants';
-import styles from '../styles/mobile-filter.module.scss';
-import { Condition } from '@src/lib';
+import styles from './project-filter-desktop.module.scss';
+import { projectCategoryList, ProjectCategoryType } from '../../lib/constants';
 import cc from 'classcat';
+import { Condition } from '@src/lib';
+import { ReactComponent as ToggleArrowBtn } from '@src/assets/icons/ToggleArrow.svg';
+import { DesktopUtilityButtons } from '../utility/DesktopUtilityButtons';
 
 type ModalProps = {
-  toggleModalState: (args: boolean) => void;
-  selectedCategory: ProjectCategoryType | undefined;
+  selectedCategory: ProjectCategoryType;
   setCategory: (args: ProjectCategoryType) => void;
 };
 
-export function MobileFilterModal({ toggleModalState, selectedCategory, setCategory }: ModalProps) {
-  const [isCategoryOpen, toggleCategoryOpenState] = useState(false);
-
-  const ableScroll = () => (document.body.style.overflow = 'scroll');
-
+export function DesktopFilter({ selectedCategory, setCategory }: ModalProps) {
+  const [isCategoryOpen, toggleCategoryOpenState] = useState(true);
   const handleSelect = (id: ProjectCategoryType) => {
     setCategory(id);
-    toggleModalState(false);
-    ableScroll();
   };
 
   return (
-    <div className={styles.modal}>
-      <div className={styles.overlay} onClick={() => toggleModalState(false)}></div>
+    <div className={styles['project-filter']}>
+      <div className={styles['title']}>
+        <h3>프로젝트 필터</h3>
+      </div>
       <div className={styles['content']}>
-        <div className={styles['title']} onClick={() => toggleCategoryOpenState((prev) => !prev)}>
+        <div
+          className={styles['category-name']}
+          onClick={() => toggleCategoryOpenState((prev) => !prev)}
+        >
           <ToggleArrowBtn className={cc([isCategoryOpen && styles.isRotated])} />
           <h4>프로젝트 유형</h4>
         </div>
@@ -44,6 +44,7 @@ export function MobileFilterModal({ toggleModalState, selectedCategory, setCateg
           </div>
         </Condition>
       </div>
+      <DesktopUtilityButtons />
     </div>
   );
 }

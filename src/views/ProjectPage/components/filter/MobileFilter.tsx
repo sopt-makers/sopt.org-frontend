@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import { MobileFilterModal } from './MobileFilterModal';
-import { MobileUtilityButtons } from './MobileUtilityButtons';
-import { ProjectCategoryType } from '../lib/constants';
+import { MobileUtilityButtons } from '../utility/MobileUtilityButtons';
+import { ProjectCategoryType } from '../../lib/constants';
 import { Condition } from '@src/lib';
 
 type MobileFilterProps = {
-  selectedCategory: ProjectCategoryType | undefined;
+  selectedCategory: ProjectCategoryType;
   setCategory: (args: ProjectCategoryType) => void;
 };
 
