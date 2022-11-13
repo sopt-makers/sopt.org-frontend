@@ -122,22 +122,24 @@ list-container는 description, count, card-list 영역을 가짐.
 }
 
 .list-count {
-  width: 90%;
-
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 80px;
 
   & > div {
-    color: #8e8e8e;
-    font-size: 24px;
-    font-weight: 500;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+
     font-size: 32px;
-    line-height: 100%;
+    font-weight: 500;
+    color: #8e8e8e;
+    width: 100%;
 
     @include tablet-small {
-      font-size: 22px;
+      font-size: 28px;
       padding-left: 0;
     }
 

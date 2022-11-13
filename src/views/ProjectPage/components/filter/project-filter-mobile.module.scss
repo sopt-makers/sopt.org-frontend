@@ -1,27 +1,59 @@
+@import '@src/styles/mixins';
+
 .modal {
   position: fixed;
   top: 0;
-  z-index: 99;
+  z-index: 100;
   width: 100vw;
   height: 100vh;
-
   border-radius: 10px 10px 0px 0px;
 
-  .overlay {
-    width: 100%;
-    height: 50%;
-    cursor: pointer;
+  @include tablet {
+    display: flex;
+  }
 
+  .overlay {
     opacity: 0.8;
     background-color: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+
+    @include tablet-medium {
+      width: calc(100vw - 350px);
+      height: 100%;
+    }
+
+    @include tablet-small {
+      width: calc(100vw - 300px);
+      height: 100%;
+    }
+
+    @include mobile {
+      width: 100%;
+      height: 50%;
+    }
   }
 
   .content {
-    width: 100%;
-    height: 50%;
     background: #181818;
-    border-radius: 10px 10px 0px 0px;
-    padding: 32px 32px 0 32px;
+
+    @include tablet-medium {
+      width: 350px;
+      height: 100%;
+      padding: 57px 84px 0 62px;
+    }
+
+    @include tablet-small {
+      width: 300px;
+      height: 100%;
+      padding: 57px 84px 0 62px;
+    }
+
+    @include mobile {
+      width: 100%;
+      height: 50%;
+      border-radius: 10px 10px 0px 0px;
+      padding: 32px 32px 0 32px;
+    }
 
     .title {
       display: flex;
@@ -31,12 +63,19 @@
       h4 {
         color: #ffffff;
         padding-top: 4px;
-        padding-left: 10px;
-
+        padding-left: 8px;
         font-family: 'SUIT';
         font-style: normal;
-        font-weight: 600;
-        font-size: 18px;
+
+        @include tablet {
+          font-weight: 600;
+          font-size: 22px;
+        }
+
+        @include mobile {
+          font-weight: 600;
+          font-size: 18px;
+        }
       }
 
       svg.isRotated {
@@ -45,9 +84,17 @@
     }
 
     .categories {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
+      @include mobile {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+      }
+
+      @include tablet {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+      }
 
       span {
         display: flex;
@@ -58,9 +105,28 @@
         height: 40px;
         border-radius: 10px;
         padding-left: 18px;
-
         color: #cccccc;
-        font-size: 16px;
+
+        @include tablet {
+          width: 180px;
+          height: 42px;
+          border-radius: 10px;
+          padding-left: 18px;
+
+          font-weight: 500;
+          font-size: 18px;
+        }
+
+        @include mobile {
+          width: 140px;
+          height: 40px;
+          border-radius: 10px;
+          padding-left: 18px;
+
+          font-weight: 500;
+          font-size: 16px;
+        }
+
         &.isClicked {
           color: #ffffff;
           background: rgba(255, 255, 255, 0.05);
