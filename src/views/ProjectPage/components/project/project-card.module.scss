@@ -28,20 +28,26 @@
     border-radius: 5px;
     overflow: hidden;
 
-    img {
-      border-radius: 5px;
-    }
-
     @include desktop {
-      width: 380px;
+      width: 368px;
       height: 208px;
-      padding: 6px;
+      margin: 7px;
+      padding-bottom: 5px;
+
+      img {
+        border-radius: 10px;
+      }
     }
 
     @include mobile-tablet {
-      width: 328px;
+      width: 316px;
       height: 176px;
-      padding: 6px;
+      margin: 5px;
+      padding-bottom: 5px;
+
+      img {
+        border-radius: 10px;
+      }
     }
   }
 
