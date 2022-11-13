@@ -46,7 +46,7 @@ interface MenuTitleProps {
 
 export const Wrapper = styled.div`
   max-width: 1188px;
-  width: 70%;
+  width: 80%;
 
   display: flex;
   justify-content: space-between;
