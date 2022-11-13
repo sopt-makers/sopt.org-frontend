@@ -4,7 +4,7 @@ import { projectCategoryList, ProjectCategoryType } from '../../lib/constants';
 import cc from 'classcat';
 import { Condition } from '@src/lib';
 import { ReactComponent as ToggleArrowBtn } from '@src/assets/icons/ToggleArrow.svg';
-import { DesktopUtilityButtons } from './DesktopUtilityButtons';
+import { DesktopUtilityButtons } from '../utility/DesktopUtilityButtons';
 
 type ModalProps = {
   selectedCategory: ProjectCategoryType;

@@ -1,4 +1,4 @@
-import styles from './project-filter-desktop.module.scss';
+import styles from './utility.module.scss';
 import { ReactComponent as UpArrow } from '@src/views/ProjectPage/assets/icon/arrow-up-24x24.svg';
 
 export function DesktopUtilityButtons() {
