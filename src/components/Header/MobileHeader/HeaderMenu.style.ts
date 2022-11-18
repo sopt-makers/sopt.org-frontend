@@ -24,9 +24,7 @@ export const Root = styled.div<RootProps>`
   z-index: 9;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
 
-  background: #181818;
   width: 100%;
-
   height: 100vh;
 
   ${(props) => {
@@ -57,8 +55,14 @@ export const Root = styled.div<RootProps>`
 `;
 
 export const MenuWrap = styled.div`
-  padding: 0 30px;
+  /* padding: 0 30px; */
   height: 100%;
+`;
+
+export const Background = styled.div`
+  height: 100vh;
+  background: #181818;
+  opacity: 0.8;
 `;
 
 export const CloseButton = styled.button<CloseButtonProps>`
@@ -104,11 +108,12 @@ export const ContentsWrap = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  background: #181818;
 
-  margin-top: 50px;
+  padding-top: 50px;
   margin-bottom: 0px;
 
-  height: calc(100vh - 150px);
+  height: 320px;
 `;
 
 export const MenuTitlesWrap = styled.div`
@@ -130,6 +135,7 @@ export const MenuTitle = styled.a<MenuTitleProps>`
   cursor: pointer;
 
   &:not(:last-child) {
+    padding-left: 30px;
     padding-right: 40px;
   }
 `;

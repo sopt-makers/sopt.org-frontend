@@ -57,6 +57,7 @@ function HeaderMenu({ isMenuShown }: HeaderMenuProps) {
                 {title}
               </S.MenuTitle>
             ))}
+            <S.Background />
           </S.MenuTitlesWrap>
         </S.ContentsWrap>
       </S.MenuWrap>
