@@ -342,6 +342,10 @@ export const ProjectDescription = styled(CommonWrapper)`
     width: 346px;
     padding: 28px;
   }
+  /* 모바일 뷰 */
+  @media (max-width: 766px) {
+    width: 320px;
+  }
 
   & > p {
     margin-top: 56px;
