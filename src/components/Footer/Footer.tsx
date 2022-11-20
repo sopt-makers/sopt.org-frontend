@@ -1,7 +1,7 @@
 import Channels from '@src/components/Footer/Channels';
 import { useRouter } from 'next/router';
-import React from 'react';
 import { useMediaQuery } from 'react-responsive';
+import { ReactComponent as ArrowRight } from '@src/assets/icons/arrow-right-16x16.svg';
 
 import * as S from './Footer.style';
 
@@ -20,7 +20,10 @@ export function Footer() {
     <S.Root>
       <S.ContentWrap>
         <div>
-          <S.TitleButton onClick={handleClick}>SOPT 회칙</S.TitleButton>
+          <S.TitleButton onClick={handleClick}>
+            <span>SOPT 회칙</span>
+            <ArrowRight />
+          </S.TitleButton>
           <S.CopyrightText>
             SOPT (솝트, 대학생연합 IT벤처창업 동아리)
             <br />
