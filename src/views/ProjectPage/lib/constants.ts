@@ -1,7 +1,7 @@
 export enum ProjectCategoryType {
   ALL = 'ALL',
   APPJAM = 'APPJAM',
-  SOPKATHON = 'SOPSOPKATHON',
+  SOPKATHON = 'SOPKATHON',
   SOPTERM = 'SOPTERM',
   STUDY = 'STUDY',
   JOINTSEMINAR = 'JOINTSEMINAR',
