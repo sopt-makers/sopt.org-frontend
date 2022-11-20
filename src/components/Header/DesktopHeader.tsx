@@ -45,7 +45,7 @@ interface MenuTitleProps {
 }
 
 export const Wrapper = styled.div`
-  max-width: 1188px;
+  max-width: 1180px;
   width: 80%;
 
   display: flex;
