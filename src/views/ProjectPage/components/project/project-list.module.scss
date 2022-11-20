@@ -92,14 +92,16 @@ list-container는 description, count, card-list 영역을 가짐.
   }
 
   @include mobile {
-    width: 85%;
+    width: 90%;
     height: 130px;
+
     p {
       font-family: 'SUIT';
       font-style: normal;
       font-weight: 500;
       font-size: 15px;
     }
+
     p:nth-child(2) {
       display: flex;
       flex-direction: column;
