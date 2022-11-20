@@ -6,6 +6,7 @@ import { debounce } from '@src/utils/scrollDebounce';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import React from 'react';
 import { useEffect, useState } from 'react';
 import { useQuery } from 'react-query';
 import UpButton from './components/UpButton';
@@ -66,7 +67,7 @@ function ProjectDetailPage() {
       <S.Root>
         <S.ProjectHeader>
           <S.LogoImageWrapper>
-            <Image src={logoImage} alt="logo" width="56" height="56" />
+            <Image src={logoImage} alt="logo" width="72" height="72" />
           </S.LogoImageWrapper>
           <div>
             <h1>{name}</h1>

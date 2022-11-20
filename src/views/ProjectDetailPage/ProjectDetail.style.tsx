@@ -118,20 +118,14 @@ export const LogoImageWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 56px;
-  height: 56px;
   object-fit: cover;
   & > span {
     border-radius: 10px;
   }
-  /* 데스크탑 뷰 */
-  @media (min-width: 800px) {
-    position: absolute;
-    top: 40px;
-    right: 40px;
-  }
   /* 태블릿 뷰 */
   @media (max-width: 1280px) {
+    width: 56px;
+    height: 56px;
     top: 20px;
     right: 20px;
   }
@@ -299,6 +293,7 @@ export const Members = styled.div`
     color: #ffffff;
     font-size: 18px;
     font-weight: 700;
+    letter-spacing: -0.01px;
     @media (max-width: 1280px) {
       font-size: 16px;
     }
@@ -347,14 +342,19 @@ export const ProjectDescription = styled(CommonWrapper)`
     width: 346px;
     padding: 28px;
   }
+  /* 모바일 뷰 */
+  @media (max-width: 766px) {
+    width: 320px;
+  }
 
   & > p {
-    margin-top: 32px;
-    line-height: 25px;
+    margin-top: 56px;
+    line-height: 180%;
     color: rgba(255, 255, 255, 0.8);
     font-size: 18px;
     font-weight: 500;
     @media (max-width: 1280px) {
+      margin-top: 32px;
       font-size: 15px;
     }
   }

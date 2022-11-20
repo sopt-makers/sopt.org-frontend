@@ -49,6 +49,7 @@ export const StyledHeader = styled.div`
   justify-content: space-between;
   width: 100%;
   z-index: 10;
+  background-color: inherit;
 `;
 
 export const Logo = styled.button<StyleProps>`
