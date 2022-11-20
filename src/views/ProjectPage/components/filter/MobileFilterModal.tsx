@@ -12,7 +12,7 @@ type ModalProps = {
 };
 
 export function MobileFilterModal({ toggleModalState, selectedCategory, setCategory }: ModalProps) {
-  const [isCategoryOpen, toggleCategoryOpenState] = useState(false);
+  const [isCategoryOpen, toggleCategoryOpenState] = useState(true);
 
   const ableScroll = () => (document.body.style.overflow = 'scroll');
 
