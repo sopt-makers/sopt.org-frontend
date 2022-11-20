@@ -40,11 +40,17 @@ export const ContentWrap = styled.div`
 export const TitleButton = styled.button`
   cursor: pointer;
   line-height: 20px;
+  display: flex;
+  align-items: center;
 
   color: ${({ theme }) => theme.colors.soptWhite};
   font-family: 'SUIT', arial, sans-serif;
   font-size: 16px;
-  font-weight: 800;
+  font-weight: 700;
+
+  span {
+    margin-right: 5px;
+  }
 `;
 
 export const CopyrightText = styled.p`
@@ -70,7 +76,7 @@ export const ChannelTitleText = styled.p`
   line-height: 20px;
   font-family: 'SUIT', arial, sans-serif;
   font-size: 16px;
-  font-weight: 800;
+  font-weight: 500;
 
   /* 모바일 뷰 */
   @media (max-width: 1279px) {

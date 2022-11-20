@@ -123,7 +123,7 @@ function ProjectCategoryDescription(category: ProjectCategoryType) {
                 <p>무박 2일간의 해커톤을 통해 아이디어를 </p>
                 <p>
                   <span>빠르게 프로덕트로 만들어보는 프로젝트,</span>
-                  <span className={styles['category-summary']}>SOPTKATHON</span>
+                  <span className={styles['category-summary']}>SOPKATHON</span>
                 </p>
               </div>
             );
@@ -140,9 +140,9 @@ function ProjectCategoryDescription(category: ProjectCategoryType) {
           case ProjectCategoryType.STUDY:
             return (
               <div className={styles['category-description']}>
-                <p>2개월간 지식 공유를 진행하며</p>
+                <p>2개월간 지식 공유를 진행하며 아이디어를 </p>
                 <p>
-                  <span>아이디어를 시각화 하거나 프로덕트로 만들어보는 프로젝트</span>
+                  <span>시각화 하거나 프로덕트로 만들어보는 프로젝트,</span>
                   <span className={styles['category-summary']}>스터디</span>
                 </p>
               </div>

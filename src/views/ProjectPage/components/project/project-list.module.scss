@@ -92,14 +92,16 @@ list-container는 description, count, card-list 영역을 가짐.
   }
 
   @include mobile {
-    width: 85%;
+    width: 90%;
     height: 130px;
+
     p {
       font-family: 'SUIT';
       font-style: normal;
       font-weight: 500;
       font-size: 15px;
     }
+
     p:nth-child(2) {
       display: flex;
       flex-direction: column;
@@ -129,14 +131,14 @@ list-container는 description, count, card-list 영역을 가짐.
   margin-bottom: 80px;
 
   & > div {
-    width: 80%;
     display: flex;
     justify-content: center;
+    width: 100%;
 
+    color: rgba(255, 255, 255, 0.3);
     font-size: 32px;
     font-weight: 500;
-    color: #8e8e8e;
-    width: 100%;
+    opacity: 30%;
 
     @include tablet-small {
       font-size: 28px;
