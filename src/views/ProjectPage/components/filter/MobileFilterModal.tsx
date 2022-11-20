@@ -22,9 +22,14 @@ export function MobileFilterModal({ toggleModalState, selectedCategory, setCateg
     ableScroll();
   };
 
+  const handleOverlayClick = () => {
+    toggleModalState(false);
+    ableScroll();
+  };
+
   return (
     <div className={styles.modal}>
-      <div className={styles.overlay} onClick={() => toggleModalState(false)}></div>
+      <div className={styles.overlay} onClick={() => handleOverlayClick()}></div>
       <div className={styles['content']}>
         <div className={styles['title']} onClick={() => toggleCategoryOpenState((prev) => !prev)}>
           <ToggleArrowBtn className={cc([isCategoryOpen && styles.isRotated])} />
