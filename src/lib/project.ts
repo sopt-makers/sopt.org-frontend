@@ -1,8 +1,8 @@
-import { ProjectCategoryType } from '@src/views/ProjectPage/lib/constants';
 import axios from 'axios';
+import { ProjectCategoryType } from '@src/views/ProjectPage/lib/constants';
 
 const client = axios.create({
-  baseURL: 'https://dev.dguchatbot.com',
+  baseURL: process.env.NEXT_PUBLIC_SERVER_URL,
   timeout: 3000,
 });
 
