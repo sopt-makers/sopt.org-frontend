@@ -1,11 +1,11 @@
 export enum LinkType {
-  웹사이트 = '웹사이트',
-  발표영상 = '발표영상',
-  Github = 'Github',
+  웹사이트 = 'website',
+  발표영상 = 'media',
+  Github = 'github',
   instagram = 'instagram',
-  '구글 플레이스토어' = '구글 플레이스토어',
-  '앱 스토어' = '앱 스토어',
-  '기타 관련자료' = '기타 관련자료',
+  '구글 플레이스토어' = 'googlePlay',
+  '앱 스토어' = 'appStore',
+  '기타 관련자료' = 'media',
 }
 
 export interface ProjectType {
