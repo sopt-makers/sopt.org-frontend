@@ -10,12 +10,12 @@ export interface LinkType {
 }
 
 export type LinkDetailType =
-  | '웹사이트'
-  | '앱 스토어'
-  | '구글 플레이스토어'
-  | 'Github'
+  | 'website'
+  | 'appStore'
+  | 'googlePlay'
+  | 'github'
   | 'instagram'
-  | '발표영상';
+  | 'media';
 
 export interface UpButtonProps {
   isScrolled: boolean;
