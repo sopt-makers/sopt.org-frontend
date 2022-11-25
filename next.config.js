@@ -5,7 +5,11 @@ const nextConfig = {
     ignoreDuringBuilds: true,
   },
   images: {
-    domains: ['sopt-makers.s3.ap-northeast-2.amazonaws.com'],
+    domains: [
+      'sopt-makers.s3.ap-northeast-2.amazonaws.com',
+      's3.ap-northeast-2.amazonaws.com',
+      'user-images.githubusercontent.com',
+    ],
   },
   webpack: (config) => {
     config.module.rules.push({
