@@ -24,9 +24,10 @@ function useNoScroll(isMenuShown: MenuType) {
 
 interface HeaderMenuProps {
   isMenuShown: MenuType;
+  handleHeaderToggleButton: () => void;
 }
 
-function HeaderMenu({ isMenuShown }: HeaderMenuProps) {
+function HeaderMenu({ isMenuShown, handleHeaderToggleButton }: HeaderMenuProps) {
   const router = useRouter();
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
@@ -34,7 +35,6 @@ function HeaderMenu({ isMenuShown }: HeaderMenuProps) {
 
     if (currentMenu === '/recruit') {
       window.open('https://sopt-recruiting.web.app/recruiting/apply/yb');
-
       return;
     }
     router.push(currentMenu);
@@ -57,7 +57,7 @@ function HeaderMenu({ isMenuShown }: HeaderMenuProps) {
                 {title}
               </S.MenuTitle>
             ))}
-            <S.Background />
+            <S.Background onClick={() => handleHeaderToggleButton()} />
           </S.MenuTitlesWrap>
         </S.ContentsWrap>
       </S.MenuWrap>
