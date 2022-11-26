@@ -25,14 +25,10 @@ interface SemestersType {
 }
 
 interface dataType {
-  status: number;
-  message: string;
-  data: {
-    limit: number;
-    page: number;
-    total: number;
-    semesters: Array<SemestersType>;
-  };
+  limit: number;
+  page: number;
+  total: number;
+  semesters: Array<SemestersType>;
 }
 
 const HistoryList = ({ page, limit, setTotal }: HistoryListProps) => {
@@ -58,12 +54,14 @@ function Resolved({ page, limit, setTotal }: HistoryListProps) {
   );
 
   useEffect(() => {
-    data?.data.total && setTotal(data?.data.total);
-  }, [data?.data.total, setTotal]);
+    if (data) {
+      setTotal(data.total);
+    }
+  }, [data, setTotal]);
 
   return (
     <S.UL>
-      {data?.data?.semesters?.map((item) => (
+      {data?.semesters?.map((item) => (
         <HistoryCard
           backgroundImage={item.background}
           mainColor={item.color}

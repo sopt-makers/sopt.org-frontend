@@ -18,13 +18,12 @@ export const getPartnersData = async () => {
 };
 
 export const getHistoryDetailData = async (id: string | string[] | undefined) => {
-  const data = await client.get(`/history/semesters/${id}`);
-
+  const data = await client.get(`/semesters/${id}`);
+  console.log(data);
   return data?.data;
 };
 
 export const getAllHistoryData = async (page: number, limit: number) => {
-  const data = await client.get(`/history/semesters?page=${page}&limit=${limit}`);
-
+  const data = await client.get(`/semesters?page=${page}&limit=${limit}`);
   return data?.data;
 };
