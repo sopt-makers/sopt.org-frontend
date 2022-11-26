@@ -28,9 +28,11 @@ export function ProjectCard({ project }: { project: ProjectType }) {
             <p>{project.summary}</p>
           </div>
           <div className={styles.links}>
-            {project.link?.map(({ title, url }) => {
-              return <div key={shortid.generate()}>{LinkRender(title, url)}</div>;
-            })}
+            {project.link
+              ?.filter(({ title }) => title?.length > 0)
+              .map(({ title, url }) => {
+                return <div key={shortid.generate()}>{LinkRender(title, url)}</div>;
+              })}
           </div>
         </div>
       </article>

@@ -32,8 +32,8 @@ function MobileHeader() {
           />
         </ToggleButton>
       </StyledHeader>
-      <Condition statement={isMenuShown === 'open' || isMenuShown === 'close'}>
-        <HeaderMenu isMenuShown={isMenuShown} />
+      <Condition statement={isMenuShown === 'open'}>
+        <HeaderMenu isMenuShown={isMenuShown} handleHeaderToggleButton={handleHeaderToggleButton} />
       </Condition>
     </>
   );

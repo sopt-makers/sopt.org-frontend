@@ -129,6 +129,7 @@ list-container는 description, count, card-list 영역을 가짐.
   align-items: center;
   justify-content: center;
   margin-bottom: 80px;
+  padding-top: 40px;
 
   & > div {
     display: flex;
