@@ -3,19 +3,21 @@ import Image from 'next/image';
 import * as S from './PartnerCard.style';
 
 interface PartnerCardProps {
-  imageSrc: string;
+  posterImage: string;
   name: string;
 }
 
-function PartnerCard({ imageSrc, name }: PartnerCardProps) {
+function PartnerCard(props: PartnerCardProps) {
+  const { posterImage, name } = props;
+
   return (
     <S.Root>
       <S.ImageWrap>
         <Image
           layout="fill"
-          src={imageSrc}
+          src={posterImage}
           alt="협업 프로젝트 사진"
-          blurDataURL={imageSrc}
+          blurDataURL={posterImage}
           placeholder="blur"
         />
       </S.ImageWrap>

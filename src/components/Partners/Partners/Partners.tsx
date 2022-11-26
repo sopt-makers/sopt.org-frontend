@@ -3,17 +3,16 @@ import ErrorBoundary from '@src/components/common/ErrorBoundary';
 import SSRSafeSuspense from '@src/components/common/SSRSafeSuspense';
 import UnderlinedTitle from '@src/components/common/UnderlinedTitle';
 import PartnerCard from '@src/components/Partners/Partners/PartnerCard';
-import { getPartnersData } from '@src/lib/api';
-import { useEffect } from 'react';
+import { getCooperationPartner, getCooperationProject } from '@src/lib/api';
 import { useQuery } from 'react-query';
 import { ClipLoader } from 'react-spinners';
 
 import * as S from './Partners.style';
 
-interface dataType {
+interface PartnerType {
   id: string;
-  image: string;
   name: string;
+  image: string;
 }
 
 const Partners = () => {
@@ -21,7 +20,6 @@ const Partners = () => {
     <ErrorBoundary
       renderFallback={({ error, reset }) => <CommonError error={error} reset={reset} />}
     >
-      {/*  TODO skeleton 추가 */}
       <SSRSafeSuspense fallback={<ClipLoader size={50} color={'#ffffff'} />}>
         <Resolved />
       </SSRSafeSuspense>
@@ -30,7 +28,7 @@ const Partners = () => {
 };
 
 function Resolved() {
-  const { data } = useQuery('partners', () => getPartnersData(), {
+  const { data } = useQuery('partner', () => getCooperationPartner(), {
     suspense: true,
   });
 
@@ -39,8 +37,8 @@ function Resolved() {
       <UnderlinedTitle>PARTNERS</UnderlinedTitle>
       <S.Description>다양한 기업 및 단체에서 SOPT를 위해 후원하고 있습니다.</S.Description>
       <S.PartnerWrap>
-        {data?.data?.partners?.map((item: dataType) => (
-          <PartnerCard key={item.id} imageSrc={item.image} name={item.name} />
+        {data?.map((item: PartnerType) => (
+          <PartnerCard key={item.id} posterImage={item.image} name={item.name} />
         ))}
       </S.PartnerWrap>
     </S.Root>
