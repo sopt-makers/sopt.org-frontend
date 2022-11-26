@@ -1,9 +1,7 @@
 import axios from 'axios';
 
-const BASE_URL = 'https://api.sopt.org';
-
 const client = axios.create({
-  baseURL: BASE_URL,
+  baseURL: process.env.NEXT_PUBLIC_SERVER_URL,
   timeout: 3000,
 });
 
