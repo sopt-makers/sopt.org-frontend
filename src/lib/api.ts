@@ -6,7 +6,7 @@ const client = axios.create({
 });
 
 export const getMainLogo = async () => {
-  const data = await client.get('/logo');
+  const data = await client.get('/logos');
 
   return data?.data;
 };

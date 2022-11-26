@@ -3,12 +3,19 @@ import ErrorBoundary from '@src/components/common/ErrorBoundary';
 import SSRSafeSuspense from '@src/components/common/SSRSafeSuspense';
 import { getMainLogo } from '@src/lib/api';
 import Image from 'next/image';
+import { Fragment } from 'react';
 import Marquee from 'react-fast-marquee';
 import { useQuery } from 'react-query';
 import { useMediaQuery } from 'react-responsive';
 import { ClipLoader } from 'react-spinners';
 
 import * as S from './IconBanner.style';
+
+type LogoImageType = {
+  id: number;
+  image: string;
+};
+
 const IconBanner = () => {
   return (
     <ErrorBoundary
@@ -22,30 +29,31 @@ const IconBanner = () => {
 };
 
 function Resolved() {
-  // const isDesktop = useMediaQuery({
-  //   query: '(min-width: 1280px)',
-  // });
-  // const { data } = useQuery('mainLogo', () => getMainLogo(), {
-  //   suspense: true,
-  // });
+  const isDesktop = useMediaQuery({
+    query: '(min-width: 1280px)',
+  });
+  const { data } = useQuery('mainLogo', () => getMainLogo(), {
+    suspense: true,
+  });
 
+  //FIXME type 해결해야함
   return (
     <Marquee pauseOnHover={true} gradient={false} speed={50}>
-      {/* {data?.data?.map((imgSrc: any) => (
-        <>
+      {data.data?.map((image: LogoImageType) => (
+        <Fragment key={image.id}>
           <Image
-            key={imgSrc.id}
-            src={imgSrc.image}
+            key={image.id}
+            src={image.image}
             className="main__logo"
             width={isDesktop ? '55px' : '35px'}
             height={isDesktop ? '55px' : '35px'}
             alt="프로덕트 로고"
-            blurDataURL={imgSrc.image}
+            blurDataURL={image.image}
             placeholder="blur"
           />
           <S.dummyData size={isDesktop ? '55px' : '35px'} />
-        </>
-      ))} */}
+        </Fragment>
+      ))}
     </Marquee>
   );
 }
