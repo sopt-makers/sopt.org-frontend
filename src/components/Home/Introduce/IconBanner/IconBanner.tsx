@@ -36,10 +36,9 @@ function Resolved() {
     suspense: true,
   });
 
-  //FIXME type 해결해야함
   return (
     <Marquee pauseOnHover={true} gradient={false} speed={50}>
-      {data.data?.map((image: LogoImageType) => (
+      {data?.map((image: LogoImageType) => (
         <Fragment key={image.id}>
           <Image
             key={image.id}
