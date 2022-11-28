@@ -6,17 +6,15 @@ import Sopkaton from '@src/components/About/Sopkaton';
 import SoptTerm from '@src/components/About/SoptTerm';
 import StudyNetworking from '@src/components/About/StudyNetworking';
 import Team from '@src/components/About/Team';
-import Footer from '@src/components/common/Footer';
-import Header from '@src/components/common/Header';
+import { Header, Footer } from '@src/components';
 import theme from '@src/styles/theme';
-import React from 'react';
 
 function about() {
   return (
     <>
       <AboutHead />
-      <Header />
       <Styled.Main>
+        <Header />
         <Seminar />
         <Appjam />
         <Sopkaton />

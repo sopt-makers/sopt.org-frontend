@@ -1,14 +1,21 @@
 import styled from '@emotion/styled';
 import Sopt404 from '@src/assets/images/sopt_404.png';
-import Header from '@src/components/common/Header';
+import { Header } from '@src/components';
 import theme from '@src/styles/theme';
 import Image from 'next/image';
-import React from 'react';
+import { useRouter } from 'next/router';
 import { useMediaQuery } from 'react-responsive';
+import RoundButton from '@src/components/common/RoundButton';
+
 function DetailHistory() {
   const isDesktop = useMediaQuery({
     query: '(min-width: 768px)',
   });
+  const router = useRouter();
+
+  const handleClick = () => {
+    router.push('/projects');
+  };
 
   return (
     <>
@@ -23,9 +30,9 @@ function DetailHistory() {
           placeholder="blur"
         />
         <span>앗 아직 준비 중인 기능이에요!</span>
-        {/* <RoundButton isReverse={true} onClick={handleClick}>
-        홈으로 가기
-      </RoundButton> */}
+        <RoundButton isReverse={true} onClick={handleClick}>
+          홈으로 가기
+        </RoundButton>
       </Styled.Root>
     </>
   );

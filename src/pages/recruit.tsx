@@ -1,15 +1,14 @@
+import { useRouter } from 'next/router';
 import styled from '@emotion/styled';
 import Sopt404 from '@src/assets/images/sopt_404.png';
-import Header from '@src/components/common/Header';
-import RoundButton from '@src/components/common/RoundButton';
+import { Header } from '@src/components';
 import theme from '@src/styles/theme';
 import Image from 'next/image';
-import { useRouter } from 'next/router';
-import React from 'react';
+import RoundButton from '@src/components/common/RoundButton';
 
-function recruit() {
-  // eslint-disable-next-line react-hooks/rules-of-hooks
+function Recruit() {
   const router = useRouter();
+
   const handleClick = () => {
     router.push('/');
   };
@@ -27,15 +26,15 @@ function recruit() {
           placeholder="blur"
         />
         <span>아직 지원 기간이 아니에요!</span>
-        {/* <RoundButton isReverse={true} onClick={handleClick}>
-        홈으로 가기
-      </RoundButton> */}
+        <RoundButton isReverse={true} onClick={handleClick}>
+          홈으로 가기
+        </RoundButton>
       </Styled.Root>
     </>
   );
 }
 
-export default recruit;
+export default Recruit;
 
 const Styled = {
   Root: styled.section`

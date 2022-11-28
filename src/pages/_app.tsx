@@ -5,6 +5,7 @@ import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import { useState } from 'react';
 import { QueryClient, QueryClientProvider } from 'react-query';
+import '../styles/font.css';
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [queryClient] = useState(() => new QueryClient());
@@ -30,6 +31,12 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta name="msapplication-TileColor" content="#ffffff" />
         <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
         <meta name="theme-color" content="#ffffff" />
+
+        <meta content="yes" name="apple-mobile-web-app-capable" />
+        <meta
+          content="minimum-scale=1.0, width=device-width, maximum-scale=1, user-scalable=no"
+          name="viewport"
+        />
 
         <meta name="title" content="SOPT" />
         <meta property="og:title" content="SOPT" />

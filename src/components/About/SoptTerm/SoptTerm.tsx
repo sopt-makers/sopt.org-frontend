@@ -1,5 +1,4 @@
 import SoptTermServices from '@src/assets/images/sopterm_service.png';
-import { NetworkingImage } from '@src/assets/replaceMe/imageList';
 import UnderlinedTitle from '@src/components/common/UnderlinedTitle';
 import { ABOUT_INFO } from '@src/constants/about';
 import Image from 'next/image';
@@ -36,7 +35,7 @@ function SoptTerm() {
       <S.ImageWrapper>
         <S.Filter />
         <Image
-          src={SoptTermServices.src}
+          src={SoptTermServices}
           width={isDesktop ? 1020 : 485}
           height={isDesktop ? 165 : 80}
           alt="솝텀 서비스들"

@@ -1,8 +1,7 @@
 import DotImg from '@src/assets/images/DotImg.svg';
 import { PART_INFO } from '@src/constants/about';
-import { PartKorean } from '@src/types';
 import Image from 'next/image';
-import React from 'react';
+import { Fragment } from 'react';
 import { useMediaQuery } from 'react-responsive';
 import Fade from 'react-reveal/Fade';
 
@@ -17,7 +16,7 @@ function PartInfos() {
   return (
     <S.Root>
       {PART_INFO?.map((item, idx) => (
-        <>
+        <Fragment key={idx}>
           <Fade left delay={item.delay}>
             <PartInfo
               title={item.title}
@@ -40,7 +39,7 @@ function PartInfos() {
               )}
             </S.DotImg>
           </Fade>
-        </>
+        </Fragment>
       ))}
     </S.Root>
   );

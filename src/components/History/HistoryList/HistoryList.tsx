@@ -1,4 +1,3 @@
-import { Item } from '@src/components/About/Sopkaton/Subjects/Subjects.style';
 import CommonError from '@src/components/common/CommonError';
 import ErrorBoundary from '@src/components/common/ErrorBoundary';
 import SSRSafeSuspense from '@src/components/common/SSRSafeSuspense';
@@ -7,7 +6,7 @@ import React, { Dispatch, useEffect } from 'react';
 import { useQuery } from 'react-query';
 import { ClipLoader } from 'react-spinners';
 
-import HistoryCard, { HistoryCardProps } from '../HistoryCard/HistoryCard';
+import HistoryCard from '../HistoryCard/HistoryCard';
 import * as S from './HistoryList.style';
 
 interface HistoryListProps {
@@ -26,14 +25,10 @@ interface SemestersType {
 }
 
 interface dataType {
-  status: number;
-  message: string;
-  data: {
-    limit: number;
-    page: number;
-    total: number;
-    semesters: Array<SemestersType>;
-  };
+  limit: number;
+  page: number;
+  total: number;
+  semesters: Array<SemestersType>;
 }
 
 const HistoryList = ({ page, limit, setTotal }: HistoryListProps) => {
@@ -59,12 +54,14 @@ function Resolved({ page, limit, setTotal }: HistoryListProps) {
   );
 
   useEffect(() => {
-    data?.data.total && setTotal(data?.data.total);
-  }, [data?.data.total, setTotal]);
+    if (data) {
+      setTotal(data.total);
+    }
+  }, [data, setTotal]);
 
   return (
     <S.UL>
-      {data?.data?.semesters?.map((item) => (
+      {data?.semesters?.map((item) => (
         <HistoryCard
           backgroundImage={item.background}
           mainColor={item.color}

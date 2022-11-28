@@ -1,17 +1,21 @@
-import Logo from '@src/assets/replaceMe/branding/symbol(1).svg';
 import CommonError from '@src/components/common/CommonError';
 import ErrorBoundary from '@src/components/common/ErrorBoundary';
 import SSRSafeSuspense from '@src/components/common/SSRSafeSuspense';
 import { getMainLogo } from '@src/lib/api';
-import axios from 'axios';
 import Image from 'next/image';
-import { useEffect } from 'react';
+import { Fragment } from 'react';
 import Marquee from 'react-fast-marquee';
 import { useQuery } from 'react-query';
 import { useMediaQuery } from 'react-responsive';
 import { ClipLoader } from 'react-spinners';
 
 import * as S from './IconBanner.style';
+
+type LogoImageType = {
+  id: number;
+  image: string;
+};
+
 const IconBanner = () => {
   return (
     <ErrorBoundary
@@ -34,20 +38,20 @@ function Resolved() {
 
   return (
     <Marquee pauseOnHover={true} gradient={false} speed={50}>
-      {data?.data?.map((imgSrc: any) => (
-        <>
+      {data?.map((image: LogoImageType) => (
+        <Fragment key={image.id}>
           <Image
-            key={imgSrc.id}
-            src={imgSrc.image}
+            key={image.id}
+            src={image.image}
             className="main__logo"
             width={isDesktop ? '55px' : '35px'}
             height={isDesktop ? '55px' : '35px'}
             alt="프로덕트 로고"
-            blurDataURL={imgSrc.image}
+            blurDataURL={image.image}
             placeholder="blur"
           />
           <S.dummyData size={isDesktop ? '55px' : '35px'} />
-        </>
+        </Fragment>
       ))}
     </Marquee>
   );

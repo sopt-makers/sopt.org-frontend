@@ -1,14 +1,11 @@
 import Arrow from '@src/assets/icons/icArrowDown.svg';
 import RoundButton from '@src/components/common/RoundButton';
 import UnderlinedTitle from '@src/components/common/UnderlinedTitle';
-import { useRouter } from 'next/router';
-import React from 'react';
 import Fade from 'react-reveal/Fade';
 
 import * as S from './Recruit.style';
 
 function Recruit() {
-  const router = useRouter();
   const handleClick = () => {
     window.open('https://sopt-recruiting.web.app/recruiting/apply/yb');
   };
@@ -25,13 +22,13 @@ function Recruit() {
               <S.PlainCircleText>1차 서류</S.PlainCircleText>
             </Fade>
             <Fade left delay={400}>
-              <S.ArrowIcon src={Arrow.src} alt="오른쪽 화살표" />
+              <S.ArrowIcon src={Arrow} alt="오른쪽 화살표" />
             </Fade>
             <Fade left delay={500}>
               <S.PlainCircleText>2차 면접</S.PlainCircleText>
             </Fade>
             <Fade left delay={600}>
-              <S.ArrowIcon src={Arrow.src} alt="오른쪽 화살표" />
+              <S.ArrowIcon src={Arrow} alt="오른쪽 화살표" />
             </Fade>
             <Fade left delay={700}>
               <S.GradientCircleText>최종 합격</S.GradientCircleText>

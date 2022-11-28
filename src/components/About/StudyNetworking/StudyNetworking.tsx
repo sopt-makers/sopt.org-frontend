@@ -34,11 +34,11 @@ function StudyNetworking() {
         }
         rightProps={
           <Image
-            src={StudyNetworkingImg.src}
+            src={StudyNetworkingImg}
             width={475}
             height={250}
             alt="스터디 네트워킹"
-            blurDataURL={StudyNetworkingImg.src}
+            blurDataURL={StudyNetworkingImg}
             placeholder="blur"
           />
         }

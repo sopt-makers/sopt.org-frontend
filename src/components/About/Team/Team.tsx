@@ -1,8 +1,5 @@
-import StudyNetworkingImg from '@src/assets/images/study_networking.svg';
-import Footer from '@src/components/common/Footer';
 import UnderlinedTitle from '@src/components/common/UnderlinedTitle';
 import { ABOUT_INFO } from '@src/constants/about';
-import Image from 'next/image';
 import { useMediaQuery } from 'react-responsive';
 
 import AboutWrapper from '../AboutWrapper';

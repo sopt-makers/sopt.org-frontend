@@ -140,3 +140,27 @@ export const FadeOut = `
   }
 }
 `;
+
+export const FadeInDown = `
+  @keyframes fadeindown{
+    from{
+      opacity:0;
+      transform:translateY(-500px);
+    }to{
+      opacity:1;
+      transform:translateY(0);
+    }
+  }
+`;
+
+export const FadeOutUp = `
+  @keyframes fadeoutup{
+    from{
+      opacity:1;
+    }to{
+      opacity:0;
+      transform:translateY(-1000px);
+      z-index:-1;
+    }
+  }
+`;

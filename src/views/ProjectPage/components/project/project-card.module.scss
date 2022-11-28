@@ -1,0 +1,117 @@
+@import '@src/styles/mixins';
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  border: 1px solid #353535;
+  border-radius: 10px;
+  cursor: pointer;
+
+  @include desktop {
+    width: 380px;
+    height: 468px;
+  }
+
+  @include mobile-tablet {
+    width: 328px;
+    height: 402px;
+  }
+
+  .image-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #141414;
+    border-radius: 5px;
+    overflow: hidden;
+
+    @include desktop {
+      width: 368px;
+      height: 208px;
+      margin: 7px;
+      padding-bottom: 5px;
+
+      img {
+        border-radius: 10px;
+      }
+    }
+
+    @include mobile-tablet {
+      width: 316px;
+      height: 176px;
+      margin: 5px;
+      padding-bottom: 5px;
+
+      img {
+        border-radius: 10px;
+      }
+    }
+  }
+
+  .content {
+    width: 90%;
+    height: 268px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    .types {
+      display: flex;
+      justify-content: flex-start;
+
+      & > div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        width: 60px;
+        height: 32px;
+        padding: 10px 10px;
+
+        font-size: 18px;
+
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: 10px;
+        color: #cccccc;
+
+        margin-right: 8px;
+      }
+    }
+
+    .text {
+      height: 50px;
+
+      & > h5 {
+        font-size: 26px;
+      }
+
+      & > p {
+        font-size: 18px;
+        margin-top: 10px;
+        color: #8e8e8e;
+      }
+    }
+
+    .links {
+      display: flex;
+      height: 50px;
+
+      .icon-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        width: 50px;
+        height: 50px;
+
+        background: #242424;
+        border-radius: 5px;
+        margin-right: 10px;
+      }
+    }
+  }
+}

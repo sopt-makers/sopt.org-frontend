@@ -37,11 +37,11 @@ function HistoryCard({
     >
       <S.TitleContainer>
         <Image
-          src={mainLogo ? mainLogo : SoptDefaultLogo.src}
+          src={mainLogo ? mainLogo : SoptDefaultLogo}
           width={98}
           height={36}
           alt="솝트 로고"
-          blurDataURL={mainLogo ? mainLogo : SoptDefaultLogo.src}
+          blurDataURL={mainLogo ? mainLogo : SoptDefaultLogo}
           placeholder="blur"
         />
       </S.TitleContainer>

@@ -1,0 +1,191 @@
+@import '@src/styles/mixins';
+
+.total-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 
+list-container는 description, count, card-list 영역을 가짐.
+세 개의 영역 모두 65% 의 width를 가짐
+*/
+
+.list-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 1200px;
+
+  @include desktop {
+    margin-top: 130px;
+  }
+
+  @include mobile-tablet {
+    height: 100%;
+    width: 100%;
+    margin-top: 90px;
+  }
+}
+
+.category-description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 160px;
+  background: linear-gradient(90deg, #000000 1.33%, rgba(0, 0, 0, 0) 100%);
+  border-radius: 10px;
+  margin-bottom: 80px;
+
+  p {
+    display: flex;
+    justify-content: center;
+
+    color: rgba(255, 255, 255, 0.8);
+    font-family: 'SUIT';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+  }
+
+  p:first-child {
+    padding-bottom: 10px;
+  }
+
+  .category-summary {
+    text-indent: 10px;
+    font-weight: 700;
+  }
+
+  @include desktop {
+    width: 100%;
+  }
+
+  @include tablet-medium {
+    width: 90%;
+
+    p {
+      font-weight: 500;
+      font-size: 20px;
+    }
+
+    .category-summary {
+      text-indent: 10px;
+      font-weight: 700;
+    }
+  }
+
+  @include tablet-small {
+    width: 75%;
+    p {
+      font-weight: 500;
+      font-size: 20px;
+    }
+
+    .category-summary {
+      text-indent: 10px;
+      font-weight: 700;
+    }
+  }
+
+  @include mobile {
+    width: 90%;
+    height: 130px;
+
+    p {
+      font-family: 'SUIT';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 15px;
+    }
+
+    p:nth-child(2) {
+      display: flex;
+      flex-direction: column;
+      span {
+        display: flex;
+        justify-content: center;
+        font-family: 'SUIT';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 15px;
+      }
+      span:first-child {
+        padding-bottom: 10px;
+      }
+      .category-summary {
+        font-weight: 700;
+      }
+    }
+  }
+}
+
+.list-count {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 80px;
+  padding-top: 40px;
+
+  & > div {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 32px;
+    font-weight: 500;
+    opacity: 30%;
+
+    @include tablet-small {
+      font-size: 28px;
+      padding-left: 0;
+    }
+
+    @include mobile {
+      font-family: 'SUIT';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 18px;
+      padding: 0;
+    }
+  }
+}
+
+.card-list {
+  width: 100%;
+  display: grid;
+
+  @include desktop {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+  }
+
+  @include tablet-medium {
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 90%;
+    gap: 20px;
+  }
+
+  @include tablet-small {
+    grid-template-columns: 1fr 1fr;
+    width: 75%;
+    gap: 20px;
+  }
+
+  @include mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
+}
+
+.spinner {
+  margin-top: 50px;
+}

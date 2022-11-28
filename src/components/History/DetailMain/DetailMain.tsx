@@ -4,7 +4,6 @@ import SSRSafeSuspense from '@src/components/common/SSRSafeSuspense';
 import { getHistoryDetailData } from '@src/lib/api';
 import { seperateLeaderType } from '@src/utils/history';
 import { useRouter } from 'next/router';
-import React, { useEffect, useState } from 'react';
 import { useQuery } from 'react-query';
 import { ClipLoader } from 'react-spinners';
 
@@ -36,12 +35,6 @@ function Resolved() {
     id: 0,
     part: `${id}기 THE SOPT`,
   };
-
-  //  data?.data?.leaders
-  useEffect(() => {
-    console.log('>>data', data);
-    console.log('>>router', router);
-  }, [data]);
 
   return (
     <S.Root>
