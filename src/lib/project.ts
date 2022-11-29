@@ -2,7 +2,7 @@ import axios from 'axios';
 import { ProjectCategoryType } from '@src/views/ProjectPage/lib/constants';
 
 const client = axios.create({
-  baseURL: process.env.NEXT_PUBLIC_SERVER_URL,
+  baseURL: 'https://api.sopt.org',
   timeout: 3000,
 });
 
