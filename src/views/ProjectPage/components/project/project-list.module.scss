@@ -20,6 +20,8 @@ list-container는 description, count, card-list 영역을 가짐.
   max-width: 1200px;
 
   @include desktop {
+    height: 100%;
+    width: 100%;
     margin-top: 130px;
   }
 

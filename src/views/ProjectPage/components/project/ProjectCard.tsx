@@ -74,10 +74,20 @@ function ProjectCardDesktopImage(logoImage: string, thumbnailImage?: string) {
 }
 
 function ServiceTypeRender(serviceTypes: string[] | string) {
-  if (!Array.isArray(serviceTypes)) return <div>{serviceTypes}</div>;
+  const convertEngToKorean = (text: string) => {
+    switch (text) {
+      case 'APP':
+        return '앱';
+      case 'WEB':
+        return '웹';
+      default:
+        throw new Error('앱 또는 웹 타입이 아닙니다');
+    }
+  };
+  if (!Array.isArray(serviceTypes)) return <div>{convertEngToKorean(serviceTypes)}</div>;
 
   return serviceTypes?.map((type) => {
-    return <div key={shortid.generate()}>{type}</div>;
+    return <div key={shortid.generate()}>{convertEngToKorean(type)}</div>;
   });
 }
 
