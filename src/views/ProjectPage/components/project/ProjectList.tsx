@@ -1,16 +1,13 @@
-import { useState, useEffect, useRef } from 'react';
 import cc from 'classcat';
 import { ProjectCategoryType } from '../../lib/constants';
 import styles from './project-list.module.scss';
 
-import { useInView } from 'react-intersection-observer';
 import { OvalSpinner } from '../common/OvalSpinner';
-
 import { Condition } from '@src/lib';
 import { EmptyContent } from '../common/EmptyContent';
 import { ProjectCard, ProjectEnrollSection } from '../project';
 import { ProjectType, State } from '../../types';
-import useScroll from '../../hooks/useScroll';
+import { useInfiniteScroll } from '../../hooks/useInfiniteScroll';
 
 interface ProjectListProp {
   state: State<ProjectType>;
@@ -23,56 +20,25 @@ export function ProjectList({ selectedCategory, state }: ProjectListProp) {
       {(() => {
         switch (state._TAG) {
           case 'IDLE':
-            return <p>IDLE</p>;
+            return (
+              <div className={styles['list-container']}>
+                {ProjectCategoryDescription(selectedCategory)}
+                {ProjectListSkeletonUI()}
+                <ProjectEnrollSection />
+              </div>
+            );
           case 'LOADING':
-            return <p>LOADING</p>;
+            return (
+              <div className={styles['list-container']}>
+                {ProjectCategoryDescription(selectedCategory)}
+                {ProjectListSkeletonUI()}
+                <ProjectEnrollSection />
+              </div>
+            );
           case 'ERROR':
             return <p>ERROR</p>;
           case 'OK': {
-            // const { data: projectList } = state;
-            const projectList = new Array(100).fill({
-              id: 32,
-              name: '사람 복사 되나 안되나',
-              generation: 28,
-              category: {
-                project: 'SOPKATHON',
-              },
-              startAt: '2022-01-01',
-              endAt: null,
-              serviceType: ['WEB'],
-              isAvailable: true,
-              isFounding: false,
-              summary: '한줄 두줄',
-              detail: '세줄 네줄\n다셧\n줄',
-              logoImage:
-                'https://s3.ap-northeast-2.amazonaws.com/sopt-makers-internal//dev/image/project/3871d415-67ed-4c11-9026-8dd311436cde-로고_고화질.png',
-              thumbnailImage:
-                'https://s3.ap-northeast-2.amazonaws.com/sopt-makers-internal//dev/image/project/581bfe80-1d89-439a-9171-6bfdb4d1676a-bg image.png',
-              uploadedAt: '2022-11-23T10:39:04.581Z',
-              updatedAt: '2022-11-23T10:39:04.581Z',
-              link: [
-                {
-                  title: 'googlePlay',
-                  url: 'https://www.airbnb.co.kr/',
-                },
-                {
-                  title: 'instagram',
-                  url: 'https://www.airbnb.co.kr/',
-                },
-              ],
-              members: [
-                {
-                  name: '김솝트',
-                  role: 'PM',
-                  description: '역할',
-                },
-                {
-                  name: '이준호',
-                  role: 'IOS',
-                  description: '역할',
-                },
-              ],
-            });
+            const { data: projectList } = state;
             const listLength = projectList.length;
             return (
               <div className={styles['list-container']}>
@@ -96,41 +62,20 @@ export function ProjectList({ selectedCategory, state }: ProjectListProp) {
 }
 
 function ProjectCardList(list: ProjectType[]) {
-  const [cardList, setCardList] = useState(list.slice(0, 15));
-  const [isFetching, setIsFetching] = useState<boolean>(false);
-  const isScrollMoveDown = useScroll();
-  const { ref, inView } = useInView({
-    threshold: 1,
-    triggerOnce: false,
-  });
-  const count = useRef<number | null>(1);
-
-  useEffect(() => {
-    if (count.current) {
-      const isComplete = Math.floor(list.length / 15) <= count.current;
-
-      if (inView && isScrollMoveDown && !isComplete) {
-        count.current = count.current + 1;
-        setIsFetching(true);
-        setTimeout(() => {
-          setCardList(list.slice(0, (count.current as number) * 15));
-          setIsFetching(false);
-        }, 600);
-      }
-    }
-  }, [inView, isScrollMoveDown, list]);
+  const { data, isNextPage, ref } = useInfiniteScroll(list);
 
   return (
     <>
       <section className={styles['card-list']}>
-        {cardList.map((project, index) => (
+        {data.map((project, index) => (
           <ProjectCard key={index} project={project} />
         ))}
       </section>
-      <div className={styles['observered']} ref={ref} />
-      {isFetching && isScrollMoveDown && (
-        <div className={styles['spinner']}>
-          <OvalSpinner />
+      {isNextPage && (
+        <div className={styles['observered']} ref={ref}>
+          <div className={styles['spinner']}>
+            <OvalSpinner />
+          </div>
         </div>
       )}
     </>
@@ -206,5 +151,33 @@ function ProjectCategoryDescription(category: ProjectCategoryType) {
         }
       })()}
     </>
+  );
+}
+
+function ProjectListSkeletonUI() {
+  const array = new Array(9).fill(undefined);
+  return (
+    <section className={styles['card-list']}>
+      {array.map((_, index) => {
+        return <CardSkeletonUI key={index} />;
+      })}
+    </section>
+  );
+}
+
+function CardSkeletonUI() {
+  return (
+    <article className={styles['skeleton']}>
+      <div className={styles['thumbnail']} />
+      <div className={styles['type-list']}>
+        <div className={styles['type']} />
+        <div className={styles['type']} />
+      </div>
+      <div className={styles['description']}>
+        <div className={styles['long-line']} />
+        <div className={styles['long-line']} />
+        <div className={styles['short-line']} />
+      </div>
+    </article>
   );
 }

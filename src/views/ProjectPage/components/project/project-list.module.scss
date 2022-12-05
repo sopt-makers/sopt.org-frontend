@@ -18,6 +18,7 @@ list-container는 description, count, card-list 영역을 가짐.
   align-items: center;
   justify-content: center;
   max-width: 1200px;
+  min-height: 1140px;
 
   @include desktop {
     height: 100%;
@@ -190,4 +191,89 @@ list-container는 description, count, card-list 영역을 가짐.
 
 .spinner {
   margin-top: 50px;
+}
+
+.skeleton {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  border: 1px solid #353535;
+  border-radius: 10px;
+  // background-color: white;
+
+  @include desktop {
+    width: 380px;
+    height: 468px;
+  }
+
+  @include mobile-tablet {
+    width: 328px;
+    height: 402px;
+  }
+
+  .thumbnail {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: #242424;
+    border-radius: 10px;
+
+    @include desktop {
+      width: 368px;
+      height: 208px;
+      margin: 7px;
+      padding-bottom: 5px;
+    }
+
+    @include mobile-tablet {
+      width: 316px;
+      height: 176px;
+      margin: 5px;
+      padding-bottom: 5px;
+    }
+  }
+
+  .type-list {
+    width: 95%;
+    height: 36px;
+    display: flex;
+    margin-top: 16px;
+
+    .type {
+      width: 40px;
+      background: #242424;
+      border-radius: 10px;
+    }
+    .type:first-child {
+      height: 36px;
+      margin-right: 10px;
+    }
+    .type:nth-child(2) {
+      width: 61px;
+    }
+  }
+
+  .description {
+    width: 95%;
+    height: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 25px;
+
+    .long-line {
+      height: 20px;
+      background: #242424;
+      border-radius: 10px;
+    }
+
+    .short-line {
+      width: 50%;
+      height: 20px;
+      background: #242424;
+      border-radius: 10px;
+    }
+  }
 }

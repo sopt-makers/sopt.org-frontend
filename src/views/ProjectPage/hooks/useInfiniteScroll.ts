@@ -29,7 +29,7 @@ const useIntersect = (onIntersect: IntersectHandler, options?: IntersectionObser
 export function useInfiniteScroll<T>(totalData: T[]) {
   const [count, setCount] = useState(1);
   const [data, setData] = useState(totalData.slice(0, 15));
-  const isNextPage = count <= Math.ceil(totalData.length / 15);
+  const isNextPage = totalData.length > 15 && count <= Math.ceil(totalData.length / 15);
 
   const ref = useIntersect(
     async (entry, observer) => {
