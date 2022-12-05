@@ -239,8 +239,13 @@ export const ProjectInfo = styled.div<{ isLinkExist: boolean }>`
 `;
 
 export const ProjectLinkWrapper = styled.div`
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 20px;
+  /* 태블릿 뷰 */
+  @media (max-width: 1280px) {
+    row-gap: 17px;
+  }
 `;
 
 export const ProjectLink = styled.div`
@@ -250,11 +255,20 @@ export const ProjectLink = styled.div`
   background: #313131;
   cursor: pointer;
   padding: 6px 4px;
-  width: 80px;
-  height: 94px;
+  width: 88px;
+  height: 100px;
+  /* 태블릿 뷰 */
+  @media (max-width: 1280px) {
+    width: 80px;
+    height: 94px;
+  }
 
   &:not(:last-child) {
     margin-right: 16px;
+    /* 태블릿 뷰 */
+    @media (max-width: 1280px) {
+      margin-right: 12px;
+    }
   }
 
   & > span {

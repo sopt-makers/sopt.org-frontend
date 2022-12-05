@@ -59,6 +59,7 @@
       display: flex;
       align-items: center;
       margin-bottom: 30px;
+      cursor: pointer;
 
       h4 {
         color: #ffffff;
@@ -106,6 +107,7 @@
         border-radius: 10px;
         padding-left: 18px;
         color: #cccccc;
+        cursor: pointer;
 
         @include tablet {
           width: 180px;

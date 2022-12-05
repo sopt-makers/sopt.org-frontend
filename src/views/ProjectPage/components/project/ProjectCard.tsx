@@ -24,8 +24,8 @@ export function ProjectCard({ project }: { project: ProjectType }) {
             {GenerationRender(project?.generation)}
           </div>
           <div className={styles.text}>
-            <h5>{project.name}</h5>
-            <p>{project.summary}</p>
+            {TitleRender(project.name)}
+            {SummaryRender(project.summary)}
           </div>
           <div className={styles.links}>
             {project.link
@@ -74,15 +74,37 @@ function ProjectCardDesktopImage(logoImage: string, thumbnailImage?: string) {
 }
 
 function ServiceTypeRender(serviceTypes: string[] | string) {
-  if (!Array.isArray(serviceTypes)) return <div>{serviceTypes}</div>;
+  const convertEngToKorean = (text: string) => {
+    switch (text) {
+      case 'APP':
+        return '앱';
+      case 'WEB':
+        return '웹';
+      default:
+        throw new Error('앱 또는 웹 타입이 아닙니다');
+    }
+  };
+  if (!Array.isArray(serviceTypes)) return <div>{convertEngToKorean(serviceTypes)}</div>;
 
   return serviceTypes?.map((type) => {
-    return <div key={shortid.generate()}>{type}</div>;
+    return <div key={shortid.generate()}>{convertEngToKorean(type)}</div>;
   });
 }
 
 function GenerationRender(generation?: number) {
   return generation ? <div>{generation}기</div> : <></>;
+}
+
+function TitleRender(text: string) {
+  const titleWithoutParentheses = text.replace(/ *\([^)]*\) */g, '');
+  if (titleWithoutParentheses.length > 12) {
+    return <h5>{titleWithoutParentheses.slice(0, 12) + '...'}</h5>;
+  }
+  return <h5>{titleWithoutParentheses}</h5>;
+}
+
+function SummaryRender(text: string) {
+  return text.length > 20 ? <p>{text.slice(0, 20) + '...'} </p> : <p>{text}</p>;
 }
 
 function LinkRender(link: LinkType, url: string) {

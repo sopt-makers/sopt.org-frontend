@@ -1,16 +1,13 @@
-import { useState, useEffect, useRef } from 'react';
 import cc from 'classcat';
 import { ProjectCategoryType } from '../../lib/constants';
 import styles from './project-list.module.scss';
 
-import { useInView } from 'react-intersection-observer';
 import { OvalSpinner } from '../common/OvalSpinner';
-
 import { Condition } from '@src/lib';
 import { EmptyContent } from '../common/EmptyContent';
 import { ProjectCard, ProjectEnrollSection } from '../project';
 import { ProjectType, State } from '../../types';
-import useScroll from '../../hooks/useScroll';
+import { useInfiniteScroll } from '../../hooks/useInfiniteScroll';
 
 interface ProjectListProp {
   state: State<ProjectType>;
@@ -23,9 +20,21 @@ export function ProjectList({ selectedCategory, state }: ProjectListProp) {
       {(() => {
         switch (state._TAG) {
           case 'IDLE':
-            return <p>IDLE</p>;
+            return (
+              <div className={styles['list-container']}>
+                {ProjectCategoryDescription(selectedCategory)}
+                {ProjectListSkeletonUI()}
+                <ProjectEnrollSection />
+              </div>
+            );
           case 'LOADING':
-            return <p>LOADING</p>;
+            return (
+              <div className={styles['list-container']}>
+                {ProjectCategoryDescription(selectedCategory)}
+                {ProjectListSkeletonUI()}
+                <ProjectEnrollSection />
+              </div>
+            );
           case 'ERROR':
             return <p>ERROR</p>;
           case 'OK': {
@@ -53,41 +62,20 @@ export function ProjectList({ selectedCategory, state }: ProjectListProp) {
 }
 
 function ProjectCardList(list: ProjectType[]) {
-  const [cardList, setCardList] = useState(list.slice(0, 15));
-  const [isFetching, setIsFetching] = useState<boolean>(false);
-  const isScrollMoveDown = useScroll();
-  const { ref, inView } = useInView({
-    threshold: 1,
-    triggerOnce: false,
-  });
-  const count = useRef<number | null>(1);
-
-  useEffect(() => {
-    if (count.current) {
-      const isComplete = Math.floor(list.length / 15) <= count.current;
-
-      if (inView && isScrollMoveDown && !isComplete) {
-        count.current = count.current + 1;
-        setIsFetching(true);
-        setTimeout(() => {
-          setCardList(list.slice(0, (count.current as number) * 15));
-          setIsFetching(false);
-        }, 600);
-      }
-    }
-  }, [inView, isScrollMoveDown, list]);
+  const { data, isNextPage, ref } = useInfiniteScroll(list);
 
   return (
     <>
       <section className={styles['card-list']}>
-        {cardList.map((project, index) => (
+        {data.map((project, index) => (
           <ProjectCard key={index} project={project} />
         ))}
       </section>
-      <div className={styles['observered']} ref={ref} />
-      {isFetching && isScrollMoveDown && (
-        <div className={styles['spinner']}>
-          <OvalSpinner />
+      {isNextPage && (
+        <div className={styles['observered']} ref={ref}>
+          <div className={styles['spinner']}>
+            <OvalSpinner />
+          </div>
         </div>
       )}
     </>
@@ -163,5 +151,33 @@ function ProjectCategoryDescription(category: ProjectCategoryType) {
         }
       })()}
     </>
+  );
+}
+
+function ProjectListSkeletonUI() {
+  const array = new Array(9).fill(undefined);
+  return (
+    <section className={styles['card-list']}>
+      {array.map((_, index) => {
+        return <CardSkeletonUI key={index} />;
+      })}
+    </section>
+  );
+}
+
+function CardSkeletonUI() {
+  return (
+    <article className={styles['skeleton']}>
+      <div className={styles['thumbnail']} />
+      <div className={styles['type-list']}>
+        <div className={styles['type']} />
+        <div className={styles['type']} />
+      </div>
+      <div className={styles['description']}>
+        <div className={styles['long-line']} />
+        <div className={styles['long-line']} />
+        <div className={styles['short-line']} />
+      </div>
+    </article>
   );
 }
