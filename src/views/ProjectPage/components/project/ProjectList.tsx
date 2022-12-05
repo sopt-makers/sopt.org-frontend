@@ -29,7 +29,50 @@ export function ProjectList({ selectedCategory, state }: ProjectListProp) {
           case 'ERROR':
             return <p>ERROR</p>;
           case 'OK': {
-            const { data: projectList } = state;
+            // const { data: projectList } = state;
+            const projectList = new Array(100).fill({
+              id: 32,
+              name: '사람 복사 되나 안되나',
+              generation: 28,
+              category: {
+                project: 'SOPKATHON',
+              },
+              startAt: '2022-01-01',
+              endAt: null,
+              serviceType: ['WEB'],
+              isAvailable: true,
+              isFounding: false,
+              summary: '한줄 두줄',
+              detail: '세줄 네줄\n다셧\n줄',
+              logoImage:
+                'https://s3.ap-northeast-2.amazonaws.com/sopt-makers-internal//dev/image/project/3871d415-67ed-4c11-9026-8dd311436cde-로고_고화질.png',
+              thumbnailImage:
+                'https://s3.ap-northeast-2.amazonaws.com/sopt-makers-internal//dev/image/project/581bfe80-1d89-439a-9171-6bfdb4d1676a-bg image.png',
+              uploadedAt: '2022-11-23T10:39:04.581Z',
+              updatedAt: '2022-11-23T10:39:04.581Z',
+              link: [
+                {
+                  title: 'googlePlay',
+                  url: 'https://www.airbnb.co.kr/',
+                },
+                {
+                  title: 'instagram',
+                  url: 'https://www.airbnb.co.kr/',
+                },
+              ],
+              members: [
+                {
+                  name: '김솝트',
+                  role: 'PM',
+                  description: '역할',
+                },
+                {
+                  name: '이준호',
+                  role: 'IOS',
+                  description: '역할',
+                },
+              ],
+            });
             const listLength = projectList.length;
             return (
               <div className={styles['list-container']}>
