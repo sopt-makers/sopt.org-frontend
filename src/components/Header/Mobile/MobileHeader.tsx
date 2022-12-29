@@ -12,7 +12,7 @@ import Image from 'next/image';
 
 export type MenuType = 'idle' | 'open' | 'close';
 
-function MobileHeader() {
+function MobileHeader({ menuList }: { menuList: { id: string; title: string }[] }) {
   const router = useRouter();
   const [isMenuShown, setIsMenuShown] = useState<MenuType>('idle');
 
@@ -33,7 +33,11 @@ function MobileHeader() {
         </ToggleButton>
       </StyledHeader>
       <Condition statement={isMenuShown === 'open'}>
-        <HeaderMenu isMenuShown={isMenuShown} handleHeaderToggleButton={handleHeaderToggleButton} />
+        <HeaderMenu
+          menuList={menuList}
+          isMenuShown={isMenuShown}
+          handleHeaderToggleButton={handleHeaderToggleButton}
+        />
       </Condition>
     </>
   );

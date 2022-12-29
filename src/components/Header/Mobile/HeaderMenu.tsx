@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { useRouter } from 'next/router';
-import { menuTitle } from '@src/constants/headerMenu';
 
 import * as S from './HeaderMenu.style';
 
@@ -23,11 +22,12 @@ function useNoScroll(isMenuShown: MenuType) {
 }
 
 interface HeaderMenuProps {
+  menuList: { id: string; title: string }[];
   isMenuShown: MenuType;
   handleHeaderToggleButton: () => void;
 }
 
-function HeaderMenu({ isMenuShown, handleHeaderToggleButton }: HeaderMenuProps) {
+function HeaderMenu({ menuList, isMenuShown, handleHeaderToggleButton }: HeaderMenuProps) {
   const router = useRouter();
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
@@ -52,7 +52,7 @@ function HeaderMenu({ isMenuShown, handleHeaderToggleButton }: HeaderMenuProps) 
       <S.MenuWrap>
         <S.ContentsWrap>
           <S.MenuTitlesWrap>
-            {menuTitle.map(({ id, title }) => (
+            {menuList.map(({ id, title }) => (
               <S.MenuTitle key={id} id={id} isSelected={handleIsSelected(id)} onClick={handleClick}>
                 {title}
               </S.MenuTitle>

@@ -1,9 +1,8 @@
 import { useRouter } from 'next/router';
-import { menuTitle } from '@src/constants/headerMenu';
 import styled from '@emotion/styled';
 import logoIcon from '@src/assets/replaceMe/branding/logo.png';
 
-function DesktopHeader() {
+function DesktopHeader({ menuList }: { menuList: { id: string; title: string }[] }) {
   const router = useRouter();
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
@@ -26,7 +25,7 @@ function DesktopHeader() {
         <Logo src={logoIcon.src} onClick={() => router.push('/')} />
       </CenterAligner>
       <MenuTitlesWrapper>
-        {menuTitle.map(({ id, title }) => (
+        {menuList.map(({ id, title }) => (
           <MenuTitle key={id} id={id} isSelected={handleIsSelected(id)} onClick={handleClick}>
             {title}
           </MenuTitle>
