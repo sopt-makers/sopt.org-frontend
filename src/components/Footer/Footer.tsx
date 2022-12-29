@@ -1,17 +1,22 @@
 import { ReactComponent as ArrowRight } from '@src/assets/icons/arrow-right-16x16.svg';
 import Channels from '@src/components/Footer/Channels';
 import { useIsDesktop } from '@src/hooks/useIsDesktop';
+import { useRouter } from 'next/router';
 
 import * as S from './Footer.style';
 
 export function Footer() {
   const isDesktop = useIsDesktop();
+  const router = useRouter();
+  const handleClick = () => {
+    router.push('/rules');
+  };
 
   return (
     <S.Root>
       <S.ContentWrap>
         <div>
-          <S.TitleButton>
+          <S.TitleButton onClick={handleClick}>
             <span>SOPT 회칙</span>
             <ArrowRight />
           </S.TitleButton>

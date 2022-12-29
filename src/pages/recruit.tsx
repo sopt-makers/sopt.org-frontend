@@ -8,7 +8,6 @@ import { useRouter } from 'next/router';
 
 function Recruit() {
   const router = useRouter();
-
   const handleClick = () => {
     router.push('/');
   };
