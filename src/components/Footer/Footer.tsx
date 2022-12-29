@@ -2,7 +2,6 @@ import { ReactComponent as ArrowRight } from '@src/assets/icons/arrow-right-16x1
 import Channels from '@src/components/Footer/Channels';
 import { useIsDesktop } from '@src/hooks/useIsDesktop';
 import { useRouter } from 'next/router';
-
 import * as S from './Footer.style';
 
 export function Footer() {

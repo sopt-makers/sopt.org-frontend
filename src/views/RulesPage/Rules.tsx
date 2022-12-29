@@ -1,6 +1,6 @@
-import { useMediaQuery } from 'react-responsive';
 import styled from '@emotion/styled';
 import { Footer, Header } from '@src/components';
+import { useIsDesktop } from '@src/hooks/useIsDesktop';
 import RulesHead from '@src/views/RulesPage/RulesHead';
 
 import UnderlinedTitle from '../../components/common/UnderlinedTitle';
@@ -10,14 +10,14 @@ import RulesList from './RulesList';
 const SOPT_RULES = 'SOPT 회칙';
 
 function Rules() {
-  const isTabletOrMobile = useMediaQuery({ query: '(max-width: 769px)' });
+  const isDesktopOrTablet = useIsDesktop('769px');
 
   return (
     <Root>
       <RulesHead />
       <Header />
       <Content>
-        <UnderlinedTitle fontSize={isTabletOrMobile ? '25px' : '35px'}>
+        <UnderlinedTitle fontSize={isDesktopOrTablet ? '25px' : '35px'}>
           {SOPT_RULES}
         </UnderlinedTitle>
         <RulesList />
