@@ -1,8 +1,9 @@
 import { useState } from 'react';
-import { Header, Footer, Layout } from '@src/components';
-import { ProjectFilter, ProjectList } from './components';
-import { ProjectCategoryType } from './lib/constants';
+import { Footer, Header, Layout } from '@src/components';
+
 import useFetch from './hooks/useFetch';
+import { ProjectCategoryType } from './lib/constants';
+import { ProjectFilter, ProjectList } from './components';
 
 function Projects() {
   const [selectedCategory, setCategory] = useState<ProjectCategoryType>(ProjectCategoryType.ALL);

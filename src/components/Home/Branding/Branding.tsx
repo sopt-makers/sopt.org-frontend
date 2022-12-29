@@ -1,12 +1,13 @@
+import React from 'react';
+import Fade from 'react-reveal/Fade';
 import { basicInfo } from '@src/assets/replaceMe/basicInfo';
 import symbol1 from '@src/assets/replaceMe/branding/symbol(1).svg';
 import RoundButton from '@src/components/common/RoundButton';
 import UnderlinedTitle from '@src/components/common/UnderlinedTitle';
 import { useRouter } from 'next/router';
-import React from 'react';
-import Fade from 'react-reveal/Fade';
 
 import SoptMarquee from '../SoptMarquee';
+
 import * as S from './Branding.style';
 import Symbol from './Symbol';
 

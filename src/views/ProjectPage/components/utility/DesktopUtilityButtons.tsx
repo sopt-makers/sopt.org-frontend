@@ -1,6 +1,7 @@
-import cc from 'classcat';
-import styles from './utility.module.scss';
 import { ReactComponent as UpArrow } from '@src/views/ProjectPage/assets/icon/arrow-up-24x24.svg';
+import cc from 'classcat';
+
+import styles from './utility.module.scss';
 
 export function DesktopUtilityButtons() {
   return (

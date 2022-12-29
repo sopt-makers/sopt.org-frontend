@@ -1,5 +1,5 @@
-import { useRouter } from 'next/router';
 import React, { useEffect } from 'react';
+import { useRouter } from 'next/router';
 
 function LegacyHomePage() {
   const router = useRouter();

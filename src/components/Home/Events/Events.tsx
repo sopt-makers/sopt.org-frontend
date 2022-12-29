@@ -1,12 +1,13 @@
+import Fade from 'react-reveal/Fade';
 import AppjamImage from '@src/assets/replaceMe/MainImg/img_appjam.png';
 import SopkathonImage from '@src/assets/replaceMe/MainImg/img_sopkathon.png';
 import SoptTermImage from '@src/assets/replaceMe/MainImg/img_sopt-term.png';
 import { appjamInfo, sopkathonInfo, soptTermInfo } from '@src/assets/replaceMe/statistics';
 import RoundButton from '@src/components/common/RoundButton';
 import { useRouter } from 'next/router';
-import Fade from 'react-reveal/Fade';
 
 import SoptMarquee from '../SoptMarquee';
+
 import Event from './Event/Event';
 import * as S from './Events.style';
 

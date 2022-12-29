@@ -1,8 +1,10 @@
 import { useState } from 'react';
-import { MobileFilterModal } from './MobileFilterModal';
-import { MobileUtilityButtons } from '../utility/MobileUtilityButtons';
-import { ProjectCategoryType } from '../../lib/constants';
 import { Condition } from '@src/lib';
+
+import { ProjectCategoryType } from '../../lib/constants';
+import { MobileUtilityButtons } from '../utility/MobileUtilityButtons';
+
+import { MobileFilterModal } from './MobileFilterModal';
 
 type MobileFilterProps = {
   selectedCategory: ProjectCategoryType;

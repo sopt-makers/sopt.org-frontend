@@ -1,5 +1,6 @@
-import Image from 'next/image';
 import { useIsDesktop } from '@src/hooks/useIsDesktop';
+import Image from 'next/image';
+
 import * as S from './Symbol.style';
 
 interface SymbolProps {

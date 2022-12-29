@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { Header, Footer } from '@src/components';
+import { Footer, Header } from '@src/components';
 import Branding from '@src/components/Home/Branding';
 import Events from '@src/components/Home/Events';
 import Introduce from '@src/components/Home/Introduce';

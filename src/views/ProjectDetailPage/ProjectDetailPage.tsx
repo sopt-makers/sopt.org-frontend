@@ -1,20 +1,20 @@
+import React from 'react';
+import { useEffect, useState } from 'react';
+import { useQuery } from 'react-query';
 import { ReactComponent as IToggle } from '@src/assets/images/toggle.svg';
-import { Header, Footer, Layout } from '@src/components';
+import { Footer, Header, Layout } from '@src/components';
 import { getProjectDetail } from '@src/lib/project';
 import { dateFormat } from '@src/utils/dateFormat';
 import { debounce } from '@src/utils/scrollDebounce';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import React from 'react';
-import { useEffect, useState } from 'react';
-import { useQuery } from 'react-query';
+
 import UpButton from './components/UpButton';
 import { projectOverviewTitle } from './constants/contants';
-
+import { getLinkNameAndSrcWithType } from './utils/getLinkNameAndSrcWithType';
 import * as S from './ProjectDetail.style';
 import { LinkType, TeamMembersType } from './types';
-import { getLinkNameAndSrcWithType } from './utils/getLinkNameAndSrcWithType';
 
 const SCROLL_MINIMUM_VALUE = 120;
 

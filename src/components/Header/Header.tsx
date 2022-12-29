@@ -1,7 +1,8 @@
-import DesktopHeader from './Desktop/DesktopHeader';
-import MobileHeader from './Mobile/MobileHeader';
 import styled from '@emotion/styled';
 import { useIsDesktop } from '@src/hooks/useIsDesktop';
+
+import DesktopHeader from './Desktop/DesktopHeader';
+import MobileHeader from './Mobile/MobileHeader';
 
 const menuList = [
   { id: '/project', title: '프로젝트' },

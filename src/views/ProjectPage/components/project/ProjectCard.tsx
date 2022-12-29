@@ -1,17 +1,17 @@
+import { useIsDesktop } from '@src/hooks/useIsDesktop';
 import Image from 'next/image';
 import Link from 'next/link';
 import shortid from 'shortid';
 
-import styles from './project-card.module.scss';
-import { ProjectType, LinkType } from '../../types';
-
-import { ReactComponent as PlayStore } from '../../assets/play-store-40x40.svg';
 import { ReactComponent as AppStore } from '../../assets/app-store-40x40.svg';
 import { ReactComponent as Github } from '../../assets/github-40x40.svg';
-import { ReactComponent as Web } from '../../assets/website-40x40.svg';
 import { ReactComponent as Instagram } from '../../assets/instagram-30x30.svg';
+import { ReactComponent as PlayStore } from '../../assets/play-store-40x40.svg';
+import { ReactComponent as Web } from '../../assets/website-40x40.svg';
 import { ReactComponent as Youtube } from '../../assets/youtube-30x30.svg';
-import { useIsDesktop } from '@src/hooks/useIsDesktop';
+import { LinkType, ProjectType } from '../../types';
+
+import styles from './project-card.module.scss';
 
 export function ProjectCard({ project }: { project: ProjectType }) {
   return (

@@ -4,6 +4,7 @@ import googleplay from '@src/assets/icons/googleplay_icon.svg';
 import instagram from '@src/assets/icons/instagram_icon.svg';
 import media from '@src/assets/icons/media_icon.svg';
 import website from '@src/assets/icons/website_icon.svg';
+
 import { LinkDetailType } from '../types';
 
 const LinkMap = {

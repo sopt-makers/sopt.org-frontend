@@ -1,7 +1,7 @@
-import 'react-toastify/dist/ReactToastify.css';
-
 import React, { useEffect } from 'react';
 import { toast, ToastContainer } from 'react-toastify';
+
+import 'react-toastify/dist/ReactToastify.css';
 
 interface CommonErrorProps {
   error: Nullable<Error>;

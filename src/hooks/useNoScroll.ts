@@ -1,5 +1,5 @@
-import { MenuType } from '@src/components/Header/Mobile/MobileHeader';
 import { useEffect } from 'react';
+import { MenuType } from '@src/components/Header/Mobile/MobileHeader';
 
 export default function useNoScroll(isMenuShown: MenuType) {
   useEffect(() => {

@@ -38,7 +38,7 @@
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
     "prettier/prettier": "error",
-    // "simple-import-sort/imports": "error", // to fix : error가 없음에도 error가 나타남.
+    "simple-import-sort/imports": "warn",
     "simple-import-sort/exports": "error",
     "import/no-anonymous-default-export": 0,
     "no-multiple-empty-lines": ["error", { "max": 1 }],
@@ -53,5 +53,32 @@
     "semi": ["error", "always"],
     "object-shorthand": "error",
     "@typescript-eslint/explicit-module-boundary-types": "off"
-  }
+  },
+  "overrides": [
+    // override "simple-import-sort" config
+    {
+      "files": ["*.js", "*.jsx", "*.ts", "*.tsx"],
+      "rules": {
+        "simple-import-sort/imports": [
+          "error",
+          {
+            "groups": [
+              // Packages `react` related packages come first.
+              ["^react", "^@?\\w"],
+              // Internal packages.
+              ["^(@|components)(/.*|$)"],
+              // Side effect imports.
+              ["^\\u0000"],
+              // Parent imports. Put `..` last.
+              ["^\\.\\.(?!/?$)", "^\\.\\./?$"],
+              // Other relative imports. Put same-folder imports and `.` last.
+              ["^\\./(?=.*/)(?!/?$)", "^\\.(?!/?$)", "^\\./?$"],
+              // Style imports.
+              ["^.+\\.?(css)$"]
+            ]
+          }
+        ]
+      }
+    }
+  ]
 }

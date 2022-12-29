@@ -1,10 +1,11 @@
+import { useState } from 'react';
+import { QueryClient, QueryClientProvider } from 'react-query';
 import { Global, ThemeProvider } from '@emotion/react';
 import { global } from '@src/styles/global';
 import theme from '@src/styles/theme';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
-import { useState } from 'react';
-import { QueryClient, QueryClientProvider } from 'react-query';
+
 import '../styles/font.css';
 
 function MyApp({ Component, pageProps }: AppProps) {

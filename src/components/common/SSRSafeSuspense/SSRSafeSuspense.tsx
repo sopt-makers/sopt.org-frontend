@@ -1,5 +1,5 @@
-import useMounted from '@src/hooks/useMounted';
 import React, { ComponentProps, Suspense } from 'react';
+import useMounted from '@src/hooks/useMounted';
 
 export default function SSRSafeSuspense(props: ComponentProps<typeof Suspense>) {
   const isMounted = useMounted();

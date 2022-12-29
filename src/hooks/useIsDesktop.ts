@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
 
 export function useIsDesktop(minWidth = '1280px') {

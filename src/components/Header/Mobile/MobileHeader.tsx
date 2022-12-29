@@ -1,14 +1,13 @@
 import { useState } from 'react';
-import { useRouter } from 'next/router';
-import { Condition } from '@src/lib';
-
-import HeaderMenu from './HeaderMenu';
-
+import styled from '@emotion/styled';
 import menuBar from '@src/assets/icons/menuBar.svg';
 import xButton from '@src/assets/icons/xButton.png';
 import logoIcon from '@src/assets/replaceMe/branding/logo.png';
-import styled from '@emotion/styled';
+import { Condition } from '@src/lib';
 import Image from 'next/image';
+import { useRouter } from 'next/router';
+
+import HeaderMenu from './HeaderMenu';
 
 export type MenuType = 'idle' | 'open' | 'close';
 
