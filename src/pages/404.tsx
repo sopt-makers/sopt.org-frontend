@@ -5,8 +5,7 @@ import RoundButton from '@src/components/common/RoundButton';
 import theme from '@src/styles/theme';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-import React from 'react';
-import { useMediaQuery } from 'react-responsive';
+import { useIsDesktop } from '@src/hooks/useIsDesktop';
 
 function Wrong() {
   const router = useRouter();
@@ -14,9 +13,7 @@ function Wrong() {
   const handleButtonClick = () => {
     router.push('/');
   };
-  const isDesktop = useMediaQuery({
-    query: '(min-width: 768px)',
-  });
+  const isDesktop = useIsDesktop();
 
   return (
     <>

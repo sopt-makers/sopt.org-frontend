@@ -1,8 +1,7 @@
-import { useMediaQuery } from 'react-responsive';
 import DesktopHeader from './Desktop/DesktopHeader';
 import MobileHeader from './Mobile/MobileHeader';
 import styled from '@emotion/styled';
-import { Condition } from '@src/lib';
+import { useIsDesktop } from '@src/hooks/useIsDesktop';
 
 const menuList = [
   { id: '/project', title: '프로젝트' },
@@ -10,18 +9,12 @@ const menuList = [
 ];
 
 export function Header() {
-  const isDesktop = useMediaQuery({
-    query: '(min-width: 1280px)',
-  });
+  const isDesktop = useIsDesktop();
 
   return (
     <HeaderContainer>
-      <Condition statement={isDesktop}>
-        <DesktopHeader menuList={menuList} />
-      </Condition>
-      <Condition statement={!isDesktop}>
-        <MobileHeader menuList={menuList} />
-      </Condition>
+      {isDesktop && <DesktopHeader menuList={menuList} />}
+      {!isDesktop && <MobileHeader menuList={menuList} />}
     </HeaderContainer>
   );
 }

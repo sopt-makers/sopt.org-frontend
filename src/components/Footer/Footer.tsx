@@ -1,26 +1,16 @@
 import Channels from '@src/components/Footer/Channels';
-import { useRouter } from 'next/router';
-import { useMediaQuery } from 'react-responsive';
+import { useIsDesktop } from '@src/hooks/useIsDesktop';
 import { ReactComponent as ArrowRight } from '@src/assets/icons/arrow-right-16x16.svg';
-
 import * as S from './Footer.style';
 
 export function Footer() {
-  const isDesktop = useMediaQuery({
-    query: '(min-width: 1280px)',
-  });
-
-  const router = useRouter();
-
-  const handleClick = () => {
-    router.push('/rules');
-  };
+  const isDesktop = useIsDesktop();
 
   return (
     <S.Root>
       <S.ContentWrap>
         <div>
-          <S.TitleButton onClick={handleClick}>
+          <S.TitleButton>
             <span>SOPT 회칙</span>
             <ArrowRight />
           </S.TitleButton>

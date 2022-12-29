@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { Fragment } from 'react';
 import Marquee from 'react-fast-marquee';
 import { useQuery } from 'react-query';
-import { useMediaQuery } from 'react-responsive';
+import { useIsDesktop } from '@src/hooks/useIsDesktop';
 import { ClipLoader } from 'react-spinners';
 
 import * as S from './IconBanner.style';
@@ -29,9 +29,7 @@ const IconBanner = () => {
 };
 
 function Resolved() {
-  const isDesktop = useMediaQuery({
-    query: '(min-width: 1280px)',
-  });
+  const isDesktop = useIsDesktop();
   const { data } = useQuery('mainLogo', () => getMainLogo(), {
     suspense: true,
   });

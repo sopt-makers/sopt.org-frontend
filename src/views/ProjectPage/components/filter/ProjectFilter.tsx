@@ -1,8 +1,7 @@
 import { Dispatch, SetStateAction } from 'react';
-import { useMediaQuery } from 'react-responsive';
+import { useIsDesktop } from '@src/hooks/useIsDesktop';
 import { DesktopFilter } from './DesktopFilter';
 import { MobileFilter } from './MobileFilter';
-import { Condition } from '@src/lib';
 import { ProjectCategoryType } from '../../lib/constants';
 
 interface ProjectFilterPropType {
@@ -11,19 +10,13 @@ interface ProjectFilterPropType {
 }
 
 export function ProjectFilter({ selectedCategory, setCategory }: ProjectFilterPropType) {
-  const isDesktop = useMediaQuery({
-    query: '(min-width: 1920px)',
-  });
+  const isDesktop = useIsDesktop('1920px');
   const isMobile = !isDesktop;
 
   return (
     <>
-      <Condition statement={isDesktop}>
-        <DesktopFilter selectedCategory={selectedCategory} setCategory={setCategory} />
-      </Condition>
-      <Condition statement={isMobile}>
-        <MobileFilter selectedCategory={selectedCategory} setCategory={setCategory} />
-      </Condition>
+      {isDesktop && <DesktopFilter selectedCategory={selectedCategory} setCategory={setCategory} />}
+      {isMobile && <MobileFilter selectedCategory={selectedCategory} setCategory={setCategory} />}
     </>
   );
 }
