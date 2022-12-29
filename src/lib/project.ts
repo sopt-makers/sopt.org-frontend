@@ -1,5 +1,5 @@
-import axios from 'axios';
 import { ProjectCategoryType } from '@src/views/ProjectPage/lib/constants';
+import axios from 'axios';
 
 const client = axios.create({
   baseURL: process.env.NEXT_PUBLIC_SERVER_URL,

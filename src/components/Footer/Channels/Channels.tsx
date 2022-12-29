@@ -3,7 +3,6 @@ import { ReactComponent as InstagramLogo } from '@src/assets/logo/instagram.svg'
 import { ReactComponent as KakaoLogo } from '@src/assets/logo/kakao.svg';
 import { ReactComponent as MailLogo } from '@src/assets/logo/mail.svg';
 import { ReactComponent as YoutubeLogo } from '@src/assets/logo/youtube.svg';
-
 import * as S from './Channels.style';
 
 interface ChannelsProps {

@@ -1,6 +1,5 @@
 import Image from 'next/image';
-import { useMediaQuery } from 'react-responsive';
-
+import { useIsDesktop } from '@src/hooks/useIsDesktop';
 import * as S from './Symbol.style';
 
 interface SymbolProps {
@@ -9,9 +8,7 @@ interface SymbolProps {
 }
 
 function Symbol({ imgSrc, name }: SymbolProps) {
-  const isDesktop = useMediaQuery({
-    query: '(min-width: 1280px)',
-  });
+  const isDesktop = useIsDesktop();
 
   return (
     <S.Root>

@@ -1,22 +1,20 @@
-import { useMediaQuery } from 'react-responsive';
-import DesktopHeader from './DesktopHeader';
-import MobileHeader from './MobileHeader/MobileHeader';
 import styled from '@emotion/styled';
-import { Condition } from '@src/lib';
+import { useIsDesktop } from '@src/hooks/useIsDesktop';
+import DesktopHeader from './Desktop/DesktopHeader';
+import MobileHeader from './Mobile/MobileHeader';
+
+const menuList = [
+  { id: '/project', title: '프로젝트' },
+  { id: '/recruit', title: '리크루팅' },
+];
 
 export function Header() {
-  const isDesktop = useMediaQuery({
-    query: '(min-width: 1280px)',
-  });
+  const isDesktop = useIsDesktop();
 
   return (
     <HeaderContainer>
-      <Condition statement={isDesktop}>
-        <DesktopHeader />
-      </Condition>
-      <Condition statement={!isDesktop}>
-        <MobileHeader />
-      </Condition>
+      {isDesktop && <DesktopHeader menuList={menuList} />}
+      {!isDesktop && <MobileHeader menuList={menuList} />}
     </HeaderContainer>
   );
 }

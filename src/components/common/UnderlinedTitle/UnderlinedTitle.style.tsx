@@ -1,5 +1,4 @@
 import styled from '@emotion/styled';
-
 import { TitleStyleProps } from './UnderlinedTitle';
 
 export const Root = styled.h1<TitleStyleProps>`

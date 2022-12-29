@@ -1,5 +1,4 @@
 import React, { ReactElement } from 'react';
-
 import * as S from './UnderlinedTitle.style';
 
 export interface TitleStyleProps {

@@ -1,6 +1,5 @@
-import { ReactComponent as ArrowDown } from '@src/assets/icons/icArrowDown.svg';
 import Fade from 'react-reveal/Fade';
-
+import { ReactComponent as ArrowDown } from '@src/assets/icons/icArrowDown.svg';
 import * as S from './Top.style';
 
 function Top() {

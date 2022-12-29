@@ -1,6 +1,5 @@
-import styles from './project-enroll.module.scss';
-
 import { ReactComponent as RightArrow } from '@src/views/ProjectPage/assets/icon/arrow-right-24x24.svg';
+import styles from './project-enroll.module.scss';
 
 export function ProjectEnrollSection() {
   const handleProjectEnroll = (e: React.MouseEvent) => {
