@@ -1,5 +1,4 @@
 import Marquee from 'react-fast-marquee';
-
 import * as S from './SoptMarquee.style';
 
 interface MarqueeProps {

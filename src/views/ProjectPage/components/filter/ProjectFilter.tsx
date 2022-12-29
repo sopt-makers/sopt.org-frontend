@@ -1,8 +1,6 @@
 import { Dispatch, SetStateAction } from 'react';
 import { useIsDesktop } from '@src/hooks/useIsDesktop';
-
 import { ProjectCategoryType } from '../../lib/constants';
-
 import { DesktopFilter } from './DesktopFilter';
 import { MobileFilter } from './MobileFilter';
 

@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
-import logoIcon from '@src/assets/replaceMe/branding/logo.png';
 import { useRouter } from 'next/router';
+import logoIcon from '@src/assets/replaceMe/branding/logo.png';
 
 function DesktopHeader({ menuList }: { menuList: { id: string; title: string }[] }) {
   const router = useRouter();

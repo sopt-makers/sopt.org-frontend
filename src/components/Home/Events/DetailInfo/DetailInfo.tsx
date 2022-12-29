@@ -1,5 +1,4 @@
 import { EventDetailNumbers } from '@src/types/EventDetailNumbers';
-
 import * as S from './DetailInfo.style';
 
 interface InfoProps {

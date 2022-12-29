@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { Fragment } from 'react';
 import Marquee from 'react-fast-marquee';
 import { useQuery } from 'react-query';
@@ -7,8 +8,6 @@ import ErrorBoundary from '@src/components/common/ErrorBoundary';
 import SSRSafeSuspense from '@src/components/common/SSRSafeSuspense';
 import { useIsDesktop } from '@src/hooks/useIsDesktop';
 import { getMainLogo } from '@src/lib/api';
-import Image from 'next/image';
-
 import * as S from './IconBanner.style';
 
 type LogoImageType = {

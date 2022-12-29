@@ -1,12 +1,11 @@
-import { useState } from 'react';
 import styled from '@emotion/styled';
+import Image from 'next/image';
+import { useRouter } from 'next/router';
+import { useState } from 'react';
 import menuBar from '@src/assets/icons/menuBar.svg';
 import xButton from '@src/assets/icons/xButton.png';
 import logoIcon from '@src/assets/replaceMe/branding/logo.png';
 import { Condition } from '@src/lib';
-import Image from 'next/image';
-import { useRouter } from 'next/router';
-
 import HeaderMenu from './HeaderMenu';
 
 export type MenuType = 'idle' | 'open' | 'close';

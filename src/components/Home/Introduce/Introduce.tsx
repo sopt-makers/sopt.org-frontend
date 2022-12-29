@@ -1,5 +1,4 @@
 import React from 'react';
-
 import Description from './Description';
 import IconBanner from './IconBanner';
 import * as S from './Introduce.style';

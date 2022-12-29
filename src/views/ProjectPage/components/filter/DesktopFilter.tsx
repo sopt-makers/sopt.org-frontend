@@ -2,10 +2,8 @@ import { useState } from 'react';
 import { ReactComponent as ToggleArrowBtn } from '@src/assets/icons/ToggleArrow.svg';
 import { Condition } from '@src/lib';
 import cc from 'classcat';
-
-import { projectCategoryList, ProjectCategoryType } from '../../lib/constants';
+import { ProjectCategoryType, projectCategoryList } from '../../lib/constants';
 import { DesktopUtilityButtons } from '../utility/DesktopUtilityButtons';
-
 import styles from './project-filter-desktop.module.scss';
 
 type ModalProps = {

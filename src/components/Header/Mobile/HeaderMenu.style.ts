@@ -1,5 +1,5 @@
-import { css } from '@emotion/react';
 import styled from '@emotion/styled';
+import { css } from '@emotion/react';
 import { FadeIn, FadeInDown, FadeOut, FadeOutUp } from '@src/lib/styles/animation';
 
 type MenuType = 'idle' | 'open' | 'close';

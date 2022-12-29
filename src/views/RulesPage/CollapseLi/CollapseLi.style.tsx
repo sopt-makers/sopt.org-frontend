@@ -1,5 +1,5 @@
-import { css } from '@emotion/react';
 import styled from '@emotion/styled';
+import { css } from '@emotion/react';
 import { ArrowDownAnimation, ArrowUpAnimation } from '@src/lib/styles/animation';
 import theme from '@src/styles/theme';
 

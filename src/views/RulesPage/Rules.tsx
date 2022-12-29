@@ -2,9 +2,7 @@ import styled from '@emotion/styled';
 import { Footer, Header } from '@src/components';
 import { useIsDesktop } from '@src/hooks/useIsDesktop';
 import RulesHead from '@src/views/RulesPage/RulesHead';
-
 import UnderlinedTitle from '../../components/common/UnderlinedTitle';
-
 import RulesList from './RulesList';
 
 const SOPT_RULES = 'SOPT 회칙';

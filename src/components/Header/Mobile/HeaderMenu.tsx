@@ -1,6 +1,5 @@
-import React, { useEffect } from 'react';
 import { useRouter } from 'next/router';
-
+import React, { useEffect } from 'react';
 import * as S from './HeaderMenu.style';
 
 type MenuType = 'idle' | 'open' | 'close';

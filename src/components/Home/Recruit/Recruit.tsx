@@ -2,7 +2,6 @@ import Fade from 'react-reveal/Fade';
 import Arrow from '@src/assets/icons/icArrowDown.svg';
 import RoundButton from '@src/components/common/RoundButton';
 import UnderlinedTitle from '@src/components/common/UnderlinedTitle';
-
 import * as S from './Recruit.style';
 
 function Recruit() {

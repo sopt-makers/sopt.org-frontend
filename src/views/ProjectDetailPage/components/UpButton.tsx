@@ -1,8 +1,7 @@
-import { css } from '@emotion/react';
 import styled from '@emotion/styled';
+import { css } from '@emotion/react';
 import { ReactComponent as UpArrow } from '@src/assets/icons/upArrow.svg';
 import { FadeIn, FadeOut } from '@src/lib/styles/animation';
-
 import { UpButtonProps } from '../types';
 
 function UpButton(props: UpButtonProps) {

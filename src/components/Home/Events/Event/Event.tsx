@@ -1,8 +1,6 @@
-import { EventDetailNumbers } from '@src/types/EventDetailNumbers';
 import Image from 'next/image';
-
+import { EventDetailNumbers } from '@src/types/EventDetailNumbers';
 import DetailInfo from '../DetailInfo';
-
 import * as S from './Event.style';
 
 interface EventProps {

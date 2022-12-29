@@ -1,6 +1,5 @@
 import { ReactComponent as MobileFilterBtn } from '@src/assets/icons/MobileFilterBtn.svg';
 import { ReactComponent as UpArrow } from '@src/assets/icons/upArrow.svg';
-
 import styles from './utility.module.scss';
 
 export function MobileUtilityButtons({
