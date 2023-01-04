@@ -104,7 +104,7 @@ function ProjectDetailPage() {
                     </span>
                     <span>{generation ? generation + '기' : '-'}</span>
                     <span>
-                      {[serviceType]
+                      {[...serviceType]
                         .map((type: string) => (type === 'WEB' ? '웹' : '앱'))
                         .join(', ')}
                     </span>
