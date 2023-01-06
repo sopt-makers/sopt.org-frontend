@@ -1,14 +1,9 @@
 import styled from '@emotion/styled';
-import { ContactInfoType } from '../../types';
+import { contactInfo } from '../../lib/constants';
 import ContactInfo from './ContactInfo';
 
 function Contact() {
-  const contactInfo: ContactInfoType[] = [
-    { id: 'mail', text: '이메일', content: 'president@sopt.org' },
-    { id: 'instagram', text: '인스타그램', content: '@sopt_official' },
-    { id: 'kakao', text: '카카오플러스친구', content: 'SOPT' },
-    { id: 'facebook', text: '페이스북', content: 'clubsopt' },
-  ];
+  
   return (
     <Styled.Root>
       <Styled.Title>문의하기</Styled.Title>
@@ -26,7 +21,7 @@ const Styled = {
   Root: styled.div`
     display:flex;
     flex-direction: column;
-    margin:8rem 36rem 0 36rem;
+    margin-top:8rem;
   `,
   Title: styled.h1`
     font-weight: 800;
