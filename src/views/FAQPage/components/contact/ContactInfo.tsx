@@ -57,6 +57,7 @@ const Styled = {
     line-height: 50px;
     letter-spacing: -0.01em;
     text-decoration-line: underline;
+    text-underline-position: under;
     color: #ffffff;
   `,
 };
