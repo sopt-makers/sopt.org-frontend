@@ -21,6 +21,6 @@ export default FAQPage;
 const Root = styled.div`
   display: flex;
   flex-direction: column;
-  width: 100vw;
+  width: 1200px;
   margin: 0 auto;
 `;

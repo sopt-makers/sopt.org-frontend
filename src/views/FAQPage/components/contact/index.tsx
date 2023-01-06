@@ -3,13 +3,14 @@ import { contactInfo } from '../../lib/constants';
 import ContactInfo from './ContactInfo';
 
 function Contact() {
-  
   return (
     <Styled.Root>
       <Styled.Title>문의하기</Styled.Title>
 
       <Styled.ContactInfo>
-        {contactInfo.map(info => <ContactInfo key={info.id} info={info} />)}
+        {contactInfo.map((info) => (
+          <ContactInfo key={info.id} info={info} />
+        ))}
       </Styled.ContactInfo>
     </Styled.Root>
   );
@@ -19,22 +20,21 @@ export default Contact;
 
 const Styled = {
   Root: styled.div`
-    display:flex;
+    display: flex;
     flex-direction: column;
-    margin-top:8rem;
+    margin: 180px 0 240px 0;
   `,
   Title: styled.h1`
     font-weight: 800;
     font-size: 45px;
     line-height: 60px;
     letter-spacing: -0.01em;
-    color: #FFFFFF;
-    margin-bottom:10rem;
-
+    color: #ffffff;
+    margin-bottom: 100px;
   `,
   ContactInfo: styled.ul`
-    display:flex;
+    display: flex;
     flex-direction: column;
-    gap:8rem;
+    gap: 80px;
   `,
 };

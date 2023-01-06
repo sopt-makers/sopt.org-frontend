@@ -15,10 +15,10 @@ function FAQ() {
 
   return (
     <Styled.Root>
-      <div>
+      <Styled.Header>
         <Styled.Title>FAQ</Styled.Title>
         <Styled.Caption>자주 묻는 질문</Styled.Caption>
-      </div>
+      </Styled.Header>
 
       <Styled.FAQWrapper>
         {questionList.map((info, index) => (
@@ -37,9 +37,9 @@ const Styled = {
   Root: styled.div`
     display: flex;
     flex-direction: column;
-    & > div {
-      margin-bottom: 1rem;
-    }
+  `,
+  Header: styled.div`
+    margin-bottom: 100px;
   `,
   Title: styled.h1`
     font-family: 'SUIT';
@@ -48,7 +48,7 @@ const Styled = {
     line-height: 60px;
     letter-spacing: -0.01em;
     color: #ffffff;
-    margin-bottom: 2.4rem;
+    margin-bottom: 24px;
   `,
   Caption: styled.p`
     font-family: 'Pretendard';
@@ -61,5 +61,9 @@ const Styled = {
   FAQWrapper: styled.div`
     display: flex;
     flex-direction: column;
+    margin-bottom: 240px;
+    & > div:not(:last-child) {
+      margin-bottom: 30px;
+    }
   `,
 };

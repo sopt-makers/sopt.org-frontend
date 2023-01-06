@@ -47,7 +47,7 @@ const Styled = {
     line-height: 30px;
     letter-spacing: -0.01em;
     color: #787878;
-    margin-bottom: 3.2rem;
+    margin-bottom: 32px;
   `,
   Content: styled.p`
     width: fit-content;
