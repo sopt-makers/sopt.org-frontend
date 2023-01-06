@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import React from 'react';
 import { useEffect, useState } from 'react';
 import { useQuery } from 'react-query';
 import { ReactComponent as IToggle } from '@src/assets/images/toggle.svg';
@@ -11,7 +10,7 @@ import { dateFormat } from '@src/utils/dateFormat';
 import { debounce } from '@src/utils/scrollDebounce';
 import * as S from './ProjectDetail.style';
 import UpButton from './components/UpButton';
-import { projectOverviewTitle } from './constants/contants';
+import { projectOverviewTitle } from './lib/contants';
 import { LinkType, TeamMembersType } from './types';
 import { getLinkNameAndSrcWithType } from './utils/getLinkNameAndSrcWithType';
 
