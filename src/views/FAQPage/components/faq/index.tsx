@@ -1,10 +1,14 @@
 import styled from '@emotion/styled';
 import { useState } from 'react';
-import { questionList } from '../../lib/constants';
+import { useIsDesktop, useIsTablet } from '@src/hooks/useIsDesktop';
+import { questionList, questionListMobile, questionListTablet } from '../../lib/constants';
 import QuestionBox from './QuestionBox';
 
 function FAQ() {
   const [status, setStatus] = useState(new Set());
+  const isDesktop = useIsDesktop();
+  const isTablet = useIsTablet();
+  const isMobile = !isDesktop && !isTablet;
 
   const toggleBox = (index: number) => {
     const updatedStatus = new Set(status);
@@ -21,11 +25,24 @@ function FAQ() {
       </Styled.Header>
 
       <Styled.FAQWrapper>
-        {questionList.map((info, index) => (
-          <div key={index} onClick={() => toggleBox(index)}>
-            <QuestionBox info={info} status={status.has(index)} />
-          </div>
-        ))}
+        {isDesktop &&
+          questionList.map((info, index) => (
+            <div key={index} onClick={() => toggleBox(index)}>
+              <QuestionBox info={info} status={status.has(index)} />
+            </div>
+          ))}
+        {isTablet &&
+          questionListTablet.map((info, index) => (
+            <div key={index} onClick={() => toggleBox(index)}>
+              <QuestionBox info={info} status={status.has(index)} />
+            </div>
+          ))}
+        {isMobile &&
+          questionListMobile.map((info, index) => (
+            <div key={index} onClick={() => toggleBox(index)}>
+              <QuestionBox info={info} status={status.has(index)} />
+            </div>
+          ))}
       </Styled.FAQWrapper>
     </Styled.Root>
   );
@@ -37,9 +54,19 @@ const Styled = {
   Root: styled.div`
     display: flex;
     flex-direction: column;
+    /* 태블릿 뷰 */
+    @media (max-width: 1280px) {
+      align-items: center;
+    }
   `,
   Header: styled.div`
     margin-bottom: 100px;
+    /* 태블릿 뷰 */
+    @media (max-width: 1280px) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
   `,
   Title: styled.h1`
     font-family: 'SUIT';
@@ -57,13 +84,23 @@ const Styled = {
     line-height: 30px;
     letter-spacing: -0.01em;
     color: #787878;
+    /* 태블릿 뷰 */
+    @media (max-width: 1280px) {
+      font-size: 25px;
+    }
   `,
   FAQWrapper: styled.div`
     display: flex;
     flex-direction: column;
+    width: 100%;
     margin-bottom: 240px;
     & > div:not(:last-child) {
       margin-bottom: 30px;
+    }
+    /* 태블릿 뷰 */
+    @media (max-width: 1280px) {
+      padding-left: 38.5px;
+      padding-right: 41.5px;
     }
   `,
 };

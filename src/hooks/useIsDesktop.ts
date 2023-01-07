@@ -11,3 +11,14 @@ export function useIsDesktop(minWidth = '1280px') {
   }, [desktop]);
   return isDesktop;
 }
+
+export function useIsTablet(minWidth = '766px') {
+  const [isTablet, setIsTablet] = useState(true);
+  const tablet = useMediaQuery({
+    query: `(min-width: ${minWidth})`,
+  });
+  useEffect(() => {
+    setIsTablet(tablet);
+  }, [tablet]);
+  return isTablet;
+}
