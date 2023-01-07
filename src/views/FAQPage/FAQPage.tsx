@@ -29,8 +29,7 @@ const Root = styled.div`
     width: 766px;
   }
   /* 모바일 뷰 */
-  /* @media (max-width: 766px) {
-    width: 320px;
-    margin-top: 80px;
-  } */
+  @media (max-width: 766px) {
+    width: 360px;
+  }
 `;

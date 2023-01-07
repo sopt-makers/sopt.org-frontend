@@ -56,6 +56,12 @@ const Styled = {
     @media (max-width: 1280px) {
       font-size: 25px;
     }
+    /* 모바일 뷰 */
+    @media (max-width: 766px) {
+      font-size: 14px;
+      line-height: 16px;
+      margin-bottom: 8px;
+    }
   `,
   Content: styled.p`
     width: fit-content;
@@ -70,6 +76,11 @@ const Styled = {
     /* 태블릿 뷰 */
     @media (max-width: 1280px) {
       font-size: 35px;
+    }
+    /* 모바일 뷰 */
+    @media (max-width: 766px) {
+      font-size: 18px;
+      line-height: 27px;
     }
   `,
 };
