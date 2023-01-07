@@ -13,6 +13,20 @@ function QuestionBox(props: QuestionBoxProps) {
     status,
   } = props;
 
+  const makeBoldText = (text: string) => {
+    const regex = 'Shout Our Passion Together!';
+    if (text.includes(regex)) {
+      const index = text.indexOf(regex);
+      const rest = text.slice(0, index);
+      return (
+        <>
+          {rest} <span style={{ fontWeight: '700' }}>{regex}</span>
+        </>
+      );
+    }
+    return text;
+  };
+
   return (
     <Styled.Root>
       <Styled.QuestionWrapper isOpened={status}>
@@ -29,7 +43,7 @@ function QuestionBox(props: QuestionBoxProps) {
       {status && (
         <Styled.Content>
           {answer.split('\n').map((text) => (
-            <div key={text}>{text}</div>
+            <div key={text}>{makeBoldText(text)}</div>
           ))}
         </Styled.Content>
       )}
