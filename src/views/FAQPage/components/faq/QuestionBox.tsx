@@ -1,6 +1,5 @@
 import styled from '@emotion/styled';
-import Image from 'next/image';
-import IToggle from '@src/assets/images/toggle.svg';
+import { ReactComponent as IToggle } from '@src/assets/images/toggle.svg';
 import { FAQType } from '../../types';
 
 interface QuestionBoxProps {
@@ -23,7 +22,7 @@ function QuestionBox(props: QuestionBoxProps) {
           ))}
         </Styled.Title>
         <Styled.IconWrapper isOpened={status}>
-          <Image src={IToggle} alt="toggle button" width={25} height={18.33} />
+          <IToggle />
         </Styled.IconWrapper>
       </Styled.QuestionWrapper>
 
@@ -53,11 +52,15 @@ const Styled = {
     @media (max-width: 1280px) {
       font-size: 25px;
     }
+    /* 모바일 뷰 */
+    @media (max-width: 766px) {
+      padding: 28px;
+    }
   `,
   QuestionWrapper: styled.div<{ isOpened: boolean }>`
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    /* align-items: center; */
     margin-bottom: ${({ isOpened }) => (isOpened ? '37px' : '0')};
     /* 태블릿 뷰 */
     @media (max-width: 1280px) {
@@ -76,6 +79,11 @@ const Styled = {
     @media (max-width: 1280px) {
       font-size: 25px;
     }
+    /* 모바일 뷰 */
+    @media (max-width: 766px) {
+      font-size: 16px;
+      line-height: 24px;
+    }
   `,
   IconWrapper: styled.div<{ isOpened: boolean }>`
     display: flex;
@@ -83,12 +91,31 @@ const Styled = {
     align-items: center;
     width: 40px;
     height: 40px;
-    transform: ${({ isOpened }) => (isOpened ? 'rotate(90deg)' : 'rotate(0deg')};
     /* 태블릿 뷰 */
     @media (max-width: 1280px) {
       width: 32px;
       height: 32px;
     }
+    /* 모바일 뷰 */
+    @media (max-width: 766px) {
+      width: 24px;
+      height: 24px;
+    }
+    & > svg {
+      width: 25px;
+      height: 18.33px;
+      /* 태블릿 뷰 */
+      @media (max-width: 1280px) {
+        width: 20px;
+        height: 14.67px;
+      }
+      /* 모바일 뷰 */
+      @media (max-width: 766px) {
+        width: 15px;
+        height: 11px;
+      }
+    }
+    transform: ${({ isOpened }) => (isOpened ? 'rotate(90deg)' : 'rotate(0deg')};
   `,
   Content: styled.div`
     font-family: 'Pretendard';
@@ -100,6 +127,11 @@ const Styled = {
     /* 태블릿 뷰 */
     @media (max-width: 1280px) {
       font-size: 22px;
+    }
+    /* 모바일 뷰 */
+    @media (max-width: 766px) {
+      font-size: 14px;
+      line-height: 22px;
     }
   `,
 };

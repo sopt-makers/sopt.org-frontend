@@ -26,12 +26,14 @@ function FAQ() {
 
       <Styled.FAQWrapper>
         {isDesktop &&
+          isTablet &&
           questionList.map((info, index) => (
             <div key={index} onClick={() => toggleBox(index)}>
               <QuestionBox info={info} status={status.has(index)} />
             </div>
           ))}
-        {isTablet &&
+        {!isDesktop &&
+          isTablet &&
           questionListTablet.map((info, index) => (
             <div key={index} onClick={() => toggleBox(index)}>
               <QuestionBox info={info} status={status.has(index)} />
@@ -67,6 +69,10 @@ const Styled = {
       flex-direction: column;
       align-items: center;
     }
+    /* 모바일 뷰 */
+    @media (max-width: 766px) {
+      margin-bottom: 24px;
+    }
   `,
   Title: styled.h1`
     font-family: 'SUIT';
@@ -76,6 +82,12 @@ const Styled = {
     letter-spacing: -0.01em;
     color: #ffffff;
     margin-bottom: 24px;
+    /* 모바일 뷰 */
+    @media (max-width: 766px) {
+      font-size: 20px;
+      line-height: 28px;
+      margin-bottom: 4px;
+    }
   `,
   Caption: styled.p`
     font-family: 'Pretendard';
@@ -87,6 +99,11 @@ const Styled = {
     /* 태블릿 뷰 */
     @media (max-width: 1280px) {
       font-size: 25px;
+    }
+    /* 모바일 뷰 */
+    @media (max-width: 766px) {
+      font-size: 16px;
+      line-height: 20px;
     }
   `,
   FAQWrapper: styled.div`
@@ -101,6 +118,11 @@ const Styled = {
     @media (max-width: 1280px) {
       padding-left: 38.5px;
       padding-right: 41.5px;
+    }
+    /* 모바일 뷰 */
+    @media (max-width: 766px) {
+      padding-left: 16px;
+      padding-right: 16px;
     }
   `,
 };
