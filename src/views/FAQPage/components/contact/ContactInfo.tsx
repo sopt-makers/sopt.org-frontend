@@ -39,6 +39,10 @@ const Styled = {
   Root: styled.div`
     display: flex;
     flex-direction: column;
+    /* 태블릿 뷰 */
+    @media (max-width: 1280px) {
+      align-items: center;
+    }
   `,
   Text: styled.h1`
     font-family: 'Pretendard';
@@ -48,6 +52,10 @@ const Styled = {
     letter-spacing: -0.01em;
     color: #787878;
     margin-bottom: 32px;
+    /* 태블릿 뷰 */
+    @media (max-width: 1280px) {
+      font-size: 25px;
+    }
   `,
   Content: styled.p`
     width: fit-content;
@@ -59,5 +67,9 @@ const Styled = {
     text-decoration-line: underline;
     text-underline-position: under;
     color: #ffffff;
+    /* 태블릿 뷰 */
+    @media (max-width: 1280px) {
+      font-size: 35px;
+    }
   `,
 };

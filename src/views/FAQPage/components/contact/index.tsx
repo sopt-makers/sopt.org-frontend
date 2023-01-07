@@ -23,6 +23,11 @@ const Styled = {
     display: flex;
     flex-direction: column;
     margin: 180px 0 240px 0;
+    /* 태블릿 뷰 */
+    @media (max-width: 1280px) {
+      align-items: center;
+      margin-bottom: 200px;
+    }
   `,
   Title: styled.h1`
     font-weight: 800;
@@ -31,6 +36,10 @@ const Styled = {
     letter-spacing: -0.01em;
     color: #ffffff;
     margin-bottom: 100px;
+    /* 태블릿 뷰 */
+    @media (max-width: 1280px) {
+      font-size: 36px;
+    }
   `,
   ContactInfo: styled.ul`
     display: flex;

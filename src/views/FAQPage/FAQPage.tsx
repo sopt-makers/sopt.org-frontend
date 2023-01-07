@@ -23,4 +23,14 @@ const Root = styled.div`
   flex-direction: column;
   width: 1200px;
   margin: 0 auto;
+
+  /* 태블릿 뷰 */
+  @media (max-width: 1280px) {
+    width: 766px;
+  }
+  /* 모바일 뷰 */
+  /* @media (max-width: 766px) {
+    width: 320px;
+    margin-top: 80px;
+  } */
 `;
