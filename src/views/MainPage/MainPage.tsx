@@ -2,15 +2,12 @@ import { Footer, Header, Layout } from '@src/components';
 import {
   ActivityDescription,
   BannerImage,
+  CoporatePartner,
   DetailedInformation,
   PartDescription,
   SoptHistory,
 } from '@src/views/MainPage/components';
 import styles from './main-page.module.scss';
-
-function CoporatePartner() {
-  return <section>Partner</section>;
-}
 
 function CorporateLinkedActivities() {
   return <section>Corporate Linked Activities</section>;
