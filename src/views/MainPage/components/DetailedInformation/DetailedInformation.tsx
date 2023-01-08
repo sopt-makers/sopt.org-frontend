@@ -1,3 +1,5 @@
+import { useRouter } from 'next/router';
+import { ReactComponent as ArrowRight } from '@src/views/MainPage/assets/arrow-right.svg';
 import styles from './detailed-information.module.scss';
 
 const cardList = [
@@ -16,15 +18,40 @@ const cardList = [
 ];
 
 export function DetailedInformation() {
+  const router = useRouter();
+  const handleClickItem = (name: string) => {
+    switch (name) {
+      case '프로젝트':
+        router.push('/project');
+        break;
+      case 'FAQ':
+        router.push('/FAQ');
+        break;
+      case 'Youtube':
+        window.open('https://www.youtube.com/c/SOPTMEDIA');
+        break;
+      default:
+        throw new Error('unKnown Name');
+    }
+  };
+
   return (
-    <section>
-      <h3>SOPT를 더 알고 싶다면, 둘러보세요.</h3>
-      <div>
+    <section className={styles.container}>
+      <h3 className={styles.title}>SOPT를 더 알고 싶다면, 둘러보세요.</h3>
+      <div className={styles.content}>
         {cardList.map(({ name, desc }) => {
           return (
-            <article key={name}>
-              <h4>{name}</h4>
-              <p>{desc}</p>
+            <article
+              className={styles.card}
+              onClick={() => handleClickItem(name)}
+              role="presentation"
+              key={name}
+            >
+              <div className={styles.nameWrapper}>
+                <h4 className={styles.name}>{name}</h4>
+                <ArrowRight />
+              </div>
+              <p className={styles.desc}>{desc}</p>
             </article>
           );
         })}
