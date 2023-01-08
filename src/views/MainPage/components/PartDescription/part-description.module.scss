@@ -1,0 +1,96 @@
+@import '@src/styles/mixins';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include mobile {
+    width: 91%;
+  }
+}
+
+.title {
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+
+  @include mobile {
+    justify-content: center;
+    width: 190px;
+    height: 56px;
+    font-weight: 800;
+    font-size: 20px;
+    line-height: 28px;
+    text-align: center;
+  }
+}
+
+.subTitle {
+  color: #787878;
+
+  @include mobile {
+    width: 190px;
+    height: 20px;
+    margin-top: 8px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+
+.content {
+  @include mobile {
+    margin-top: 48px;
+  }
+}
+
+.partList {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  overflow-x: scroll;
+
+  li {
+    color: #ffffff;
+    white-space: nowrap;
+    opacity: 0.2;
+    &.selected {
+      opacity: 1;
+    }
+
+    @include mobile {
+      padding: 8px 0px;
+      height: 32px;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 100%;
+    }
+  }
+}
+
+.selectedCard {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgba(253, 253, 253, 0.8);
+  word-break: keep-all;
+
+  @include mobile {
+    height: 122px;
+    background-color: #262626;
+    border-radius: 10px;
+    margin-top: 16px;
+
+    p {
+      width: 272px;
+      height: 66px;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 22px;
+    }
+  }
+}

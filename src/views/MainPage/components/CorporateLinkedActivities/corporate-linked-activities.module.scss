@@ -1,0 +1,120 @@
+@import '@src/styles/mixins';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @include mobile {
+    gap: 48px;
+    width: 91%;
+    height: 520px;
+  }
+}
+
+.summary {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @include mobile {
+    gap: 8px;
+  }
+}
+
+.title {
+  text-align: center;
+  color: #ffffff;
+  @include mobile {
+    width: 130px;
+    height: 56px;
+    font-weight: 800;
+    font-size: 20px;
+    line-height: 28px;
+  }
+}
+
+.subtitle {
+  color: #787878;
+  @include mobile {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+.contentWrapper {
+  width: 100%;
+}
+
+.content {
+  display: grid;
+  grid-template-rows: repeat(1, 1fr);
+  grid-template-columns: repeat(9, 1fr);
+  overflow-x: scroll;
+
+  @include mobile {
+    height: 384px;
+    gap: 24px;
+  }
+}
+
+.item {
+  color: red;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  gap: 10px;
+
+  @include mobile {
+    width: 171px;
+    height: 384px;
+  }
+}
+
+.year {
+  color: #fcfcfc;
+
+  @include mobile {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+  }
+}
+
+.name {
+  color: #fcfcfc;
+  white-space: nowrap;
+  @include mobile {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+  }
+}
+
+.description {
+  color: #fcfcfc;
+  opacity: 0.8;
+  word-break: keep-all;
+
+  @include mobile {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 20px;
+  }
+}
+
+.subDescription {
+  color: #787878;
+
+  @include mobile {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 20px;
+  }
+}
+
+.activityImage {
+  @include mobile {
+    width: 170px;
+    height: 170px;
+  }
+}

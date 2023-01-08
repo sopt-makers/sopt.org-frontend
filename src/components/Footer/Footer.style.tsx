@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 
 export const Root = styled.footer`
-  width: 100vw;
+  width: 100%;
   min-height: 163px;
   background-color: #2a2a2a;
 
@@ -54,7 +54,7 @@ export const TitleButton = styled.button`
 `;
 
 export const CopyrightText = styled.p`
-  width: 500px;
+  width: 100%;
   margin-top: 25px;
   line-height: 180%;
   font-family: 'SUIT', arial, sans-serif;

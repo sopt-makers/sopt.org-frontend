@@ -1,0 +1,53 @@
+@import '@src/styles/mixins';
+
+.container {
+  display: flex;
+
+  @include mobile {
+    flex-direction: column;
+    align-items: center;
+    width: 72%;
+    height: 276px;
+  }
+}
+
+.title {
+  @include mobile {
+    color: #ffffff;
+    font-weight: 800;
+    font-size: 21px;
+    line-height: 28px;
+    text-align: center;
+  }
+}
+
+.content {
+  @include mobile {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 40px;
+    padding-top: 48px;
+  }
+}
+
+.item {
+  @include mobile {
+    width: 101px;
+    height: 66px;
+
+    h5 {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+      color: #787878;
+    }
+
+    span {
+      font-weight: 600;
+      font-size: 25px;
+      line-height: 38px;
+      color: #ffffff;
+    }
+  }
+}

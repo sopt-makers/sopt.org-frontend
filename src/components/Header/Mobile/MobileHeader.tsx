@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 import { useState } from 'react';
 import menuBar from '@src/assets/icons/menuBar.svg';
 import xButton from '@src/assets/icons/xButton.png';
-import logoIcon from '@src/assets/replaceMe/branding/logo.png';
+import logoIcon from '@src/assets/sopt/logo.png';
 import { Condition } from '@src/lib';
 import HeaderMenu from './HeaderMenu';
 

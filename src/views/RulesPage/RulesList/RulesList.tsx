@@ -1,4 +1,4 @@
-import { RULES } from '@src/assets/replaceMe/rules';
+import { RULES } from '@src/assets/sopt/rules';
 import CollapseLi from '../CollapseLi';
 import * as S from './RulesList.style';
 

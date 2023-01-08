@@ -1,0 +1,135 @@
+@import '@src/styles/mixins';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include mobile {
+    width: 91%;
+    gap: 64px;
+  }
+}
+
+.title {
+  color: #ffffff;
+  word-break: keep-all;
+
+  @include mobile {
+    width: 215px;
+    height: 56px;
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 28px;
+    text-align: center;
+  }
+}
+
+.content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.activityList {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  overflow-x: scroll;
+
+  li {
+    color: #ffffff;
+    white-space: nowrap;
+    opacity: 0.2;
+    &.selected {
+      opacity: 1;
+    }
+
+    @include mobile {
+      padding: 8px 0px;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 100%;
+    }
+  }
+}
+
+.selectedCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  gap: 8px;
+  color: rgba(253, 253, 253, 0.8);
+  word-break: keep-all;
+
+  @include mobile {
+    width: 328px;
+    height: 340px;
+
+    p {
+      width: 328px;
+      height: 166px;
+      padding: 28px;
+      background-color: #262626;
+      border-radius: 10px;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 22px;
+    }
+  }
+}
+
+.imageWrapper {
+  position: relative;
+  border-radius: 10px;
+
+  @include mobile {
+    width: 328px;
+    height: 166px;
+  }
+
+  .cardImage {
+    border-radius: 10px;
+    opacity: 0.6;
+    background-color: black;
+  }
+}
+
+.imageDesc {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 79px;
+  height: 38px;
+  z-index: 2;
+  color: #ffffff;
+  white-space: nowrap;
+
+  @include mobile {
+    top: 22%;
+    left: 38%;
+  }
+
+  .type {
+    @include mobile {
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 100%;
+    }
+  }
+
+  .nickName {
+    @include mobile {
+      margin-top: 8px;
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 100%;
+    }
+  }
+}
