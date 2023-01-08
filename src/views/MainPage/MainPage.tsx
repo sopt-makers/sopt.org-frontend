@@ -24,7 +24,7 @@ function MainPage() {
           <CoporatePartner />
           <CorporateLinkedActivities />
         </div>
-        {/* <Footer /> */}
+        <Footer />
       </Layout>
     </>
   );
