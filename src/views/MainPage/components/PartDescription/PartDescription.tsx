@@ -35,7 +35,6 @@ const partList = [
 
 export function PartDescription() {
   const { currentTab, changeTab } = useTabs(partList[0], partList);
-
   const handleClick = (tab: string) => {
     changeTab(tab);
   };

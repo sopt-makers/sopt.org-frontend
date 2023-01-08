@@ -46,9 +46,10 @@
 }
 
 .partList {
+  width: 100%;
   display: flex;
-  gap: 20px;
   justify-content: space-between;
+  gap: 20px;
   overflow-x: scroll;
 
   li {
@@ -62,8 +63,8 @@
     @include mobile {
       padding: 8px 0px;
       height: 32px;
-      font-weight: 600;
-      font-size: 15px;
+      font-weight: 700;
+      font-size: 16px;
       line-height: 100%;
     }
   }
@@ -82,6 +83,7 @@
     height: 122px;
     background-color: #262626;
     border-radius: 10px;
+    margin-top: 16px;
 
     p {
       width: 272px;

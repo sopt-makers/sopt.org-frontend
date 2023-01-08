@@ -18,7 +18,7 @@ const cardList = [
 export function DetailedInformation() {
   return (
     <section>
-      <h3>SOPT는 총 6개의 파트로 이루어져 있어요.</h3>
+      <h3>SOPT를 더 알고 싶다면, 둘러보세요.</h3>
       <div>
         {cardList.map(({ name, desc }) => {
           return (
