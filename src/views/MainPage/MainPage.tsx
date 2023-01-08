@@ -1,3 +1,4 @@
+import styled from '@emotion/styled';
 import Head from 'next/head';
 import { Footer, Header, Layout } from '@src/components';
 import {
@@ -16,6 +17,13 @@ function CorporateLinkedActivities() {
   return <section>Corporate Linked Activities</section>;
 }
 
+const ContentContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+`;
+
 function MainPage() {
   return (
     <>
@@ -30,13 +38,15 @@ function MainPage() {
       </Head>
       <Layout>
         <Header />
-        <BannerImage />
-        <SoptHistory />
-        <PartDescription />
-        <ActivityDescription />
-        <DetailedInformation />
-        <CoporatePartner />
-        <CorporateLinkedActivities />
+        <ContentContainer>
+          <BannerImage />
+          <SoptHistory />
+          <PartDescription />
+          <ActivityDescription />
+          <DetailedInformation />
+          <CoporatePartner />
+          <CorporateLinkedActivities />
+        </ContentContainer>
         <Footer />
       </Layout>
     </>
