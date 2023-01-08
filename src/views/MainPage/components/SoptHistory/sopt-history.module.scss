@@ -1,0 +1,8 @@
+@import '@src/styles/mixins';
+
+.container {
+  @include mobile {
+    width: 72%;
+    height: 276px;
+  }
+}

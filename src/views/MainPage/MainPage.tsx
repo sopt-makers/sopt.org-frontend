@@ -1,22 +1,12 @@
 import Head from 'next/head';
 import { Footer, Header, Layout } from '@src/components';
-import { BannerImage } from '@src/views/MainPage/components';
-
-function History() {
-  return <section>History</section>;
-}
-
-function PartDescription() {
-  return <section>Part Description</section>;
-}
-
-function ActivityDescription() {
-  return <section>Activity Description</section>;
-}
-
-function DetailedInformation() {
-  return <section>Information Cards</section>;
-}
+import {
+  ActivityDescription,
+  BannerImage,
+  DetailedInformation,
+  PartDescription,
+  SoptHistory,
+} from '@src/views/MainPage/components';
 
 function CoporatePartner() {
   return <section>Partner</section>;
@@ -41,7 +31,7 @@ function MainPage() {
       <Layout>
         <Header />
         <BannerImage />
-        <History />
+        <SoptHistory />
         <PartDescription />
         <ActivityDescription />
         <DetailedInformation />
