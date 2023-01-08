@@ -3,15 +3,12 @@ import {
   ActivityDescription,
   BannerImage,
   CoporatePartner,
+  CorporateLinkedActivities,
   DetailedInformation,
   PartDescription,
   SoptHistory,
 } from '@src/views/MainPage/components';
 import styles from './main-page.module.scss';
-
-function CorporateLinkedActivities() {
-  return <section>Corporate Linked Activities</section>;
-}
 
 function MainPage() {
   return (
