@@ -32,6 +32,12 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
         <meta name="theme-color" content="#ffffff" />
 
+        <link
+          rel="stylesheet"
+          type="text/css"
+          href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard-dynamic-subset.css"
+        />
+
         <meta content="yes" name="apple-mobile-web-app-capable" />
         <meta
           content="minimum-scale=1.0, width=device-width, maximum-scale=1, user-scalable=no"

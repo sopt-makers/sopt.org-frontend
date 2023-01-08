@@ -5,6 +5,7 @@ import MobileHeader from './Mobile/MobileHeader';
 
 const menuList = [
   { id: '/project', title: '프로젝트' },
+  { id: '/FAQ', title: '문의하기' },
   { id: '/recruit', title: '리크루팅' },
 ];
 
