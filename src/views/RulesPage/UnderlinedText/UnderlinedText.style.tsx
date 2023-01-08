@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
-import { TitleStyleProps } from './UnderlinedTitle';
+import { TitleProps } from './UnderlinedText';
 
-export const Root = styled.h1<TitleStyleProps>`
+export const Root = styled.h1<TitleProps>`
   border-bottom: 10px solid ${({ theme }) => theme.colors.mainColor};
   padding-bottom: 10px;
 
