@@ -21,7 +21,7 @@ export function Header() {
 }
 
 export const HeaderContainer = styled.header`
-  width: 100vw;
+  width: 100%;
   min-height: 80px;
 
   display: flex;
@@ -36,12 +36,10 @@ export const HeaderContainer = styled.header`
   backdrop-filter: blur(20px);
 
   @media (max-width: 1279px) {
-    width: calc(100%);
+    width: 100%;
     height: 48px;
 
     justify-content: space-between;
     padding: 12px 20px;
-
-    /* backdrop-filter: none; */
   }
 `;

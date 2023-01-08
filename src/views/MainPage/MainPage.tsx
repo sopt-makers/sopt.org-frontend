@@ -1,5 +1,4 @@
 import styled from '@emotion/styled';
-import Head from 'next/head';
 import { Footer, Header, Layout } from '@src/components';
 import {
   ActivityDescription,
@@ -27,15 +26,6 @@ const ContentContainer = styled.div`
 function MainPage() {
   return (
     <>
-      <Head>
-        <title>SOPT</title>
-        <meta name="description" content="sopt입니다.." />
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"
-        />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
       <Layout>
         <Header />
         <ContentContainer>
@@ -47,7 +37,7 @@ function MainPage() {
           <CoporatePartner />
           <CorporateLinkedActivities />
         </ContentContainer>
-        <Footer />
+        {/* <Footer /> */}
       </Layout>
     </>
   );

@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 
 export const Root = styled.footer`
-  width: 100vw;
+  width: 100%;
   min-height: 163px;
   background-color: #2a2a2a;
 
