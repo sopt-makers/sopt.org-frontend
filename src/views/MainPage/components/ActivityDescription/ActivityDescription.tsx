@@ -1,10 +1,10 @@
 import Image from 'next/image';
-import appJamImage from '@src/views/MainPage/assets/appjam.png';
-import managementMediaTeamImage from '@src/views/MainPage/assets/management-media-team.png';
-import seminarImage from '@src/views/MainPage/assets/seminar.png';
-import sopkathonImage from '@src/views/MainPage/assets/sopkathon.png';
-import soptTermImage from '@src/views/MainPage/assets/sopt-term.png';
-import studyAndNetworkingImage from '@src/views/MainPage/assets/study-networking.png';
+import appJamImage from '@src/views/MainPage/assets/sopt-activity/appjam.png';
+import managementMediaTeamImage from '@src/views/MainPage/assets/sopt-activity/management-media-team.png';
+import seminarImage from '@src/views/MainPage/assets/sopt-activity/seminar.png';
+import sopkathonImage from '@src/views/MainPage/assets/sopt-activity/sopkathon.png';
+import soptTermImage from '@src/views/MainPage/assets/sopt-activity/sopt-term.png';
+import studyAndNetworkingImage from '@src/views/MainPage/assets/sopt-activity/study-networking.png';
 import { useTabs } from '@src/views/MainPage/lib';
 import cc from 'classcat';
 import styles from './activity-description.module.scss';

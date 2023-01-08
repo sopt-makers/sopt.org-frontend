@@ -54,8 +54,8 @@
 
   li {
     color: #ffffff;
+    white-space: nowrap;
     opacity: 0.2;
-
     &.selected {
       opacity: 1;
     }
