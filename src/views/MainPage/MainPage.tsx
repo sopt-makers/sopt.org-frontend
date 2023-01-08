@@ -1,4 +1,3 @@
-import styled from '@emotion/styled';
 import { Footer, Header, Layout } from '@src/components';
 import {
   ActivityDescription,
@@ -7,6 +6,7 @@ import {
   PartDescription,
   SoptHistory,
 } from '@src/views/MainPage/components';
+import styles from './main-page.module.scss';
 
 function CoporatePartner() {
   return <section>Partner</section>;
@@ -16,27 +16,20 @@ function CorporateLinkedActivities() {
   return <section>Corporate Linked Activities</section>;
 }
 
-const ContentContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
-`;
-
 function MainPage() {
   return (
     <>
       <Layout>
         <Header />
-        <ContentContainer>
-          <BannerImage />
+        <BannerImage />
+        <div className={styles.container}>
           <SoptHistory />
           <PartDescription />
           <ActivityDescription />
           <DetailedInformation />
           <CoporatePartner />
           <CorporateLinkedActivities />
-        </ContentContainer>
+        </div>
         {/* <Footer /> */}
       </Layout>
     </>
