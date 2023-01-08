@@ -9,14 +9,14 @@ const historyList = [
 
 export function SoptHistory() {
   return (
-    <section>
-      <h3>국내 최대 규모의 대학생 연합 IT벤처창업 동아리 SOPT</h3>
-      <div>
+    <section className={styles.container}>
+      <h3 className={styles.title}>국내 최대 규모의 대학생 연합 IT벤처창업 동아리 SOPT</h3>
+      <div className={styles.content}>
         {historyList.map(({ category, content }) => {
           return (
-            <article key={category}>
+            <article className={styles.item} key={category}>
               <h5>{category}</h5>
-              <p>{content}</p>
+              <span>{content}</span>
             </article>
           );
         })}
