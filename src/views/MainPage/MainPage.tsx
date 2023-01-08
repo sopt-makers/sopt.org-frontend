@@ -1,5 +1,30 @@
 import Head from 'next/head';
 import { Footer, Header, Layout } from '@src/components';
+import { BannerImage } from '@src/views/MainPage/components';
+
+function History() {
+  return <section>History</section>;
+}
+
+function PartDescription() {
+  return <section>Part Description</section>;
+}
+
+function ActivityDescription() {
+  return <section>Activity Description</section>;
+}
+
+function DetailedInformation() {
+  return <section>Information Cards</section>;
+}
+
+function CoporatePartner() {
+  return <section>Partner</section>;
+}
+
+function CorporateLinkedActivities() {
+  return <section>Corporate Linked Activities</section>;
+}
 
 function MainPage() {
   return (
@@ -15,6 +40,13 @@ function MainPage() {
       </Head>
       <Layout>
         <Header />
+        <BannerImage />
+        <History />
+        <PartDescription />
+        <ActivityDescription />
+        <DetailedInformation />
+        <CoporatePartner />
+        <CorporateLinkedActivities />
         <Footer />
       </Layout>
     </>
