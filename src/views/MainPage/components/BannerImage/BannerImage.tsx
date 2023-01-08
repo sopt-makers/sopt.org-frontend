@@ -8,7 +8,9 @@ export function BannerImage() {
     <section className={styles.container}>
       <p className={styles.description}>기획자, 디자이너, 개발자가 협업을 통해 성장하는 SOPT</p>
       <p className={styles.slogan}>SHOUT OUR PASSION TOGETHER</p>
-      <ArrowDown className={styles.downArrow} width="24" height="24" />
+      <div className={styles.downArrowWrapper}>
+        <ArrowDown className={styles.downArrow} />
+      </div>
       <Image
         src={MainPageBanner}
         className={styles.bannerImage}

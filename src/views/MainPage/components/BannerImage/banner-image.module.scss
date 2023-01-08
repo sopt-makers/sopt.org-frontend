@@ -24,16 +24,24 @@
   position: absolute;
   text-align: center;
   z-index: 2;
+  color: #ffffff;
 
   @include mobile {
     top: 128px;
     width: 210px;
     height: 52px;
-
     font-weight: 500;
     font-size: 18px;
     line-height: 26px;
-    color: #ffffff;
+  }
+
+  @include tablet {
+    top: 160px;
+    width: 320px;
+    height: 84px;
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 42px;
   }
 }
 
@@ -46,24 +54,41 @@
     top: 424px;
     width: 280px;
     height: 232px;
-
     font-weight: 900;
     font-size: 50px;
     line-height: 58px;
   }
+
+  @include tablet {
+    top: 734px;
+    width: 575px;
+    height: 300px;
+    font-weight: 900;
+    font-size: 80px;
+    line-height: 100px;
+  }
 }
 
-.downArrow {
+.downArrowWrapper {
   position: absolute;
-  color: white;
   z-index: 2;
 
   @include mobile {
     top: 696px;
+    & > svg {
+      color: white;
+      width: 24px;
+      height: 24px;
+    }
   }
 
   @include tablet {
     top: 1114px;
+    & > svg {
+      color: white;
+      width: 48px;
+      height: 48px;
+    }
   }
 
   @include desktop {
