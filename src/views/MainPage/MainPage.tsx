@@ -1,4 +1,4 @@
-import { Footer, Header, Layout, ScrollToTopButton } from '@src/components';
+import { Footer, Header, Layout } from '@src/components';
 import {
   ActivityDescription,
   BannerImage,
@@ -15,7 +15,6 @@ function MainPage() {
     <>
       <Layout>
         <Header />
-        <ScrollToTopButton />
         <BannerImage />
         <div className={styles.container}>
           <SoptHistory />

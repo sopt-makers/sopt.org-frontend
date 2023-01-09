@@ -1,4 +1,3 @@
-import { useIsDesktop } from '@src/hooks/useIsDesktop';
 import { useTabs } from '@src/views/MainPage/lib';
 import cc from 'classcat';
 import styles from './part-description.module.scss';
@@ -34,53 +33,11 @@ const partList = [
   },
 ];
 
-function MobilePartDescription() {
+export function PartDescription() {
   const { currentTab, changeTab } = useTabs(partList[0], partList);
   const handleClick = (tab: string) => {
     changeTab(tab);
   };
-
-  return (
-    <div className={styles.content}>
-      <ul className={styles.partList}>
-        {partList.map(({ type }) => {
-          return (
-            <li
-              className={cc([currentTab.type === type && styles.selected])}
-              onClick={() => handleClick(type)}
-              key={type}
-              role="presentation"
-            >
-              {type}
-            </li>
-          );
-        })}
-      </ul>
-      <article className={styles.card}>
-        <p className={styles.cardContent}>{currentTab.content}</p>
-      </article>
-    </div>
-  );
-}
-
-function DesktopPartDescription() {
-  return (
-    <div className={styles.content}>
-      {partList.map(({ type, content }) => {
-        return (
-          <article className={styles.card} key={type}>
-            <span className={styles.type}>{type}</span>
-            <p className={styles.cardContent}>{content}</p>
-          </article>
-        );
-      })}
-    </div>
-  );
-}
-
-export function PartDescription() {
-  const isDesktop = useIsDesktop();
-  const isMobile = !isDesktop;
 
   return (
     <section className={styles.container}>
@@ -89,8 +46,25 @@ export function PartDescription() {
         <span>파트로 이루어져 있어요.</span>
       </h3>
       <h5 className={styles.subTitle}>*2022년 하반기 31기 기준</h5>
-      {isMobile && <MobilePartDescription />}
-      {isDesktop && <DesktopPartDescription />}
+      <div className={styles.content}>
+        <ul className={styles.partList}>
+          {partList.map(({ type }) => {
+            return (
+              <li
+                className={cc([currentTab.type === type && styles.selected])}
+                onClick={() => handleClick(type)}
+                key={type}
+                role="presentation"
+              >
+                {type}
+              </li>
+            );
+          })}
+        </ul>
+        <article className={styles.selectedCard}>
+          <p>{currentTab.content}</p>
+        </article>
+      </div>
     </section>
   );
 }

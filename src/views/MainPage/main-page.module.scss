@@ -10,12 +10,4 @@
   @include mobile {
     gap: 100px;
   }
-
-  @include tablet {
-    gap: 200px;
-  }
-
-  @include desktop {
-    gap: 240px;
-  }
 }
