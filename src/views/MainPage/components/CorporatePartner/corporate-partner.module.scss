@@ -5,21 +5,58 @@
   flex-direction: column;
   align-items: center;
   @include mobile {
+    width: 90%;
     gap: 48px;
-    width: 91%;
+  }
+  @include tablet {
+    width: 75%;
+    gap: 100px;
+  }
+  @include desktop {
+    width: 63%;
+    gap: 100px;
   }
 }
 
 .title {
+  font-weight: 800;
   @include mobile {
-    font-weight: 800;
     font-size: 20px;
     line-height: 28px;
+  }
+  @include tablet {
+    font-size: 36px;
+    line-height: 56px;
+  }
+  @include desktop {
+    font-size: 45px;
+    line-height: 60px;
   }
 }
 
 .contentWrapper {
   width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.arrowWrapper {
+  @include mobile {
+    display: none;
+  }
+  @include tablet {
+    display: none;
+  }
+  @include desktop {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
 }
 
 .content {
@@ -27,12 +64,25 @@
   grid-template-rows: repeat(2, 1fr);
   grid-template-columns: repeat(8, 1fr);
   grid-auto-flow: column;
-  overflow-x: scroll;
 
   @include mobile {
+    overflow-x: scroll;
     height: 185px;
     column-gap: 50px;
     row-gap: 20px;
+  }
+  @include tablet {
+    overflow-x: scroll;
+    height: 386px;
+    column-gap: 30px;
+    row-gap: 64px;
+  }
+  @include desktop {
+    overflow-x: hidden;
+    max-width: 900px;
+    height: 386px;
+    column-gap: 30px;
+    row-gap: 64px;
   }
 }
 
@@ -42,6 +92,14 @@
     width: 138px;
     height: 60px;
   }
+  @include tablet {
+    width: 277px;
+    height: 161px;
+  }
+  @include desktop {
+    width: 278px;
+    height: 161px;
+  }
 }
 
 .corporateLogoImage {
@@ -49,19 +107,30 @@
     width: 138px;
     height: 60px;
   }
-
   @include tablet {
     width: 278px;
     height: 161px;
+  }
+  @include desktop {
+    width: 278px;
+    height: 121px;
   }
 }
 
 .name {
   color: rgba(253, 253, 253, 0.8);
   text-align: center;
+  font-weight: 400;
   @include mobile {
-    font-weight: 400;
     font-size: 12px;
     line-height: 19px;
+  }
+  @include tablet {
+    font-size: 25px;
+    line-height: 40px;
+  }
+  @include desktop {
+    font-size: 25px;
+    line-height: 40px;
   }
 }
