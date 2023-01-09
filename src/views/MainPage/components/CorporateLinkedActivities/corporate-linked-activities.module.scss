@@ -19,7 +19,7 @@
     margin-bottom: 180px;
   }
   @include desktop {
-    align-items: center;
+    align-items: flex-start;
     gap: 100px;
     width: 63%;
     height: 920px;
