@@ -2,7 +2,6 @@ import Image from 'next/image';
 import { ReactComponent as ArrowLeft } from '@src/views/MainPage/assets/arrow-left-28x28.svg';
 import { ReactComponent as ArrowRight } from '@src/views/MainPage/assets/arrow-right-28x28.svg';
 import { useHorizontalScroll } from '@src/views/MainPage/lib';
-import cc from 'classcat';
 import { corporatedLinkedActivities } from './constants';
 import styles from './corporate-linked-activities.module.scss';
 
