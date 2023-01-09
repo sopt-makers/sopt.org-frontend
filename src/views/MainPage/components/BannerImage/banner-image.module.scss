@@ -24,50 +24,90 @@
   position: absolute;
   text-align: center;
   z-index: 2;
+  color: #ffffff;
+  font-weight: 500;
+  word-break: keep-all;
 
   @include mobile {
     top: 128px;
     width: 210px;
     height: 52px;
-
-    font-weight: 500;
     font-size: 18px;
     line-height: 26px;
-    color: #ffffff;
+  }
+  @include tablet {
+    top: 160px;
+    width: 320px;
+    height: 84px;
+    font-size: 28px;
+    line-height: 42px;
+  }
+  @include desktop {
+    top: 207px;
+    width: 800px;
+    height: 40px;
+    font-size: 35px;
+    line-height: 40px;
   }
 }
 
 .slogan {
   position: absolute;
   text-align: center;
+  font-weight: 900;
   z-index: 2;
+  word-break: keep-all;
 
   @include mobile {
     top: 424px;
     width: 280px;
     height: 232px;
-
-    font-weight: 900;
     font-size: 50px;
     line-height: 58px;
   }
+  @include tablet {
+    top: 734px;
+    width: 575px;
+    height: 300px;
+    font-size: 80px;
+    line-height: 100px;
+  }
+  @include desktop {
+    width: 1050px;
+    height: 480px;
+    top: 300px;
+    font-size: 140px;
+    line-height: 160px;
+  }
 }
 
-.downArrow {
+.downArrowWrapper {
   position: absolute;
-  color: white;
   z-index: 2;
 
   @include mobile {
     top: 696px;
+    & > svg {
+      color: white;
+      width: 24px;
+      height: 24px;
+    }
   }
-
   @include tablet {
     top: 1114px;
+    & > svg {
+      color: white;
+      width: 48px;
+      height: 48px;
+    }
   }
-
   @include desktop {
     top: 916px;
+    & > svg {
+      color: white;
+      width: 64px;
+      height: 64px;
+    }
   }
 }
 

@@ -3,28 +3,62 @@
 .container {
   display: flex;
   flex-direction: column;
-  align-items: center;
 
   @include mobile {
-    width: 91%;
+    align-items: center;
+    width: 90%;
+  }
+  @include tablet {
+    align-items: center;
+    width: 75%;
+  }
+  @include desktop {
+    align-items: flex-start;
+    width: 63%;
   }
 }
 
 .title {
+  word-break: keep-all;
+  font-weight: 800;
   @include mobile {
-    font-weight: 800;
+    text-align: center;
+    width: 210px;
+    height: 56px;
     font-size: 20px;
     line-height: 28px;
+  }
+  @include tablet {
+    text-align: center;
+    width: 360px;
+    height: 112px;
+    font-size: 36px;
+    line-height: 56px;
+  }
+  @include desktop {
+    text-align: start;
+    width: 460px;
+    height: 120px;
+    font-size: 45px;
+    line-height: 60px;
   }
 }
 
 .content {
   display: flex;
-  flex-direction: column;
-  gap: 8px;
-
   @include mobile {
+    flex-direction: column;
     margin-top: 48px;
+    gap: 8px;
+  }
+  @include tablet {
+    flex-direction: column;
+    margin-top: 100px;
+    gap: 16px;
+  }
+  @include desktop {
+    margin-top: 100px;
+    gap: 16px;
   }
 }
 
@@ -37,28 +71,63 @@
     height: 104px;
     padding: 28px;
   }
+  @include tablet {
+    width: 585px;
+    height: 196px;
+    padding: 56px;
+  }
+  @include desktop {
+    padding: 63px 55px;
+    width: 381px;
+    height: 260px;
+  }
 }
 
 .nameWrapper {
   display: flex;
-  margin-bottom: 8px;
+  @include mobile {
+    margin-bottom: 8px;
+  }
+  @include tablet {
+    margin-bottom: 16px;
+  }
+  @include desktop {
+    margin-bottom: 24px;
+  }
 }
 
 .name {
   color: #262626;
+  line-height: 100%;
+  font-weight: 700;
 
   @include mobile {
-    font-weight: 700;
     font-size: 16px;
-    line-height: 100%;
+  }
+  @include tablet {
+    font-size: 30px;
+  }
+  @include desktop {
+    font-size: 30px;
   }
 }
 
 .desc {
   color: #7d7d7d;
+  font-weight: 500;
+  word-break: keep-all;
   @include mobile {
-    font-weight: 500;
     font-size: 15px;
     line-height: 22px;
+  }
+  @include tablet {
+    font-size: 25px;
+    line-height: 40px;
+  }
+  @include desktop {
+    width: 260px;
+    height: 80px;
+    font-size: 25px;
+    line-height: 40px;
   }
 }
