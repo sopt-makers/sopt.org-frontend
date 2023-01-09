@@ -20,7 +20,7 @@ export function CoporatePartner() {
       <h3 className={styles.title}>SOPT의 파트너</h3>
       <div className={styles.contentWrapper}>
         <div
-          className={cc([styles.arrowWrapper, !isLeftScrollable && styles.disabled])}
+          className={styles.arrowWrapper}
           onClick={() => onClickLeftButton(scrollableRef.current)}
         >
           <ArrowLeft stroke={isLeftScrollable ? 'white' : 'grey'} />
@@ -36,7 +36,7 @@ export function CoporatePartner() {
           })}
         </div>
         <div
-          className={cc([styles.arrowWrapper, !isRightScrollable && styles.disabled])}
+          className={styles.arrowWrapper}
           onClick={() => onClickRightButton(scrollableRef.current)}
         >
           <ArrowRight stroke={isRightScrollable ? 'white' : 'grey'} />
