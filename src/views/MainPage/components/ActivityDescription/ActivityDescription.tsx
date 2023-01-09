@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { useIsDesktop } from '@src/hooks/useIsDesktop';
 import appJamImage from '@src/views/MainPage/assets/sopt-activity/appjam.png';
 import managementMediaTeamImage from '@src/views/MainPage/assets/sopt-activity/management-media-team.png';
 import seminarImage from '@src/views/MainPage/assets/sopt-activity/seminar.png';
@@ -51,48 +52,84 @@ const activityList = [
   },
 ];
 
-export function ActivityDescription() {
+function MobileActivityDescription() {
   const { currentTab, changeTab } = useTabs(activityList[0], activityList);
   const handleClick = (tab: string) => {
     changeTab(tab);
   };
 
   return (
+    <div className={styles.content}>
+      <ul className={styles.activityList}>
+        {activityList.map(({ type }) => {
+          return (
+            <li
+              className={cc([currentTab.type === type && styles.selected])}
+              onClick={() => handleClick(type)}
+              key={type}
+              role="presentation"
+            >
+              {type}
+            </li>
+          );
+        })}
+      </ul>
+      <article className={styles.card}>
+        <div className={styles.imageWrapper}>
+          <Image
+            className={styles.cardImage}
+            src={currentTab.imgSrc}
+            alt="card image"
+            layout="fill"
+            objectFit={'cover'}
+          />
+        </div>
+        <div className={styles.imageDesc}>
+          <span className={styles.type}>{currentTab.type}</span>
+          {currentTab.nickName && <span className={styles.nickName}>{currentTab.nickName}</span>}
+        </div>
+        <p className={styles.cardContent}>{currentTab.content}</p>
+      </article>
+    </div>
+  );
+}
+
+function DesktopActivityDescription() {
+  return (
+    <div className={styles.content}>
+      {activityList.map(({ type, imgSrc, nickName, content }) => {
+        return (
+          <article className={styles.card} key={type}>
+            <div className={styles.imageWrapper}>
+              <Image
+                className={styles.cardImage}
+                src={imgSrc}
+                alt="card image"
+                layout="fill"
+                objectFit={'cover'}
+              />
+            </div>
+            <div className={cc([styles.imageDesc, nickName && styles.nickNameInclude])}>
+              <span className={styles.type}>{type}</span>
+              {nickName && <span className={styles.nickName}>{nickName}</span>}
+            </div>
+            <p className={styles.cardContent}>{content}</p>
+          </article>
+        );
+      })}
+    </div>
+  );
+}
+
+export function ActivityDescription() {
+  const isDesktop = useIsDesktop();
+  const isMobile = !isDesktop;
+
+  return (
     <section className={styles.container}>
       <h3 className={styles.title}>SOPT에서는 이렇게 다양한 활동을 하고 있어요.</h3>
-      <div className={styles.content}>
-        <ul className={styles.activityList}>
-          {activityList.map(({ type }) => {
-            return (
-              <li
-                className={cc([currentTab.type === type && styles.selected])}
-                onClick={() => handleClick(type)}
-                key={type}
-                role="presentation"
-              >
-                {type}
-              </li>
-            );
-          })}
-        </ul>
-        <article className={styles.selectedCard}>
-          <div className={styles.imageWrapper}>
-            <Image
-              className={styles.cardImage}
-              src={currentTab.imgSrc}
-              alt="card image"
-              layout="fill"
-              objectFit={'cover'}
-            />
-          </div>
-
-          <div className={styles.imageDesc}>
-            <span className={styles.type}>{currentTab.type}</span>
-            {currentTab.nickName && <span className={styles.nickName}>{currentTab.nickName}</span>}
-          </div>
-          <p>{currentTab.content}</p>
-        </article>
-      </div>
+      {isMobile && <MobileActivityDescription />}
+      {isDesktop && <DesktopActivityDescription />}
     </section>
   );
 }
