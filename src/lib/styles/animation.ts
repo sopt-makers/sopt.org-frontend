@@ -7,9 +7,57 @@ export const ArrowDownAnimation = `
     transform: rotate(0deg);
   }
 }
+@-moz-keyframes ArrowDown {
+  from {
+    transform: rotate(-180deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+@-webkit-keyframes ArrowDown {
+  from {
+    transform: rotate(-180deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+@-o-keyframes ArrowDown {
+  from {
+    transform: rotate(-180deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
 `;
 export const ArrowUpAnimation = `
 @keyframes ArrowUp {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-180deg);
+  }
+}
+@-moz-keyframes ArrowUp {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-180deg);
+  }
+}
+@-webkit-keyframes ArrowUp {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-180deg);
+  }
+}
+@-o-keyframes ArrowUp {
   from {
     transform: rotate(0deg);
   }

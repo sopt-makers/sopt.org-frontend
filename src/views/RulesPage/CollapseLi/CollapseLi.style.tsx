@@ -62,6 +62,12 @@ export const Button = styled.button<ButtonStyleProps>`
   ${ArrowUpAnimation}
   
   animation: ${({ isOpened }) => (isOpened ? 'ArrowUp 0.3s forwards' : 'ArrowDown 0.3s forwards')};
+  -moz-animation: ${({ isOpened }) =>
+    isOpened ? 'ArrowUp 0.3s forwards' : 'ArrowDown 0.3s forwards'};
+  -webkit-animation: ${({ isOpened }) =>
+    isOpened ? 'ArrowUp 0.3s forwards' : 'ArrowDown 0.3s forwards'};
+  -o-animation: ${({ isOpened }) =>
+    isOpened ? 'ArrowUp 0.3s forwards' : 'ArrowDown 0.3s forwards'};
   color: inherit;
   font: inherit;
 `;
