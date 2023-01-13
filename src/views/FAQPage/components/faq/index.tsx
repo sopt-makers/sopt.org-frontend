@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import { useState } from 'react';
-import { useIsDesktop, useIsMobile, useIsTablet } from '@src/hooks/useIsDesktop';
+import { useIsDesktop, useIsMobile, useIsTablet } from '@src/hooks/useDevice';
 import { questionList, questionListMobile, questionListTablet } from '../../lib/constants';
 import QuestionBox from './QuestionBox';
 

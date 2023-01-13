@@ -1,5 +1,5 @@
 import { Dispatch, SetStateAction } from 'react';
-import { useIsDesktop, useIsMobile, useIsTablet } from '@src/hooks/useIsDesktop';
+import { useIsDesktop, useIsMobile, useIsTablet } from '@src/hooks/useDevice';
 import { ProjectCategoryType } from '../../lib/constants';
 import { DesktopFilter } from './DesktopFilter';
 import { MobileFilter } from './MobileFilter';

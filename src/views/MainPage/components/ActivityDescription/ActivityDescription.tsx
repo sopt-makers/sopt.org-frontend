@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { useIsDesktop, useIsMobile, useIsTablet } from '@src/hooks/useIsDesktop';
+import { useIsDesktop, useIsMobile, useIsTablet } from '@src/hooks/useDevice';
 import appJamImage from '@src/views/MainPage/assets/sopt-activity/appjam.png';
 import managementMediaTeamImage from '@src/views/MainPage/assets/sopt-activity/management-media-team.png';
 import seminarImage from '@src/views/MainPage/assets/sopt-activity/seminar.png';
