@@ -1,44 +1,32 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useQuery } from 'react-query';
 import { ReactComponent as IToggle } from '@src/assets/images/toggle.svg';
-import { Footer, Header, Layout } from '@src/components';
+import { Footer, Header, Layout, ScrollToTopButton } from '@src/components';
 import { getProjectDetail } from '@src/lib/project';
 import { dateFormat } from '@src/utils/dateFormat';
-import { debounce } from '@src/utils/scrollDebounce';
 import * as S from './ProjectDetail.style';
-import UpButton from './components/UpButton';
-import { projectOverviewTitle } from './lib/contants';
 import { LinkType, TeamMembersType } from './types';
 import { getLinkNameAndSrcWithType } from './utils/getLinkNameAndSrcWithType';
 
-const SCROLL_MINIMUM_VALUE = 120;
+const projectOverviewTitle = [
+  '프로젝트 기간',
+  '진행 기수',
+  '프로젝트 형태',
+  '프로젝트 상태',
+  '프로젝트 링크',
+];
 
 function ProjectDetailPage() {
   const router = useRouter();
   const id = router.query.id as string;
-
   const { data } = useQuery('projectDetail', () => getProjectDetail(+id), {
     enabled: !!id,
   });
   const [isOverviewOpened, setIsOverviewOpened] = useState(true);
   const [isTeamMemberOpened, setIsTeamMemberOpened] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  const checkScroll = debounce(() => {
-    window.scrollY > SCROLL_MINIMUM_VALUE ? setIsScrolled(true) : setIsScrolled(false);
-  });
-
-  useEffect(() => {
-    window.addEventListener('scroll', checkScroll);
-
-    return () => {
-      window.removeEventListener('scroll', checkScroll);
-    };
-  }, [checkScroll]);
-
   if (!data) return;
 
   const {
@@ -60,8 +48,7 @@ function ProjectDetailPage() {
   return (
     <Layout>
       <Header />
-      <UpButton isScrolled={isScrolled} />
-
+      <ScrollToTopButton />
       <S.Root>
         <S.ProjectHeader>
           <S.LogoImageWrapper>
@@ -72,7 +59,6 @@ function ProjectDetailPage() {
             <p>{summary}</p>
           </div>
         </S.ProjectHeader>
-
         {projectImage && (
           <S.ProjectImageWrapper>
             <Image src={projectImage} alt="project image" layout="fill" />
@@ -122,7 +108,6 @@ function ProjectDetailPage() {
                 <S.ProjectLinkWrapper>
                   {link.map(({ title, url }: LinkType) => {
                     const { name, src } = getLinkNameAndSrcWithType(title);
-
                     return (
                       <Link href={url} key={title}>
                         <S.ProjectLink>
@@ -135,7 +120,6 @@ function ProjectDetailPage() {
                 </S.ProjectLinkWrapper>
               </S.ProjectOverviewDetail>
             </S.ProjectOverview>
-
             <S.ProjectTeam>
               <S.ToggleWrapper onClick={() => setIsTeamMemberOpened((prev) => !prev)}>
                 <S.Title>프로젝트 팀원</S.Title>
@@ -159,7 +143,6 @@ function ProjectDetailPage() {
               </S.TeamMembers>
             </S.ProjectTeam>
           </S.ToggleSection>
-
           <S.ProjectDescription>
             <S.Title>프로젝트 설명</S.Title>
             <p>{detail}</p>
