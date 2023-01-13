@@ -8,7 +8,6 @@ const useIntersect = (onIntersect: IntersectHandler, options?: IntersectionObser
     (entries: IntersectionObserverEntry[], observer: IntersectionObserver) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          console.log('enter');
           onIntersect(entry, observer);
         }
       });
