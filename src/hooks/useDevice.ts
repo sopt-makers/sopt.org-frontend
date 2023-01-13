@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
 
 export function useIsDesktop(minWidth = '1920px') {
-  const [isDesktop, setIsDesktop] = useState(true);
+  const [isDesktop, setIsDesktop] = useState(false);
   const desktop = useMediaQuery({
     query: `(min-width: ${minWidth})`,
   });
@@ -13,7 +13,7 @@ export function useIsDesktop(minWidth = '1920px') {
 }
 
 export function useIsTablet(minWidth = '766px', maxWidth = '1919px') {
-  const [isTablet, setIsTablet] = useState(true);
+  const [isTablet, setIsTablet] = useState(false);
   const tablet = useMediaQuery({
     query: `(min-width: ${minWidth}) and (max-width: ${maxWidth})`,
   });
@@ -24,7 +24,7 @@ export function useIsTablet(minWidth = '766px', maxWidth = '1919px') {
 }
 
 export function useIsMobile(maxWidth = '765px') {
-  const [isMobile, setIsMobile] = useState(true);
+  const [isMobile, setIsMobile] = useState(false);
   const mobile = useMediaQuery({
     query: `(max-width:${maxWidth})`,
   });
