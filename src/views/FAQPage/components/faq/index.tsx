@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import { useState } from 'react';
-import { useIsDesktop, useIsTablet } from '@src/hooks/useIsDesktop';
+import { useIsDesktop, useIsMobile, useIsTablet } from '@src/hooks/useIsDesktop';
 import { questionList, questionListMobile, questionListTablet } from '../../lib/constants';
 import QuestionBox from './QuestionBox';
 
@@ -8,11 +8,10 @@ function FAQ() {
   const [status, setStatus] = useState(new Set());
   const isDesktop = useIsDesktop();
   const isTablet = useIsTablet();
-  const isMobile = !isDesktop && !isTablet;
+  const isMobile = useIsMobile();
 
   const toggleBox = (index: number) => {
     const updatedStatus = new Set(status);
-
     status.has(index) ? updatedStatus.delete(index) : updatedStatus.add(index);
     setStatus(updatedStatus);
   };
@@ -32,8 +31,7 @@ function FAQ() {
               <QuestionBox info={info} status={status.has(index)} />
             </div>
           ))}
-        {!isDesktop &&
-          isTablet &&
+        {isTablet &&
           questionListTablet.map((info, index) => (
             <div key={index} onClick={() => toggleBox(index)}>
               <QuestionBox info={info} status={status.has(index)} />

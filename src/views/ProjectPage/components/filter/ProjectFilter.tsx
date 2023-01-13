@@ -1,5 +1,5 @@
 import { Dispatch, SetStateAction } from 'react';
-import { useIsDesktop } from '@src/hooks/useIsDesktop';
+import { useIsDesktop, useIsMobile, useIsTablet } from '@src/hooks/useIsDesktop';
 import { ProjectCategoryType } from '../../lib/constants';
 import { DesktopFilter } from './DesktopFilter';
 import { MobileFilter } from './MobileFilter';
@@ -10,12 +10,14 @@ interface ProjectFilterPropType {
 }
 
 export function ProjectFilter({ selectedCategory, setCategory }: ProjectFilterPropType) {
-  const isDesktop = useIsDesktop('1920px');
-  const isMobile = !isDesktop;
+  const isDesktop = useIsDesktop();
+  const isTablet = useIsTablet();
+  const isMobile = useIsMobile();
 
   return (
     <>
       {isDesktop && <DesktopFilter selectedCategory={selectedCategory} setCategory={setCategory} />}
+      {isTablet && <MobileFilter selectedCategory={selectedCategory} setCategory={setCategory} />}
       {isMobile && <MobileFilter selectedCategory={selectedCategory} setCategory={setCategory} />}
     </>
   );
