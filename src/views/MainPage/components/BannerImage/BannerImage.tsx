@@ -8,7 +8,7 @@ export function BannerImage() {
   const containerRef = useRef<HTMLDivElement>(null);
   const onScrollMoveDown = () => {
     if (containerRef.current) {
-      const containerHeight = containerRef.current?.getBoundingClientRect().height;
+      const { height: containerHeight } = containerRef.current.getBoundingClientRect();
       window.scrollTo(0, containerHeight);
     }
   };
