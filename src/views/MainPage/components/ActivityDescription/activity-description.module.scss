@@ -133,7 +133,6 @@
 .imageWrapper {
   position: relative;
   border-radius: 10px;
-
   @include mobile {
     width: 328px;
     height: 166px;
@@ -157,31 +156,30 @@
   position: absolute;
   display: flex;
   align-items: center;
+  justify-content: center;
+  flex-direction: column;
   z-index: 2;
   color: #ffffff;
   white-space: nowrap;
 
   @include mobile {
-    width: 79px;
-    height: 38px;
-    flex-direction: column;
-    top: 22%;
-    left: 38%;
+    width: 328px;
+    height: 166px;
+    top: 0;
+    left: 0;
   }
   @include tablet {
-    width: 79px;
-    height: 38px;
-    flex-direction: column;
-    top: 22%;
-    left: 45%;
+    width: 586px;
+    height: 308px;
+    left: 0;
+    top: 0;
   }
   @include desktop {
-    width: 150px;
-    top: 45%;
-    left: 16%;
-    &.nickNameInclude {
-      left: 17%;
-    }
+    flex-direction: row;
+    width: 585px;
+    height: 308px;
+    left: 0;
+    top: 0;
   }
 
   .type {
@@ -191,7 +189,7 @@
       font-size: 18px;
     }
     @include tablet {
-      font-size: 40px;
+      font-size: 30px;
     }
     @include desktop {
       font-size: 40px;
@@ -207,13 +205,14 @@
     }
     @include tablet {
       margin-top: 16px;
-      font-size: 40px;
+      font-size: 24px;
+      font-weight: 600;
     }
     @include desktop {
-      font-weight: 500;
-      font-size: 25px;
       margin-top: 16px;
       margin-left: 4px;
+      font-size: 24px;
+      font-weight: 600;
     }
   }
 }
