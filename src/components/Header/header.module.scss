@@ -1,0 +1,26 @@
+@import '@src/styles/mixins';
+
+.wrapper {
+  width: 100%;
+  min-height: 80px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  background-color: rgba(24, 24, 24, 0.9);
+  backdrop-filter: blur(20px);
+  z-index: 100;
+
+  @include tablet {
+    height: 48px;
+    padding: 12px 48px;
+    justify-content: space-between;
+  }
+
+  @include mobile {
+    height: 48px;
+    padding: 12px 20px;
+    justify-content: space-between;
+  }
+}
