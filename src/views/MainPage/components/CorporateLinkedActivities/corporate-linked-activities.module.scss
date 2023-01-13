@@ -99,7 +99,6 @@
   display: grid;
   grid-template-rows: repeat(1, 1fr);
   grid-template-columns: repeat(9, 1fr);
-
   @include mobile {
     overflow-x: scroll;
     height: 384px;
@@ -112,27 +111,9 @@
   }
   @include desktop {
     overflow-x: hidden;
-    max-width: 1080px;
+    max-width: 910px;
     height: 700px;
-    gap: 60px;
-  }
-}
-
-.arrowWrapper {
-  @include mobile {
-    display: none;
-  }
-  @include tablet {
-    display: none;
-  }
-  @include desktop {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 64px;
-    height: 64px;
-    border-radius: 50%;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    gap: 76px;
   }
 }
 
@@ -140,7 +121,6 @@
   position: relative;
   display: flex;
   flex-direction: column;
-
   @include mobile {
     width: 171px;
     height: 384px;
@@ -152,7 +132,7 @@
     gap: 16px;
   }
   @include desktop {
-    width: 301px;
+    width: 240px;
     height: 700px;
     gap: 16px;
   }
@@ -188,7 +168,7 @@
     line-height: 31px;
   }
   @include desktop {
-    font-size: 25px;
+    font-size: 22px;
     line-height: 31px;
   }
 }
@@ -198,7 +178,6 @@
   opacity: 0.8;
   font-weight: 500;
   word-break: keep-all;
-
   @include mobile {
     font-size: 12px;
     line-height: 20px;
@@ -208,8 +187,8 @@
     line-height: 160%;
   }
   @include desktop {
-    font-size: 25px;
-    line-height: 31px;
+    font-size: 20px;
+    line-height: 160%;
   }
 }
 
@@ -242,7 +221,25 @@
     height: 300px;
   }
   @include desktop {
-    width: 300px;
-    height: 300px;
+    width: 240px;
+    height: 240px;
+  }
+}
+
+.arrowWrapper {
+  @include mobile {
+    display: none;
+  }
+  @include tablet {
+    display: none;
+  }
+  @include desktop {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.1);
   }
 }

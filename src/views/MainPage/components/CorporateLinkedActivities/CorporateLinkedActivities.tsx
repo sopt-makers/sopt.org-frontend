@@ -12,7 +12,7 @@ export function CorporateLinkedActivities() {
     onClickRightButton,
     isLeftScrollable,
     isRightScrollable,
-  } = useHorizontalScroll(1080, 2);
+  } = useHorizontalScroll(930, 2);
 
   return (
     <section className={styles.container}>
