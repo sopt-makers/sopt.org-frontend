@@ -53,9 +53,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  @include desktop {
-    gap: 30px;
-  }
 }
 
 .activityList {
@@ -119,7 +116,8 @@
     align-items: center;
     width: 585px;
     height: 632px;
-    gap: 16px;
+    gap: 8px;
+    margin-bottom: 16px;
   }
   @include desktop {
     justify-content: center;
@@ -127,6 +125,7 @@
     width: 1200px;
     height: 308px;
     gap: 30px;
+    margin-bottom: 16px;
   }
 }
 

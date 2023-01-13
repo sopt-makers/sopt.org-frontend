@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { useIsDesktop } from '@src/hooks/useIsDesktop';
+import { useIsDesktop, useIsMobile, useIsTablet } from '@src/hooks/useIsDesktop';
 import appJamImage from '@src/views/MainPage/assets/sopt-activity/appjam.png';
 import managementMediaTeamImage from '@src/views/MainPage/assets/sopt-activity/management-media-team.png';
 import seminarImage from '@src/views/MainPage/assets/sopt-activity/seminar.png';
@@ -122,13 +122,15 @@ function DesktopActivityDescription() {
 }
 
 export function ActivityDescription() {
+  const isMobile = useIsMobile();
+  const isTablet = useIsTablet();
   const isDesktop = useIsDesktop();
-  const isMobile = !isDesktop;
 
   return (
     <section className={styles.container}>
       <h3 className={styles.title}>SOPT에서는 이렇게 다양한 활동을 하고 있어요.</h3>
       {isMobile && <MobileActivityDescription />}
+      {isTablet && <DesktopActivityDescription />}
       {isDesktop && <DesktopActivityDescription />}
     </section>
   );
