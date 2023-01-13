@@ -1,8 +1,7 @@
 import { ReactComponent as MobileFilterBtn } from '@src/assets/icons/MobileFilterBtn.svg';
-import { ReactComponent as UpArrow } from '@src/assets/icons/upArrow.svg';
-import styles from './utility.module.scss';
+import styles from './mobile-utility-button.module.scss';
 
-export function MobileUtilityButtons({
+export function MobileUtilityButton({
   toggleModalState,
   prevState,
 }: {
@@ -20,10 +19,7 @@ export function MobileUtilityButtons({
   };
 
   return (
-    <div className={styles['mobile-utility']}>
-      <button type="button" className={styles.up} onClick={() => window.scrollTo(0, 0)}>
-        <UpArrow />
-      </button>
+    <div className={styles.wrapper}>
       <button type="button" className={styles.filter} onClick={() => handleFilterBtnClick()}>
         <MobileFilterBtn />
       </button>

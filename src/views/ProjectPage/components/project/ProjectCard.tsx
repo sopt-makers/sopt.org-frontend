@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { useIsDesktop } from '@src/hooks/useIsDesktop';
+import { useIsDesktop, useIsMobile, useIsTablet } from '@src/hooks/useDevice';
 import shortid from 'shortid';
 import { ReactComponent as AppStore } from '../../assets/app-store-40x40.svg';
 import { ReactComponent as Github } from '../../assets/github-40x40.svg';
@@ -40,11 +40,13 @@ export function ProjectCard({ project }: { project: ProjectType }) {
 
 function RepresentativeImageRender(logoImage: string, thumbnailImage?: string) {
   const isDesktop = useIsDesktop();
-  const isMobile = !isDesktop;
+  const isTablet = useIsTablet();
+  const isMobile = useIsMobile();
 
   return (
     <div className={styles['image-wrapper']}>
       {isDesktop && ProjectCardDesktopImage(logoImage, thumbnailImage)}
+      {isTablet && ProjectCardMobileImage(logoImage, thumbnailImage)}
       {isMobile && ProjectCardMobileImage(logoImage, thumbnailImage)}
     </div>
   );

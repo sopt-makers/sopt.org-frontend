@@ -1,4 +1,4 @@
-import { useIsDesktop, useIsMobile, useIsTablet } from '@src/hooks/useIsDesktop';
+import { useIsDesktop, useIsMobile, useIsTablet } from '@src/hooks/useDevice';
 import { useTabs } from '@src/views/MainPage/lib';
 import cc from 'classcat';
 import styles from './part-description.module.scss';

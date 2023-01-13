@@ -1,7 +1,8 @@
 import styled from '@emotion/styled';
-import { useIsDesktop } from '@src/hooks/useIsDesktop';
+import { useIsDesktop, useIsMobile, useIsTablet } from '@src/hooks/useDevice';
 import DesktopHeader from './Desktop/DesktopHeader';
 import MobileHeader from './Mobile/MobileHeader';
+import styles from './header.module.scss';
 
 const menuList = [
   { id: '/project', title: '프로젝트' },
@@ -11,12 +12,15 @@ const menuList = [
 
 export function Header() {
   const isDesktop = useIsDesktop();
+  const isTablet = useIsTablet();
+  const isMobile = useIsMobile();
 
   return (
-    <HeaderContainer>
+    <header className={styles.wrapper}>
       {isDesktop && <DesktopHeader menuList={menuList} />}
-      {!isDesktop && <MobileHeader menuList={menuList} />}
-    </HeaderContainer>
+      {isTablet && <MobileHeader menuList={menuList} />}
+      {isMobile && <MobileHeader menuList={menuList} />}
+    </header>
   );
 }
 

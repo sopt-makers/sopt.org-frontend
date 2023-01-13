@@ -26,7 +26,7 @@ export function useIsTablet(minWidth = '766px', maxWidth = '1919px') {
 export function useIsMobile(maxWidth = '765px') {
   const [isMobile, setIsMobile] = useState(true);
   const mobile = useMediaQuery({
-    query: `max-width:${maxWidth}`,
+    query: `(max-width:${maxWidth})`,
   });
   useEffect(() => {
     setIsMobile(mobile);

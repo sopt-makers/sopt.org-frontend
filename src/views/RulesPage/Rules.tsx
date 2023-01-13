@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import { Footer, Header } from '@src/components';
-import { useIsDesktop } from '@src/hooks/useIsDesktop';
+import { useIsDesktop } from '@src/hooks/useDevice';
 import RulesHead from '@src/views/RulesPage/RulesHead';
 import RulesList from './RulesList';
 import UnderlinedTitle from './UnderlinedText';

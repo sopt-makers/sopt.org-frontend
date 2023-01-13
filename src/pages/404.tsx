@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 import Sopt404 from '@src/assets/images/sopt_404.png';
 import { Header } from '@src/components';
 import RoundButton from '@src/components/common/RoundButton';
-import { useIsDesktop } from '@src/hooks/useIsDesktop';
+import { useIsDesktop } from '@src/hooks/useDevice';
 import theme from '@src/styles/theme';
 
 function Wrong() {
