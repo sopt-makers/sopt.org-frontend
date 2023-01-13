@@ -85,6 +85,7 @@
 
 .nameWrapper {
   display: flex;
+  align-items: center;
   @include mobile {
     margin-bottom: 8px;
   }
