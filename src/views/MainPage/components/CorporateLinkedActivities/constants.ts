@@ -51,7 +51,7 @@ export const corporatedLinkedActivities = [
   },
   {
     year: 2018,
-    name: '청년창업 컨퍼런스 ATTENTION',
+    name: '청년창업 컨퍼런스',
     description:
       '창업계 연사들을 초청하여 창업과 기술혁신으로 더 나은 세상을 만들어가는 과정에 대해 다룬 컨퍼런스',
     subDescription: '이승건 비바리퍼블리카(토스) 대표 연사로 참석',

@@ -1,4 +1,4 @@
-import { useIsDesktop } from '@src/hooks/useIsDesktop';
+import { useIsDesktop, useIsMobile, useIsTablet } from '@src/hooks/useIsDesktop';
 import { useTabs } from '@src/views/MainPage/lib';
 import cc from 'classcat';
 import styles from './part-description.module.scss';
@@ -80,7 +80,8 @@ function DesktopPartDescription() {
 
 export function PartDescription() {
   const isDesktop = useIsDesktop();
-  const isMobile = !isDesktop;
+  const isTablet = useIsTablet();
+  const isMobile = useIsMobile();
 
   return (
     <section className={styles.container}>
@@ -90,6 +91,7 @@ export function PartDescription() {
       </h3>
       <h5 className={styles.subTitle}>*2022년 하반기 31기 기준</h5>
       {isMobile && <MobilePartDescription />}
+      {isTablet && <DesktopPartDescription />}
       {isDesktop && <DesktopPartDescription />}
     </section>
   );
