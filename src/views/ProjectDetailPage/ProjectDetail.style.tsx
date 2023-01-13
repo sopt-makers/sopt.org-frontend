@@ -2,25 +2,26 @@ import styled from '@emotion/styled';
 
 export const Root = styled.div`
   display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const Container = styled.div`
+  display: flex;
   flex-direction: column;
   align-items: center;
   width: 1200px;
-  min-height: calc(100vh - 243px);
-
-  margin: 0 auto;
-  margin-top: 130px;
-
-  /* 태블릿 뷰 */
+  padding-top: 150px;
   @media (max-width: 1280px) {
     width: 686px;
-    margin-top: 80px;
+    padding-top: 80px;
   }
-  /* 모바일 뷰 */
   @media (max-width: 766px) {
     width: 320px;
-    margin-top: 80px;
+    padding-top: 80px;
   }
 `;
+
 export const ProjectHeader = styled.div`
   position: relative;
   display: flex;
