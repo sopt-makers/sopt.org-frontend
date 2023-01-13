@@ -3,7 +3,6 @@ import { ReactComponent as ToggleArrowBtn } from '@src/assets/icons/ToggleArrow.
 import { Condition } from '@src/lib';
 import cc from 'classcat';
 import { ProjectCategoryType, projectCategoryList } from '../../lib/constants';
-import { DesktopUtilityButtons } from '../utility/DesktopUtilityButtons';
 import styles from './project-filter-desktop.module.scss';
 
 type ModalProps = {
@@ -44,7 +43,6 @@ export function DesktopFilter({ selectedCategory, setCategory }: ModalProps) {
           </div>
         </Condition>
       </div>
-      <DesktopUtilityButtons />
     </div>
   );
 }
