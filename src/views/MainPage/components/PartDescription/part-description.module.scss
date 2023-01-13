@@ -22,7 +22,6 @@
   flex-direction: column;
   white-space: nowrap;
   justify-content: center;
-  text-align: center;
   font-weight: 800;
 
   @include mobile {
@@ -30,15 +29,17 @@
     height: 56px;
     font-size: 20px;
     line-height: 28px;
+    text-align: center;
   }
   @include tablet {
     width: 338px;
     height: 112px;
     font-size: 36px;
     line-height: 56px;
+    text-align: center;
   }
   @include desktop {
-    width: 422px;
+    width: 100%;
     height: 120px;
     font-size: 45px;
     line-height: 60px;
@@ -63,7 +64,7 @@
     margin-top: 24px;
   }
   @include desktop {
-    width: 264px;
+    width: 100%;
     height: 30px;
     font-size: 25px;
     line-height: 30px;
