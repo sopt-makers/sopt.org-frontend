@@ -1,5 +1,5 @@
-import { css } from '@emotion/react';
 import reset from 'emotion-reset';
+import { css } from '@emotion/react';
 
 export const global = css`
   ${reset}
@@ -12,7 +12,7 @@ export const global = css`
   }
   * {
     box-sizing: border-box;
-    font-family: 'SUIT';
+    font-family: 'SUIT', 'Pretendard';
   }
 
   h1,
@@ -27,7 +27,7 @@ export const global = css`
 
   body {
     background-color: #181818;
-    font-family: 'SUIT';
+    font-family: 'SUIT', 'Pretendard';
   }
 
   button {

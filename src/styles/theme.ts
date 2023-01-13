@@ -1,5 +1,6 @@
 import { Theme } from '@emotion/react';
-import { mainColor } from '@src/assets/replaceMe/mainColor';
+import { mainColor } from '@src/assets/sopt/mainColor';
+
 const theme: Theme = {
   colors: {
     mainColor: mainColor.mainColor,

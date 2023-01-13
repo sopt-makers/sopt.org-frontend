@@ -1,12 +1,11 @@
 import styled from '@emotion/styled';
+import Image from 'next/image';
+import { useRouter } from 'next/router';
 import Sopt404 from '@src/assets/images/sopt_404.png';
 import { Header } from '@src/components';
 import RoundButton from '@src/components/common/RoundButton';
+import { useIsDesktop } from '@src/hooks/useDevice';
 import theme from '@src/styles/theme';
-import Image from 'next/image';
-import { useRouter } from 'next/router';
-import React from 'react';
-import { useMediaQuery } from 'react-responsive';
 
 function Wrong() {
   const router = useRouter();
@@ -14,9 +13,7 @@ function Wrong() {
   const handleButtonClick = () => {
     router.push('/');
   };
-  const isDesktop = useMediaQuery({
-    query: '(min-width: 768px)',
-  });
+  const isDesktop = useIsDesktop();
 
   return (
     <>

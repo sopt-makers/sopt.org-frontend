@@ -1,10 +1,9 @@
 import { useState } from 'react';
-import styles from './project-filter-desktop.module.scss';
-import { projectCategoryList, ProjectCategoryType } from '../../lib/constants';
-import cc from 'classcat';
-import { Condition } from '@src/lib';
 import { ReactComponent as ToggleArrowBtn } from '@src/assets/icons/ToggleArrow.svg';
-import { DesktopUtilityButtons } from '../utility/DesktopUtilityButtons';
+import { Condition } from '@src/lib';
+import cc from 'classcat';
+import { ProjectCategoryType, projectCategoryList } from '../../lib/constants';
+import styles from './project-filter-desktop.module.scss';
 
 type ModalProps = {
   selectedCategory: ProjectCategoryType;
@@ -44,7 +43,6 @@ export function DesktopFilter({ selectedCategory, setCategory }: ModalProps) {
           </div>
         </Condition>
       </div>
-      <DesktopUtilityButtons />
     </div>
   );
 }

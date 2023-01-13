@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import { MobileFilterModal } from './MobileFilterModal';
-import { MobileUtilityButtons } from '../utility/MobileUtilityButtons';
-import { ProjectCategoryType } from '../../lib/constants';
 import { Condition } from '@src/lib';
+import { ProjectCategoryType } from '../../lib/constants';
+import { MobileFilterModal } from './MobileFilterModal';
+import { MobileUtilityButton } from './MobileUtilityButton';
 
 type MobileFilterProps = {
   selectedCategory: ProjectCategoryType;
@@ -14,7 +14,7 @@ export function MobileFilter({ selectedCategory, setCategory }: MobileFilterProp
 
   return (
     <>
-      <MobileUtilityButtons prevState={isModalOpen} toggleModalState={toggleModalState} />
+      <MobileUtilityButton prevState={isModalOpen} toggleModalState={toggleModalState} />
       <Condition statement={isModalOpen}>
         <MobileFilterModal
           toggleModalState={toggleModalState}

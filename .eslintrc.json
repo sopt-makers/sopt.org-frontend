@@ -7,7 +7,7 @@
     "ecmaVersion": 12,
     "sourceType": "module"
   },
-  "plugins": ["@typescript-eslint", "simple-import-sort", "prettier"],
+  "plugins": ["@typescript-eslint", "prettier"],
   "extends": [
     "eslint:recommended",
     "plugin:react-hooks/recommended",
@@ -37,9 +37,6 @@
     "@next/next/no-img-element": "off",
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
-    "prettier/prettier": "error",
-    // "simple-import-sort/imports": "error", // to fix : error가 없음에도 error가 나타남.
-    "simple-import-sort/exports": "error",
     "import/no-anonymous-default-export": 0,
     "no-multiple-empty-lines": ["error", { "max": 1 }],
     "eol-last": ["error", "always"],

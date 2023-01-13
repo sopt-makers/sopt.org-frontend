@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import { Header, Footer, Layout } from '@src/components';
+import { Footer, Header, Layout, ScrollToTopButton } from '@src/components';
 import { ProjectFilter, ProjectList } from './components';
-import { ProjectCategoryType } from './lib/constants';
 import useFetch from './hooks/useFetch';
+import { ProjectCategoryType } from './lib/constants';
 
 function Projects() {
   const [selectedCategory, setCategory] = useState<ProjectCategoryType>(ProjectCategoryType.ALL);
@@ -11,6 +11,7 @@ function Projects() {
   return (
     <Layout>
       <Header />
+      <ScrollToTopButton />
       <ProjectFilter selectedCategory={selectedCategory} setCategory={setCategory} />
       <ProjectList state={state} selectedCategory={selectedCategory} />
       <Footer />

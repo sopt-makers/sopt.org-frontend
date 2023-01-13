@@ -1,9 +1,8 @@
 import { Dispatch, SetStateAction } from 'react';
-import { useMediaQuery } from 'react-responsive';
+import { useIsDesktop, useIsMobile, useIsTablet } from '@src/hooks/useDevice';
+import { ProjectCategoryType } from '../../lib/constants';
 import { DesktopFilter } from './DesktopFilter';
 import { MobileFilter } from './MobileFilter';
-import { Condition } from '@src/lib';
-import { ProjectCategoryType } from '../../lib/constants';
 
 interface ProjectFilterPropType {
   selectedCategory: ProjectCategoryType;
@@ -11,19 +10,15 @@ interface ProjectFilterPropType {
 }
 
 export function ProjectFilter({ selectedCategory, setCategory }: ProjectFilterPropType) {
-  const isDesktop = useMediaQuery({
-    query: '(min-width: 1920px)',
-  });
-  const isMobile = !isDesktop;
+  const isDesktop = useIsDesktop();
+  const isTablet = useIsTablet();
+  const isMobile = useIsMobile();
 
   return (
     <>
-      <Condition statement={isDesktop}>
-        <DesktopFilter selectedCategory={selectedCategory} setCategory={setCategory} />
-      </Condition>
-      <Condition statement={isMobile}>
-        <MobileFilter selectedCategory={selectedCategory} setCategory={setCategory} />
-      </Condition>
+      {isDesktop && <DesktopFilter selectedCategory={selectedCategory} setCategory={setCategory} />}
+      {isTablet && <MobileFilter selectedCategory={selectedCategory} setCategory={setCategory} />}
+      {isMobile && <MobileFilter selectedCategory={selectedCategory} setCategory={setCategory} />}
     </>
   );
 }

@@ -1,9 +1,5 @@
-### PR 요약
+## Summary
 
-### 체크리스트
+## Screenshot
 
-- [ ] 기능 A
-
-### Screenshot
-
-### 궁금한 점 및 코멘트
+## Comment

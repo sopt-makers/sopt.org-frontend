@@ -1,8 +1,8 @@
-import { useEffect, useReducer } from 'react';
 import { to } from 'await-to-js';
-import { reducer } from '../lib/reducer';
-import { getProjectList, getProjectByCategory } from '@src/lib/project';
+import { useEffect, useReducer } from 'react';
+import { getProjectByCategory, getProjectList } from '@src/lib/project';
 import { ProjectCategoryType } from '../lib/constants';
+import { reducer } from '../lib/reducer';
 import type { ProjectType, State } from '../types';
 
 const useFetch = (selected: ProjectCategoryType): State<ProjectType> => {

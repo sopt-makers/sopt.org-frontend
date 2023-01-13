@@ -1,0 +1,194 @@
+@import '@src/styles/mixins';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include mobile {
+    width: 90%;
+  }
+  @include tablet {
+    width: 75%;
+  }
+  @include desktop {
+    width: 63%;
+  }
+}
+
+.title {
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  white-space: nowrap;
+  justify-content: center;
+  font-weight: 800;
+
+  @include mobile {
+    width: 190px;
+    height: 56px;
+    font-size: 20px;
+    line-height: 28px;
+    text-align: center;
+  }
+  @include tablet {
+    width: 338px;
+    height: 112px;
+    font-size: 36px;
+    line-height: 56px;
+    text-align: center;
+  }
+  @include desktop {
+    width: 100%;
+    height: 120px;
+    font-size: 45px;
+    line-height: 60px;
+  }
+}
+
+.subTitle {
+  color: #787878;
+  font-weight: 400;
+  @include mobile {
+    width: 190px;
+    height: 20px;
+    margin-top: 8px;
+    font-size: 16px;
+    line-height: 20px;
+  }
+  @include tablet {
+    width: 264px;
+    height: 20px;
+    font-size: 25px;
+    line-height: 20px;
+    margin-top: 24px;
+  }
+  @include desktop {
+    width: 100%;
+    height: 30px;
+    font-size: 25px;
+    line-height: 30px;
+    margin-top: 24px;
+  }
+}
+
+.content {
+  @include mobile {
+    margin-top: 48px;
+  }
+  @include tablet {
+    margin-top: 100px;
+  }
+  @include desktop {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-top: 100px;
+  }
+}
+
+.partList {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  overflow-x: scroll;
+  @include desktop {
+    display: none;
+  }
+
+  li {
+    color: #ffffff;
+    white-space: nowrap;
+    opacity: 0.2;
+    &.selected {
+      font-weight: 700;
+      opacity: 1;
+    }
+
+    @include mobile {
+      padding: 8px 0px;
+      height: 32px;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 100%;
+    }
+
+    @include tablet {
+      padding: 8px 0px;
+      height: 46px;
+      font-weight: 600;
+      font-size: 30px;
+      line-height: 100%;
+    }
+  }
+}
+
+.card {
+  display: flex;
+  color: rgba(253, 253, 253, 0.8);
+  background-color: #262626;
+  word-break: keep-all;
+  border-radius: 10px;
+
+  @include mobile {
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 122px;
+    margin-top: 16px;
+  }
+
+  @include tablet {
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 246px;
+    padding: 63px 56px;
+    margin-top: 16px;
+  }
+
+  @include desktop {
+    flex-direction: column;
+    justify-content: center;
+    width: 587px;
+    height: 308px;
+    padding: 63px 55px;
+  }
+}
+
+.cardContent {
+  @include mobile {
+    width: 272px;
+    height: 66px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  @include tablet {
+    width: 448px;
+    height: 150px;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 40px;
+  }
+
+  @include desktop {
+    width: 475px;
+    height: 120px;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 40px;
+  }
+}
+
+.type {
+  width: 173px;
+  height: 30px;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 100%;
+  margin-bottom: 32px;
+}

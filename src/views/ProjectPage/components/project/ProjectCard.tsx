@@ -1,17 +1,15 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { useIsDesktop, useIsMobile, useIsTablet } from '@src/hooks/useDevice';
 import shortid from 'shortid';
-import { useMediaQuery } from 'react-responsive';
-
-import styles from './project-card.module.scss';
-import { ProjectType, LinkType } from '../../types';
-
-import { ReactComponent as PlayStore } from '../../assets/play-store-40x40.svg';
 import { ReactComponent as AppStore } from '../../assets/app-store-40x40.svg';
 import { ReactComponent as Github } from '../../assets/github-40x40.svg';
-import { ReactComponent as Web } from '../../assets/website-40x40.svg';
 import { ReactComponent as Instagram } from '../../assets/instagram-30x30.svg';
+import { ReactComponent as PlayStore } from '../../assets/play-store-40x40.svg';
+import { ReactComponent as Web } from '../../assets/website-40x40.svg';
 import { ReactComponent as Youtube } from '../../assets/youtube-30x30.svg';
+import { LinkType, ProjectType } from '../../types';
+import styles from './project-card.module.scss';
 
 export function ProjectCard({ project }: { project: ProjectType }) {
   return (
@@ -41,14 +39,15 @@ export function ProjectCard({ project }: { project: ProjectType }) {
 }
 
 function RepresentativeImageRender(logoImage: string, thumbnailImage?: string) {
-  const isDesktop = useMediaQuery({
-    query: '(min-width: 1280px)',
-  });
+  const isDesktop = useIsDesktop();
+  const isTablet = useIsTablet();
+  const isMobile = useIsMobile();
+
   return (
     <div className={styles['image-wrapper']}>
-      {isDesktop
-        ? ProjectCardDesktopImage(logoImage, thumbnailImage)
-        : ProjectCardMobileImage(logoImage, thumbnailImage)}
+      {isDesktop && ProjectCardDesktopImage(logoImage, thumbnailImage)}
+      {isTablet && ProjectCardMobileImage(logoImage, thumbnailImage)}
+      {isMobile && ProjectCardMobileImage(logoImage, thumbnailImage)}
     </div>
   );
 }

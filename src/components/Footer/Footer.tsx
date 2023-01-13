@@ -1,17 +1,12 @@
-import Channels from '@src/components/Footer/Channels';
 import { useRouter } from 'next/router';
-import { useMediaQuery } from 'react-responsive';
 import { ReactComponent as ArrowRight } from '@src/assets/icons/arrow-right-16x16.svg';
-
+import Channels from '@src/components/Footer/Channels';
+import { useIsDesktop } from '@src/hooks/useDevice';
 import * as S from './Footer.style';
 
 export function Footer() {
-  const isDesktop = useMediaQuery({
-    query: '(min-width: 1280px)',
-  });
-
+  const isDesktop = useIsDesktop();
   const router = useRouter();
-
   const handleClick = () => {
     router.push('/rules');
   };

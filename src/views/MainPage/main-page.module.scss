@@ -1,0 +1,21 @@
+@import '@src/styles/mixins';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  margin-top: 64px;
+
+  @include mobile {
+    gap: 100px;
+  }
+
+  @include tablet {
+    gap: 200px;
+  }
+
+  @include desktop {
+    gap: 240px;
+  }
+}

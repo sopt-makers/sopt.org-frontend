@@ -1,13 +1,12 @@
-import cc from 'classcat';
-import { ProjectCategoryType } from '../../lib/constants';
-import styles from './project-list.module.scss';
-
-import { OvalSpinner } from '../common/OvalSpinner';
 import { Condition } from '@src/lib';
-import { EmptyContent } from '../common/EmptyContent';
-import { ProjectCard, ProjectEnrollSection } from '../project';
-import { ProjectType, State } from '../../types';
+import cc from 'classcat';
 import { useInfiniteScroll } from '../../hooks/useInfiniteScroll';
+import { ProjectCategoryType } from '../../lib/constants';
+import { ProjectType, State } from '../../types';
+import { EmptyContent } from '../common/EmptyContent';
+import { OvalSpinner } from '../common/OvalSpinner';
+import { ProjectCard, ProjectEnrollSection } from '../project';
+import styles from './project-list.module.scss';
 
 interface ProjectListProp {
   state: State<ProjectType>;

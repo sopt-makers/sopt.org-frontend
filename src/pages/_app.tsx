@@ -1,10 +1,10 @@
-import { Global, ThemeProvider } from '@emotion/react';
-import { global } from '@src/styles/global';
-import theme from '@src/styles/theme';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
+import { Global, ThemeProvider } from '@emotion/react';
 import { useState } from 'react';
 import { QueryClient, QueryClientProvider } from 'react-query';
+import { global } from '@src/styles/global';
+import theme from '@src/styles/theme';
 import '../styles/font.css';
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -13,7 +13,6 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
         <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png" />
         <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png" />
         <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png" />
@@ -31,17 +30,14 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta name="msapplication-TileColor" content="#ffffff" />
         <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
         <meta name="theme-color" content="#ffffff" />
-
-        <meta content="yes" name="apple-mobile-web-app-capable" />
         <meta
-          content="minimum-scale=1.0, width=device-width, maximum-scale=1, user-scalable=no"
           name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0,  maximum-scale=1"
         />
-
+        <meta content="yes" name="apple-mobile-web-app-capable" />
         <meta name="title" content="SOPT" />
         <meta property="og:title" content="SOPT" />
         <meta name="twitter:title" content="SOPT" />
-
         <meta
           name="description"
           content="SOPT는 IT와 벤처창업에 뜻이 있는 대학생들이 모인 국내 최대 규모의 대학생 연합 IT벤처창업 동아리입니다."

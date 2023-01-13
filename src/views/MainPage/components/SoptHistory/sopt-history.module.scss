@@ -1,0 +1,121 @@
+@import '@src/styles/mixins';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  @include mobile {
+    align-items: center;
+    width: 72%;
+    height: 276px;
+  }
+  @include tablet {
+    align-items: center;
+    width: 72%;
+    height: 664px;
+  }
+  @include desktop {
+    align-items: flex-start;
+    justify-content: space-around;
+    width: 1207px;
+    height: 502px;
+  }
+}
+
+.title {
+  color: #ffffff;
+  text-align: center;
+  word-break: keep-all;
+  font-weight: 800;
+
+  @include mobile {
+    font-size: 21px;
+    line-height: 28px;
+  }
+  @include tablet {
+    width: 420px;
+    font-size: 36px;
+    line-height: 56px;
+  }
+  @include desktop {
+    text-align: start;
+    width: 600px;
+    height: 120px;
+    font-size: 45px;
+    line-height: 60px;
+  }
+}
+
+.content {
+  display: grid;
+  @include mobile {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 40px;
+    padding-top: 48px;
+  }
+  @include tablet {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 120px;
+    padding-top: 100px;
+  }
+  @include desktop {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    gap: 140px;
+  }
+}
+
+.item {
+  @include mobile {
+    width: 101px;
+    height: 66px;
+    h5 {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+      color: #787878;
+    }
+
+    span {
+      font-weight: 600;
+      font-size: 25px;
+      line-height: 38px;
+      color: #ffffff;
+    }
+  }
+  @include tablet {
+    width: 187px;
+    height: 114px;
+    h5 {
+      font-weight: 400;
+      font-size: 25px;
+      line-height: 30px;
+      color: #787878;
+    }
+    span {
+      font-weight: 600;
+      font-size: 56px;
+      line-height: 60px;
+      white-space: nowrap;
+      color: #ffffff;
+    }
+  }
+  @include desktop {
+    width: 201px;
+    height: 122px;
+    h5 {
+      font-weight: 400;
+      font-size: 30px;
+      line-height: 30px;
+      color: #787878;
+    }
+    span {
+      font-weight: 600;
+      font-size: 60px;
+      line-height: 60px;
+      white-space: nowrap;
+      color: #ffffff;
+    }
+  }
+}

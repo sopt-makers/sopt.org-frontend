@@ -1,0 +1,130 @@
+@import '@src/styles/mixins';
+
+.wrapper {
+  position: fixed;
+  z-index: 9999;
+  cursor: pointer;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+  background: #242424;
+
+  @include mobile {
+    width: 56px;
+    height: 56px;
+    right: 20px;
+    bottom: 24px;
+    border-radius: 50%;
+  }
+
+  @include tablet {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    right: 40px;
+    bottom: 130px;
+  }
+
+  @include desktop {
+    width: 123px;
+    height: 80px;
+    border-radius: 52px;
+    right: 100px;
+    top: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 16px 32px;
+  }
+  // when scroll value is false
+  animation: fadeout 0.4s;
+  animation-fill-mode: forwards;
+  // when scroll value is true
+  &.isScrolled {
+    animation: fadein 0.4s;
+  }
+}
+
+.text {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 48px;
+  color: #ffffff;
+  @include mobile-tablet {
+    display: none;
+  }
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-moz-keyframes fadein {
+  /* Firefox */
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fadein {
+  /* Safari and Chrome */
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-o-keyframes fadein {
+  /* Opera */
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    z-index: -1;
+  }
+}
+@-moz-keyframes fadeout {
+  /* Firefox */
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    z-index: -1;
+  }
+}
+@-webkit-keyframes fadeout {
+  /* Safari and Chrome */
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    z-index: -1;
+  }
+}
+@-o-keyframes fadeout {
+  /* Opera */
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    z-index: -1;
+  }
+}
