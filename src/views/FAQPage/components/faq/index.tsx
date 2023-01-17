@@ -10,6 +10,8 @@ function FAQ() {
   const isTablet = useIsTablet();
   const isMobile = useIsMobile();
 
+  console.log(isDesktop, isTablet, isMobile);
+
   const toggleBox = (index: number) => {
     const updatedStatus = new Set(status);
     status.has(index) ? updatedStatus.delete(index) : updatedStatus.add(index);
@@ -25,7 +27,6 @@ function FAQ() {
 
       <Styled.FAQWrapper>
         {isDesktop &&
-          isTablet &&
           questionList.map((info, index) => (
             <div key={index} onClick={() => toggleBox(index)}>
               <QuestionBox info={info} status={status.has(index)} />
@@ -55,14 +56,14 @@ const Styled = {
     display: flex;
     flex-direction: column;
     /* 태블릿 뷰 */
-    @media (max-width: 1280px) {
+    @media (max-width: 1919.9px) and (min-width: 766px) {
       align-items: center;
     }
   `,
   Header: styled.div`
     margin-bottom: 100px;
     /* 태블릿 뷰 */
-    @media (max-width: 1280px) {
+    @media (max-width: 1919.9px) and (min-width: 766px) {
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -95,7 +96,7 @@ const Styled = {
     letter-spacing: -0.01em;
     color: #787878;
     /* 태블릿 뷰 */
-    @media (max-width: 1280px) {
+    @media (max-width: 1919.9px) and (min-width: 766px) {
       font-size: 25px;
     }
     /* 모바일 뷰 */
@@ -107,18 +108,20 @@ const Styled = {
   FAQWrapper: styled.div`
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 1200px;
     margin-bottom: 240px;
     & > div:not(:last-child) {
       margin-bottom: 30px;
     }
     /* 태블릿 뷰 */
-    @media (max-width: 1280px) {
+    @media (max-width: 1919.9px) and (min-width: 766px) {
       padding-left: 38.5px;
       padding-right: 41.5px;
+      width: 766px;
     }
     /* 모바일 뷰 */
     @media (max-width: 766px) {
+      width: 360px;
       padding-left: 16px;
       padding-right: 16px;
     }
