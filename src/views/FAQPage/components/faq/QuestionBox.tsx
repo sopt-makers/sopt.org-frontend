@@ -57,17 +57,17 @@ const Styled = {
   Root: styled.div`
     display: flex;
     flex-direction: column;
-    width: 100%;
     background: #262626;
     border-radius: 10px;
     padding: 56px;
     padding-right: 54px;
     /* 태블릿 뷰 */
-    @media (max-width: 1280px) {
+    @media (max-width: 1919.9px) and (min-width: 766px) {
       font-size: 25px;
+      padding: 48px;
     }
     /* 모바일 뷰 */
-    @media (max-width: 766px) {
+    @media (max-width: 765.9px) {
       padding: 28px;
     }
   `,
@@ -77,7 +77,7 @@ const Styled = {
     /* align-items: center; */
     margin-bottom: ${({ isOpened }) => (isOpened ? '37px' : '0')};
     /* 태블릿 뷰 */
-    @media (max-width: 1280px) {
+    @media (max-width: 1919.9px) and (min-width: 766px) {
       margin-bottom: ${({ isOpened }) => (isOpened ? '16px' : '0')};
     }
   `,
@@ -90,11 +90,11 @@ const Styled = {
     color: #ffffff;
 
     /* 태블릿 뷰 */
-    @media (max-width: 1280px) {
+    @media (max-width: 1919.9px) and (min-width: 766px) {
       font-size: 25px;
     }
     /* 모바일 뷰 */
-    @media (max-width: 766px) {
+    @media (max-width: 765.9px) {
       font-size: 16px;
       line-height: 24px;
     }
@@ -106,12 +106,12 @@ const Styled = {
     width: 40px;
     height: 40px;
     /* 태블릿 뷰 */
-    @media (max-width: 1280px) {
+    @media (max-width: 1919.9px) and (min-width: 766px) {
       width: 32px;
       height: 32px;
     }
     /* 모바일 뷰 */
-    @media (max-width: 766px) {
+    @media (max-width: 765.9px) {
       width: 24px;
       height: 24px;
     }
@@ -119,12 +119,12 @@ const Styled = {
       width: 25px;
       height: 18.33px;
       /* 태블릿 뷰 */
-      @media (max-width: 1280px) {
+      @media (max-width: 1919.9px) and (min-width: 766px) {
         width: 20px;
         height: 14.67px;
       }
       /* 모바일 뷰 */
-      @media (max-width: 766px) {
+      @media (max-width: 765.9px) {
         width: 15px;
         height: 11px;
       }
@@ -139,11 +139,11 @@ const Styled = {
     letter-spacing: -0.01em;
     color: rgba(253, 253, 253, 0.8);
     /* 태블릿 뷰 */
-    @media (max-width: 1280px) {
+    @media (max-width: 1919.9px) and (min-width: 766px) {
       font-size: 22px;
     }
     /* 모바일 뷰 */
-    @media (max-width: 766px) {
+    @media (max-width: 765.9px) {
       font-size: 14px;
       line-height: 22px;
     }
