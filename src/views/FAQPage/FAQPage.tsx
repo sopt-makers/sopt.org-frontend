@@ -25,11 +25,11 @@ const Root = styled.div`
   margin: 0 auto;
 
   /* 태블릿 뷰 */
-  @media (max-width: 1280px) {
+  @media (max-width: 1919px) and (min-width: 766px) {
     width: 766px;
   }
   /* 모바일 뷰 */
-  @media (max-width: 766px) {
+  @media (max-width: 765.9px) {
     width: 360px;
   }
 `;

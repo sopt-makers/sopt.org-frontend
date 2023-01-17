@@ -40,7 +40,7 @@ const Styled = {
     display: flex;
     flex-direction: column;
     /* 태블릿 뷰 */
-    @media (max-width: 1280px) {
+    @media (max-width: 1919px) {
       align-items: center;
     }
   `,
@@ -53,11 +53,11 @@ const Styled = {
     color: #787878;
     margin-bottom: 32px;
     /* 태블릿 뷰 */
-    @media (max-width: 1280px) {
+    @media (max-width: 1919px) {
       font-size: 25px;
     }
     /* 모바일 뷰 */
-    @media (max-width: 766px) {
+    @media (max-width: 765px) {
       font-size: 14px;
       line-height: 16px;
       margin-bottom: 8px;
@@ -74,11 +74,11 @@ const Styled = {
     text-underline-position: under;
     color: #ffffff;
     /* 태블릿 뷰 */
-    @media (max-width: 1280px) {
+    @media (max-width: 1919px) {
       font-size: 35px;
     }
     /* 모바일 뷰 */
-    @media (max-width: 766px) {
+    @media (max-width: 765px) {
       font-size: 18px;
       line-height: 27px;
     }
