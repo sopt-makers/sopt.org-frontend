@@ -112,7 +112,9 @@ function ProjectDetailPage() {
                       return (
                         <Link href={url} key={title}>
                           <S.ProjectLink>
-                            <Image src={src} alt={name} width="56" height="56" />
+                            <S.ImageWrapper>
+                              <Image src={src} alt={name} width="56" height="56" />
+                            </S.ImageWrapper>
                             <span>{name}</span>
                           </S.ProjectLink>
                         </Link>

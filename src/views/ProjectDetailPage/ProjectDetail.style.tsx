@@ -252,6 +252,8 @@ export const ProjectLinkWrapper = styled.div`
 export const ProjectLink = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   border-radius: 9px;
   background: #313131;
   cursor: pointer;
@@ -280,6 +282,15 @@ export const ProjectLink = styled.div`
     font-size: 12px;
     font-weight: 500;
   }
+`;
+
+export const ImageWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 56px;
+  height: 56px;
 `;
 
 export const ProjectTeam = styled(CommonWrapper)`

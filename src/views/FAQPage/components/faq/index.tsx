@@ -10,8 +10,6 @@ function FAQ() {
   const isTablet = useIsTablet();
   const isMobile = useIsMobile();
 
-  console.log(isDesktop, isTablet, isMobile);
-
   const toggleBox = (index: number) => {
     const updatedStatus = new Set(status);
     status.has(index) ? updatedStatus.delete(index) : updatedStatus.add(index);
