@@ -53,20 +53,20 @@
 
 .slogan {
   position: absolute;
+  top: 300px;
+
   text-align: center;
   font-weight: 900;
   z-index: 2;
   word-break: keep-all;
 
   @include mobile {
-    top: 424px;
     width: 280px;
     height: 232px;
     font-size: 50px;
     line-height: 58px;
   }
   @include tablet {
-    top: 734px;
     width: 575px;
     height: 300px;
     font-size: 80px;
@@ -75,7 +75,6 @@
   @include desktop {
     width: 1050px;
     height: 480px;
-    top: 300px;
     font-size: 140px;
     line-height: 160px;
   }
