@@ -18,12 +18,14 @@ function MainPage() {
         <ScrollToTopButton />
         <BannerImage />
         <div className={styles.container}>
-          <SoptHistory />
-          <PartDescription />
-          <ActivityDescription />
-          <DetailedInformation />
-          <CoporatePartner />
-          <CorporateLinkedActivities />
+          <div className={styles.content}>
+            <SoptHistory />
+            <PartDescription />
+            <ActivityDescription />
+            <DetailedInformation />
+            <CoporatePartner />
+            <CorporateLinkedActivities />
+          </div>
         </div>
         <Footer />
       </Layout>

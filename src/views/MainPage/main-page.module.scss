@@ -2,20 +2,26 @@
 
 .container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: center;
   position: relative;
   margin-top: 64px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   @include mobile {
+    max-width: 360px;
     gap: 100px;
   }
-
   @include tablet {
+    max-width: 766px;
     gap: 200px;
   }
-
   @include desktop {
+    max-width: 1200px;
     gap: 240px;
   }
 }
