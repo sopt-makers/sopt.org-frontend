@@ -16,7 +16,7 @@
   }
 
   @include desktop {
-    height: 1080px;
+    height: 900px;
   }
 }
 
@@ -43,18 +43,17 @@
     line-height: 42px;
   }
   @include desktop {
-    top: 207px;
+    top: 170px;
     width: 800px;
     height: 40px;
-    font-size: 35px;
-    line-height: 40px;
+    font-size: 30px;
+    line-height: 30px;
   }
 }
 
 .slogan {
   position: absolute;
   top: 300px;
-
   text-align: center;
   font-weight: 900;
   z-index: 2;
@@ -73,10 +72,11 @@
     line-height: 100px;
   }
   @include desktop {
-    width: 1050px;
-    height: 480px;
-    font-size: 140px;
-    line-height: 160px;
+    width: 900px;
+    height: 400px;
+    top: 250px;
+    font-size: 100px;
+    line-height: 120px;
   }
 }
 
@@ -101,7 +101,7 @@
     }
   }
   @include desktop {
-    top: 916px;
+    top: 630px;
     & > svg {
       color: white;
       width: 64px;
