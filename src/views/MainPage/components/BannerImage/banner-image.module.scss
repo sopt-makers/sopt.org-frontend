@@ -81,6 +81,7 @@
 .downArrowWrapper {
   position: absolute;
   z-index: 2;
+  cursor: pointer;
 
   @include mobile {
     top: 630px;
