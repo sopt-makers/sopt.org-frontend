@@ -44,7 +44,7 @@ interface MenuTitleProps {
 }
 
 export const Wrapper = styled.div`
-  max-width: 1180px;
+  max-width: 1280px;
   width: 80%;
   display: flex;
   justify-content: space-between;
@@ -59,6 +59,7 @@ export const CenterAligner = styled.div`
 export const Logo = styled.button<StyleProps>`
   width: 87px;
   height: 30px;
+  margin-left: 100px;
 
   background: url(${({ src }) => src}) center no-repeat;
   background-size: 100% 100%;
