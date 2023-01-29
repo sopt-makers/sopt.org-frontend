@@ -18,10 +18,10 @@
   }
   @include tablet {
     max-width: 766px;
-    gap: 200px;
+    gap: 150px;
   }
   @include desktop {
     max-width: 1100px;
-    gap: 220px;
+    gap: 180px;
   }
 }
