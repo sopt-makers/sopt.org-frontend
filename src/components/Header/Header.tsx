@@ -10,8 +10,8 @@ const menuList = [
 ];
 
 export function Header() {
-  const isDesktop = useIsDesktop();
-  const isTablet = useIsTablet();
+  const isDesktop = useIsDesktop('992px');
+  const isTablet = useIsTablet('766px', '991.9px');
   const isMobile = useIsMobile();
 
   return (

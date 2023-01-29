@@ -1,4 +1,4 @@
-@import '@src/styles/mixins';
+@import '@src/views/MainPage/stylesheets/mixins';
 
 .container {
   display: flex;
@@ -13,7 +13,7 @@
     gap: 100px;
   }
   @include desktop {
-    width: 63%;
+    width: 100%;
     gap: 100px;
   }
 }
@@ -57,6 +57,7 @@
     height: 64px;
     border-radius: 50%;
     border: 1px solid rgba(255, 255, 255, 0.1);
+    cursor: pointer;
   }
 }
 

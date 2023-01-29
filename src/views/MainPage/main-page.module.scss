@@ -1,21 +1,27 @@
-@import '@src/styles/mixins';
+@import '@src/views/MainPage/stylesheets/mixins';
 
 .container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: center;
   position: relative;
   margin-top: 64px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   @include mobile {
+    max-width: 360px;
     gap: 100px;
   }
-
   @include tablet {
-    gap: 200px;
+    max-width: 766px;
+    gap: 150px;
   }
-
   @include desktop {
-    gap: 240px;
+    max-width: 1100px;
+    gap: 180px;
   }
 }
