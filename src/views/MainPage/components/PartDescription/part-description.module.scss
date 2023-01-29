@@ -12,7 +12,7 @@
     width: 75%;
   }
   @include desktop {
-    width: 63%;
+    width: 100%;
   }
 }
 
@@ -152,9 +152,9 @@
   @include desktop {
     flex-direction: column;
     justify-content: center;
-    width: 587px;
-    height: 308px;
-    padding: 63px 55px;
+    width: 540px;
+    height: 260px;
+    padding: 50px 50px;
   }
 }
 
@@ -176,11 +176,11 @@
   }
 
   @include desktop {
-    width: 475px;
-    height: 120px;
+    width: 400px;
+    height: 280px;
     font-weight: 400;
-    font-size: 25px;
-    line-height: 40px;
+    font-size: 22px;
+    line-height: 30px;
   }
 }
 
@@ -191,4 +191,8 @@
   font-size: 30px;
   line-height: 100%;
   margin-bottom: 32px;
+
+  @include desktop {
+    margin-bottom: 20px;
+  }
 }
