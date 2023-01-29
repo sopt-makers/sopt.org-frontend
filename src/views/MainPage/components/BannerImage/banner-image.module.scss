@@ -10,11 +10,9 @@
   @include mobile {
     height: 800px;
   }
-
   @include tablet {
-    height: 1242px;
+    height: 800px;
   }
-
   @include desktop {
     height: 900px;
   }
@@ -85,7 +83,7 @@
   z-index: 2;
 
   @include mobile {
-    top: 696px;
+    top: 630px;
     & > svg {
       color: white;
       width: 24px;
@@ -93,7 +91,7 @@
     }
   }
   @include tablet {
-    top: 1114px;
+    top: 630px;
     & > svg {
       color: white;
       width: 48px;
