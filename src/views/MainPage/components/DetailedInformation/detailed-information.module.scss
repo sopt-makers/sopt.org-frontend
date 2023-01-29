@@ -14,7 +14,7 @@
   }
   @include desktop {
     align-items: flex-start;
-    width: 63%;
+    width: 100%;
   }
 }
 
@@ -77,9 +77,9 @@
     padding: 56px;
   }
   @include desktop {
-    padding: 63px 55px;
-    width: 381px;
-    height: 260px;
+    padding: 63px 50px;
+    width: 355px;
+    height: 240px;
   }
 }
 
