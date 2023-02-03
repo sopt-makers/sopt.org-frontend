@@ -123,14 +123,13 @@ function DesktopActivityDescription() {
 
 export function ActivityDescription() {
   const isMobile = useIsMobile();
-  const isTablet = useIsTablet();
-  const isDesktop = useIsDesktop();
+  const isTablet = useIsTablet('766px', '1299.9px');
+  const isDesktop = useIsDesktop('1300px');
 
   return (
     <section className={styles.container}>
       <h3 className={styles.title}>SOPT에서는 이렇게 다양한 활동을 하고 있어요.</h3>
-      {isMobile && <MobileActivityDescription />}
-      {isTablet && <DesktopActivityDescription />}
+      {(isMobile || isTablet) && <MobileActivityDescription />}
       {isDesktop && <DesktopActivityDescription />}
     </section>
   );

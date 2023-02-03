@@ -1,18 +1,18 @@
-@import '@src/styles/mixins';
+@import '@src/views/MainPage/stylesheets/mixins';
 
 .container {
   display: flex;
   flex-direction: column;
-  align-items: center;
-
   @include mobile {
+    align-items: center;
     width: 90%;
   }
   @include tablet {
+    align-items: center;
     width: 75%;
   }
   @include desktop {
-    width: 63%;
+    width: 100%;
   }
 }
 
@@ -21,7 +21,6 @@
   display: flex;
   flex-direction: column;
   white-space: nowrap;
-  justify-content: center;
   font-weight: 800;
 
   @include mobile {
@@ -29,6 +28,7 @@
     height: 56px;
     font-size: 20px;
     line-height: 28px;
+    justify-content: center;
     text-align: center;
   }
   @include tablet {
@@ -36,10 +36,11 @@
     height: 112px;
     font-size: 36px;
     line-height: 56px;
+    justify-content: center;
     text-align: center;
   }
   @include desktop {
-    width: 100%;
+    width: 471px;
     height: 120px;
     font-size: 45px;
     line-height: 60px;
@@ -64,7 +65,7 @@
     margin-top: 24px;
   }
   @include desktop {
-    width: 100%;
+    width: 471px;
     height: 30px;
     font-size: 25px;
     line-height: 30px;
@@ -83,8 +84,8 @@
     display: grid;
     grid-template-rows: repeat(2, 1fr);
     grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
-    margin-top: 100px;
+    gap: 20px;
+    margin-top: 50px;
   }
 }
 
@@ -152,9 +153,9 @@
   @include desktop {
     flex-direction: column;
     justify-content: center;
-    width: 587px;
-    height: 308px;
-    padding: 63px 55px;
+    width: 540px;
+    height: 260px;
+    padding: 50px 50px;
   }
 }
 
@@ -176,11 +177,11 @@
   }
 
   @include desktop {
-    width: 475px;
-    height: 120px;
+    width: 400px;
+    height: 280px;
     font-weight: 400;
-    font-size: 25px;
-    line-height: 40px;
+    font-size: 22px;
+    line-height: 30px;
   }
 }
 
@@ -191,4 +192,8 @@
   font-size: 30px;
   line-height: 100%;
   margin-bottom: 32px;
+
+  @include desktop {
+    margin-bottom: 20px;
+  }
 }

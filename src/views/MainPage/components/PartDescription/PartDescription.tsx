@@ -79,9 +79,9 @@ function DesktopPartDescription() {
 }
 
 export function PartDescription() {
-  const isDesktop = useIsDesktop();
-  const isTablet = useIsTablet();
   const isMobile = useIsMobile();
+  const isTablet = useIsTablet('766px', '1299.9px');
+  const isDesktop = useIsDesktop('1300px');
 
   return (
     <section className={styles.container}>
@@ -90,8 +90,7 @@ export function PartDescription() {
         <span>파트로 이루어져 있어요.</span>
       </h3>
       <h5 className={styles.subTitle}>*2022년 하반기 31기 기준</h5>
-      {isMobile && <MobilePartDescription />}
-      {isTablet && <DesktopPartDescription />}
+      {(isMobile || isTablet) && <MobilePartDescription />}
       {isDesktop && <DesktopPartDescription />}
     </section>
   );
