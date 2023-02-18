@@ -33,7 +33,7 @@ function HeaderMenu({ menuList, isMenuShown, handleHeaderToggleButton }: HeaderM
     const currentMenu = e.currentTarget.id;
 
     if (currentMenu === '/recruit') {
-      window.open('hhttps://sopt-recruiting.web.app/recruiting/apply/ob');
+      window.open('https://sopt-recruiting.web.app/recruiting/apply/ob');
       return;
     }
     router.push(currentMenu);
