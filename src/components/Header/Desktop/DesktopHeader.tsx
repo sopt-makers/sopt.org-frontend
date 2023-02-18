@@ -9,7 +9,7 @@ function DesktopHeader({ menuList }: { menuList: { id: string; title: string }[]
     const currentMenu = e.currentTarget.id;
 
     if (currentMenu === '/recruit') {
-      return window.open('https://sopt-recruiting.web.app/recruiting/apply/yb');
+      return window.open('https://sopt-recruiting.web.app/recruiting/apply/ob');
     }
     router.push(currentMenu);
   };
