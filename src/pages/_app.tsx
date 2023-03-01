@@ -1,14 +1,27 @@
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 import { Global, ThemeProvider } from '@emotion/react';
+import { useEffect } from 'react';
 import { useState } from 'react';
 import { QueryClient, QueryClientProvider } from 'react-query';
+import GoogleTagManagerNoscript from '@src/components/googleTagManager/Noscript';
+import GoogleTagManagerScript from '@src/components/googleTagManager/Script';
+import * as gtm from '@src/components/googleTagManager/gtm';
 import { global } from '@src/styles/global';
 import theme from '@src/styles/theme';
 import '../styles/font.css';
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [queryClient] = useState(() => new QueryClient());
+
+  const router = useRouter();
+  useEffect(() => {
+    router.events.on('routeChangeComplete', gtm.pageview);
+    return () => {
+      router.events.off('routeChangeComplete', gtm.pageview);
+    };
+  }, [router.events]);
 
   return (
     <>
@@ -71,12 +84,14 @@ function MyApp({ Component, pageProps }: AppProps) {
           content="https://sopt-makers.s3.ap-northeast-2.amazonaws.com/mainpage/seo/sopt_twitter_seo.png"
         />
       </Head>
+      <GoogleTagManagerScript />
       <Global styles={global} />
       <ThemeProvider theme={theme}>
         <QueryClientProvider client={queryClient}>
           <Component {...pageProps} />
         </QueryClientProvider>
       </ThemeProvider>
+      <GoogleTagManagerNoscript />
     </>
   );
 }
