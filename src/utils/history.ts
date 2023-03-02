@@ -4,7 +4,6 @@ export interface LeaderType {
   name?: string;
   content?: string;
   image?: string;
-  [key: string]: any;
 }
 
 export const seperateLeaderType = (leaders: Array<LeaderType>) => {
