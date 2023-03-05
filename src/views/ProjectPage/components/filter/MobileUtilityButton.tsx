@@ -1,4 +1,5 @@
 import { ReactComponent as MobileFilterBtn } from '@src/assets/icons/MobileFilterBtn.svg';
+import { GTM_CLASS } from '@src/utils/const/gtmClass';
 import styles from './mobile-utility-button.module.scss';
 
 export function MobileUtilityButton({
@@ -20,7 +21,11 @@ export function MobileUtilityButton({
 
   return (
     <div className={styles.wrapper}>
-      <button type="button" className={styles.filter} onClick={() => handleFilterBtnClick()}>
+      <button
+        type="button"
+        className={`${styles.filter} ${GTM_CLASS.projectFilter}`}
+        onClick={() => handleFilterBtnClick()}
+      >
         <MobileFilterBtn />
       </button>
     </div>

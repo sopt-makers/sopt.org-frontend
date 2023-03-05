@@ -1,4 +1,5 @@
 import { useRouter } from 'next/router';
+import { GTM_CLASS } from '@src/utils/const/gtmClass';
 import { ReactComponent as ArrowRight } from '@src/views/MainPage/assets/arrow-right.svg';
 import styles from './detailed-information.module.scss';
 
@@ -42,16 +43,16 @@ export function DetailedInformation() {
         {cardList.map(({ name, desc }) => {
           return (
             <article
-              className={styles.card}
+              className={`${styles.card} ${GTM_CLASS[`informationCard${name}`]}`}
               onClick={() => handleClickItem(name)}
               role="presentation"
               key={name}
             >
-              <div className={styles.nameWrapper}>
-                <h4 className={styles.name}>{name}</h4>
+              <div className={`${styles.nameWrapper}  ${GTM_CLASS[`informationCard${name}`]}`}>
+                <h4 className={`${styles.name}  ${GTM_CLASS[`informationCard${name}`]}`}>{name}</h4>
                 <ArrowRight />
               </div>
-              <p className={styles.desc}>{desc}</p>
+              <p className={`${styles.desc}  ${GTM_CLASS[`informationCard${name}`]}`}>{desc}</p>
             </article>
           );
         })}

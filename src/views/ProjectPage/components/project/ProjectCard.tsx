@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useIsDesktop, useIsMobile, useIsTablet } from '@src/hooks/useDevice';
+import { GTM_CLASS } from '@src/utils/const/gtmClass';
 import shortid from 'shortid';
 import { ReactComponent as AppStore } from '../../assets/app-store-40x40.svg';
 import { ReactComponent as Github } from '../../assets/github-40x40.svg';
@@ -14,18 +15,18 @@ import styles from './project-card.module.scss';
 export function ProjectCard({ project }: { project: ProjectType }) {
   return (
     <Link href={`/project/${project.id}`}>
-      <article className={styles.item}>
+      <article className={`${styles.item} ${GTM_CLASS.projectCard}`}>
         {RepresentativeImageRender(project.logoImage, project?.thumbnailImage)}
-        <div className={styles.content}>
-          <div className={styles.types}>
+        <div className={`${styles.content} ${GTM_CLASS.projectCard}`}>
+          <div className={`${styles.types} ${GTM_CLASS.projectCard}`}>
             {ServiceTypeRender(project.serviceType)}
             {GenerationRender(project?.generation)}
           </div>
-          <div className={styles.text}>
+          <div className={`${styles.text} ${GTM_CLASS.projectCard}`}>
             {TitleRender(project.name)}
             {SummaryRender(project.summary)}
           </div>
-          <div className={styles.links}>
+          <div className={`${styles.links} ${GTM_CLASS.projectCard}`}>
             {project.link
               ?.filter(({ title }) => title?.length > 0)
               .map(({ title, url }) => {
@@ -56,8 +57,24 @@ function ProjectCardMobileImage(logoImage: string, thumbnailImage?: string) {
   const isCardThumbnail = thumbnailImage && thumbnailImage?.length > 0;
   return (
     <>
-      {isCardThumbnail && <Image src={thumbnailImage} width={316} height={176} alt="thumbnail" />}
-      {!isCardThumbnail && <Image src={logoImage} width={100} height={100} alt="logo" />}
+      {isCardThumbnail && (
+        <Image
+          className={`${GTM_CLASS.projectCard}`}
+          src={thumbnailImage}
+          width={316}
+          height={176}
+          alt="thumbnail"
+        />
+      )}
+      {!isCardThumbnail && (
+        <Image
+          className={`${GTM_CLASS.projectCard}`}
+          src={logoImage}
+          width={100}
+          height={100}
+          alt="logo"
+        />
+      )}
     </>
   );
 }
@@ -66,8 +83,24 @@ function ProjectCardDesktopImage(logoImage: string, thumbnailImage?: string) {
   const isCardThumbnail = thumbnailImage && thumbnailImage?.length > 0;
   return (
     <>
-      {isCardThumbnail && <Image src={thumbnailImage} width={368} height={208} alt="thumbnail" />}
-      {!isCardThumbnail && <Image src={logoImage} width={100} height={100} alt="logo" />}
+      {isCardThumbnail && (
+        <Image
+          className={`${GTM_CLASS.projectCard}`}
+          src={thumbnailImage}
+          width={368}
+          height={208}
+          alt="thumbnail"
+        />
+      )}
+      {!isCardThumbnail && (
+        <Image
+          className={`${GTM_CLASS.projectCard}`}
+          src={logoImage}
+          width={100}
+          height={100}
+          alt="logo"
+        />
+      )}
     </>
   );
 }
@@ -97,13 +130,19 @@ function GenerationRender(generation?: number) {
 function TitleRender(text: string) {
   const titleWithoutParentheses = text.replace(/ *\([^)]*\) */g, '');
   if (titleWithoutParentheses.length > 12) {
-    return <h5>{titleWithoutParentheses.slice(0, 12) + '...'}</h5>;
+    return (
+      <h5 className={`${GTM_CLASS.projectCard}`}>{titleWithoutParentheses.slice(0, 12) + '...'}</h5>
+    );
   }
-  return <h5>{titleWithoutParentheses}</h5>;
+  return <h5 className={`${GTM_CLASS.projectCard}`}>{titleWithoutParentheses}</h5>;
 }
 
 function SummaryRender(text: string) {
-  return text.length > 20 ? <p>{text.slice(0, 20) + '...'} </p> : <p>{text}</p>;
+  return text.length > 20 ? (
+    <p className={`${GTM_CLASS.projectCard}`}>{text.slice(0, 20) + '...'} </p>
+  ) : (
+    <p className={`${GTM_CLASS.projectCard}`}>{text}</p>
+  );
 }
 
 function LinkRender(link: LinkType, url: string) {
