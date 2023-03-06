@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useCallback, useEffect } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -8,20 +8,19 @@ interface CommonErrorProps {
 }
 
 function CommonError({ error }: CommonErrorProps) {
-  const customId = error?.message;
-
-  const notify = () =>
-    toast.error(`${error?.message}`, {
+  const notify = useCallback((errorMessage: string) => {
+    toast.error(`${errorMessage}`, {
       autoClose: 3000,
       position: toast.POSITION.TOP_RIGHT,
-      toastId: customId,
+      toastId: errorMessage,
     });
+  }, []);
 
   useEffect(() => {
     if (error) {
-      notify();
+      notify(error.message);
     }
-  }, []);
+  }, [error, notify]);
 
   return <ToastContainer />;
 }
