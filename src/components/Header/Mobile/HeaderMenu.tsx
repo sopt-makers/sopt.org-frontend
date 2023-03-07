@@ -1,5 +1,5 @@
-import { useRouter } from 'next/router';
 import React, { useEffect } from 'react';
+import useHeader from '@src/hooks/useHeader';
 import * as S from './HeaderMenu.style';
 
 type MenuType = 'idle' | 'open' | 'close';
@@ -27,24 +27,9 @@ interface HeaderMenuProps {
 }
 
 function HeaderMenu({ menuList, isMenuShown, handleHeaderToggleButton }: HeaderMenuProps) {
-  const router = useRouter();
-
-  const handleClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
-    const currentMenu = e.currentTarget.id;
-
-    if (currentMenu === '/recruit') {
-      window.open('https://sopt-recruiting.web.app/recruiting/apply/yb');
-      return;
-    }
-    router.push(currentMenu);
-  };
-
-  const handleIsSelected = (path: string) => {
-    if (path.includes('project') && router.pathname.includes('project')) return true;
-    return router.pathname === path;
-  };
-
   useNoScroll(isMenuShown);
+
+  const { handleClickTap, handleIsSelected } = useHeader();
 
   return (
     <S.Root isMenuShown={isMenuShown}>
@@ -52,7 +37,12 @@ function HeaderMenu({ menuList, isMenuShown, handleHeaderToggleButton }: HeaderM
         <S.ContentsWrap>
           <S.MenuTitlesWrap>
             {menuList.map(({ id, title }) => (
-              <S.MenuTitle key={id} id={id} isSelected={handleIsSelected(id)} onClick={handleClick}>
+              <S.MenuTitle
+                key={id}
+                id={id}
+                isSelected={handleIsSelected(id)}
+                onClick={handleClickTap}
+              >
                 {title}
               </S.MenuTitle>
             ))}

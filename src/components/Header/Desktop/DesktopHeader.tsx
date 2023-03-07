@@ -1,32 +1,18 @@
 import styled from '@emotion/styled';
-import { useRouter } from 'next/router';
 import logoIcon from '@src/assets/sopt/logo.png';
+import useHeader from '@src/hooks/useHeader';
 
 function DesktopHeader({ menuList }: { menuList: { id: string; title: string }[] }) {
-  const router = useRouter();
-
-  const handleClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
-    const currentMenu = e.currentTarget.id;
-
-    if (currentMenu === '/recruit') {
-      return window.open('https://sopt-recruiting.web.app/recruiting/apply/yb');
-    }
-    router.push(currentMenu);
-  };
-
-  const handleIsSelected = (path: string) => {
-    if (path.includes('project') && router.pathname.includes('project')) return true;
-    return router.pathname === path;
-  };
+  const { handleClickLogo, handleClickTap, handleIsSelected } = useHeader();
 
   return (
     <Wrapper>
       <CenterAligner>
-        <Logo src={logoIcon.src} onClick={() => router.push('/')} />
+        <Logo src={logoIcon.src} onClick={handleClickLogo} />
       </CenterAligner>
       <MenuTitlesWrapper>
         {menuList.map(({ id, title }) => (
-          <MenuTitle key={id} id={id} isSelected={handleIsSelected(id)} onClick={handleClick}>
+          <MenuTitle key={id} id={id} isSelected={handleIsSelected(id)} onClick={handleClickTap}>
             {title}
           </MenuTitle>
         ))}
