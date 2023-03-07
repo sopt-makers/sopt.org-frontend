@@ -8,9 +8,13 @@ function DesktopHeader({ menuList }: { menuList: { id: string; title: string }[]
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
     const currentMenu = e.currentTarget.id;
 
+    if (currentMenu === '/review') {
+      return window.open('https://sopt-official-review.oopy.io/');
+    }
     if (currentMenu === '/recruit') {
       return window.open('https://sopt-recruiting.web.app/recruiting/apply/yb');
     }
+
     router.push(currentMenu);
   };
 
