@@ -3,11 +3,14 @@ import DesktopHeader from './Desktop/DesktopHeader';
 import MobileHeader from './Mobile/MobileHeader';
 import styles from './header.module.scss';
 
-const menuList = [
-  { id: '/project', title: '프로젝트' },
-  { id: '/review', title: '활동후기' },
-  { id: '/FAQ', title: '문의하기' },
-  { id: '/recruit', title: '리크루팅' },
+type RoutingMenu = { title: string; route: string };
+type AnchorMenu = { title: string; anchor: string };
+export type MenuList = Array<RoutingMenu | AnchorMenu>;
+export function checkIsAnchorMenu(menuTap: RoutingMenu | AnchorMenu): menuTap is AnchorMenu {
+  if ('anchor' in menuTap) return true;
+  return false;
+}
+
 ];
 
 export function Header() {
