@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import Link from 'next/link';
 import logoIcon from '@src/assets/sopt/logo.png';
 import useHeader from '@src/hooks/useHeader';
-import { MenuList, checkIsAnchorMenu } from '../Header';
+import { MenuList, checkIsAnchorMenu } from '../types';
 
 function DesktopHeader({ menuList }: { menuList: MenuList }) {
   const { handleClickLogo, handleIsSelected } = useHeader();

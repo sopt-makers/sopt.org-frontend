@@ -2,14 +2,7 @@ import { useIsDesktop, useIsMobile, useIsTablet } from '@src/hooks/useDevice';
 import DesktopHeader from './Desktop/DesktopHeader';
 import MobileHeader from './Mobile/MobileHeader';
 import styles from './header.module.scss';
-
-type RoutingMenu = { title: string; route: string };
-type AnchorMenu = { title: string; anchor: string };
-export type MenuList = Array<RoutingMenu | AnchorMenu>;
-export function checkIsAnchorMenu(menuTap: RoutingMenu | AnchorMenu): menuTap is AnchorMenu {
-  if ('anchor' in menuTap) return true;
-  return false;
-}
+import { MenuList } from './types';
 
 const menuList: MenuList = [
   { title: '프로젝트', route: '/project' },

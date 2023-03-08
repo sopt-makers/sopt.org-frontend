@@ -1,7 +1,7 @@
 import Link from 'next/link';
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import useHeader from '@src/hooks/useHeader';
-import { MenuList, checkIsAnchorMenu } from '../Header';
+import { MenuList, checkIsAnchorMenu } from '../types';
 import * as S from './HeaderMenu.style';
 
 type MenuType = 'idle' | 'open' | 'close';
