@@ -6,12 +6,10 @@ function useHeader() {
   const handleClickLogo = () => router.push('/');
 
   const handleIsSelected = (path: string) => {
-    if (path.includes('project') && router.pathname.includes('project')) return true;
-    return router.pathname === path;
+    return router.pathname.startsWith(path);
   };
 
   return { handleClickLogo, handleIsSelected };
-
 }
 
 export default useHeader;
