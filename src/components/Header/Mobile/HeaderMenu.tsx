@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React, { useEffect } from 'react';
 import useHeader from '@src/hooks/useHeader';
 import { MenuList, checkIsAnchorMenu } from '../Header';
@@ -40,19 +41,19 @@ function HeaderMenu({ menuList, isMenuShown, handleHeaderToggleButton }: HeaderM
             {menuList.map((menuTap) => {
               if (checkIsAnchorMenu(menuTap)) {
                 return (
-                  <S.MenuTitle key={menuTap.title} href={menuTap.anchor} target="_blank">
-                    {menuTap.title}
+                  <S.MenuTitle key={menuTap.title}>
+                    <S.MenuTitleAnchor href={menuTap.anchor} target="_blank" rel="noreferrer">
+                      {menuTap.title}
+                    </S.MenuTitleAnchor>
                   </S.MenuTitle>
                 );
               }
               return (
-                <S.MenuTitle
-                  key={menuTap.title}
-                  href={menuTap.route}
-                  isSelected={handleIsSelected(menuTap.route)}
-                >
-                  {menuTap.title}
-                </S.MenuTitle>
+                <Link key={menuTap.title} href={menuTap.route}>
+                  <S.MenuTitle isSelected={handleIsSelected(menuTap.route)}>
+                    {menuTap.title}
+                  </S.MenuTitle>
+                </Link>
               );
             })}
             <S.Background onClick={() => handleHeaderToggleButton()} />

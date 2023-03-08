@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import Link from 'next/link';
 import logoIcon from '@src/assets/sopt/logo.png';
 import useHeader from '@src/hooks/useHeader';
 import { MenuList, checkIsAnchorMenu } from '../Header';
@@ -15,19 +16,17 @@ function DesktopHeader({ menuList }: { menuList: MenuList }) {
         {menuList.map((menuTap) => {
           if (checkIsAnchorMenu(menuTap)) {
             return (
-              <MenuTitle key={menuTap.title} href={menuTap.anchor} target="_blank">
-                {menuTap.title}
+              <MenuTitle key={menuTap.title}>
+                <MenuTitleAnchor href={menuTap.anchor} target="_blank" rel="noreferrer">
+                  {menuTap.title}
+                </MenuTitleAnchor>
               </MenuTitle>
             );
           }
           return (
-            <MenuTitle
-              key={menuTap.title}
-              href={menuTap.route}
-              isSelected={handleIsSelected(menuTap.route)}
-            >
-              {menuTap.title}
-            </MenuTitle>
+            <Link key={menuTap.title} href={menuTap.route}>
+              <MenuTitle isSelected={handleIsSelected(menuTap.route)}>{menuTap.title}</MenuTitle>
+            </Link>
           );
         })}
       </MenuTitlesWrapper>
@@ -79,7 +78,14 @@ export const MenuTitlesWrapper = styled.div`
   align-items: center;
 `;
 
-export const MenuTitle = styled.a<MenuTitleProps>`
+export const MenuTitleAnchor = styled.a`
+  display: block;
+
+  color: inherit;
+  text-decoration: none;
+`;
+
+export const MenuTitle = styled.div<MenuTitleProps>`
   font-family: 'SUIT';
   font-size: 18px;
   line-height: 36px;
