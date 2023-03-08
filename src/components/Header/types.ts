@@ -1,9 +1,14 @@
-type RoutingMenu = { title: string; route: string };
-type AnchorMenu = { title: string; anchor: string };
+export const enum MenuTapType {
+  Router = 'ROUTER',
+  Anchor = 'ANCHOR',
+};
 
-export type MenuTapList = Array<RoutingMenu | AnchorMenu>;
-
-export function checkIsAnchorMenu(menuTap: RoutingMenu | AnchorMenu): menuTap is AnchorMenu {
-  if ('anchor' in menuTap) return true;
-  return false;
+interface BaseMenuTap {
+  type: MenuTapType;
+  title: string;
 }
+
+interface RoutingMenuTap extends BaseMenuTap { type: MenuTapType.Router; route: string };
+interface AnchorMenuTap extends BaseMenuTap { type: MenuTapType.Anchor; anchor: string };
+
+export type MenuTapList = Array<RoutingMenuTap | AnchorMenuTap>;

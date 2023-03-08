@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import Link from 'next/link';
 import logoIcon from '@src/assets/sopt/logo.png';
 import useHeader from '@src/hooks/useHeader';
-import { MenuTapList, checkIsAnchorMenu } from '../types';
+import { MenuTapList, MenuTapType } from '../types';
 
 function DesktopHeader({ menuTapList }: { menuTapList: MenuTapList }) {
   const { handleClickLogo, handleIsSelected } = useHeader();
@@ -14,20 +14,24 @@ function DesktopHeader({ menuTapList }: { menuTapList: MenuTapList }) {
       </CenterAligner>
       <MenuTitlesWrapper>
         {menuTapList.map((menuTap) => {
-          if (checkIsAnchorMenu(menuTap)) {
-            return (
-              <MenuTitle key={menuTap.title}>
-                <MenuTitleAnchor href={menuTap.anchor} target="_blank" rel="noreferrer">
-                  {menuTap.title}
-                </MenuTitleAnchor>
-              </MenuTitle>
-            );
+          switch (menuTap.type) {
+            case MenuTapType.Anchor:
+              return (
+                <MenuTitle key={menuTap.title}>
+                  <MenuTitleAnchor href={menuTap.anchor} target="_blank" rel="noreferrer">
+                    {menuTap.title}
+                  </MenuTitleAnchor>
+                </MenuTitle>
+              );
+            case MenuTapType.Router:
+              return (
+                <Link key={menuTap.title} href={menuTap.route}>
+                  <MenuTitle isSelected={handleIsSelected(menuTap.route)}>
+                    {menuTap.title}
+                  </MenuTitle>
+                </Link>
+              );
           }
-          return (
-            <Link key={menuTap.title} href={menuTap.route}>
-              <MenuTitle isSelected={handleIsSelected(menuTap.route)}>{menuTap.title}</MenuTitle>
-            </Link>
-          );
         })}
       </MenuTitlesWrapper>
     </Wrapper>

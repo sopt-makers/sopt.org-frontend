@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { useEffect } from 'react';
 import useHeader from '@src/hooks/useHeader';
-import { MenuTapList, checkIsAnchorMenu } from '../types';
+import { MenuTapList, MenuTapType } from '../types';
 import * as S from './HeaderMenu.style';
 
 type MenuType = 'idle' | 'open' | 'close';
@@ -39,22 +39,24 @@ function HeaderMenu({ menuTapList, isMenuShown, handleHeaderToggleButton }: Head
         <S.ContentsWrap>
           <S.MenuTitlesWrap>
             {menuTapList.map((menuTap) => {
-              if (checkIsAnchorMenu(menuTap)) {
-                return (
-                  <S.MenuTitle key={menuTap.title}>
-                    <S.MenuTitleAnchor href={menuTap.anchor} target="_blank" rel="noreferrer">
-                      {menuTap.title}
-                    </S.MenuTitleAnchor>
-                  </S.MenuTitle>
-                );
+              switch (menuTap.type) {
+                case MenuTapType.Anchor:
+                  return (
+                    <S.MenuTitle key={menuTap.title}>
+                      <S.MenuTitleAnchor href={menuTap.anchor} target="_blank" rel="noreferrer">
+                        {menuTap.title}
+                      </S.MenuTitleAnchor>
+                    </S.MenuTitle>
+                  );
+                case MenuTapType.Router:
+                  return (
+                    <Link key={menuTap.title} href={menuTap.route}>
+                      <S.MenuTitle isSelected={handleIsSelected(menuTap.route)}>
+                        {menuTap.title}
+                      </S.MenuTitle>
+                    </Link>
+                  );
               }
-              return (
-                <Link key={menuTap.title} href={menuTap.route}>
-                  <S.MenuTitle isSelected={handleIsSelected(menuTap.route)}>
-                    {menuTap.title}
-                  </S.MenuTitle>
-                </Link>
-              );
             })}
             <S.Background onClick={() => handleHeaderToggleButton()} />
           </S.MenuTitlesWrap>
