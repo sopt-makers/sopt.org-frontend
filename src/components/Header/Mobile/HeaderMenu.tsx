@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { useEffect } from 'react';
 import useHeader from '@src/hooks/useHeader';
-import { MenuList, checkIsAnchorMenu } from '../types';
+import { MenuTapList, checkIsAnchorMenu } from '../types';
 import * as S from './HeaderMenu.style';
 
 type MenuType = 'idle' | 'open' | 'close';
@@ -23,12 +23,12 @@ function useNoScroll(isMenuShown: MenuType) {
 }
 
 interface HeaderMenuProps {
-  menuList: MenuList;
+  menuTapList: MenuTapList;
   isMenuShown: MenuType;
   handleHeaderToggleButton: () => void;
 }
 
-function HeaderMenu({ menuList, isMenuShown, handleHeaderToggleButton }: HeaderMenuProps) {
+function HeaderMenu({ menuTapList, isMenuShown, handleHeaderToggleButton }: HeaderMenuProps) {
   useNoScroll(isMenuShown);
 
   const { handleIsSelected } = useHeader();
@@ -38,7 +38,7 @@ function HeaderMenu({ menuList, isMenuShown, handleHeaderToggleButton }: HeaderM
       <S.MenuWrap>
         <S.ContentsWrap>
           <S.MenuTitlesWrap>
-            {menuList.map((menuTap) => {
+            {menuTapList.map((menuTap) => {
               if (checkIsAnchorMenu(menuTap)) {
                 return (
                   <S.MenuTitle key={menuTap.title}>

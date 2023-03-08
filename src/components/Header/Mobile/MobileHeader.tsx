@@ -6,12 +6,12 @@ import menuBar from '@src/assets/icons/menuBar.svg';
 import xButton from '@src/assets/icons/xButton.png';
 import logoIcon from '@src/assets/sopt/logo.png';
 import { Condition } from '@src/lib';
-import { MenuList } from '../types';
+import { MenuTapList } from '../types';
 import HeaderMenu from './HeaderMenu';
 
 export type MenuType = 'idle' | 'open' | 'close';
 
-function MobileHeader({ menuList }: { menuList: MenuList }) {
+function MobileHeader({ menuTapList }: { menuTapList: MenuTapList }) {
   const router = useRouter();
   const [isMenuShown, setIsMenuShown] = useState<MenuType>('idle');
 
@@ -33,7 +33,7 @@ function MobileHeader({ menuList }: { menuList: MenuList }) {
       </StyledHeader>
       <Condition statement={isMenuShown === 'open'}>
         <HeaderMenu
-          menuList={menuList}
+          menuTapList={menuTapList}
           isMenuShown={isMenuShown}
           handleHeaderToggleButton={handleHeaderToggleButton}
         />

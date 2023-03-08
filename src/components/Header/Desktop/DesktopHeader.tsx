@@ -2,9 +2,9 @@ import styled from '@emotion/styled';
 import Link from 'next/link';
 import logoIcon from '@src/assets/sopt/logo.png';
 import useHeader from '@src/hooks/useHeader';
-import { MenuList, checkIsAnchorMenu } from '../types';
+import { MenuTapList, checkIsAnchorMenu } from '../types';
 
-function DesktopHeader({ menuList }: { menuList: MenuList }) {
+function DesktopHeader({ menuTapList }: { menuTapList: MenuTapList }) {
   const { handleClickLogo, handleIsSelected } = useHeader();
 
   return (
@@ -13,7 +13,7 @@ function DesktopHeader({ menuList }: { menuList: MenuList }) {
         <Logo src={logoIcon.src} onClick={handleClickLogo} />
       </CenterAligner>
       <MenuTitlesWrapper>
-        {menuList.map((menuTap) => {
+        {menuTapList.map((menuTap) => {
           if (checkIsAnchorMenu(menuTap)) {
             return (
               <MenuTitle key={menuTap.title}>

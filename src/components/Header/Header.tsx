@@ -2,9 +2,9 @@ import { useIsDesktop, useIsMobile, useIsTablet } from '@src/hooks/useDevice';
 import DesktopHeader from './Desktop/DesktopHeader';
 import MobileHeader from './Mobile/MobileHeader';
 import styles from './header.module.scss';
-import { MenuList } from './types';
+import { MenuTapList } from './types';
 
-const menuList: MenuList = [
+const menuTapList: MenuTapList = [
   { title: '프로젝트', route: '/project' },
   { title: '활동후기', anchor: 'https://sopt-official-review.oopy.io/' },
   { title: '문의하기', route: '/FAQ' },
@@ -21,9 +21,9 @@ export function Header() {
 
   return (
     <header className={styles.wrapper}>
-      {isDesktop && <DesktopHeader menuList={menuList} />}
-      {isTablet && <MobileHeader menuList={menuList} />}
-      {isMobile && <MobileHeader menuList={menuList} />}
+      {isDesktop && <DesktopHeader menuTapList={menuTapList} />}
+      {isTablet && <MobileHeader menuTapList={menuTapList} />}
+      {isMobile && <MobileHeader menuTapList={menuTapList} />}
     </header>
   );
 }
