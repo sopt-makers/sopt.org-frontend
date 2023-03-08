@@ -11,6 +11,14 @@ export function checkIsAnchorMenu(menuTap: RoutingMenu | AnchorMenu): menuTap is
   return false;
 }
 
+const menuList: MenuList = [
+  { title: '프로젝트', route: '/project' },
+  { title: '활동후기', anchor: 'https://sopt-official-review.oopy.io/' },
+  { title: '문의하기', route: '/FAQ' },
+  {
+    title: '리크루팅',
+    anchor: 'https://sopt-recruiting.web.app/recruiting/apply/yb',
+  },
 ];
 
 export function Header() {

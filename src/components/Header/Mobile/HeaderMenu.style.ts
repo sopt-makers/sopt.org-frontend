@@ -9,7 +9,7 @@ interface CloseButtonProps extends RootProps {
 }
 
 interface MenuTitleProps {
-  isSelected: boolean;
+  isSelected?: boolean;
 }
 
 interface RootProps {

@@ -6,11 +6,12 @@ import menuBar from '@src/assets/icons/menuBar.svg';
 import xButton from '@src/assets/icons/xButton.png';
 import logoIcon from '@src/assets/sopt/logo.png';
 import { Condition } from '@src/lib';
+import { MenuList } from '../Header';
 import HeaderMenu from './HeaderMenu';
 
 export type MenuType = 'idle' | 'open' | 'close';
 
-function MobileHeader({ menuList }: { menuList: { id: string; title: string }[] }) {
+function MobileHeader({ menuList }: { menuList: MenuList }) {
   const router = useRouter();
   const [isMenuShown, setIsMenuShown] = useState<MenuType>('idle');
 

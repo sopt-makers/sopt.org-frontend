@@ -1,9 +1,10 @@
 import styled from '@emotion/styled';
 import logoIcon from '@src/assets/sopt/logo.png';
 import useHeader from '@src/hooks/useHeader';
+import { MenuList, checkIsAnchorMenu } from '../Header';
 
-function DesktopHeader({ menuList }: { menuList: { id: string; title: string }[] }) {
-  const { handleClickLogo, handleClickTap, handleIsSelected } = useHeader();
+function DesktopHeader({ menuList }: { menuList: MenuList }) {
+  const { handleClickLogo, handleIsSelected } = useHeader();
 
   return (
     <Wrapper>
@@ -11,11 +12,24 @@ function DesktopHeader({ menuList }: { menuList: { id: string; title: string }[]
         <Logo src={logoIcon.src} onClick={handleClickLogo} />
       </CenterAligner>
       <MenuTitlesWrapper>
-        {menuList.map(({ id, title }) => (
-          <MenuTitle key={id} id={id} isSelected={handleIsSelected(id)} onClick={handleClickTap}>
-            {title}
-          </MenuTitle>
-        ))}
+        {menuList.map((menuTap) => {
+          if (checkIsAnchorMenu(menuTap)) {
+            return (
+              <MenuTitle key={menuTap.title} href={menuTap.anchor} target="_blank">
+                {menuTap.title}
+              </MenuTitle>
+            );
+          }
+          return (
+            <MenuTitle
+              key={menuTap.title}
+              href={menuTap.route}
+              isSelected={handleIsSelected(menuTap.route)}
+            >
+              {menuTap.title}
+            </MenuTitle>
+          );
+        })}
       </MenuTitlesWrapper>
     </Wrapper>
   );
@@ -26,7 +40,7 @@ interface StyleProps {
 }
 
 interface MenuTitleProps {
-  isSelected: boolean;
+  isSelected?: boolean;
 }
 
 export const Wrapper = styled.div`
