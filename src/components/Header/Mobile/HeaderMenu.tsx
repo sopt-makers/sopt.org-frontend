@@ -36,22 +36,20 @@ function HeaderMenu({ isMenuShown, handleHeaderToggleButton }: HeaderMenuProps) 
       <S.MenuWrap>
         <S.ContentsWrap>
           <S.MenuTitlesWrap>
-            {menuTapList.map((menuTap) => {
-              switch (menuTap.type) {
+            {menuTapList.map(({ type, title, href }) => {
+              switch (type) {
                 case MenuTapType.Anchor:
                   return (
-                    <S.MenuTitle key={menuTap.title}>
-                      <S.MenuTitleAnchor href={menuTap.anchor} target="_blank" rel="noreferrer">
-                        {menuTap.title}
+                    <S.MenuTitle key={title}>
+                      <S.MenuTitleAnchor href={href} target="_blank" rel="noreferrer">
+                        {title}
                       </S.MenuTitleAnchor>
                     </S.MenuTitle>
                   );
                 case MenuTapType.Router:
                   return (
-                    <Link key={menuTap.title} href={menuTap.route}>
-                      <S.MenuTitle isSelected={handleIsSelected(menuTap.route)}>
-                        {menuTap.title}
-                      </S.MenuTitle>
+                    <Link key={title} href={href}>
+                      <S.MenuTitle isSelected={handleIsSelected(href)}>{title}</S.MenuTitle>
                     </Link>
                   );
               }

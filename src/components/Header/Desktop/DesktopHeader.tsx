@@ -14,22 +14,20 @@ function DesktopHeader() {
         <Logo src={logoIcon.src} onClick={handleClickLogo} />
       </CenterAligner>
       <MenuTitlesWrapper>
-        {menuTapList.map((menuTap) => {
-          switch (menuTap.type) {
+        {menuTapList.map(({ type, title, href }) => {
+          switch (type) {
             case MenuTapType.Anchor:
               return (
-                <MenuTitle key={menuTap.title}>
-                  <MenuTitleAnchor href={menuTap.anchor} target="_blank" rel="noreferrer">
-                    {menuTap.title}
+                <MenuTitle key={title}>
+                  <MenuTitleAnchor href={href} target="_blank" rel="noreferrer">
+                    {title}
                   </MenuTitleAnchor>
                 </MenuTitle>
               );
             case MenuTapType.Router:
               return (
-                <Link key={menuTap.title} href={menuTap.route}>
-                  <MenuTitle isSelected={handleIsSelected(menuTap.route)}>
-                    {menuTap.title}
-                  </MenuTitle>
+                <Link key={title} href={href}>
+                  <MenuTitle isSelected={handleIsSelected(href)}>{title}</MenuTitle>
                 </Link>
               );
           }

@@ -8,9 +8,7 @@ export const enum MenuTapType {
 interface BaseMenuTap {
   type: MenuTapType;
   title: string;
+  href: string;
 }
 
-interface RoutingMenuTap extends BaseMenuTap { type: MenuTapType.Router; route: string };
-interface AnchorMenuTap extends BaseMenuTap { type: MenuTapType.Anchor; anchor: string };
-
-export type MenuTapList = Array<RoutingMenuTap | AnchorMenuTap>;
+export type MenuTapList = BaseMenuTap[];
