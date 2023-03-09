@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { useEffect } from 'react';
 import useHeader from '@src/hooks/useHeader';
+import { menuTapList } from '../menuTapList';
 import { MenuState, MenuTapType } from '../types';
 import * as S from './HeaderMenu.style';
 
@@ -25,7 +26,7 @@ interface HeaderMenuProps {
   handleHeaderToggleButton: () => void;
 }
 
-function HeaderMenu({ menuTapList, isMenuShown, handleHeaderToggleButton }: HeaderMenuProps) {
+function HeaderMenu({ isMenuShown, handleHeaderToggleButton }: HeaderMenuProps) {
   useNoScroll(isMenuShown);
 
   const { handleIsSelected } = useHeader();

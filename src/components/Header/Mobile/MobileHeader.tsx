@@ -9,9 +9,7 @@ import { Condition } from '@src/lib';
 import { MenuState } from '../types';
 import HeaderMenu from './HeaderMenu';
 
-export type MenuType = 'idle' | 'open' | 'close';
-
-function MobileHeader({ menuTapList }: { menuTapList: MenuTapList }) {
+function MobileHeader() {
   const router = useRouter();
   const [isMenuShown, setIsMenuShown] = useState<MenuState>('idle');
 
@@ -32,11 +30,7 @@ function MobileHeader({ menuTapList }: { menuTapList: MenuTapList }) {
         </ToggleButton>
       </StyledHeader>
       <Condition statement={isMenuShown === 'open'}>
-        <HeaderMenu
-          menuTapList={menuTapList}
-          isMenuShown={isMenuShown}
-          handleHeaderToggleButton={handleHeaderToggleButton}
-        />
+        <HeaderMenu isMenuShown={isMenuShown} handleHeaderToggleButton={handleHeaderToggleButton} />
       </Condition>
     </>
   );

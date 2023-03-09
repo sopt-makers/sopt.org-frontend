@@ -2,9 +2,10 @@ import styled from '@emotion/styled';
 import Link from 'next/link';
 import logoIcon from '@src/assets/sopt/logo.png';
 import useHeader from '@src/hooks/useHeader';
-import { MenuTapList, MenuTapType } from '../types';
+import { menuTapList } from '../menuTapList';
+import { MenuTapType } from '../types';
 
-function DesktopHeader({ menuTapList }: { menuTapList: MenuTapList }) {
+function DesktopHeader() {
   const { handleClickLogo, handleIsSelected } = useHeader();
 
   return (
