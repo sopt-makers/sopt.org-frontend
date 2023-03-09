@@ -1,12 +1,10 @@
 import Link from 'next/link';
 import { useEffect } from 'react';
 import useHeader from '@src/hooks/useHeader';
-import { MenuTapList, MenuTapType } from '../types';
+import { MenuState, MenuTapType } from '../types';
 import * as S from './HeaderMenu.style';
 
-type MenuType = 'idle' | 'open' | 'close';
-
-function useNoScroll(isMenuShown: MenuType) {
+function useNoScroll(isMenuShown: MenuState) {
   useEffect(() => {
     if (isMenuShown === 'open') {
       document.body.style.overflow = 'hidden';
@@ -23,8 +21,7 @@ function useNoScroll(isMenuShown: MenuType) {
 }
 
 interface HeaderMenuProps {
-  menuTapList: MenuTapList;
-  isMenuShown: MenuType;
+  isMenuShown: MenuState;
   handleHeaderToggleButton: () => void;
 }
 

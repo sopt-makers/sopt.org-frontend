@@ -6,14 +6,14 @@ import menuBar from '@src/assets/icons/menuBar.svg';
 import xButton from '@src/assets/icons/xButton.png';
 import logoIcon from '@src/assets/sopt/logo.png';
 import { Condition } from '@src/lib';
-import { MenuTapList } from '../types';
+import { MenuState } from '../types';
 import HeaderMenu from './HeaderMenu';
 
 export type MenuType = 'idle' | 'open' | 'close';
 
 function MobileHeader({ menuTapList }: { menuTapList: MenuTapList }) {
   const router = useRouter();
-  const [isMenuShown, setIsMenuShown] = useState<MenuType>('idle');
+  const [isMenuShown, setIsMenuShown] = useState<MenuState>('idle');
 
   const handleHeaderToggleButton = () => {
     setIsMenuShown((prev) => (prev === 'open' ? 'close' : 'open'));

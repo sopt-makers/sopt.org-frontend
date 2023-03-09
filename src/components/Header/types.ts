@@ -1,3 +1,5 @@
+export type MenuState = 'idle' | 'open' | 'close';
+
 export const enum MenuTapType {
   Router = 'ROUTER',
   Anchor = 'ANCHOR',
