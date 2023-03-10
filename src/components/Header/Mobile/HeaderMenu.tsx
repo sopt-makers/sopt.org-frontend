@@ -1,10 +1,11 @@
-import React, { useEffect } from 'react';
+import Link from 'next/link';
+import { useEffect } from 'react';
 import useHeader from '@src/hooks/useHeader';
+import { menuTapList } from '../menuTapList';
+import { MenuState, MenuTapType } from '../types';
 import * as S from './HeaderMenu.style';
 
-type MenuType = 'idle' | 'open' | 'close';
-
-function useNoScroll(isMenuShown: MenuType) {
+function useNoScroll(isMenuShown: MenuState) {
   useEffect(() => {
     if (isMenuShown === 'open') {
       document.body.style.overflow = 'hidden';
@@ -21,31 +22,38 @@ function useNoScroll(isMenuShown: MenuType) {
 }
 
 interface HeaderMenuProps {
-  menuList: { id: string; title: string }[];
-  isMenuShown: MenuType;
+  isMenuShown: MenuState;
   handleHeaderToggleButton: () => void;
 }
 
-function HeaderMenu({ menuList, isMenuShown, handleHeaderToggleButton }: HeaderMenuProps) {
+function HeaderMenu({ isMenuShown, handleHeaderToggleButton }: HeaderMenuProps) {
   useNoScroll(isMenuShown);
 
-  const { handleClickTap, handleIsSelected } = useHeader();
+  const { handleIsSelected } = useHeader();
 
   return (
     <S.Root isMenuShown={isMenuShown}>
       <S.MenuWrap>
         <S.ContentsWrap>
           <S.MenuTitlesWrap>
-            {menuList.map(({ id, title }) => (
-              <S.MenuTitle
-                key={id}
-                id={id}
-                isSelected={handleIsSelected(id)}
-                onClick={handleClickTap}
-              >
-                {title}
-              </S.MenuTitle>
-            ))}
+            {menuTapList.map(({ type, title, href }) => {
+              switch (type) {
+                case MenuTapType.Anchor:
+                  return (
+                    <S.MenuTitle key={title}>
+                      <S.MenuTitleAnchor href={href} target="_blank" rel="noreferrer">
+                        {title}
+                      </S.MenuTitleAnchor>
+                    </S.MenuTitle>
+                  );
+                case MenuTapType.Router:
+                  return (
+                    <Link key={title} href={href}>
+                      <S.MenuTitle isSelected={handleIsSelected(href)}>{title}</S.MenuTitle>
+                    </Link>
+                  );
+              }
+            })}
             <S.Background onClick={() => handleHeaderToggleButton()} />
           </S.MenuTitlesWrap>
         </S.ContentsWrap>

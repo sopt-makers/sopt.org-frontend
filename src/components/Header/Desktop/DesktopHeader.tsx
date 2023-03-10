@@ -1,9 +1,12 @@
 import styled from '@emotion/styled';
+import Link from 'next/link';
 import logoIcon from '@src/assets/sopt/logo.png';
 import useHeader from '@src/hooks/useHeader';
+import { menuTapList } from '../menuTapList';
+import { MenuTapType } from '../types';
 
-function DesktopHeader({ menuList }: { menuList: { id: string; title: string }[] }) {
-  const { handleClickLogo, handleClickTap, handleIsSelected } = useHeader();
+function DesktopHeader() {
+  const { handleClickLogo, handleIsSelected } = useHeader();
 
   return (
     <Wrapper>
@@ -11,11 +14,24 @@ function DesktopHeader({ menuList }: { menuList: { id: string; title: string }[]
         <Logo src={logoIcon.src} onClick={handleClickLogo} />
       </CenterAligner>
       <MenuTitlesWrapper>
-        {menuList.map(({ id, title }) => (
-          <MenuTitle key={id} id={id} isSelected={handleIsSelected(id)} onClick={handleClickTap}>
-            {title}
-          </MenuTitle>
-        ))}
+        {menuTapList.map(({ type, title, href }) => {
+          switch (type) {
+            case MenuTapType.Anchor:
+              return (
+                <MenuTitle key={title}>
+                  <MenuTitleAnchor href={href} target="_blank" rel="noreferrer">
+                    {title}
+                  </MenuTitleAnchor>
+                </MenuTitle>
+              );
+            case MenuTapType.Router:
+              return (
+                <Link key={title} href={href}>
+                  <MenuTitle isSelected={handleIsSelected(href)}>{title}</MenuTitle>
+                </Link>
+              );
+          }
+        })}
       </MenuTitlesWrapper>
     </Wrapper>
   );
@@ -26,7 +42,7 @@ interface StyleProps {
 }
 
 interface MenuTitleProps {
-  isSelected: boolean;
+  isSelected?: boolean;
 }
 
 export const Wrapper = styled.div`
@@ -65,7 +81,14 @@ export const MenuTitlesWrapper = styled.div`
   align-items: center;
 `;
 
-export const MenuTitle = styled.a<MenuTitleProps>`
+export const MenuTitleAnchor = styled.a`
+  display: block;
+
+  color: inherit;
+  text-decoration: none;
+`;
+
+export const MenuTitle = styled.div<MenuTitleProps>`
   font-family: 'SUIT';
   font-size: 18px;
   line-height: 36px;
