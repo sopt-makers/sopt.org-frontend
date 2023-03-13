@@ -1,3 +1,5 @@
+import styled from '@emotion/styled';
+import { css } from '@emotion/react';
 import { ReactComponent as FacebookLogo } from '@src/assets/logo/facebook.svg';
 import { ReactComponent as InstagramLogo } from '@src/assets/logo/instagram.svg';
 import { ReactComponent as KakaoLogo } from '@src/assets/logo/kakao.svg';
@@ -32,13 +34,33 @@ function Channels({ isFooter = false }: ChannelsProps) {
 
   return (
     <S.ChannelButtonsWrap isFooter={isFooter}>
-      <MailLogo id={'mail'} onClick={handleClick} />
-      <FacebookLogo id={'facebook'} onClick={handleClick} />
-      <InstagramLogo id={'instagram'} onClick={handleClick} />
-      <KakaoLogo id={'kakao'} onClick={handleClick} />
-      <YoutubeLogo id={'youtube'} onClick={handleClick} />
+      <IcMainLogo id={'mail'} onClick={handleClick} />
+      <IcFacebookLogo id={'facebook'} onClick={handleClick} />
+      <IcInstagramLogo id={'instagram'} onClick={handleClick} />
+      <IcKakaoLogo id={'kakao'} onClick={handleClick} />
+      <IcYoutubeLogo id={'youtube'} onClick={handleClick} />
     </S.ChannelButtonsWrap>
   );
 }
+
+const iconBaseStyle = css`
+  cursor: pointer;
+`;
+
+const IcMainLogo = styled(MailLogo)`
+  ${iconBaseStyle}
+`;
+const IcFacebookLogo = styled(FacebookLogo)`
+  ${iconBaseStyle}
+`;
+const IcInstagramLogo = styled(InstagramLogo)`
+  ${iconBaseStyle}
+`;
+const IcKakaoLogo = styled(KakaoLogo)`
+  ${iconBaseStyle}
+`;
+const IcYoutubeLogo = styled(YoutubeLogo)`
+  ${iconBaseStyle}
+`;
 
 export default Channels;

@@ -73,6 +73,7 @@ const Styled = {
     text-decoration-line: underline;
     text-underline-position: under;
     color: #ffffff;
+    cursor: pointer;
     /* 태블릿 뷰 */
     @media (max-width: 1919px) {
       font-size: 35px;

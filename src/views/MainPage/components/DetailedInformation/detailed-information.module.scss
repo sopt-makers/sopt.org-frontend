@@ -65,6 +65,7 @@
 .card {
   background-color: #ffffff;
   border-radius: 10px;
+  cursor: pointer;
 
   @include mobile {
     width: 328px;
