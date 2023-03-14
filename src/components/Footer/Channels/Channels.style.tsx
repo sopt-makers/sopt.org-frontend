@@ -15,3 +15,7 @@ export const ChannelButtonsWrap = styled.div<WrapProps>`
   height: ${(props: WrapProps) => (props.isFooter ? '30px' : '96px')};
   margin-top: 15px;
 `;
+
+export const ChannelButton = styled.img`
+  cursor: pointer;
+`;

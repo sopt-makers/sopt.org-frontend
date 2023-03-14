@@ -1,10 +1,8 @@
-import styled from '@emotion/styled';
-import { css } from '@emotion/react';
-import { ReactComponent as FacebookLogo } from '@src/assets/logo/facebook.svg';
-import { ReactComponent as InstagramLogo } from '@src/assets/logo/instagram.svg';
-import { ReactComponent as KakaoLogo } from '@src/assets/logo/kakao.svg';
-import { ReactComponent as MailLogo } from '@src/assets/logo/mail.svg';
-import { ReactComponent as YoutubeLogo } from '@src/assets/logo/youtube.svg';
+import facebookLogo from '@src/assets/logo/facebook.svg';
+import instagramLogo from '@src/assets/logo/instagram.svg';
+import kakaoLogo from '@src/assets/logo/kakao.svg';
+import mailLogo from '@src/assets/logo/mail.svg';
+import youtubeLogo from '@src/assets/logo/youtube.svg';
 import * as S from './Channels.style';
 
 interface ChannelsProps {
@@ -12,7 +10,7 @@ interface ChannelsProps {
 }
 
 function Channels({ isFooter = false }: ChannelsProps) {
-  const handleClick = (e: React.MouseEvent<SVGSVGElement, MouseEvent>) => {
+  const handleClick = (e: React.MouseEvent) => {
     switch (e.currentTarget.id) {
       case 'mail':
         window.location.href = 'mailto:president@sopt.org';
@@ -34,33 +32,13 @@ function Channels({ isFooter = false }: ChannelsProps) {
 
   return (
     <S.ChannelButtonsWrap isFooter={isFooter}>
-      <IcMainLogo id={'mail'} onClick={handleClick} />
-      <IcFacebookLogo id={'facebook'} onClick={handleClick} />
-      <IcInstagramLogo id={'instagram'} onClick={handleClick} />
-      <IcKakaoLogo id={'kakao'} onClick={handleClick} />
-      <IcYoutubeLogo id={'youtube'} onClick={handleClick} />
+      <S.ChannelButton src={mailLogo} id={'mail'} onClick={handleClick} />
+      <S.ChannelButton src={facebookLogo} id={'facebook'} onClick={handleClick} />
+      <S.ChannelButton src={instagramLogo} id={'instagram'} onClick={handleClick} />
+      <S.ChannelButton src={kakaoLogo} id={'kakao'} onClick={handleClick} />
+      <S.ChannelButton src={youtubeLogo} id={'youtube'} onClick={handleClick} />
     </S.ChannelButtonsWrap>
   );
 }
-
-const iconBaseStyle = css`
-  cursor: pointer;
-`;
-
-const IcMainLogo = styled(MailLogo)`
-  ${iconBaseStyle}
-`;
-const IcFacebookLogo = styled(FacebookLogo)`
-  ${iconBaseStyle}
-`;
-const IcInstagramLogo = styled(InstagramLogo)`
-  ${iconBaseStyle}
-`;
-const IcKakaoLogo = styled(KakaoLogo)`
-  ${iconBaseStyle}
-`;
-const IcYoutubeLogo = styled(YoutubeLogo)`
-  ${iconBaseStyle}
-`;
 
 export default Channels;
