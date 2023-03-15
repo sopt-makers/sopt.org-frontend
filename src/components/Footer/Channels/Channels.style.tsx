@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import Image from 'next/image';
 
 interface WrapProps {
   isFooter: boolean;
@@ -16,6 +17,6 @@ export const ChannelButtonsWrap = styled.div<WrapProps>`
   margin-top: 15px;
 `;
 
-export const ChannelButton = styled.img`
+export const ClickableChannelButton = styled(Image)`
   cursor: pointer;
 `;

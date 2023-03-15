@@ -32,11 +32,41 @@ function Channels({ isFooter = false }: ChannelsProps) {
 
   return (
     <S.ChannelButtonsWrap isFooter={isFooter}>
-      <S.ChannelButton src={mailLogo} id={'mail'} onClick={handleClick} />
-      <S.ChannelButton src={facebookLogo} id={'facebook'} onClick={handleClick} />
-      <S.ChannelButton src={instagramLogo} id={'instagram'} onClick={handleClick} />
-      <S.ChannelButton src={kakaoLogo} id={'kakao'} onClick={handleClick} />
-      <S.ChannelButton src={youtubeLogo} id={'youtube'} onClick={handleClick} />
+      <S.ClickableChannelButton
+        src={mailLogo}
+        width={30}
+        height={30}
+        id={'mail'}
+        onClick={handleClick}
+      />
+      <S.ClickableChannelButton
+        src={facebookLogo}
+        width={30}
+        height={30}
+        id={'facebook'}
+        onClick={handleClick}
+      />
+      <S.ClickableChannelButton
+        src={instagramLogo}
+        width={30}
+        height={30}
+        id={'instagram'}
+        onClick={handleClick}
+      />
+      <S.ClickableChannelButton
+        src={kakaoLogo}
+        width={30}
+        height={30}
+        id={'kakao'}
+        onClick={handleClick}
+      />
+      <S.ClickableChannelButton
+        src={youtubeLogo}
+        width={30}
+        height={30}
+        id={'youtube'}
+        onClick={handleClick}
+      />
     </S.ChannelButtonsWrap>
   );
 }
