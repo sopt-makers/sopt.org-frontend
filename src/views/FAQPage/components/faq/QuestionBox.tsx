@@ -61,6 +61,7 @@ const Styled = {
     border-radius: 10px;
     padding: 56px;
     padding-right: 54px;
+    cursor: pointer;
     /* 태블릿 뷰 */
     @media (max-width: 1919.9px) and (min-width: 766px) {
       font-size: 25px;

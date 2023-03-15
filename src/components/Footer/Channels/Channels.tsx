@@ -1,8 +1,8 @@
-import { ReactComponent as FacebookLogo } from '@src/assets/logo/facebook.svg';
-import { ReactComponent as InstagramLogo } from '@src/assets/logo/instagram.svg';
-import { ReactComponent as KakaoLogo } from '@src/assets/logo/kakao.svg';
-import { ReactComponent as MailLogo } from '@src/assets/logo/mail.svg';
-import { ReactComponent as YoutubeLogo } from '@src/assets/logo/youtube.svg';
+import facebookLogo from '@src/assets/logo/facebook.svg';
+import instagramLogo from '@src/assets/logo/instagram.svg';
+import kakaoLogo from '@src/assets/logo/kakao.svg';
+import mailLogo from '@src/assets/logo/mail.svg';
+import youtubeLogo from '@src/assets/logo/youtube.svg';
 import * as S from './Channels.style';
 
 interface ChannelsProps {
@@ -10,7 +10,7 @@ interface ChannelsProps {
 }
 
 function Channels({ isFooter = false }: ChannelsProps) {
-  const handleClick = (e: React.MouseEvent<SVGSVGElement, MouseEvent>) => {
+  const handleClick = (e: React.MouseEvent) => {
     switch (e.currentTarget.id) {
       case 'mail':
         window.location.href = 'mailto:president@sopt.org';
@@ -32,11 +32,41 @@ function Channels({ isFooter = false }: ChannelsProps) {
 
   return (
     <S.ChannelButtonsWrap isFooter={isFooter}>
-      <MailLogo id={'mail'} onClick={handleClick} />
-      <FacebookLogo id={'facebook'} onClick={handleClick} />
-      <InstagramLogo id={'instagram'} onClick={handleClick} />
-      <KakaoLogo id={'kakao'} onClick={handleClick} />
-      <YoutubeLogo id={'youtube'} onClick={handleClick} />
+      <S.ClickableChannelButton
+        src={mailLogo}
+        width={30}
+        height={30}
+        id={'mail'}
+        onClick={handleClick}
+      />
+      <S.ClickableChannelButton
+        src={facebookLogo}
+        width={30}
+        height={30}
+        id={'facebook'}
+        onClick={handleClick}
+      />
+      <S.ClickableChannelButton
+        src={instagramLogo}
+        width={30}
+        height={30}
+        id={'instagram'}
+        onClick={handleClick}
+      />
+      <S.ClickableChannelButton
+        src={kakaoLogo}
+        width={30}
+        height={30}
+        id={'kakao'}
+        onClick={handleClick}
+      />
+      <S.ClickableChannelButton
+        src={youtubeLogo}
+        width={30}
+        height={30}
+        id={'youtube'}
+        onClick={handleClick}
+      />
     </S.ChannelButtonsWrap>
   );
 }
