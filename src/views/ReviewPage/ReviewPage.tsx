@@ -1,11 +1,20 @@
 import styled from '@emotion/styled';
-import { Footer, Header, Layout } from '@src/components';
+import { useState } from 'react';
+import { Footer, Header, Layout, ScrollToTopButton } from '@src/components';
+import Description from './components/Description';
+import TabBar from './components/TabBar';
+import { TAB } from './types';
 
 function ReviewPage() {
+  const [selectedTab, setSelectedTab] = useState(TAB.ALL);
   return (
     <Layout>
       <Header />
-      <Root>hello</Root>
+      <ScrollToTopButton />
+      <Root>
+        <Description />
+        <TabBar onTabClick={setSelectedTab} selectedTab={selectedTab} />
+      </Root>
       <Footer />
     </Layout>
   );
@@ -18,10 +27,11 @@ const Root = styled.div`
   flex-direction: column;
   width: 1200px;
   margin: 0 auto;
+  margin-top: 90px;
 
   /* 태블릿 뷰 */
   @media (max-width: 1919px) and (min-width: 766px) {
-    width: 766px;
+    width: 100%;
   }
   /* 모바일 뷰 */
   @media (max-width: 765.9px) {
