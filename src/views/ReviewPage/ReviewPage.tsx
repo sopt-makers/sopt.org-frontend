@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 import { useState } from 'react';
 import { Footer, Header, Layout, ScrollToTopButton } from '@src/components';
 import Description from './components/Description';
+import Reviews from './components/Reviews';
 import TabBar from './components/TabBar';
 import { TAB } from './types';
 
@@ -14,6 +15,7 @@ function ReviewPage() {
       <Root>
         <Description />
         <TabBar onTabClick={setSelectedTab} selectedTab={selectedTab} />
+        <Reviews selectedTab={selectedTab} />
       </Root>
       <Footer />
     </Layout>

@@ -1,4 +1,5 @@
 import { ProjectCategoryType } from '@src/views/ProjectPage/lib/constants';
+import { ProjectType } from '@src/views/ProjectPage/types';
 import axios from 'axios';
 
 const client = axios.create({
@@ -12,14 +13,11 @@ export const getProjectDetail = async (projectId: number) => {
   return data;
 };
 
-export const getProjectByCategory = async (category: Omit<ProjectCategoryType, 'ALL'>) => {
-  const { data } = await client.get(`/projects?filter=${category}`);
-
-  return data;
-};
-
-export const getProjectList = async () => {
-  const { data } = await client.get('/projects');
+export const getProjectList = async (
+  category?: Omit<ProjectCategoryType, 'ALL'>,
+): Promise<ProjectType[]> => {
+  const queryString = category ? `?filter=${category}` : '';
+  const { data } = await client.get(`/projects${queryString}`);
 
   return data;
 };
