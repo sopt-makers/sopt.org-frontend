@@ -13,11 +13,8 @@ export const getProjectDetail = async (projectId: number) => {
   return data;
 };
 
-export const getProjectList = async (
-  category?: Omit<ProjectCategoryType, 'ALL'>,
-): Promise<ProjectType[]> => {
-  const queryString = category ? `?filter=${category}` : '';
+export const getProjectList = async (category?: ProjectCategoryType): Promise<ProjectType[]> => {
+  const queryString = category !== ProjectCategoryType.ALL ? `?filter=${category}` : '';
   const { data } = await client.get(`/projects${queryString}`);
-
   return data;
 };
