@@ -179,7 +179,6 @@
   display:flex;
   justify-content: space-between;
   align-items: flex-end;
-  white-space: pre-wrap;
   color: rgba(38, 38, 38, 0.6);
   font-weight: 500;
   @include mobile {
@@ -187,10 +186,12 @@
   }
   @include tablet {
     font-size: 25px;
+    white-space: pre-wrap;
   }
   @include desktop {
     font-size: 25px;
     line-height: 40px;
+    white-space: pre-wrap;
   }
 }
 
