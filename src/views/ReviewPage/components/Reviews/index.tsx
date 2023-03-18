@@ -1,6 +1,7 @@
 import { useMemo } from 'react';
 import { useIsMobile } from '@src/hooks/useDevice';
 import useFetch from '../../hooks/useFetch';
+import { logoPath } from '../../libs/constants';
 import { TAB } from '../../types';
 import * as S from './style';
 
@@ -22,13 +23,10 @@ const Reviews = ({ selectedTab }: ReviewsProps) => {
           <S.Section>
             <S.ThumbnailWrapper css={{ height: imageHeight }}>
               <S.Thumbnail
-                src={
-                  review.thumbnail ??
-                  'https://static.wikia.nocookie.net/pokemon/images/3/3c/%EB%9D%BC%EC%9D%B4%EC%B8%84_%EA%B3%B5%EC%8B%9D_%EC%9D%BC%EB%9F%AC%EC%8A%A4%ED%8A%B8.png/revision/latest?cb=20170405000124&path-prefix=ko'
-                }
+                src={logoPath[review.semester]}
                 alt={review.title}
-                objectFit="cover"
-                layout="fill"
+                width={120}
+                height="100%"
               />
             </S.ThumbnailWrapper>
             <S.ChipWrapper>

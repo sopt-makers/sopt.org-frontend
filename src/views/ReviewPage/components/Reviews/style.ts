@@ -52,12 +52,14 @@ export const Section = styled.div`
 export const ThumbnailWrapper = styled.div`
   width: 100%;
   position: relative;
+  background-color: #000000;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
-export const Thumbnail = styled(Image)`
-  width: 100%;
-  border-radius: 5px;
-`;
+export const Thumbnail = styled(Image)``;
 
 export const ChipWrapper = styled.div`
   display: flex;

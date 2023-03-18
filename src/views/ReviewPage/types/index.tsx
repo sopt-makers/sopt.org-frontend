@@ -20,7 +20,6 @@ export type ReviewType = {
   semester: number;
   part: string;
   subject: string;
-  thumbnail: string;
   platform: string;
   link: string;
 };
