@@ -1,7 +1,7 @@
 @import './variables';
 
 @mixin mobile {
-  @media (min-width: #{$breakpoint-mobile}) and (max-width: #{$breakpoint-tablet-small - 1px}) {
+  @media (max-width: #{$breakpoint-tablet-small - 1px}) {
     @content;
   }
 }
