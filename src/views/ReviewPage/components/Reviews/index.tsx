@@ -18,24 +18,27 @@ const Reviews = ({ selectedTab }: ReviewsProps) => {
   return (
     <S.Wrapper>
       {reviews.data.map((review) => (
-        <S.Card key={review.id} href={review.url} target="_blank">
+        <S.Card key={review.id} href={review.link} target="_blank">
           <S.Section>
             <S.ThumbnailWrapper css={{ height: imageHeight }}>
               <S.Thumbnail
-                src={review.thumbnail}
+                src={
+                  review.thumbnail ??
+                  'https://static.wikia.nocookie.net/pokemon/images/3/3c/%EB%9D%BC%EC%9D%B4%EC%B8%84_%EA%B3%B5%EC%8B%9D_%EC%9D%BC%EB%9F%AC%EC%8A%A4%ED%8A%B8.png/revision/latest?cb=20170405000124&path-prefix=ko'
+                }
                 alt={review.title}
                 objectFit="cover"
                 layout="fill"
               />
             </S.ThumbnailWrapper>
             <S.ChipWrapper>
-              <S.Chip>{review.department}</S.Chip>
+              <S.Chip>{review.part}</S.Chip>
               <S.Chip>{review.semester}기</S.Chip>
             </S.ChipWrapper>
           </S.Section>
           <S.Section>
             <S.Title>{review.title}</S.Title>
-            <S.Desc>{review.preview}</S.Desc>
+            <S.Desc>{review.subject}</S.Desc>
           </S.Section>
         </S.Card>
       ))}

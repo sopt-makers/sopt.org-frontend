@@ -1,11 +1,11 @@
 export enum TAB {
-  ALL = 'all',
-  PLAN = 'plan',
-  DESIGN = 'design',
-  ANDROID = 'android',
-  IOS = 'ios',
-  WEB = 'web',
-  SERVER = 'server',
+  ALL = 'ALL',
+  PLAN = 'PLAN',
+  DESIGN = 'DESIGN',
+  ANDROID = 'ANDROID',
+  IOS = 'iOS',
+  WEB = 'WEB',
+  SERVER = 'SERVER',
 }
 
 export type TabType = {
@@ -16,10 +16,11 @@ export type TabType = {
 export type ReviewType = {
   id: number;
   title: string;
-  writer: string;
-  url: string;
-  thumbnail: string;
+  reviewer: string;
   semester: number;
-  department: string;
-  preview: string;
+  part: string;
+  subject: string;
+  thumbnail: string;
+  platform: string;
+  link: string;
 };
