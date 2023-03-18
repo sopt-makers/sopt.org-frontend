@@ -1,8 +1,9 @@
+import { BASE_URL, DEFAULT_TIMEOUT } from '@src/utils/const/client';
 import axios from 'axios';
 
 const client = axios.create({
-  baseURL: 'https://api.sopt.org',
-  timeout: 3000,
+  baseURL: BASE_URL,
+  timeout: DEFAULT_TIMEOUT,
 });
 
 export const getMainLogo = async () => {
