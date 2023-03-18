@@ -19,15 +19,26 @@
 }
 
 .titleWrapper {
-  width: 100%;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
+  @include mobile {
+    gap: 8px;
+  }
+  @include tablet {
+    gap: 24px;
+  }
+  @include desktop {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }
 
 .title {
   font-weight: 800;
   white-space: pre-wrap;
+  text-align: center;
   @include mobile {
     font-size: 20px;
     line-height: 28px;
@@ -37,9 +48,28 @@
     line-height: 56px;
   }
   @include desktop {
-    width: 100%;
+    text-align: left;
     font-size: 45px;
     line-height: 60px;
+  }
+}
+
+.moreLink {
+  cursor: pointer;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: underline;
+  @include mobile {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  @include tablet {
+    font-size: 25px;
+    line-height: 24px;
+  }
+  @include desktop {
+    font-size: 25px;
+    line-height: 30px;
   }
 }
 
@@ -70,70 +100,62 @@
 }
 
 .content {
-  display: grid;
-  grid-template-rows: repeat(2, 1fr);
-  grid-template-columns: repeat(8, 1fr);
-  grid-auto-flow: column;
-
+  display: flex;
   @include mobile {
     overflow-x: scroll;
     height: 185px;
-    column-gap: 50px;
-    row-gap: 20px;
+    gap: 16px;
   }
   @include tablet {
     overflow-x: scroll;
     height: 386px;
-    column-gap: 30px;
-    row-gap: 64px;
+    gap: 24px;
   }
   @include desktop {
     overflow-x: hidden;
     max-width: 900px;
     height: 386px;
-    column-gap: 30px;
-    row-gap: 64px;
+    gap: 24px;
   }
 }
 
-.item {
-  position: relative;
+.card {
+  cursor: pointer;
+  background-color: #ffffff;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   @include mobile {
-    width: 138px;
-    height: 60px;
+    min-width: 194px;
+    height: 139px;
+    padding: 20px;
   }
   @include tablet {
-    width: 277px;
-    height: 161px;
+    min-width: 320px;
+    height: 300px;
+    padding: 63px 34px;
   }
   @include desktop {
-    width: 278px;
-    height: 161px;
+    min-width: 320px;
+    height: 300px;
+    padding: 63px 34px;
   }
 }
 
-.corporateLogoImage {
-  @include mobile {
-    width: 138px;
-    height: 60px;
-  }
-  @include tablet {
-    width: 278px;
-    height: 161px;
-  }
-  @include desktop {
-    width: 278px;
-    height: 121px;
-  }
-}
+.cardTitle {
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  word-break: break-all;
 
-.name {
-  color: rgba(253, 253, 253, 0.8);
-  text-align: center;
-  font-weight: 400;
+  color: #262626;
+  font-weight: 500;
   @include mobile {
     font-size: 12px;
-    line-height: 19px;
+    line-height: 20px;
   }
   @include tablet {
     font-size: 25px;
@@ -142,5 +164,38 @@
   @include desktop {
     font-size: 25px;
     line-height: 40px;
+  }
+}
+
+.desc {
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #7d7d7d;
+  font-weight: 500;
+  word-break: keep-all;
+  @include mobile {
+    font-size: 12px;
+  }
+  @include tablet {
+    font-size: 25px;
+  }
+  @include desktop {
+    font-size: 25px;
+  }
+}
+
+.arrow {
+  @include mobile {
+    width: 17px;
+    height: 15px;
+  }
+  @include tablet {
+    width: 30px;
+    height: 30px;
+  }
+  @include desktop {
+    width: 30px;
+    height: 30px;
   }
 }
