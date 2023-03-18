@@ -40,7 +40,8 @@ export function ActivityReview() {
               <h4 className={styles.cardTitle}>{review.title}</h4>
               <p className={styles.desc}>
                 <div>
-                  {parsePartToKorean(review.part)}파트 {review.semester}기 {review.reviewer}
+                  {parsePartToKorean(review.part)} {review.semester}기{'\n'}
+                  <strong className={styles.descName}>{review.reviewer}</strong>
                 </div>
                 <LinkArrowRight className={styles.arrow} />
               </p>
