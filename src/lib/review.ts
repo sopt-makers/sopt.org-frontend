@@ -11,3 +11,8 @@ export const getReviews = async (tab: TAB): Promise<ReviewType[]> => {
   const { data } = await client.get(`/reviews${parameter}`);
   return data.data;
 };
+
+export const getSampleReviews = async (): Promise<ReviewType[]> => {
+  const { data } = await client.get('/reviews/random');
+  return data;
+};

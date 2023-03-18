@@ -4,8 +4,11 @@ import { ReactComponent as ArrowRight } from '@src/views/MainPage/assets/arrow-r
 import { ReactComponent as LinkArrowRight } from '@src/views/MainPage/assets/arrow_right_white.svg';
 import { useHorizontalScroll } from '@src/views/MainPage/lib';
 import styles from './activity-review.module.scss';
+import useFetch from './hooks/useFetch';
+import { parsePartToKorean } from './utils/parsePartToKorean';
 
 export function ActivityReview() {
+  const reviews = useFetch();
   const {
     scrollableRef,
     onClickLeftButton,
@@ -13,6 +16,8 @@ export function ActivityReview() {
     isLeftScrollable,
     isRightScrollable,
   } = useHorizontalScroll(900, 2);
+
+  if (reviews._TAG !== 'OK') return null;
 
   return (
     <section className={styles.container}>
@@ -30,32 +35,17 @@ export function ActivityReview() {
           <ArrowLeft stroke={isLeftScrollable ? 'white' : 'grey'} />
         </div>
         <div className={styles.content} ref={scrollableRef}>
-          {/* content!!!!!!!!!!!!!!!!!! */}
-          <article className={styles.card} role="presentation">
-            <h4 className={styles.cardTitle}>a</h4>
-
-            <p className={styles.desc}>
-              <div>xzc</div>
-              <LinkArrowRight className={styles.arrow} />
-            </p>
-          </article>
-
-          <article className={styles.card} role="presentation">
-            <h4 className={styles.cardTitle}>zxc</h4>
-            <p className={styles.desc}>
-              <div>xzc</div>
-              <LinkArrowRight className={styles.arrow} />
-            </p>
-          </article>
-
-          <article className={styles.card} role="presentation">
-            <h4 className={styles.cardTitle}>zxc</h4>
-            <p className={styles.desc}>
-              <div>xzc</div>
-              <LinkArrowRight className={styles.arrow} />
-            </p>
-          </article>
-          {/* content!!!!!!!!!!!!!!!!!! */}
+          {reviews.data.map((review) => (
+            <article key={review.id} className={styles.card} role="presentation">
+              <h4 className={styles.cardTitle}>{review.title}</h4>
+              <p className={styles.desc}>
+                <div>
+                  {parsePartToKorean(review.part)}파트 {review.semester}기 {review.reviewer}
+                </div>
+                <LinkArrowRight className={styles.arrow} />
+              </p>
+            </article>
+          ))}
         </div>
         <div
           className={styles.arrowWrapper}
