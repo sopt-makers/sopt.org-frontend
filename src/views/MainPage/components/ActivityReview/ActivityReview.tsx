@@ -15,7 +15,7 @@ export function ActivityReview() {
     onClickRightButton,
     isLeftScrollable,
     isRightScrollable,
-  } = useHorizontalScroll(900, 2);
+  } = useHorizontalScroll(1032, 1);
 
   if (reviews._TAG !== 'OK') return null;
 
@@ -40,7 +40,7 @@ export function ActivityReview() {
               <h4 className={styles.cardTitle}>{review.title}</h4>
               <p className={styles.desc}>
                 <div>
-                  {parsePartToKorean(review.part)} {review.semester}기{'\n'}
+                  {parsePartToKorean(review.part)}파트 {review.semester}기{'\n'}
                   <strong className={styles.descName}>{review.reviewer}</strong>
                 </div>
                 <LinkArrowRight className={styles.arrow} />
