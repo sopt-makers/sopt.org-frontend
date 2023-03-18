@@ -36,16 +36,18 @@ export function ActivityReview() {
         </div>
         <div className={styles.content} ref={scrollableRef}>
           {reviews.data.map((review) => (
-            <article key={review.id} className={styles.card} role="presentation">
-              <h4 className={styles.cardTitle}>{review.title}</h4>
-              <p className={styles.desc}>
-                <div>
-                  {parsePartToKorean(review.part)}파트 {review.semester}기{'\n'}
-                  <strong className={styles.descName}>{review.reviewer}</strong>
-                </div>
-                <LinkArrowRight className={styles.arrow} />
-              </p>
-            </article>
+            <Link key={review.id} href={review.link}>
+              <article className={styles.card} role="presentation">
+                <h4 className={styles.cardTitle}>{review.title}</h4>
+                <p className={styles.desc}>
+                  <div>
+                    {parsePartToKorean(review.part)}파트 {review.semester}기{'\n'}
+                    <strong className={styles.descName}>{review.reviewer}</strong>
+                  </div>
+                  <LinkArrowRight className={styles.arrow} />
+                </p>
+              </article>
+            </Link>
           ))}
         </div>
         <div
