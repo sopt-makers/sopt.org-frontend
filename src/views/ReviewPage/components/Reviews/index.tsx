@@ -3,6 +3,7 @@ import { useIsMobile } from '@src/hooks/useDevice';
 import useFetch from '../../hooks/useFetch';
 import { logoPath } from '../../libs/constants';
 import { TAB } from '../../types';
+import Loading from './Loading';
 import * as S from './style';
 
 type ReviewsProps = {
@@ -13,6 +14,8 @@ const Reviews = ({ selectedTab }: ReviewsProps) => {
   const reviews = useFetch(selectedTab);
   const isMobile = useIsMobile();
   const imageHeight = useMemo(() => (isMobile ? 216 : 240), [isMobile]);
+
+  if (reviews._TAG === 'LOADING') return <Loading />;
 
   if (reviews._TAG !== 'OK') return null;
 
