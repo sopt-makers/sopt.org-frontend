@@ -39,13 +39,13 @@ export function ActivityReview() {
             <Link key={review.id} href={review.link}>
               <article className={styles.card} role="presentation">
                 <h4 className={styles.cardTitle}>{review.title}</h4>
-                <p className={styles.desc}>
-                  <div>
+                <div className={styles.desc}>
+                  <p>
                     {parsePartToKorean(review.part)}파트 {review.semester}기{'\n'}
                     <strong className={styles.descName}>{review.reviewer}</strong>
-                  </div>
+                  </p>
                   <LinkArrowRight className={styles.arrow} />
-                </p>
+                </div>
               </article>
             </Link>
           ))}
