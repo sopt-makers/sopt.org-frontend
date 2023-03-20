@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { ReactComponent as ArrowLeft } from '@src/views/MainPage/assets/arrow-left-28x28.svg';
 import { ReactComponent as ArrowRight } from '@src/views/MainPage/assets/arrow-right-28x28.svg';
-import { ReactComponent as LinkArrowRight } from '@src/views/MainPage/assets/arrow_right_white.svg';
+import ArrowRightWhite from '@src/views/MainPage/assets/arrow_right_white.svg';
 import { useHorizontalScroll } from '@src/views/MainPage/lib';
 import styles from './activity-review.module.scss';
 import useFetch from './hooks/useFetch';
@@ -39,13 +39,13 @@ export function ActivityReview() {
             <Link key={review.id} href={review.link}>
               <article className={styles.card} role="presentation">
                 <h4 className={styles.cardTitle}>{review.title}</h4>
-                <p className={styles.desc}>
-                  <div>
+                <div className={styles.descWrapper}>
+                  <p className={styles.desc}>
                     {parsePartToKorean(review.part)}파트 {review.semester}기{'\n'}
                     <strong className={styles.descName}>{review.reviewer}</strong>
-                  </div>
-                  <LinkArrowRight className={styles.arrow} />
-                </p>
+                  </p>
+                  <img className={styles.arrow} src={ArrowRightWhite} alt="" />
+                </div>
               </article>
             </Link>
           ))}
