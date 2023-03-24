@@ -7,6 +7,11 @@ export default function Document() {
         <link
           rel="stylesheet"
           type="text/css"
+          href="https://cdn.jsdelivr.net/gh/sunn-us/SUIT/fonts/static/woff2/SUIT.css"
+        />
+        <link
+          rel="stylesheet"
+          type="text/css"
           href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard-dynamic-subset.css"
         />
       </Head>

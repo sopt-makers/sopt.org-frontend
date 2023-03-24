@@ -3,6 +3,7 @@ import { css } from '@emotion/react';
 
 export const global = css`
   ${reset}
+  
   html {
     -webkit-touch-callout: none;
     /* -webkit-user-select:none; */
@@ -10,9 +11,10 @@ export const global = css`
     font-family: 'SUIT';
     scroll-behavior: smooth;
   }
+
   * {
     box-sizing: border-box;
-    font-family: 'SUIT', 'Pretendard';
+    font-family: 'SUIT', 'Pretendard', arial, sans-serif;
   }
 
   h1,
