@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 import { useState } from 'react';
 import menuBar from '@src/assets/icons/menuBar.svg';
 import xButton from '@src/assets/icons/xButton.png';
-import logoIcon from '@src/assets/sopt/logo.png';
+import { LOGO_IMAGE_URL } from '@src/assets/sopt/logo';
 import { Condition } from '@src/lib';
 import { MenuState } from '../types';
 import HeaderMenu from './HeaderMenu';
@@ -20,7 +20,7 @@ function MobileHeader() {
   return (
     <>
       <StyledHeader>
-        <Logo src={logoIcon.src} onClick={() => router.push('/')} />
+        <Logo onClick={() => router.push('/')} />
         <ToggleButton onClick={handleHeaderToggleButton}>
           <Image
             src={isMenuShown === 'open' ? xButton.src : menuBar}
@@ -36,10 +36,6 @@ function MobileHeader() {
   );
 }
 
-interface StyleProps {
-  src: string;
-}
-
 export const StyledHeader = styled.div`
   display: flex;
   align-items: center;
@@ -49,10 +45,10 @@ export const StyledHeader = styled.div`
   background-color: transparent;
 `;
 
-export const Logo = styled.button<StyleProps>`
+export const Logo = styled.button`
   width: 63px;
   height: 21px;
-  background: url(${({ src }) => src}) center no-repeat;
+  background: url(${LOGO_IMAGE_URL}) center no-repeat;
   background-size: 100% 100%;
   cursor: pointer;
 `;
