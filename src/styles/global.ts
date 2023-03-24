@@ -39,6 +39,11 @@ export const global = css`
     padding: 0;
   }
 
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
   ::-webkit-scrollbar {
     display: none;
   }
