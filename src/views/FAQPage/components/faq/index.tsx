@@ -72,7 +72,6 @@ const Styled = {
     }
   `,
   Title: styled.h1`
-    font-family: 'SUIT';
     font-weight: 800;
     font-size: 45px;
     line-height: 60px;

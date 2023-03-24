@@ -93,13 +93,11 @@
 
       /* title */
       & > h5 {
-        font-family: 'SUIT';
         font-style: normal;
         font-size: 26px;
         font-weight: 700;
 
         @include mobile-tablet {
-          font-family: 'SUIT';
           font-style: normal;
           font-size: 20px;
           font-weight: 700;
@@ -108,7 +106,6 @@
 
       /* summary */
       & > p {
-        font-family: 'SUIT';
         font-style: normal;
         font-size: 18px;
         line-height: 26px;
@@ -116,7 +113,6 @@
         color: #8e8e8e;
 
         @include mobile-tablet {
-          font-family: 'SUIT';
           font-style: normal;
           font-size: 15px;
           line-height: 24px;
