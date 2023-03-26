@@ -85,7 +85,6 @@ export const MenuTitleAnchor = styled.a`
 `;
 
 export const MenuTitle = styled.div<MenuTitleProps>`
-  font-family: 'SUIT';
   font-size: 18px;
   line-height: 36px;
   font-weight: ${({ isSelected }) => (isSelected ? '700' : '500')};

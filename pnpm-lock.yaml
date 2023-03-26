@@ -28,7 +28,6 @@ specifiers:
   babel-plugin-inline-react-svg: ^2.0.1
   babel-plugin-module-resolver: ^4.1.0
   classcat: ^5.0.4
-  emotion-reset: ^3.0.1
   eslint: ^8.16.0
   eslint-config-next: 12.1.6
   eslint-config-prettier: ^8.5.0
@@ -70,7 +69,6 @@ dependencies:
   '@types/qs': 6.9.7
   axios: 0.27.2
   classcat: 5.0.4
-  emotion-reset: 3.0.1_@emotion+react@11.10.0
   next: 12.1.6_3ppgbpefmt26el3mp2necl7ifa
   qs: 6.11.1
   react: 18.1.0
@@ -3695,14 +3693,6 @@ packages:
     resolution: {integrity: sha512-/kyM18EfinwXZbno9FyUGeFh87KC8HRQBQGildHZbEuRyWFOmv1U10o9BBp8XVZDVNNuQKyIGIu5ZYAAXJ0V2Q==}
     engines: {node: '>= 4'}
     dev: true
-
-  /emotion-reset/3.0.1_@emotion+react@11.10.0:
-    resolution: {integrity: sha512-v6scW83qSu+wtxg7lX1s0+/2U4EAAGFxDQMkvXE10jhKtyuXCzy3/su5/MU9ZjXeNv6ZjxZH51WktrKosKUy9g==}
-    peerDependencies:
-      '@emotion/react': '>=11'
-    dependencies:
-      '@emotion/react': 11.10.0_rzzs4it3vc6zxnuyimlesjlbfm
-    dev: false
 
   /enhanced-resolve/5.10.0:
     resolution: {integrity: sha512-T0yTFjdpldGY8PmuXXR0PyQ1ufZpEGiHVrp7zHKB7jdR4qlmZHhONVM5AQOAWXuF/w3dnHbEQVrNptJgt7F+cQ==}
