@@ -52,7 +52,7 @@ export const global = css`
 
   * {
     box-sizing: border-box;
-    font-family: 'SUIT', 'Pretendard', arial, sans-serif;
+    font-family: 'SUIT', arial, sans-serif;
     /* color: red !important; */
   }
 

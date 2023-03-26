@@ -67,11 +67,6 @@ export default function Document() {
           type="font/woff2"
           crossOrigin=""
         />
-        <link
-          rel="stylesheet"
-          type="text/css"
-          href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard-dynamic-subset.css"
-        />
       </Head>
       <body>
         <Main />

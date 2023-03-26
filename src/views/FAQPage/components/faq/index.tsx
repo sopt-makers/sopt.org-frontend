@@ -86,7 +86,6 @@ const Styled = {
     }
   `,
   Caption: styled.p`
-    font-family: 'Pretendard';
     font-weight: 400;
     font-size: 30px;
     line-height: 30px;

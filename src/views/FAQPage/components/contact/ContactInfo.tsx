@@ -37,7 +37,6 @@ export default ContactInfo;
 
 const Styled = {
   Root: styled.div`
-    font-family: 'Pretendard';
     display: flex;
     flex-direction: column;
     /* 태블릿 뷰 */
