@@ -68,7 +68,6 @@ export const Button = styled.button<ButtonStyleProps>`
   -o-animation: ${({ isOpened }) =>
     isOpened ? 'ArrowUp 0.3s forwards' : 'ArrowDown 0.3s forwards'};
   color: inherit;
-  font: inherit;
 `;
 
 export const Contents = styled.div<ButtonStyleProps>`
