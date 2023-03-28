@@ -20,8 +20,8 @@ const Reviews = ({ selectedTab }: ReviewsProps) => {
   return (
     <>
       <S.Wrapper>
-        {reviews.data.map((review, idx) => (
-          <S.Card key={`${review.id}-${idx}`} href={review.link} target="_blank">
+        {reviews.data.map((review) => (
+          <S.Card key={review.id} href={review.link} target="_blank">
             <S.Section>
               <S.ThumbnailWrapper css={{ height: imageHeight }}>
                 <S.Thumbnail
