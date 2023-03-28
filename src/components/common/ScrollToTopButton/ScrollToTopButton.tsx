@@ -16,18 +16,16 @@ const debounce = (cb: () => void, delay = 100) => {
 const SCROLL_MINIMUM_VALUE = 120;
 
 export function ScrollToTopButton() {
-  const [mounted, setMounted] = useState<boolean>(false);
   const [isScrolled, setIsScrolled] = useState(false);
+
   const checkScroll = debounce(() => {
     window.scrollY > SCROLL_MINIMUM_VALUE ? setIsScrolled(true) : setIsScrolled(false);
   });
+
   const handleUpBtnClick = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  useEffect(() => {
-    setMounted(true);
-  }, []);
   useEffect(() => {
     window.addEventListener('scroll', checkScroll);
     return () => {
@@ -37,11 +35,8 @@ export function ScrollToTopButton() {
 
   return (
     <>
-      {mounted && (
-        <button
-          className={cc([styles.wrapper, isScrolled && styles.isScrolled])}
-          onClick={handleUpBtnClick}
-        >
+      {isScrolled && (
+        <button className={cc([styles.wrapper])} onClick={handleUpBtnClick}>
           <span className={styles.text}>UP</span>
           <UpArrow />
         </button>

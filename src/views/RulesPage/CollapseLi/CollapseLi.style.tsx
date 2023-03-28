@@ -30,7 +30,6 @@ export const TItle = styled.h3`
   text-align: center;
   line-height: 30px;
   color: ${theme.colors.soptWhite};
-  font-family: 'SUIT', arial, sans-serif;
   font-size: 24px;
   font-weight: 700;
   font-style: normal;
@@ -69,7 +68,6 @@ export const Button = styled.button<ButtonStyleProps>`
   -o-animation: ${({ isOpened }) =>
     isOpened ? 'ArrowUp 0.3s forwards' : 'ArrowDown 0.3s forwards'};
   color: inherit;
-  font: inherit;
 `;
 
 export const Contents = styled.div<ButtonStyleProps>`
@@ -78,7 +76,6 @@ export const Contents = styled.div<ButtonStyleProps>`
   letter-spacing: -0.03em;
   white-space: pre-line;
   color: ${theme.colors.soptWhite};
-  font-family: 'SUIT', arial, sans-serif;
   font-size: 20px;
   font-weight: 400;
   font-style: normal;

@@ -48,7 +48,6 @@ list-container는 description, count, card-list 영역을 가짐.
     justify-content: center;
 
     color: rgba(255, 255, 255, 0.8);
-    font-family: 'SUIT';
     font-style: normal;
     font-weight: 500;
     font-size: 24px;
@@ -99,7 +98,6 @@ list-container는 description, count, card-list 영역을 가짐.
     height: 130px;
 
     p {
-      font-family: 'SUIT';
       font-style: normal;
       font-weight: 500;
       font-size: 15px;
@@ -111,7 +109,6 @@ list-container는 description, count, card-list 영역을 가짐.
       span {
         display: flex;
         justify-content: center;
-        font-family: 'SUIT';
         font-style: normal;
         font-weight: 500;
         font-size: 15px;
@@ -150,7 +147,6 @@ list-container는 description, count, card-list 영역을 가짐.
     }
 
     @include mobile {
-      font-family: 'SUIT';
       font-style: normal;
       font-weight: 500;
       font-size: 18px;

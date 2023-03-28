@@ -10,7 +10,6 @@ export const Root = styled.h1<TitleProps>`
 
   white-space: pre-line;
 
-  font-family: 'SUIT', arial, sans-serif;
   font-size: ${({ fontSize }) => fontSize};
   font-weight: 800;
 

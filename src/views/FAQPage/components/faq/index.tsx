@@ -72,7 +72,6 @@ const Styled = {
     }
   `,
   Title: styled.h1`
-    font-family: 'SUIT';
     font-weight: 800;
     font-size: 45px;
     line-height: 60px;
@@ -87,7 +86,6 @@ const Styled = {
     }
   `,
   Caption: styled.p`
-    font-family: 'Pretendard';
     font-weight: 400;
     font-size: 30px;
     line-height: 30px;

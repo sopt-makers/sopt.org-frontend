@@ -10,7 +10,6 @@ import GoogleTagManagerScript from '@src/components/googleTagManager/Script';
 import * as gtm from '@src/components/googleTagManager/gtm';
 import { global } from '@src/styles/global';
 import theme from '@src/styles/theme';
-import '../styles/font.css';
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [queryClient] = useState(() => new QueryClient());

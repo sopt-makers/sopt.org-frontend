@@ -45,7 +45,6 @@ const Styled = {
     }
   `,
   Text: styled.h1`
-    font-family: 'Pretendard';
     font-weight: 400;
     font-size: 30px;
     line-height: 30px;
@@ -65,7 +64,6 @@ const Styled = {
   `,
   Content: styled.p`
     width: fit-content;
-    font-family: 'Pretendard';
     font-weight: 600;
     font-size: 40px;
     line-height: 50px;
