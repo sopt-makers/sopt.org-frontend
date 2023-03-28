@@ -1,12 +1,15 @@
 import { useCallback } from 'react';
-import useFetchBase from '@src/hooks/useFetchBase';
 import { getReviews } from '@src/lib/review';
 import { TAB } from '../types';
+import useInfiniteScroll from './useInfiniteScroll';
+import useStackedFetchBase from '@src/hooks/useStackedFetchBase';
 
 const useFetch = (selected: TAB) => {
-  const willFetch = useCallback(() => getReviews(selected), [selected]);
-  const state = useFetchBase(willFetch);
-  return state;
+  const { ref, count } = useInfiniteScroll();
+  const willFetch = useCallback(() => getReviews(selected, count), [selected, count]);
+  const state = useStackedFetchBase(willFetch);
+  
+  return { state, ref };
 };
 
 export default useFetch;

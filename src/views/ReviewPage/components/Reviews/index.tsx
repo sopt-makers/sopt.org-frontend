@@ -11,7 +11,7 @@ type ReviewsProps = {
 };
 
 const Reviews = ({ selectedTab }: ReviewsProps) => {
-  const reviews = useFetch(selectedTab);
+  const { state: reviews, ref } = useFetch(selectedTab);
   const isMobile = useIsMobile();
   const imageHeight = useMemo(() => (isMobile ? 216 : 240), [isMobile]);
 
@@ -19,10 +19,12 @@ const Reviews = ({ selectedTab }: ReviewsProps) => {
 
   if (reviews._TAG !== 'OK') return null;
 
+  console.log('reviews', reviews);
   return (
     <S.Wrapper>
-      {reviews.data.map((review) => (
-        <S.Card key={review.id} href={review.link} target="_blank">
+      {/* TODO :: idx key 값 임시 추가 삭제 */}
+      {reviews.data.map((review, idx) => (
+        <S.Card key={`${review.id}-${idx}`} href={review.link} target="_blank">
           <S.Section>
             <S.ThumbnailWrapper css={{ height: imageHeight }}>
               <S.Thumbnail
@@ -43,6 +45,16 @@ const Reviews = ({ selectedTab }: ReviewsProps) => {
           </S.Section>
         </S.Card>
       ))}
+      {
+        // <div className={styles['observered']} ref={ref}>
+        //   <div className={styles['spinner']}>
+        //     <OvalSpinner />
+        //   </div>
+        // </div>
+        <div ref={ref}>
+          <Loading />
+        </div>
+      }
     </S.Wrapper>
   );
 };
