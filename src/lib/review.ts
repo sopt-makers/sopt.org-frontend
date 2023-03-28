@@ -7,9 +7,9 @@ const client = axios.create({
   timeout: 3000,
 });
 
-export const getReviews = async (tab: TAB): Promise<ReviewType[]> => {
+export const getReviews = async (tab: TAB, pageNo = 1): Promise<ReviewType[]> => {
   const partParameter = tab === TAB.ALL ? {} : { part: tab };
-  const pageParameter = { pageNo: 1, limit: '120' };
+  const pageParameter = { pageNo, limit: 6 };
   const parameter = qs.stringify({ ...partParameter, ...pageParameter });
 
   const { data } = await client.get(`/reviews?${parameter}`);
