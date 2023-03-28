@@ -11,7 +11,7 @@ type ReviewsProps = {
 };
 
 const Reviews = ({ selectedTab }: ReviewsProps) => {
-  const { state: reviews, ref } = useFetch(selectedTab);
+  const { state: reviews, ref, canGetMoreReviews } = useFetch(selectedTab);
   const isMobile = useIsMobile();
   const imageHeight = useMemo(() => (isMobile ? 216 : 240), [isMobile]);
 
@@ -20,7 +20,6 @@ const Reviews = ({ selectedTab }: ReviewsProps) => {
   return (
     <>
       <S.Wrapper>
-        {/* TODO :: idx key 값 임시 추가 삭제 */}
         {reviews.data.map((review, idx) => (
           <S.Card key={`${review.id}-${idx}`} href={review.link} target="_blank">
             <S.Section>
@@ -44,9 +43,11 @@ const Reviews = ({ selectedTab }: ReviewsProps) => {
           </S.Card>
         ))}
       </S.Wrapper>
-      <S.SpinnerWrapper ref={ref}>
-        <OvalSpinner />
-      </S.SpinnerWrapper>
+      {canGetMoreReviews && (
+        <S.SpinnerWrapper ref={ref}>
+          <OvalSpinner />
+        </S.SpinnerWrapper>
+      )}
     </>
   );
 };

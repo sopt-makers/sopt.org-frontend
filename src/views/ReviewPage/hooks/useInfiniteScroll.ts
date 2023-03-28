@@ -1,7 +1,6 @@
 import useIntersectionObserver from '@src/hooks/useIntersectionObserver';
 import { useState } from 'react';
 
-// TODO :: 프로필 훅과 연동
 export default function useInfiniteScroll() {
   const [count, setCount] = useState(1);
 
