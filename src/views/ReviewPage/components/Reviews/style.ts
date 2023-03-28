@@ -102,3 +102,10 @@ export const Desc = styled.div`
   }
   ${textEllipsis}
 `;
+
+export const SpinnerWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 50px 0;
+`;

@@ -10,7 +10,7 @@ export default function useInfiniteScroll() {
       setCount(prevCount => prevCount + 1);
       observer.unobserve(entry.target);
     },
-    { threshold: 0.25, rootMargin: '80px' },
+    { rootMargin: '80px' },
   );
 
   return { ref, count };

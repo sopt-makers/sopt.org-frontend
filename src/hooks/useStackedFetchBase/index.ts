@@ -1,7 +1,7 @@
 import { to } from 'await-to-js';
 import { useEffect, useReducer, useRef } from 'react';
-import { reducer } from './useFetchBase/reducer';
-import { Action, State } from './useFetchBase/types';
+import { reducer } from './reducer';
+import { Action, State } from './types';
 
 function useStackedFetchBase<T>(willFetch: () => Promise<T[]>): State<T> {
   const [state, dispatch] = useReducer<React.Reducer<State<T>, Action<T>>>(reducer, {
@@ -13,6 +13,7 @@ function useStackedFetchBase<T>(willFetch: () => Promise<T[]>): State<T> {
     const fetchProjectList = async () => {
       dispatch({
         _TAG: 'FETCH',
+        data: stateStack.current,
       });
 
       const [error, response] = await to(willFetch());
