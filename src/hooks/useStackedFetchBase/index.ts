@@ -3,7 +3,7 @@ import { useEffect, useReducer, useRef } from 'react';
 import { reducer } from './reducer';
 import { Action, State } from './types';
 
-function useStackedFetchBase<T>(willFetch: () => Promise<T[]>): State<T> {
+function useStackedFetchBase<T>(willFetch: () => Promise<T[]>, isInitialFetching: boolean): State<T> {
   const [state, dispatch] = useReducer<React.Reducer<State<T>, Action<T>>>(reducer, {
     _TAG: 'IDLE',
   });
@@ -13,7 +13,7 @@ function useStackedFetchBase<T>(willFetch: () => Promise<T[]>): State<T> {
     const fetchProjectList = async () => {
       dispatch({
         _TAG: 'FETCH',
-        data: stateStack.current,
+        data: isInitialFetching ? [] : stateStack.current,
       });
 
       const [error, response] = await to(willFetch());
@@ -26,15 +26,15 @@ function useStackedFetchBase<T>(willFetch: () => Promise<T[]>): State<T> {
       }
 
       if (response) {
-        const newState = [...stateStack.current, ...response];
+        const newState = isInitialFetching ? [...response] : [...stateStack.current, ...response];
 
         dispatch({ _TAG: 'SUCCESS', data: newState });
         stateStack.current = newState;
       }
     };
-
+    
     fetchProjectList();
-  }, [willFetch]);
+  }, [willFetch, isInitialFetching]);
 
   return state;
 }

@@ -13,5 +13,5 @@ export default function useInfiniteScroll() {
     { rootMargin: '80px' },
   );
 
-  return { ref, count };
+  return { ref, count, setCount };
 }
