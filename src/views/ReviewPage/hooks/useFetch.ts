@@ -7,17 +7,17 @@ import useInfiniteScroll from './useInfiniteScroll';
 
 const useFetch = (selected: TAB) => {
   const { ref, count, setCount } = useInfiniteScroll();
-  const [canGetMoreReviews, setIsStartToGetReviews, setIsEndToGetReviews] = useBooleanState(true);
+  const [canGetMoreReviews, setCanGetMoreReviews, setCanNotGetMoreReviews] = useBooleanState(true);
 
   // initialize
   useEffect(() => {
     setCount(1);
-    setIsStartToGetReviews();
-  }, [selected, setCount, setIsStartToGetReviews]);
+    setCanGetMoreReviews();
+  }, [selected, setCount, setCanGetMoreReviews]);
 
   const willFetch = useCallback(
-    () => getReviews(selected, count, setIsStartToGetReviews, setIsEndToGetReviews),
-    [selected, count, setIsStartToGetReviews, setIsEndToGetReviews],
+    () => getReviews(selected, count, setCanGetMoreReviews, setCanNotGetMoreReviews),
+    [selected, count, setCanGetMoreReviews, setCanNotGetMoreReviews],
   );
   const state = useStackedFetchBase(willFetch, count === 1);
 

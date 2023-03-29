@@ -10,8 +10,8 @@ const client = axios.create({
 export const getReviews = async (
   tab: TAB,
   pageNo = 1,
-  setIsStartToGetReviews: () => void,
-  setIsEndToGetReviews: () => void,
+  setCanGetMoreReviews: () => void,
+  setCanNotGetMoreReviews: () => void,
 ): Promise<ReviewType[]> => {
   const partParameter = tab === TAB.ALL ? {} : { part: tab };
   const pageParameter = { pageNo, limit: 6 };
@@ -19,7 +19,7 @@ export const getReviews = async (
 
   const { data } = await client.get(`/reviews?${parameter}`);
 
-  data.hasNextPage ? setIsStartToGetReviews() : setIsEndToGetReviews();
+  data.hasNextPage ? setCanGetMoreReviews() : setCanNotGetMoreReviews();
 
   return data.data;
 };
