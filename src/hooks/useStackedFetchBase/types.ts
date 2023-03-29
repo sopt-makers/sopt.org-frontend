@@ -1,6 +1,7 @@
 export type State<T> =
   | {
       _TAG: 'IDLE';
+      data: T[];
     }
   | {
       _TAG: 'LOADING';
@@ -18,7 +19,7 @@ export type State<T> =
 export type Action<T> =
   | {
       _TAG: 'FETCH';
-      data: T[];
+      isInitialFetching: boolean;
     }
   | {
       _TAG: 'FAILED';
@@ -26,5 +27,6 @@ export type Action<T> =
     }
   | {
       _TAG: 'SUCCESS';
+      isInitialFetching: boolean;
       data: T[];
     };

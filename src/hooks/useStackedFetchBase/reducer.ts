@@ -6,7 +6,7 @@ export function reducer<T>(prevState: State<T>, action: Action<T>): State<T> {
       if (action._TAG === 'FETCH') {
         return {
           _TAG: 'LOADING',
-          data: action.data,
+          data: action.isInitialFetching ? [] : prevState.data,
         };
       }
       break;
@@ -20,7 +20,7 @@ export function reducer<T>(prevState: State<T>, action: Action<T>): State<T> {
       if (action._TAG === 'SUCCESS') {
         return {
           _TAG: 'OK',
-          data: action.data,
+          data: action.isInitialFetching ? action.data : [...prevState.data, ...action.data],
         };
       }
       break;
@@ -28,7 +28,7 @@ export function reducer<T>(prevState: State<T>, action: Action<T>): State<T> {
       if (action._TAG === 'FETCH') {
         return {
           _TAG: 'LOADING',
-          data: action.data,
+          data: action.isInitialFetching ? [] : prevState.data,
         };
       }
       break;
