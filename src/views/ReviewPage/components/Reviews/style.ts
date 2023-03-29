@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import Image from 'next/image';
-import { css } from '@emotion/react';
+import { textSingularLineEllipsis, textpluralLinesEllipsis } from '@src/styles/textEllipsis';
 
 export const Wrapper = styled.div`
   display: flex;
@@ -73,13 +73,8 @@ export const Chip = styled.div`
   border-radius: 10px;
 `;
 
-const textEllipsis = css`
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-`;
-
 export const Title = styled.div`
+  line-height: 140%;
   font-weight: 700;
   font-size: 28px;
   color: #ffffff;
@@ -89,7 +84,7 @@ export const Title = styled.div`
     font-size: 20px;
   }
 
-  ${textEllipsis}
+  ${textpluralLinesEllipsis(2)}
 `;
 
 export const Desc = styled.div`
@@ -100,7 +95,7 @@ export const Desc = styled.div`
   @media (max-width: 765.9px) {
     font-size: 15px;
   }
-  ${textEllipsis}
+  ${textSingularLineEllipsis}
 `;
 
 export const SpinnerWrapper = styled.div`
