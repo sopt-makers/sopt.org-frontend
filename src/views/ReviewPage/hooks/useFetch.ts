@@ -11,8 +11,10 @@ const useFetch = (selected: TAB) => {
 
   // initialize
   useEffect(() => {
-    setCount(1);
-    setCanGetMoreReviews();
+    return () => {
+      setCount(1);
+      setCanGetMoreReviews();
+    };
   }, [selected, setCount, setCanGetMoreReviews]);
 
   const willFetch = useCallback(
