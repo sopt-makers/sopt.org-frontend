@@ -8,6 +8,7 @@ import { TAB } from './types';
 
 function ReviewPage() {
   const [selectedTab, setSelectedTab] = useState(TAB.ALL);
+
   return (
     <Layout>
       <Header />
@@ -28,6 +29,7 @@ const Root = styled.div`
   display: flex;
   flex-direction: column;
   width: 1200px;
+  min-height: 100vh;
   margin: 0 auto;
 
   /* 태블릿 뷰 */

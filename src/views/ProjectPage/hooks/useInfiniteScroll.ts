@@ -1,36 +1,12 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
-
-type IntersectHandler = (entry: IntersectionObserverEntry, observer: IntersectionObserver) => void;
-
-const useIntersect = (onIntersect: IntersectHandler, options?: IntersectionObserverInit) => {
-  const ref = useRef<HTMLDivElement>(null);
-  const callback = useCallback(
-    (entries: IntersectionObserverEntry[], observer: IntersectionObserver) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          onIntersect(entry, observer);
-        }
-      });
-    },
-    [onIntersect],
-  );
-
-  useEffect(() => {
-    if (!ref.current) return;
-    const observer = new IntersectionObserver(callback, options);
-    observer.observe(ref.current);
-    return () => observer.disconnect();
-  }, [ref, options, callback]);
-
-  return ref;
-};
+import useIntersectionObserver from '@src/hooks/useIntersectionObserver';
+import { useState } from 'react';
 
 export function useInfiniteScroll<T>(totalData: T[]) {
   const [count, setCount] = useState(1);
   const [data, setData] = useState(totalData.slice(0, 15));
   const isNextPage = totalData.length > 15 && count <= Math.ceil(totalData.length / 15);
 
-  const ref = useIntersect(
+  const ref = useIntersectionObserver(
     async (entry, observer) => {
       if (isNextPage) {
         setTimeout(() => {
