@@ -17,6 +17,8 @@ export const getReviews = async (
   const pageParameter = { pageNo, limit: 6 };
   const parameter = qs.stringify({ ...partParameter, ...pageParameter });
 
+  setCanNotGetMoreReviews();
+
   const { data } = await client.get(`/reviews?${parameter}`);
 
   data.hasNextPage ? setCanGetMoreReviews() : setCanNotGetMoreReviews();

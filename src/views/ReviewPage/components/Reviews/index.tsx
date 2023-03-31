@@ -44,7 +44,12 @@ const Reviews = ({ selectedTab }: ReviewsProps) => {
         ))}
       </S.Wrapper>
       {canGetMoreReviews && (
-        <S.SpinnerWrapper ref={reviews._TAG === 'LOADING' ? null : ref}>
+        <S.SpinnerWrapper ref={ref}>
+          <OvalSpinner />
+        </S.SpinnerWrapper>
+      )}
+      {reviews._TAG === 'LOADING' && (
+        <S.SpinnerWrapper>
           <OvalSpinner />
         </S.SpinnerWrapper>
       )}
