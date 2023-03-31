@@ -29,17 +29,19 @@ export const Card = styled.a`
   text-decoration: none;
   display: flex;
   flex-direction: column;
-  gap: 28px;
+  gap: 20px;
 
-  width: 360px;
+  width: 380px;
 
   /* 태블릿 뷰 */
   @media (max-width: 1199px) and (min-width: 766px) {
+    gap: 16px;
     width: 316px;
   }
   /* 모바일 뷰 */
   @media (max-width: 765.9px) {
-    width: 360px;
+    gap: 16px;
+    width: 380px;
   }
 `;
 
@@ -47,6 +49,14 @@ export const Section = styled.div`
   display: flex;
   flex-direction: column;
   gap: 16px;
+  /* 태블릿 뷰 */
+  @media (max-width: 1199px) and (min-width: 766px) {
+    gap: 12px;
+  }
+  /* 모바일 뷰 */
+  @media (max-width: 765.9px) {
+    gap: 12px;
+  }
 `;
 
 export const ThumbnailWrapper = styled.div`
