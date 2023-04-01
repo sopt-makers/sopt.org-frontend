@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { useRef } from 'react';
-import MainPageBanner from '@src/assets/sopt/main-page_banner.png';
+import MainPageBanner from '@src/assets/sopt/main-page_banner-compression.png';
 import { ReactComponent as ArrowDown } from '@src/views/MainPage/assets/arrow-down.svg';
 import styles from './banner-image.module.scss';
 
@@ -26,6 +26,7 @@ export function BannerImage() {
         alt="banner image"
         layout="fill"
         objectFit={'cover'}
+        priority
       />
     </section>
   );

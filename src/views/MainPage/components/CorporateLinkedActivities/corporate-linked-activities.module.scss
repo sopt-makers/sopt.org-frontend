@@ -89,10 +89,20 @@
 }
 
 .contentWrapper {
-  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @include mobile {
+    width: 100vw;
+    padding: 0 16px;
+  }
+  @include tablet {
+    width: 100vw;
+    padding: 0 24px;
+  }
+  @include desktop {
+    width: 100%;
+  }
 }
 
 .content {

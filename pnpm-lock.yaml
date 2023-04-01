@@ -16,6 +16,7 @@ specifiers:
   '@trivago/prettier-plugin-sort-imports': ^4.0.0
   '@types/jest': ^28.1.1
   '@types/node': 17.0.38
+  '@types/qs': 6.9.7
   '@types/react': 18.0.10
   '@types/react-dom': 18.0.5
   '@types/react-test-renderer': ^18.0.0
@@ -27,7 +28,6 @@ specifiers:
   babel-plugin-inline-react-svg: ^2.0.1
   babel-plugin-module-resolver: ^4.1.0
   classcat: ^5.0.4
-  emotion-reset: ^3.0.1
   eslint: ^8.16.0
   eslint-config-next: 12.1.6
   eslint-config-prettier: ^8.5.0
@@ -47,6 +47,7 @@ specifiers:
   postcss-html: ^1.4.1
   postcss-syntax: ^0.36.2
   prettier: ^2.6.2
+  qs: 6.11.1
   react: 18.1.0
   react-dom: 18.1.0
   react-query: ^3.39.2
@@ -65,10 +66,11 @@ specifiers:
 dependencies:
   '@emotion/react': 11.10.0_rzzs4it3vc6zxnuyimlesjlbfm
   '@emotion/styled': 11.10.0_jq54skta57c72tr6wozaoukndu
+  '@types/qs': 6.9.7
   axios: 0.27.2
   classcat: 5.0.4
-  emotion-reset: 3.0.1_@emotion+react@11.10.0
   next: 12.1.6_3ppgbpefmt26el3mp2necl7ifa
+  qs: 6.11.1
   react: 18.1.0
   react-dom: 18.1.0_react@18.1.0
   react-query: 3.39.2_ef5jwxihqo6n7gxfmzogljlgcm
@@ -2454,6 +2456,10 @@ packages:
   /@types/prop-types/15.7.5:
     resolution: {integrity: sha512-JCB8C6SnDoQf0cNycqd/35A7MjcnK+ZTqE7judS6o7utxUCg6imJg3QK2qzHKszlTjcj2cn+NwMB2i96ubpj7w==}
 
+  /@types/qs/6.9.7:
+    resolution: {integrity: sha512-FGa1F62FT09qcrueBA6qYTrJPVDzah9a+493+o2PCXsesWHIn27G98TsSMs3WPNbZIEj4+VJf6saSFpvD+3Zsw==}
+    dev: false
+
   /@types/react-dom/18.0.5:
     resolution: {integrity: sha512-OWPWTUrY/NIrjsAPkAk1wW9LZeIjSvkXRhclsFO8CZcZGCOg2G0YZy4ft+rOyYxy8B7ui5iZzi9OkDebZ7/QSA==}
     dependencies:
@@ -3196,7 +3202,6 @@ packages:
     dependencies:
       function-bind: 1.1.1
       get-intrinsic: 1.1.2
-    dev: true
 
   /callsites/3.1.0:
     resolution: {integrity: sha512-P8BjAsXvZS+VIDUI11hHCQEv74YT67YUi5JJFNWIqL235sBmjX4+qx9Muvls5ivyNENctx46xQLQ3aTuE7ssaQ==}
@@ -3688,14 +3693,6 @@ packages:
     resolution: {integrity: sha512-/kyM18EfinwXZbno9FyUGeFh87KC8HRQBQGildHZbEuRyWFOmv1U10o9BBp8XVZDVNNuQKyIGIu5ZYAAXJ0V2Q==}
     engines: {node: '>= 4'}
     dev: true
-
-  /emotion-reset/3.0.1_@emotion+react@11.10.0:
-    resolution: {integrity: sha512-v6scW83qSu+wtxg7lX1s0+/2U4EAAGFxDQMkvXE10jhKtyuXCzy3/su5/MU9ZjXeNv6ZjxZH51WktrKosKUy9g==}
-    peerDependencies:
-      '@emotion/react': '>=11'
-    dependencies:
-      '@emotion/react': 11.10.0_rzzs4it3vc6zxnuyimlesjlbfm
-    dev: false
 
   /enhanced-resolve/5.10.0:
     resolution: {integrity: sha512-T0yTFjdpldGY8PmuXXR0PyQ1ufZpEGiHVrp7zHKB7jdR4qlmZHhONVM5AQOAWXuF/w3dnHbEQVrNptJgt7F+cQ==}
@@ -4391,7 +4388,6 @@ packages:
       function-bind: 1.1.1
       has: 1.0.3
       has-symbols: 1.0.3
-    dev: true
 
   /get-own-enumerable-property-symbols/3.0.2:
     resolution: {integrity: sha512-I0UBV/XOz1XkIJHEUDMZAbzCThU/H8DxmSfmdGcKPnVhu2VfFqr34jr9777IyaTYvxjedWhqVIilEDsCdP5G6g==}
@@ -4511,7 +4507,6 @@ packages:
   /has-symbols/1.0.3:
     resolution: {integrity: sha512-l3LCuF6MgDNwTDKkdYGEihYjt5pRPbEg46rtlmnSPlUbgmB8LOIrKJbYYFBSbnPaJexMKtiPO8hmeRjRz2Td+A==}
     engines: {node: '>= 0.4'}
-    dev: true
 
   /has-tostringtag/1.0.0:
     resolution: {integrity: sha512-kFjcSNhnlGV1kyoGk7OXKSawH5JOb/LzUc5w9B02hOTO0dfFRjbHQKvg1d6cf3HbeUmtU9VbbV3qzZ2Teh97WQ==}
@@ -5784,7 +5779,6 @@ packages:
 
   /object-inspect/1.12.2:
     resolution: {integrity: sha512-z+cPxW0QGUp0mcqcsgQyLVRDoXFQbXOwBaqyF7VIgI4TWNQsDHrBpUQslRmIfAoYWdYzs6UlKJtB2XJpTaNSpQ==}
-    dev: true
 
   /object-keys/1.1.1:
     resolution: {integrity: sha512-NuAESUOUMrlIXOfHKzD6bpPu3tYt3xvjNdRIQ+FeT0lNb4K8WR70CaDxhuNguS2XG+GjkyMwOzsN5ZktImfhLA==}
@@ -6150,6 +6144,13 @@ packages:
     engines: {node: '>=6'}
     dev: true
 
+  /qs/6.11.1:
+    resolution: {integrity: sha512-0wsrzgTz/kAVIeuxSjnpGC56rzYtr6JT/2BwEvMaPhFIoYa1aGO8LbzuU1R0uUYQkLpWBTOj0l/CLAJB64J6nQ==}
+    engines: {node: '>=0.6'}
+    dependencies:
+      side-channel: 1.0.4
+    dev: false
+
   /queue-microtask/1.2.3:
     resolution: {integrity: sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==}
     dev: true
@@ -6513,7 +6514,6 @@ packages:
       call-bind: 1.0.2
       get-intrinsic: 1.1.2
       object-inspect: 1.12.2
-    dev: true
 
   /signal-exit/3.0.7:
     resolution: {integrity: sha512-wnD2ZE+l+SPC/uoS0vXeE9L1+0wuaMqKlfz9AMUo38JsyLSBWSFcHR1Rri62LZc12vLr1gb3jl7iwQhgwpAbGQ==}

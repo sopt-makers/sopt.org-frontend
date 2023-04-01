@@ -83,7 +83,6 @@ const Styled = {
     }
   `,
   Title: styled.h1`
-    font-family: 'SUIT';
     font-weight: 700;
     font-size: 30px;
     line-height: 100%;
@@ -133,7 +132,6 @@ const Styled = {
     transform: ${({ isOpened }) => (isOpened ? 'rotate(90deg)' : 'rotate(0deg')};
   `,
   Content: styled.div`
-    font-family: 'Pretendard';
     font-weight: 400;
     font-size: 25px;
     line-height: 40px;

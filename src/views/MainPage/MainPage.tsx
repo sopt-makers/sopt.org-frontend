@@ -1,6 +1,7 @@
 import { Footer, Header, Layout, ScrollToTopButton } from '@src/components';
 import {
   ActivityDescription,
+  ActivityReview,
   BannerImage,
   CoporatePartner,
   CorporateLinkedActivities,
@@ -23,6 +24,7 @@ function MainPage() {
             <PartDescription />
             <ActivityDescription />
             <DetailedInformation />
+            <ActivityReview />
             <CoporatePartner />
             <CorporateLinkedActivities />
           </div>

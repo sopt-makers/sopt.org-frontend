@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import Link from 'next/link';
-import logoIcon from '@src/assets/sopt/logo.png';
+import { LOGO_IMAGE_URL } from '@src/assets/sopt/logo';
 import useHeader from '@src/hooks/useHeader';
 import { menuTapList } from '../menuTapList';
 import { MenuTapType } from '../types';
@@ -11,7 +11,7 @@ function DesktopHeader() {
   return (
     <Wrapper>
       <CenterAligner>
-        <Logo src={logoIcon.src} onClick={handleClickLogo} />
+        <Logo onClick={handleClickLogo} />
       </CenterAligner>
       <MenuTitlesWrapper>
         {menuTapList.map(({ type, title, href }) => {
@@ -37,10 +37,6 @@ function DesktopHeader() {
   );
 }
 
-interface StyleProps {
-  src: string;
-}
-
 interface MenuTitleProps {
   isSelected?: boolean;
 }
@@ -58,12 +54,12 @@ export const CenterAligner = styled.div`
   align-items: center;
 `;
 
-export const Logo = styled.button<StyleProps>`
+export const Logo = styled.button`
   width: 87px;
   height: 30px;
   margin-left: 100px;
 
-  background: url(${({ src }) => src}) center no-repeat;
+  background: url(${LOGO_IMAGE_URL}) center no-repeat;
   background-size: 100% 100%;
   cursor: pointer;
 
@@ -89,7 +85,6 @@ export const MenuTitleAnchor = styled.a`
 `;
 
 export const MenuTitle = styled.div<MenuTitleProps>`
-  font-family: 'SUIT';
   font-size: 18px;
   line-height: 36px;
   font-weight: ${({ isSelected }) => (isSelected ? '700' : '500')};

@@ -7,9 +7,9 @@ export const menuTapList: MenuTapList = [
     href: '/project',
   },
   {
-    type: MenuTapType.Anchor,
+    type: MenuTapType.Router,
     title: '활동후기',
-    href: 'https://sopt-official-review.oopy.io/',
+    href: '/review',
   },
   {
     type: MenuTapType.Router,

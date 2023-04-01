@@ -1,14 +1,12 @@
-import type { Action, ProjectType, State } from '../types';
+import type { Action, State } from './types';
 
-export function reducer(
-  prevState: State<ProjectType>,
-  action: Action<ProjectType>,
-): State<ProjectType> {
+export function reducer<T>(prevState: State<T>, action: Action<T>): State<T> {
   switch (prevState._TAG) {
     case 'IDLE':
       if (action._TAG === 'FETCH') {
         return {
           _TAG: 'LOADING',
+          data: action.isInitialFetching ? [] : prevState.data,
         };
       }
       break;
@@ -22,7 +20,7 @@ export function reducer(
       if (action._TAG === 'SUCCESS') {
         return {
           _TAG: 'OK',
-          data: action.data,
+          data: action.isInitialFetching ? action.data : [...prevState.data, ...action.data],
         };
       }
       break;
@@ -30,6 +28,7 @@ export function reducer(
       if (action._TAG === 'FETCH') {
         return {
           _TAG: 'LOADING',
+          data: action.isInitialFetching ? [] : prevState.data,
         };
       }
       break;

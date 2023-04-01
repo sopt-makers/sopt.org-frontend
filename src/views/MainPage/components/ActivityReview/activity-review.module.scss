@@ -1,0 +1,221 @@
+@import '@src/views/MainPage/stylesheets/mixins';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @include mobile {
+    width: 90%;
+    gap: 48px;
+  }
+  @include tablet {
+    width: 75%;
+    gap: 100px;
+  }
+  @include desktop {
+    width: 100%;
+    gap: 100px;
+  }
+}
+
+.titleWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @include mobile {
+    gap: 8px;
+  }
+  @include tablet {
+    gap: 24px;
+  }
+  @include desktop {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.title {
+  font-weight: 800;
+  white-space: pre-wrap;
+  text-align: center;
+  @include mobile {
+    font-size: 20px;
+    line-height: 28px;
+  }
+  @include tablet {
+    font-size: 36px;
+    line-height: 56px;
+  }
+  @include desktop {
+    text-align: left;
+    font-size: 45px;
+    line-height: 60px;
+  }
+}
+
+.moreLink {
+  cursor: pointer;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: underline;
+  @include mobile {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  @include tablet {
+    font-size: 25px;
+    line-height: 24px;
+  }
+  @include desktop {
+    font-size: 25px;
+    line-height: 30px;
+  }
+}
+
+.contentWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @include mobile {
+    width: 100vw;
+    padding: 0 16px;
+  }
+  @include tablet {
+    width: 100vw;
+    padding: 0 24px;
+  }
+  @include desktop {
+    width: 100%;
+  }
+}
+
+.arrowWrapper {
+  @include mobile {
+    display: none;
+  }
+  @include tablet {
+    display: none;
+  }
+  @include desktop {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+  }
+}
+
+.content {
+  display: flex;
+  @include mobile {
+    overflow-x: scroll;
+    gap: 16px;
+  }
+  @include tablet {
+    overflow-x: scroll;
+    gap: 24px;
+  }
+  @include desktop {
+    margin: 0 32px;
+    overflow-x: hidden;
+    gap: 24px;
+    max-width: 1008px;
+  }
+}
+
+.card {
+  cursor: pointer;
+  background-color: #ffffff;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  @include mobile {
+    min-width: 194px;
+    height: 139px;
+    padding: 20px;
+  }
+  @include tablet {
+    min-width: 320px;
+    height: 300px;
+    padding: 38px 34px;
+  }
+  @include desktop {
+    min-width: 320px;
+    height: 300px;
+    padding: 38px 34px;
+  }
+}
+
+.cardTitle {
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  word-break: break-all;
+  color: #262626;
+  font-weight: 500;
+  @include mobile {
+    font-size: 12px;
+    line-height: 20px;
+  }
+  @include tablet {
+    font-size: 25px;
+    line-height: 40px;
+  }
+  @include desktop {
+    font-size: 25px;
+    line-height: 40px;
+  }
+}
+
+.descWrapper {
+  display:flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.desc {
+  color: rgba(38, 38, 38, 0.6);
+  font-weight: 500;
+  @include mobile {
+    font-size: 12px;
+  }
+  @include tablet {
+    font-size: 25px;
+    line-height: 40px;
+    white-space: pre-wrap;
+  }
+  @include desktop {
+    font-size: 25px;
+    line-height: 40px;
+    white-space: pre-wrap;
+  }
+}
+
+.descName {
+  font-weight: 700;
+  @include mobile {
+    font-weight: 500;
+  }
+}
+
+.arrow {
+    @include mobile {
+      width: 17px;
+      height: 15px;
+    }
+    @include tablet {
+      width: 30px;
+      height: 30px;
+    }
+    @include desktop {
+      width: 30px;
+      height: 30px;
+    }
+}
