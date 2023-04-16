@@ -3,7 +3,7 @@ import instagramLogo from '@src/assets/logo/instagram.svg';
 import kakaoLogo from '@src/assets/logo/kakao.svg';
 import mailLogo from '@src/assets/logo/mail.svg';
 import youtubeLogo from '@src/assets/logo/youtube.svg';
-import * as S from './Channels.style';
+import * as S from './style';
 
 interface ChannelsProps {
   isFooter?: boolean;
