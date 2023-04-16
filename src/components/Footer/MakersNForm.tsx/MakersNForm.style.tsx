@@ -29,7 +29,7 @@ const FooterForm = styled.div<{ hide: boolean }>`
   }
 `;
 
-const FooterLink = styled.a<{ highlight?: boolean }>`
+const FooterLink = styled.a`
   padding: 17px 10px;
 
   color: #c0c5c9;
