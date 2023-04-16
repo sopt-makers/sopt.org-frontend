@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 
-const useScroll = () => {
+const useScrollPosition = () => {
   const lastScrollPositionRef = useRef(0);
   const [isScrollingDown, setIsScrollingDown] = useState(true);
   const [isScrollTop, setIsScrollTop] = useState(true);
@@ -28,4 +28,4 @@ const useScroll = () => {
   };
 };
 
-export default useScroll;
+export default useScrollPosition;

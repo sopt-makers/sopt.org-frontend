@@ -1,9 +1,9 @@
 import { FC } from 'react';
-import useScroll from '@src/hooks/useScroll';
+import useScrollPosition from '@src/hooks/useScrollPosition';
 import St from './MakersNForm.style';
 
 const MakersNForm: FC = () => {
-  const { isScrollingDown, isScrollTop } = useScroll();
+  const { isScrollingDown, isScrollTop } = useScrollPosition();
 
   return (
     <St.FooterForm hide={isScrollingDown && !isScrollTop}>
