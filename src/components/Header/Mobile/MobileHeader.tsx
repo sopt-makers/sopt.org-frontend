@@ -25,7 +25,7 @@ function MobileHeader() {
           <Image
             src={isMenuShown === 'open' ? xButton.src : menuBar}
             alt="header toggle button"
-            layout="fill"
+            fill
           />
         </ToggleButton>
       </StyledHeader>
