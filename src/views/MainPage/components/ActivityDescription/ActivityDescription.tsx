@@ -76,7 +76,13 @@ function MobileActivityDescription() {
       </ul>
       <article className={styles.card}>
         <div className={styles.imageWrapper}>
-          <Image className={styles.cardImage} src={currentTab.imgSrc} alt="card" fill />
+          <Image
+            className={styles.cardImage}
+            src={currentTab.imgSrc}
+            alt="card"
+            fill
+            sizes="(max-width: 766px) 328px 585px"
+          />
         </div>
         <div className={styles.imageDesc}>
           <span className={styles.type}>{currentTab.type}</span>
@@ -95,7 +101,14 @@ function DesktopActivityDescription() {
         return (
           <article className={styles.card} key={type}>
             <div className={styles.imageWrapper}>
-              <Image className={styles.cardImage} src={imgSrc} alt="card" fill />
+              <Image
+                className={styles.cardImage}
+                src={imgSrc}
+                alt="card"
+                fill
+                sizes="
+              540px"
+              />
             </div>
             <div className={cc([styles.imageDesc, nickName && styles.nickNameInclude])}>
               <span className={styles.type}>{type}</span>
