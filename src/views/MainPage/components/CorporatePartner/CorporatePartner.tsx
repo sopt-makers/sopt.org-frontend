@@ -28,7 +28,14 @@ export function CoporatePartner() {
           {corporatePartnerList.map(({ name, imgSrc }) => {
             return (
               <article className={styles.item} key={name}>
-                <Image className={styles.corporateLogoImage} src={imgSrc} alt="corporate logo" />
+                <div className={styles.corporateLogoImageWrapper}>
+                  <Image
+                    src={imgSrc}
+                    alt="corporate logo"
+                    fill
+                    sizes="(max-width: 766px) 138px 278px"
+                  />
+                </div>
                 <p className={styles.name}>{name}</p>
               </article>
             );

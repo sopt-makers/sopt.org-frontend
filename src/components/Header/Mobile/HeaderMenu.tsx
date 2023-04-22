@@ -48,9 +48,9 @@ function HeaderMenu({ isMenuShown, handleHeaderToggleButton }: HeaderMenuProps) 
                   );
                 case MenuTapType.Router:
                   return (
-                    <Link key={title} href={href}>
-                      <S.MenuTitle isSelected={handleIsSelected(href)}>{title}</S.MenuTitle>
-                    </Link>
+                    <S.MenuTitle key={title} isSelected={handleIsSelected(href)}>
+                      <Link href={href}>{title}</Link>
+                    </S.MenuTitle>
                   );
               }
             })}

@@ -23,12 +23,12 @@ const Reviews = ({ selectedTab }: ReviewsProps) => {
         {reviews.data.map((review, idx) => (
           <S.Card key={`${review.id}-${idx}`} href={review.link} target="_blank">
             <S.Section>
-              <S.ThumbnailWrapper css={{ height: imageHeight }}>
+              <S.ThumbnailWrapper>
                 <S.Thumbnail
                   src={logoPath[review.semester]}
                   alt={review.title}
                   width={120}
-                  height="100%"
+                  height={imageHeight}
                 />
               </S.ThumbnailWrapper>
               <S.ChipWrapper>

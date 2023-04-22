@@ -20,7 +20,7 @@ function Recruit() {
           src={Sopt404.src}
           width={296}
           height={78}
-          alt="솝트"
+          alt="SOPT"
           blurDataURL={Sopt404.src}
           placeholder="blur"
         />

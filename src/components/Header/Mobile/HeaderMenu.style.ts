@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import Link from 'next/link';
 import { css } from '@emotion/react';
 import { FadeIn, FadeInDown, FadeOut, FadeOutUp } from '@src/lib/styles/animation';
 
@@ -124,7 +125,7 @@ export const MenuTitlesWrap = styled.div`
   padding-bottom: 30px;
 `;
 
-export const MenuTitleAnchor = styled.a`
+export const MenuTitleAnchor = styled(Link)`
   display: block;
 
   color: inherit;
@@ -146,7 +147,7 @@ export const MenuTitle = styled.div<MenuTitleProps>`
   }
 `;
 
-export const Rules = styled.a`
+export const Rules = styled(Link)`
   cursor: pointer;
   text-decoration-line: underline;
   line-height: 20px;

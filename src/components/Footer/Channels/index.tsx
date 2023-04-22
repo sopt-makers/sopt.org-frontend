@@ -36,35 +36,40 @@ function Channels({ isFooter = false }: ChannelsProps) {
         src={mailLogo}
         width={30}
         height={30}
-        id={'mail'}
+        id="mail"
+        alt="mail"
         onClick={handleClick}
       />
       <S.ClickableChannelButton
         src={facebookLogo}
         width={30}
         height={30}
-        id={'facebook'}
+        id="facebook"
+        alt="facebook"
         onClick={handleClick}
       />
       <S.ClickableChannelButton
         src={instagramLogo}
         width={30}
         height={30}
-        id={'instagram'}
+        id="instagram"
+        alt="instagram"
         onClick={handleClick}
       />
       <S.ClickableChannelButton
         src={kakaoLogo}
         width={30}
         height={30}
-        id={'kakao'}
+        id="kakao"
+        alt="kakao"
         onClick={handleClick}
       />
       <S.ClickableChannelButton
         src={youtubeLogo}
         width={30}
         height={30}
-        id={'youtube'}
+        id="youtube"
+        alt="youtube"
         onClick={handleClick}
       />
     </S.ChannelButtonsWrap>

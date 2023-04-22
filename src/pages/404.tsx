@@ -23,7 +23,7 @@ function Wrong() {
           src={Sopt404.src}
           width={isDesktop ? 296 : 196}
           height={isDesktop ? 78 : 52}
-          alt="솝트"
+          alt="SOPT"
           blurDataURL={Sopt404.src}
           placeholder="blur"
         />

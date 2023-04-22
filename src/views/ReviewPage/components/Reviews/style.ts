@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import Image from 'next/image';
+import Link from 'next/link';
 import { textSingularLineEllipsis, textpluralLinesEllipsis } from '@src/styles/textEllipsis';
 
 export const Wrapper = styled.div`
@@ -25,7 +26,7 @@ export const Wrapper = styled.div`
   }
 `;
 
-export const Card = styled.a`
+export const Card = styled(Link)`
   text-decoration: none;
   display: flex;
   flex-direction: column;

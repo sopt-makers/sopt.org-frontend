@@ -89,7 +89,6 @@
 }
 
 .item {
-  position: relative;
   @include mobile {
     width: 138px;
     height: 60px;
@@ -104,14 +103,15 @@
   }
 }
 
-.corporateLogoImage {
+.corporateLogoImageWrapper {
+  position: relative;
   @include mobile {
     width: 138px;
     height: 60px;
   }
   @include tablet {
     width: 278px;
-    height: 161px;
+    height: 121px;
   }
   @include desktop {
     width: 278px;

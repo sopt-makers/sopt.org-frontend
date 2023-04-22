@@ -79,9 +79,9 @@ function MobileActivityDescription() {
           <Image
             className={styles.cardImage}
             src={currentTab.imgSrc}
-            alt="card image"
-            layout="fill"
-            objectFit={'cover'}
+            alt="card"
+            fill
+            sizes="(max-width: 766px) 328px 585px"
           />
         </div>
         <div className={styles.imageDesc}>
@@ -104,9 +104,10 @@ function DesktopActivityDescription() {
               <Image
                 className={styles.cardImage}
                 src={imgSrc}
-                alt="card image"
-                layout="fill"
-                objectFit={'cover'}
+                alt="card"
+                fill
+                sizes="
+              540px"
               />
             </div>
             <div className={cc([styles.imageDesc, nickName && styles.nickNameInclude])}>

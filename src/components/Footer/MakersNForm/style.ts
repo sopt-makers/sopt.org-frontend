@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import Link from 'next/link';
 import { css } from '@emotion/react';
 
 const FooterForm = styled.div<{ hide: boolean }>`
@@ -29,7 +30,7 @@ const FooterForm = styled.div<{ hide: boolean }>`
   }
 `;
 
-const FooterLink = styled.a`
+const FooterLink = styled(Link)`
   padding: 17px 10px;
 
   color: #c0c5c9;

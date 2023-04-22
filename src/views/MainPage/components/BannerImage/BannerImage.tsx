@@ -20,14 +20,7 @@ export function BannerImage() {
       <div className={styles.downArrowWrapper} onClick={onScrollMoveDown}>
         <ArrowDown className={styles.downArrow} width="24" height="24" />
       </div>
-      <Image
-        src={MainPageBanner}
-        className={styles.bannerImage}
-        alt="banner image"
-        layout="fill"
-        objectFit={'cover'}
-        priority
-      />
+      <Image src={MainPageBanner} className={styles.bannerImage} alt="banner" fill priority />
     </section>
   );
 }

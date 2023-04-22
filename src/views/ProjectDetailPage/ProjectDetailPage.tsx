@@ -62,7 +62,7 @@ function ProjectDetailPage() {
           </S.ProjectHeader>
           {projectImage && (
             <S.ProjectImageWrapper>
-              <Image src={projectImage} alt="project image" layout="fill" />
+              <Image src={projectImage} alt="project image" fill />
             </S.ProjectImageWrapper>
           )}
           <S.ProjectWrapper>
