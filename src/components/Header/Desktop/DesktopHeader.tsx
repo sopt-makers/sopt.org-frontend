@@ -57,7 +57,6 @@ export const CenterAligner = styled.div`
 export const Logo = styled.button`
   width: 87px;
   height: 30px;
-  margin-left: 100px;
 
   background: url(${LOGO_IMAGE_URL}) center no-repeat;
   background-size: 100% 100%;
