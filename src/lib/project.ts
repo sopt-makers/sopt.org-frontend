@@ -1,10 +1,11 @@
+import { BASE_URL, DEFAULT_TIMEOUT } from '@src/utils/const/client';
 import { ProjectCategoryType } from '@src/views/ProjectPage/lib/constants';
 import { ProjectType } from '@src/views/ProjectPage/types';
 import axios from 'axios';
 
 const client = axios.create({
-  baseURL: 'https://api.sopt.org',
-  timeout: 3000,
+  baseURL: BASE_URL,
+  timeout: DEFAULT_TIMEOUT,
 });
 
 export const getProjectDetail = async (projectId: number) => {
