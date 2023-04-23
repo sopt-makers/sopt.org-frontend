@@ -1,10 +1,10 @@
+import { ReviewTab, TabType } from '@src/lib/api/types/review';
 import { tabs } from '../../libs/constants';
-import { TAB, TabType } from '../../types';
 import * as S from './style';
 
 type TabBarProps = {
-  selectedTab: TAB;
-  onTabClick(targetTab: TAB): void;
+  selectedTab: ReviewTab;
+  onTabClick(targetTab: ReviewTab): void;
 };
 
 const TabBar = ({ onTabClick, selectedTab }: TabBarProps) => {

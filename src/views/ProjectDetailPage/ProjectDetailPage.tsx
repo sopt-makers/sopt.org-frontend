@@ -5,10 +5,11 @@ import { useState } from 'react';
 import { useQuery } from 'react-query';
 import { ReactComponent as IToggle } from '@src/assets/images/toggle.svg';
 import { Footer, Header, Layout, ScrollToTopButton } from '@src/components';
-import { getProjectDetail } from '@src/lib/project';
+import { api } from '@src/lib/api';
+import { ProjectLinkType } from '@src/lib/api/types/project';
 import { dateFormat } from '@src/utils/dateFormat';
 import * as S from './ProjectDetail.style';
-import { LinkType, TeamMembersType } from './types';
+import { TeamMembersType } from './types';
 import { getLinkNameAndSrcWithType } from './utils/getLinkNameAndSrcWithType';
 
 const projectOverviewTitle = [
@@ -22,9 +23,16 @@ const projectOverviewTitle = [
 function ProjectDetailPage() {
   const router = useRouter();
   const id = router.query.id as string;
-  const { data } = useQuery('projectDetail', () => getProjectDetail(+id), {
-    enabled: !!id,
-  });
+  const { data } = useQuery(
+    'projectDetail',
+    async () => {
+      const response = await api.projectAPI.getProjectDetail(+id);
+      return response.project;
+    },
+    {
+      enabled: !!id,
+    },
+  );
   const [isOverviewOpened, setIsOverviewOpened] = useState(true);
   const [isTeamMemberOpened, setIsTeamMemberOpened] = useState(false);
   if (!data) return;
@@ -35,7 +43,7 @@ function ProjectDetailPage() {
     name,
     summary,
     generation,
-    serviceType,
+    serviceTypes,
     startAt,
     endAt,
     isFounding,
@@ -90,7 +98,7 @@ function ProjectDetailPage() {
                       </span>
                       <span>{generation ? generation + '기' : '-'}</span>
                       <span>
-                        {[...serviceType]
+                        {serviceTypes
                           .map((type: string) => (type === 'WEB' ? '웹' : '앱'))
                           .join(', ')}
                       </span>
@@ -107,7 +115,7 @@ function ProjectDetailPage() {
                     </div>
                   </S.ProjectInfo>
                   <S.ProjectLinkWrapper>
-                    {link.map(({ title, url }: LinkType) => {
+                    {link.map(({ title, url }: ProjectLinkType) => {
                       const { name, src } = getLinkNameAndSrcWithType(title);
                       return (
                         <Link href={url} key={title}>

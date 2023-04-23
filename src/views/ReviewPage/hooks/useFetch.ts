@@ -1,11 +1,11 @@
 import { useCallback, useEffect } from 'react';
 import useBooleanState from '@src/hooks/useBooleanState';
 import useStackedFetchBase from '@src/hooks/useStackedFetchBase';
-import { getReviews } from '@src/lib/review';
-import { TAB } from '../types';
+import { api } from '@src/lib/api';
+import { ReviewTab } from '@src/lib/api/types/review';
 import useInfiniteScroll from './useInfiniteScroll';
 
-const useFetch = (selected: TAB) => {
+const useFetch = (selected: ReviewTab) => {
   const { ref, count, setCount } = useInfiniteScroll();
   const [canGetMoreReviews, setCanGetMoreReviews, setCanNotGetMoreReviews] = useBooleanState(true);
 
@@ -17,10 +17,12 @@ const useFetch = (selected: TAB) => {
     };
   }, [selected, setCount, setCanGetMoreReviews]);
 
-  const willFetch = useCallback(
-    () => getReviews(selected, count, setCanGetMoreReviews, setCanNotGetMoreReviews),
-    [selected, count, setCanGetMoreReviews, setCanNotGetMoreReviews],
-  );
+  const willFetch = useCallback(async () => {
+    setCanNotGetMoreReviews();
+    const response = await api.reviewAPI.getReviews(selected, count);
+    response.hasNextPage ? setCanGetMoreReviews() : setCanNotGetMoreReviews();
+    return response.reviews;
+  }, [selected, count, setCanGetMoreReviews, setCanNotGetMoreReviews]);
   const state = useStackedFetchBase(willFetch, count === 1);
 
   return { state, ref, canGetMoreReviews };

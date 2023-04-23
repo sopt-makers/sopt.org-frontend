@@ -1,33 +1,33 @@
 import * as L from '@src/assets/mainLogo';
-import { TAB, TabType } from '../types';
+import { ReviewTab, TabType } from '@src/lib/api/types/review';
 
 export const tabs: TabType[] = [
   {
-    value: TAB.ALL,
+    value: ReviewTab.ALL,
     label: '전체',
   },
   {
-    value: TAB.PLAN,
+    value: ReviewTab.PLAN,
     label: '기획',
   },
   {
-    value: TAB.DESIGN,
+    value: ReviewTab.DESIGN,
     label: '디자인',
   },
   {
-    value: TAB.ANDROID,
+    value: ReviewTab.ANDROID,
     label: '안드로이드',
   },
   {
-    value: TAB.IOS,
+    value: ReviewTab.IOS,
     label: 'iOS',
   },
   {
-    value: TAB.WEB,
+    value: ReviewTab.WEB,
     label: '웹',
   },
   {
-    value: TAB.SERVER,
+    value: ReviewTab.SERVER,
     label: '서버',
   },
 ];

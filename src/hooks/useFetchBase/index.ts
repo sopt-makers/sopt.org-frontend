@@ -3,13 +3,13 @@ import { useEffect, useReducer } from 'react';
 import { reducer } from './reducer';
 import type { Action, State } from './types';
 
-function useFetchBase<T>(willFetch: () => Promise<T[]>): State<T> {
+function useFetchBase<T>(willFetch: () => Promise<T>): State<T> {
   const [state, dispatch] = useReducer<React.Reducer<State<T>, Action<T>>>(reducer, {
     _TAG: 'IDLE',
   });
 
   useEffect(() => {
-    const fetchProjectList = async () => {
+    const fetch = async () => {
       dispatch({
         _TAG: 'FETCH',
       });
@@ -28,7 +28,7 @@ function useFetchBase<T>(willFetch: () => Promise<T[]>): State<T> {
       }
     };
 
-    fetchProjectList();
+    fetch();
   }, [willFetch]);
 
   return state;
