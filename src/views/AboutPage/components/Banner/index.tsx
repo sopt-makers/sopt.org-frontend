@@ -1,16 +1,20 @@
 import Image from 'next/image';
-import 이미지 from './image-76.png';
 import * as St from './style';
 
-const 기수 = 30;
-const 솝트 = 'GO SOPT';
+interface BannerProps {
+  imageSrc: string;
+  generation: number;
+  title: string;
+}
 
-const Banner = () => {
+const Banner = (props: BannerProps) => {
+  const { imageSrc, generation, title } = props;
+
   return (
     <St.ImageWrapper>
-      <Image src={이미지} alt="" fill style={{ objectFit: 'cover' }} />
+      <Image src={imageSrc} alt="" fill style={{ objectFit: 'cover' }} />
       <St.HeadTitle>
-        {기수}기 {솝트} 소개
+        {generation}기 {title} 소개
       </St.HeadTitle>
     </St.ImageWrapper>
   );

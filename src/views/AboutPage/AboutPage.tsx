@@ -1,14 +1,23 @@
 import styled from '@emotion/styled';
 import { Footer, Header, Layout } from '@src/components';
 import Banner from './components/Banner';
+import useFetch from './hooks/useFetch';
 
 const AboutPage = () => {
+  const state = useFetch();
+
   return (
     <Layout>
       <Header />
-      <Root>
-        <Banner />
-      </Root>
+      {state._TAG === 'OK' && (
+        <Root>
+          <Banner
+            imageSrc={state.data.aboutInfo.bannerImage}
+            generation={state.data.aboutInfo.generation}
+            title={state.data.aboutInfo.title}
+          />
+        </Root>
+      )}
       <Footer />
     </Layout>
   );
