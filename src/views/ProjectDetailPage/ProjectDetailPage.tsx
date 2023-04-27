@@ -23,16 +23,10 @@ const projectOverviewTitle = [
 function ProjectDetailPage() {
   const router = useRouter();
   const id = router.query.id as string;
-  const { data } = useQuery(
-    'projectDetail',
-    async () => {
-      const response = await api.projectAPI.getProjectDetail(+id);
-      return response.project;
-    },
-    {
-      enabled: !!id,
-    },
-  );
+  const { data } = useQuery('projectDetail', () => api.projectAPI.getProjectDetail(+id), {
+    enabled: !!id,
+    select: (response) => response.project,
+  });
   const [isOverviewOpened, setIsOverviewOpened] = useState(true);
   const [isTeamMemberOpened, setIsTeamMemberOpened] = useState(false);
   if (!data) return;
