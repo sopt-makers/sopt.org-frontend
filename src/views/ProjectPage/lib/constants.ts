@@ -1,4 +1,4 @@
-import { ProjectCategoryType } from '@src/lib/api/types/project';
+import { ProjectCategoryType } from '@src/lib/types/project';
 
 export const projectCategoryList: {
   type: ProjectCategoryType;

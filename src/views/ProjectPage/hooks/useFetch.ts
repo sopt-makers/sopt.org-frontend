@@ -1,7 +1,7 @@
 import { useCallback } from 'react';
 import useFetchBase from '@src/hooks/useFetchBase';
 import { api } from '@src/lib/api';
-import { ProjectCategoryType } from '@src/lib/api/types/project';
+import { ProjectCategoryType } from '@src/lib/types/project';
 
 const useFetch = (selected: ProjectCategoryType) => {
   const willFetch = useCallback(async () => {

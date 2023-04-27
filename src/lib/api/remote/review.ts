@@ -6,7 +6,7 @@ import {
   GetSampleReviewsResponse,
   ReviewAPI,
   ReviewTab,
-} from '../types/review';
+} from '../../types/review';
 
 const client = axios.create({
   baseURL: BASE_URL,

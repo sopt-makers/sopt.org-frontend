@@ -5,7 +5,7 @@ import {
   GetProjectListResponse,
   ProjectAPI,
   ProjectCategoryType,
-} from '../types/project';
+} from '../../types/project';
 
 const client = axios.create({
   baseURL: BASE_URL,

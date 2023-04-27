@@ -2,7 +2,7 @@ import { useCallback, useEffect } from 'react';
 import useBooleanState from '@src/hooks/useBooleanState';
 import useStackedFetchBase from '@src/hooks/useStackedFetchBase';
 import { api } from '@src/lib/api';
-import { ReviewTab } from '@src/lib/api/types/review';
+import { ReviewTab } from '@src/lib/types/review';
 import useInfiniteScroll from './useInfiniteScroll';
 
 const useFetch = (selected: ReviewTab) => {

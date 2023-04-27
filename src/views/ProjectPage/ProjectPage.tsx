@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Footer, Header, Layout, ScrollToTopButton } from '@src/components';
-import { ProjectCategoryType } from '@src/lib/api/types/project';
+import { ProjectCategoryType } from '@src/lib/types/project';
 import { ProjectFilter, ProjectList } from './components';
 import useFetch from './hooks/useFetch';
 

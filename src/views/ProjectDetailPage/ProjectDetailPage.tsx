@@ -6,7 +6,7 @@ import { useQuery } from 'react-query';
 import { ReactComponent as IToggle } from '@src/assets/images/toggle.svg';
 import { Footer, Header, Layout, ScrollToTopButton } from '@src/components';
 import { api } from '@src/lib/api';
-import { ProjectLinkType } from '@src/lib/api/types/project';
+import { ProjectLinkType } from '@src/lib/types/project';
 import { dateFormat } from '@src/utils/dateFormat';
 import * as S from './ProjectDetail.style';
 import { TeamMembersType } from './types';

@@ -1,4 +1,4 @@
-import { ReviewTab } from '@src/lib/api/types/review';
+import { ReviewTab } from '@src/lib/types/review';
 
 // TODO :: ReviewType의 part 타입을 string -> TAB 변경
 export function parsePartToKorean(part: string) {

@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useIsDesktop, useIsMobile, useIsTablet } from '@src/hooks/useDevice';
-import { LinkType, ProjectType } from '@src/lib/api/types/project';
+import { LinkType, ProjectType } from '@src/lib/types/project';
 import { GTM_CLASS } from '@src/utils/const/gtmClass';
 import shortid from 'shortid';
 import { ReactComponent as AppStore } from '../../assets/app-store-40x40.svg';

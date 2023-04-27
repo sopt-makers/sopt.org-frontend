@@ -1,5 +1,5 @@
 import * as L from '@src/assets/mainLogo';
-import { ReviewTab, TabType } from '@src/lib/api/types/review';
+import { ReviewTab, TabType } from '@src/lib/types/review';
 
 export const tabs: TabType[] = [
   {

@@ -1,4 +1,4 @@
-import { ReviewTab, TabType } from '@src/lib/api/types/review';
+import { ReviewTab, TabType } from '@src/lib/types/review';
 import { tabs } from '../../libs/constants';
 import * as S from './style';
 
