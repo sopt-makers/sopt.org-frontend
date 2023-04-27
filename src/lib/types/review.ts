@@ -1,15 +1,13 @@
-export enum ReviewTab {
+import { Part } from './universal';
+
+export enum ReviewTabExtraType {
   ALL = 'ALL',
-  PLAN = 'PLAN',
-  DESIGN = 'DESIGN',
-  ANDROID = 'ANDROID',
-  IOS = 'iOS',
-  WEB = 'WEB',
-  SERVER = 'SERVER',
 }
 
+export type ReviewTabType = ReviewTabExtraType | Part;
+
 export type TabType = {
-  value: ReviewTab;
+  value: ReviewTabType;
   label: string;
 };
 
@@ -34,6 +32,6 @@ export type GetReviewsResponse = {
 };
 
 export interface ReviewAPI {
-  getReviews(tab: ReviewTab, page: number): Promise<GetReviewsResponse>;
+  getReviews(tab: ReviewTabType, page: number): Promise<GetReviewsResponse>;
   getSampleReviews(): Promise<GetSampleReviewsResponse>;
 }

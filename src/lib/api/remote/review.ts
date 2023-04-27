@@ -5,7 +5,8 @@ import {
   GetReviewsResponse,
   GetSampleReviewsResponse,
   ReviewAPI,
-  ReviewTab,
+  ReviewTabExtraType,
+  ReviewTabType,
 } from '../../types/review';
 
 const client = axios.create({
@@ -13,8 +14,8 @@ const client = axios.create({
   timeout: DEFAULT_TIMEOUT,
 });
 
-const getReviews = async (tab: ReviewTab, pageNo = 1): Promise<GetReviewsResponse> => {
-  const partParameter = tab === ReviewTab.ALL ? {} : { part: tab };
+const getReviews = async (tab: ReviewTabType, pageNo = 1): Promise<GetReviewsResponse> => {
+  const partParameter = tab === ReviewTabExtraType.ALL ? {} : { part: tab };
   const pageParameter = { pageNo, limit: 6 };
   const parameter = qs.stringify({ ...partParameter, ...pageParameter });
 
