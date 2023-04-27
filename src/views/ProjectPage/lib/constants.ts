@@ -1,12 +1,4 @@
-export enum ProjectCategoryType {
-  ALL = 'ALL',
-  APPJAM = 'APPJAM',
-  SOPKATHON = 'SOPKATHON',
-  SOPTERM = 'SOPTERM',
-  STUDY = 'STUDY',
-  JOINTSEMINAR = 'JOINTSEMINAR',
-  ETC = 'ETC',
-}
+import { ProjectCategoryType } from '@src/lib/types/project';
 
 export const projectCategoryList: {
   type: ProjectCategoryType;

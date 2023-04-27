@@ -1,16 +1,15 @@
 import { State } from '@src/hooks/useFetchBase/types';
 import { Condition } from '@src/lib';
+import { ProjectCategoryType, ProjectType } from '@src/lib/types/project';
 import cc from 'classcat';
 import { useInfiniteScroll } from '../../hooks/useInfiniteScroll';
-import { ProjectCategoryType } from '../../lib/constants';
-import { ProjectType } from '../../types';
 import { EmptyContent } from '../common/EmptyContent';
 import { OvalSpinner } from '../common/OvalSpinner';
 import { ProjectCard, ProjectEnrollSection } from '../project';
 import styles from './project-list.module.scss';
 
 interface ProjectListProp {
-  state: State<ProjectType>;
+  state: State<ProjectType[]>;
   selectedCategory: ProjectCategoryType;
 }
 

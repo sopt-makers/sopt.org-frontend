@@ -13,7 +13,7 @@ function useStackedFetchBase<T>(
   });
 
   useEffect(() => {
-    const fetchProjectList = async () => {
+    const fetchList = async () => {
       dispatch({
         _TAG: 'FETCH',
         isInitialFetching,
@@ -33,7 +33,7 @@ function useStackedFetchBase<T>(
       }
     };
 
-    fetchProjectList();
+    fetchList();
   }, [willFetch, isInitialFetching]);
 
   return state;

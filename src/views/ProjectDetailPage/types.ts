@@ -4,11 +4,6 @@ export interface TeamMembersType {
   description: string;
 }
 
-export interface LinkType {
-  title: LinkDetailType;
-  url: string;
-}
-
 export type LinkDetailType =
   | 'website'
   | 'appStore'

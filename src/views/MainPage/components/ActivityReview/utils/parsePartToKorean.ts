@@ -1,17 +1,17 @@
-import { TAB } from '@src/views/ReviewPage/types';
+import { Part } from '@src/lib/types/universal';
 
 // TODO :: ReviewType의 part 타입을 string -> TAB 변경
 export function parsePartToKorean(part: string) {
   switch (part) {
-    case TAB.ANDROID:
+    case Part.ANDROID:
       return '안드로이드';
-    case TAB.WEB:
+    case Part.WEB:
       return '웹';
-    case TAB.DESIGN:
+    case Part.DESIGN:
       return '디자인';
-    case TAB.PLAN:
+    case Part.PLAN:
       return '기획';
-    case TAB.SERVER:
+    case Part.SERVER:
       return '서버';
     default:
       return part;

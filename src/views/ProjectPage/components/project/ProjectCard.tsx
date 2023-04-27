@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useIsDesktop, useIsMobile, useIsTablet } from '@src/hooks/useDevice';
+import { LinkType, ProjectType } from '@src/lib/types/project';
 import { GTM_CLASS } from '@src/utils/const/gtmClass';
 import shortid from 'shortid';
 import { ReactComponent as AppStore } from '../../assets/app-store-40x40.svg';
@@ -9,7 +10,6 @@ import { ReactComponent as Instagram } from '../../assets/instagram-30x30.svg';
 import { ReactComponent as PlayStore } from '../../assets/play-store-40x40.svg';
 import { ReactComponent as Web } from '../../assets/website-40x40.svg';
 import { ReactComponent as Youtube } from '../../assets/youtube-30x30.svg';
-import { LinkType, ProjectType } from '../../types';
 import styles from './project-card.module.scss';
 
 export function ProjectCard({ project }: { project: ProjectType }) {
@@ -19,7 +19,7 @@ export function ProjectCard({ project }: { project: ProjectType }) {
         {RepresentativeImageRender(project.logoImage, project?.thumbnailImage)}
         <div className={`${styles.content} ${GTM_CLASS.projectCard}`}>
           <div className={`${styles.types} ${GTM_CLASS.projectCard}`}>
-            {ServiceTypeRender(project.serviceType)}
+            {ServiceTypeRender(project.serviceTypes)}
             {GenerationRender(project?.generation)}
           </div>
           <div className={`${styles.text} ${GTM_CLASS.projectCard}`}>
@@ -105,7 +105,7 @@ function ProjectCardDesktopImage(logoImage: string, thumbnailImage?: string) {
   );
 }
 
-function ServiceTypeRender(serviceTypes: string[] | string) {
+function ServiceTypeRender(serviceTypes: string[]) {
   const convertEngToKorean = (text: string) => {
     switch (text) {
       case 'APP':
@@ -116,7 +116,6 @@ function ServiceTypeRender(serviceTypes: string[] | string) {
         throw new Error('앱 또는 웹 타입이 아닙니다');
     }
   };
-  if (!Array.isArray(serviceTypes)) return <div>{convertEngToKorean(serviceTypes)}</div>;
 
   return serviceTypes?.map((type) => {
     return <div key={shortid.generate()}>{convertEngToKorean(type)}</div>;

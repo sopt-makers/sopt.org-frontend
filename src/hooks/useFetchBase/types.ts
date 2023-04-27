@@ -11,7 +11,7 @@ export type State<T> =
     }
   | {
       _TAG: 'OK';
-      data: T[];
+      data: T;
     };
 
 export type Action<T> =
@@ -24,5 +24,5 @@ export type Action<T> =
     }
   | {
       _TAG: 'SUCCESS';
-      data: T[];
+      data: T;
     };
