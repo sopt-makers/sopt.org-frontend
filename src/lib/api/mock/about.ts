@@ -1,11 +1,14 @@
 import { GetAboutInfoResponse } from '@src/lib/types/about';
 import { Part } from '@src/lib/types/universal';
 
+const BANNER_SRC = 'https://i.ibb.co/84ybMKQ/image-76.png';
 const SRC = 'https://avatars.githubusercontent.com/u/47105088?v=4';
 
-const getAboutInfo = (generation: number): GetAboutInfoResponse => ({
+const getAboutInfo = async (generation: number): Promise<GetAboutInfoResponse> => ({
   aboutInfo: {
     generation,
+    title: 'GO SOPT',
+    bannerImage: BANNER_SRC,
     coreValue: {
       mainDescription:
         '32기 Go SOPT는 협업을 중시하는 멤버들과 함께 나아가며\n끊임없이 실천하는 태도를 지향합니다.',

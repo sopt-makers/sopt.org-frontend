@@ -15,6 +15,8 @@ export interface MemberType {
 
 export interface AboutInfoType {
   generation: number;
+  title: string;
+  bannerImage: string;
   coreValue: {
     mainDescription: string;
     eachValues: CoreValueType[];
@@ -33,5 +35,5 @@ export interface GetAboutInfoResponse {
 }
 
 export interface AboutAPI {
-  getAboutInfo(generation: number): GetAboutInfoResponse;
+  getAboutInfo(generation: number): Promise<GetAboutInfoResponse>;
 }
