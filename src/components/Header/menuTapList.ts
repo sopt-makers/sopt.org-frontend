@@ -3,6 +3,11 @@ import { MenuTapList, MenuTapType } from './types';
 export const menuTapList: MenuTapList = [
   {
     type: MenuTapType.Router,
+    title: 'ABOUT',
+    href: '/about',
+  },
+  {
+    type: MenuTapType.Router,
     title: '프로젝트',
     href: '/project',
   },
