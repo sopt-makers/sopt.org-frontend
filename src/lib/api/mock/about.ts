@@ -14,18 +14,18 @@ const getAboutInfo = async (generation: number): Promise<GetAboutInfoResponse> =
         '32기 Go SOPT는 협업을 중시하는 멤버들과 함께 나아가며\n끊임없이 실천하는 태도를 지향합니다.',
       eachValues: [
         {
-          title: '이',
-          description: '이주함의 0번 인덱스 값인\n이 입니다.',
+          title: 'Protect',
+          description: '몸살으로부터\n주함을 지킵니다.',
           src: SRC,
         },
         {
-          title: '주',
-          description: '이주함의 1번 인덱스 값인\n주 입니다.',
+          title: 'Health',
+          description: '주함 항상\n건강해야 합니다.',
           src: SRC,
         },
         {
-          title: '함',
-          description: '이주함의 2번 인덱스 값인\n함 입니다.',
+          title: 'Retrieve',
+          description: '푹 쉬고 건강을\n되찾습니다.',
           src: SRC,
         },
       ],
