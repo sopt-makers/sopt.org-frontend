@@ -33,9 +33,9 @@ const Flex = ({ dir, gap, style, children }: React.PropsWithChildren<FlexProps>)
   const isMobile = useIsMobile('765.9px');
   const parsedGap = useMemo(() => parseProp(gap), [gap]);
   const parsedFlexDirection = useMemo(() => parseProp(dir), [dir]);
-  console.log({ style });
 
   const baseCssProps = useMemo(() => ({ ...style, display: 'flex' }), [style]);
+
   if (isDesktop)
     return (
       <div
