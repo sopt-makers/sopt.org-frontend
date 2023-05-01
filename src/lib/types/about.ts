@@ -27,6 +27,9 @@ export interface AboutInfoType {
     projectCount: number;
     studyCount: number;
   };
+}
+
+export interface GetMembersInfoResponse {
   members: MemberType[];
 }
 
@@ -36,4 +39,5 @@ export interface GetAboutInfoResponse {
 
 export interface AboutAPI {
   getAboutInfo(generation: number): Promise<GetAboutInfoResponse>;
+  getMemberInfo(part?: Part): Promise<GetMembersInfoResponse>;
 }
