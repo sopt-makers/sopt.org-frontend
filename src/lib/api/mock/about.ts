@@ -1,4 +1,4 @@
-import { GetAboutInfoResponse } from '@src/lib/types/about';
+import { GetAboutInfoResponse, GetMembersInfoResponse } from '@src/lib/types/about';
 import { Part } from '@src/lib/types/universal';
 
 const BANNER_SRC = 'https://i.ibb.co/84ybMKQ/image-76.png';
@@ -43,17 +43,23 @@ const getAboutInfo = async (generation: number): Promise<GetAboutInfoResponse> =
       projectCount: 24,
       studyCount: 300,
     },
-    members: Array.from({ length: 12 }, () =>
-      [Part.PLAN, Part.ANDROID, Part.DESIGN, Part.IOS, Part.SERVER, Part.WEB].map((part) => ({
+  },
+});
+
+const getMemberInfo = async (part?: Part): Promise<GetMembersInfoResponse> => ({
+  members: Array.from({ length: 12 }, () =>
+    (part ? [part] : [Part.PLAN, Part.ANDROID, Part.DESIGN, Part.IOS, Part.SERVER, Part.WEB]).map(
+      (part) => ({
         name: '이주함',
         description: `2023년 현존하는 최고의 ${part}`,
         part,
         src: SRC,
-      })),
-    ).flat(),
-  },
+      }),
+    ),
+  ).flat(),
 });
 
 export const mockAboutAPI = {
   getAboutInfo,
+  getMemberInfo,
 };
