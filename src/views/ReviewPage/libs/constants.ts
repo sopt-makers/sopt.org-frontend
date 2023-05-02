@@ -1,10 +1,9 @@
 import * as L from '@src/assets/mainLogo';
-import { ReviewTabExtraType, TabType } from '@src/lib/types/review';
-import { Part } from '@src/lib/types/universal';
+import { ExtraTabType, Part, PartExtraType } from '@src/lib/types/universal';
 
-export const tabs: TabType[] = [
+export const tabs: ExtraTabType[] = [
   {
-    value: ReviewTabExtraType.ALL,
+    value: PartExtraType.ALL,
     label: '전체',
   },
   {

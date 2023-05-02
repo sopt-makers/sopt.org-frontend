@@ -1,13 +1,13 @@
 import { useMemo } from 'react';
 import { useIsMobile } from '@src/hooks/useDevice';
-import { ReviewTabType } from '@src/lib/types/review';
+import { ExtraPart } from '@src/lib/types/universal';
 import { OvalSpinner } from '@src/views/ProjectPage/components';
 import useFetch from '../../hooks/useFetch';
 import { logoPath } from '../../libs/constants';
 import * as S from './style';
 
 type ReviewsProps = {
-  selectedTab: ReviewTabType;
+  selectedTab: ExtraPart;
 };
 
 const Reviews = ({ selectedTab }: ReviewsProps) => {

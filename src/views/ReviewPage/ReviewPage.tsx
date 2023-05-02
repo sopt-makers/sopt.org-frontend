@@ -1,13 +1,13 @@
 import styled from '@emotion/styled';
 import { useState } from 'react';
 import { Footer, Header, Layout, ScrollToTopButton } from '@src/components';
-import { ReviewTabExtraType, ReviewTabType } from '@src/lib/types/review';
+import { ExtraPart, PartExtraType } from '@src/lib/types/universal';
 import Description from './components/Description';
 import Reviews from './components/Reviews';
 import TabBar from './components/TabBar';
 
 function ReviewPage() {
-  const [selectedTab, setSelectedTab] = useState<ReviewTabType>(ReviewTabExtraType.ALL);
+  const [selectedTab, setSelectedTab] = useState<ExtraPart>(PartExtraType.ALL);
 
   return (
     <Layout>
