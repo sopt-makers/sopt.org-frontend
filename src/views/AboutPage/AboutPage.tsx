@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import { Footer, Header, Layout } from '@src/components';
 import Banner from './components/Banner';
+import CirriculumSection from './components/Cirriculum/Section';
 import CoreValueSection from './components/CoreValue/Section';
 import useFetch from './hooks/useFetch';
 
@@ -21,6 +22,7 @@ const AboutPage = () => {
             mainDescription={state.data.aboutInfo.coreValue.mainDescription}
             coreValues={state.data.aboutInfo.coreValue.eachValues}
           />
+          <CirriculumSection />
         </Root>
       )}
       <Footer />
