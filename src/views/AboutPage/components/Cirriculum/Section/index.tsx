@@ -1,7 +1,12 @@
 import Flex from '@src/components/common/Flex';
+import { Part } from '@src/lib/types/universal';
 import SectionTitle from '../../common/SectionTitle';
 
-const CirriculumSection = () => {
+type CirriculumSectionProps = {
+  cirriculums: Record<Part, string>;
+};
+
+const CirriculumSection = ({ cirriculums }: CirriculumSectionProps) => {
   return (
     <Flex dir="column" gap={{ mobile: 60, tablet: 48, desktop: 24 }}>
       <SectionTitle>모집 파트 & 커리큘럼</SectionTitle>;

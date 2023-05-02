@@ -4,7 +4,7 @@ import { api } from '@src/lib/api';
 
 const useFetch = () => {
   const willFetch = useCallback(async () => {
-    const response = await api.aboutAPI.getAboutInfo(32);
+    const response = await api.aboutAPI.getAboutInfo();
     return response;
   }, []);
   const state = useFetchBase(willFetch);

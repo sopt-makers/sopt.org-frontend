@@ -22,7 +22,7 @@ const AboutPage = () => {
             mainDescription={state.data.aboutInfo.coreValue.mainDescription}
             coreValues={state.data.aboutInfo.coreValue.eachValues}
           />
-          <CirriculumSection />
+          <CirriculumSection cirriculums={state.data.aboutInfo.curriculums} />
         </Root>
       )}
       <Footer />

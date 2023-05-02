@@ -38,6 +38,6 @@ export interface GetAboutInfoResponse {
 }
 
 export interface AboutAPI {
-  getAboutInfo(generation: number): Promise<GetAboutInfoResponse>;
+  getAboutInfo(): Promise<GetAboutInfoResponse>;
   getMemberInfo(part?: Part): Promise<GetMembersInfoResponse>;
 }
