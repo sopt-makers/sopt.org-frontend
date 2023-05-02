@@ -42,12 +42,12 @@ const Root = styled.main`
 
   /* 태블릿 뷰 */
   @media (max-width: 1199px) and (min-width: 766px) {
-    width: 700px;
+    width: 667px;
     gap: 140px;
   }
   /* 모바일 뷰 */
   @media (max-width: 765.9px) {
-    width: 360px;
+    width: 332px;
     gap: 80px;
   }
 `;
