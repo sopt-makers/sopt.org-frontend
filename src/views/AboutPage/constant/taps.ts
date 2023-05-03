@@ -1,6 +1,6 @@
-import { ExtraTabType, Part, PartExtraType } from '@src/lib/types/universal';
+import { ExtraTabType, Part, PartExtraType, TabType } from '@src/lib/types/universal';
 
-export const tabs: ExtraTabType[] = [
+export const extraTabs: ExtraTabType[] = [
   {
     value: PartExtraType.ALL,
     label: '전체',
@@ -30,3 +30,5 @@ export const tabs: ExtraTabType[] = [
     label: 'Server',
   },
 ];
+
+export const tabs = extraTabs.slice(1) as TabType[];

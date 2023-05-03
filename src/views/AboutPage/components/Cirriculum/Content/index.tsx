@@ -14,7 +14,7 @@ const CirriculumContent = ({ cirriculums }: CirriculumContentProps) => {
 
   return (
     <Flex dir="column" gap={{ mobile: 18, tablet: 24, desktop: 48 }}>
-      <TabBar onTabClick={setCurrentPart} selectedTab={currentPart} />
+      <TabBar onTabClick={setCurrentPart} selectedTab={currentPart} includesExtra={false} />
       <St.ImageWrapper>
         <Image
           src={cirriculums[currentPart]}

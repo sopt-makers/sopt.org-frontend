@@ -1,22 +1,41 @@
-import { ExtraPart, ExtraTabType, Part } from '@src/lib/types/universal';
-import { TabType } from '@src/lib/types/universal';
-import { tabs } from '@src/views/AboutPage/constant/taps';
+import { ExtraPart, Part } from '@src/lib/types/universal';
+import { extraTabs, tabs } from '@src/views/AboutPage/constant/taps';
 import * as St from './style';
 
-type TabBarProps = {
+type TabBarPropsIncludedExtra = {
+  includesExtra: true;
   selectedTab: ExtraPart;
+  onTabClick(targetTab: ExtraPart): void;
+};
+type TabBarPropsNoExtra = {
+  includesExtra: false;
+  selectedTab: Part;
   onTabClick(targetTab: Part): void;
 };
+type TabBarProps = TabBarPropsIncludedExtra | TabBarPropsNoExtra;
 
-const TabBar = ({ onTabClick, selectedTab }: TabBarProps) => {
+const TabBar = ({ includesExtra, onTabClick, selectedTab }: TabBarProps) => {
+  if (includesExtra)
+    return (
+      <St.TabBar>
+        {extraTabs.map((tab) => (
+          <Tab
+            key={tab.value}
+            onClick={() => onTabClick(tab.value)}
+            label={tab.label}
+            selected={selectedTab === tab.value}
+          />
+        ))}
+      </St.TabBar>
+    );
+
   return (
     <St.TabBar>
-      {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
-      {(tabs as any).slice(1).map((tab: TabType) => (
+      {tabs.map((tab) => (
         <Tab
           key={tab.value}
           onClick={() => onTabClick(tab.value)}
-          tab={tab}
+          label={tab.label}
           selected={selectedTab === tab.value}
         />
       ))}
@@ -26,13 +45,13 @@ const TabBar = ({ onTabClick, selectedTab }: TabBarProps) => {
 
 type TabProps = {
   onClick(): void;
-  tab: ExtraTabType;
+  label: string;
   selected: boolean;
 };
 
-const Tab = ({ onClick, tab, selected }: TabProps) => (
+const Tab = ({ onClick, label, selected }: TabProps) => (
   <St.Tab selected={selected} onClick={onClick}>
-    {tab.label}
+    {label}
   </St.Tab>
 );
 
