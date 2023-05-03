@@ -1,15 +1,4 @@
-import { Part } from './universal';
-
-export enum ReviewTabExtraType {
-  ALL = 'ALL',
-}
-
-export type ReviewTabType = ReviewTabExtraType | Part;
-
-export type TabType = {
-  value: ReviewTabType;
-  label: string;
-};
+import { ExtraPart } from './universal';
 
 export type ReviewType = {
   id: number;
@@ -32,6 +21,6 @@ export type GetReviewsResponse = {
 };
 
 export interface ReviewAPI {
-  getReviews(tab: ReviewTabType, page: number): Promise<GetReviewsResponse>;
+  getReviews(tab: ExtraPart, page: number): Promise<GetReviewsResponse>;
   getSampleReviews(): Promise<GetSampleReviewsResponse>;
 }

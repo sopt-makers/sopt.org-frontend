@@ -2,10 +2,10 @@ import { useCallback, useEffect } from 'react';
 import useBooleanState from '@src/hooks/useBooleanState';
 import useStackedFetchBase from '@src/hooks/useStackedFetchBase';
 import { api } from '@src/lib/api';
-import { ReviewTabType } from '@src/lib/types/review';
+import { ExtraPart } from '@src/lib/types/universal';
 import useInfiniteScroll from './useInfiniteScroll';
 
-const useFetch = (selected: ReviewTabType) => {
+const useFetch = (selected: ExtraPart) => {
   const { ref, count, setCount } = useInfiniteScroll();
   const [canGetMoreReviews, setCanGetMoreReviews, setCanNotGetMoreReviews] = useBooleanState(true);
 

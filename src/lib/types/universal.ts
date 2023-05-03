@@ -16,3 +16,17 @@ export enum Part {
   WEB = 'WEB',
   SERVER = 'SERVER',
 }
+
+export enum PartExtraType {
+  ALL = 'ALL',
+}
+
+export type ExtraPart = PartExtraType | Part;
+
+type TapTypeOption<T> = {
+  value: T;
+  label: string;
+};
+
+export type TabType = TapTypeOption<Part>;
+export type ExtraTabType = TapTypeOption<ExtraPart>;

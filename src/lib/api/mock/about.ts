@@ -3,10 +3,11 @@ import { Part } from '@src/lib/types/universal';
 
 const BANNER_SRC = 'https://i.ibb.co/84ybMKQ/image-76.png';
 const SRC = 'https://avatars.githubusercontent.com/u/47105088?v=4';
+const SRC_MAIN = 'https://avatars.githubusercontent.com/u/48249505?v=4';
 
-const getAboutInfo = async (generation: number): Promise<GetAboutInfoResponse> => ({
+const getAboutInfo = async (): Promise<GetAboutInfoResponse> => ({
   aboutInfo: {
-    generation,
+    generation: 32,
     title: 'GO SOPT',
     bannerImage: BANNER_SRC,
     coreValue: {
@@ -31,11 +32,11 @@ const getAboutInfo = async (generation: number): Promise<GetAboutInfoResponse> =
       ],
     },
     curriculums: {
-      [Part.PLAN]: SRC,
-      [Part.DESIGN]: SRC,
-      [Part.ANDROID]: SRC,
-      [Part.IOS]: SRC,
-      [Part.SERVER]: SRC,
+      [Part.PLAN]: SRC_MAIN,
+      [Part.DESIGN]: BANNER_SRC,
+      [Part.ANDROID]: BANNER_SRC,
+      [Part.IOS]: BANNER_SRC,
+      [Part.SERVER]: BANNER_SRC,
       [Part.WEB]: SRC,
     },
     records: {
