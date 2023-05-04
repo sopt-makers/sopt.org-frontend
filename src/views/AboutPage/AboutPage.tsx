@@ -3,6 +3,7 @@ import { Footer, Header, Layout } from '@src/components';
 import Banner from './components/Banner';
 import CirriculumSection from './components/Cirriculum/Section';
 import CoreValueSection from './components/CoreValue/Section';
+import MemberSection from './components/Member/Section';
 import useFetch from './hooks/useFetch';
 
 const AboutPage = () => {
@@ -23,6 +24,7 @@ const AboutPage = () => {
             coreValues={state.data.aboutInfo.coreValue.eachValues}
           />
           <CirriculumSection cirriculums={state.data.aboutInfo.curriculums} />
+          <MemberSection generation={state.data.aboutInfo.generation} />
         </Root>
       )}
       <Footer />
