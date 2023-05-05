@@ -13,25 +13,26 @@ const AboutPage = () => {
   return (
     <Layout>
       <Header />
-      {state._TAG === 'OK' && (
-        <Root>
-          <Banner
-            imageSrc={state.data.aboutInfo.bannerImage}
-            generation={state.data.aboutInfo.generation}
-            title={state.data.aboutInfo.title}
-          />
-          <CoreValueSection
-            mainDescription={state.data.aboutInfo.coreValue.mainDescription}
-            coreValues={state.data.aboutInfo.coreValue.eachValues}
-          />
-          <CirriculumSection cirriculums={state.data.aboutInfo.curriculums} />
-          <RecordSection
-            generation={state.data.aboutInfo.generation}
-            records={state.data.aboutInfo.records}
-          />
-          <MemberSection generation={state.data.aboutInfo.generation} />
-        </Root>
-      )}
+      <Root>
+        {state._TAG === 'OK' && (
+          <>
+            <Banner
+              imageSrc={state.data.aboutInfo.bannerImage}
+              title={state.data.aboutInfo.title}
+            />
+            <CoreValueSection
+              mainDescription={state.data.aboutInfo.coreValue.mainDescription}
+              coreValues={state.data.aboutInfo.coreValue.eachValues}
+            />
+            <CirriculumSection cirriculums={state.data.aboutInfo.curriculums} />
+            <RecordSection
+              generation={state.data.aboutInfo.generation}
+              records={state.data.aboutInfo.records}
+            />
+            <MemberSection generation={state.data.aboutInfo.generation} />
+          </>
+        )}
+      </Root>
       <Footer />
     </Layout>
   );

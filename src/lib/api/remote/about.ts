@@ -10,33 +10,38 @@ import {
   StudyResponseDto,
 } from '@src/lib/types/dto';
 import { Part } from '@src/lib/types/universal';
+import { BASE_URL, DEFAULT_TIMEOUT } from '@src/utils/const/client';
 import axios from 'axios';
 import qs from 'qs';
 
+const client = axios.create({
+  baseURL: BASE_URL,
+  timeout: DEFAULT_TIMEOUT,
+});
+
 const getAboutInfo = async (): Promise<GetAboutInfoResponse> => {
-  const { data: generations } = await axios.get<number[]>('aboutsopt/published-ids');
-  const { data } = await axios.get(`/aboutsopt/semester/${generations[0]}`);
+  const { data } = await client.get('/aboutsopt');
 
   return {
     aboutInfo: {
-      generation: generations[0],
-      title: data.title,
-      bannerImage: data.bannerImage,
+      generation: data.aboutSopt.id,
+      title: data.aboutSopt.title,
+      bannerImage: data.aboutSopt.bannerImage,
       coreValue: {
-        mainDescription: data.coreDescription,
-        eachValues: data.coreValues.map((coreValue: CoreValueResponseDto) => ({
+        mainDescription: data.aboutSopt.coreDescription,
+        eachValues: data.aboutSopt.coreValues.map((coreValue: CoreValueResponseDto) => ({
           title: coreValue.title,
           description: coreValue.subTitle,
           src: coreValue.imageUrl,
         })),
       },
       curriculums: {
-        [Part.PLAN]: data.planCurriculum,
-        [Part.DESIGN]: data.designCurriculum,
-        [Part.ANDROID]: data.androidCurriculum,
-        [Part.IOS]: data.iosCurriculum,
-        [Part.SERVER]: data.serverCurriculum,
-        [Part.WEB]: data.webCurriculum,
+        [Part.PLAN]: data.aboutSopt.planCurriculum,
+        [Part.DESIGN]: data.aboutSopt.designCurriculum,
+        [Part.ANDROID]: data.aboutSopt.androidCurriculum,
+        [Part.IOS]: data.aboutSopt.iosCurriculum,
+        [Part.SERVER]: data.aboutSopt.serverCurriculum,
+        [Part.WEB]: data.aboutSopt.webCurriculum,
       },
       records: {
         memberCount: data.activitiesRecords.activitiesMemberCount,
@@ -79,16 +84,17 @@ const getMemberInfoParams = (part?: Part): { filter?: number; generation: number
 
 const getMemberInfo = async (part?: Part): Promise<GetMembersInfoResponse> => {
   const parameter = qs.stringify(getMemberInfoParams(part));
+
   const {
     data: { members },
-  } = await axios.get<{ members: MemberResponseDto[] }>(`/member?${parameter}`);
+  } = await client.get<{ members: MemberResponseDto[] }>(`/member?${parameter}`);
 
   return {
     members: members.map((member) => ({
-      name: member.name,
-      description: member.introduction,
-      part: member.part,
-      src: member.profileImage,
+      name: member.name ?? '-',
+      description: member.introduction ?? '-',
+      part: member.part ?? '-',
+      src: member.profileImage ?? '',
     })),
   };
 };
@@ -102,9 +108,8 @@ const parseServerPartsToClientParts = (_part: Parts): Part => {
 };
 
 const getStudyInfo = async (): Promise<GetStudyInfoResponse> => {
-  const { data } = await axios.get<StudyResponseDto[]>('/study');
+  const { data } = await client.get<StudyResponseDto[]>('/study');
 
-  // TODO :: hasNextPage property 개발 요청
   return {
     studies: data.map((study: StudyResponseDto) => ({
       id: study.id,

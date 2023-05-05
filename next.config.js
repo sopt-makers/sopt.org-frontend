@@ -8,6 +8,7 @@ const nextConfig = {
     domains: [
       'sopt-makers.s3.ap-northeast-2.amazonaws.com',
       's3.ap-northeast-2.amazonaws.com',
+      'makers-web-img.s3.ap-northeast-2.amazonaws.com',
       'user-images.githubusercontent.com',
       'avatars.githubusercontent.com',
       'i.ibb.co',
