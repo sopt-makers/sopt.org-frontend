@@ -13,3 +13,14 @@ export const CardContainer = styled.div`
     gap: 10px;
   }
 `;
+
+export const OvalSpinnerWrapper = styled.div`
+  width: 100%;
+  height: 100vh;
+
+  padding-top: 200px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
