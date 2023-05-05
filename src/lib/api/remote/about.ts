@@ -52,34 +52,23 @@ const getAboutInfo = async (): Promise<GetAboutInfoResponse> => {
   };
 };
 
+const partToFilterParam: Record<Part, number> = {
+  PLAN: 1,
+  DESIGN: 2,
+  WEB: 3,
+  SERVER: 4,
+  ANDROID: 5,
+  iOS: 6,
+};
+
 const getMemberInfoParams = (part?: Part): { filter?: number; generation: number } => {
   const generation = 32;
-  let filter = null;
 
-  switch (part) {
-    case Part.PLAN:
-      filter = 1;
-      break;
-    case Part.DESIGN:
-      filter = 2;
-      break;
-    case Part.WEB:
-      filter = 3;
-      break;
-    case Part.SERVER:
-      filter = 4;
-      break;
-    case Part.ANDROID:
-      filter = 5;
-      break;
-    case Part.IOS:
-      filter = 6;
-      break;
-    default:
-      break;
-  }
+  if (!part) return { generation };
 
-  return filter ? { filter, generation } : { generation };
+  const filter = partToFilterParam[part];
+
+  return { filter, generation };
 };
 
 const getMemberInfo = async (part?: Part): Promise<GetMembersInfoResponse> => {
