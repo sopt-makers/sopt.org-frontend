@@ -3,19 +3,16 @@ import * as St from './style';
 
 interface BannerProps {
   imageSrc: string;
-  generation: number;
   title: string;
 }
 
 const Banner = (props: BannerProps) => {
-  const { imageSrc, generation, title } = props;
+  const { imageSrc, title } = props;
 
   return (
     <St.ImageWrapper>
-      <Image src={imageSrc} alt="" fill style={{ objectFit: 'cover' }} />
-      <St.HeadTitle>
-        {generation}기 {title} 소개
-      </St.HeadTitle>
+      <Image src={imageSrc} alt="" fill style={{ objectFit: 'cover' }} priority />
+      <St.HeadTitle>{title}</St.HeadTitle>
     </St.ImageWrapper>
   );
 };
