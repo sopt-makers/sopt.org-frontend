@@ -11,7 +11,7 @@ const Banner = (props: BannerProps) => {
 
   return (
     <St.ImageWrapper>
-      <Image src={imageSrc} alt="" fill style={{ objectFit: 'cover' }} />
+      <Image src={imageSrc} alt="" fill style={{ objectFit: 'cover' }} priority />
       <St.HeadTitle>{title}</St.HeadTitle>
     </St.ImageWrapper>
   );
