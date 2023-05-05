@@ -1,4 +1,8 @@
-import { GetAboutInfoResponse, GetMembersInfoResponse } from '@src/lib/types/about';
+import {
+  GetAboutInfoResponse,
+  GetMembersInfoResponse,
+  GetStudyInfoResponse,
+} from '@src/lib/types/about';
 import { Part } from '@src/lib/types/universal';
 
 const BANNER_SRC = 'https://i.ibb.co/84ybMKQ/image-76.png';
@@ -60,7 +64,22 @@ const getMemberInfo = async (part?: Part): Promise<GetMembersInfoResponse> => ({
   ).flat(),
 });
 
+const getStudyInfo = async (): Promise<GetStudyInfoResponse> => ({
+  studies: Array.from({ length: 23 }, (idx: number) => ({
+    id: idx,
+    generation: 30,
+    joinableParts: [Part.ANDROID, Part.PLAN],
+    title: '안드러와',
+    src: SRC,
+    startDate: new Date('2022-01-01'),
+    endDate: new Date('2022-08-01'),
+    membersCount: 40,
+  })),
+  hasNextPage: true,
+});
+
 export const mockAboutAPI = {
   getAboutInfo,
   getMemberInfo,
+  getStudyInfo,
 };

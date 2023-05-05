@@ -4,6 +4,7 @@ import Banner from './components/Banner';
 import CirriculumSection from './components/Cirriculum/Section';
 import CoreValueSection from './components/CoreValue/Section';
 import MemberSection from './components/Member/Section';
+import RecordSection from './components/Record/Section';
 import useFetch from './hooks/useFetch';
 
 const AboutPage = () => {
@@ -24,6 +25,10 @@ const AboutPage = () => {
             coreValues={state.data.aboutInfo.coreValue.eachValues}
           />
           <CirriculumSection cirriculums={state.data.aboutInfo.curriculums} />
+          <RecordSection
+            generation={state.data.aboutInfo.generation}
+            records={state.data.aboutInfo.records}
+          />
           <MemberSection generation={state.data.aboutInfo.generation} />
         </Root>
       )}
