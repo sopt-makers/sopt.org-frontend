@@ -76,10 +76,10 @@ const getMemberInfo = async (part?: Part): Promise<GetMembersInfoResponse> => {
 
   return {
     members: members.map((member) => ({
-      name: member.name ?? '-',
-      description: member.introduction ?? '-',
-      part: member.part ?? '-',
-      src: member.profileImage ?? '',
+      name: member.name,
+      description: member.introduction,
+      part: member.part,
+      src: member.profileImage,
     })),
   };
 };

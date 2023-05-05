@@ -7,10 +7,10 @@ export interface CoreValueType {
 }
 
 export interface MemberType {
-  name: string;
-  description: string;
-  part: string;
-  src: string;
+  name?: string;
+  description?: string;
+  part?: string;
+  src?: string;
 }
 
 export interface AboutInfoType {
