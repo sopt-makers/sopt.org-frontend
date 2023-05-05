@@ -1,3 +1,10 @@
+export type CoreValueResponseDto = {
+  id: number;
+  title: string;
+  subTitle: string;
+  imageUrl: string;
+};
+
 export type MemberResponseDto = {
   id: number;
   name: string;
