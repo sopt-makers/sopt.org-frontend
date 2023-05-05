@@ -3,9 +3,56 @@ import {
   GetMembersInfoResponse,
   GetStudyInfoResponse,
 } from '@src/lib/types/about';
-import { Parts, StudyResponseDto } from '@src/lib/types/dto';
+import { MemberResponseDto, Parts, StudyResponseDto } from '@src/lib/types/dto';
 import { Part } from '@src/lib/types/universal';
 import axios from 'axios';
+import qs from 'qs';
+
+const getMemberInfoParams = (part?: Part): { filter?: number; generation: number } => {
+  const generation = 32;
+  let filter = null;
+
+  switch (part) {
+    case Part.PLAN:
+      filter = 1;
+      break;
+    case Part.DESIGN:
+      filter = 2;
+      break;
+    case Part.WEB:
+      filter = 3;
+      break;
+    case Part.SERVER:
+      filter = 4;
+      break;
+    case Part.ANDROID:
+      filter = 5;
+      break;
+    case Part.IOS:
+      filter = 6;
+      break;
+    default:
+      break;
+  }
+
+  return filter ? { filter, generation } : { generation };
+};
+
+const getMemberInfo = async (part?: Part): Promise<GetMembersInfoResponse> => {
+  const parameter = qs.stringify(getMemberInfoParams(part));
+  const {
+    data: { members },
+  } = await axios.get<{ members: MemberResponseDto[] }>(`/member?${parameter}`);
+
+  return {
+    members: members.map((member) => ({
+      name: member.name,
+      description: member.introduction,
+      part: member.part,
+      src: member.profileImage,
+    })),
+  };
+};
 
 const parseServerPartsToClientParts = (_part: Parts): Part => {
   let returnPart: string = _part;
@@ -37,5 +84,6 @@ const getStudyInfo = async (): Promise<GetStudyInfoResponse> => {
 };
 
 export const remoteAboutAPI = {
+  getMemberInfo,
   getStudyInfo,
 };

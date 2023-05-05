@@ -1,3 +1,12 @@
+export type MemberResponseDto = {
+  id: number;
+  name: string;
+  profileImage: string;
+  introduction: string;
+  part: string;
+  generation: number;
+};
+
 export enum Parts {
   PM = 'PM',
   DESIGN = 'DESIGN',
