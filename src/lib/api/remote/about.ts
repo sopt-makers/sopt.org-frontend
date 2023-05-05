@@ -3,14 +3,10 @@ import {
   GetMembersInfoResponse,
   GetStudyInfoResponse,
 } from '@src/lib/types/about';
-import {
-  CoreValueResponseDto,
-  MemberResponseDto,
-  Parts,
-  StudyResponseDto,
-} from '@src/lib/types/dto';
+import { CoreValueResponseDto, MemberResponseDto, StudyResponseDto } from '@src/lib/types/dto';
 import { Part } from '@src/lib/types/universal';
 import { BASE_URL, DEFAULT_TIMEOUT } from '@src/utils/const/client';
+import { parseStringToPart } from '@src/utils/parseStringToPart';
 import axios from 'axios';
 import qs from 'qs';
 
@@ -88,14 +84,6 @@ const getMemberInfo = async (part?: Part): Promise<GetMembersInfoResponse> => {
   };
 };
 
-const parseServerPartsToClientParts = (_part: Parts): Part => {
-  let returnPart: string = _part;
-  if (returnPart === Parts.IOS) {
-    returnPart = Part.IOS;
-  }
-  return returnPart as Part;
-};
-
 const getStudyInfo = async (): Promise<GetStudyInfoResponse> => {
   const { data } = await client.get<StudyResponseDto[]>('/study');
 
@@ -103,7 +91,7 @@ const getStudyInfo = async (): Promise<GetStudyInfoResponse> => {
     studies: data.map((study: StudyResponseDto) => ({
       id: study.id,
       generation: study.generation,
-      joinableParts: study.parts.map((part) => parseServerPartsToClientParts(part)),
+      joinableParts: study.parts.map((part) => parseStringToPart(part)),
       title: study.title,
       src: study.imageUrl,
       startDate: study.startDate,

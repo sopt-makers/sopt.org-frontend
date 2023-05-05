@@ -14,19 +14,10 @@ export type MemberResponseDto = {
   generation: number;
 };
 
-export enum Parts {
-  PM = 'PM',
-  DESIGN = 'DESIGN',
-  IOS = 'IOS',
-  ANDROID = 'ANDROID',
-  SERVER = 'SERVER',
-  WEB = 'WEB',
-}
-
 export type StudyResponseDto = {
   id: number;
   generation: number;
-  parts: Parts[];
+  parts: string[];
   title: string;
   imageUrl: string;
   startDate: Date;
