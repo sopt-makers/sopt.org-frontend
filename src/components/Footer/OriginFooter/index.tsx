@@ -26,7 +26,7 @@ const OriginFooter: FC = () => {
           </St.CopyrightText>
         </div>
         <St.ChannelsWrap>
-          {<St.ChannelTitleText>SOPT 채널 바로가기</St.ChannelTitleText>}
+          <St.ChannelTitleText>SOPT 채널 바로가기</St.ChannelTitleText>
           <Channels isFooter={true} />
         </St.ChannelsWrap>
       </St.ContentWrap>
