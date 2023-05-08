@@ -12,7 +12,7 @@ type StudyItemProps = {
 
 const StudyItem = (props: StudyItemProps) => {
   return (
-    <Flex dir="column" gap={{ desktop: 24, tablet: 24, mobile: 15 }}>
+    <Flex dir="column" gap={{ desktop: 20, tablet: 24, mobile: 14 }}>
       <St.CardWrapper>
         <Image src={props.study.src} alt={props.study.title} fill />
         <Flex dir="row" gap={6} style={{ position: 'relative' }}>
