@@ -41,6 +41,9 @@ export const Tab = styled.li<{ selected: boolean }>`
   align-items: center;
 
   cursor: pointer;
+  &:hover {
+    color: #ffffff;
+  }
   ${({ selected }) =>
     selected &&
     css`
