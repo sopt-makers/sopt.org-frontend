@@ -15,7 +15,7 @@ const StudyItem = (props: StudyItemProps) => {
     <Flex dir="column" gap={{ desktop: 20, tablet: 24, mobile: 14 }}>
       <St.CardWrapper>
         <Image src={props.study.src} alt={props.study.title} fill />
-        <Flex dir="row" gap={6} style={{ position: 'relative' }}>
+        <Flex dir="row" gap={6} style={{ position: 'relative', flexWrap: 'wrap' }}>
           <St.ChipHighlighted>{props.study.generation}기</St.ChipHighlighted>
           {props.study.joinableParts.map((part) => (
             <St.ChipNormal key={part}>{parsePartToKorean(part)}</St.ChipNormal>
