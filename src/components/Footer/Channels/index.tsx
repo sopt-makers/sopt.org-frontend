@@ -57,19 +57,19 @@ function Channels({ isFooter = false }: ChannelsProps) {
         onClick={handleClick}
       />
       <S.ClickableChannelButton
-        src={kakaoLogo}
-        width={30}
-        height={30}
-        id="kakao"
-        alt="kakao"
-        onClick={handleClick}
-      />
-      <S.ClickableChannelButton
         src={youtubeLogo}
         width={30}
         height={30}
         id="youtube"
         alt="youtube"
+        onClick={handleClick}
+      />
+      <S.ClickableChannelButton
+        src={kakaoLogo}
+        width={30}
+        height={30}
+        id="kakao"
+        alt="kakao"
         onClick={handleClick}
       />
     </S.ChannelButtonsWrap>
