@@ -18,7 +18,7 @@ export const CardWrapper = styled.div`
 export const DescriptionWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 8px;
   /* 모바일 뷰 */
   @media (max-width: 765.9px) {
     padding: 0 10px;
@@ -78,6 +78,7 @@ export const Title = styled.div`
   color: white;
   font-size: 26px;
   letter-spacing: -1%;
+  line-height: 130%;
 
   /* 모바일 뷰 */
   @media (max-width: 765.9px) {

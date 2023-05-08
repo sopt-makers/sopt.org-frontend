@@ -2,11 +2,9 @@ import { useRouter } from 'next/router';
 import { FC } from 'react';
 import { ReactComponent as ArrowRight } from '@src/assets/icons/arrow-right-16x16.svg';
 import Channels from '@src/components/Footer/Channels';
-import { useIsDesktop } from '@src/hooks/useDevice';
 import * as St from './style';
 
 const OriginFooter: FC = () => {
-  const isDesktop = useIsDesktop();
   const router = useRouter();
 
   const handleClick = () => {
@@ -28,7 +26,7 @@ const OriginFooter: FC = () => {
           </St.CopyrightText>
         </div>
         <St.ChannelsWrap>
-          {isDesktop && <St.ChannelTitleText>SOPT 채널 바로가기</St.ChannelTitleText>}
+          <St.ChannelTitleText>SOPT 채널 바로가기</St.ChannelTitleText>
           <Channels isFooter={true} />
         </St.ChannelsWrap>
       </St.ContentWrap>

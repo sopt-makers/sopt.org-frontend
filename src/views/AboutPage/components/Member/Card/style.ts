@@ -2,8 +2,6 @@ import styled from '@emotion/styled';
 import { textSingularLineEllipsis } from '@src/styles/textEllipsis';
 
 export const Card = styled.article`
-  ${textSingularLineEllipsis}
-
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -52,6 +50,10 @@ export const ImageWrapper = styled.div`
 `;
 
 export const Name = styled.strong`
+  ${textSingularLineEllipsis}
+  width: 100%;
+  text-align: center;
+
   margin-top: 24px;
 
   font-weight: 700;
@@ -75,6 +77,11 @@ export const Name = styled.strong`
 `;
 
 export const Desc = styled.p`
+  ${textSingularLineEllipsis}
+  width: 100%;
+  height: 26px;
+  text-align: center;
+
   margin-top: 8px;
   font-size: 18px;
   line-height: 26px;
@@ -88,6 +95,9 @@ export const Desc = styled.p`
 `;
 
 export const Part = styled.div`
+  ${textSingularLineEllipsis}
+  width: 100%;
+
   display: flex;
   justify-content: center;
   align-items: center;

@@ -17,14 +17,8 @@ const MemberContent = () => {
       <TabBar onTabClick={setCurrentPart} selectedTab={currentPart} includesExtra={true} />
       <St.CardContainer>
         {state._TAG === 'OK' ? (
-          state.data.members.map((member, idx) => (
-            <MemberCard
-              key={`${member.name}-${idx}`}
-              imgSrc={member.src}
-              name={member.name}
-              description={member.description}
-              part={member.part}
-            />
+          state.data.members.map(({ id, name, src, description, part }) => (
+            <MemberCard key={id} imgSrc={src} name={name} description={description} part={part} />
           ))
         ) : (
           <St.OvalSpinnerWrapper>
