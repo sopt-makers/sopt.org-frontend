@@ -75,13 +75,15 @@ const getMemberInfo = async (part?: Part): Promise<GetMembersInfoResponse> => {
   } = await client.get<{ members: MemberResponseDto[] }>(`/member?${parameter}`);
 
   return {
-    members: members.map((member) => ({
-      id: member.id,
-      name: member.name,
-      description: member.introduction,
-      part: member.part,
-      src: member.profileImage,
-    })),
+    members: members
+      .filter((member) => member.name && member.part)
+      .map((member) => ({
+        id: member.id,
+        name: member.name,
+        description: member.introduction,
+        part: member.part,
+        src: member.profileImage,
+      })),
   };
 };
 

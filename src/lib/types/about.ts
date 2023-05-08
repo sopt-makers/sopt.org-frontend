@@ -8,9 +8,9 @@ export interface CoreValueType {
 
 export interface MemberType {
   id: number;
-  name?: string;
+  name: string;
   description?: string;
-  part?: string;
+  part: string;
   src?: string;
 }
 
