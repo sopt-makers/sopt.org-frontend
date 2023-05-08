@@ -76,6 +76,7 @@ const getMemberInfo = async (part?: Part): Promise<GetMembersInfoResponse> => {
 
   return {
     members: members.map((member) => ({
+      id: member.id,
       name: member.name,
       description: member.introduction,
       part: member.part,
