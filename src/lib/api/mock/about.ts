@@ -55,6 +55,7 @@ const getMemberInfo = async (part?: Part): Promise<GetMembersInfoResponse> => ({
   members: Array.from({ length: 12 }, () =>
     (part ? [part] : [Part.PLAN, Part.ANDROID, Part.DESIGN, Part.IOS, Part.SERVER, Part.WEB]).map(
       (part) => ({
+        id: Math.floor(Math.random() * 200),
         name: '이주함',
         description: `2023년 현존하는 최고의 ${part}`,
         part,
