@@ -13,7 +13,7 @@ const MemberCard = ({ imgSrc, name, description, part }: MeberCardProps) => {
     <St.Card>
       <St.ImageWrapper>{imgSrc && <Image src={imgSrc} alt={name} fill />}</St.ImageWrapper>
       <St.Name>{name}</St.Name>
-      <St.Desc>{description ?? '-'}</St.Desc>
+      <St.Desc>{description ?? ' '}</St.Desc>
       <St.Part>{part}</St.Part>
     </St.Card>
   );
