@@ -8,13 +8,13 @@ export const dateFormat = (date: string) => {
 export const formatDate = (date: Date, format: 'yyyymmdd' | 'mmdd'): string => {
   switch (format) {
     case 'yyyymmdd':
-      return date.toLocaleDateString('en-US', {
+      return date.toLocaleDateString('ja-JP', {
         year: 'numeric',
         month: '2-digit',
         day: '2-digit',
       });
     case 'mmdd':
-      return date.toLocaleDateString('en-US', { month: '2-digit', day: '2-digit' });
+      return date.toLocaleDateString('ja-JP', { month: '2-digit', day: '2-digit' });
     default:
       return date.toLocaleDateString();
   }
