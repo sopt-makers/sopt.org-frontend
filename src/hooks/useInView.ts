@@ -1,13 +1,16 @@
 import { useCallback, useEffect, useState } from 'react';
 
 function useInView(element: React.RefObject<HTMLElement>, padding = 0) {
-  const [isInView, setIsInView] = useState(false);
-  const onScroll = useCallback(() => {
+  const getIsInView = useCallback(() => {
     const windowHeight = window.innerHeight;
     const elementTop = element.current?.getBoundingClientRect().top ?? 0;
-
-    setIsInView(elementTop > padding && elementTop < windowHeight - padding);
+    return elementTop > padding && elementTop < windowHeight - padding;
   }, [element, padding]);
+  const [isInView, setIsInView] = useState(getIsInView());
+
+  const onScroll = useCallback(() => {
+    setIsInView(getIsInView());
+  }, [getIsInView]);
 
   useEffect(() => {
     window.addEventListener('scroll', onScroll);
