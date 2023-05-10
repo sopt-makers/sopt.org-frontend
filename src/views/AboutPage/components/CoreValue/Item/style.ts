@@ -17,6 +17,11 @@ export const ItemContainer = styled.div<{ src: string }>`
   @media (max-width: 765.9px) {
     height: 330px;
   }
+  /* 모바일 뷰 */
+  @media (max-width: 440px) {
+    width: 332px;
+    height: 332px;
+  }
 `;
 
 export type BlurStrengthType = 'none' | 'small' | 'medium' | 'strong';
