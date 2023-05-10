@@ -96,7 +96,7 @@ export const Desc = styled.p`
 
 export const Part = styled.div`
   ${textSingularLineEllipsis}
-  width: 100%;
+  max-width: 100%;
 
   display: flex;
   justify-content: center;
