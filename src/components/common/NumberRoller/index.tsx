@@ -14,7 +14,6 @@ const NumberRoller = ({ goalNumber, rollRange = 50 }: NumberRollerProps) => {
   useEffect(() => {
     const timerIntervalId = setInterval(() => {
       if (isInView) {
-        console.log({ isInView });
         setNumber((n) => {
           if (n >= goalNumber) {
             clearInterval(timerIntervalId);
