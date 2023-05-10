@@ -1,13 +1,19 @@
 import styled from '@emotion/styled';
+import { FadeInDown } from '@src/lib/styles/animation';
 
-export const ItemContainer = styled.div<{ src: string }>`
+export const ItemContainer = styled.div<{ src: string; isInView: boolean; order: number }>`
   color: white;
   position: relative;
   width: 380px;
   height: 380px;
   background-image: url(${({ src }) => src});
   background-size: 100%;
+  opacity: 0;
   cursor: default;
+  ${FadeInDown(50)}
+  animation: fadeindown 0.6s forwards;
+  animation-play-state: ${({ isInView }) => (isInView ? 'running' : 'paused')};
+  animation-delay: ${({ order }) => `${order * 0.2}s`};
 
   /* 태블릿 뷰 */
   @media (max-width: 1199px) and (min-width: 766px) {

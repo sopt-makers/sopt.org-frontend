@@ -12,8 +12,8 @@ const CoreValueList = ({ coreValues }: CoreValueListProps) => {
       dir={{ mobile: 'column', tablet: 'row', desktop: 'row' }}
       gap={{ mobile: 20, tablet: 20, desktop: 30 }}
     >
-      {coreValues.map((coreValue) => (
-        <CoreValueItem coreValue={coreValue} key={coreValue.title} />
+      {coreValues.map((coreValue, idx) => (
+        <CoreValueItem order={idx} coreValue={coreValue} key={coreValue.title} />
       ))}
     </Flex>
   );

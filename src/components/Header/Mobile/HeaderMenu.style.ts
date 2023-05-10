@@ -32,7 +32,7 @@ export const Root = styled.div<RootProps>`
     switch (props.isMenuShown) {
       case 'open':
         return css`
-          ${FadeInDown}
+          ${FadeInDown()}
           animation: fadeindown 0.6s;
           -moz-animation: fadeindown 0.6s; /* Firefox */
           -webkit-animation: fadeindown 0.6s; /* Safari and Chrome */
