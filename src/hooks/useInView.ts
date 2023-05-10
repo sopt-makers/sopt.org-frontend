@@ -1,8 +1,9 @@
 import { useCallback, useEffect, useState } from 'react';
+import { getWindowHeight } from '@src/utils/platform';
 
 function useInView(element: React.RefObject<HTMLElement>, padding = 0) {
   const getIsInView = useCallback(() => {
-    const windowHeight = window.innerHeight;
+    const windowHeight = getWindowHeight();
     const elementTop = element.current?.getBoundingClientRect().top ?? 0;
     return elementTop > padding && elementTop < windowHeight - padding;
   }, [element, padding]);
