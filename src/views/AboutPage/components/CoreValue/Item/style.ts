@@ -62,6 +62,7 @@ export const CoreValueSub = styled.div<{ isHovered: boolean }>`
   color: rgba(#ffffff, 70%);
   transition: 0.3s;
   white-space: pre-line;
+  word-break: keep-all;
 
   /* 데스크탑 뷰 */
   @media (min-width: 1200px) {
