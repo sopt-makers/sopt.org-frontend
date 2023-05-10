@@ -37,13 +37,16 @@ export const Count = styled.div`
   font-weight: 600;
   font-size: 45px;
   color: white;
+  line-height: 60px;
   /* 태블릿 뷰 */
   @media (max-width: 1199px) and (min-width: 766px) {
     font-size: 28px;
+    line-height: 40px;
   }
   /* 모바일 뷰 */
   @media (max-width: 765.9px) {
     font-size: 18px;
+    line-height: 18px;
   }
 
   &::after {
@@ -55,19 +58,19 @@ export const Count = styled.div`
     background-color: #787878;
     width: 32px;
     height: 40px;
-    margin-top: 2px;
+    margin-top: 9px;
 
     /* 태블릿 뷰 */
     @media (max-width: 1199px) and (min-width: 766px) {
       width: 16px;
       height: 20px;
-      margin-top: 4px;
+      margin-top: 9px;
     }
     /* 모바일 뷰 */
     @media (max-width: 765.9px) {
       width: 12px;
       height: 15px;
-      margin-top: 0;
+      margin-top: 1px;
     }
   }
 `;
