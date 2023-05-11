@@ -11,21 +11,12 @@ const NumberRoller = ({ goalNumber, rollRange = 50 }: NumberRollerProps) => {
   const { isInView, ref: wrapperRef } = useInView();
 
   useEffect(() => {
-    const timerIntervalId = setInterval(() => {
-      if (isInView) {
-        setNumber((n) => {
-          if (n >= goalNumber) {
-            clearInterval(timerIntervalId);
-            return n;
-          }
-          return n + 1;
-        });
-      }
-    }, 100);
-    return () => {
-      clearInterval(timerIntervalId);
-    };
-  }, [goalNumber, isInView]);
+    if (isInView && number < goalNumber) {
+      setTimeout(() => {
+        setNumber((n) => n + 1);
+      }, 100);
+    }
+  }, [goalNumber, isInView, number]);
 
   return <span ref={wrapperRef}>{number}</span>;
 };
