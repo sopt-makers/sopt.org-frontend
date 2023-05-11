@@ -1,13 +1,19 @@
 import styled from '@emotion/styled';
+import { FadeInDown } from '@src/lib/styles/animation';
 
-export const ItemContainer = styled.div<{ src: string }>`
+export const ItemContainer = styled.div<{ src: string; isInView: boolean; order: number }>`
   color: white;
   position: relative;
   width: 380px;
   height: 380px;
   background-image: url(${({ src }) => src});
   background-size: 100%;
+  opacity: 0;
   cursor: default;
+  ${FadeInDown(50)}
+  animation: fadeindown 0.6s forwards;
+  animation-play-state: ${({ isInView }) => (isInView ? 'running' : 'paused')};
+  animation-delay: ${({ order }) => `${order * 0.2}s`};
 
   /* 태블릿 뷰 */
   @media (max-width: 1199px) and (min-width: 766px) {
@@ -15,7 +21,8 @@ export const ItemContainer = styled.div<{ src: string }>`
   }
   /* 모바일 뷰 */
   @media (max-width: 765.9px) {
-    height: 330px;
+    width: 332px;
+    height: 332px;
   }
 `;
 
@@ -62,6 +69,7 @@ export const CoreValueSub = styled.div<{ isHovered: boolean }>`
   color: rgba(#ffffff, 70%);
   transition: 0.3s;
   white-space: pre-line;
+  word-break: keep-all;
 
   /* 데스크탑 뷰 */
   @media (min-width: 1200px) {

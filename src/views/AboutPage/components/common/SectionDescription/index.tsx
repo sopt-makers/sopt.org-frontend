@@ -11,6 +11,7 @@ const Div = styled.div`
   letter-spacing: 0%;
   color: #ffffff;
   white-space: pre-line;
+  word-break: keep-all;
   /* 태블릿 뷰 */
   @media (max-width: 1199px) and (min-width: 766px) {
     font-size: 18px;
@@ -21,6 +22,7 @@ const Div = styled.div`
   @media (max-width: 765.9px) {
     font-size: 16px;
     line-height: 150%;
+    text-align: center;
   }
 `;
 
