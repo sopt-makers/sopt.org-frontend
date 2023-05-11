@@ -1,4 +1,4 @@
-import { useMemo, useRef, useState } from 'react';
+import { useMemo, useState } from 'react';
 import Flex from '@src/components/common/Flex';
 import { useIsDesktop, useIsMobile, useIsTablet } from '@src/hooks/useDevice';
 import useInView from '@src/hooks/useInView';
@@ -31,8 +31,7 @@ const CoreValueItem = ({ coreValue, order }: CoreValueProps) => {
   const isMobile = useIsMobile('765.9px');
   const [isHovered, setIsHovered] = useState(false);
 
-  const wrapperRef = useRef<HTMLDivElement>(null);
-  const { isInView } = useInView(wrapperRef, 20);
+  const { isInView, ref: wrapperRef } = useInView();
 
   const blurStrength = useMemo(
     () => getBackgroundBlurStrength(isDesktop, isTablet, isMobile, isHovered),

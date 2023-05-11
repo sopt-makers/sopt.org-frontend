@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import useInView from '@src/hooks/useInView';
 
 type NumberRollerProps = {
@@ -8,8 +8,7 @@ type NumberRollerProps = {
 
 const NumberRoller = ({ goalNumber, rollRange = 50 }: NumberRollerProps) => {
   const [number, setNumber] = useState(Math.max(goalNumber - rollRange, 0));
-  const wrapperRef = useRef<HTMLSpanElement>(null);
-  const { isInView } = useInView(wrapperRef, -20);
+  const { isInView, ref: wrapperRef } = useInView();
 
   useEffect(() => {
     const timerIntervalId = setInterval(() => {
