@@ -9,13 +9,15 @@ const useFetch = (selected: ExtraPart) => {
   const { ref, count, setCount } = useInfiniteScroll();
   const [canGetMoreReviews, setCanGetMoreReviews, setCanNotGetMoreReviews] = useBooleanState(true);
 
-  // initialize
   useEffect(() => {
-    return () => {
+    function initializeStates() {
       setCount(1);
       setCanGetMoreReviews();
+    }
+    return () => {
+      initializeStates();
     };
-  }, [selected, setCount, setCanGetMoreReviews]);
+  }, [selected, setCanGetMoreReviews, setCount]);
 
   const willFetch = useCallback(async () => {
     setCanNotGetMoreReviews();
