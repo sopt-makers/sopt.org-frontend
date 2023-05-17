@@ -1,18 +1,9 @@
 import { useEffect, useState } from 'react';
 import { ReactComponent as UpArrow } from '@src/assets/icons/upArrow.svg';
+import { debounce } from '@src/utils/debounce';
 import cc from 'classcat';
 import styles from './scroll-to-top-button.module.scss';
 
-const debounce = (cb: () => void, delay = 100) => {
-  let timer: ReturnType<typeof setTimeout>;
-
-  return () => {
-    clearTimeout(timer);
-    timer = setTimeout(() => {
-      cb();
-    }, delay);
-  };
-};
 const SCROLL_MINIMUM_VALUE = 120;
 
 export function ScrollToTopButton() {

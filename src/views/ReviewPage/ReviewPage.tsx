@@ -1,22 +1,16 @@
 import styled from '@emotion/styled';
-import { useState } from 'react';
 import { Footer, Header, Layout, ScrollToTopButton } from '@src/components';
-import { ExtraPart, PartExtraType } from '@src/lib/types/universal';
+import Content from './components/Content';
 import Description from './components/Description';
-import Reviews from './components/Reviews';
-import TabBar from './components/TabBar';
 
 function ReviewPage() {
-  const [selectedTab, setSelectedTab] = useState<ExtraPart>(PartExtraType.ALL);
-
   return (
     <Layout>
       <Header />
       <ScrollToTopButton />
       <Root>
         <Description />
-        <TabBar onTabClick={setSelectedTab} selectedTab={selectedTab} />
-        <Reviews selectedTab={selectedTab} />
+        <Content />
       </Root>
       <Footer />
     </Layout>

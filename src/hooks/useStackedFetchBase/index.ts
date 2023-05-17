@@ -1,5 +1,6 @@
 import { to } from 'await-to-js';
 import { useEffect, useReducer } from 'react';
+import { debounce } from '@src/utils/debounce';
 import { reducer } from './reducer';
 import { Action, State } from './types';
 
@@ -13,7 +14,7 @@ function useStackedFetchBase<T>(
   });
 
   useEffect(() => {
-    const fetchList = async () => {
+    const fetchList = debounce(async () => {
       dispatch({
         _TAG: 'FETCH',
         isInitialFetching,
@@ -31,7 +32,7 @@ function useStackedFetchBase<T>(
       if (response) {
         dispatch({ _TAG: 'SUCCESS', isInitialFetching, data: response });
       }
-    };
+    });
 
     fetchList();
   }, [willFetch, isInitialFetching]);
