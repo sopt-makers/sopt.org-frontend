@@ -23,25 +23,38 @@ export const global = css`
     font-size: 100%;
     vertical-align: baseline;
   }
-  article, aside, details, figcaption, figure, 
-  footer, header, hgroup, menu, nav, section {
+  article,
+  aside,
+  details,
+  figcaption,
+  figure,
+  footer,
+  header,
+  hgroup,
+  menu,
+  nav,
+  section {
     display: block;
   }
-  ol, ul {
+  ol,
+  ul {
     list-style: none;
   }
-  blockquote, q {
+  blockquote,
+  q {
     quotes: none;
   }
-  blockquote:before, blockquote:after,
-  q:before, q:after {
+  blockquote:before,
+  blockquote:after,
+  q:before,
+  q:after {
     content: '';
     content: none;
   }
   table {
     border-collapse: collapse;
     border-spacing: 0;
-  } 
+  }
 
   html {
     -webkit-touch-callout: none;
@@ -53,7 +66,7 @@ export const global = css`
   * {
     box-sizing: border-box;
     font-family: 'SUIT', arial, sans-serif;
-    /* color: red !important; */
+    letter-spacing: -0.01em;
   }
 
   h1,
@@ -65,7 +78,7 @@ export const global = css`
   p {
     color: #fcfcfc;
   }
-  
+
   body {
     background-color: #181818;
     line-height: 1;

@@ -58,7 +58,6 @@ export const Name = styled.strong`
 
   font-weight: 700;
   font-size: 28px;
-  letter-spacing: -0.01em;
 
   color: #ffffff;
 
@@ -85,7 +84,7 @@ export const Desc = styled.p`
   margin-top: 8px;
   font-size: 18px;
   line-height: 26px;
-  letter-spacing: -0.01em;
+
   color: rgba(255, 255, 255, 0.5);
   /* 모바일 뷰 */
   @media (max-width: 765.9px) {
@@ -110,7 +109,6 @@ export const Part = styled.div`
 
   font-size: 18px;
   line-height: 26px;
-  letter-spacing: -0.01em;
 
   color: #ffffff;
 
