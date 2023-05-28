@@ -1,16 +1,18 @@
 import styled from '@emotion/styled';
 
 const Root = styled.section`
-  width: 100%;
-
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 60px;
-
+  width: 100%;
   @media (max-width: 1199px) and (min-width: 766px) {
+    width: 676px;
+    gap: 24px;
   }
   @media (max-width: 765.9px) {
+    width: 328px;
+    gap: 48px;
   }
 `;
 

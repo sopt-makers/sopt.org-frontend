@@ -1,6 +1,8 @@
+import { Suspense } from 'react';
 import { JobField } from '@src/lib/types/job';
 import { useTabs } from '../../lib';
 import FieldTabs from './FieldTabs';
+import JobPostings from './JobPostings';
 import { St } from './style';
 
 export const fieldTabs = [
@@ -28,7 +30,10 @@ const CorporateJob = () => {
   return (
     <St.Root>
       <St.Title>채용 공고</St.Title>
-      <FieldTabs currentTab={currentTab} changeTab={changeTab} />
+      <FieldTabs currentTabType={currentTab.type} changeTab={changeTab} />
+      <Suspense fallback={<div>loading</div>}>
+        <JobPostings field={currentTab.type} />
+      </Suspense>
     </St.Root>
   );
 };

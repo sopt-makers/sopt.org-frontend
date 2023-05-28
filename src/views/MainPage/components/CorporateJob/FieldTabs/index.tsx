@@ -3,15 +3,15 @@ import { fieldTabs } from '..';
 import { St } from './style';
 
 interface FieldTabsProps {
-  currentTab: { type: JobField; text: string };
+  currentTabType: JobField;
   changeTab: (tabType: string) => void;
 }
 
-const FieldTabs = ({ currentTab, changeTab }: FieldTabsProps) => {
+const FieldTabs = ({ currentTabType, changeTab }: FieldTabsProps) => {
   return (
     <St.Ul>
       {fieldTabs.map(({ type, text }) => (
-        <St.Li key={type} onClick={() => changeTab(type)} isactive={type === currentTab.type}>
+        <St.Li key={type} onClick={() => changeTab(type)} isactive={type === currentTabType}>
           {text}
         </St.Li>
       ))}

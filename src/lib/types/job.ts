@@ -16,5 +16,5 @@ export type CorporateJoin = {
 };
 
 export type JobAPI = {
-  getCorporateJoins: (field?: JobField) => Promise<CorporateJoin[]>;
+  getCorporateJobsByField: (field?: JobField) => Promise<CorporateJoin[]>;
 };

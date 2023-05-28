@@ -1,10 +1,12 @@
+import { JobField } from '@src/lib/types/job';
+
 const SRC = 'https://avatars.githubusercontent.com/u/48249505?v=4';
 
-const getCorporateJoins = async () => [
+const getCorporateJobsByField = async () => [
   {
     id: '1',
     imgSrc: SRC,
-    type: 'DEV',
+    type: JobField.DEV,
     title: '일이삼사오육칠팔구십일이삼사오육칠팔구십',
     corporation: '당근마켓',
     career: '신입',
@@ -13,7 +15,7 @@ const getCorporateJoins = async () => [
   {
     id: '2',
     imgSrc: SRC,
-    type: 'DEV',
+    type: JobField.DEV,
     title: '일이삼사오육칠팔구십일이삼사오육칠팔구십',
     corporation: '당근마켓',
     career: '신입',
@@ -22,7 +24,7 @@ const getCorporateJoins = async () => [
   {
     id: '3',
     imgSrc: SRC,
-    type: 'DEV',
+    type: JobField.DEV,
     title: '일이삼사오육칠팔구십일이삼사오육칠팔구십',
     corporation: '당근마켓',
     career: '신입',
@@ -31,7 +33,7 @@ const getCorporateJoins = async () => [
   {
     id: '4',
     imgSrc: SRC,
-    type: 'DEV',
+    type: JobField.DEV,
     title: '일이삼사오육칠팔구십일이삼사오육칠팔구십',
     corporation: '당근마켓',
     career: '신입',
@@ -40,5 +42,5 @@ const getCorporateJoins = async () => [
 ];
 
 export const mockJobAPI = {
-  getCorporateJoins,
+  getCorporateJobsByField,
 };

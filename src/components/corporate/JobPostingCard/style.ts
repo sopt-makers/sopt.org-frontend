@@ -2,23 +2,24 @@ import styled from '@emotion/styled';
 import { textpluralLinesEllipsis } from '@src/styles/textEllipsis';
 
 const Card = styled.article`
-  flex: 1;
-
   display: flex;
   background: #000000;
   border-radius: 10px;
   width: 380px;
-  height: 277px;
+  max-width: 380px;
+  height: 227px;
   padding: 26px 49px 29px 26px;
+  margin-bottom: 18px;
   /* 태블릿 뷰 */
   @media (max-width: 1199px) and (min-width: 766px) {
-    width: 314px;
+    margin-bottom: 4px;
+    max-width: 314px;
     height: 227px;
     padding: 26px 19px 29px 21px;
   }
   /* 모바일 뷰 */
   @media (max-width: 765.9px) {
-    width: 314px;
+    max-width: 314px;
     height: 193px;
     padding: 21px 27px 23px 21px;
   }
@@ -75,12 +76,10 @@ const Title = styled.p`
   ${textpluralLinesEllipsis(2)}
   /* 태블릿 뷰 */
   @media (max-width: 1199px) and (min-width: 766px) {
-    margin-left: 17px;
     max-width: 185px;
   }
   /* 모바일 뷰 */
   @media (max-width: 765.9px) {
-    margin-left: 20px;
     max-width: 187px;
     font-size: 18px;
     line-height: 140%;
