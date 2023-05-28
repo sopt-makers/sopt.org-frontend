@@ -6,7 +6,7 @@ const Root = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 100px;
+  gap: 60px;
 
   @media (max-width: 1199px) and (min-width: 766px) {
   }

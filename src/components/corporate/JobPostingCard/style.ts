@@ -11,13 +11,13 @@ const Card = styled.article`
   height: 277px;
   padding: 26px 49px 29px 26px;
   /* 태블릿 뷰 */
-  @media (width: 1199px) and (min-width: 766px) {
+  @media (max-width: 1199px) and (min-width: 766px) {
     width: 314px;
     height: 227px;
     padding: 26px 19px 29px 21px;
   }
   /* 모바일 뷰 */
-  @media (width: 765.9px) {
+  @media (max-width: 765.9px) {
     width: 314px;
     height: 193px;
     padding: 21px 27px 23px 21px;
