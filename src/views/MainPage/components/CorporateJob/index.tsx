@@ -29,7 +29,10 @@ const CorporateJob = () => {
 
   return (
     <St.Root>
-      <St.Title>채용 공고</St.Title>
+      <St.TitleWrapper>
+        <St.BigTitle>후원</St.BigTitle>
+        <St.Title>채용 공고</St.Title>
+      </St.TitleWrapper>
       <FieldTabs currentTabType={currentTab.type} changeTab={changeTab} />
       <Suspense fallback={<div>loading</div>}>
         <JobPostings field={currentTab.type} />
