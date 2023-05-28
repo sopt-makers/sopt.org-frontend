@@ -22,7 +22,7 @@ const JobPostingCard = ({
       <St.Image src={imgSrc} alt={corporation} />
       <St.Contents>
         <St.Chip>{type}</St.Chip>
-        <St.Title>sad</St.Title>
+        <St.Title>{title}</St.Title>
         <St.Corporation>{corporation}</St.Corporation>
         <St.RestInfo>
           {career} | {location}

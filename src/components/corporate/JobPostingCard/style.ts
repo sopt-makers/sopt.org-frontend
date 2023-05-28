@@ -68,12 +68,15 @@ const Chip = styled.div`
 `;
 
 const Title = styled.p`
+  ${textpluralLinesEllipsis(2)}
   margin-top: 12px;
-  width: 199px;
+
+  max-width: 199px;
+  height: 60px;
+
   font-weight: 700;
   font-size: 23px;
-  line-height: 130%;
-  ${textpluralLinesEllipsis(2)}
+  line-height: 30px;
   /* 태블릿 뷰 */
   @media (max-width: 1199px) and (min-width: 766px) {
     max-width: 185px;
@@ -81,8 +84,9 @@ const Title = styled.p`
   /* 모바일 뷰 */
   @media (max-width: 765.9px) {
     max-width: 187px;
+    height: 50px;
     font-size: 18px;
-    line-height: 140%;
+    line-height: 25px;
   }
 `;
 
