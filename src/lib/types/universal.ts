@@ -1,11 +1,13 @@
 import { AboutAPI } from './about';
 import { ProjectAPI } from './project';
 import { ReviewAPI } from './review';
+import { SopticleAPI } from './sopticle';
 
 export interface API {
   projectAPI: ProjectAPI;
   reviewAPI: ReviewAPI;
   aboutAPI: AboutAPI;
+  sopticleAPI: SopticleAPI;
 }
 
 export enum Part {
