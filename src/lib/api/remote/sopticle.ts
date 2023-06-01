@@ -19,10 +19,13 @@ const client = axios.create({
 const getSopticles = async (tab: ExtraPart, pageNo = 1): Promise<GetSopticlesResponse> => {
   const partParameter = tab === PartExtraType.ALL ? {} : { part: tab };
   const pageParameter = { pageNo, limit: 12 };
+  const sessionStorageHandler = getStorageHandler('sessionStorage');
+  const sessionId = sessionStorageHandler.getItemOrGenerate('session-id', nanoid);
   const parameter = qs.stringify({ ...partParameter, ...pageParameter });
 
   const { data } = await client.get<{ hasNextPage: boolean; data: SopticleResponseDto[] }>(
     `/sopticle?${parameter}`,
+    { headers: { 'session-id': sessionId } },
   );
 
   return {
