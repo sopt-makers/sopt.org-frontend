@@ -12,7 +12,7 @@ const Title = styled.div`
 
   /* 데스크탑 뷰 */
   @media (min-width: 1124px) {
-    margin-top: 120px;
+    margin-top: 190px;
     margin-bottom: 54px;
     font-size: 40px;
   }
