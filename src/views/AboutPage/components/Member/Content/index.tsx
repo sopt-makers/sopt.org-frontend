@@ -1,29 +1,26 @@
 import { useMemo, useState } from 'react';
 import DataErrorBanner from '@src/components/DataErrorBanner';
 import Flex from '@src/components/common/Flex';
-import { useIsMobile, useIsTablet } from '@src/hooks/useDevice';
 import { ExtraPart } from '@src/lib/types/universal';
 import { PartExtraType } from '@src/lib/types/universal';
 import { emptyMembers } from '@src/views/AboutPage/constant/emptyMembers';
 import useFetchMember from '@src/views/AboutPage/hooks/useFetchMemeber';
+import useResponsiveMember from '@src/views/AboutPage/hooks/useResponsiveMember';
 import { OvalSpinner } from '@src/views/ProjectPage/components';
 import TabBar from '../../common/TabBar';
 import MemberCard from '../Card';
 import * as St from './style';
 
 const MemberContent = () => {
+  const { memberCardsCount, shouldNotShownWithError } = useResponsiveMember();
+
   const [currentPart, setCurrentPart] = useState<ExtraPart>(PartExtraType.ALL);
   const state = useFetchMember(currentPart);
 
-  const isTablet = useIsTablet('766px', '1199.9px');
-  const isMobile = useIsMobile();
-
-  const memberCardsCount = useMemo(() => {
-    if (isMobile) return 2;
-    if (isTablet) return 3;
-    return 4;
-  }, [isMobile, isTablet]);
-
+  const errorContent = state._TAG === 'ERROR' && <DataErrorBanner />;
+  const tabBarContent = !(state._TAG === 'ERROR' && shouldNotShownWithError) && (
+    <TabBar onTabClick={setCurrentPart} selectedTab={currentPart} includesExtra={true} />
+  );
   const cardContent = useMemo(() => {
     if (state._TAG === 'OK')
       return state.data.members.map(({ id, name, src, description, part }) => (
@@ -44,11 +41,8 @@ const MemberContent = () => {
 
   return (
     <Flex dir="column" gap={{ mobile: 18, tablet: 24, desktop: 48 }}>
-      <DataErrorBanner />
-      {state._TAG === 'ERROR' && <DataErrorBanner />}
-      {!(state._TAG === 'ERROR' && isMobile) && (
-        <TabBar onTabClick={setCurrentPart} selectedTab={currentPart} includesExtra={true} />
-      )}
+      {errorContent}
+      {tabBarContent}
       <St.CardContainer>{cardContent}</St.CardContainer>
     </Flex>
   );
