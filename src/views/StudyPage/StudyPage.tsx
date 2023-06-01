@@ -32,12 +32,12 @@ const Root = styled.div`
   /* 태블릿 뷰 */
   @media (max-width: 1199px) and (min-width: 766px) {
     width: 700px;
-    margin-top: 90px;
+    margin-top: 190px;
   }
   /* 모바일 뷰 */
   @media (max-width: 765.9px) {
     width: 360px;
-    margin-top: 90px;
+    margin-top: 190px;
   }
 `;
 

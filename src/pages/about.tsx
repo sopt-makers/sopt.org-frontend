@@ -10,7 +10,7 @@ import RecordSection from '@src/views/AboutPage/components/Record/Section';
 
 const MemberSection = lazy(() => import('@src/views/AboutPage/components/Member/Section'));
 
-const AboutPage = ({ aboutInfo }: InferGetServerSidePropsType<typeof getStaticProps >) => {
+const AboutPage = ({ aboutInfo }: InferGetServerSidePropsType<typeof getStaticProps>) => {
   return (
     <Layout>
       <Header />
@@ -32,7 +32,7 @@ const AboutPage = ({ aboutInfo }: InferGetServerSidePropsType<typeof getStaticPr
   );
 };
 
-export const getStaticProps  = async () => {
+export const getStaticProps = async () => {
   const aboutInfo = await api.aboutAPI.getAboutInfo();
 
   return {
