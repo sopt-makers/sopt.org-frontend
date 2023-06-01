@@ -166,3 +166,11 @@ export const ColSeparator = styled.div`
   height: 1em;
   background-color: #ffffff4d;
 `;
+
+export const LikeSection = styled.div`
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 6px;
+`;
