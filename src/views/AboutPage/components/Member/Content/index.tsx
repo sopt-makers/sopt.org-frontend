@@ -44,6 +44,7 @@ const MemberContent = () => {
 
   return (
     <Flex dir="column" gap={{ mobile: 18, tablet: 24, desktop: 48 }}>
+      <DataErrorBanner />
       {state._TAG === 'ERROR' && <DataErrorBanner />}
       {!(state._TAG === 'ERROR' && isMobile) && (
         <TabBar onTabClick={setCurrentPart} selectedTab={currentPart} includesExtra={true} />

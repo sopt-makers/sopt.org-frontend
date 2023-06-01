@@ -1,12 +1,23 @@
+import ImgErrorCaution from '@src/assets/icons/error_caution.webp';
+import { useIsDesktop } from '@src/hooks/useDevice';
+import St from './style';
+
 const DataErrorBanner = () => {
+  const isDesktop = useIsDesktop('1200px');
+
   return (
-    <article style={{ width: '200px', height: '30px', backgroundColor: 'green' }}>
-      <img />
-      <div>
-        <strong></strong>
-        <p></p>
-      </div>
-    </article>
+    <St.Container>
+      <St.CautionImage
+        src={ImgErrorCaution.src}
+        alt=""
+        width={isDesktop ? 51 : 36}
+        height={isDesktop ? 46 : 32}
+      />
+      <St.Texts>
+        <St.Strong>데이터 오류 발생!</St.Strong>
+        <p>잠시 후 다시 시도해주세요.</p>
+      </St.Texts>
+    </St.Container>
   );
 };
 
