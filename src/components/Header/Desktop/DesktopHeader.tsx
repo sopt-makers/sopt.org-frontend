@@ -151,7 +151,6 @@ export const Wrapper = styled.div`
 `;
 
 export const SubMenuWrapper = styled.div`
-  max-width: 1280px;
   width: 100%;
   height: 80px;
   background-color: rgba(24, 24, 24, 0.9);
