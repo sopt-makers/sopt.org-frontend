@@ -1,21 +1,12 @@
 import type { Action, State } from './types';
 
 export function reducer<T>(prevState: State<T>, action: Action<T>): State<T> {
-  switch (prevState._TAG) {
-    case 'IDLE':
-      if (action._TAG === 'FETCH') {
-        return {
-          _TAG: 'LOADING',
-        };
-      }
-      break;
-    case 'LOADING':
-      if (action._TAG === 'FAILED') {
-        return {
-          _TAG: 'ERROR',
-          error: action.error,
-        };
-      }
+  switch (action._TAG) {
+    case 'FETCH':
+      return {
+        _TAG: 'LOADING',
+      };
+    case 'SUCCESS':
       if (action._TAG === 'SUCCESS') {
         return {
           _TAG: 'OK',
@@ -23,15 +14,11 @@ export function reducer<T>(prevState: State<T>, action: Action<T>): State<T> {
         };
       }
       break;
-    case 'OK':
-      if (action._TAG === 'FETCH') {
-        return {
-          _TAG: 'LOADING',
-        };
-      }
-      break;
-    default:
-      throw new Error(`Unknown action type: ${action._TAG}`);
+    case 'FAILED':
+      return {
+        _TAG: 'ERROR',
+        error: action.error,
+      };
   }
 
   return prevState;

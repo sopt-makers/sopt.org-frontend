@@ -15,7 +15,7 @@ const MemberContent = () => {
   const [currentPart, setCurrentPart] = useState<ExtraPart>(PartExtraType.ALL);
   const state = useFetchMember(currentPart);
 
-  const isTablet = useIsTablet();
+  const isTablet = useIsTablet('766px', '1199.9px');
   const isMobile = useIsMobile();
 
   const memberCardsCount = useMemo(() => {
