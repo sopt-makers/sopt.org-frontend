@@ -117,7 +117,7 @@ function ParentMenu({
             switch (c.type) {
               case MenuTapType.Anchor:
                 return (
-                  <MenuTitle type="sub">
+                  <MenuTitle type="sub" key={c.title}>
                     <MenuTitleAnchor href={c.href} target="_blank" rel="noreferrer">
                       {c.title}
                     </MenuTitleAnchor>
@@ -125,7 +125,7 @@ function ParentMenu({
                 );
               case MenuTapType.Router:
                 return (
-                  <MenuTitle type="sub" isSelected={handleIsSelected(c.href)}>
+                  <MenuTitle type="sub" isSelected={handleIsSelected(c.href)} key={c.title}>
                     <Link href={c.href}>{c.title}</Link>
                   </MenuTitle>
                 );
