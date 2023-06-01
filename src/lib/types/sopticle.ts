@@ -19,8 +19,13 @@ export type GetSopticlesResponse = {
   hasNextPage: boolean;
 };
 
+export type PostSopticleLikeResponse = {
+  currentLike: boolean;
+  likeChanged: boolean;
+};
 export interface SopticleAPI {
   getSopticles(tab: ExtraPart, page: number): Promise<GetSopticlesResponse>;
+  postSopticleLike(sopticleId: number, prevLike: boolean): Promise<PostSopticleLikeResponse>;
 }
 
 export interface SopticleResponseDto {
