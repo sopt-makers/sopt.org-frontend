@@ -1,5 +1,4 @@
 import styled from '@emotion/styled';
-import CautionIcon from './CautionIcon';
 
 const Container = styled.article`
   display: flex;
@@ -25,7 +24,7 @@ const Container = styled.article`
   }
 `;
 
-const Caution = styled(CautionIcon)`
+const Caution = styled.div`
   margin: 0 28px 0 48px;
 
   /* 태블릿 뷰 */

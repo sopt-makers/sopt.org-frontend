@@ -1,4 +1,5 @@
 import { useIsDesktop } from '@src/hooks/useDevice';
+import CautionIcon from './CautionIcon';
 import St from './style';
 
 const DataErrorBanner = () => {
@@ -6,7 +7,9 @@ const DataErrorBanner = () => {
 
   return (
     <St.Container>
-      <St.Caution width={isDesktop ? 51 : 36} height={isDesktop ? 46 : 32} />
+      <St.Caution>
+        <CautionIcon width={isDesktop ? 51 : 36} />
+      </St.Caution>
       <St.Texts>
         <St.Strong>데이터 오류 발생!</St.Strong>
         <p>잠시 후 다시 시도해주세요.</p>
