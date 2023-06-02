@@ -5,8 +5,9 @@ function useHeader() {
 
   const handleClickLogo = () => router.push('/');
 
-  const handleIsSelected = (path: string) => {
-    return router.pathname.startsWith(path);
+  const handleIsSelected = (path: string | string[]) => {
+    if (typeof path === 'string') return router.pathname.startsWith(path);
+    return path.some((p) => router.pathname.startsWith(p));
   };
 
   return { handleClickLogo, handleIsSelected };

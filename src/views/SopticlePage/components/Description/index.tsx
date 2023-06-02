@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import { mainColor } from '@src/assets/sopt/mainColor';
 
 const Description = () => {
-  return <Title>SOPT 회원들의 활동 후기</Title>;
+  return <Title>솝티클</Title>;
 };
 
 const Title = styled.div`

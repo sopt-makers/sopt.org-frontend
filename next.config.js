@@ -12,6 +12,8 @@ const nextConfig = {
       'user-images.githubusercontent.com',
       'avatars.githubusercontent.com',
       'i.ibb.co',
+      'velog.velcdn.com',
+      'leadership.ng',
     ],
   },
   webpack: (config) => {

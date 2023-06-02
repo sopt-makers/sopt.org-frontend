@@ -1,5 +1,5 @@
-import { MenuState } from '@src/components/Header/types';
 import { useEffect } from 'react';
+import { MenuState } from '@src/components/Header/types';
 
 export default function useNoScroll(isMenuShown: MenuState) {
   useEffect(() => {

@@ -12,9 +12,20 @@ export const menuTapList: MenuTapList = [
     href: '/project',
   },
   {
-    type: MenuTapType.Router,
-    title: '활동후기',
-    href: '/review',
+    type: MenuTapType.Parent,
+    title: '블로그',
+    children: [
+      {
+        type: MenuTapType.Router,
+        title: '활동후기',
+        href: '/review',
+      },
+      {
+        type: MenuTapType.Router,
+        title: '솝티클',
+        href: '/sopticle',
+      },
+    ],
   },
   {
     type: MenuTapType.Router,

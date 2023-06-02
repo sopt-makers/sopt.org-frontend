@@ -1,5 +1,5 @@
-import useIntersectionObserver from '@src/hooks/useIntersectionObserver';
 import { useState } from 'react';
+import useIntersectionObserver from '@src/hooks/useIntersectionObserver';
 
 export function useInfiniteScroll<T>(totalData: T[]) {
   const [count, setCount] = useState(1);
