@@ -10,7 +10,6 @@ export const TabBar = styled.ul`
 
   font-size: 28px;
   font-weight: 400;
-  letter-spacing: -0.01em;
   color: rgba(255, 255, 255, 0.5);
 
   /* 태블릿 뷰 */

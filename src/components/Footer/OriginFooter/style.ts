@@ -53,7 +53,6 @@ export const TitleButton = styled.button`
   color: ${({ theme }) => theme.colors.soptWhite};
   font-size: 14px;
   font-weight: 700;
-  letter-spacing: -0.01em;
 
   span {
     margin-right: 5px;

@@ -48,7 +48,6 @@ const Styled = {
     font-weight: 400;
     font-size: 30px;
     line-height: 30px;
-    letter-spacing: -0.01em;
     color: #787878;
     margin-bottom: 32px;
     /* 태블릿 뷰 */
@@ -67,7 +66,7 @@ const Styled = {
     font-weight: 600;
     font-size: 40px;
     line-height: 50px;
-    letter-spacing: -0.01em;
+
     text-decoration-line: underline;
     text-underline-position: under;
     color: #ffffff;

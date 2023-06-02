@@ -86,7 +86,6 @@ const Styled = {
     font-weight: 700;
     font-size: 30px;
     line-height: 100%;
-    letter-spacing: -0.01em;
     color: #ffffff;
 
     /* 태블릿 뷰 */
@@ -135,7 +134,7 @@ const Styled = {
     font-weight: 400;
     font-size: 25px;
     line-height: 40px;
-    letter-spacing: -0.01em;
+
     color: rgba(253, 253, 253, 0.8);
     /* 태블릿 뷰 */
     @media (max-width: 1919.9px) and (min-width: 766px) {
