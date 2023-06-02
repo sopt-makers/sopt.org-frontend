@@ -4,7 +4,7 @@ import { St } from './style';
 
 interface FieldTabsProps {
   currentTabType: JobField;
-  changeTab: (tabType: string) => void;
+  changeTab: (tabType: JobField) => void;
 }
 
 const FieldTabs = ({ currentTabType, changeTab }: FieldTabsProps) => {
