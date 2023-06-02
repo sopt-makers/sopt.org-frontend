@@ -20,7 +20,6 @@ const Li = styled.li<{ isactive: boolean }>`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 20px 16px;
 
   width: 160px;
   height: 58px;
