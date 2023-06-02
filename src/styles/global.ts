@@ -66,7 +66,7 @@ export const global = css`
   * {
     box-sizing: border-box;
     font-family: 'SUIT', arial, sans-serif;
-    /* color: red !important; */
+    letter-spacing: -0.01em;
   }
 
   h1,

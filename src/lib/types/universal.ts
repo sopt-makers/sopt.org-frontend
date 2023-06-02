@@ -1,4 +1,5 @@
 import { AboutAPI } from './about';
+import { JobAPI } from './job';
 import { ProjectAPI } from './project';
 import { ReviewAPI } from './review';
 import { SopticleAPI } from './sopticle';
@@ -8,6 +9,7 @@ export interface API {
   reviewAPI: ReviewAPI;
   aboutAPI: AboutAPI;
   sopticleAPI: SopticleAPI;
+  jobAPI: JobAPI;
 }
 
 export enum Part {

@@ -39,7 +39,7 @@ const Styled = {
     font-weight: 800;
     font-size: 45px;
     line-height: 60px;
-    letter-spacing: -0.01em;
+
     color: #ffffff;
     margin-bottom: 100px;
     /* 태블릿 뷰 */
