@@ -6,7 +6,7 @@ export const enum JobField {
 }
 
 export type CorporateJoin = {
-  id: string;
+  id: number;
   imgSrc: string;
   type: JobField;
   title: string;
