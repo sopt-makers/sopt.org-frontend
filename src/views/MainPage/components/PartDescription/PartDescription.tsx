@@ -1,5 +1,5 @@
 import { useIsDesktop, useIsMobile, useIsTablet } from '@src/hooks/useDevice';
-import { useTabs } from '@src/views/MainPage/lib';
+import { useTabs } from '@src/hooks/useTabs';
 import cc from 'classcat';
 import styles from './part-description.module.scss';
 

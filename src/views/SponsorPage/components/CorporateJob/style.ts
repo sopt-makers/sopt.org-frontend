@@ -61,9 +61,27 @@ const Title = styled.h3`
   }
 `;
 
+const OvalSpinnerContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 1200px;
+  height: 520px;
+  @media (max-width: 1199px) and (min-width: 766px) {
+    width: 100%;
+    height: 494px;
+  }
+  @media (max-width: 765.9px) {
+    width: 100%;
+    height: 892px;
+  }
+`;
+
 export const St = {
   Root,
   TitleWrapper,
   BigTitle,
   Title,
+  OvalSpinnerContainer,
 };

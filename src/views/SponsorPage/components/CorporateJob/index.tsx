@@ -1,7 +1,7 @@
 import { Suspense } from 'react';
+import { useTabs } from '@src/hooks/useTabs';
 import { JobField } from '@src/lib/types/job';
 import { OvalSpinner } from '@src/views/ProjectPage/components';
-import { useTabs } from '../../lib';
 import FieldTabs from './FieldTabs';
 import JobPostings from './JobPostings';
 import { St } from './style';
@@ -38,7 +38,13 @@ const CorporateJob = () => {
         <St.Title>채용 공고</St.Title>
       </St.TitleWrapper>
       <FieldTabs currentTabType={currentTab.type} changeTab={changeFieldTab} />
-      <Suspense fallback={<OvalSpinner />}>
+      <Suspense
+        fallback={
+          <St.OvalSpinnerContainer>
+            <OvalSpinner />
+          </St.OvalSpinnerContainer>
+        }
+      >
         <JobPostings field={currentTab.type} />
       </Suspense>
     </St.Root>

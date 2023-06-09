@@ -3,13 +3,10 @@ import {
   ActivityDescription,
   ActivityReview,
   BannerImage,
-  CoporatePartner,
-  CorporateLinkedActivities,
   DetailedInformation,
   PartDescription,
   SoptHistory,
 } from '@src/views/MainPage/components';
-import CorporateJob from './components/CorporateJob';
 import styles from './main-page.module.scss';
 
 function MainPage() {
@@ -26,9 +23,6 @@ function MainPage() {
             <ActivityDescription />
             <DetailedInformation />
             <ActivityReview />
-            <CorporateJob />
-            <CoporatePartner />
-            <CorporateLinkedActivities />
           </div>
         </div>
         <Footer />

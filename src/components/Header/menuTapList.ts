@@ -29,8 +29,8 @@ export const menuTapList: MenuTapList = [
   },
   {
     type: MenuTapType.Router,
-    title: '문의하기',
-    href: '/FAQ',
+    title: '후원',
+    href: '/sponsor',
   },
   {
     type: MenuTapType.Anchor,

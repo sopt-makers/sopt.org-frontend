@@ -7,14 +7,17 @@
   @include mobile {
     width: 90%;
     gap: 48px;
+    margin-bottom: 120px;
   }
   @include tablet {
     width: 75%;
     gap: 100px;
+    margin-bottom: 180px;
   }
   @include desktop {
     width: 100%;
     gap: 100px;
+    margin-bottom: 150px;
   }
 }
 
