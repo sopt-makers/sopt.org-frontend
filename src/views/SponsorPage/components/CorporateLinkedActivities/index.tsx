@@ -2,21 +2,24 @@ import Image from 'next/image';
 import { ReactComponent as ArrowLeft } from '@src/views/MainPage/assets/arrow-left-28x28.svg';
 import { ReactComponent as ArrowRight } from '@src/views/MainPage/assets/arrow-right-28x28.svg';
 import { useHorizontalScroll } from '@src/views/MainPage/lib';
-import { corporatePartnerList } from './constants';
-import styles from './corporate-partner.module.scss';
+import { corporatedLinkedActivities } from './constants';
+import styles from './corporate-linked-activities.module.scss';
 
-export function CoporatePartner() {
+const CorporateLinkedActivities = () => {
   const {
     scrollableRef,
     onClickLeftButton,
     onClickRightButton,
     isLeftScrollable,
     isRightScrollable,
-  } = useHorizontalScroll(900, 2);
+  } = useHorizontalScroll(930, 2);
 
   return (
     <section className={styles.container}>
-      <h3 className={styles.title}>SOPT의 파트너</h3>
+      <div className={styles.summary}>
+        <h3 className={styles.title}>SOPT와 함께한 기업 연계 활동</h3>
+        <h4 className={styles.subtitle}>다양한 기업 및 단체와 함께 진행했어요.</h4>
+      </div>
       <div className={styles.contentWrapper}>
         <div
           className={styles.arrowWrapper}
@@ -25,18 +28,16 @@ export function CoporatePartner() {
           <ArrowLeft stroke={isLeftScrollable ? 'white' : 'grey'} />
         </div>
         <div className={styles.content} ref={scrollableRef}>
-          {corporatePartnerList.map(({ name, imgSrc }) => {
+          {corporatedLinkedActivities.map(({ year, name, description, subDescription, imgSrc }) => {
             return (
               <article className={styles.item} key={name}>
-                <div className={styles.corporateLogoImageWrapper}>
-                  <Image
-                    src={imgSrc}
-                    alt="corporate logo"
-                    fill
-                    sizes="(max-width: 766px) 138px 278px"
-                  />
-                </div>
-                <p className={styles.name}>{name}</p>
+                <span className={styles.year}>{year}</span>
+                <Image className={styles.activityImage} src={imgSrc} alt="activity" />
+                <h5 className={styles.name}>{name}</h5>
+                <p className={styles.description}>{description}</p>
+                {subDescription.length > 0 && (
+                  <p className={styles.subDescription}>{subDescription}</p>
+                )}
               </article>
             );
           })}
@@ -50,4 +51,6 @@ export function CoporatePartner() {
       </div>
     </section>
   );
-}
+};
+
+export default CorporateLinkedActivities;
