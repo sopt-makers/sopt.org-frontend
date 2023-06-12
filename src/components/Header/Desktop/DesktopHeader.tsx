@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { LOGO_IMAGE_URL } from '@src/assets/sopt/logo';
 import useHeader from '@src/hooks/useHeader';
 import { GrowDown } from '@src/lib/styles/animation';
@@ -91,25 +91,38 @@ function ParentMenu({
   setIsSubTapOpened,
 }: ParentMenuProps) {
   const [isOpened, setIsOpened] = useState(false);
+
+  const closeSubTap = useCallback(() => {
+    setIsSubTapOpened(false);
+    setIsOpened(false);
+  }, [setIsSubTapOpened, setIsOpened]);
+
+  const onMouseIn = () => {
+    setIsSubTapOpened(true);
+    setIsOpened(true);
+  };
+
   useEffect(() => {
     if (!isSubTapOpened) {
       setIsOpened(false);
     }
   }, [isSubTapOpened]);
-  const onParentMenuTapClicked = () => {
-    if (isOpened) {
-      setIsSubTapOpened(false);
-      setIsOpened(false);
-    } else {
-      setIsSubTapOpened(true);
-      setIsOpened(true);
+
+  useEffect(() => {
+    if (isSubTapOpened) {
+      document.addEventListener('click', closeSubTap);
     }
-  };
+    return () => {
+      document.removeEventListener('click', closeSubTap);
+    };
+  }, [closeSubTap, isSubTapOpened]);
+
   return (
     <ParentMenuTitle
       isSelected={handleIsSelected(menuTap.children.map((t) => t.href))}
       isOpened={isOpened}
-      onClick={onParentMenuTapClicked}
+      onMouseEnter={onMouseIn}
+      onClick={(e) => e.stopPropagation()}
     >
       {menuTap.title}
       {isOpened && (
