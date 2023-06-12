@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { LOGO_IMAGE_URL } from '@src/assets/sopt/logo';
 import useHeader from '@src/hooks/useHeader';
+import { GrowDown } from '@src/lib/styles/animation';
 import { menuTapList } from '../menuTapList';
 import { BaseMenuTap, MenuTapType, ParentMenuTap } from '../types';
 
@@ -153,9 +154,11 @@ export const Wrapper = styled.div`
 export const SubMenuWrapper = styled.div`
   width: 100%;
   height: 80px;
-  background-color: rgba(24, 24, 24, 0.9);
+  background-color: rgba(255, 255, 255, 0.1);
   position: absolute;
   top: 80px;
+  ${GrowDown}
+  animation: growdown 0.4s forwards;
 `;
 
 const SubMenu = styled.div`
