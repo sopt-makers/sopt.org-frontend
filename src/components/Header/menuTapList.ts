@@ -34,7 +34,7 @@ export const menuTapList: MenuTapList = [
   },
   {
     type: MenuTapType.Anchor,
-    title: '리크루팅',
+    title: '지원하기',
     href: 'https://sopt-recruiting.web.app/recruiting/apply/yb',
   },
 ];

@@ -200,9 +200,11 @@ export const MenuTitlesWrapper = styled.div`
 
 export const MenuTitleAnchor = styled(Link)`
   display: block;
-
   color: inherit;
   text-decoration: none;
+  background-color: #504ebf;
+  padding: 6px 32px;
+  border-radius: 30px;
 `;
 
 export const MenuTitle = styled.div<MenuTitleProps>`
