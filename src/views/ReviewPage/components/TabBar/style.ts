@@ -17,6 +17,9 @@ export const Tab = styled.div<{ selected: boolean }>`
   font-size: 18px;
 
   min-width: 160px;
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
 
   /* 태블릿 뷰 */
   @media (max-width: 765.9px) {
