@@ -186,6 +186,8 @@ const SubMenu = styled.div`
   top: 80px;
   left: 25%; /* it is bad practice */
   transform: translateX(-50%);
+
+  cursor: default;
 `;
 
 export const CenterAligner = styled.div`
