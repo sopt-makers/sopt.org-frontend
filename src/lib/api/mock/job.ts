@@ -10,6 +10,7 @@ const corporateJobs = [
     corporation: '레브잇(올웨이즈)',
     career: '신입',
     location: '서울 관악구',
+    url: 'https://parangjy.notion.site/bfe8ba96114c42069616661e1876e121?pvs=4',
   },
   {
     id: 2,
@@ -19,6 +20,7 @@ const corporateJobs = [
     corporation: '레브잇(올웨이즈)',
     career: '신입',
     location: '서울 관악구',
+    url: 'https://parangjy.notion.site/bfe8ba96114c42069616661e1876e121?pvs=4',
   },
   {
     id: 3,
@@ -28,6 +30,7 @@ const corporateJobs = [
     corporation: '레브잇(올웨이즈)',
     career: '신입',
     location: '서울 관악구',
+    url: 'https://parangjy.notion.site/bfe8ba96114c42069616661e1876e121?pvs=4',
   },
 ];
 
