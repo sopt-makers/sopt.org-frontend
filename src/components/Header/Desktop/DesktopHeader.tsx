@@ -1,8 +1,10 @@
 import styled from '@emotion/styled';
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
+import { css } from '@emotion/react';
+import { useCallback, useEffect, useState } from 'react';
 import { LOGO_IMAGE_URL } from '@src/assets/sopt/logo';
 import useHeader from '@src/hooks/useHeader';
+import { GrowDown } from '@src/lib/styles/animation';
 import { menuTapList } from '../menuTapList';
 import { BaseMenuTap, MenuTapType, ParentMenuTap } from '../types';
 
@@ -44,22 +46,22 @@ function MenuTap({ menuTap, handleIsSelected, isSubTapOpened, setIsSubTapOpened 
   switch (menuTap.type) {
     case MenuTapType.Anchor:
       return (
-        <MenuTitle>
-          <MenuTitleAnchor
-            href={menuTap.href}
-            target="_blank"
-            rel="noreferrer"
-            onClick={() => setIsSubTapOpened(false)}
-          >
-            {menuTap.title}
-          </MenuTitleAnchor>
-        </MenuTitle>
+        <MenuTitleAnchor
+          href={menuTap.href}
+          target="_blank"
+          rel="noreferrer"
+          onClick={() => setIsSubTapOpened(false)}
+          onMouseEnter={() => setIsSubTapOpened(false)}
+        >
+          {menuTap.title}
+        </MenuTitleAnchor>
       );
     case MenuTapType.Router:
       return (
         <MenuTitle
           isSelected={handleIsSelected(menuTap.href)}
           onClick={() => setIsSubTapOpened(false)}
+          onMouseEnter={() => setIsSubTapOpened(false)}
         >
           <Link href={menuTap.href}>{menuTap.title}</Link>
         </MenuTitle>
@@ -90,25 +92,38 @@ function ParentMenu({
   setIsSubTapOpened,
 }: ParentMenuProps) {
   const [isOpened, setIsOpened] = useState(false);
+
+  const closeSubTap = useCallback(() => {
+    setIsSubTapOpened(false);
+    setIsOpened(false);
+  }, [setIsSubTapOpened, setIsOpened]);
+
+  const onMouseIn = () => {
+    setIsSubTapOpened(true);
+    setIsOpened(true);
+  };
+
   useEffect(() => {
     if (!isSubTapOpened) {
       setIsOpened(false);
     }
   }, [isSubTapOpened]);
-  const onParentMenuTapClicked = () => {
-    if (isOpened) {
-      setIsSubTapOpened(false);
-      setIsOpened(false);
-    } else {
-      setIsSubTapOpened(true);
-      setIsOpened(true);
+
+  useEffect(() => {
+    if (isSubTapOpened) {
+      document.addEventListener('click', closeSubTap);
     }
-  };
+    return () => {
+      document.removeEventListener('click', closeSubTap);
+    };
+  }, [closeSubTap, isSubTapOpened]);
+
   return (
     <ParentMenuTitle
       isSelected={handleIsSelected(menuTap.children.map((t) => t.href))}
       isOpened={isOpened}
-      onClick={onParentMenuTapClicked}
+      onMouseEnter={onMouseIn}
+      onClick={(e) => e.stopPropagation()}
     >
       {menuTap.title}
       {isOpened && (
@@ -140,7 +155,7 @@ function ParentMenu({
 interface MenuTitleProps {
   isSelected?: boolean;
   isOpened?: boolean;
-  type?: 'sub';
+  type?: 'main' | 'sub';
 }
 
 export const Wrapper = styled.div`
@@ -153,9 +168,11 @@ export const Wrapper = styled.div`
 export const SubMenuWrapper = styled.div`
   width: 100%;
   height: 80px;
-  background-color: rgba(24, 24, 24, 0.9);
+  background-color: rgba(255, 255, 255, 0.1);
   position: absolute;
   top: 80px;
+  ${GrowDown}
+  animation: growdown 0.4s forwards;
 `;
 
 const SubMenu = styled.div`
@@ -169,6 +186,8 @@ const SubMenu = styled.div`
   top: 80px;
   left: 25%; /* it is bad practice */
   transform: translateX(-50%);
+
+  cursor: default;
 `;
 
 export const CenterAligner = styled.div`
@@ -199,10 +218,28 @@ export const MenuTitlesWrapper = styled.div`
 `;
 
 export const MenuTitleAnchor = styled(Link)`
+  font-size: 18px;
+  height: 100%;
+  line-height: 36px;
+  font-weight: 500;
   display: block;
-
   color: inherit;
   text-decoration: none;
+  color: white;
+  background-color: #504ebf;
+  padding: 6px 32px;
+  border-radius: 30px;
+`;
+
+const menuTitleUnderline = css`
+  &::after {
+    content: '';
+    position: absolute;
+    top: 3.5rem; /* this is bad practice */
+    left: -20px;
+    width: 100%;
+    border-bottom: 2px solid white;
+  }
 `;
 
 export const MenuTitle = styled.div<MenuTitleProps>`
@@ -215,25 +252,15 @@ export const MenuTitle = styled.div<MenuTitleProps>`
     type === 'sub' ? (isSelected ? '#fff' : 'rgba(255, 255, 255, 0.5)') : '#fff'};
   cursor: pointer;
   position: relative;
-  ${({ isOpened }) =>
-    isOpened &&
-    `
-    &::after {
-  content: "";
-  position: absolute;
-  top: 3.5rem; /* this is bad practice */
-  left: 28%;
-  transform: translateX(-50%);
-  width: 60px;
-  border-bottom: 2px solid white;
-}
-  `}
+  ${({ isOpened }) => isOpened && menuTitleUnderline};
 
   &:not(:last-child) {
     padding-right: 40px;
   }
+
   &:hover {
     color: #fff;
+    ${({ type }) => type !== 'sub' && menuTitleUnderline}
   }
 `;
 

@@ -164,3 +164,14 @@ export const FadeOutUp = `
     }
   }
 `;
+
+export const GrowDown = `
+  @keyframes growdown {
+    from {
+      transform: scaleY(84%) translateY(-16%);
+    }
+    to {
+      transform: scaleY(100%) translateY(0%);
+    }
+  }
+`;

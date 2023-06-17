@@ -14,6 +14,8 @@ const nextConfig = {
       'i.ibb.co',
       'velog.velcdn.com',
       'leadership.ng',
+      'github.githubassets.com',
+      'img1.daumcdn.net',
     ],
   },
   webpack: (config) => {

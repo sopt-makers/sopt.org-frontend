@@ -19,7 +19,7 @@ interface RootProps {
 
 export const Root = styled.div<RootProps>`
   position: fixed;
-  top: 50px;
+  top: 48px;
   right: 0;
 
   z-index: 9;
@@ -114,7 +114,7 @@ export const ContentsWrap = styled.div`
   padding-top: 50px;
   margin-bottom: 0px;
 
-  height: 320px;
+  height: 364px;
 `;
 
 export const MenuTitlesWrap = styled.div`
