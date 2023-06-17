@@ -1,7 +1,7 @@
 import ImgLevitLogo from '@src/assets/corperates/levit.webp';
-import { JobField } from '@src/lib/types/job';
+import { CorporateJoin, JobAPI, JobField } from '@src/lib/types/job';
 
-const corporateJobs = [
+const corporateJobs: CorporateJoin[] = [
   {
     id: 1,
     imgSrc: ImgLevitLogo.src,
@@ -34,11 +34,11 @@ const corporateJobs = [
   },
 ];
 
-const getCorporateJobsByField = async (field: JobField) => {
+const getCorporateJobsByField = async (field?: JobField) => {
   if (field === JobField.ALL) return corporateJobs;
   return corporateJobs.filter((corporateJob) => corporateJob.type === field);
 };
 
-export const mockJobAPI = {
+export const mockJobAPI: JobAPI = {
   getCorporateJobsByField,
 };
