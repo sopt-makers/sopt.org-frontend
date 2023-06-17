@@ -42,7 +42,7 @@ const Content = styled.main`
   flex-direction: column;
   align-items: center;
 
-  max-width: 1200px;
+  width: 1200px;
   gap: 190px;
 
   /* 태블릿 뷰 */
