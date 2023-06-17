@@ -14,16 +14,17 @@ const JobPostings = ({ field }: JopPostingsProps) => {
   return (
     <St.Root>
       <St.JobPostingsContainer>
-        {data?.map(({ id, imgSrc, type, title, corporation, career, location }) => (
-          <JobPostingCard
-            key={id}
-            imgSrc={imgSrc}
-            type={type}
-            title={title}
-            corporation={corporation}
-            career={career}
-            location={location}
-          />
+        {data?.map(({ id, url, imgSrc, type, title, corporation, career, location }) => (
+          <a key={id} href={url} target="_blank" rel="noreferrer">
+            <JobPostingCard
+              imgSrc={imgSrc}
+              type={type}
+              title={title}
+              corporation={corporation}
+              career={career}
+              location={location}
+            />
+          </a>
         ))}
       </St.JobPostingsContainer>
     </St.Root>

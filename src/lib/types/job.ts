@@ -13,6 +13,7 @@ export type CorporateJoin = {
   corporation: string;
   career: string;
   location: string;
+  url: string;
 };
 
 export type JobAPI = {
