@@ -1,8 +1,8 @@
 export const enum JobField {
-  ALL = 'ALL',
-  PM = 'PM',
-  DESIGN = 'DESIGN',
-  DEV = 'DEV',
+  ALL = '전체',
+  PM = '기획',
+  DESIGN = '디자인',
+  DEV = '개발',
 }
 
 export type CorporateJoin = {
