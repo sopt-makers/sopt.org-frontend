@@ -10,6 +10,9 @@ const Card = styled.article`
   height: 227px;
   padding: 26px 49px 29px 26px;
   margin-bottom: 18px;
+  &:hover {
+    background: #212121;
+  }
   /* 태블릿 뷰 */
   @media (max-width: 1199px) and (min-width: 766px) {
     margin-bottom: 4px;
