@@ -229,6 +229,9 @@ export const MenuTitleAnchor = styled(Link)`
   background-color: #504ebf;
   padding: 6px 32px;
   border-radius: 30px;
+  &:hover {
+    background-color: #413fac;
+  }
 `;
 
 const menuTitleUnderline = css`

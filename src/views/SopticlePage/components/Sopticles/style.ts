@@ -141,6 +141,9 @@ export const Title = styled.div`
     font-size: 20px;
   }
   ${textSingularLineEllipsis}
+  ${Card}:hover & {
+    opacity: 0.8;
+  }
 `;
 
 export const Desc = styled.div`
