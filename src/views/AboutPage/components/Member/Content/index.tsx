@@ -17,7 +17,7 @@ const MemberContent = () => {
   const [currentPart, setCurrentPart] = useState<ExtraPart>(PartExtraType.ALL);
   const state = useFetchMember(currentPart);
 
-  const errorContent = <DataErrorBanner />;
+  const errorContent = state._TAG === 'ERROR' && <DataErrorBanner />;
   const tabBarContent = !(state._TAG === 'ERROR' && shouldNotShownWithError) && (
     <TabBar onTabClick={setCurrentPart} selectedTab={currentPart} includesExtra={true} />
   );
