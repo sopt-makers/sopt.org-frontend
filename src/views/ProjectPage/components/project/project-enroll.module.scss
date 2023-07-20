@@ -5,17 +5,22 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: rgba(255, 255, 255, 0.5);
+  color: #ffffff;
   font-style: normal;
 
   .content {
-    width: 60%;
     display: flex;
     justify-content: center;
     align-items: center;
 
-    padding-top: 5px;
     cursor: pointer;
+    color: #ffffff;
+    background-color: #504ebf;
+    border-radius: 30px;
+    padding: 12px 20px;
+    &:hover {
+      background-color: #413fac;
+    }
   }
 
   @include desktop {
@@ -23,14 +28,12 @@
     p {
       font-size: 22px;
       font-weight: 500;
-      color: rgba(255, 255, 255, 0.5);
       padding-bottom: 10px;
     }
 
     span {
       font-size: 22px;
       font-weight: 700;
-      color: rgba(255, 255, 255, 0.5);
     }
   }
 
@@ -40,14 +43,12 @@
     p {
       font-size: 15px;
       font-weight: 500;
-      color: rgba(255, 255, 255, 0.5);
       padding-bottom: 10px;
     }
 
     span {
       font-size: 15px;
       font-weight: 700;
-      color: rgba(255, 255, 255, 0.5);
     }
   }
 }
