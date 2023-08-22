@@ -15,34 +15,37 @@ const client = axios.create({
   timeout: DEFAULT_TIMEOUT,
 });
 
+const CURRENT_GENERATION = 33;
+
 const getAboutInfo = async (): Promise<GetAboutInfoResponse> => {
-  const { data } = await client.get('/aboutsopt');
+  const { data: dataCurrent } = await client.get(`/aboutsopt?generation=${CURRENT_GENERATION}`);
+  const { data: dataPrev } = await client.get(`/aboutsopt?generation=${CURRENT_GENERATION - 1}`);
 
   return {
     aboutInfo: {
-      generation: data.aboutSopt.id,
-      title: data.aboutSopt.title,
-      bannerImage: data.aboutSopt.bannerImage,
+      generation: dataCurrent.aboutSopt.id,
+      title: dataCurrent.aboutSopt.title,
+      bannerImage: dataCurrent.aboutSopt.bannerImage,
       coreValue: {
-        mainDescription: data.aboutSopt.coreDescription,
-        eachValues: data.aboutSopt.coreValues.map((coreValue: CoreValueResponseDto) => ({
+        mainDescription: dataCurrent.aboutSopt.coreDescription,
+        eachValues: dataCurrent.aboutSopt.coreValues.map((coreValue: CoreValueResponseDto) => ({
           title: coreValue.title,
           description: coreValue.subTitle,
           src: coreValue.imageUrl,
         })),
       },
       curriculums: {
-        [Part.PLAN]: data.aboutSopt.planCurriculum,
-        [Part.DESIGN]: data.aboutSopt.designCurriculum,
-        [Part.ANDROID]: data.aboutSopt.androidCurriculum,
-        [Part.IOS]: data.aboutSopt.iosCurriculum,
-        [Part.SERVER]: data.aboutSopt.serverCurriculum,
-        [Part.WEB]: data.aboutSopt.webCurriculum,
+        [Part.PLAN]: dataCurrent.aboutSopt.planCurriculum,
+        [Part.DESIGN]: dataCurrent.aboutSopt.designCurriculum,
+        [Part.ANDROID]: dataCurrent.aboutSopt.androidCurriculum,
+        [Part.IOS]: dataCurrent.aboutSopt.iosCurriculum,
+        [Part.SERVER]: dataCurrent.aboutSopt.serverCurriculum,
+        [Part.WEB]: dataCurrent.aboutSopt.webCurriculum,
       },
       records: {
-        memberCount: data.activitiesRecords.activitiesMemberCount,
-        projectCount: data.activitiesRecords.projectCounts,
-        studyCount: data.activitiesRecords.studyCounts,
+        memberCount: dataPrev.activitiesRecords.activitiesMemberCount,
+        projectCount: dataPrev.activitiesRecords.projectCounts,
+        studyCount: dataPrev.activitiesRecords.studyCounts,
       },
     },
   };

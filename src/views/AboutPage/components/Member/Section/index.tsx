@@ -16,7 +16,7 @@ const MemberSection = ({ generation }: MemberSectionProps) => {
     >
       {/* member 2뎁스 탭  개발 이 삭제 필요 */}
       <ScrollGhost id="members" />
-      <SectionTitle>{generation}기 활동 멤버들</SectionTitle>
+      <SectionTitle>{generation - 1}기 활동 멤버들</SectionTitle>
       <MemberContent />
     </Flex>
   );
