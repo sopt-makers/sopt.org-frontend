@@ -1,4 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next';
+import { googleSheetCredential } from '@src/utils/const/googlesheet-env';
 import { google } from 'googleapis';
 
 export default async function handler(request: NextApiRequest, response: NextApiResponse) {
@@ -19,9 +20,9 @@ export const writeRow = async (email: string) => {
   const dateString = `${now.toDateString()} ${now.toTimeString()}`;
   const auth = new google.auth.GoogleAuth({
     credentials: {
-      client_email: process.env.NEXT_GOOGLE_SHEET_CLIENT_EMAIL,
-      client_id: process.env.NEXT_GOOGLE_SHEET_CLIENT_ID,
-      private_key: process.env.NEXT_GOOGLE_SHEET_PRIVATE_KEY,
+      client_email: googleSheetCredential.client_email,
+      client_id: googleSheetCredential.client_id,
+      private_key: googleSheetCredential.private_key,
     },
     scopes: ['https://www.googleapis.com/auth/spreadsheets'],
   });
