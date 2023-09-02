@@ -74,6 +74,7 @@ const Styled = {
   `,
   QuestionWrapper: styled.div<{ isOpened: boolean }>`
     display: flex;
+    align-items: center;
     justify-content: space-between;
     /* align-items: center; */
     margin-bottom: ${({ isOpened }) => (isOpened ? '37px' : '0')};

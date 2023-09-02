@@ -243,6 +243,11 @@ const menuTitleUnderline = css`
     width: 100%;
     border-bottom: 2px solid white;
   }
+  &:last-child {
+    &::after {
+      width: calc(100% + 40px);
+    }
+  }
 `;
 
 export const MenuTitle = styled.div<MenuTitleProps>`
