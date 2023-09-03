@@ -1,4 +1,5 @@
 import { Footer, Header, Layout, ScrollToTopButton } from '@src/components';
+import { useIsMobile } from '@src/hooks/useDevice';
 import {
   ActivityDescription,
   ActivityReview,
@@ -11,11 +12,13 @@ import {
 import styles from './main-page.module.scss';
 
 function MainPage() {
+  const isMobile = useIsMobile();
+
   return (
     <>
       <Layout>
         <Header />
-        <ScrollToTopButton />
+        {!isMobile && <ScrollToTopButton />}
         <RecruitFloatingBanner />
         <BannerImage />
         <div className={styles.container}>
