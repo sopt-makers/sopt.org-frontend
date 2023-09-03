@@ -21,8 +21,8 @@ function MainPage() {
             <SoptHistory />
             <PartDescription />
             <ActivityDescription />
-            <DetailedInformation />
             <ActivityReview />
+            <DetailedInformation />
           </div>
         </div>
         <Footer />

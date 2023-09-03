@@ -1,12 +1,12 @@
 import { useRouter } from 'next/router';
 import { GTM_CLASS } from '@src/utils/const/gtmClass';
-import { ReactComponent as ArrowRight } from '@src/views/MainPage/assets/arrow-right.svg';
+import ArrowRight from '@src/views/MainPage/assets/arrow-right-grey.svg';
 import styles from './detailed-information.module.scss';
 
 const cardList = [
   {
     name: '프로젝트',
-    desc: 'SOPT에서 진행된 다양한 프로젝트',
+    desc: 'SOPT에서 진행된 프로젝트',
   },
   {
     name: 'FAQ',
@@ -14,7 +14,7 @@ const cardList = [
   },
   {
     name: 'Youtube',
-    desc: 'SOPT 활동 스케치 및 자체콘텐츠',
+    desc: 'SOPT 활동 스케치와 자체 콘텐츠',
   },
 ];
 
@@ -50,7 +50,7 @@ export function DetailedInformation() {
             >
               <div className={`${styles.nameWrapper}  ${GTM_CLASS[`informationCard${name}`]}`}>
                 <h4 className={`${styles.name}  ${GTM_CLASS[`informationCard${name}`]}`}>{name}</h4>
-                <ArrowRight />
+                <img className={`${styles.arrow}`} src={ArrowRight} alt="이동" />
               </div>
               <p className={`${styles.desc}  ${GTM_CLASS[`informationCard${name}`]}`}>{desc}</p>
             </article>

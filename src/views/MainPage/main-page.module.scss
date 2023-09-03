@@ -4,7 +4,7 @@
   display: flex;
   justify-content: center;
   position: relative;
-  margin-top: 64px;
+  margin: 64px 0 240px 0;
 }
 
 .content {
@@ -14,14 +14,14 @@
 
   @include mobile {
     max-width: 360px;
-    gap: 100px;
+    gap: 200px;
   }
   @include tablet {
     max-width: 766px;
-    gap: 150px;
+    gap: 200px;
   }
   @include desktop {
     max-width: 1200px;
-    gap: 190px;
+    gap: 240px;
   }
 }
