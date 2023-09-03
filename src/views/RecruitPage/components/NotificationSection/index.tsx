@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
-import { useRef, useState } from 'react';
 import axios from 'axios';
+import { useRef, useState } from 'react';
 
 const NotificationSection = () => {
   const [isRegistered, setIsRegistered] = useState(false);
