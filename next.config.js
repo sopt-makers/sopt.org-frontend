@@ -17,6 +17,7 @@ const nextConfig = {
       'github.githubassets.com',
       'img1.daumcdn.net',
     ],
+    formats: ['image/avif', 'image/webp'],
   },
   webpack: (config) => {
     config.module.rules.push({
