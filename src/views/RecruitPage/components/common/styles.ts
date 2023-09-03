@@ -44,6 +44,7 @@ export const SectionSubTitle = styled.h3`
   font-weight: 400;
   line-height: 30px; /* 100% */
   letter-spacing: -0.3px;
+  text-align: center;
 
   /* 태블릿 뷰 */
   @media (max-width: 1299px) and (min-width: 766px) {
@@ -59,7 +60,6 @@ export const SectionSubTitle = styled.h3`
     font-weight: 400;
     line-height: 28px; /* 200% */
     letter-spacing: -0.14px;
-    text-align: center;
   }
 `;
 
@@ -69,6 +69,7 @@ export const SectionDesc = styled.div`
   font-family: SUIT;
   font-weight: 400;
   line-height: 150%;
+  text-align: center;
 
   /* 태블릿 뷰 */
   @media (max-width: 1299px) and (min-width: 766px) {
@@ -81,6 +82,5 @@ export const SectionDesc = styled.div`
     text-align: center;
     font-size: 16px;
     line-height: 150%; /* 24px */
-    text-align: center;
   }
 `;

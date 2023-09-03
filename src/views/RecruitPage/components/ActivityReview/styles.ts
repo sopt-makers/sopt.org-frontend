@@ -49,9 +49,9 @@ export const MoreLinkWrapper = styled.a`
   line-height: 40px; /* 160% */
   letter-spacing: -0.25px;
   opacity: 0.6;
+  border-bottom: 1px solid #959595;
 
   @media (max-width: 1299px) and (min-width: 766px) {
-    font-family: SUIT;
     font-size: 20px;
     font-weight: 400;
     line-height: 100%; /* 20px */
@@ -59,7 +59,7 @@ export const MoreLinkWrapper = styled.a`
   }
 
   @media (max-width: 765.9px) {
-    display: none;
+    font-size: 16px;
   }
 `;
 
@@ -98,7 +98,7 @@ export const Content = styled.div`
 
 export const CardWrapper = styled.div`
   cursor: pointer;
-  background-color: #ffffff;
+  background-color: #1a1a20;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -125,7 +125,7 @@ export const CardTitle = styled.div`
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
   word-break: break-all;
-  color: #262626;
+  color: #c8c8c8;
   font-weight: 500;
   font-size: 25px;
   line-height: 40px;
@@ -146,7 +146,7 @@ export const DescWrapper = styled.div`
 `;
 
 export const Desc = styled.div`
-  color: rgba(38, 38, 38, 0.6);
+  color: #c8c8c8;
   font-weight: 500;
   font-size: 25px;
   line-height: 40px;
@@ -163,6 +163,7 @@ export const Desc = styled.div`
 
 export const DescName = styled.div`
   font-weight: 700;
+  line-height: 100%;
   @media (max-width: 765.9px) {
     font-weight: 500;
   }

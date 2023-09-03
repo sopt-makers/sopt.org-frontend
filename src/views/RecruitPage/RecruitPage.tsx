@@ -35,15 +35,6 @@ const Root = styled.div`
   align-items: center;
   min-height: 100vh;
   margin: 0 auto;
-
-  /* 태블릿 뷰 */
-  @media (max-width: 1299px) and (min-width: 766px) {
-    margin-top: 90px;
-  }
-  /* 모바일 뷰 */
-  @media (max-width: 765.9px) {
-    margin-top: 90px;
-  }
 `;
 
 const ContentWrapper = styled.div`

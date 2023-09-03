@@ -25,14 +25,22 @@ const FaqInfo = () => {
         </SectionTitleWrapper>
       </Wrapper>
       <TabBar type="with-all" onTabClick={setSelectedTab} selectedTab={selectedTab} />
-      {faqMap[selectedTab].map((info, index) => (
-        <div key={index} onClick={() => toggleBox(index)}>
-          <QuestionBox info={info} status={status.has(index)} />
-        </div>
-      ))}
+      <FaqWrapper>
+        {faqMap[selectedTab].map((info, index) => (
+          <div key={index} onClick={() => toggleBox(index)}>
+            <QuestionBox info={info} status={status.has(index)} />
+          </div>
+        ))}
+      </FaqWrapper>
     </W>
   );
 };
+
+const FaqWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+`;
 
 const W = styled.div`
   display: flex;

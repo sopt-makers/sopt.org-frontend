@@ -22,7 +22,14 @@ const BlurOverlay = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(rgba(24, 24, 24, 0.5), rgba(24, 24, 24, 1));
+  background: linear-gradient(
+    rgba(24, 24, 24, 0.6),
+    rgba(24, 24, 24, 0.6),
+    rgba(24, 24, 24, 0.6),
+    rgba(24, 24, 24, 0.6),
+    rgba(24, 24, 24, 0.9),
+    rgba(24, 24, 24, 1)
+  );
   z-index: 1;
 `;
 
@@ -69,7 +76,7 @@ const Title = styled.div`
   }
   /* 모바일 뷰 */
   @media (max-width: 765.9px) {
-    font-size: 32px;
+    font-size: 28px;
   }
 `;
 
@@ -82,6 +89,19 @@ const Chip = styled.div`
   color: #1deda2;
   text-align: center;
   z-index: 2;
+  line-height: 100%;
+
+  /* 태블릿 뷰 */
+  @media (max-width: 1299px) and (min-width: 766px) {
+    padding: 6px 0;
+    font-size: 16px;
+    width: 184px;
+  }
+  /* 모바일 뷰 */
+  @media (max-width: 765.9px) {
+    font-size: 12px;
+    width: 164px;
+  }
 `;
 
 const Wrapper = styled.div`

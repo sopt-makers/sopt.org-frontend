@@ -51,12 +51,15 @@ const GridWrapper = styled.div`
     grid-template-columns: 340px auto;
     padding: 38px 54px;
     gap: 15px;
+    border-radius: 20px;
   }
   /* 모바일 뷰 */
   @media (max-width: 765.9px) {
-    grid-template-columns: 170px auto;
+    grid-template-columns: 92px auto;
     padding: 18px 26px;
-    gap: 7px;
+    row-gap: 7px;
+    column-gap: 40px;
+    border-radius: 12px;
   }
 `;
 

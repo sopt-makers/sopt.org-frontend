@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { ReactComponent as ArrowLeft } from '@src/views/MainPage/assets/arrow-left-28x28.svg';
 import { ReactComponent as ArrowRight } from '@src/views/MainPage/assets/arrow-right-28x28.svg';
-import ArrowRightWhite from '@src/views/MainPage/assets/arrow_right_white.svg';
+import arrowRightWhite from '@src/views/MainPage/assets/arrow_right_white.svg';
 import { useHorizontalScroll } from '@src/views/MainPage/lib';
 import { SectionTitle, SectionTitleTranslate, SectionTitleWrapper } from '../common/styles';
 import useFetch from './hooks/useFetch';
@@ -17,7 +17,6 @@ import {
   DescName,
   DescWrapper,
   MoreLinkWrapper,
-  TitleWrapper,
 } from './styles';
 import { parsePartToKorean } from './utils/parsePartToKorean';
 
@@ -35,15 +34,10 @@ export function ActivityReview() {
 
   return (
     <ContainerWrapper>
-      <TitleWrapper>
-        <SectionTitleWrapper>
-          <SectionTitleTranslate>Activity Review</SectionTitleTranslate>
-          <SectionTitle>{'회원들의 후기로 SOPT\n 활동을 미리 만나보세요.'}</SectionTitle>
-        </SectionTitleWrapper>
-        <Link href="/review">
-          <MoreLinkWrapper>활동후기 더보기</MoreLinkWrapper>
-        </Link>
-      </TitleWrapper>
+      <SectionTitleWrapper>
+        <SectionTitleTranslate>Activity Review</SectionTitleTranslate>
+        <SectionTitle>{'회원들의 후기로 SOPT\n 활동을 미리 만나보세요.'}</SectionTitle>
+      </SectionTitleWrapper>
       <ContentWrapper>
         <ArrowWrapper onClick={() => onClickLeftButton(scrollableRef.current)}>
           <ArrowLeft stroke={isLeftScrollable ? 'white' : 'grey'} />
@@ -58,7 +52,7 @@ export function ActivityReview() {
                     {parsePartToKorean(review.part)}파트 {review.semester}기{'\n'}
                     <DescName>{review.reviewer}</DescName>
                   </Desc>
-                  <Arrow src={ArrowRightWhite} alt="" />
+                  <Arrow src={arrowRightWhite} alt="" />
                 </DescWrapper>
               </CardWrapper>
             </Link>
@@ -68,6 +62,9 @@ export function ActivityReview() {
           <ArrowRight stroke={isRightScrollable ? 'white' : 'grey'} />
         </ArrowWrapper>
       </ContentWrapper>
+      <Link href="/review">
+        <MoreLinkWrapper>활동후기 더보기</MoreLinkWrapper>
+      </Link>
     </ContainerWrapper>
   );
 }

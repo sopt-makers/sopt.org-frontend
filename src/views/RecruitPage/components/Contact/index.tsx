@@ -16,7 +16,7 @@ const Contact = () => {
           <SectionTitleTranslate>Inquiry</SectionTitleTranslate>
           <SectionTitle>문의하기</SectionTitle>
         </SectionTitleWrapper>
-        <SectionSubTitle>SOPT 지원에 대해 궁금한 것이 있나요?</SectionSubTitle>
+        <SectionSubTitle>SOPT 지원에 대해 궁금한 것이 더 있나요?</SectionSubTitle>
       </Wrapper>
       <GridWrapper>
         {contactInDisplayOrder.map((contact) => {
@@ -55,10 +55,10 @@ const Contact = () => {
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 8px;
   /* 태블릿 뷰 */
   @media (max-width: 1299px) and (min-width: 766px) {
-    gap: 20px;
+    gap: 8px;
   }
   /* 모바일 뷰 */
   @media (max-width: 765.9px) {
