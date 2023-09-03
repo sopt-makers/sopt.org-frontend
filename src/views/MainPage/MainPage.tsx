@@ -5,6 +5,7 @@ import {
   BannerImage,
   DetailedInformation,
   PartDescription,
+  RecruitFloatingBanner,
   SoptHistory,
 } from '@src/views/MainPage/components';
 import styles from './main-page.module.scss';
@@ -15,6 +16,7 @@ function MainPage() {
       <Layout>
         <Header />
         <ScrollToTopButton />
+        <RecruitFloatingBanner />
         <BannerImage />
         <div className={styles.container}>
           <div className={styles.content}>
