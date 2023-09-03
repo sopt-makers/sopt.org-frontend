@@ -4,75 +4,67 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  @include mobile {
-    width: 90%;
-    gap: 48px;
-    margin-bottom: 120px;
-  }
-  @include tablet {
-    width: 75%;
-    gap: 100px;
-    margin-bottom: 180px;
-  }
-  @include desktop {
-    width: 100%;
-    gap: 100px;
-    margin-bottom: 150px;
-  }
-}
+  gap: 80px;
 
-.titleWrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   @include mobile {
-    gap: 8px;
+    width: 312px;
   }
   @include tablet {
-    gap: 24px;
+    width: 585px;
   }
   @include desktop {
-    width: 100%;
-    flex-direction: row;
-    justify-content: space-between;
+    width: 1200px;
   }
 }
 
 .title {
-  font-weight: 800;
-  white-space: pre-wrap;
+  font-weight: 700;
   text-align: center;
+
   @include mobile {
+    white-space: pre-wrap;
     font-size: 20px;
     line-height: 28px;
   }
   @include tablet {
-    font-size: 36px;
-    line-height: 56px;
+    font-size: 32px;
+    line-height: 140%;
   }
   @include desktop {
-    text-align: left;
-    font-size: 45px;
-    line-height: 60px;
+    font-size: 40px;
+    line-height: 140%;
+  }
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 37px;
+
+  @include mobile {
+    gap: 32.81px;
+  }
+  @include tablet {
+    gap: 48px;
   }
 }
 
 .moreLink {
   cursor: pointer;
-  font-weight: 400;
-  color: rgba(255, 255, 255, 0.6);
+  font-weight: 500;
+  color: #959595;
   text-decoration: underline;
+  line-height: 140%;
+
   @include mobile {
-    font-size: 16px;
-    line-height: 24px;
+    font-size: 14px;
   }
   @include tablet {
-    font-size: 25px;
-    line-height: 24px;
+    font-size: 18px;
   }
   @include desktop {
-    font-size: 25px;
-    line-height: 30px;
+    font-size: 22px;
   }
 }
 
@@ -80,6 +72,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+
   @include mobile {
     width: 100vw;
     padding: 0 16px;
@@ -89,7 +82,7 @@
     padding: 0 24px;
   }
   @include desktop {
-    width: 100%;
+    width: 1200px;
   }
 }
 
@@ -104,16 +97,24 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
     width: 64px;
     height: 64px;
+
     border-radius: 50%;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.4);
     cursor: pointer;
   }
 }
 
+.selected {
+  opacity: 0.2;
+  cursor: not-allowed;
+}
+
 .content {
   display: flex;
+
   @include mobile {
     overflow-x: scroll;
     gap: 16px;
@@ -123,34 +124,35 @@
     gap: 24px;
   }
   @include desktop {
-    margin: 0 32px;
+    max-width: 1008px;
     overflow-x: hidden;
     gap: 24px;
-    max-width: 1008px;
   }
 }
 
 .card {
-  cursor: pointer;
-  background-color: #ffffff;
-  border-radius: 10px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  background-color: #1a1a20;
+  border-radius: 10px;
+  cursor: pointer;
+
   @include mobile {
-    min-width: 194px;
-    height: 139px;
+    min-width: 204px;
+    height: 182px;
     padding: 20px;
   }
   @include tablet {
     min-width: 320px;
     height: 300px;
-    padding: 38px 34px;
+    padding: 46px 34px;
   }
   @include desktop {
     min-width: 320px;
     height: 300px;
-    padding: 38px 34px;
+    padding: 46px 34px;
   }
 }
 
@@ -161,11 +163,14 @@
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
   word-break: break-all;
-  color: #262626;
+
+  color: #c8c8c8;
   font-weight: 500;
+
   @include mobile {
-    font-size: 12px;
-    line-height: 20px;
+    font-size: 16px;
+    line-height: 160%;
+    letter-spacing: -0.32px;
   }
   @include tablet {
     font-size: 25px;
@@ -184,34 +189,32 @@
 }
 
 .desc {
-  color: rgba(38, 38, 38, 0.6);
+  color: #848484;
   font-weight: 500;
+  white-space: pre-wrap;
+
   @include mobile {
-    font-size: 12px;
+    font-size: 16px;
+    line-height: 20px;
   }
   @include tablet {
     font-size: 25px;
     line-height: 40px;
-    white-space: pre-wrap;
   }
   @include desktop {
-    font-size: 25px;
-    line-height: 40px;
-    white-space: pre-wrap;
+    font-size: 22px;
+    line-height: 32px;
   }
 }
 
 .descName {
   font-weight: 700;
-  @include mobile {
-    font-weight: 500;
-  }
 }
 
 .arrow {
   @include mobile {
-    width: 17px;
-    height: 15px;
+    width: 18px;
+    height: 18px;
   }
   @include tablet {
     width: 30px;
