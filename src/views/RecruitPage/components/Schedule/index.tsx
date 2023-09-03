@@ -1,12 +1,15 @@
 import styled from '@emotion/styled';
-import { SectionTitle } from '../common/styles';
+import { SectionTitle, SectionTitleTranslate, SectionTitleWrapper } from '../common/styles';
 
 const Schedule = () => {
   return (
     <Wrapper>
-      <SectionTitle>모집 일정</SectionTitle>
+      <SectionTitleWrapper>
+        <SectionTitleTranslate>Schedule</SectionTitleTranslate>
+        <SectionTitle>모집 일정</SectionTitle>
+      </SectionTitleWrapper>
       <GridWrapper>
-        <OddText>YB 서류 접수</OddText>
+        <OddText> YB 서류 접수</OddText>
         <EvenText>9월 4일 - 9월 9일</EvenText>
         <OddText>YB 면접</OddText>
         <EvenText>9월 16일 - 9월 17일</EvenText>
@@ -35,23 +38,24 @@ const Wrapper = styled.div`
 
 const GridWrapper = styled.div`
   display: grid;
-  grid-template-columns: 560px auto;
-  border-radius: 10px;
-  background-color: #000;
+  justify-content: center;
+  grid-template-columns: 240px 220px;
+  row-gap: 25px;
+  column-gap: 220px;
+  border-radius: 30px;
+  background-color: #1a1a20;
   padding: 85px 88px;
-  gap: 25px;
+
   /* 태블릿 뷰 */
   @media (max-width: 1299px) and (min-width: 766px) {
     grid-template-columns: 340px auto;
     padding: 38px 54px;
-    background: linear-gradient(to right, #000 30%, transparent);
     gap: 15px;
   }
   /* 모바일 뷰 */
   @media (max-width: 765.9px) {
     grid-template-columns: 170px auto;
     padding: 18px 26px;
-    background: linear-gradient(to right, #000 30%, transparent);
     gap: 7px;
   }
 `;
@@ -62,6 +66,9 @@ const OddText = styled.div`
   font-size: 28px;
   font-weight: 700;
   line-height: 150%; /* 42px */
+  &::before {
+    content: '🗓 ';
+  }
   /* 태블릿 뷰 */
   @media (max-width: 1299px) and (min-width: 766px) {
     color: #fff;

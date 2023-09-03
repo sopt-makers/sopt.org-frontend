@@ -3,7 +3,7 @@ import { ReactComponent as ArrowLeft } from '@src/views/MainPage/assets/arrow-le
 import { ReactComponent as ArrowRight } from '@src/views/MainPage/assets/arrow-right-28x28.svg';
 import ArrowRightWhite from '@src/views/MainPage/assets/arrow_right_white.svg';
 import { useHorizontalScroll } from '@src/views/MainPage/lib';
-import { SectionTitle } from '../common/styles';
+import { SectionTitle, SectionTitleTranslate, SectionTitleWrapper } from '../common/styles';
 import useFetch from './hooks/useFetch';
 import {
   Arrow,
@@ -36,7 +36,10 @@ export function ActivityReview() {
   return (
     <ContainerWrapper>
       <TitleWrapper>
-        <SectionTitle>{'회원들의 후기로 SOPT\n 활동을 미리 만나보세요.'}</SectionTitle>
+        <SectionTitleWrapper>
+          <SectionTitleTranslate>Activity Review</SectionTitleTranslate>
+          <SectionTitle>{'회원들의 후기로 SOPT\n 활동을 미리 만나보세요.'}</SectionTitle>
+        </SectionTitleWrapper>
         <Link href="/review">
           <MoreLinkWrapper>활동후기 더보기</MoreLinkWrapper>
         </Link>

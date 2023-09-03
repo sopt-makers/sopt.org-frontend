@@ -2,27 +2,31 @@ import styled from '@emotion/styled';
 import { useState } from 'react';
 import { Part } from '@src/lib/types/universal';
 import TabBar from '../common/Tabs';
-import { SectionTitle } from '../common/styles';
+import { SectionTitle, SectionTitleTranslate, SectionTitleWrapper } from '../common/styles';
 import { infoMap } from './constants';
 
 const ChapterInfo = () => {
   const [selectedTab, setSelectedTab] = useState<Part>(Part.PLAN);
 
   return (
-    <W>
-      <SectionTitle>{'SOPT는 33기는 총 6개의 파트로\n이루어져 있어요.'}</SectionTitle>
+    <Wrapper>
+      <SectionTitleWrapper>
+        <SectionTitleTranslate>Positions</SectionTitleTranslate>
+        <SectionTitle>{'SOPT는 33기는 총 6개의 파트로\n이루어져 있어요.'}</SectionTitle>
+      </SectionTitleWrapper>
       <TabBar type="without-all" onTabClick={setSelectedTab} selectedTab={selectedTab} />
+
       <InfoWrapper>{infoMap[selectedTab].info}</InfoWrapper>
       <FitWrapper>
         {infoMap[selectedTab].fit.map((fit, idx) => (
           <div key={idx}>- {fit}</div>
         ))}
       </FitWrapper>
-    </W>
+    </Wrapper>
   );
 };
 
-const W = styled.div`
+const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 70px;

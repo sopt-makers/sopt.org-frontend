@@ -1,13 +1,21 @@
 import styled from '@emotion/styled';
 import Image from 'next/image';
-import { SectionSubTitle, SectionTitle } from '../common/styles';
+import {
+  SectionSubTitle,
+  SectionTitle,
+  SectionTitleTranslate,
+  SectionTitleWrapper,
+} from '../common/styles';
 import { contactInDisplayOrder, contactMap } from './constant';
 
 const Contact = () => {
   return (
     <div>
       <Wrapper>
-        <SectionTitle>문의하기</SectionTitle>
+        <SectionTitleWrapper>
+          <SectionTitleTranslate>Inquiry</SectionTitleTranslate>
+          <SectionTitle>문의하기</SectionTitle>
+        </SectionTitleWrapper>
         <SectionSubTitle>SOPT 지원에 대해 궁금한 것이 있나요?</SectionSubTitle>
       </Wrapper>
       <GridWrapper>

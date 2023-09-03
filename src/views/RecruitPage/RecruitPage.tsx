@@ -37,7 +37,7 @@ const Root = styled.div`
   margin: 0 auto;
 
   /* 태블릿 뷰 */
-  @media (max-width: 1199px) and (min-width: 766px) {
+  @media (max-width: 1299px) and (min-width: 766px) {
     margin-top: 90px;
   }
   /* 모바일 뷰 */
@@ -55,7 +55,7 @@ const ContentWrapper = styled.div`
   padding: 100px 0;
 
   /* 태블릿 뷰 */
-  @media (max-width: 1199px) and (min-width: 766px) {
+  @media (max-width: 1299px) and (min-width: 766px) {
     width: 700px;
     gap: 120px;
   }

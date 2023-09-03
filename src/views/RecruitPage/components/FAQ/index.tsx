@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { ExtraPart, PartExtraType } from '@src/lib/types/universal';
 import QuestionBox from '@src/views/FAQPage/components/faq/QuestionBox';
 import TabBar from '../common/Tabs';
-import { SectionSubTitle, SectionTitle } from '../common/styles';
+import { SectionTitle, SectionTitleTranslate, SectionTitleWrapper } from '../common/styles';
 import { faqMap } from './constant';
 
 const FaqInfo = () => {
@@ -19,8 +19,10 @@ const FaqInfo = () => {
   return (
     <W>
       <Wrapper>
-        <SectionTitle>FAQ</SectionTitle>
-        <SectionSubTitle>자주 묻는 질문</SectionSubTitle>
+        <SectionTitleWrapper>
+          <SectionTitleTranslate>FAQ</SectionTitleTranslate>
+          <SectionTitle>자주 묻는 질문</SectionTitle>
+        </SectionTitleWrapper>
       </Wrapper>
       <TabBar type="with-all" onTabClick={setSelectedTab} selectedTab={selectedTab} />
       {faqMap[selectedTab].map((info, index) => (

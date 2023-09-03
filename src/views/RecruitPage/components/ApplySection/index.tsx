@@ -40,7 +40,7 @@ const ApplyButton = styled.a`
   background-color: #1dedae;
   z-index: 2;
   /* 태블릿 뷰 */
-  @media (max-width: 1199px) and (min-width: 766px) {
+  @media (max-width: 1299px) and (min-width: 766px) {
     font-size: 18px;
     width: 180px;
     padding: 20px 0;
@@ -62,8 +62,9 @@ const Title = styled.div`
   line-height: 140%; /* 60.2px */
   letter-spacing: -0.86px;
   z-index: 2;
+  word-break: keep-all;
   /* 태블릿 뷰 */
-  @media (max-width: 1199px) and (min-width: 766px) {
+  @media (max-width: 1299px) and (min-width: 766px) {
     font-size: 36px;
   }
   /* 모바일 뷰 */
@@ -98,7 +99,7 @@ const Wrapper = styled.div`
   background-repeat: no-repeat;
 
   /* 태블릿 뷰 */
-  @media (max-width: 1199px) and (min-width: 766px) {
+  @media (max-width: 1299px) and (min-width: 766px) {
     padding-top: 0;
     height: 440px;
     background-size: auto 160px;

@@ -1,5 +1,7 @@
 import styled from '@emotion/styled';
 
+export const SectionTitleWrapper = styled.div``;
+
 export const SectionTitle = styled.h3`
   color: #fff;
   font-family: SUIT;
@@ -9,6 +11,7 @@ export const SectionTitle = styled.h3`
   line-height: 60px;
   letter-spacing: -0.45px;
   white-space: pre-line;
+  text-align: center;
 
   /* 태블릿 뷰 */
   @media (max-width: 1299px) and (min-width: 766px) {
@@ -23,8 +26,16 @@ export const SectionTitle = styled.h3`
     line-height: 28px;
     letter-spacing: -0.18px;
     width: 360px;
-    text-align: center;
   }
+`;
+
+export const SectionTitleTranslate = styled.h4`
+  color: #1dedae;
+  text-align: center;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 140%; /* 23.8px */
+  letter-spacing: -0.34px;
 `;
 
 export const SectionSubTitle = styled.h3`

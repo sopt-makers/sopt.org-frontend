@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
-import axios from 'axios';
 import { useRef, useState } from 'react';
+import axios from 'axios';
 
 const NotificationSection = () => {
   const [isRegistered, setIsRegistered] = useState(false);
@@ -62,7 +62,7 @@ const Wrapper = styled.div`
   padding-top: 90px;
 
   /* 태블릿 뷰 */
-  @media (max-width: 1199px) and (min-width: 766px) {
+  @media (max-width: 1299px) and (min-width: 766px) {
     padding-top: 0;
     height: 440px;
   }
@@ -83,7 +83,7 @@ const TitleText = styled.div`
   line-height: 140%;
 
   /* 태블릿 뷰 */
-  @media (max-width: 1199px) and (min-width: 766px) {
+  @media (max-width: 1299px) and (min-width: 766px) {
     font-size: 30px;
   }
   /* 모바일 뷰 */
@@ -104,7 +104,7 @@ const FormWrapper = styled.form`
   padding: 15px 20px;
 
   /* 태블릿 뷰 */
-  @media (max-width: 1199px) and (min-width: 766px) {
+  @media (max-width: 1299px) and (min-width: 766px) {
     height: 85px;
     padding: 13px 15px;
     max-width: 639px;
@@ -135,7 +135,7 @@ const Input = styled.input`
   }
 
   /* 태블릿 뷰 */
-  @media (max-width: 1199px) and (min-width: 766px) {
+  @media (max-width: 1299px) and (min-width: 766px) {
     font-size: 20px;
   }
   /* 모바일 뷰 */
@@ -161,7 +161,7 @@ const SubmitButton = styled.input`
   letter-spacing: -0.22px;
 
   /* 태블릿 뷰 */
-  @media (max-width: 1199px) and (min-width: 766px) {
+  @media (max-width: 1299px) and (min-width: 766px) {
     width: 172px;
     font-size: 20px;
   }
@@ -182,7 +182,7 @@ const ConfirmText = styled.div<{ visible: boolean }>`
   color: rgba(255, 255, 255, 0.5);
 
   /* 태블릿 뷰 */
-  @media (max-width: 1199px) and (min-width: 766px) {
+  @media (max-width: 1299px) and (min-width: 766px) {
     font-size: 20px;
   }
   /* 모바일 뷰 */
