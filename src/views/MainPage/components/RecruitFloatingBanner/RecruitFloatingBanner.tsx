@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import Timer from '@src/components/common/Timer';
 import { useIsMobile } from '@src/hooks/useDevice';
 import SoptSymbol from '@src/views/MainPage/assets/sopt-symbol.svg';
@@ -9,10 +10,11 @@ const TARGET_DATE = dayjs('2023-09-08T15:00:00.000Z').toDate();
 
 export function RecruitFloatingBanner() {
   const isMobile = useIsMobile();
+  const router = useRouter();
 
   return (
     <Wrapper>
-      <Banner>
+      <Banner isMobile={isMobile} onClick={() => router.push('/recruit')}>
         <Countdown>
           <Symbol src={SoptSymbol} alt="솝트 심볼" />
           {isMobile ? (
@@ -60,7 +62,7 @@ const Symbol = styled.img`
   }
 `;
 
-const Banner = styled.div`
+const Banner = styled.div<{ isMobile: boolean }>`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -88,6 +90,8 @@ const Banner = styled.div`
 
     border-radius: 12px;
   }
+
+  cursor: ${({ isMobile }) => (isMobile ? 'pointer' : 'auto')};
 `;
 
 const Countdown = styled.div`
