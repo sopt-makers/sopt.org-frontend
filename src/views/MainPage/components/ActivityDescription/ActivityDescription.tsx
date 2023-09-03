@@ -1,19 +1,21 @@
 import Image from 'next/image';
 import { useIsDesktop, useIsMobile, useIsTablet } from '@src/hooks/useDevice';
 import { useTabs } from '@src/hooks/useTabs';
-import appJamImage from '@src/views/MainPage/assets/sopt-activity/appjam.png';
-import managementMediaTeamImage from '@src/views/MainPage/assets/sopt-activity/management-media-team.png';
-import seminarImage from '@src/views/MainPage/assets/sopt-activity/seminar.png';
-import sopkathonImage from '@src/views/MainPage/assets/sopt-activity/sopkathon.png';
-import soptTermImage from '@src/views/MainPage/assets/sopt-activity/sopt-term.png';
-import studyAndNetworkingImage from '@src/views/MainPage/assets/sopt-activity/study-networking.png';
+import {
+  imgAppjam,
+  imgManagementMediaTeam,
+  imgSeminar,
+  imgSopkathon,
+  imgSoptTerm,
+  imgStudyNetworking,
+} from '@src/views/MainPage/assets/sopt-activity';
 import cc from 'classcat';
 import styles from './activity-description.module.scss';
 
 const activityList = [
   {
     type: '정기세미나',
-    imgSrc: seminarImage,
+    imgSrc: imgSeminar,
     content: [
       { data: '활동 기간 동안 총 ', highlight: false },
       { data: '8회의 파트별 세미나', highlight: true },
@@ -25,7 +27,7 @@ const activityList = [
   },
   {
     type: '솝커톤',
-    imgSrc: sopkathonImage,
+    imgSrc: imgSopkathon,
     content: [
       { data: '무박 2일', highlight: true },
       {
@@ -41,7 +43,7 @@ const activityList = [
   },
   {
     type: '앱잼',
-    imgSrc: appJamImage,
+    imgSrc: imgAppjam,
     content: [
       { data: '3~5주간 ', highlight: true },
       {
@@ -56,7 +58,7 @@ const activityList = [
   },
   {
     type: '스터디&네트워킹',
-    imgSrc: studyAndNetworkingImage,
+    imgSrc: imgStudyNetworking,
     content: [
       { data: '각 파트의 실력을 심도있게 다질 수 있는 ', highlight: false },
       { data: '스터디', highlight: true },
@@ -70,7 +72,7 @@ const activityList = [
   },
   {
     type: '솝텀',
-    imgSrc: soptTermImage,
+    imgSrc: imgSoptTerm,
     content: [
       { data: 'SOPT를 ', highlight: false },
       { data: '한 기수 이상 수료한 회원', highlight: true },
@@ -84,7 +86,7 @@ const activityList = [
   },
   {
     type: '운영팀&미디어팀',
-    imgSrc: managementMediaTeamImage,
+    imgSrc: imgManagementMediaTeam,
     content: [
       { data: '운영팀', highlight: true },
       { data: '에서는 SOPT 회원들의 원활한 ', highlight: false },
@@ -127,7 +129,7 @@ function MobileActivityDescription() {
             src={currentTab.imgSrc}
             alt="card"
             fill
-            sizes="(max-width: 766px) 328px 585px"
+            sizes="(max-width: 766px) 309px, 585px"
           />
         </div>
         <div className={styles.cardContent}>
