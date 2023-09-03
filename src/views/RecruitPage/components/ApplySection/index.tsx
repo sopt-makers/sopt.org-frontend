@@ -22,7 +22,7 @@ const BlurOverlay = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(rgba(27, 27, 27, 0.5), rgba(27, 27, 27, 1));
+  background: linear-gradient(rgba(24, 24, 24, 0.5), rgba(24, 24, 24, 1));
   z-index: 1;
 `;
 
