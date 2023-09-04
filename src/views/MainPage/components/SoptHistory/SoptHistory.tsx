@@ -10,7 +10,7 @@ const historyList = [
 export function SoptHistory() {
   return (
     <section className={styles.container}>
-      <h3 className={styles.title}>국내 최대 규모의 대학생 연합 IT벤처창업 동아리 SOPT</h3>
+      <h3 className={styles.title}>{'국내 최대 규모의 대학생 연합\n IT벤처창업 동아리 SOPT'}</h3>
       <div className={styles.content}>
         {historyList.map(({ category, content }) => {
           return (
