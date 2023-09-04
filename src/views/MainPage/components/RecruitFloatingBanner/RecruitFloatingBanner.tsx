@@ -14,7 +14,7 @@ export function RecruitFloatingBanner() {
 
   return (
     <Wrapper>
-      <Banner isMobile={isMobile} onClick={() => router.push('/recruit')}>
+      <Banner isMobile={isMobile} onClick={() => isMobile && router.push('/recruit')}>
         <Countdown>
           <Symbol src={SoptSymbol.src} alt="솝트 심볼" />
           {isMobile ? (
