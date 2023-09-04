@@ -15,8 +15,10 @@ export function BannerImage() {
 
   return (
     <section className={styles.container} ref={containerRef}>
-      <p className={styles.description}>기획자, 디자이너, 개발자가 협업을 통해 성장하는 SOPT</p>
-      <p className={styles.slogan}>SHOUT OUR PASSION TOGETHER</p>
+      <div className={styles.textWrapper}>
+        <p className={styles.slogan}>{'SHOUT\nOUR PASSION\nTOGETHER'}</p>
+        <p className={styles.description}>기획자, 디자이너, 개발자가 협업을 통해 성장하는 SOPT</p>
+      </div>
       <div className={styles.downArrowWrapper} onClick={onScrollMoveDown}>
         <ArrowDown className={styles.downArrow} width="24" height="24" />
       </div>
