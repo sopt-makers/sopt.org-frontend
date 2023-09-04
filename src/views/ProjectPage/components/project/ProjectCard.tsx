@@ -28,7 +28,7 @@ export function ProjectCard({ project }: { project: ProjectType }) {
           </div>
           <div className={`${styles.links} ${GTM_CLASS.projectCard}`}>
             {project.link
-              ?.filter(({ title }) => title?.length > 0)
+              ?.filter((project, index) => project?.title?.length > 0 && index <= 3)
               .map(({ title, url }) => {
                 return <div key={shortid.generate()}>{LinkRender(title, url)}</div>;
               })}
