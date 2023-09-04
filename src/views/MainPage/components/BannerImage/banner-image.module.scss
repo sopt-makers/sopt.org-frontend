@@ -109,8 +109,39 @@
   }
 }
 
+.bannerWrapper {
+  position: relative;
+  width: 100vw;
+  height: inherit;
+}
+
 .bannerImage {
-  opacity: 0.6;
-  background-image: linear-gradient(180deg, #181818, rgba(24, 24, 24, 0) 43.49%, #181818 79.91%);
+  opacity: 0.7;
   object-fit: cover;
+}
+
+.bannerGradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100vw;
+  height: inherit;
+
+  background: linear-gradient(
+    180deg,
+    #16161c 25.43%,
+    rgba(24, 24, 24, 0.21) 45.89%,
+    rgba(24, 24, 24, 0) 64.38%,
+    #181818 83.43%
+  );
+
+  @include desktop {
+    background: linear-gradient(
+      180deg,
+      #16161c 13.73%,
+      rgba(22, 22, 28, 0.21) 46.18%,
+      #16161c 84.75%
+    );
+  }
 }

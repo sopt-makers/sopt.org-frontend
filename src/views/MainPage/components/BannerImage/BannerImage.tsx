@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { useRef } from 'react';
-import MainPageBanner from '@src/assets/sopt/main-page_banner-compression.png';
+import MainPageBanner from '@src/assets/sopt/main-page_banner.png';
 import { ReactComponent as ArrowDown } from '@src/views/MainPage/assets/arrow-down.svg';
 import styles from './banner-image.module.scss';
 
@@ -20,7 +20,10 @@ export function BannerImage() {
       <div className={styles.downArrowWrapper} onClick={onScrollMoveDown}>
         <ArrowDown className={styles.downArrow} width="24" height="24" />
       </div>
-      <Image src={MainPageBanner} className={styles.bannerImage} alt="banner" fill priority />
+      <div className={styles.bannerWrapper}>
+        <Image src={MainPageBanner} className={styles.bannerImage} alt="banner" fill priority />
+        <div className={styles.bannerGradient} />
+      </div>
     </section>
   );
 }
