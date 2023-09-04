@@ -38,12 +38,12 @@ export function RecruitFloatingBanner() {
 const Wrapper = styled.div`
   position: fixed;
   left: 50%;
-  bottom: 120px;
+  bottom: 60px;
   transform: translate(-50%, -50%);
   z-index: 9999;
 
   @media (max-width: 1299px) {
-    bottom: 80px;
+    bottom: 48px;
   }
 `;
 
