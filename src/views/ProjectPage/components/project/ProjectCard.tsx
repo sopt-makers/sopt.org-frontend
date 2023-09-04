@@ -8,6 +8,7 @@ import { ReactComponent as AppStore } from '../../assets/app-store-40x40.svg';
 import { ReactComponent as Github } from '../../assets/github-40x40.svg';
 import { ReactComponent as Instagram } from '../../assets/instagram-30x30.svg';
 import { ReactComponent as PlayStore } from '../../assets/play-store-40x40.svg';
+import asap from '../../assets/temp-asap-thumbnail.png';
 import { ReactComponent as Web } from '../../assets/website-40x40.svg';
 import { ReactComponent as Youtube } from '../../assets/youtube-30x30.svg';
 import styles from './project-card.module.scss';
@@ -16,7 +17,23 @@ export function ProjectCard({ project }: { project: ProjectType }) {
   return (
     <Link href={`/project/${project.id}`}>
       <article className={`${styles.item} ${GTM_CLASS.projectCard}`}>
-        {RepresentativeImageRender(project.logoImage, project?.thumbnailImage)}
+        {
+          /* 임시 코드 */
+          project.name === 'ASAP' ? (
+            <div className={styles['image-wrapper']}>
+              <Image
+                className={`${GTM_CLASS.projectCard}`}
+                src={asap}
+                width={316}
+                height={176}
+                alt="thumbnail"
+              />
+            </div>
+          ) : (
+            RepresentativeImageRender(project.logoImage, project?.thumbnailImage)
+          )
+        }
+        {/* {RepresentativeImageRender(project.logoImage, project?.thumbnailImage)} */}
         <div className={`${styles.content} ${GTM_CLASS.projectCard}`}>
           <div className={`${styles.types} ${GTM_CLASS.projectCard}`}>
             {ServiceTypeRender(project.serviceTypes)}
