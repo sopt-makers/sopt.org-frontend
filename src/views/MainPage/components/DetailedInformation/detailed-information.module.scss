@@ -3,9 +3,9 @@
 .container {
   display: flex;
   flex-direction: column;
+  align-items: center;
 
   @include mobile {
-    align-items: center;
     width: 312px;
     gap: 48px;
   }
@@ -14,7 +14,6 @@
     gap: 80px;
   }
   @include desktop {
-    align-items: center;
     width: 1200px;
     gap: 80px;
   }
