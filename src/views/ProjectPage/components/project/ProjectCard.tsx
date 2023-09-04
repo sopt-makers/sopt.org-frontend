@@ -1,3 +1,4 @@
+import styled from '@emotion/styled';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useIsDesktop, useIsMobile, useIsTablet } from '@src/hooks/useDevice';
@@ -58,11 +59,9 @@ function ProjectCardMobileImage(logoImage: string, thumbnailImage?: string) {
   return (
     <>
       {isCardThumbnail && (
-        <Image
+        <StyledThumbnail
           className={`${GTM_CLASS.projectCard}`}
           src={thumbnailImage}
-          width={316}
-          height={176}
           alt="thumbnail"
         />
       )}
@@ -78,6 +77,12 @@ function ProjectCardMobileImage(logoImage: string, thumbnailImage?: string) {
     </>
   );
 }
+
+const StyledThumbnail = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+`;
 
 function ProjectCardDesktopImage(logoImage: string, thumbnailImage?: string) {
   const isCardThumbnail = thumbnailImage && thumbnailImage?.length > 0;
