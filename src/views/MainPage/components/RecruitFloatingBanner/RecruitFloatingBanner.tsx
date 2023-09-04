@@ -6,7 +6,7 @@ import { useIsMobile } from '@src/hooks/useDevice';
 import SoptSymbol from '@src/views/MainPage/assets/sopt-symbol.svg';
 import dayjs from 'dayjs';
 
-const TARGET_DATE = dayjs('2023-09-08T15:00:00.000Z').toDate();
+const TARGET_DATE = dayjs('2023-09-09T18:00:00+09:00').toDate();
 
 export function RecruitFloatingBanner() {
   const isMobile = useIsMobile();
