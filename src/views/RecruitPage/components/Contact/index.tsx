@@ -97,7 +97,8 @@ const IconImage = styled(Image)`
 
 const GridWrapper = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: auto auto;
+  justify-content: space-between;
   row-gap: 80px;
   margin-top: 80px;
   /* 태블릿 뷰 */

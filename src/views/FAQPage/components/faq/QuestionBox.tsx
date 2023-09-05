@@ -60,7 +60,7 @@ const Styled = {
   `,
   Title: styled.h1`
     font-weight: 600;
-    font-size: 30px;
+    font-size: 24px;
     line-height: 100%;
     color: #ffffff;
     &::before {
@@ -68,10 +68,6 @@ const Styled = {
       color: #1deda2;
     }
 
-    /* 태블릿 뷰 */
-    @media (max-width: 1919.9px) and (min-width: 766px) {
-      font-size: 24px;
-    }
     /* 모바일 뷰 */
     @media (max-width: 765.9px) {
       font-size: 16px;

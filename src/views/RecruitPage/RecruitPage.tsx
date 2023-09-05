@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 import { Footer, Header, Layout, ScrollToTopButton } from '@src/components';
 import { ActivityReview } from './components/ActivityReview/ActivityReview';
 import ApplySection from './components/ApplySection';
+import BottomLogo from './components/BottomLogo';
 import ChapterInfo from './components/ChapterInfo';
 import Contact from './components/Contact';
 import FaqInfo from './components/FAQ';
@@ -10,7 +11,7 @@ import Schedule from './components/Schedule';
 
 function Recruit() {
   return (
-    <Layout>
+    <Layout moreStyle={{ backgroundColor: '#16161c' }}>
       <Header />
       <ScrollToTopButton />
       <Root>
@@ -23,6 +24,7 @@ function Recruit() {
           <Contact />
           <ActivityReview />
         </ContentWrapper>
+        <BottomLogo />
       </Root>
       <Footer />
     </Layout>

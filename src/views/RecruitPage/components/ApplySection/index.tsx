@@ -76,7 +76,7 @@ const Title = styled.div`
   }
   /* 모바일 뷰 */
   @media (max-width: 765.9px) {
-    font-size: 28px;
+    font-size: 29px;
   }
 `;
 

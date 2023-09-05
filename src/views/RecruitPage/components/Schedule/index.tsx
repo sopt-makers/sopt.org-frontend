@@ -10,7 +10,9 @@ const Schedule = () => {
       </SectionTitleWrapper>
       <GridWrapper>
         <OddText> YB 서류 접수</OddText>
-        <EvenText>9월 4일 - 9월 9일</EvenText>
+        <EvenText>
+          9월 4일 <Highlight>11시</Highlight> - 9월 9일 <Highlight>18시</Highlight>
+        </EvenText>
         <OddText>YB 면접</OddText>
         <EvenText>9월 16일 - 9월 17일</EvenText>
         <OddText>YB 최종 결과 발표</OddText>
@@ -39,7 +41,7 @@ const Wrapper = styled.div`
 const GridWrapper = styled.div`
   display: grid;
   justify-content: center;
-  grid-template-columns: 240px 220px;
+  grid-template-columns: 240px 300px;
   row-gap: 25px;
   column-gap: 220px;
   border-radius: 30px;
@@ -48,7 +50,7 @@ const GridWrapper = styled.div`
 
   /* 태블릿 뷰 */
   @media (max-width: 1299px) and (min-width: 766px) {
-    grid-template-columns: 340px auto;
+    grid-template-columns: 300px auto;
     padding: 38px 54px;
     gap: 15px;
     border-radius: 20px;
@@ -65,8 +67,7 @@ const GridWrapper = styled.div`
 
 const OddText = styled.div`
   color: #fff;
-  font-family: SUIT;
-  font-size: 28px;
+  font-size: 24px;
   font-weight: 700;
   line-height: 150%; /* 42px */
   &::before {
@@ -75,7 +76,6 @@ const OddText = styled.div`
   /* 태블릿 뷰 */
   @media (max-width: 1299px) and (min-width: 766px) {
     color: #fff;
-    font-family: SUIT;
     font-size: 18px;
     font-weight: 700;
     line-height: 30px; /* 166.667% */
@@ -83,31 +83,41 @@ const OddText = styled.div`
   /* 모바일 뷰 */
   @media (max-width: 765.9px) {
     color: #fff;
-    font-family: SUIT;
     font-size: 8.957px;
     font-weight: 700;
     line-height: 14.929px; /* 166.667% */
   }
 `;
 
+const Highlight = styled.span`
+  color: #1deda2;
+  font-size: 24px;
+  font-weight: 400;
+  letter-spacing: -0.48px;
+  text-decoration-line: underline;
+  /* 태블릿 뷰 */
+  @media (max-width: 1299px) and (min-width: 766px) {
+    font-size: 18px;
+  }
+  /* 모바일 뷰 */
+  @media (max-width: 765.9px) {
+    font-size: 8.957px;
+  }
+`;
+
 const EvenText = styled.div`
   color: #fff;
-  font-family: SUIT;
-  font-size: 28px;
+  font-size: 24px;
   font-weight: 400;
   line-height: 150%; /* 42px */
   /* 태블릿 뷰 */
   @media (max-width: 1299px) and (min-width: 766px) {
-    color: rgba(255, 255, 255, 0.8);
-    font-family: SUIT;
     font-size: 18px;
     font-weight: 300;
     line-height: 30px; /* 166.667% */
   }
   /* 모바일 뷰 */
   @media (max-width: 765.9px) {
-    color: rgba(255, 255, 255, 0.8);
-    font-family: SUIT;
     font-size: 8.957px;
     font-weight: 300;
     line-height: 14.929px; /* 166.667% */

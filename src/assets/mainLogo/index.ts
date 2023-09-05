@@ -18,6 +18,7 @@ import logo28 from './logo_28.svg';
 import logo29 from './logo_29.svg';
 import logo30 from './logo_30.svg';
 import logo31 from './logo_31.svg';
+import logoDoSopt from './logo_dosopt@3x.png';
 
 export {
   logo11,
@@ -40,4 +41,5 @@ export {
   logo29,
   logo30,
   logo31,
+  logoDoSopt,
 };

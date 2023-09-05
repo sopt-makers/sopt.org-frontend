@@ -36,18 +36,11 @@ const ChapterInfo = () => {
 const BaseChip = styled.div`
   border-radius: 30px;
   align-self: flex-start;
-  padding: 12px 28px;
-  line-height: 42px;
-  font-size: 22px;
   border-width: 2px;
   border-style: solid;
-
-  /* 태블릿 뷰 */
-  @media (max-width: 1299px) and (min-width: 766px) {
-    padding: 8px 14px;
-    line-height: 22px;
-    font-size: 14px;
-  }
+  padding: 13px 28px;
+  line-height: 22px;
+  font-size: 22px;
 
   @media (max-width: 765.9px) {
     padding: 6px 10px;
@@ -93,7 +86,7 @@ const Wrapper = styled.div`
 
 const BaseText = styled.div`
   color: #fff;
-  font-size: 28px;
+  font-size: 24px;
   font-style: normal;
   font-weight: 400;
   line-height: 40px; /* 142.857% */

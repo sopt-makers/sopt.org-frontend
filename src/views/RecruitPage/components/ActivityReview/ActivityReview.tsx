@@ -36,7 +36,7 @@ export function ActivityReview() {
     <ContainerWrapper>
       <SectionTitleWrapper>
         <SectionTitleTranslate>Activity Review</SectionTitleTranslate>
-        <SectionTitle>{'회원들의 후기로 SOPT\n 활동을 미리 만나보세요.'}</SectionTitle>
+        <SectionTitle>{'회원들의 후기로\nSOPT 활동을 미리 만나보세요.'}</SectionTitle>
       </SectionTitleWrapper>
       <ContentWrapper>
         <ArrowWrapper onClick={() => onClickLeftButton(scrollableRef.current)}>
