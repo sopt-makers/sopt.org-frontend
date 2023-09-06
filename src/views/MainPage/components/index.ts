@@ -4,3 +4,4 @@ export * from './ActivityDescription/ActivityDescription';
 export * from './DetailedInformation/DetailedInformation';
 export * from './PartDescription/PartDescription';
 export * from './ActivityReview/ActivityReview';
+export * from './RecruitFloatingBanner/RecruitFloatingBanner';
