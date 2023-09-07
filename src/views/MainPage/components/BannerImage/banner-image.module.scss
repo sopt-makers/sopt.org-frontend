@@ -13,7 +13,7 @@
     height: 1242px;
   }
   @include desktop {
-    height: 1000px;
+    height: calc(100vh - 80px);
   }
 }
 
@@ -34,7 +34,8 @@
     gap: 16px;
   }
   @include desktop {
-    top: 250px;
+    top: max(calc(50% + 50px), 300px);
+    transform: translate(0, -50%);
     left: 18.8vw;
     gap: 13px;
   }
@@ -96,7 +97,7 @@
     }
   }
   @include desktop {
-    top: 916px;
+    top: max(calc(85% + 50px), 650px);
 
     & > svg {
       width: 64px;
