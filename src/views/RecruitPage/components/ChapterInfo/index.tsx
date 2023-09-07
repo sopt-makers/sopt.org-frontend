@@ -42,8 +42,14 @@ const BaseChip = styled.div`
   line-height: 22px;
   font-size: 22px;
 
+    /* 태블릿 뷰 */
+  @media (max-width: 1299px) and (min-width: 766px) {
+    padding: 8px 20px;
+    font-size: 18px;
+  }
+
   @media (max-width: 765.9px) {
-    padding: 6px 10px;
+    padding: 6px 12px;
     line-height: 18px;
     font-size: 12px;
     border-width: 1px;
