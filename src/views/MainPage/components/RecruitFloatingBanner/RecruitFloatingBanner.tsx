@@ -38,13 +38,9 @@ export function RecruitFloatingBanner() {
 const Wrapper = styled.div`
   position: fixed;
   left: 50%;
-  bottom: 60px;
+  bottom: 30px;
   transform: translate(-50%, -50%);
   z-index: 9999;
-
-  @media (max-width: 1299px) {
-    bottom: 48px;
-  }
 `;
 
 const Symbol = styled.img`
