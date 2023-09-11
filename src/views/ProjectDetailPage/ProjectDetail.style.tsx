@@ -363,6 +363,7 @@ export const ProjectDescription = styled(CommonWrapper)`
   border-radius: 10px;
   background-color: transparent;
   padding: 40px;
+  white-space: pre-wrap;
   /* 태블릿 뷰 */
   @media (max-width: 1280px) {
     width: 346px;

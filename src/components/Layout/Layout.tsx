@@ -1,11 +1,11 @@
 import styled from '@emotion/styled';
-import { PropsWithChildren } from 'react';
+import { CSSProperties, PropsWithChildren } from 'react';
 
-export function Layout({ children }: PropsWithChildren<unknown>) {
-  return <Main>{children}</Main>;
+export function Layout({ children, moreStyle }: PropsWithChildren<{ moreStyle?: CSSProperties }>) {
+  return <Main style={moreStyle}>{children}</Main>;
 }
 
-const Main = styled.div`
+const Main = styled.div<{ moreStyle?: CSSProperties }>`
   width: 100%;
 
   @media (max-width: 1279px) {
