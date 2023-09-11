@@ -3,44 +3,35 @@
 .container {
   display: flex;
   flex-direction: column;
+  align-items: center;
 
   @include mobile {
-    align-items: center;
-    width: 90%;
+    width: 312px;
+    gap: 48px;
   }
   @include tablet {
-    align-items: center;
-    width: 75%;
+    width: 585px;
+    gap: 80px;
   }
   @include desktop {
-    align-items: flex-start;
-    width: 100%;
+    width: 1200px;
+    gap: 80px;
   }
 }
 
 .title {
   word-break: keep-all;
-  font-weight: 800;
+  font-weight: 700;
+  line-height: 140%;
+
   @include mobile {
-    text-align: center;
-    width: 210px;
-    height: 56px;
     font-size: 20px;
-    line-height: 28px;
   }
   @include tablet {
-    text-align: center;
-    width: 360px;
-    height: 112px;
-    font-size: 36px;
-    line-height: 56px;
+    font-size: 32px;
   }
   @include desktop {
-    text-align: start;
-    width: 460px;
-    height: 120px;
-    font-size: 45px;
-    line-height: 60px;
+    font-size: 40px;
   }
 }
 
@@ -48,58 +39,55 @@
   display: flex;
   @include mobile {
     flex-direction: column;
-    margin-top: 48px;
     gap: 8px;
   }
   @include tablet {
     flex-direction: column;
-    margin-top: 100px;
     gap: 16px;
   }
   @include desktop {
-    margin-top: 100px;
-    gap: 16px;
+    gap: 30px;
   }
 }
 
 .card {
-  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+
+  background-color: #1a1a20;
   border-radius: 10px;
   cursor: pointer;
 
   @include mobile {
-    width: 328px;
-    height: 104px;
+    width: 312px;
+    height: 102px;
     padding: 28px;
+
+    gap: 9px;
   }
   @include tablet {
     width: 585px;
-    height: 196px;
-    padding: 56px;
+    height: 169px;
+    padding: 48px 40px;
+
+    gap: 17px;
   }
   @include desktop {
-    padding: 63px 50px;
-    width: 355px;
-    height: 240px;
+    padding: 60px 40px;
+    width: 381px;
+    height: 201px;
+
+    gap: 24px;
   }
 }
 
 .nameWrapper {
   display: flex;
   align-items: center;
-  @include mobile {
-    margin-bottom: 8px;
-  }
-  @include tablet {
-    margin-bottom: 16px;
-  }
-  @include desktop {
-    margin-bottom: 24px;
-  }
 }
 
 .name {
-  color: #262626;
+  color: #c8c8c8;
   line-height: 100%;
   font-weight: 700;
 
@@ -114,10 +102,21 @@
   }
 }
 
+.arrow {
+  width: 30px;
+  height: 30px;
+
+  @include mobile {
+    width: 18px;
+    height: 18px;
+  }
+}
+
 .desc {
-  color: #7d7d7d;
+  color: #848484;
   font-weight: 500;
   word-break: keep-all;
+
   @include mobile {
     font-size: 15px;
     line-height: 22px;
@@ -127,9 +126,7 @@
     line-height: 40px;
   }
   @include desktop {
-    width: 260px;
-    height: 80px;
-    font-size: 25px;
-    line-height: 40px;
+    font-size: 22px;
+    line-height: normal;
   }
 }

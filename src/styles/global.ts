@@ -80,7 +80,7 @@ export const global = css`
   }
 
   body {
-    background-color: #181818;
+    background-color: #16161c;
     line-height: 1;
   }
 
