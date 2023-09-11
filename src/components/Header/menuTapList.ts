@@ -33,8 +33,8 @@ export const menuTapList: MenuTapList = [
     href: '/sponsor',
   },
   {
-    type: MenuTapType.Anchor,
-    title: '지원하기',
-    href: 'https://sopt-recruiting.web.app/recruiting/apply/ob',
+    type: MenuTapType.Router,
+    title: '리크루팅',
+    href: '/recruit',
   },
 ];
