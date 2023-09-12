@@ -1,7 +1,6 @@
 import styled from '@emotion/styled';
 import { Footer, Header, Layout, ScrollToTopButton } from '@src/components';
-import Content from './components/Content';
-import Description from './components/Description';
+import { Content, Description } from './components';
 
 function ReviewPage() {
   return (

@@ -6,7 +6,7 @@ import website from '@src/assets/icons/website_icon.svg';
 import instagram from '@src/assets/logo/instagram.svg';
 import { LinkDetailType } from '../types';
 
-const LinkMap = {
+const LinkMap: Record<LinkDetailType, { name: string; src: string }> = {
   website: { name: '웹사이트', src: website },
   googlePlay: { name: '플레이스토어', src: googleplay },
   appStore: { name: '앱스토어', src: appstore },

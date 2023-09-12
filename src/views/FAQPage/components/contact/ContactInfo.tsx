@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { ContactInfoType } from '../../types';
+import { ContactInfoType } from '@src/lib/types/faq';
 
 interface ContactInfoProps {
   info: ContactInfoType;

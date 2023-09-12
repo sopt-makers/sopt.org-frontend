@@ -1,7 +1,7 @@
 import Image from 'next/image';
+import { useHorizontalScroll } from '@src/hooks/useHorizontalScroll';
 import { ReactComponent as ArrowLeft } from '@src/views/MainPage/assets/arrow-left-28x28.svg';
 import { ReactComponent as ArrowRight } from '@src/views/MainPage/assets/arrow-right-28x28.svg';
-import { useHorizontalScroll } from '@src/views/MainPage/lib';
 import { corporatePartnerList } from './constants';
 import styles from './corporate-partner.module.scss';
 
