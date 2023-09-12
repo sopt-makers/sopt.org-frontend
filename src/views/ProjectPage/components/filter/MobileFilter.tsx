@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Condition } from '@src/lib';
+import { Condition } from '@src/components/common/Condition';
 import { ProjectCategoryType } from '@src/lib/types/project';
 import { MobileFilterModal } from './MobileFilterModal';
 import { MobileUtilityButton } from './MobileUtilityButton';

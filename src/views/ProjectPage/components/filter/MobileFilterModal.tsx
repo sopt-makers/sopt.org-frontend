@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { ReactComponent as ToggleArrowBtn } from '@src/assets/icons/ToggleArrow.svg';
-import { Condition } from '@src/lib';
+import { Condition } from '@src/components/common/Condition';
 import { ProjectCategoryType } from '@src/lib/types/project';
 import cc from 'classcat';
 import { projectCategoryList } from '../../lib/constants';
