@@ -1,5 +1,5 @@
+import { BASE_URL, DEFAULT_TIMEOUT } from '@src/lib/constants/client';
 import { ExtraPart, PartExtraType } from '@src/lib/types/universal';
-import { BASE_URL, DEFAULT_TIMEOUT } from '@src/utils/const/client';
 import axios from 'axios';
 import qs from 'qs';
 import { GetReviewsResponse, GetSampleReviewsResponse, ReviewAPI } from '../../types/review';

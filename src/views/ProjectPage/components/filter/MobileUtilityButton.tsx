@@ -1,5 +1,5 @@
 import { ReactComponent as MobileFilterBtn } from '@src/assets/icons/MobileFilterBtn.svg';
-import { GTM_CLASS } from '@src/utils/const/gtmClass';
+import { GTM_CLASS } from '@src/lib/constants/gtmClass';
 import styles from './mobile-utility-button.module.scss';
 
 export function MobileUtilityButton({

@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import { googleSheetCredential } from '@src/utils/const/googlesheet-env';
+import { googleSheetCredential } from '@src/lib/constants/googlesheet-env';
 import { google } from 'googleapis';
 
 export default async function handler(request: NextApiRequest, response: NextApiResponse) {

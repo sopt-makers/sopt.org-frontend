@@ -1,4 +1,4 @@
-import { BASE_URL, DEFAULT_TIMEOUT } from '@src/utils/const/client';
+import { BASE_URL, DEFAULT_TIMEOUT } from '@src/lib/constants/client';
 import axios from 'axios';
 import {
   GetProjectDetailResponse,

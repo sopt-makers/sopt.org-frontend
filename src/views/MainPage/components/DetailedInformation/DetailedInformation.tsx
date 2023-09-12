@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router';
-import { GTM_CLASS } from '@src/utils/const/gtmClass';
+import { GTM_CLASS } from '@src/lib/constants/gtmClass';
 import ArrowRight from '@src/views/MainPage/assets/arrow-right-grey.svg';
 import styles from './detailed-information.module.scss';
 

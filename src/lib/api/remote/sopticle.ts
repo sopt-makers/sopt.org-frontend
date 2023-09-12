@@ -1,3 +1,4 @@
+import { BASE_URL, DEFAULT_TIMEOUT } from '@src/lib/constants/client';
 import {
   GetSopticlesResponse,
   PostSopticleLikeResponse,
@@ -5,7 +6,6 @@ import {
   SopticleResponseDto,
 } from '@src/lib/types/sopticle';
 import { ExtraPart, PartExtraType } from '@src/lib/types/universal';
-import { BASE_URL, DEFAULT_TIMEOUT } from '@src/utils/const/client';
 import { sanitizeImageUrl } from '@src/utils/sanitize';
 import { getStorageHandler } from '@src/utils/storageHandler';
 import axios from 'axios';

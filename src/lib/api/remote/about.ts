@@ -1,3 +1,4 @@
+import { BASE_URL, DEFAULT_TIMEOUT } from '@src/lib/constants/client';
 import {
   GetAboutInfoResponse,
   GetMembersInfoResponse,
@@ -5,7 +6,6 @@ import {
 } from '@src/lib/types/about';
 import { CoreValueResponseDto, MemberResponseDto, StudyResponseDto } from '@src/lib/types/dto';
 import { Part } from '@src/lib/types/universal';
-import { BASE_URL, DEFAULT_TIMEOUT } from '@src/utils/const/client';
 import { parseStringToPart } from '@src/utils/parseStringToPart';
 import axios from 'axios';
 import qs from 'qs';
