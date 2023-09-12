@@ -1,5 +1,5 @@
+import { extraTabs, tabs } from '@src/lib/constants/tabs';
 import { ExtraPart, Part } from '@src/lib/types/universal';
-import { extraTabs, tabs } from '@src/views/AboutPage/constant/taps';
 import * as St from './style';
 
 type TabBarPropsIncludedExtra = {

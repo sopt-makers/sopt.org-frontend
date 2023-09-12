@@ -1,4 +1,4 @@
-import { ExtraTabType, Part, PartExtraType, TabType } from '@src/lib/types/universal';
+import { ExtraTabType, Part, PartExtraType, TabType } from '../types/universal';
 
 export const extraTabs: ExtraTabType[] = [
   {
@@ -15,7 +15,7 @@ export const extraTabs: ExtraTabType[] = [
   },
   {
     value: Part.ANDROID,
-    label: 'Android',
+    label: '안드로이드',
   },
   {
     value: Part.IOS,
@@ -23,11 +23,11 @@ export const extraTabs: ExtraTabType[] = [
   },
   {
     value: Part.WEB,
-    label: 'Web',
+    label: '웹',
   },
   {
     value: Part.SERVER,
-    label: 'Server',
+    label: '서버',
   },
 ];
 
