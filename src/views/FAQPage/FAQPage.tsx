@@ -1,7 +1,6 @@
 import styled from '@emotion/styled';
 import { Footer, Header, Layout } from '@src/components';
-import Contact from './components/contact';
-import FAQ from './components/faq';
+import { Contact, FAQ } from './components';
 
 function FAQPage() {
   return (
