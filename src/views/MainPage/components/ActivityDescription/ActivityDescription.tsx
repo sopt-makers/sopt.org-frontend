@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import React from 'react';
 import { useIsDesktop, useIsMobile, useIsTablet } from '@src/hooks/useDevice';
 import { useTabs } from '@src/hooks/useTabs';
 import {
@@ -134,8 +135,12 @@ function MobileActivityDescription() {
         </div>
         <div className={styles.cardContent}>
           <p>
-            {currentTab.content.map(({ data, highlight }) =>
-              highlight ? <span>{data}</span> : data,
+            {currentTab.content.map(({ data, highlight }, index) =>
+              highlight ? (
+                <span key={index}>{data}</span>
+              ) : (
+                <React.Fragment key={index}>data</React.Fragment>
+              ),
             )}
           </p>
         </div>
@@ -165,7 +170,13 @@ function DesktopActivityDescription() {
             </div>
             <div className={styles.cardContent}>
               <p>
-                {content.map(({ data, highlight }) => (highlight ? <span>{data}</span> : data))}
+                {content.map(({ data, highlight }, index) =>
+                  highlight ? (
+                    <span key={index}>{data}</span>
+                  ) : (
+                    <React.Fragment key={index}>data</React.Fragment>
+                  ),
+                )}
               </p>
             </div>
           </article>
