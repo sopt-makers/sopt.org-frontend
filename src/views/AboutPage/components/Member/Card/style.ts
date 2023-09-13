@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import Image from 'next/image';
 import { textSingularLineEllipsis } from '@src/styles/textEllipsis';
 
 export const Card = styled.article`
@@ -31,6 +32,10 @@ export const Card = styled.article`
     margin-bottom: 32px;
     padding: 18px 17px;
   }
+`;
+
+export const ProfileImage = styled(Image)`
+  object-fit: cover;
 `;
 
 export const ImageWrapper = styled.div`
