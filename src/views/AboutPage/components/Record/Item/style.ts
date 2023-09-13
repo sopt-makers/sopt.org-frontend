@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import Link from 'next/link';
-import arrowRight from '@src/assets/icons/arrow-right-16x16.svg';
+import arrowRight from '@src/assets/icons/arrow_right_16x16.svg';
 
 export const LinkWrapper = styled(Link)`
   width: 100%;

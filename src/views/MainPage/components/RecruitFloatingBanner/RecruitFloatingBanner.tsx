@@ -1,9 +1,9 @@
 import styled from '@emotion/styled';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import SoptSymbol from '@src/assets/icons/dosopt_symbol.png';
 import Timer from '@src/components/common/Timer';
 import { useIsMobile } from '@src/hooks/useDevice';
-import SoptSymbol from '@src/views/MainPage/assets/dosopt_symbol.png';
 import dayjs from 'dayjs';
 
 const TARGET_DATE = dayjs('2023-09-09T18:00:00+09:00').toDate();

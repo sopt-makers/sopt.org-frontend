@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import Link from 'next/link';
 import { css } from '@emotion/react';
 import { useCallback, useEffect, useState } from 'react';
-import { LOGO_IMAGE_URL } from '@src/assets/sopt/logo';
+import { LOGO_IMAGE_URL } from '@src/assets/mainLogo/base64_logo';
 import useHeader from '@src/hooks/useHeader';
 import { GrowDown } from '@src/lib/styles/animation';
 import { menuTapList } from '../menuTapList';

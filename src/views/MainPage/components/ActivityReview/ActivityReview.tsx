@@ -1,8 +1,8 @@
 import Link from 'next/link';
+import { ReactComponent as ArrowLeft } from '@src/assets/icons/arrow_left_28x28.svg';
+import { ReactComponent as ArrowRight } from '@src/assets/icons/arrow_right_28x28.svg';
+import ArrowRightGrey from '@src/assets/icons/arrow_right_grey.svg';
 import { useHorizontalScroll } from '@src/hooks/useHorizontalScroll';
-import { ReactComponent as ArrowLeft } from '@src/views/MainPage/assets/arrow-left-28x28.svg';
-import { ReactComponent as ArrowRight } from '@src/views/MainPage/assets/arrow-right-28x28.svg';
-import ArrowRightGrey from '@src/views/MainPage/assets/arrow-right-grey.svg';
 import cc from 'classcat';
 import styles from './activity-review.module.scss';
 import useFetch from './hooks/useFetch';

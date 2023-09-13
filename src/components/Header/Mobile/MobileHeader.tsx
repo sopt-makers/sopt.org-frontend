@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 import { useState } from 'react';
 import menuBar from '@src/assets/icons/menuBar.svg';
 import xButton from '@src/assets/icons/xButton.png';
-import { LOGO_IMAGE_URL } from '@src/assets/sopt/logo';
+import { LOGO_IMAGE_URL } from '@src/assets/mainLogo/base64_logo';
 import { Condition } from '@src/components/common/Condition';
 import { MenuState } from '../types';
 import HeaderMenu from './HeaderMenu';

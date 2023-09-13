@@ -1,8 +1,8 @@
-import facebookLogo from '@src/assets/logo/facebook.svg';
-import instagramLogo from '@src/assets/logo/instagram.svg';
-import kakaoLogo from '@src/assets/logo/kakao.svg';
-import mailLogo from '@src/assets/logo/mail.svg';
-import youtubeLogo from '@src/assets/logo/youtube.svg';
+import facebookLogo from '@src/assets/icons/facebook.svg';
+import instagramLogo from '@src/assets/icons/instagram.svg';
+import kakaoLogo from '@src/assets/icons/kakao.svg';
+import mailLogo from '@src/assets/icons/mail.svg';
+import youtubeLogo from '@src/assets/icons/youtube.svg';
 import * as S from './style';
 
 interface ChannelsProps {

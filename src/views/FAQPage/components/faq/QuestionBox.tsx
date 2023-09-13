@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import { ReactComponent as IcArrow } from '@src/assets/icons/ic_arrow_right_white.svg';
-import { FAQType } from '../../types';
+import { FAQType } from '@src/lib/types/faq';
 
 interface QuestionBoxProps {
   info: FAQType;

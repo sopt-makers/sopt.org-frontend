@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { useRef } from 'react';
-import MainPageBanner from '@src/assets/sopt/main-page_banner.png';
-import { ReactComponent as ArrowDown } from '@src/views/MainPage/assets/arrow-down.svg';
+import { ReactComponent as ArrowDown } from '@src/assets/icons/arrow_down.svg';
+import MainPageBanner from '@src/assets/images/main-page_banner.png';
 import styles from './banner-image.module.scss';
 
 export function BannerImage() {

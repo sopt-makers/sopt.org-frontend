@@ -1,4 +1,4 @@
-import { ReactComponent as MobileFilterBtn } from '@src/assets/icons/MobileFilterBtn.svg';
+import { ReactComponent as MobileFilterBtn } from '@src/assets/icons/btn-mobile-filter.svg';
 import { GTM_CLASS } from '@src/lib/constants/gtmClass';
 import styles from './mobile-utility-button.module.scss';
 

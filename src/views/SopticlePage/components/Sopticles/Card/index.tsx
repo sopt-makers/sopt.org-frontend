@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { ReactComponent as IconHeartFilled } from '@src/assets/icons/icon_heartfilled.svg';
-import { ReactComponent as IconHeartUnfilled } from '@src/assets/icons/icon_heartunfilled.svg';
+import { ReactComponent as IconHeartFilled } from '@src/assets/icons/ic_heartfilled.svg';
+import { ReactComponent as IconHeartUnfilled } from '@src/assets/icons/ic_heartunfilled.svg';
 import NullImage from '@src/assets/images/null_image.png';
 import useStorage from '@src/hooks/useStorage';
 import { api } from '@src/lib/api';

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ReactComponent as ToggleArrowBtn } from '@src/assets/icons/ToggleArrow.svg';
+import { ReactComponent as ToggleArrowBtn } from '@src/assets/icons/ic_toggle_arrow.svg';
 import { Condition } from '@src/components/common/Condition';
 import { ProjectCategoryType } from '@src/lib/types/project';
 import cc from 'classcat';
