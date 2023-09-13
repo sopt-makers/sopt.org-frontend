@@ -2,8 +2,8 @@ import { useMemo } from 'react';
 import { useIsMobile } from '@src/hooks/useDevice';
 import { ExtraPart } from '@src/lib/types/universal';
 import { OvalSpinner } from '@src/views/ProjectPage/components';
+import { logoPath } from '../../assets/logo';
 import useFetch from '../../hooks/useFetch';
-import { logoPath } from '../../libs/constants';
 import * as S from './style';
 
 type ReviewsProps = {
