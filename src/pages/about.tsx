@@ -3,10 +3,12 @@ import { InferGetServerSidePropsType } from 'next';
 import { lazy } from 'react';
 import { Footer, Header, Layout } from '@src/components';
 import { api } from '@src/lib/api';
-import Banner from '@src/views/AboutPage/components/Banner';
-import CirriculumSection from '@src/views/AboutPage/components/Cirriculum/Section';
-import CoreValueSection from '@src/views/AboutPage/components/CoreValue/Section';
-import RecordSection from '@src/views/AboutPage/components/Record/Section';
+import {
+  Banner,
+  CirriculumSection,
+  CoreValueSection,
+  RecordSection,
+} from '@src/views/AboutPage/components';
 
 const MemberSection = lazy(() => import('@src/views/AboutPage/components/Member/Section'));
 
