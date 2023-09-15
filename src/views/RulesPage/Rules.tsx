@@ -1,9 +1,7 @@
 import styled from '@emotion/styled';
 import { Footer, Header } from '@src/components';
 import { useIsDesktop } from '@src/hooks/useDevice';
-import RulesHead from '@src/views/RulesPage/RulesHead';
-import RulesList from './RulesList';
-import UnderlinedTitle from './UnderlinedText';
+import { RulesHead, RulesList, UnderlinedText } from './components';
 
 const SOPT_RULES = 'SOPT 회칙';
 
@@ -15,9 +13,7 @@ function Rules() {
       <RulesHead />
       <Header />
       <Content>
-        <UnderlinedTitle fontSize={isDesktopOrTablet ? '25px' : '35px'}>
-          {SOPT_RULES}
-        </UnderlinedTitle>
+        <UnderlinedText fontSize={isDesktopOrTablet ? '25px' : '35px'}>{SOPT_RULES}</UnderlinedText>
         <RulesList />
       </Content>
       <Footer />

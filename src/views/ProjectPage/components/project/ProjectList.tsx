@@ -1,5 +1,5 @@
+import { Condition } from '@src/components/common/Condition';
 import { State } from '@src/hooks/useFetchBase/types';
-import { Condition } from '@src/lib';
 import { ProjectCategoryType, ProjectType } from '@src/lib/types/project';
 import cc from 'classcat';
 import { useInfiniteScroll } from '../../hooks/useInfiniteScroll';

@@ -1,8 +1,8 @@
 import Link from 'next/link';
-import { ReactComponent as ArrowLeft } from '@src/views/MainPage/assets/arrow-left-28x28.svg';
-import { ReactComponent as ArrowRight } from '@src/views/MainPage/assets/arrow-right-28x28.svg';
-import arrowRightWhite from '@src/views/MainPage/assets/arrow_right_white.svg';
-import { useHorizontalScroll } from '@src/views/MainPage/lib';
+import { ReactComponent as ArrowLeft } from '@src/assets/icons/arrow_left_28x28.svg';
+import { ReactComponent as ArrowRight } from '@src/assets/icons/arrow_right_28x28.svg';
+import arrowRightWhite from '@src/assets/icons/arrow_right_white.svg';
+import { useHorizontalScroll } from '@src/hooks/useHorizontalScroll';
 import { SectionTitle, SectionTitleTranslate, SectionTitleWrapper } from '../common/styles';
 import useFetch from './hooks/useFetch';
 import {

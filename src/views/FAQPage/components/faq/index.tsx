@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { useState } from 'react';
 import { useIsDesktop, useIsMobile, useIsTablet } from '@src/hooks/useDevice';
-import { questionList, questionListMobile, questionListTablet } from '../../lib/constants';
+import { questionList, questionListMobile, questionListTablet } from '@src/lib/constants/faq';
 import QuestionBox from './QuestionBox';
 
 function FAQ() {

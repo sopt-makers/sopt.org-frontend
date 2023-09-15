@@ -1,4 +1,4 @@
-import { ContactInfoType, FAQType } from '../types';
+import { ContactInfoType, FAQType } from '../types/faq';
 
 export const contactInfo: ContactInfoType[] = [
   { id: 'mail', text: '이메일', content: 'president@sopt.org' },

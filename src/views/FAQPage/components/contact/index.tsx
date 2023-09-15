@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { contactInfo } from '../../lib/constants';
+import { contactInfo } from '@src/lib/constants/faq';
 import ContactInfo from './ContactInfo';
 
 function Contact() {

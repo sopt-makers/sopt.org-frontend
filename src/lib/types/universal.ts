@@ -27,10 +27,10 @@ export enum PartExtraType {
 
 export type ExtraPart = PartExtraType | Part;
 
-type TapTypeOption<T> = {
+type TabTypeOption<T> = {
   value: T;
   label: string;
 };
 
-export type TabType = TapTypeOption<Part>;
-export type ExtraTabType = TapTypeOption<ExtraPart>;
+export type TabType = TabTypeOption<Part>;
+export type ExtraTabType = TabTypeOption<ExtraPart>;

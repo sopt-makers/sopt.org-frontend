@@ -1,5 +1,5 @@
-import { RULES } from '@src/assets/sopt/rules';
-import CollapseLi from '../CollapseLi';
+import { RULES } from '@src/lib/constants/rules';
+import CollapseLi from '../CollapseLi/CollapseLi';
 import * as S from './RulesList.style';
 
 function RulesList() {

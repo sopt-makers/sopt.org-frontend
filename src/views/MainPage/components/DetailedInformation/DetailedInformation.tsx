@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router';
-import { GTM_CLASS } from '@src/utils/const/gtmClass';
-import ArrowRight from '@src/views/MainPage/assets/arrow-right-grey.svg';
+import ArrowRight from '@src/assets/icons/arrow_right_grey.svg';
+import { GTM_CLASS } from '@src/lib/constants/gtmClass';
 import styles from './detailed-information.module.scss';
 
 const cardList = [

@@ -1,5 +1,5 @@
+import { extraTabs } from '@src/lib/constants/tabs';
 import { ExtraPart, ExtraTabType } from '@src/lib/types/universal';
-import { tabs } from '../../libs/constants';
 import * as S from './style';
 
 type TabBarProps = {
@@ -10,7 +10,7 @@ type TabBarProps = {
 const TabBar = ({ onTabClick, selectedTab }: TabBarProps) => {
   return (
     <S.TabBar>
-      {tabs.map((tab) => (
+      {extraTabs.map((tab) => (
         <Tab
           key={tab.value}
           onClick={() => onTabClick(tab.value)}

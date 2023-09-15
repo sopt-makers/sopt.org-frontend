@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router';
 import { FC } from 'react';
-import { ReactComponent as ArrowRight } from '@src/assets/icons/arrow-right-16x16.svg';
+import { ReactComponent as ArrowRight } from '@src/assets/icons/arrow_right_16x16.svg';
 import Channels from '@src/components/Footer/Channels';
 import * as St from './style';
 

@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { mainColor } from '@src/assets/sopt/mainColor';
+import { mainColor } from '@src/styles/colors';
 
 const Description = () => {
   return <Title>SOPT 회원들의 활동 후기</Title>;

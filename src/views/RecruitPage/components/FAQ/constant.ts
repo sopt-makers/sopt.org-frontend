@@ -1,5 +1,5 @@
+import { questionList } from '@src/lib/constants/faq';
 import { ExtraPart, Part, PartExtraType } from '@src/lib/types/universal';
-import { questionList } from '@src/views/FAQPage/lib/constants';
 
 export const faqMap: Record<ExtraPart, { question: string; answer: string }[]> = {
   [PartExtraType.ALL]: questionList,
