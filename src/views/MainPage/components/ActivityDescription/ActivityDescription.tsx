@@ -1,3 +1,5 @@
+import Image from 'next/image';
+import React from 'react';
 import { useIsDesktop, useIsMobile, useIsTablet } from '@src/hooks/useDevice';
 import { useTabs } from '@src/hooks/useTabs';
 import {
@@ -9,8 +11,6 @@ import {
   imgStudyNetworking,
 } from '@src/views/MainPage/assets/sopt-activity';
 import cc from 'classcat';
-import Image from 'next/image';
-import React from 'react';
 import styles from './activity-description.module.scss';
 
 const activityList = [
