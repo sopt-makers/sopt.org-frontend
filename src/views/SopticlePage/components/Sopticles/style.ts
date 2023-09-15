@@ -95,7 +95,9 @@ export const ThumbnailWrapper = styled.div`
   }
 `;
 
-export const Thumbnail = styled(Image)``;
+export const Thumbnail = styled(Image)`
+  object-fit: cover;
+`;
 
 export const ChipWrapper = styled.div`
   display: flex;
