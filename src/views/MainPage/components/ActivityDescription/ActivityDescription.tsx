@@ -1,5 +1,3 @@
-import Image from 'next/image';
-import React from 'react';
 import { useIsDesktop, useIsMobile, useIsTablet } from '@src/hooks/useDevice';
 import { useTabs } from '@src/hooks/useTabs';
 import {
@@ -11,6 +9,8 @@ import {
   imgStudyNetworking,
 } from '@src/views/MainPage/assets/sopt-activity';
 import cc from 'classcat';
+import Image from 'next/image';
+import React from 'react';
 import styles from './activity-description.module.scss';
 
 const activityList = [
@@ -139,7 +139,7 @@ function MobileActivityDescription() {
               highlight ? (
                 <span key={index}>{data}</span>
               ) : (
-                <React.Fragment key={index}>data</React.Fragment>
+                <React.Fragment key={index}>{data}</React.Fragment>
               ),
             )}
           </p>
@@ -174,7 +174,7 @@ function DesktopActivityDescription() {
                   highlight ? (
                     <span key={index}>{data}</span>
                   ) : (
-                    <React.Fragment key={index}>data</React.Fragment>
+                    <React.Fragment key={index}>{data}</React.Fragment>
                   ),
                 )}
               </p>
