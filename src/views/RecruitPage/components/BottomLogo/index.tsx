@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 import Image from 'next/image';
 import { logoDoSopt } from '@src/assets/mainLogo';
 

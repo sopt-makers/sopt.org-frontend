@@ -52,8 +52,7 @@ const NotificationSection = () => {
 
 const Wrapper = styled.div`
   width: 100vw;
-  height: 620px;
-  background-color: rgba(255, 255, 255, 0.1);
+  height: 700px;
   justify-content: center;
   align-items: center;
   display: flex;
@@ -63,7 +62,7 @@ const Wrapper = styled.div`
 
   /* 태블릿 뷰 */
   @media (max-width: 1299px) and (min-width: 766px) {
-    padding-top: 0;
+    padding-top: 100px;
     height: 440px;
   }
   /* 모바일 뷰 */
@@ -97,7 +96,7 @@ const FormWrapper = styled.form`
   width: 100%;
   max-width: 1000px;
   height: 100px;
-  background-color: #000;
+  background-color: #ffffff24;
   border-radius: 100px;
   display: flex;
   justify-content: space-between;
@@ -148,15 +147,15 @@ const Input = styled.input`
 const SubmitButton = styled.input`
   border-radius: 50px;
   width: 184px;
-  background: #504ebf;
+  background: #ffffff;
   border: none;
-  color: #fff;
+  color: #000;
   cursor: pointer;
   text-align: center;
   font-family: SUIT;
   font-size: 22px;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 100%; /* 22px */
   letter-spacing: -0.22px;
 
