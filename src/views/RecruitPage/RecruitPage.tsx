@@ -1,11 +1,11 @@
 import styled from '@emotion/styled';
 import { Footer, Header, Layout, ScrollToTopButton } from '@src/components';
 import { ActivityReview } from './components/ActivityReview/ActivityReview';
-import ApplySection from './components/ApplySection';
 import BottomLogo from './components/BottomLogo';
 import ChapterInfo from './components/ChapterInfo';
 import Contact from './components/Contact';
 import FaqInfo from './components/FAQ';
+import NotificationSection from './components/NotificationSection';
 import RecruiteeInfo from './components/RecruteeInfo';
 import Schedule from './components/Schedule';
 
@@ -15,7 +15,7 @@ function Recruit() {
       <Header />
       <ScrollToTopButton />
       <Root>
-        <ApplySection />
+        <NotificationSection />
         <ContentWrapper>
           <RecruiteeInfo />
           <ChapterInfo />

@@ -19,7 +19,7 @@ function MainPage() {
       <Layout>
         <Header />
         {!isMobile && <ScrollToTopButton />}
-        <RecruitFloatingBanner />
+        {false && <RecruitFloatingBanner />}
         <BannerImage />
         <div className={styles.container}>
           <div className={styles.content}>
