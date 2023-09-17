@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Footer, Header, Layout, ScrollToTopButton } from '@src/components';
+import PageLayout from '@src/components/common/PageLayout';
 import { ProjectCategoryType } from '@src/lib/types/project';
 import { ProjectFilter, ProjectList } from './components';
 import useFetch from './hooks/useFetch';
@@ -9,13 +9,10 @@ function Projects() {
   const state = useFetch(selectedCategory);
 
   return (
-    <Layout>
-      <Header />
-      <ScrollToTopButton />
+    <PageLayout showScrollTopButton>
       <ProjectFilter selectedCategory={selectedCategory} setCategory={setCategory} />
       <ProjectList state={state} selectedCategory={selectedCategory} />
-      <Footer />
-    </Layout>
+    </PageLayout>
   );
 }
 

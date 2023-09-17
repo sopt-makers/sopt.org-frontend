@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { Footer, Header, Layout } from '@src/components';
+import PageLayout from '@src/components/common/PageLayout';
 import StudySection from './components/Section';
 import useFetch from './hooks/useFetch';
 
@@ -7,16 +7,14 @@ const StudyPage = () => {
   const state = useFetch();
 
   return (
-    <Layout>
-      <Header />
+    <PageLayout>
       {state._TAG === 'OK' && (
         <Root>
           <Title>스터디</Title>
           <StudySection studies={state.data.studies} />
         </Root>
       )}
-      <Footer />
-    </Layout>
+    </PageLayout>
   );
 };
 

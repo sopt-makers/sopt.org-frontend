@@ -1,10 +1,15 @@
+import dynamic from 'next/dynamic';
+import DummyDiv from '../common/DummyDiv';
 import MakersNForm from './MakersNForm';
-import OriginFooter from './OriginFooter';
+
+const DynamicOriginFooter = dynamic(() => import('./OriginFooter'), {
+  loading: () => <DummyDiv height={980} />,
+});
 
 export function Footer() {
   return (
     <>
-      <OriginFooter />
+      <DynamicOriginFooter />
       <MakersNForm />
     </>
   );

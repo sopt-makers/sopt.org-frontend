@@ -1,18 +1,15 @@
 import styled from '@emotion/styled';
-import { Footer, Header, Layout, ScrollToTopButton } from '@src/components';
+import PageLayout from '@src/components/common/PageLayout';
 import { Content, Description } from './components';
 
 function ReviewPage() {
   return (
-    <Layout>
-      <Header />
-      <ScrollToTopButton />
+    <PageLayout showScrollTopButton>
       <Root>
         <Description />
         <Content />
       </Root>
-      <Footer />
-    </Layout>
+    </PageLayout>
   );
 }
 

@@ -1,4 +1,4 @@
-import { Footer, Header, Layout, ScrollToTopButton } from '@src/components';
+import PageLayout from '@src/components/common/PageLayout';
 import { useIsMobile } from '@src/hooks/useDevice';
 import {
   ActivityDescription,
@@ -15,24 +15,19 @@ function MainPage() {
   const isMobile = useIsMobile();
 
   return (
-    <>
-      <Layout>
-        <Header />
-        {!isMobile && <ScrollToTopButton />}
-        {false && <RecruitFloatingBanner />}
-        <BannerImage />
-        <div className={styles.container}>
-          <div className={styles.content}>
-            <SoptHistory />
-            <PartDescription />
-            <ActivityDescription />
-            <ActivityReview />
-            <DetailedInformation />
-          </div>
+    <PageLayout showScrollTopButton={!isMobile}>
+      {false && <RecruitFloatingBanner />}
+      <BannerImage />
+      <div className={styles.container}>
+        <div className={styles.content}>
+          <SoptHistory />
+          <PartDescription />
+          <ActivityDescription />
+          <ActivityReview />
+          <DetailedInformation />
         </div>
-        <Footer />
-      </Layout>
-    </>
+      </div>
+    </PageLayout>
   );
 }
 

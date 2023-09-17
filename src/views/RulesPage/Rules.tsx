@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { Footer, Header } from '@src/components';
+import PageLayout from '@src/components/common/PageLayout';
 import { useIsDesktop } from '@src/hooks/useDevice';
 import { RulesHead, RulesList, UnderlinedText } from './components';
 
@@ -9,15 +9,17 @@ function Rules() {
   const isDesktopOrTablet = useIsDesktop('769px');
 
   return (
-    <Root>
-      <RulesHead />
-      <Header />
-      <Content>
-        <UnderlinedText fontSize={isDesktopOrTablet ? '25px' : '35px'}>{SOPT_RULES}</UnderlinedText>
-        <RulesList />
-      </Content>
-      <Footer />
-    </Root>
+    <PageLayout>
+      <Root>
+        <RulesHead />
+        <Content>
+          <UnderlinedText fontSize={isDesktopOrTablet ? '25px' : '35px'}>
+            {SOPT_RULES}
+          </UnderlinedText>
+          <RulesList />
+        </Content>
+      </Root>
+    </PageLayout>
   );
 }
 
