@@ -63,6 +63,8 @@ function ProjectCardMobileImage(logoImage: string, thumbnailImage?: string) {
           className={`${GTM_CLASS.projectCard}`}
           src={thumbnailImage}
           alt="thumbnail"
+          fill
+          sizes="100%"
         />
       )}
       {!isCardThumbnail && (
@@ -78,7 +80,7 @@ function ProjectCardMobileImage(logoImage: string, thumbnailImage?: string) {
   );
 }
 
-const StyledThumbnail = styled.img`
+const StyledThumbnail = styled(Image)`
   width: 100%;
   height: 100%;
   object-fit: cover;
