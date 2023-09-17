@@ -1,8 +1,8 @@
-import Link from 'next/link';
 import { ReactComponent as ArrowLeft } from '@src/assets/icons/arrow_left_28x28.svg';
 import { ReactComponent as ArrowRight } from '@src/assets/icons/arrow_right_28x28.svg';
 import arrowRightWhite from '@src/assets/icons/arrow_right_white.svg';
 import { useHorizontalScroll } from '@src/hooks/useHorizontalScroll';
+import Link from 'next/link';
 import { SectionTitle, SectionTitleTranslate, SectionTitleWrapper } from '../common/styles';
 import useFetch from './hooks/useFetch';
 import {
@@ -20,7 +20,7 @@ import {
 } from './styles';
 import { parsePartToKorean } from './utils/parsePartToKorean';
 
-export function ActivityReview() {
+export default function ActivityReview() {
   const reviews = useFetch();
   const {
     scrollableRef,

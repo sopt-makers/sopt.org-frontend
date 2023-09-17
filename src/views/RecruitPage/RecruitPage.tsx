@@ -1,13 +1,15 @@
 import styled from '@emotion/styled';
+import { lazy } from 'react';
 import PageLayout from '@src/components/common/PageLayout';
-import { ActivityReview } from './components/ActivityReview/ActivityReview';
-import BottomLogo from './components/BottomLogo';
 import ChapterInfo from './components/ChapterInfo';
-import Contact from './components/Contact';
-import FaqInfo from './components/FAQ';
 import NotificationSection from './components/NotificationSection';
 import RecruiteeInfo from './components/RecruteeInfo';
 import Schedule from './components/Schedule';
+
+const FaqInfo = lazy(() => import('./components/FAQ'));
+const Contact = lazy(() => import('./components/Contact'));
+const ActivityReview = lazy(() => import('./components/ActivityReview'));
+const BottomLogo = lazy(() => import('./components/BottomLogo'));
 
 function Recruit() {
   return (
