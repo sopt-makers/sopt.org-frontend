@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import { TitleProps } from './UnderlinedText';
 
 export const Root = styled.h1<TitleProps>`
-  border-bottom: 10px solid ${({ theme }) => theme.colors.mainColor};
+  border-bottom: 10px solid ${({ theme }) => theme.colors.soptWhite};
   padding-bottom: 10px;
 
   width: max-content;
@@ -14,7 +14,7 @@ export const Root = styled.h1<TitleProps>`
   font-weight: 800;
 
   @media (max-width: 1279px) {
-    border-bottom: 6px solid ${({ theme }) => theme.colors.mainColor};
+    border-bottom: 6px solid ${({ theme }) => theme.colors.soptWhite};
     padding-bottom: 5px;
 
     line-height: 31px;
