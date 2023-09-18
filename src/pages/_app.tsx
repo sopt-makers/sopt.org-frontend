@@ -26,11 +26,17 @@ function MyApp({ Component, pageProps }: AppProps) {
     <>
       <Head>
         <title>SOPT</title>
-        <meta name="title" content="SOPT" />
         <meta
           name="description"
           content="SOPT는 IT와 벤처 창업에 뜻이 있는 대학생들이 모인 국내 최대 규모의 대학생 연합 IT 벤처 창업 동아리입니다."
         />
+        <meta name="title" content="SOPT" />
+        <meta name="keyword" content="IT, 창업, 개발, 대학생, 동아리"></meta>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+
+        <meta name="apple-mobile-web-app-title" content="SOPT" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
 
         <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png" />
         <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png" />
