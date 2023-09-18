@@ -53,16 +53,10 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta name="twitter:title" content="SOPT" />
         <meta
           name="description"
-          content="SOPT는 IT와 벤처창업에 뜻이 있는 대학생들이 모인 국내 최대 규모의 대학생 연합 IT벤처창업 동아리입니다."
+          content="SOPT는 IT와 벤처 창업에 뜻이 있는 대학생들이 모인 국내 최대 규모의 대학생 연합 IT 벤처 창업 동아리입니다."
         />
-        <meta
-          property="og:description"
-          content="SOPT는 IT와 벤처창업에 뜻이 있는 대학생들이 모인 국내 최대 규모의 대학생 연합 IT벤처창업 동아리입니다."
-        />
-        <meta
-          name="twitter:description"
-          content="SOPT는 IT와 벤처창업에 뜻이 있는 대학생들이 모인 국내 최대 규모의 대학생 연합 IT벤처창업 동아리입니다."
-        />
+        <meta property="og:description" content="대학생 연합 IT 벤처 창업 동아리" />
+        <meta name="twitter:description" content="대학생 연합 IT 벤처 창업 동아리" />
 
         <meta
           property="og:image"
