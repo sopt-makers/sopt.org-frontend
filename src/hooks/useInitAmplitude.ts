@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 const AMPLITUDE_API_KEY = process.env.NEXT_PUBLIC_AMPLITUDE_API_KEY;
 
-function useAmplitudeInit() {
+function useAmplitude() {
   const [amplitude, setAmplitude] = useState<typeof import('@amplitude/analytics-browser')>();
 
   useEffect(() => {
@@ -30,4 +30,4 @@ function useAmplitudeInit() {
   return { trackEvent };
 }
 
-export default useAmplitudeInit;
+export default useAmplitude;
