@@ -1,15 +1,19 @@
-import * as amplitude from '@amplitude/analytics-browser';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 const AMPLITUDE_API_KEY = process.env.NEXT_PUBLIC_AMPLITUDE_API_KEY;
 
 function useAmplitudeInit() {
+  const [amplitude, setAmplitude] = useState<typeof import('@amplitude/analytics-browser')>();
+
   useEffect(() => {
-    const initAmplitude = () => {
+    const initAmplitude = async () => {
       if (AMPLITUDE_API_KEY) {
+        const amplitudeModule = await import('@amplitude/analytics-browser');
+        setAmplitude(amplitudeModule);
+
         const pageName = window.location.pathname.slice(1) || 'main';
-        amplitude.init(AMPLITUDE_API_KEY, undefined, {
-          logLevel: amplitude.Types.LogLevel.Warn,
+        amplitudeModule.init(AMPLITUDE_API_KEY, undefined, {
+          logLevel: amplitudeModule.Types.LogLevel.Warn,
           defaultTracking: { pageViews: { eventType: `view_${pageName}` } },
         });
       }
@@ -17,9 +21,9 @@ function useAmplitudeInit() {
     initAmplitude();
   }, []);
 
-  const trackEvent = (key: string, props: amplitude.Types.BaseEvent['event_properties']) => {
-    if (AMPLITUDE_API_KEY) {
-      amplitude.track(key, props);
+  const trackEvent = (key: string, props?: Record<string, string>) => {
+    if (AMPLITUDE_API_KEY && amplitude) {
+      amplitude.track(key, { event_properties: props });
     }
   };
 
