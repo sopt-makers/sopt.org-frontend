@@ -17,7 +17,7 @@ export function ProjectCard({ project }: { project: ProjectType }) {
   return (
     <Link href={`/project/${project.id}`}>
       <article className={`${styles.item} ${GTM_CLASS.projectCard}`}>
-        {RepresentativeImageRender(project.logoImage, project?.thumbnailImage)}
+        {RepresentativeImageRender(project.name, project.logoImage, project?.thumbnailImage)}
         <div className={`${styles.content} ${GTM_CLASS.projectCard}`}>
           <div className={`${styles.types} ${GTM_CLASS.projectCard}`}>
             {ServiceTypeRender(project.serviceTypes)}
@@ -40,21 +40,21 @@ export function ProjectCard({ project }: { project: ProjectType }) {
   );
 }
 
-function RepresentativeImageRender(logoImage: string, thumbnailImage?: string) {
+function RepresentativeImageRender(name: string, logoImage: string, thumbnailImage?: string) {
   const isDesktop = useIsDesktop();
   const isTablet = useIsTablet();
   const isMobile = useIsMobile();
 
   return (
     <div className={styles['image-wrapper']}>
-      {isDesktop && ProjectCardDesktopImage(logoImage, thumbnailImage)}
-      {isTablet && ProjectCardMobileImage(logoImage, thumbnailImage)}
-      {isMobile && ProjectCardMobileImage(logoImage, thumbnailImage)}
+      {isDesktop && ProjectCardDesktopImage(name, logoImage, thumbnailImage)}
+      {isTablet && ProjectCardMobileImage(name, logoImage, thumbnailImage)}
+      {isMobile && ProjectCardMobileImage(name, logoImage, thumbnailImage)}
     </div>
   );
 }
 
-function ProjectCardMobileImage(logoImage: string, thumbnailImage?: string) {
+function ProjectCardMobileImage(name: string, logoImage: string, thumbnailImage?: string) {
   const isCardThumbnail = thumbnailImage && thumbnailImage?.length > 0;
   return (
     <>
@@ -62,7 +62,7 @@ function ProjectCardMobileImage(logoImage: string, thumbnailImage?: string) {
         <StyledThumbnail
           className={`${GTM_CLASS.projectCard}`}
           src={thumbnailImage}
-          alt="thumbnail"
+          alt={`${name} 프로젝트 썸네일`}
         />
       )}
       {!isCardThumbnail && (
@@ -71,7 +71,7 @@ function ProjectCardMobileImage(logoImage: string, thumbnailImage?: string) {
           src={logoImage}
           width={100}
           height={100}
-          alt="logo"
+          alt={`${name} 프로젝트 로고`}
         />
       )}
     </>
@@ -84,7 +84,7 @@ const StyledThumbnail = styled.img`
   object-fit: cover;
 `;
 
-function ProjectCardDesktopImage(logoImage: string, thumbnailImage?: string) {
+function ProjectCardDesktopImage(name: string, logoImage: string, thumbnailImage?: string) {
   const isCardThumbnail = thumbnailImage && thumbnailImage?.length > 0;
   return (
     <>
@@ -94,7 +94,7 @@ function ProjectCardDesktopImage(logoImage: string, thumbnailImage?: string) {
           src={thumbnailImage}
           width={368}
           height={208}
-          alt="thumbnail"
+          alt={`${name} 프로젝트 썸네일`}
         />
       )}
       {!isCardThumbnail && (
@@ -103,7 +103,7 @@ function ProjectCardDesktopImage(logoImage: string, thumbnailImage?: string) {
           src={logoImage}
           width={100}
           height={100}
-          alt="logo"
+          alt={`${name} 프로젝트 로고`}
         />
       )}
     </>
