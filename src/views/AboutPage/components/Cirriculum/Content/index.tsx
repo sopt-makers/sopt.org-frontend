@@ -1,8 +1,8 @@
 import Image from 'next/image';
 import { useState } from 'react';
 import Flex from '@src/components/common/Flex';
-import { parsePartToKorean } from '@src/components/common/parsePartToKorean';
 import { Part } from '@src/lib/types/universal';
+import { parsePartToKorean } from '@src/lib/utils/parsePartToKorean';
 import TabBar from '../../common/TabBar';
 import * as St from './style';
 

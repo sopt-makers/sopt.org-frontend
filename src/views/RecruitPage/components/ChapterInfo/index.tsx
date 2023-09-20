@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import { useState } from 'react';
 import Flex from '@src/components/common/Flex';
 import { Part } from '@src/lib/types/universal';
-import { parsePartToKorean } from '@src/views/MainPage/components/ActivityReview/utils/parsePartToKorean';
+import { parsePartToKorean } from '@src/lib/utils/parsePartToKorean';
 import TabBar from '../common/Tabs';
 import { SectionTitle, SectionTitleTranslate, SectionTitleWrapper } from '../common/styles';
 import { infoMap } from './constants';
@@ -42,7 +42,7 @@ const BaseChip = styled.div`
   line-height: 22px;
   font-size: 22px;
 
-    /* 태블릿 뷰 */
+  /* 태블릿 뷰 */
   @media (max-width: 1299px) and (min-width: 766px) {
     padding: 8px 20px;
     font-size: 18px;

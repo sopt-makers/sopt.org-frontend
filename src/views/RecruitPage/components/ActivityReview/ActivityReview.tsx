@@ -3,6 +3,7 @@ import { ReactComponent as ArrowLeft } from '@src/assets/icons/arrow_left_28x28.
 import { ReactComponent as ArrowRight } from '@src/assets/icons/arrow_right_28x28.svg';
 import arrowRightWhite from '@src/assets/icons/arrow_right_white.svg';
 import { useHorizontalScroll } from '@src/hooks/useHorizontalScroll';
+import { parsePartToKorean } from '@src/lib/utils/parsePartToKorean';
 import { SectionTitle, SectionTitleTranslate, SectionTitleWrapper } from '../common/styles';
 import useFetch from './hooks/useFetch';
 import {
@@ -18,7 +19,6 @@ import {
   DescWrapper,
   MoreLinkWrapper,
 } from './styles';
-import { parsePartToKorean } from './utils/parsePartToKorean';
 
 export function ActivityReview() {
   const reviews = useFetch();
