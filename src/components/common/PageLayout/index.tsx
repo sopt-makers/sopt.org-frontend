@@ -7,16 +7,9 @@ type PageLayoutOwnProps = {
   moreStyle?: CSSProperties;
 };
 
-const DynamicFooter = dynamic(() => import('@src/components/Footer').then((f) => f.Footer), {
-  loading: () => <></>,
-});
+const DynamicFooter = dynamic(() => import('@src/components/Footer'));
 
-const DynamicScrollToTopButton = dynamic(
-  () => import('@src/components/common/ScrollToTopButton').then((f) => f.ScrollToTopButton),
-  {
-    loading: () => <></>,
-  },
-);
+const DynamicScrollToTopButton = dynamic(() => import('@src/components/common/ScrollToTopButton'));
 
 export default function PageLayout({
   children,

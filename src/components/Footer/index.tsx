@@ -6,7 +6,7 @@ const DynamicOriginFooter = dynamic(() => import('./OriginFooter'), {
   loading: () => <DummyDiv height={980} />,
 });
 
-export function Footer() {
+export default function Footer() {
   return (
     <>
       <DynamicOriginFooter />
