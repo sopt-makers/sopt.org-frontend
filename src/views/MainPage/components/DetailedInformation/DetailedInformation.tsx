@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { useRouter } from 'next/router';
 import ArrowRight from '@src/assets/icons/arrow_right_grey.svg';
 import { GTM_CLASS } from '@src/lib/constants/gtmClass';
@@ -50,11 +51,9 @@ export function DetailedInformation() {
             >
               <div className={`${styles.nameWrapper}  ${GTM_CLASS[`informationCard${name}`]}`}>
                 <h4 className={`${styles.name}  ${GTM_CLASS[`informationCard${name}`]}`}>{name}</h4>
-                <img
-                  className={`${styles.arrow}`}
-                  src={ArrowRight}
-                  alt={`${name} 더보기 이동 버튼`}
-                />
+                <div className={`${styles.arrow}`}>
+                  <Image src={ArrowRight} alt={`${name} 더보기 이동 버튼`} fill sizes="100%" />
+                </div>
               </div>
               <p className={`${styles.desc}  ${GTM_CLASS[`informationCard${name}`]}`}>{desc}</p>
             </article>

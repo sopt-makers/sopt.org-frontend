@@ -52,7 +52,7 @@ export function ActivityReview() {
                     {parsePartToKorean(review.part)}파트 {review.semester}기{'\n'}
                     <DescName>{review.reviewer}</DescName>
                   </Desc>
-                  <Arrow src={arrowRightWhite} alt={`${review.title} 활동후기 더보기 버튼`} />
+                  <Arrow src={arrowRightWhite} alt={`${review.title} 활동후기 더보기 버튼`} width={30} height={30} />
                 </DescWrapper>
               </CardWrapper>
             </Link>

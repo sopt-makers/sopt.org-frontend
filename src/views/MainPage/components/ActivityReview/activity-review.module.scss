@@ -212,6 +212,7 @@
 }
 
 .arrow {
+  position: relative;
   @include mobile {
     width: 18px;
     height: 18px;

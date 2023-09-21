@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { ReactComponent as ArrowLeft } from '@src/assets/icons/arrow_left_28x28.svg';
 import { ReactComponent as ArrowRight } from '@src/assets/icons/arrow_right_28x28.svg';
@@ -41,7 +42,9 @@ export function ActivityReview() {
                       {parsePartToKorean(review.part)}파트 {review.semester}기{'\n'}
                       <strong className={styles.descName}>{review.reviewer}</strong>
                     </p>
-                    <img className={`${styles.arrow}`} src={ArrowRightGrey} alt="이동" />
+                    <div className={styles.arrow}>
+                      <Image src={ArrowRightGrey} alt="이동" fill sizes="100%" />
+                    </div>
                   </div>
                 </article>
               </Link>
