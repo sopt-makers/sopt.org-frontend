@@ -32,7 +32,7 @@ const CorporateLinkedActivities = () => {
             return (
               <article className={styles.item} key={name}>
                 <span className={styles.year}>{year}</span>
-                <Image className={styles.activityImage} src={imgSrc} alt="activity" />
+                <Image className={styles.activityImage} src={imgSrc} alt={name} />
                 <h5 className={styles.name}>{name}</h5>
                 <p className={styles.description}>{description}</p>
                 {subDescription.length > 0 && (

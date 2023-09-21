@@ -52,7 +52,7 @@ export function DetailedInformation() {
               <div className={`${styles.nameWrapper}  ${GTM_CLASS[`informationCard${name}`]}`}>
                 <h4 className={`${styles.name}  ${GTM_CLASS[`informationCard${name}`]}`}>{name}</h4>
                 <div className={`${styles.arrow}`}>
-                  <Image src={ArrowRight} alt="이동" fill sizes="100%" />
+                  <Image src={ArrowRight} alt={`${name} 더보기 이동 버튼`} fill sizes="100%" />
                 </div>
               </div>
               <p className={`${styles.desc}  ${GTM_CLASS[`informationCard${name}`]}`}>{desc}</p>

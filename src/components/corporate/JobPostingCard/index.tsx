@@ -19,7 +19,7 @@ const JobPostingCard = ({
 }: JobPostingCardProps) => {
   return (
     <St.Card>
-      <St.Logo src={imgSrc} alt={corporation} width={80} height={80} />
+      <St.Logo src={imgSrc} alt={`${corporation} 로고`} width={80} height={80} />
       <St.Contents>
         <St.Chip>{type}</St.Chip>
         <St.Title>{title}</St.Title>

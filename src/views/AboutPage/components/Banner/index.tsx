@@ -11,7 +11,13 @@ const Banner = (props: BannerProps) => {
 
   return (
     <St.ImageWrapper>
-      <Image src={imageSrc} alt="" fill style={{ objectFit: 'cover' }} priority />
+      <Image
+        src={imageSrc}
+        alt="솝트 공식홈페이지 어바웃페이지 배너 사진"
+        fill
+        style={{ objectFit: 'cover' }}
+        priority
+      />
       <St.HeadTitle>{title}</St.HeadTitle>
     </St.ImageWrapper>
   );

@@ -23,7 +23,13 @@ export function BannerImage() {
         <ArrowDown className={styles.downArrow} width="24" height="24" />
       </div>
       <div className={styles.bannerWrapper}>
-        <Image src={MainPageBanner} className={styles.bannerImage} alt="banner" fill priority />
+        <Image
+          src={MainPageBanner}
+          className={styles.bannerImage}
+          alt="솝트 공식홈페이지 메인페이지 배너 사진"
+          fill
+          priority
+        />
         <div className={styles.bannerGradient} />
       </div>
     </section>

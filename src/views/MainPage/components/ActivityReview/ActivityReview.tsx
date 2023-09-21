@@ -4,10 +4,10 @@ import { ReactComponent as ArrowLeft } from '@src/assets/icons/arrow_left_28x28.
 import { ReactComponent as ArrowRight } from '@src/assets/icons/arrow_right_28x28.svg';
 import ArrowRightGrey from '@src/assets/icons/arrow_right_grey.svg';
 import { useHorizontalScroll } from '@src/hooks/useHorizontalScroll';
+import { parsePartToKorean } from '@src/lib/utils/parsePartToKorean';
 import cc from 'classcat';
 import styles from './activity-review.module.scss';
 import useFetch from './hooks/useFetch';
-import { parsePartToKorean } from './utils/parsePartToKorean';
 
 export function ActivityReview() {
   const reviews = useFetch();
