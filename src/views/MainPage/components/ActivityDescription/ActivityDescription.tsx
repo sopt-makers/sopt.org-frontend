@@ -1,3 +1,4 @@
+import { track } from '@amplitude/analytics-browser';
 import Image from 'next/image';
 import React from 'react';
 import { useIsDesktop, useIsMobile, useIsTablet } from '@src/hooks/useDevice';
@@ -114,7 +115,10 @@ function MobileActivityDescription() {
           return (
             <li
               className={cc([currentTab.type === type && styles.selected])}
-              onClick={() => handleClick(type)}
+              onClick={() => {
+                handleClick(type);
+                track('click_main_activity', { activity: type });
+              }}
               key={type}
               role="presentation"
             >

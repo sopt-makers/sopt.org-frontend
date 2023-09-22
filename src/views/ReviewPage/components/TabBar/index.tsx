@@ -1,3 +1,4 @@
+import { track } from '@amplitude/analytics-browser';
 import { extraTabs } from '@src/lib/constants/tabs';
 import { ExtraPart, ExtraTabType } from '@src/lib/types/universal';
 import * as S from './style';
@@ -13,7 +14,10 @@ const TabBar = ({ onTabClick, selectedTab }: TabBarProps) => {
       {extraTabs.map((tab) => (
         <Tab
           key={tab.value}
-          onClick={() => onTabClick(tab.value)}
+          onClick={() => {
+            onTabClick(tab.value);
+            track('click_review_part', { part: tab.value });
+          }}
           tab={tab}
           selected={selectedTab === tab.value}
         />
