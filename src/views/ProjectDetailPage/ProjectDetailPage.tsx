@@ -53,7 +53,7 @@ function ProjectDetailPage() {
         <S.Container>
           <S.ProjectHeader>
             <S.LogoImageWrapper>
-              <Image src={logoImage} alt="logo" width="72" height="72" />
+              <Image src={logoImage} alt={`${name} 프로젝트 로고`} width="72" height="72" />
             </S.LogoImageWrapper>
             <div>
               <h1>{name}</h1>
@@ -62,7 +62,7 @@ function ProjectDetailPage() {
           </S.ProjectHeader>
           {projectImage && (
             <S.ProjectImageWrapper>
-              <Image src={projectImage} alt="project image" fill />
+              <Image src={projectImage} alt={`${name} 프로젝트 썸네일`} fill />
             </S.ProjectImageWrapper>
           )}
           <S.ProjectWrapper>
@@ -113,7 +113,7 @@ function ProjectDetailPage() {
                         <Link href={url} key={title}>
                           <S.ProjectLink>
                             <S.ImageWrapper>
-                              <Image src={src} alt={name} width="56" height="56" />
+                              <Image src={src} alt={`${name} 로고`} width="56" height="56" />
                             </S.ImageWrapper>
                             <span>{name}</span>
                           </S.ProjectLink>

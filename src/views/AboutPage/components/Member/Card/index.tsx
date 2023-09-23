@@ -12,7 +12,7 @@ const MemberCard = ({ imgSrc, name, description, part }: MeberCardProps) => {
   return (
     <St.Card>
       <St.ImageWrapper>
-        <St.ProfileImage src={imgSrc || NullImage.src} alt={name} fill />
+        <St.ProfileImage src={imgSrc || NullImage.src} alt={`${name}의 프로필`} fill />
       </St.ImageWrapper>
       <St.Name>{name}</St.Name>
       <St.Desc>{description || '-'}</St.Desc>

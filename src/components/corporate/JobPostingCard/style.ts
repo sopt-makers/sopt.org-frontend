@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import Image from 'next/image';
 import { textpluralLinesEllipsis } from '@src/styles/textEllipsis';
 
 const Card = styled.article`
@@ -28,7 +29,7 @@ const Card = styled.article`
   }
 `;
 
-const Image = styled.img`
+const Logo = styled(Image)`
   width: 80px;
   height: 80px;
   border-radius: 10px;
@@ -120,7 +121,7 @@ const RestInfo = styled.p`
 
 export const St = {
   Card,
-  Image,
+  Logo,
   Contents,
   Chip,
   Title,

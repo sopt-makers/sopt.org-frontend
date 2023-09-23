@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import Image from 'next/image';
 
 export const ContainerWrapper = styled.div`
   display: flex;
@@ -169,7 +170,7 @@ export const DescName = styled.div`
   }
 `;
 
-export const Arrow = styled.img`
+export const Arrow = styled(Image)`
   width: 30px;
   height: 30px;
   @media (max-width: 765.9px) {

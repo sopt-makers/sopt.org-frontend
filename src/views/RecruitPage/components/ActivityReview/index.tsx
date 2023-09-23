@@ -1,8 +1,9 @@
+import Link from 'next/link';
 import { ReactComponent as ArrowLeft } from '@src/assets/icons/arrow_left_28x28.svg';
 import { ReactComponent as ArrowRight } from '@src/assets/icons/arrow_right_28x28.svg';
 import arrowRightWhite from '@src/assets/icons/arrow_right_white.svg';
 import { useHorizontalScroll } from '@src/hooks/useHorizontalScroll';
-import Link from 'next/link';
+import { parsePartToKorean } from '@src/lib/utils/parsePartToKorean';
 import { SectionTitle, SectionTitleTranslate, SectionTitleWrapper } from '../common/styles';
 import useFetch from './hooks/useFetch';
 import {
@@ -18,7 +19,6 @@ import {
   DescWrapper,
   MoreLinkWrapper,
 } from './styles';
-import { parsePartToKorean } from './utils/parsePartToKorean';
 
 export default function ActivityReview() {
   const reviews = useFetch();
@@ -52,7 +52,12 @@ export default function ActivityReview() {
                     {parsePartToKorean(review.part)}파트 {review.semester}기{'\n'}
                     <DescName>{review.reviewer}</DescName>
                   </Desc>
-                  <Arrow src={arrowRightWhite} alt="" />
+                  <Arrow
+                    src={arrowRightWhite}
+                    alt={`${review.title} 활동후기 더보기 버튼`}
+                    width={30}
+                    height={30}
+                  />
                 </DescWrapper>
               </CardWrapper>
             </Link>

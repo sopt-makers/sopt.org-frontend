@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import SoptSymbol from '@src/assets/icons/dosopt_symbol.png';
@@ -16,7 +17,7 @@ export function RecruitFloatingBanner() {
     <Wrapper>
       <Banner isMobile={isMobile} onClick={() => isMobile && router.push('/recruit')}>
         <Countdown>
-          <Symbol src={SoptSymbol.src} alt="솝트 심볼" />
+          <Symbol src={SoptSymbol.src} alt="솝트 심볼" width={52} height={26} />
           {isMobile ? (
             '33기 YB 지원하기'
           ) : (
@@ -43,7 +44,7 @@ const Wrapper = styled.div`
   z-index: 9999;
 `;
 
-const Symbol = styled.img`
+const Symbol = styled(Image)`
   width: 52px;
   height: 26px;
 

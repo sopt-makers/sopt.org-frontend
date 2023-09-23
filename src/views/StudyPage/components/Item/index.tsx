@@ -2,8 +2,8 @@ import Image from 'next/image';
 import { useMemo } from 'react';
 import Flex from '@src/components/common/Flex';
 import { StudyInfoType } from '@src/lib/types/about';
+import { parsePartToKorean } from '@src/lib/utils/parsePartToKorean';
 import { formatDate } from '@src/utils/dateFormat';
-import { parsePartToKorean } from '@src/views/MainPage/components/ActivityReview/utils/parsePartToKorean';
 import * as St from './style';
 
 type StudyItemProps = {

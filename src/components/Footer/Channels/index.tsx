@@ -37,7 +37,7 @@ function Channels({ isFooter = false }: ChannelsProps) {
         width={30}
         height={30}
         id="mail"
-        alt="mail"
+        alt="메일"
         onClick={handleClick}
       />
       <S.ClickableChannelButton
@@ -45,7 +45,7 @@ function Channels({ isFooter = false }: ChannelsProps) {
         width={30}
         height={30}
         id="facebook"
-        alt="facebook"
+        alt="페이스북"
         onClick={handleClick}
       />
       <S.ClickableChannelButton
@@ -53,7 +53,7 @@ function Channels({ isFooter = false }: ChannelsProps) {
         width={30}
         height={30}
         id="instagram"
-        alt="instagram"
+        alt="인스타그램"
         onClick={handleClick}
       />
       <S.ClickableChannelButton
@@ -61,7 +61,7 @@ function Channels({ isFooter = false }: ChannelsProps) {
         width={30}
         height={30}
         id="youtube"
-        alt="youtube"
+        alt="유튜브"
         onClick={handleClick}
       />
       <S.ClickableChannelButton
@@ -69,7 +69,7 @@ function Channels({ isFooter = false }: ChannelsProps) {
         width={30}
         height={30}
         id="kakao"
-        alt="kakao"
+        alt="카카오톡 채널"
         onClick={handleClick}
       />
     </S.ChannelButtonsWrap>
