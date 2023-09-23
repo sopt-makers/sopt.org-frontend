@@ -9,7 +9,7 @@ export default async function handler(request: NextApiRequest, response: NextApi
       return response.status(200).json({ success: resultStatus === 200, resultStatus });
     }
   } catch (error) {
-    return response.status(500).json({ error: 'Internal server error' });
+    return response.status(500).json({ error });
   }
 
   return response.status(200).json({ success: true });

@@ -34,6 +34,19 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
+        <title>SOPT</title>
+        <meta
+          name="description"
+          content="SOPT는 IT와 벤처 창업에 뜻이 있는 대학생들이 모인 국내 최대 규모의 대학생 연합 IT 벤처 창업 동아리입니다."
+        />
+        <meta name="title" content="SOPT" />
+        <meta name="keyword" content="IT, 창업, 개발, 대학생, 동아리" />
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+
+        <meta name="apple-mobile-web-app-title" content="SOPT" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
         <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png" />
         <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png" />
         <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png" />
@@ -57,35 +70,30 @@ function MyApp({ Component, pageProps }: AppProps) {
           content="width=device-width, initial-scale=1.0, minimum-scale=1.0,  maximum-scale=1"
         />
         <meta content="yes" name="apple-mobile-web-app-capable" />
-        <meta name="title" content="SOPT" />
-        <meta property="og:title" content="SOPT" />
-        <meta name="twitter:title" content="SOPT" />
-        <meta
-          name="description"
-          content="SOPT는 IT와 벤처창업에 뜻이 있는 대학생들이 모인 국내 최대 규모의 대학생 연합 IT벤처창업 동아리입니다."
-        />
-        <meta
-          property="og:description"
-          content="SOPT는 IT와 벤처창업에 뜻이 있는 대학생들이 모인 국내 최대 규모의 대학생 연합 IT벤처창업 동아리입니다."
-        />
-        <meta
-          name="twitter:description"
-          content="SOPT는 IT와 벤처창업에 뜻이 있는 대학생들이 모인 국내 최대 규모의 대학생 연합 IT벤처창업 동아리입니다."
-        />
 
+        {/*  Open Graph */}
+        <meta property="og:type" content="website" />
+        <meta property="og:locale" content="ko_KR" />
+        <meta property="og:url" content="https://sopt.org/" />
+        <meta property="og:title" content="SOPT" />
+        <meta property="og:site_name" content="SOPT 공식 홈페이지" />
+        <meta property="og:description" content="대학생 연합 IT 벤처 창업 동아리" />
         <meta
           property="og:image"
-          content="https://sopt-makers.s3.ap-northeast-2.amazonaws.com/mainpage/seo/sopt_discord_seo.png"
+          content="https://s3.ap-northeast-2.amazonaws.com/sopt.org/admin/origin/img_sopt_homepage.png"
         />
-        <meta property="og:url" content="https://sopt.org/" />
+        <meta property="og:image:alt" content="SOPT 공식 홈페이지 이미지" />
 
+        {/*  Twitter */}
+        <meta name="twitter:title" content="SOPT" />
+        <meta name="twitter:description" content="대학생 연합 IT 벤처 창업 동아리" />
         <meta property="twitter:card" content="website" />
         <meta property="twitter:site" content="https://sopt.org/" />
-
         <meta
           name="twitter:image"
-          content="https://sopt-makers.s3.ap-northeast-2.amazonaws.com/mainpage/seo/sopt_twitter_seo.png"
+          content="https://s3.ap-northeast-2.amazonaws.com/sopt.org/admin/origin/img_sopt_homepage.png"
         />
+        <meta property="twitter:image:alt" content="SOPT 공식 홈페이지 이미지" />
       </Head>
       <GoogleTagManagerScript />
       <Global styles={global} />

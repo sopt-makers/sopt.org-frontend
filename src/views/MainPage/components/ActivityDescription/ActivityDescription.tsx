@@ -132,7 +132,7 @@ function MobileActivityDescription() {
           <Image
             className={styles.cardImage}
             src={currentTab.imgSrc}
-            alt="card"
+            alt={`${currentTab.type} 활동 사진`}
             fill
             sizes="(max-width: 766px) 309px, 585px"
           />

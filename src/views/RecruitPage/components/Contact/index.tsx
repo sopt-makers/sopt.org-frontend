@@ -25,7 +25,7 @@ const Contact = () => {
             <ItemWrapper key={contact}>
               <IconWrapper>
                 {contactItem.thumbnail.type === 'image' ? (
-                  <IconImage src={contactItem.thumbnail.src} alt={contactItem.thumbnail.alt} />
+                  <IconImage src={contactItem.thumbnail.src} alt={contactItem.label} />
                 ) : (
                   <contactItem.thumbnail.src />
                 )}

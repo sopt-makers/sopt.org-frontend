@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { logoDoSopt } from '@src/assets/mainLogo';
 
 const BottomLogo = () => {
-  return <ScaledImage src={logoDoSopt} alt="DO SOPT" />;
+  return <ScaledImage src={logoDoSopt} alt="33기 솝트 로고" />;
 };
 
 const ScaledImage = styled(Image)`

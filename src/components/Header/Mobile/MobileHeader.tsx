@@ -22,11 +22,7 @@ function MobileHeader() {
       <StyledHeader>
         <Logo onClick={() => router.push('/')} />
         <ToggleButton onClick={handleHeaderToggleButton}>
-          <Image
-            src={isMenuShown === 'open' ? xButton.src : menuBar}
-            alt="header toggle button"
-            fill
-          />
+          <Image src={isMenuShown === 'open' ? xButton.src : menuBar} alt="메뉴 토글 버튼" fill />
         </ToggleButton>
       </StyledHeader>
       <Condition statement={isMenuShown === 'open'}>
