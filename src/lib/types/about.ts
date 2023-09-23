@@ -59,3 +59,8 @@ export interface AboutAPI {
   getMemberInfo(part?: Part): Promise<GetMembersInfoResponse>;
   getStudyInfo(generation?: number): Promise<GetStudyInfoResponse>;
 }
+
+export type RecordTitle = '활동 멤버' | '프로젝트' | '스터디';
+export type RecordTitleType = {
+  [key in RecordTitle]: 'member' | 'project' | 'study';
+};
