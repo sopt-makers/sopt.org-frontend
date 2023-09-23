@@ -4,7 +4,7 @@ import * as S from './style';
 
 type TabBarProps = {
   selectedTab: ExtraPart;
-  onTabClick(targetTab: ExtraPart): void;
+  onTabClick(tab: ExtraTabType): void;
 };
 
 const TabBar = ({ onTabClick, selectedTab }: TabBarProps) => {
@@ -13,7 +13,7 @@ const TabBar = ({ onTabClick, selectedTab }: TabBarProps) => {
       {extraTabs.map((tab) => (
         <Tab
           key={tab.value}
-          onClick={() => onTabClick(tab.value)}
+          onClick={() => onTabClick(tab)}
           tab={tab}
           selected={selectedTab === tab.value}
         />
