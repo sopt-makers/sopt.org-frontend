@@ -12,6 +12,7 @@
     "test:ci": "jest --ci"
   },
   "dependencies": {
+    "@amplitude/analytics-browser": "^2.3.0",
     "@emotion/react": "^11.9.0",
     "@emotion/styled": "^11.8.1",
     "@types/qs": "6.9.7",

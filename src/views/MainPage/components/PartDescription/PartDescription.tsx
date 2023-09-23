@@ -1,3 +1,4 @@
+import { track } from '@amplitude/analytics-browser';
 import { useIsDesktop, useIsMobile, useIsTablet } from '@src/hooks/useDevice';
 import { useTabs } from '@src/hooks/useTabs';
 import cc from 'classcat';
@@ -49,7 +50,10 @@ function MobilePartDescription() {
           return (
             <li
               className={cc([currentTab.type === type && styles.selected])}
-              onClick={() => handleClick(type)}
+              onClick={() => {
+                handleClick(type);
+                track('click_main_part', { part: type });
+              }}
               key={type}
               role="presentation"
             >
