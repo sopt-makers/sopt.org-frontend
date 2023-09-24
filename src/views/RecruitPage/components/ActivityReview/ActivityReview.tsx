@@ -1,3 +1,4 @@
+import { track } from '@amplitude/analytics-browser';
 import Link from 'next/link';
 import { ReactComponent as ArrowLeft } from '@src/assets/icons/arrow_left_28x28.svg';
 import { ReactComponent as ArrowRight } from '@src/assets/icons/arrow_right_28x28.svg';
@@ -44,7 +45,11 @@ export function ActivityReview() {
         </ArrowWrapper>
         <Content ref={scrollableRef}>
           {reviews.data.map((review) => (
-            <Link key={review.id} href={review.link}>
+            <Link
+              key={review.id}
+              href={review.link}
+              onClick={() => track('click_recruit_review_detail')}
+            >
               <CardWrapper role="presentation">
                 <CardTitle>{review.title}</CardTitle>
                 <DescWrapper>
@@ -52,7 +57,12 @@ export function ActivityReview() {
                     {parsePartToKorean(review.part)}파트 {review.semester}기{'\n'}
                     <DescName>{review.reviewer}</DescName>
                   </Desc>
-                  <Arrow src={arrowRightWhite} alt={`${review.title} 활동후기 더보기 버튼`} width={30} height={30} />
+                  <Arrow
+                    src={arrowRightWhite}
+                    alt={`${review.title} 활동후기 더보기 버튼`}
+                    width={30}
+                    height={30}
+                  />
                 </DescWrapper>
               </CardWrapper>
             </Link>
@@ -62,7 +72,7 @@ export function ActivityReview() {
           <ArrowRight stroke={isRightScrollable ? 'white' : 'grey'} />
         </ArrowWrapper>
       </ContentWrapper>
-      <Link href="/review">
+      <Link href="/review" onClick={() => track('click_recruit_review_more')}>
         <MoreLinkWrapper>활동후기 더보기</MoreLinkWrapper>
       </Link>
     </ContainerWrapper>

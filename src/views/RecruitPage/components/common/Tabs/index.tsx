@@ -1,3 +1,4 @@
+import { track } from '@amplitude/analytics-browser';
 import { ExtraPart, ExtraTabType, Part, PartExtraType, TabType } from '@src/lib/types/universal';
 import * as S from './style';
 
@@ -6,8 +7,14 @@ type TabBarProps =
       type: 'with-all';
       selectedTab: ExtraPart;
       onTabClick(targetTab: ExtraPart): void;
+      amplitudeTrackingName: string;
     }
-  | { type: 'without-all'; selectedTab: Part; onTabClick(targetTab: Part): void };
+  | {
+      type: 'without-all';
+      selectedTab: Part;
+      onTabClick(targetTab: Part): void;
+      amplitudeTrackingName: string;
+    };
 
 const allTabs: ExtraTabType[] = [
   {
@@ -67,14 +74,17 @@ const tabs: TabType[] = [
   },
 ];
 
-const TabBar = ({ type, onTabClick, selectedTab }: TabBarProps) => {
+const TabBar = ({ type, onTabClick, selectedTab, amplitudeTrackingName }: TabBarProps) => {
   if (type === 'with-all')
     return (
       <S.TabBar>
         {allTabs.map((tab) => (
           <Tab
             key={tab.value}
-            onClick={() => onTabClick(tab.value)}
+            onClick={() => {
+              onTabClick(tab.value);
+              track(amplitudeTrackingName, { part: tab.value });
+            }}
             tab={tab}
             selected={selectedTab === tab.value}
           />
@@ -86,7 +96,10 @@ const TabBar = ({ type, onTabClick, selectedTab }: TabBarProps) => {
       {tabs.map((tab) => (
         <Tab
           key={tab.value}
-          onClick={() => onTabClick(tab.value)}
+          onClick={() => {
+            onTabClick(tab.value);
+            track(amplitudeTrackingName, { part: tab.value });
+          }}
           tab={tab}
           selected={selectedTab === tab.value}
         />

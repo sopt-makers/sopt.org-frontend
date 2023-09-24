@@ -16,7 +16,12 @@ const ChapterInfo = () => {
         <SectionTitleTranslate>Positions</SectionTitleTranslate>
         <SectionTitle>{'SOPT는 33기는 총 6개의 파트로\n이루어져 있어요.'}</SectionTitle>
       </SectionTitleWrapper>
-      <TabBar type="without-all" onTabClick={setSelectedTab} selectedTab={selectedTab} />
+      <TabBar
+        type="without-all"
+        onTabClick={setSelectedTab}
+        selectedTab={selectedTab}
+        amplitudeTrackingName={'click_recruit_description_part'}
+      />
       <Flex dir="column" gap="15px">
         <BlueChip>{parsePartToKorean(selectedTab)} 파트가 배우는 것</BlueChip>
         <InfoWrapper>{infoMap[selectedTab].info}</InfoWrapper>
