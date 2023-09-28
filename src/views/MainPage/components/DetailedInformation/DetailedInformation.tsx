@@ -1,3 +1,4 @@
+import { track } from '@amplitude/analytics-browser';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import ArrowRight from '@src/assets/icons/arrow_right_grey.svg';
@@ -24,12 +25,15 @@ export function DetailedInformation() {
   const handleClickItem = (name: string) => {
     switch (name) {
       case '프로젝트':
+        track('click_main_project');
         router.push('/project');
         break;
       case 'FAQ':
+        track('click_main_faq');
         router.push('/FAQ');
         break;
       case 'Youtube':
+        track('click_main_youtube');
         window.open('https://www.youtube.com/c/SOPTMEDIA');
         break;
       default:

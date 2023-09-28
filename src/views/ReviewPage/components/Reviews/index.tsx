@@ -1,3 +1,4 @@
+import { track } from '@amplitude/analytics-browser';
 import { useMemo } from 'react';
 import { useIsMobile } from '@src/hooks/useDevice';
 import { ExtraPart } from '@src/lib/types/universal';
@@ -21,7 +22,12 @@ const Reviews = ({ selectedTab }: ReviewsProps) => {
     <>
       <S.Wrapper>
         {reviews.data.map((review, idx) => (
-          <S.Card key={`${review.id}-${idx}`} href={review.link} target="_blank">
+          <S.Card
+            key={`${review.id}-${idx}`}
+            href={review.link}
+            target="_blank"
+            onClick={() => track('click_review_detail')}
+          >
             <S.Section>
               <S.ThumbnailWrapper>
                 <S.Thumbnail
