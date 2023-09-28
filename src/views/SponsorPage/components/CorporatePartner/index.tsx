@@ -23,7 +23,7 @@ const CoporatePartner = () => {
           className={styles.arrowWrapper}
           onClick={() => {
             onClickLeftButton(scrollableRef.current);
-            track('cclick_sponsor_logo_next');
+            track('click_sponsor_logo_next');
           }}
         >
           <ArrowLeft stroke={isLeftScrollable ? 'white' : 'grey'} />
@@ -49,7 +49,7 @@ const CoporatePartner = () => {
           className={styles.arrowWrapper}
           onClick={() => {
             onClickRightButton(scrollableRef.current);
-            track('cclick_sponsor_logo_next');
+            track('click_sponsor_logo_next');
           }}
         >
           <ArrowRight stroke={isRightScrollable ? 'white' : 'grey'} />
