@@ -16,7 +16,7 @@ const TabBar = ({ onTabClick, selectedTab }: TabBarProps) => {
           key={tab.value}
           onClick={() => {
             onTabClick(tab.value);
-            track('click_review_part', { part: tab.value });
+            track('click_review_part', { part: tab.label });
           }}
           tab={tab}
           selected={selectedTab === tab.value}
