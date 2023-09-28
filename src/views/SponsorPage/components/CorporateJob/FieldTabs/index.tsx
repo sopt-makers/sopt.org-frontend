@@ -16,7 +16,7 @@ const FieldTabs = ({ currentTabType, changeTab }: FieldTabsProps) => {
           key={type}
           onClick={() => {
             changeTab(type);
-            track('click_sponsor_recruit_part', { part: type });
+            track('click_sponsor_recruit_part', { part: text });
           }}
           isactive={type === currentTabType}
         >

@@ -83,7 +83,7 @@ const TabBar = ({ type, onTabClick, selectedTab, amplitudeTrackingName }: TabBar
             key={tab.value}
             onClick={() => {
               onTabClick(tab.value);
-              track(amplitudeTrackingName, { part: tab.value });
+              track(amplitudeTrackingName, { part: tab.label });
             }}
             tab={tab}
             selected={selectedTab === tab.value}
@@ -98,7 +98,7 @@ const TabBar = ({ type, onTabClick, selectedTab, amplitudeTrackingName }: TabBar
           key={tab.value}
           onClick={() => {
             onTabClick(tab.value);
-            track(amplitudeTrackingName, { part: tab.value });
+            track(amplitudeTrackingName, { part: tab.label });
           }}
           tab={tab}
           selected={selectedTab === tab.value}
