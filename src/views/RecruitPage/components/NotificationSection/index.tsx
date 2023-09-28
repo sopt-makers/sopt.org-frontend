@@ -1,3 +1,4 @@
+import { track } from '@amplitude/analytics-browser';
 import styled from '@emotion/styled';
 import { useRef, useState } from 'react';
 import axios from 'axios';
@@ -42,8 +43,17 @@ const NotificationSection = () => {
           onRegister();
         }}
       >
-        <Input type="email" placeholder="메일을 입력해주세요" ref={emailInputRef} />
-        <SubmitButton type="submit" value="알림 신청하기" />
+        <Input
+          type="email"
+          placeholder="메일을 입력해주세요"
+          ref={emailInputRef}
+          onClick={() => track('click_recruit_notification_input')}
+        />
+        <SubmitButton
+          type="submit"
+          value="알림 신청하기"
+          onClick={() => track('click_recruit_notification_apply')}
+        />
       </FormWrapper>
       <ConfirmText visible={isRegistered}>신청 완료되었습니다!</ConfirmText>
     </Wrapper>

@@ -24,7 +24,12 @@ const FaqInfo = () => {
           <SectionTitle>자주 묻는 질문</SectionTitle>
         </SectionTitleWrapper>
       </Wrapper>
-      <TabBar type="with-all" onTabClick={setSelectedTab} selectedTab={selectedTab} />
+      <TabBar
+        type="with-all"
+        onTabClick={setSelectedTab}
+        selectedTab={selectedTab}
+        amplitudeTrackingName={'click_recruit_faq_part'}
+      />
       <FaqWrapper>
         {faqMap[selectedTab].map((info, index) => (
           <div key={index} onClick={() => toggleBox(index)}>

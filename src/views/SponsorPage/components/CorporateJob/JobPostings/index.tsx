@@ -1,3 +1,4 @@
+import { track } from '@amplitude/analytics-browser';
 import { useQuery } from 'react-query';
 import JobPostingCard from '@src/components/corporate/JobPostingCard';
 import { api } from '@src/lib/api';
@@ -15,7 +16,13 @@ const JobPostings = ({ field }: JopPostingsProps) => {
     <St.Root>
       <St.JobPostingsContainer>
         {data?.map(({ id, url, imgSrc, type, title, corporation, career, location }) => (
-          <a key={id} href={url} target="_blank" rel="noreferrer">
+          <a
+            key={id}
+            href={url}
+            target="_blank"
+            rel="noreferrer"
+            onClick={() => track('click_sponsor_recruit')}
+          >
             <JobPostingCard
               imgSrc={imgSrc}
               type={type}
