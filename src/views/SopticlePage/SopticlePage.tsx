@@ -1,19 +1,16 @@
 import styled from '@emotion/styled';
-import { Footer, Header, Layout, ScrollToTopButton } from '@src/components';
+import PageLayout from '@src/components/common/PageLayout';
 import Content from './components/Content';
 import Description from './components/Description';
 
 function SopticlePage() {
   return (
-    <Layout>
-      <Header />
-      <ScrollToTopButton />
+    <PageLayout>
       <Root>
         <Description />
         <Content />
       </Root>
-      <Footer />
-    </Layout>
+    </PageLayout>
   );
 }
 

@@ -21,7 +21,7 @@ import {
   MoreLinkWrapper,
 } from './styles';
 
-export function ActivityReview() {
+export default function ActivityReview() {
   const reviews = useFetch();
   const {
     scrollableRef,

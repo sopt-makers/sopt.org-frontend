@@ -1,21 +1,17 @@
 import styled from '@emotion/styled';
-import { Footer, Header, Layout } from '@src/components';
+import PageLayout from '@src/components/common/PageLayout';
 import { Contact, FAQ } from './components';
 
 function FAQPage() {
   return (
-    <Layout>
-      <Header />
+    <PageLayout>
       <Root>
         <Contact />
         <FAQ />
       </Root>
-      <Footer />
-    </Layout>
+    </PageLayout>
   );
 }
-
-export default FAQPage;
 
 const Root = styled.div`
   display: flex;
@@ -32,3 +28,5 @@ const Root = styled.div`
     width: 360px;
   }
 `;
+
+export default FAQPage;

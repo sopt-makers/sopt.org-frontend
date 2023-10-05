@@ -1,12 +1,10 @@
 import styled from '@emotion/styled';
-import { Header, Layout } from '@src/components';
-import { Footer } from '@src/components';
+import PageLayout from '@src/components/common/PageLayout';
 import { CorporateJob, CorporateLinkedActivities, CorporatePartner } from './components';
 
 const SponsorPage = () => {
   return (
-    <Layout>
-      <Header />
+    <PageLayout>
       <Container>
         <Content>
           <CorporateJob />
@@ -14,8 +12,7 @@ const SponsorPage = () => {
           <CorporateLinkedActivities />
         </Content>
       </Container>
-      <Footer />
-    </Layout>
+    </PageLayout>
   );
 };
 

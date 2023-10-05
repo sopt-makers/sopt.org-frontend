@@ -6,7 +6,7 @@ import styles from './scroll-to-top-button.module.scss';
 
 const SCROLL_MINIMUM_VALUE = 120;
 
-export function ScrollToTopButton() {
+export default function ScrollToTopButton() {
   const [isScrolled, setIsScrolled] = useState(false);
 
   const checkScroll = debounce(() => {
