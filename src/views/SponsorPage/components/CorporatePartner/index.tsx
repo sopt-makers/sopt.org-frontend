@@ -1,3 +1,4 @@
+import { track } from '@amplitude/analytics-browser';
 import Image from 'next/image';
 import { ReactComponent as ArrowLeft } from '@src/assets/icons/arrow_left_28x28.svg';
 import { ReactComponent as ArrowRight } from '@src/assets/icons/arrow_right_28x28.svg';
@@ -20,7 +21,10 @@ const CoporatePartner = () => {
       <div className={styles.contentWrapper}>
         <div
           className={styles.arrowWrapper}
-          onClick={() => onClickLeftButton(scrollableRef.current)}
+          onClick={() => {
+            onClickLeftButton(scrollableRef.current);
+            track('click_sponsor_logo_next');
+          }}
         >
           <ArrowLeft stroke={isLeftScrollable ? 'white' : 'grey'} />
         </div>
@@ -43,7 +47,10 @@ const CoporatePartner = () => {
         </div>
         <div
           className={styles.arrowWrapper}
-          onClick={() => onClickRightButton(scrollableRef.current)}
+          onClick={() => {
+            onClickRightButton(scrollableRef.current);
+            track('click_sponsor_logo_next');
+          }}
         >
           <ArrowRight stroke={isRightScrollable ? 'white' : 'grey'} />
         </div>

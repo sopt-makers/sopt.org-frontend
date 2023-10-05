@@ -1,3 +1,4 @@
+import { track } from '@amplitude/analytics-browser';
 import styled from '@emotion/styled';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -15,7 +16,7 @@ import styles from './project-card.module.scss';
 
 export function ProjectCard({ project }: { project: ProjectType }) {
   return (
-    <Link href={`/project/${project.id}`}>
+    <Link href={`/project/${project.id}`} onClick={() => track('click_project_detail')}>
       <article className={`${styles.item} ${GTM_CLASS.projectCard}`}>
         {RepresentativeImageRender(project.name, project.logoImage, project?.thumbnailImage)}
         <div className={`${styles.content} ${GTM_CLASS.projectCard}`}>

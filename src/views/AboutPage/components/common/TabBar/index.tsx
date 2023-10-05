@@ -1,16 +1,16 @@
 import { extraTabs, tabs } from '@src/lib/constants/tabs';
-import { ExtraPart, Part } from '@src/lib/types/universal';
+import { ExtraPart, ExtraTabType, Part, TabType } from '@src/lib/types/universal';
 import * as St from './style';
 
 type TabBarPropsIncludedExtra = {
   includesExtra: true;
   selectedTab: ExtraPart;
-  onTabClick(targetTab: ExtraPart): void;
+  onTabClick(tab: ExtraTabType): void;
 };
 type TabBarPropsNoExtra = {
   includesExtra: false;
   selectedTab: Part;
-  onTabClick(targetTab: Part): void;
+  onTabClick(tab: TabType): void;
 };
 type TabBarProps = TabBarPropsIncludedExtra | TabBarPropsNoExtra;
 
@@ -21,7 +21,7 @@ const TabBar = ({ includesExtra, onTabClick, selectedTab }: TabBarProps) => {
         {extraTabs.map((tab) => (
           <Tab
             key={tab.value}
-            onClick={() => onTabClick(tab.value)}
+            onClick={() => onTabClick(tab)}
             label={tab.label}
             selected={selectedTab === tab.value}
           />
@@ -34,7 +34,7 @@ const TabBar = ({ includesExtra, onTabClick, selectedTab }: TabBarProps) => {
       {tabs.map((tab) => (
         <Tab
           key={tab.value}
-          onClick={() => onTabClick(tab.value)}
+          onClick={() => onTabClick(tab)}
           label={tab.label}
           selected={selectedTab === tab.value}
         />

@@ -1,3 +1,4 @@
+import * as amplitude from '@amplitude/analytics-browser';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
@@ -8,8 +9,16 @@ import { QueryClient, QueryClientProvider } from 'react-query';
 import GoogleTagManagerNoscript from '@src/components/googleTagManager/Noscript';
 import GoogleTagManagerScript from '@src/components/googleTagManager/Script';
 import * as gtm from '@src/components/googleTagManager/gtm';
+import { AMPLITUDE_API_KEY } from '@src/lib/constants/client';
 import { global } from '@src/styles/global';
 import theme from '@src/styles/theme';
+import { pageViewTrackingEnrichment } from '@src/utils/pageViewTrackingEnrichment';
+
+amplitude.add(pageViewTrackingEnrichment());
+amplitude.init(AMPLITUDE_API_KEY, {
+  logLevel: amplitude.Types.LogLevel.Warn,
+  defaultTracking: true,
+});
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [queryClient] = useState(() => new QueryClient());

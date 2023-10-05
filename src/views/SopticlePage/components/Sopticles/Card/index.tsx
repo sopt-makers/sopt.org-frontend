@@ -1,3 +1,4 @@
+import { track } from '@amplitude/analytics-browser';
 import { useState } from 'react';
 import { ReactComponent as IconHeartFilled } from '@src/assets/icons/ic_heartfilled.svg';
 import { ReactComponent as IconHeartUnfilled } from '@src/assets/icons/ic_heartunfilled.svg';
@@ -22,6 +23,7 @@ const SopticleCard = ({ sopticle }: SopticleCardProps) => {
     e.preventDefault();
     const response = await api.sopticleAPI.postSopticleLike(sopticle.id, liked ?? true);
     setLiked(response.currentLike);
+    track('click_sopticle_like', { sopticle_id: sopticle.id, is_like: response.currentLike });
     if (response.likeChanged)
       setLikesCount((prevLikesCount) =>
         response.currentLike ? prevLikesCount + 1 : prevLikesCount - 1,
@@ -29,7 +31,12 @@ const SopticleCard = ({ sopticle }: SopticleCardProps) => {
   };
 
   return (
-    <S.Card href={sopticle.link} target="_blank" passHref>
+    <S.Card
+      href={sopticle.link}
+      target="_blank"
+      passHref
+      onClick={() => track('click_sopticle_detail', { sopticle_id: sopticle.id })}
+    >
       <S.ThumbnailWrapper>
         <S.Thumbnail src={sopticle.thumbnail} alt={sopticle.title} fill />
         <S.ChipWrapper>

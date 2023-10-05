@@ -1,7 +1,8 @@
+import { track } from '@amplitude/analytics-browser';
 import { useMemo, useState } from 'react';
 import DataErrorBanner from '@src/components/DataErrorBanner';
 import Flex from '@src/components/common/Flex';
-import { ExtraPart } from '@src/lib/types/universal';
+import { ExtraPart, ExtraTabType } from '@src/lib/types/universal';
 import { PartExtraType } from '@src/lib/types/universal';
 import { emptyMembers } from '@src/views/AboutPage/constant/emptyMembers';
 import useFetchMember from '@src/views/AboutPage/hooks/useFetchMemeber';
@@ -18,8 +19,12 @@ const MemberContent = () => {
   const state = useFetchMember(currentPart);
 
   const errorContent = state._TAG === 'ERROR' && <DataErrorBanner />;
+  const handleTabClick = (tab: ExtraTabType) => {
+    setCurrentPart(tab.value);
+    track('click_about_member_part', { part: tab.label });
+  };
   const tabBarContent = !(state._TAG === 'ERROR' && shouldNotShownWithError) && (
-    <TabBar onTabClick={setCurrentPart} selectedTab={currentPart} includesExtra={true} />
+    <TabBar onTabClick={handleTabClick} selectedTab={currentPart} includesExtra={true} />
   );
   const cardContent = useMemo(() => {
     if (state._TAG === 'OK')

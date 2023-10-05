@@ -1,5 +1,5 @@
-import { useState } from 'react';
 import { ExtraPart, PartExtraType } from '@src/lib/types/universal';
+import { useState } from 'react';
 import Reviews from '../Reviews';
 import TabBar from '../TabBar';
 

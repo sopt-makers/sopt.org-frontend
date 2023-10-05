@@ -1,3 +1,4 @@
+import { track } from '@amplitude/analytics-browser';
 import Link from 'next/link';
 import { ReactComponent as ArrowLeft } from '@src/assets/icons/arrow_left_28x28.svg';
 import { ReactComponent as ArrowRight } from '@src/assets/icons/arrow_right_28x28.svg';
@@ -44,7 +45,11 @@ export default function ActivityReview() {
         </ArrowWrapper>
         <Content ref={scrollableRef}>
           {reviews.data.map((review) => (
-            <Link key={review.id} href={review.link}>
+            <Link
+              key={review.id}
+              href={review.link}
+              onClick={() => track('click_recruit_review_detail')}
+            >
               <CardWrapper role="presentation">
                 <CardTitle>{review.title}</CardTitle>
                 <DescWrapper>
@@ -67,7 +72,7 @@ export default function ActivityReview() {
           <ArrowRight stroke={isRightScrollable ? 'white' : 'grey'} />
         </ArrowWrapper>
       </ContentWrapper>
-      <Link href="/review">
+      <Link href="/review" onClick={() => track('click_recruit_review_more')}>
         <MoreLinkWrapper>활동후기 더보기</MoreLinkWrapper>
       </Link>
     </ContainerWrapper>
