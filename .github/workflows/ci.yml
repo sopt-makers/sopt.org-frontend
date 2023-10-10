@@ -22,3 +22,9 @@ jobs:
 
       - name: Check code style
         run: pnpm run lint
+
+      - name: Build project
+        run: pnpm run build
+        env:
+          NEXT_PUBLIC_BASE_URL: ${{ secrets.NEXT_PUBLIC_BASE_URL }}
+          NEXT_PUBLIC_AMPLITUDE_API_KEY: ${{ secrets.NEXT_PUBLIC_AMPLITUDE_API_KEY }}
