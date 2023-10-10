@@ -50,7 +50,7 @@ function ProjectDetailPage() {
 
   return (
     <PageLayout showScrollTopButton>
-      <HTMLHead title={name} imageURL={projectImage} projectID={id} />
+      <HTMLHead projectTitle={name} projectImageURL={projectImage} projectID={id} />
       <S.Root>
         <S.Container>
           <S.ProjectHeader>

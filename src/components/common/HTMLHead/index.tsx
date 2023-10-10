@@ -1,13 +1,13 @@
 import Head from 'next/head';
 
 interface HeadProps {
-  title?: string;
+  projectTitle?: string;
   projectID?: string;
-  imageURL?: string;
+  projectImageURL?: string;
 }
 
 function HTMLHead(props: HeadProps) {
-  const { title, projectID, imageURL } = props;
+  const { projectTitle, projectID, projectImageURL } = props;
 
   return (
     <Head>
@@ -66,13 +66,13 @@ function HTMLHead(props: HeadProps) {
         property="og:url"
         content={`https://sopt.org/project/${projectID}` || 'https://sopt.org/'}
       />
-      <meta property="og:title" content={`SOPT 프로젝트 ${title}` || 'SOPT'} />
+      <meta property="og:title" content={`SOPT 프로젝트 ${projectTitle}` || 'SOPT'} />
       <meta property="og:site_name" content="SOPT 공식 홈페이지" />
       <meta property="og:description" content={'대학생 연합 IT 벤처 창업 동아리'} />
       <meta
         property="og:image"
         content={
-          imageURL ||
+          projectImageURL ||
           'https://s3.ap-northeast-2.amazonaws.com/sopt.org/admin/origin/img_sopt_homepage.png'
         }
       />
