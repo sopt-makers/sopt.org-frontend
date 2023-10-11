@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { InferGetServerSidePropsType } from 'next';
 import { lazy } from 'react';
-import { Footer, Header, Layout } from '@src/components';
+import PageLayout from '@src/components/common/PageLayout';
 import { api } from '@src/lib/api';
 import {
   Banner,
@@ -14,8 +14,7 @@ const MemberSection = lazy(() => import('@src/views/AboutPage/components/Member/
 
 const AboutPage = ({ aboutInfo }: InferGetServerSidePropsType<typeof getStaticProps>) => {
   return (
-    <Layout>
-      <Header />
+    <PageLayout>
       <Root>
         <Banner imageSrc={aboutInfo.aboutInfo.bannerImage} title={aboutInfo.aboutInfo.title} />
         <CoreValueSection
@@ -29,8 +28,7 @@ const AboutPage = ({ aboutInfo }: InferGetServerSidePropsType<typeof getStaticPr
         />
         <MemberSection generation={aboutInfo.aboutInfo.generation} />
       </Root>
-      <Footer />
-    </Layout>
+    </PageLayout>
   );
 };
 
