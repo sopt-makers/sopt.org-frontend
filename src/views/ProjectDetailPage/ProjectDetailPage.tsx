@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { useQuery } from 'react-query';
 import { ReactComponent as IToggle } from '@src/assets/images/toggle.svg';
+import HTMLHead from '@src/components/common/HTMLHead';
 import PageLayout from '@src/components/common/PageLayout';
 import { api } from '@src/lib/api';
 import { ProjectLinkType } from '@src/lib/types/project';
@@ -49,6 +50,7 @@ function ProjectDetailPage() {
 
   return (
     <PageLayout showScrollTopButton>
+      <HTMLHead projectTitle={name} projectImageURL={projectImage} projectID={id} />
       <S.Root>
         <S.Container>
           <S.ProjectHeader>
