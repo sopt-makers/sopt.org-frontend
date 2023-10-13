@@ -1,7 +1,13 @@
 import { track } from '@amplitude/analytics-browser';
 import styled from '@emotion/styled';
-import { useRef, useState } from 'react';
+import { BASE_URL, DEFAULT_TIMEOUT } from '@src/lib/constants/client';
 import axios from 'axios';
+import { useRef, useState } from 'react';
+
+const client = axios.create({
+  baseURL: BASE_URL,
+  timeout: DEFAULT_TIMEOUT,
+});
 
 const NotificationSection = () => {
   const [isRegistered, setIsRegistered] = useState(false);
@@ -14,10 +20,11 @@ const NotificationSection = () => {
       const email = emailInputRef.current?.value;
       if (!email) return;
       setIsLoading(true);
-      const result = await axios.post('/api/register', {
+      const result = await client.post('/notification/register', {
+        generation: 34, // 리크루팅 시기 이후 변경되어야 함.
         email,
       });
-      if (result.data.success) {
+      if (result.status === 201) {
         if (emailInputRef.current?.value) {
           emailInputRef.current.value = '';
         }
