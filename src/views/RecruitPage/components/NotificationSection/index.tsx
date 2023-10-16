@@ -1,8 +1,8 @@
 import { track } from '@amplitude/analytics-browser';
 import styled from '@emotion/styled';
+import { useRef, useState } from 'react';
 import { BASE_URL, DEFAULT_TIMEOUT } from '@src/lib/constants/client';
 import axios from 'axios';
-import { useRef, useState } from 'react';
 
 const client = axios.create({
   baseURL: BASE_URL,
@@ -53,6 +53,7 @@ const NotificationSection = () => {
         <Input
           type="email"
           placeholder="메일을 입력해주세요"
+          pattern="[a-zA-Z0-9]+[@][a-zA-Z0-9]+[.]+[a-zA-Z]+[.]*[a-zA-Z]*"
           ref={emailInputRef}
           onClick={() => track('click_recruit_notification_input')}
         />
