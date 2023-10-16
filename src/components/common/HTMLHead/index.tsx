@@ -64,9 +64,9 @@ function HTMLHead(props: HeadProps) {
       <meta property="og:locale" content="ko_KR" />
       <meta
         property="og:url"
-        content={`https://sopt.org/project/${projectID}` || 'https://sopt.org/'}
+        content={projectID ? `https://sopt.org/project/${projectID}` : 'https://sopt.org/'}
       />
-      <meta property="og:title" content={`SOPT 프로젝트 ${projectTitle}` || 'SOPT'} />
+      <meta property="og:title" content={projectTitle ? `SOPT 프로젝트 ${projectTitle}` : 'SOPT'} />
       <meta property="og:site_name" content="SOPT 공식 홈페이지" />
       <meta property="og:description" content={'대학생 연합 IT 벤처 창업 동아리'} />
       <meta
