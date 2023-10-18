@@ -1,6 +1,6 @@
 import { FC, useState } from 'react';
 import useInterval from '@src/hooks/useInterval';
-import { convertMsIntoDate } from '@src/utils/convertMsIntoDate';
+import { convertMsIntoDate } from '@src/lib/utils/convertMsIntoDate';
 
 interface TimerProps {
   targetDate: Date;

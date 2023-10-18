@@ -12,7 +12,7 @@ import * as gtm from '@src/components/googleTagManager/gtm';
 import { AMPLITUDE_API_KEY } from '@src/lib/constants/client';
 import { global } from '@src/styles/global';
 import theme from '@src/styles/theme';
-import { pageViewTrackingEnrichment } from '@src/utils/pageViewTrackingEnrichment';
+import { pageViewTrackingEnrichment } from '@src/lib/utils/pageViewTrackingEnrichment';
 
 amplitude.add(pageViewTrackingEnrichment());
 amplitude.init(AMPLITUDE_API_KEY, {

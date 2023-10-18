@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { ReactComponent as UpArrow } from '@src/assets/icons/ic_up_arrow.svg';
-import { debounce } from '@src/utils/debounce';
+import { debounce } from '@src/lib/utils/debounce';
 import cc from 'classcat';
 import styles from './scroll-to-top-button.module.scss';
 
