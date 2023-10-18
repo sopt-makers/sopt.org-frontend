@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { getStorageHandler } from '@src/utils/storageHandler';
+import { getStorageHandler } from '@src/lib/utils/storageHandler';
 
 export default function useStorage<T>(
   key: string,
