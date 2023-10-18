@@ -55,8 +55,8 @@ interface MenuTitleProps {
 }
 
 export const Wrapper = styled.div`
-  max-width: 1280px;
-  width: 90%;
+  max-width: 1200px;
+  width: 100%;
   display: flex;
   justify-content: space-between;
 `;

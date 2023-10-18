@@ -4,8 +4,8 @@ import MobileHeader from './Mobile/MobileHeader';
 import styles from './header.module.scss';
 
 export function Header() {
-  const isDesktop = useIsDesktop('992px');
-  const isTablet = useIsTablet('766px', '991.9px');
+  const isDesktop = useIsDesktop('940px');
+  const isTablet = useIsTablet('768px', '939px');
   const isMobile = useIsMobile();
 
   return (

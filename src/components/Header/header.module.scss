@@ -11,16 +11,17 @@
   background-color: rgba(22, 22, 28, 0.9);
   backdrop-filter: blur(20px);
   z-index: 100;
+  padding: 0 20px;
+  top: 0;
 
   @include tablet {
     height: 48px;
-    padding: 0 48px;
   }
 
   @include mobile {
     height: 48px;
     min-height: 48px;
-    padding: 0 20px;
+
     justify-content: space-between;
   }
 }
