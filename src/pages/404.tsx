@@ -5,7 +5,7 @@ import Sopt404 from '@src/assets/images/sopt_404.png';
 import { Header } from '@src/components';
 import RoundButton from '@src/components/common/RoundButton';
 import { useIsDesktop } from '@src/hooks/useDevice';
-import theme from '@src/styles/theme';
+import theme from '@src/lib/styles/theme';
 
 function Wrong() {
   const router = useRouter();

@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { mainColor } from '@src/styles/colors';
+import { mainColor } from '@src/lib/styles/colors';
 
 const Description = () => {
   return <Title>솝티클</Title>;

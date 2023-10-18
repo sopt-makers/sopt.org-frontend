@@ -1,5 +1,5 @@
 import { Theme } from '@emotion/react';
-import { mainColor } from '@src/styles/colors';
+import { mainColor } from '@src/lib/styles/colors';
 
 const theme: Theme = {
   colors: {

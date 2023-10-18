@@ -10,8 +10,8 @@ import GoogleTagManagerNoscript from '@src/components/googleTagManager/Noscript'
 import GoogleTagManagerScript from '@src/components/googleTagManager/Script';
 import * as gtm from '@src/components/googleTagManager/gtm';
 import { AMPLITUDE_API_KEY } from '@src/lib/constants/client';
-import { global } from '@src/styles/global';
-import theme from '@src/styles/theme';
+import { global } from '@src/lib/styles/global';
+import theme from '@src/lib/styles/theme';
 import { pageViewTrackingEnrichment } from '@src/lib/utils/pageViewTrackingEnrichment';
 
 amplitude.add(pageViewTrackingEnrichment());

@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import Image from 'next/image';
 import Link from 'next/link';
-import { textSingularLineEllipsis } from '@src/styles/textEllipsis';
+import { textSingularLineEllipsis } from '@src/lib/styles/textEllipsis';
 
 export const Wrapper = styled.div`
   display: flex;
