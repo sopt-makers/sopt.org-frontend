@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { useEffect } from 'react';
 import useHeader from '@src/hooks/useHeader';
 import { menuTapList } from '../menuTapList';
-import { BaseMenuTap, MenuState, MenuTapType } from '../types';
+import { MenuState, MenuTapType, SingleMenuTap } from '../types';
 import * as S from './HeaderMenu.style';
 
 function useNoScroll(isMenuShown: MenuState) {
@@ -27,7 +27,7 @@ interface HeaderMenuProps {
 }
 
 type MenuTapProps = {
-  menuTap: BaseMenuTap;
+  menuTap: SingleMenuTap;
   handleIsSelected: (path: string) => boolean;
 };
 
@@ -46,18 +46,6 @@ function MenuTap({ menuTap, handleIsSelected }: MenuTapProps) {
         <S.MenuTitle isSelected={handleIsSelected(menuTap.href)}>
           <Link href={menuTap.href}>{menuTap.title}</Link>
         </S.MenuTitle>
-      );
-    case MenuTapType.Parent:
-      return (
-        <>
-          {menuTap.children.map((childMenuTap) => (
-            <MenuTap
-              key={childMenuTap.title}
-              menuTap={childMenuTap}
-              handleIsSelected={handleIsSelected}
-            />
-          ))}
-        </>
       );
   }
 }
