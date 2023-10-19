@@ -84,7 +84,7 @@ function ProjectCardList(list: ProjectType[]) {
 function ProjectListCount(count: number) {
   return (
     <div className={styles['list-count']}>
-      <div>{count} 개의 프로젝트가 있어요.</div>
+      <div>{count}개의 프로젝트</div>
     </div>
   );
 }
