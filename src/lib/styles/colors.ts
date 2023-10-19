@@ -1,9 +1,3 @@
-/* TODO: 공홈 개편 후 제거해야 할 색상 코드입니다. */
-export const mainColor = {
-  mainColor: '#4877AF',
-  soptWhite: '#FCFCFC',
-};
-
 export const colors = {
   white: '#FFFFFF',
   black: '#000000',
