@@ -77,7 +77,7 @@ export const TabDescription = styled.h1`
   font-weight: 600;
   line-height: 30px;
   letter-spacing: -0.4px;
-  color: ${colors.gray50};
+  color: ${colors.gray100};
   width: 100%;
 
   /* 모바일 뷰 */
@@ -97,6 +97,6 @@ export const TabDescription = styled.h1`
     font-weight: 500;
     line-height: 23.1px;
     letter-spacing: -0.21px;
-    color: ${colors.gray10};
+    color: ${colors.gray30};
   }
 `;
