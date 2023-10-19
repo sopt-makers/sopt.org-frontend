@@ -17,7 +17,7 @@ const SelectTrigger = styled.button<{ isSelectionExist: boolean; isOpened: boole
   color: white;
   border-radius: 20px;
   background-color: ${({ isSelectionExist }) =>
-    isSelectionExist ? colors.gray700 : colors.gray800};
+    isSelectionExist ? colors.gray700 : colors.gray600};
   border: 1px solid;
   border-color: ${({ isSelectionExist }) => (isSelectionExist ? colors.gray200 : colors.gray700)};
   &::after {
@@ -49,7 +49,7 @@ const SelectItemWrapper = styled.div`
   flex-direction: column;
 
   position: absolute;
-  background-color: ${colors.gray700};
+  background-color: ${colors.gray600};
   z-index: 200;
   width: 110px;
   border-radius: 20px;
