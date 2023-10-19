@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { mainColor } from '@src/lib/styles/colors';
+import { colors } from '@src/lib/styles/colors';
 
 const Description = () => {
   return <Title>솝티클</Title>;
@@ -7,7 +7,7 @@ const Description = () => {
 
 const Title = styled.div`
   font-weight: 700;
-  color: ${mainColor.soptWhite};
+  color: ${colors.gray10};
   text-align: center;
 
   /* 데스크탑 뷰 */

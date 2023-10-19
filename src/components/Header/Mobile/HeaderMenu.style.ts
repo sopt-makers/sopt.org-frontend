@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import Link from 'next/link';
 import { css } from '@emotion/react';
 import { FadeIn, FadeInDown, FadeOut, FadeOutUp } from '@src/lib/styles/animation';
-import { mainColor } from '@src/lib/styles/colors';
+import { colors } from '@src/lib/styles/colors';
 
 type MenuType = 'idle' | 'open' | 'close';
 
@@ -169,7 +169,7 @@ export const ChannelTitle = styled.p`
   line-height: 17px;
   letter-spacing: -0.04em;
 
-  color: ${mainColor.soptWhite};
+  color: ${colors.gray10};
   font-size: 14px;
   font-weight: 600;
 `;
