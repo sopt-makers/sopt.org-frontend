@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { colors } from '@src/lib/styles/colors';
 
 export const Wrapper = styled.section`
   width: 100%;
@@ -53,11 +54,11 @@ export const TabTitle = styled.article<MenuTitleProps>`
   font-weight: 700;
   letter-spacing: -0.48px;
 
-  color: ${({ isSelected }) => (isSelected ? '#F7F8FA' : '#66666D')};
+  color: ${({ isSelected }) => (isSelected ? `${colors.gray10}` : `${colors.gray30}`)};
 
   cursor: pointer;
   position: relative;
-  border-bottom: ${({ isSelected }) => isSelected && '2px solid #c0c5c9'};
+  border-bottom: ${({ isSelected }) => isSelected && `2px solid ${colors.gray200}`};
 
   padding-bottom: 16px;
   margin-right: 20px;
@@ -76,7 +77,7 @@ export const TabDescription = styled.h1`
   font-weight: 600;
   line-height: 30px;
   letter-spacing: -0.4px;
-  color: #c3c3c6;
+  color: ${colors.gray50};
   width: 100%;
 
   /* 모바일 뷰 */
@@ -90,12 +91,12 @@ export const TabDescription = styled.h1`
     align-items: flex-start;
     gap: 10px;
     border-radius: 12px;
-    background: #17171c;
+    background: ${colors.gray800};
 
     font-size: 14px;
     font-weight: 500;
     line-height: 23.1px;
     letter-spacing: -0.21px;
-    color: #f0f0f0;
+    color: ${colors.gray10};
   }
 `;
