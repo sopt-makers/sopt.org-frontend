@@ -51,7 +51,6 @@ function MenuTap({ menuTap, handleIsSelected }: MenuTapProps) {
 interface MenuTitleProps {
   isSelected?: boolean;
   isOpened?: boolean;
-  type?: 'main' | 'sub';
 }
 
 export const Wrapper = styled.div`
@@ -137,19 +136,13 @@ export const MenuTitle = styled.div<MenuTitleProps>`
   line-height: 36px;
   font-weight: ${({ isSelected }) => (isSelected ? '700' : '500')};
 
-  color: ${({ type, isSelected }) =>
-    type === 'sub' ? (isSelected ? '#fff' : 'rgba(255, 255, 255, 0.5)') : '#fff'};
+  color: ${({ isSelected }) => (isSelected ? '#fff' : 'rgba(255, 255, 255, 0.5)')};
   cursor: pointer;
   position: relative;
-  ${({ isOpened }) => isOpened && menuTitleUnderline};
+  ${({ isSelected }) => isSelected && menuTitleUnderline}
 
   &:not(:last-child) {
     padding-right: 40px;
-  }
-
-  &:hover {
-    color: #fff;
-    ${({ type }) => type !== 'sub' && menuTitleUnderline}
   }
 `;
 
