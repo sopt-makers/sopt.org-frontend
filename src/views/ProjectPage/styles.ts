@@ -1,7 +1,8 @@
 import styled from '@emotion/styled';
+import { colors } from '@src/lib/styles/colors';
 
 export const SectionTitle = styled.div`
-  color: #f7f8fa;
+  color: ${colors.gray10};
   font-size: 28px;
   font-style: normal;
   font-weight: 700;

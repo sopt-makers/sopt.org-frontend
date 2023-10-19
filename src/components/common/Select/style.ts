@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import arrowDown from '@src/assets/icons/arrow_down.svg';
+import { colors } from '@src/lib/styles/colors';
 
 const SelectWrapper = styled.div`
   position: relative;
@@ -15,9 +16,10 @@ const SelectTrigger = styled.button<{ isSelectionExist: boolean; isOpened: boole
   text-align: left;
   color: white;
   border-radius: 20px;
-  background-color: ${({ isSelectionExist }) => (isSelectionExist ? '#202025' : '#1c1d1e')};
+  background-color: ${({ isSelectionExist }) =>
+    isSelectionExist ? colors.gray700 : colors.gray800};
   border: 1px solid;
-  border-color: ${({ isSelectionExist }) => (isSelectionExist ? '#808388' : '#202025')};
+  border-color: ${({ isSelectionExist }) => (isSelectionExist ? colors.gray200 : colors.gray700)};
   &::after {
     content: '';
     background-repeat: no-repeat;
@@ -34,12 +36,12 @@ const SelectTrigger = styled.button<{ isSelectionExist: boolean; isOpened: boole
 `;
 
 const SelectItem = styled.div<{ isSelected: boolean }>`
-  background-color: ${({ isSelected }) => (isSelected ? '#404045' : 'transparent')};
+  background-color: ${({ isSelected }) => (isSelected ? colors.gray400 : 'transparent')};
   padding: 6px 10px;
   border-radius: 4px;
   cursor: pointer;
   transition: 0.1s;
-  color: #efefef;
+  color: ${colors.gray30};
 `;
 
 const SelectItemWrapper = styled.div`
@@ -47,7 +49,7 @@ const SelectItemWrapper = styled.div`
   flex-direction: column;
 
   position: absolute;
-  background-color: #202025;
+  background-color: ${colors.gray700};
   z-index: 200;
   width: 110px;
   border-radius: 20px;
@@ -59,7 +61,7 @@ const SelectItemWrapper = styled.div`
     ${SelectItem} {
       background-color: transparent;
       &:hover {
-        background-color: #404045;
+        background-color: ${colors.gray400};
       }
     }
   }
