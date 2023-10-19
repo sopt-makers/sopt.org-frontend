@@ -2,7 +2,7 @@ import { useState } from 'react';
 import * as S from './style';
 import { BlogTabList } from './types';
 
-function Navigation() {
+export default function Navigation() {
   const [selectTab, setSelectTab] = useState<keyof BlogTabList>('REVIEW');
   const blogTabList: BlogTabList = {
     REVIEW: { title: '활동후기', description: 'SOPT 회원들의 생생한 활동 후기 마치 생생정보통' },
@@ -31,5 +31,3 @@ function Navigation() {
     </S.Wrapper>
   );
 }
-
-export default Navigation;
