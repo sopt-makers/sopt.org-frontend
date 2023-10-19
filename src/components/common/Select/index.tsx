@@ -26,7 +26,6 @@ export default function Select<T extends LabelKeyType>({
 
   const handleSelect = (value: T) => {
     setSelectedValue(value);
-    setIsOpen(false);
   };
 
   const closeSelectItem = useCallback(() => setIsOpen(false), []);
