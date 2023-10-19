@@ -7,7 +7,7 @@ const Description = () => {
 
 const Title = styled.div`
   font-weight: 700;
-  color: ${mainColor.white};
+  color: ${mainColor.soptWhite};
   text-align: center;
 
   /* 데스크탑 뷰 */

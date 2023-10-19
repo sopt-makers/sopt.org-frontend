@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { mainColor } from '@src/lib/styles/colors';
 
 export const Root = styled.footer`
   width: 100%;
@@ -50,7 +51,7 @@ export const TitleButton = styled.button`
   display: flex;
   align-items: center;
 
-  color: ${({ theme }) => theme.colors.soptWhite};
+  color: ${mainColor.soptWhite};
   font-size: 14px;
   font-weight: 700;
 

@@ -1,7 +1,7 @@
 import * as amplitude from '@amplitude/analytics-browser';
 import type { AppProps } from 'next/app';
 import { useRouter } from 'next/router';
-import { Global, ThemeProvider } from '@emotion/react';
+import { Global } from '@emotion/react';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { QueryClient, QueryClientProvider } from 'react-query';
@@ -11,7 +11,6 @@ import GoogleTagManagerScript from '@src/components/googleTagManager/Script';
 import * as gtm from '@src/components/googleTagManager/gtm';
 import { AMPLITUDE_API_KEY } from '@src/lib/constants/client';
 import { global } from '@src/lib/styles/global';
-import theme from '@src/lib/styles/theme';
 import { pageViewTrackingEnrichment } from '@src/lib/utils/pageViewTrackingEnrichment';
 
 amplitude.add(pageViewTrackingEnrichment());
@@ -36,11 +35,9 @@ function MyApp({ Component, pageProps }: AppProps) {
       <HTMLHead />
       <GoogleTagManagerScript />
       <Global styles={global} />
-      <ThemeProvider theme={theme}>
-        <QueryClientProvider client={queryClient}>
-          <Component {...pageProps} />
-        </QueryClientProvider>
-      </ThemeProvider>
+      <QueryClientProvider client={queryClient}>
+        <Component {...pageProps} />
+      </QueryClientProvider>
       <GoogleTagManagerNoscript />
     </>
   );
