@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import Image from 'next/image';
-import { textpluralLinesEllipsis } from '@src/styles/textEllipsis';
+import { textpluralLinesEllipsis } from '@src/lib/styles/textEllipsis';
 
 const Card = styled.article`
   display: flex;

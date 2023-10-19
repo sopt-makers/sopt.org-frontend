@@ -6,7 +6,7 @@ import {
 } from '@src/lib/types/about';
 import { CoreValueResponseDto, MemberResponseDto, StudyResponseDto } from '@src/lib/types/dto';
 import { Part } from '@src/lib/types/universal';
-import { parseStringToPart } from '@src/utils/parseStringToPart';
+import { parseStringToPart } from '@src/lib/utils/parseStringToPart';
 import axios from 'axios';
 import qs from 'qs';
 

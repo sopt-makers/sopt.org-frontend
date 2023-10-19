@@ -6,7 +6,7 @@ import NullImage from '@src/assets/images/null_image.png';
 import useStorage from '@src/hooks/useStorage';
 import { api } from '@src/lib/api';
 import { SopticleType } from '@src/lib/types/sopticle';
-import { formatDate } from '@src/utils/dateFormat';
+import { formatDate } from '@src/lib/utils/dateFormat';
 import * as S from '../style';
 
 type SopticleCardProps = {

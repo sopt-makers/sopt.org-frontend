@@ -6,8 +6,8 @@ import {
   SopticleResponseDto,
 } from '@src/lib/types/sopticle';
 import { ExtraPart, PartExtraType } from '@src/lib/types/universal';
-import { sanitizeImageUrl } from '@src/utils/sanitize';
-import { getStorageHandler } from '@src/utils/storageHandler';
+import { sanitizeImageUrl } from '@src/lib/utils/sanitize';
+import { getStorageHandler } from '@src/lib/utils/storageHandler';
 import axios from 'axios';
 import { nanoid } from 'nanoid';
 import qs from 'qs';

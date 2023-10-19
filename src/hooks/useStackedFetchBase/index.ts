@@ -1,6 +1,6 @@
 import { to } from 'await-to-js';
 import { useEffect, useReducer } from 'react';
-import { debounce } from '@src/utils/debounce';
+import { debounce } from '@src/lib/utils/debounce';
 import { reducer } from './reducer';
 import { Action, State } from './types';
 

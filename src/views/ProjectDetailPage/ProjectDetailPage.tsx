@@ -8,7 +8,7 @@ import HTMLHead from '@src/components/common/HTMLHead';
 import PageLayout from '@src/components/common/PageLayout';
 import { api } from '@src/lib/api';
 import { ProjectLinkType } from '@src/lib/types/project';
-import { dateFormat } from '@src/utils/dateFormat';
+import { dateFormat } from '@src/lib/utils/dateFormat';
 import * as S from './ProjectDetail.style';
 import { TeamMembersType } from './types';
 import { getLinkNameAndSrcWithType } from './utils/getLinkNameAndSrcWithType';

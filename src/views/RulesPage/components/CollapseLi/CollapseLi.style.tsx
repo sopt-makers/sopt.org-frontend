@@ -1,14 +1,14 @@
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
 import { ArrowDownAnimation, ArrowUpAnimation } from '@src/lib/styles/animation';
-import theme from '@src/styles/theme';
+import { mainColor } from '@src/lib/styles/colors';
 
 interface ButtonStyleProps {
   isOpened: boolean;
 }
 
 export const Root = styled.li`
-  border-bottom: 1px solid ${theme.colors.soptWhite};
+  border-bottom: 1px solid ${mainColor.soptWhite};
   padding-bottom: 40px;
   width: 100%;
   @media (max-width: 768px) {
@@ -29,7 +29,7 @@ export const Section = styled.div`
 export const TItle = styled.h3`
   text-align: center;
   line-height: 30px;
-  color: ${theme.colors.soptWhite};
+  color: ${mainColor.soptWhite};
   font-size: 24px;
   font-weight: 700;
   font-style: normal;
@@ -75,7 +75,7 @@ export const Contents = styled.div<ButtonStyleProps>`
   line-height: 180%;
   letter-spacing: -0.03em;
   white-space: pre-line;
-  color: ${theme.colors.soptWhite};
+  color: ${mainColor.soptWhite};
   font-size: 20px;
   font-weight: 400;
   font-style: normal;

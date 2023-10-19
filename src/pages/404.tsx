@@ -5,7 +5,7 @@ import Sopt404 from '@src/assets/images/sopt_404.png';
 import { Header } from '@src/components';
 import RoundButton from '@src/components/common/RoundButton';
 import { useIsDesktop } from '@src/hooks/useDevice';
-import theme from '@src/styles/theme';
+import { mainColor } from '@src/lib/styles/colors';
 
 function Wrong() {
   const router = useRouter();
@@ -51,7 +51,7 @@ const Styled = {
       margin-top: 99px;
       margin-bottom: 99px;
       line-height: 56px;
-      color: ${theme.colors.soptWhite};
+      color: ${mainColor.soptWhite};
       font-size: 45px;
       font-weight: 400;
       font-style: normal;
