@@ -34,3 +34,5 @@ type TabTypeOption<T> = {
 
 export type TabType = TabTypeOption<Part>;
 export type ExtraTabType = TabTypeOption<ExtraPart>;
+
+export type LabelKeyType = string | number | symbol;
