@@ -54,11 +54,11 @@ export const TabTitle = styled.article<MenuTitleProps>`
   font-weight: 700;
   letter-spacing: -0.48px;
 
-  color: ${({ isSelected }) => (isSelected ? `${colors.gray10}` : `${colors.gray300}`)};
+  color: ${({ isSelected }) => (isSelected ? `${colors.gray30}` : `${colors.gray400}`)};
 
   cursor: pointer;
   position: relative;
-  border-bottom: ${({ isSelected }) => isSelected && `2px solid ${colors.gray40}`};
+  border-bottom: ${({ isSelected }) => isSelected && `2px solid ${colors.gray200}`};
 
   padding-bottom: 16px;
   margin-right: 20px;
@@ -77,7 +77,7 @@ export const TabDescription = styled.h1`
   font-weight: 600;
   line-height: 30px;
   letter-spacing: -0.4px;
-  color: ${colors.gray50};
+  color: ${colors.gray100};
   width: 100%;
 
   /* 모바일 뷰 */
@@ -97,6 +97,6 @@ export const TabDescription = styled.h1`
     font-weight: 500;
     line-height: 23.1px;
     letter-spacing: -0.21px;
-    color: ${colors.gray10};
+    color: ${colors.gray30};
   }
 `;
