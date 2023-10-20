@@ -65,6 +65,7 @@ export const TabTitle = styled.article<MenuTitleProps>`
 
   /* 모바일 뷰 */
   @media (max-width: 767px) {
+    border-bottom: ${({ isSelected }) => isSelected && `1px solid ${colors.gray200}`};
     margin-right: 12px;
   }
 `;
