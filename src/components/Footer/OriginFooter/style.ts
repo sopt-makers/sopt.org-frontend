@@ -4,7 +4,7 @@ import { colors } from '@src/lib/styles/colors';
 export const Root = styled.footer`
   width: 100%;
   min-height: 162px;
-  background-color: #17171c;
+  background-color: ${colors.gray800};
 
   /* 태블릿 + 데스크탑 뷰 */
   @media (min-width: 766px) {
