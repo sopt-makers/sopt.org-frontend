@@ -2,7 +2,7 @@ import { useState } from 'react';
 import * as S from './style';
 import { BlogTabList } from './types';
 
-export default function Navigation() {
+export default function BlogTab() {
   const [selectTab, setSelectTab] = useState<keyof BlogTabList>('REVIEW');
   const blogTabList: BlogTabList = {
     REVIEW: {
