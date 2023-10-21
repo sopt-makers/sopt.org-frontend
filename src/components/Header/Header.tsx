@@ -1,7 +1,7 @@
 import { useIsDesktop, useIsMobile, useIsTablet } from '@src/hooks/useDevice';
 import DesktopHeader from './Desktop/DesktopHeader';
 import MobileHeader from './Mobile/MobileHeader';
-import styles from './header.module.scss';
+import * as S from './style';
 
 export function Header() {
   const isDesktop = useIsDesktop('940px');
@@ -9,10 +9,10 @@ export function Header() {
   const isMobile = useIsMobile();
 
   return (
-    <header className={styles.wrapper}>
+    <S.Wrapper>
       {isDesktop && <DesktopHeader />}
       {isTablet && <MobileHeader />}
       {isMobile && <MobileHeader />}
-    </header>
+    </S.Wrapper>
   );
 }
