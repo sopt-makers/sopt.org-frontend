@@ -1,7 +1,7 @@
-import { useCallback, useRef, useState } from 'react';
 import useOutsideClickListener from '@src/hooks/useOutsideClickListener';
 import { LabelKeyType } from '@src/lib/types/universal';
-import { St } from './style';
+import { useCallback, useRef, useState } from 'react';
+import { S } from './style';
 
 interface SelectProps<T extends LabelKeyType> {
   options: T[];
@@ -36,26 +36,26 @@ export default function Select<T extends LabelKeyType>({
 
   return (
     <div>
-      <St.SelectTrigger
+      <S.SelectTrigger
         ref={selectTriggerRef}
         onClick={toggleSelect}
         isSelectionExist={selectedValue !== baseValue}
         isOpened={isOpen}
       >
         {selectedValue === baseValue ? baseLabel : labels[selectedValue]}
-      </St.SelectTrigger>
+      </S.SelectTrigger>
       {isOpen && (
-        <St.SelectItemWrapper ref={selectItemWrapperRef}>
+        <S.SelectItemWrapper ref={selectItemWrapperRef}>
           {options.map((option, index) => (
-            <St.SelectItem
+            <S.SelectItem
               key={index}
               isSelected={selectedValue === option}
               onClick={() => handleSelect(option)}
             >
               {labels[option]}
-            </St.SelectItem>
+            </S.SelectItem>
           ))}
-        </St.SelectItemWrapper>
+        </S.SelectItemWrapper>
       )}
     </div>
   );

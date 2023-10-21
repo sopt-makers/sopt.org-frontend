@@ -67,4 +67,4 @@ const SelectItemWrapper = styled.div`
   }
 `;
 
-export const St = { SelectWrapper, SelectTrigger, SelectItem, SelectItemWrapper };
+export const S = { SelectWrapper, SelectTrigger, SelectItem, SelectItemWrapper };
