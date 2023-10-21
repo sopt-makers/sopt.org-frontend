@@ -67,6 +67,7 @@ export const TabTitle = styled.article<MenuTitleProps>`
 export const TabDescription = styled.h1`
   margin-top: 24px;
   margin-bottom: 48px;
+  word-break: keep-all;
 
   font-size: 20px;
   font-weight: 600;
