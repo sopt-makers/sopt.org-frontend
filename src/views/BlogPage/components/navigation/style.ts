@@ -24,14 +24,8 @@ export const Container = styled.main`
   align-items: flex-start;
   flex-direction: column;
 
-  /* 태블릿 뷰 */
-  @media (max-width: 939px) and (min-width: 768px) {
-    margin-left: 20px;
-    margin-right: 20px;
-    width: 100%;
-  }
-  /* 모바일 뷰 */
-  @media (max-width: 767px) {
+  /* 태블릿, 모바일 뷰 */
+  @media (max-width: 939px) {
     margin-left: 20px;
     margin-right: 20px;
     width: 100%;
@@ -54,7 +48,7 @@ export const TabTitle = styled.article<MenuTitleProps>`
   font-weight: 700;
   letter-spacing: -0.48px;
 
-  color: ${({ isSelected }) => (isSelected ? `${colors.gray10}` : `${colors.gray30}`)};
+  color: ${({ isSelected }) => (isSelected ? `${colors.gray30}` : `${colors.gray300}`)};
 
   cursor: pointer;
   position: relative;
