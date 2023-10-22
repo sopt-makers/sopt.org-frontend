@@ -62,6 +62,10 @@ export const TabTitle = styled.article<MenuTitleProps>`
     border-bottom: ${({ isSelected }) => isSelected && `1px solid ${colors.gray200}`};
     margin-right: 12px;
   }
+
+  &:hover {
+    color: ${colors.gray100};
+  }
 `;
 
 export const TabDescription = styled.h1`
