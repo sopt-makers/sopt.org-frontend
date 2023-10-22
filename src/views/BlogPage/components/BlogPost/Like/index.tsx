@@ -8,7 +8,7 @@ interface LikeProps {
   blogPost: BlogPostType;
 }
 
-function Like({ blogPost }: LikeProps) {
+export default function Like({ blogPost }: LikeProps) {
   return (
     <S.Like>
       <Image
@@ -21,5 +21,3 @@ function Like({ blogPost }: LikeProps) {
     </S.Like>
   );
 }
-
-export default Like;

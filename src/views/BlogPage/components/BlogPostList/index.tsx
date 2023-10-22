@@ -7,7 +7,7 @@ interface BlogPostListProps {
   blogPostList: BlogPostListType;
 }
 
-function BlogPostList({ selectedTap, blogPostList }: BlogPostListProps) {
+export default function BlogPostList({ selectedTap, blogPostList }: BlogPostListProps) {
   return (
     <S.BlogPostList>
       {blogPostList.data.map((blogPost) => (
@@ -16,5 +16,3 @@ function BlogPostList({ selectedTap, blogPostList }: BlogPostListProps) {
     </S.BlogPostList>
   );
 }
-
-export default BlogPostList;

@@ -8,7 +8,7 @@ interface HeaderProps {
   blogPost: BlogPostType;
 }
 
-function Header({ selectedTap, blogPost }: HeaderProps) {
+export default function Header({ selectedTap, blogPost }: HeaderProps) {
   return (
     <S.Header>
       {selectedTap === 'ARTICLE' ? (
@@ -35,5 +35,3 @@ function Header({ selectedTap, blogPost }: HeaderProps) {
     </S.Header>
   );
 }
-
-export default Header;
