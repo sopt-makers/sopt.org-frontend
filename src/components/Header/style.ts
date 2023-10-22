@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { colors } from '@src/lib/styles/colors';
+import { colors } from '@sopt-makers/colors';
 
 export const Wrapper = styled.header`
   width: 100%;
@@ -9,7 +9,7 @@ export const Wrapper = styled.header`
   justify-content: center;
   align-items: center;
   position: fixed;
-  background-color: ${colors.gray900};
+  background-color: ${colors.gray950};
   backdrop-filter: blur(20px);
   z-index: 100;
   padding: 0 20px;

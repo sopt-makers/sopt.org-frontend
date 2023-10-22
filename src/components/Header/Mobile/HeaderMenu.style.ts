@@ -1,8 +1,8 @@
 import styled from '@emotion/styled';
+import { colors } from '@sopt-makers/colors';
 import Link from 'next/link';
 import { css } from '@emotion/react';
 import { FadeIn, FadeInDown, FadeOut, FadeOutUp } from '@src/lib/styles/animation';
-import { colors } from '@src/lib/styles/colors';
 
 type MenuType = 'idle' | 'open' | 'close';
 
@@ -63,7 +63,7 @@ export const MenuWrap = styled.div`
 
 export const Background = styled.div`
   height: 100vh;
-  background: ${colors.gray900};
+  background: ${colors.gray950};
   opacity: 0.8;
 `;
 
@@ -110,7 +110,7 @@ export const ContentsWrap = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background: ${colors.gray900};
+  background: ${colors.gray950};
 
   padding-top: 50px;
   margin-bottom: 0px;

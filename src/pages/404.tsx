@@ -1,8 +1,8 @@
 import styled from '@emotion/styled';
+import { colors } from '@sopt-makers/colors';
 import { useRouter } from 'next/router';
 import { Header } from '@src/components';
 import RoundButton from '@src/components/common/RoundButton';
-import { colors } from '@src/lib/styles/colors';
 
 function Wrong() {
   const router = useRouter();

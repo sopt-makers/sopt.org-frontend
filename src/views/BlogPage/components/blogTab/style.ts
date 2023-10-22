@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { colors } from '@src/lib/styles/colors';
+import { colors } from '@sopt-makers/colors';
 
 export const Wrapper = styled.section`
   width: 100%;

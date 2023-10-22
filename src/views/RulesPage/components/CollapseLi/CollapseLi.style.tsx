@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
+import { colors } from '@sopt-makers/colors';
 import { css } from '@emotion/react';
 import { ArrowDownAnimation, ArrowUpAnimation } from '@src/lib/styles/animation';
-import { colors } from '@src/lib/styles/colors';
 
 interface ButtonStyleProps {
   isOpened: boolean;
