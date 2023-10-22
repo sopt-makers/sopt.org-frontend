@@ -3,7 +3,7 @@ import * as S from './style';
 import { BlogTabList } from './types';
 
 export default function BlogTab() {
-  const [selectTab, setSelectTab] = useState<keyof BlogTabList>('REVIEW');
+  const [selectedTab, setSelectedTab] = useState<keyof BlogTabList>('REVIEW');
   const blogTabList: BlogTabList = {
     REVIEW: {
       title: '활동후기',
@@ -23,15 +23,15 @@ export default function BlogTab() {
             return (
               <S.TabTitle
                 key={blogTab}
-                onClick={() => setSelectTab(blogTab as keyof BlogTabList)}
-                isSelected={selectTab === blogTab}
+                onClick={() => setSelectedTab(blogTab as keyof BlogTabList)}
+                isSelected={selectedTab === blogTab}
               >
                 {tabInfo.title}
               </S.TabTitle>
             );
           })}
         </S.TabContainer>
-        <S.TabDescription>{blogTabList[selectTab]?.description}</S.TabDescription>
+        <S.TabDescription>{blogTabList[selectedTab]?.description}</S.TabDescription>
         <p>드롭다운 들어가는 부분</p>
       </S.Container>
     </S.Wrapper>
