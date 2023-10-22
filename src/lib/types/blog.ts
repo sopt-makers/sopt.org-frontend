@@ -1,6 +1,14 @@
-/* TODO: 솝티클, 활동 후기 API 업데이트 후 수정 예정 */
+export type BlogPostListType = {
+  limit: number;
+  totalCount: number;
+  totalPage: number;
+  currentPage: number;
+  data: BlogPostType[];
+  hasNextPage: boolean;
+  hasPrevPage: boolean;
+};
 
-export type PostType = {
+export type BlogPostType = {
   id: number;
   part: string;
   generation: number;
@@ -9,18 +17,13 @@ export type PostType = {
   description: string;
   author: string;
   authorProfileImageUrl: string | null;
-  sopticleUrl: string;
+  url: string;
   uploadedAt: string;
-  likeCount: number;
-  liked: boolean;
-};
 
-export type GetPostListResponseType = {
-  limit: number;
-  totalCount: number;
-  totalPage: number;
-  currentPage: number;
-  data: PostType[];
-  hasNextPage: boolean;
-  hasPrevPage: boolean;
+  /* article */
+  likeCount?: number;
+  liked?: boolean;
+
+  /* review */
+  subject?: string;
 };
