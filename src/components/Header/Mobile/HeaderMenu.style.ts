@@ -1,8 +1,8 @@
 import styled from '@emotion/styled';
+import { colors } from '@sopt-makers/colors';
 import Link from 'next/link';
 import { css } from '@emotion/react';
 import { FadeIn, FadeInDown, FadeOut, FadeOutUp } from '@src/lib/styles/animation';
-import { colors } from '@src/lib/styles/colors';
 
 type MenuType = 'idle' | 'open' | 'close';
 

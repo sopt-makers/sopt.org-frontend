@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { colors } from '@src/lib/styles/colors';
+import { colors } from '@sopt-makers/colors';
 
 const Description = () => {
   return <Title>SOPT 회원들의 활동 후기</Title>;
