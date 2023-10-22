@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-export const PostList = styled.div`
+export const BlogPostList = styled.div`
   display: flex;
   flex-direction: column;
   gap: 80px;

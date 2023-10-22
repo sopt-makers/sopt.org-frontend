@@ -5,19 +5,19 @@ import { BlogPostType } from '@src/lib/types/blog';
 import * as S from './style';
 
 interface LikeProps {
-  post: BlogPostType;
+  blogPost: BlogPostType;
 }
 
-function Like({ post }: LikeProps) {
+function Like({ blogPost }: LikeProps) {
   return (
     <S.Like>
       <Image
-        src={post.liked ? icHeartFilled : icHeartUnfilled}
+        src={blogPost.liked ? icHeartFilled : icHeartUnfilled}
         alt="좋아요"
         width={16}
         height={16}
       />
-      <span>{post.likeCount}</span>
+      <span>{blogPost.likeCount}</span>
     </S.Like>
   );
 }
