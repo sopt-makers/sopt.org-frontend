@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { colors } from '@sopt-makers/colors';
 import Link from 'next/link';
 import { css } from '@emotion/react';
 import { LOGO_IMAGE_URL } from '@src/assets/mainLogo/base64_logo';
@@ -114,35 +115,34 @@ export const MenuTitleAnchor = styled(Link)`
   }
 `;
 
-const menuTitleUnderline = css`
-  &::after {
-    content: '';
-    position: absolute;
-    top: 3.5rem; /* this is bad practice */
-    left: -20px;
-    width: 100%;
-    border-bottom: 2px solid white;
-  }
-  &:last-child {
-    &::after {
-      width: calc(100% + 40px);
-    }
-  }
-`;
-
 export const MenuTitle = styled.div<MenuTitleProps>`
   font-size: 18px;
   height: 100%;
   line-height: 36px;
   font-weight: ${({ isSelected }) => (isSelected ? '700' : '500')};
 
-  color: ${({ isSelected }) => (isSelected ? '#fff' : 'rgba(255, 255, 255, 0.5)')};
+  color: ${colors.white};
   cursor: pointer;
   position: relative;
-  ${({ isSelected }) => isSelected && menuTitleUnderline}
 
   &:not(:last-child) {
     padding-right: 40px;
+  }
+
+  &:hover {
+    &::after {
+      content: '';
+      position: absolute;
+      top: 3.5rem; /* this is bad practice */
+      left: -20px;
+      width: 100%;
+      border-bottom: 2px solid ${colors.white};
+    }
+    &:last-child {
+      &::after {
+        width: calc(100% + 40px);
+      }
+    }
   }
 `;
 
