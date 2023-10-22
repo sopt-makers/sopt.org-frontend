@@ -9,7 +9,7 @@ specifiers:
   '@emotion/babel-plugin': ^11.10.0
   '@emotion/react': ^11.9.0
   '@emotion/styled': ^11.8.1
-  '@sopt-makers/colors': ^2.1.0
+  '@sopt-makers/colors': ^2.2.0
   '@svgr/webpack': ^6.5.0
   '@testing-library/dom': ^8.13.0
   '@testing-library/jest-dom': ^5.16.4
@@ -72,7 +72,7 @@ dependencies:
   '@amplitude/analytics-browser': 2.3.0
   '@emotion/react': 11.11.1_z2b3xs64x2tj5h6d73q25pmyxa
   '@emotion/styled': 11.11.0_lrlg252sqoeehi74frojlg57f4
-  '@sopt-makers/colors': 2.1.0
+  '@sopt-makers/colors': 2.2.0
   '@types/qs': 6.9.7
   axios: 0.27.2
   classcat: 5.0.4
@@ -2083,8 +2083,8 @@ packages:
       '@sinonjs/commons': 1.8.6
     dev: true
 
-  /@sopt-makers/colors/2.1.0:
-    resolution: {integrity: sha512-pF08IR+kG4OdPL2HU7IXxKz/AiUCiL9tLzuOiQIb+sBfqCetM/grT4fwqMxac0SVP5GWjDNOFfzsWtzS0TCXtQ==}
+  /@sopt-makers/colors/2.2.0:
+    resolution: {integrity: sha512-L91wbWPxuLc5qTR+UJ1N69WzYqv35Z+jR5Yo3DhZHhzKFUwUrp9xOMVQd1ezS0RJKBXS60MsouMf3s2jA4ukug==}
     dev: false
 
   /@svgr/babel-plugin-add-jsx-attribute/6.5.1_@babel+core@7.22.11:

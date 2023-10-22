@@ -15,7 +15,7 @@
     "@amplitude/analytics-browser": "^2.3.0",
     "@emotion/react": "^11.9.0",
     "@emotion/styled": "^11.8.1",
-    "@sopt-makers/colors": "^2.1.0",
+    "@sopt-makers/colors": "^2.2.0",
     "@types/qs": "6.9.7",
     "axios": "^0.27.2",
     "classcat": "^5.0.4",
