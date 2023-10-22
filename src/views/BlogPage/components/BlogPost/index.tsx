@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from 'react';
 import type { BlogPostType } from '@src/lib/types/blog';
 import { parsePartToKorean } from '@src/lib/utils/parsePartToKorean';
-import { Like } from '@src/views/BlogPage/components/BlogPost';
-import * as S from './style';
 import Header from '@src/views/BlogPage/components/BlogPost/Header';
+import Like from '@src/views/BlogPage/components/BlogPost/Like';
+import * as S from './style';
 
 const TWO_LINE_TITLE_HEIGHT = 72;
 
@@ -12,7 +12,7 @@ interface BlogPostProps {
   blogPost: BlogPostType;
 }
 
-function BlogPost({ selectedTap, blogPost }: BlogPostProps) {
+export default function BlogPost({ selectedTap, blogPost }: BlogPostProps) {
   const titleRef = useRef<HTMLDivElement>(null);
   const [descriptionLine, setDescriptionLine] = useState(1);
 
@@ -43,5 +43,3 @@ function BlogPost({ selectedTap, blogPost }: BlogPostProps) {
     </S.BlogPost>
   );
 }
-
-export default BlogPost;

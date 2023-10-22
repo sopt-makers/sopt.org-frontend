@@ -1,6 +1,6 @@
 import { BlogPostType } from '@src/lib/types/blog';
 import { formatDate } from '@src/lib/utils/dateFormat';
-import { DefaultProfileImage } from '@src/views/BlogPage/components/BlogPost';
+import DefaultProfileImage from '@src/views/BlogPage/components/BlogPost/DefaultProfileImage';
 import * as S from './style';
 
 interface HeaderProps {
