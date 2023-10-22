@@ -1,20 +1,18 @@
-import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
-import icHeartUnfilled from '@src/assets/icons/ic_heart_unfilled.svg';
-import type { PostType } from '@src/lib/types/blog';
-import { formatDate } from '@src/lib/utils/dateFormat';
+import type { BlogPostType } from '@src/lib/types/blog';
 import { parsePartToKorean } from '@src/lib/utils/parsePartToKorean';
-import DefaultProfileImage from '@src/views/BlogPage/components/DefaultProfileImage';
+import Header from '@src/views/BlogPage/components/Post/Header';
+import Like from '@src/views/BlogPage/components/Post/Like';
 import * as S from './style';
 
 const TWO_LINE_TITLE_HEIGHT = 72;
 
 interface PostProps {
-  post: PostType;
+  selectedTap: string;
+  post: BlogPostType;
 }
 
-function Post({ post }: PostProps) {
-  const { authorProfileImageUrl } = post;
+function Post({ selectedTap, post }: PostProps) {
   const titleRef = useRef<HTMLDivElement>(null);
   const [descriptionLine, setDescriptionLine] = useState(1);
 
@@ -26,25 +24,9 @@ function Post({ post }: PostProps) {
   }, []);
 
   return (
-    <S.Post>
+    <S.Post href={post.url}>
       <div>
-        <S.Header>
-          <S.Profile>
-            {authorProfileImageUrl ? (
-              <S.ProfileImage
-                src={authorProfileImageUrl}
-                alt="작성자 프로필 이미지"
-                width={18}
-                height={18}
-              />
-            ) : (
-              <DefaultProfileImage />
-            )}
-            <div>{post.author}</div>
-          </S.Profile>
-          <S.Divider>∙</S.Divider>
-          <div>{formatDate(new Date(post.uploadedAt), 'yyyymmdd', '.')}</div>
-        </S.Header>
+        <Header selectedTap={selectedTap} post={post} />
         <S.Body>
           <S.Title ref={titleRef}>{post.title}</S.Title>
           <S.Description descriptionLine={descriptionLine}>{post.description}</S.Description>
@@ -56,10 +38,7 @@ function Post({ post }: PostProps) {
       </div>
       <S.ThumbnailWrapper>
         <S.Thumbnail src={post.thumbnailUrl} alt="게시물 썸네일" width={239} height={160} />
-        <S.Like>
-          <Image src={icHeartUnfilled} alt="좋아요" width={16} height={16} />
-          <span>{post.likeCount}</span>
-        </S.Like>
+        {selectedTap === 'ARTICLE' && <Like post={post} />}
       </S.ThumbnailWrapper>
     </S.Post>
   );

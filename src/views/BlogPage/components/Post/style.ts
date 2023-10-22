@@ -1,59 +1,23 @@
 import styled from '@emotion/styled';
 import { colors } from '@sopt-makers/colors';
 import Image from 'next/image';
+import Link from 'next/link';
 
-export const Post = styled.div`
+export const Post = styled(Link)`
   display: flex;
   justify-content: space-between;
   gap: 36px;
 
   cursor: pointer;
+  transition: opacity 0.2s linear;
+  &:hover {
+    opacity: 0.8;
+  }
 
   /* 모바일 뷰 */
   @media (max-width: 767px) {
     gap: 16px;
   }
-`;
-
-export const Header = styled.div`
-  display: flex;
-  margin-bottom: 4px;
-
-  color: ${colors.gray100};
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 160%;
-  letter-spacing: -0.21px;
-
-  /* 모바일 뷰 */
-  @media (max-width: 767px) {
-    margin-bottom: 0;
-
-    font-size: 12px;
-    font-weight: 500;
-    line-height: 135%; /* 16.2px */
-    letter-spacing: -0.18px;
-  }
-`;
-
-export const Profile = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 6px;
-`;
-
-export const ProfileImage = styled(Image)`
-  border-radius: 18px;
-
-  /* 모바일 뷰 */
-  @media (max-width: 767px) {
-    width: 15px;
-    height: 15px;
-  }
-`;
-
-export const Divider = styled.div`
-  padding: 0 2px 0 2px;
 `;
 
 export const Body = styled.div`
@@ -170,32 +134,5 @@ export const Thumbnail = styled(Image)`
     width: 105px;
     height: 70px;
     border-radius: 5px;
-  }
-`;
-
-export const Like = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 3px;
-
-  position: absolute;
-  top: 10px;
-  right: 10px;
-
-  height: 28px;
-  padding: 2px 8px;
-  border-radius: 6px;
-  background: rgba(28, 29, 30, 0.8);
-
-  color: ${colors.gray100};
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 160%; /* 22.4px */
-  letter-spacing: -0.21px;
-
-  /* 모바일 뷰 */
-  @media (max-width: 767px) {
-    display: none;
   }
 `;
