@@ -63,7 +63,7 @@ export const MenuWrap = styled.div`
 
 export const Background = styled.div`
   height: 100vh;
-  background: #181818;
+  background: ${colors.gray950};
   opacity: 0.8;
 `;
 
@@ -110,7 +110,7 @@ export const ContentsWrap = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background: #181818;
+  background: ${colors.gray950};
 
   padding-top: 50px;
   margin-bottom: 0px;

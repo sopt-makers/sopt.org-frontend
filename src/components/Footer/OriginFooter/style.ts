@@ -4,7 +4,7 @@ import { colors } from '@sopt-makers/colors';
 export const Root = styled.footer`
   width: 100%;
   min-height: 162px;
-  background-color: #2a2a2a;
+  background-color: ${colors.gray800};
 
   /* 태블릿 + 데스크탑 뷰 */
   @media (min-width: 766px) {
