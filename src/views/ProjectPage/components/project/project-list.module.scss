@@ -23,13 +23,11 @@ list-container는 description, count, card-list 영역을 가짐.
   @include desktop {
     height: 100%;
     width: 100%;
-    margin-top: 130px;
   }
 
   @include mobile-tablet {
     height: 100%;
     width: 100%;
-    margin-top: 190px;
   }
 }
 
@@ -41,7 +39,6 @@ list-container는 description, count, card-list 영역을 가짐.
   height: 160px;
   background: linear-gradient(90deg, #000000 1.33%, rgba(0, 0, 0, 0) 100%);
   border-radius: 10px;
-  margin-bottom: 80px;
 
   p {
     display: flex;
@@ -64,10 +61,14 @@ list-container는 description, count, card-list 영역을 가짐.
 
   @include desktop {
     width: 100%;
+    margin-top: 36px;
+    margin-bottom: 36px;
   }
 
   @include tablet-medium {
     width: 90%;
+    margin-top: 36px;
+    margin-bottom: 36px;
 
     p {
       font-weight: 500;
@@ -81,7 +82,9 @@ list-container는 description, count, card-list 영역을 가짐.
   }
 
   @include tablet-small {
-    width: 75%;
+    width: 662px;
+    margin-top: 36px;
+    margin-bottom: 36px;
     p {
       font-weight: 500;
       font-size: 20px;
@@ -96,6 +99,8 @@ list-container는 description, count, card-list 영역을 가짐.
   @include mobile {
     width: 90%;
     height: 130px;
+    margin-top: 16px;
+    margin-bottom: 16px;
 
     p {
       font-style: normal;
@@ -128,29 +133,34 @@ list-container는 description, count, card-list 영역을 가짐.
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 80px;
-  padding-top: 40px;
 
   & > div {
     display: flex;
-    justify-content: center;
-    width: 100%;
+    justify-content: flex-end;
+    width: 90%;
 
-    color: rgba(255, 255, 255, 0.3);
-    font-size: 32px;
+    color: #8e8e8e;
+    font-size: 18px;
+    line-height: 26px;
     font-weight: 500;
     opacity: 30%;
+    padding-bottom: 22px;
+
+    @include tablet-medium {
+      width: 90%;
+    }
 
     @include tablet-small {
-      font-size: 28px;
-      padding-left: 0;
+      width: 662px;
     }
 
     @include mobile {
+      width: 90%;
       font-style: normal;
       font-weight: 500;
-      font-size: 18px;
+      font-size: 12px;
       padding: 0;
+      padding-bottom: 12px;
     }
   }
 }
@@ -172,7 +182,7 @@ list-container는 description, count, card-list 영역을 가짐.
 
   @include tablet-small {
     grid-template-columns: 1fr 1fr;
-    width: 75%;
+    width: 662px;
     gap: 20px;
   }
 

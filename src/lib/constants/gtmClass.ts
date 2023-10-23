@@ -4,7 +4,6 @@ type GtmClass = {
   informationCard프로젝트: string;
   informationCardFAQ: string;
   informationCardYoutube: string;
-  projectFilter: string;
 };
 
 export const GTM_CLASS: GtmClass = {
@@ -12,5 +11,4 @@ export const GTM_CLASS: GtmClass = {
   informationCard프로젝트: 'information_card_project',
   informationCardFAQ: 'information_card_faq',
   informationCardYoutube: 'information_card_youtube',
-  projectFilter: 'project_filter',
 };
