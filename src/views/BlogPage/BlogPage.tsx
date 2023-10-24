@@ -1,5 +1,5 @@
 import PageLayout from '@src/components/common/PageLayout';
-import BlogTab from './components/blogTab';
+import BlogTab from './components/BlogTab';
 
 export default function BlogPage() {
   return (
