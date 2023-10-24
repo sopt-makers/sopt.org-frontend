@@ -1,9 +1,22 @@
 import { useState } from 'react';
+import Select from '@src/components/common/Select';
+import {
+  activeGenerationCategoryList,
+  activePartCategoryList,
+  generationCategoryLabel,
+  partCategoryLabel,
+} from '@src/lib/constants/tabs';
+import { ExtraPart, PartExtraType } from '@src/lib/types/universal';
 import * as S from './style';
 import { BlogTabList } from './types';
 
 export default function BlogTab() {
   const [selectedTab, setSelectedTab] = useState<keyof BlogTabList>('REVIEW');
+  const [selectedMajorCategory, setMajorCategory] = useState<number>(
+    activeGenerationCategoryList[0],
+  );
+  const [selectedSubCategory, setSubCategory] = useState<ExtraPart>(PartExtraType.ALL);
+
   const blogTabList: BlogTabList = {
     REVIEW: {
       title: '활동후기',
@@ -32,7 +45,24 @@ export default function BlogTab() {
           })}
         </S.TabContainer>
         <S.TabDescription>{blogTabList[selectedTab]?.description}</S.TabDescription>
-        <p>드롭다운 들어가는 부분</p>
+        <S.SlectContainer>
+          <Select
+            options={activeGenerationCategoryList}
+            labels={generationCategoryLabel}
+            baseLabel="기수"
+            selectedValue={selectedMajorCategory}
+            setSelectedValue={setMajorCategory}
+            baseValue={activeGenerationCategoryList[0]}
+          />
+          <Select
+            options={activePartCategoryList}
+            labels={partCategoryLabel}
+            baseLabel="파트"
+            selectedValue={selectedSubCategory}
+            setSelectedValue={setSubCategory}
+            baseValue={PartExtraType.ALL}
+          />
+        </S.SlectContainer>
       </S.Container>
     </S.Wrapper>
   );
