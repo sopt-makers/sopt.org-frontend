@@ -1,4 +1,5 @@
 import { css } from '@emotion/react';
+import { colors } from './colors';
 import font from './font';
 
 export const global = css`
@@ -80,7 +81,7 @@ export const global = css`
   }
 
   body {
-    background-color: #16161c;
+    background-color: ${colors.background};
     line-height: 1;
   }
 
