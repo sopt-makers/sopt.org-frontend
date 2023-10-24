@@ -33,8 +33,6 @@ export default function BlogTab() {
       <S.Container>
         <S.TabContainer>
           {Object.entries(blogTabList).map(([blogTab, tabInfo]) => {
-            console.log(blogTab);
-            console.log(tabInfo);
             return (
               <S.TabTitle
                 key={blogTab}
