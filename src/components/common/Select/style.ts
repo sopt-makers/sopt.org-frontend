@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import arrowDown from '@src/assets/icons/arrow_down.svg';
-import { colors } from '@src/lib/styles/colors';
+import { colors } from '@sopt-makers/colors';
 
 const SelectWrapper = styled.div`
   position: relative;
