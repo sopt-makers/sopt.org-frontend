@@ -11,6 +11,8 @@ interface CarouselProps {
   children: JSX.Element[];
 }
 
+const SWIPE_THRESHOLD = 50;
+
 export default function Carousel({
   itemWidth,
   stride = 1,
@@ -43,9 +45,9 @@ export default function Carousel({
     const endX = e.changedTouches[0].clientX;
     const deltaX = startX - endX;
 
-    if (deltaX > 50) {
+    if (deltaX > SWIPE_THRESHOLD) {
       handleNext();
-    } else if (deltaX < -50) {
+    } else if (deltaX < -SWIPE_THRESHOLD) {
       handlePrev();
     }
   };
