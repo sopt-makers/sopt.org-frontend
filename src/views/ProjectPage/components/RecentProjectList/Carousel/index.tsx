@@ -12,7 +12,7 @@ function RecentProjectListCarousel({ children }: { children: JSX.Element[] }) {
 
   return (
     <Carousel
-      itemWidth={isTabletSize ? 588 : 325}
+      itemWidth={isTabletSize ? 588 : 345}
       leftArrowType={arrowType}
       rightArrowType={arrowType}
       overflowType={overflowType}

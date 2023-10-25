@@ -15,7 +15,7 @@ function RecentProjectList() {
     <>
       <SectionTitle>최근 출시한 프로젝트</SectionTitle>
       <RecentProjectListCarousel>
-        {state.data.slice(0, 5).map((d) => (
+        {state.data.slice(0, 6).map((d) => (
           <RecentProjectListItem key={d.id} {...d} />
         ))}
       </RecentProjectListCarousel>

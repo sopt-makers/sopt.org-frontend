@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import { useDeviceType } from '@src/hooks/useDevice';
 import { LinkType, ProjectLinkType, ProjectType } from '@src/lib/types/project';
 import { S } from './style';
@@ -26,7 +25,7 @@ const linkToRecord = (links: ProjectLinkType[]): Record<LinkType, string | undef
 const getTryLink = (
   link: ProjectLinkType[],
   deviceType?: 'desktop' | 'iOS' | 'Android',
-): string => {
+): string | undefined => {
   const linkRecord = linkToRecord(link);
   if (deviceType === 'iOS' && linkRecord['appStore']) {
     return linkRecord['appStore'];
@@ -34,13 +33,7 @@ const getTryLink = (
   if (deviceType === 'Android' && linkRecord['googlePlay']) {
     return linkRecord['googlePlay'];
   }
-  return (
-    linkRecord['website'] ??
-    linkRecord['media'] ??
-    linkRecord['github'] ??
-    linkRecord['instagram'] ??
-    ''
-  );
+  return linkRecord['website'];
 };
 
 function RecentProjectListItem(props: RecentProjectListItemProps) {
@@ -49,17 +42,21 @@ function RecentProjectListItem(props: RecentProjectListItemProps) {
 
   return (
     <S.MarginWrapper>
-      <S.FlexWrapper>
-        <Image src={props.logoImage} width={116} height={116} alt={props.name} />
+      <S.GridWrapper>
+        <S.ThumbnailImage src={props.logoImage} width={116} height={116} alt={props.name} />
         <S.DetailWrapper>
           <S.TextName>{props.name}</S.TextName>
           <S.TextSummary>{props.summary}</S.TextSummary>
-          <S.DetailFooterWrapper>
-            <S.Chip>{props.generation}기</S.Chip>
-            <S.TryLink href={tryLink}>사용해보기</S.TryLink>
-          </S.DetailFooterWrapper>
         </S.DetailWrapper>
-      </S.FlexWrapper>
+        <S.DetailFooterWrapper>
+          <S.Chip>{props.generation}기</S.Chip>
+          {tryLink && (
+            <S.TryLink href={tryLink} target="_blank">
+              사용해보기
+            </S.TryLink>
+          )}
+        </S.DetailFooterWrapper>
+      </S.GridWrapper>
     </S.MarginWrapper>
   );
 }
