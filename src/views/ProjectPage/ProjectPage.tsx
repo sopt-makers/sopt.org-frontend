@@ -7,7 +7,7 @@ import { ProjectCategoryType } from '@src/lib/types/project';
 import { ProjectList } from './components';
 import RecentProjectList from './components/RecentProjectList';
 import useFetch from './hooks/useFetch';
-import { ContentWrapper, Root, SectionTitle } from './styles';
+import S from './styles';
 
 function Projects() {
   const [selectedCategory, setCategory] = useState<ProjectCategoryType>(ProjectCategoryType.ALL);
@@ -20,10 +20,11 @@ function Projects() {
         overflow-x: hidden;
       `}
     >
-      <Root>
-        <ContentWrapper>
+      <S.Root>
+        <S.ContentWrapper>
           <RecentProjectList />
-          <SectionTitle>SOPT에서 진행된 프로젝트 둘러보기</SectionTitle>
+          <S.Spacing />
+          <S.SectionTitle>SOPT에서 진행된 프로젝트 둘러보기</S.SectionTitle>
           <Select
             options={activeProjectCategoryList}
             labels={projectCategoryLabel}
@@ -33,8 +34,8 @@ function Projects() {
             baseValue={ProjectCategoryType.ALL}
           />
           <ProjectList state={state} selectedCategory={selectedCategory} />
-        </ContentWrapper>
-      </Root>
+        </S.ContentWrapper>
+      </S.Root>
     </PageLayout>
   );
 }

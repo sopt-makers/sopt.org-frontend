@@ -1,6 +1,6 @@
 import { ProjectCategoryType } from '@src/lib/types/project';
 import useFetch from '../../hooks/useFetch';
-import { SectionTitle } from '../../styles';
+import S from '../../styles';
 import RecentProjectListCarousel from './Carousel';
 import RecentProjectListItem from './Item';
 
@@ -13,7 +13,7 @@ function RecentProjectList() {
 
   return (
     <>
-      <SectionTitle>최근 출시한 프로젝트</SectionTitle>
+      <S.SectionTitle>최근 출시한 프로젝트</S.SectionTitle>
       <RecentProjectListCarousel>
         {state.data.slice(0, 6).map((d) => (
           <RecentProjectListItem key={d.id} {...d} />
