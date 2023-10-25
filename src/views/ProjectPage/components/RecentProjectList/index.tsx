@@ -4,7 +4,7 @@ import { SectionTitle } from '../../styles';
 import RecentProjectListCarousel from './Carousel';
 import RecentProjectListItem from './Item';
 
-function RecentProjectList() {
+export default function RecentProjectList() {
   const state = useFetch(ProjectCategoryType.ALL, 'updatedAt');
 
   if (state._TAG !== 'OK') return null;
@@ -22,5 +22,3 @@ function RecentProjectList() {
     </>
   );
 }
-
-export default RecentProjectList;

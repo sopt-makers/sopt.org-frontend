@@ -2,7 +2,7 @@ import Carousel from '@src/components/common/Carousel';
 import { useDeviceType, useIsDesktop, useIsTablet } from '@src/hooks/useDevice';
 import { CarouselArrowType, CarouselOverflowType } from '@src/lib/types/universal';
 
-function RecentProjectListCarousel({ children }: { children: JSX.Element[] }) {
+export default function RecentProjectListCarousel({ children }: { children: JSX.Element[] }) {
   const isDesktopSize = useIsDesktop('1239px');
   const isTabletSize = useIsTablet('767px');
   const deviceType = useDeviceType();
@@ -23,5 +23,3 @@ function RecentProjectListCarousel({ children }: { children: JSX.Element[] }) {
     </Carousel>
   );
 }
-
-export default RecentProjectListCarousel;

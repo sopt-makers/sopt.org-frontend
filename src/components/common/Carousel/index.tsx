@@ -11,14 +11,14 @@ interface CarouselProps {
   children: JSX.Element[];
 }
 
-const Carousel: React.FC<CarouselProps> = ({
+export default function Carousel({
   itemWidth,
   stride = 1,
   leftArrowType = CarouselArrowType.External,
   rightArrowType = CarouselArrowType.External,
   overflowType = CarouselOverflowType.Blur,
   children,
-}) => {
+}: CarouselProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [startX, setStartX] = useState(0);
   const wrapperRef = useRef<HTMLDivElement>(null);
@@ -86,6 +86,4 @@ const Carousel: React.FC<CarouselProps> = ({
       </S.DotWrapper>
     </S.Wrapper>
   );
-};
-
-export default Carousel;
+}

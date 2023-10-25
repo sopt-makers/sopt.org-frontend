@@ -36,7 +36,7 @@ const getTryLink = (
   return linkRecord['website'];
 };
 
-function RecentProjectListItem(props: RecentProjectListItemProps) {
+export default function RecentProjectListItem(props: RecentProjectListItemProps) {
   const deviceType = useDeviceType();
   const tryLink = getTryLink(props.link, deviceType);
 
@@ -60,5 +60,3 @@ function RecentProjectListItem(props: RecentProjectListItemProps) {
     </S.MarginWrapper>
   );
 }
-
-export default RecentProjectListItem;
