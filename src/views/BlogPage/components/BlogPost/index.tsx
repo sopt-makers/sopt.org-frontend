@@ -37,8 +37,14 @@ export default function BlogPost({ selectedTap, blogPost }: BlogPostProps) {
         </S.TagList>
       </div>
       <S.ThumbnailWrapper>
-        <S.Thumbnail src={blogPost.thumbnailUrl} alt="게시물 썸네일" width={239} height={160} />
-        {selectedTap === 'ARTICLE' && <Like blogPost={blogPost} />}
+        <S.Thumbnail
+          src={blogPost.thumbnailUrl}
+          alt="게시물 썸네일"
+          width={239}
+          height={160}
+          loading="lazy"
+        />
+        {selectedTap === 'article' && <Like blogPost={blogPost} />}
       </S.ThumbnailWrapper>
     </S.BlogPost>
   );

@@ -6,6 +6,7 @@ import Link from 'next/link';
 export const BlogPost = styled(Link)`
   display: flex;
   justify-content: space-between;
+  width: 100%;
   gap: 36px;
 
   cursor: pointer;

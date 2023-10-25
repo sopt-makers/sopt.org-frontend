@@ -1,3 +1,4 @@
+import { BlogPostType } from './blog';
 import { ExtraPart } from './universal';
 
 export type SopticleType = {
@@ -15,8 +16,8 @@ export type SopticleType = {
 };
 
 export type GetSopticlesResponse = {
-  sopticles: SopticleType[];
   hasNextPage: boolean;
+  response: BlogPostType[];
 };
 
 export type PostSopticleLikeResponse = {
@@ -24,7 +25,7 @@ export type PostSopticleLikeResponse = {
   likeChanged: boolean;
 };
 export interface SopticleAPI {
-  getSopticles(tab: ExtraPart, page: number): Promise<GetSopticlesResponse>;
+  getResponse(generation: number, tab: ExtraPart, page: number): Promise<GetSopticlesResponse>;
   postSopticleLike(sopticleId: number, prevLike: boolean): Promise<PostSopticleLikeResponse>;
 }
 

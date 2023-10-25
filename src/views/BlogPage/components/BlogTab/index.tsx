@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import Select from '@src/components/common/Select';
 import {
   activeGenerationCategoryList,
@@ -10,13 +9,22 @@ import { ExtraPart, PartExtraType } from '@src/lib/types/universal';
 import * as S from './style';
 import { BlogTabMap, BlogTabType } from './types';
 
-export default function BlogTab() {
-  const [selectedTab, setSelectedTab] = useState<BlogTabType>(BlogTabType.REVIEW);
-  const [selectedMajorCategory, setMajorCategory] = useState<number>(
-    activeGenerationCategoryList[0],
-  );
-  const [selectedSubCategory, setSubCategory] = useState<ExtraPart>(PartExtraType.ALL);
-
+interface BlogTanProps {
+  selectedTab: BlogTabType;
+  setSelectedTab: React.Dispatch<React.SetStateAction<BlogTabType>>;
+  selectedMajorCategory: number;
+  setMajorCategory: React.Dispatch<React.SetStateAction<number>>;
+  selectedSubCategory: ExtraPart;
+  setSubCategory: React.Dispatch<React.SetStateAction<ExtraPart>>;
+}
+export default function BlogTab({
+  selectedTab,
+  setSelectedTab,
+  selectedMajorCategory,
+  setMajorCategory,
+  selectedSubCategory,
+  setSubCategory,
+}: BlogTanProps) {
   const blogTabList: BlogTabMap = {
     review: {
       title: '활동후기',

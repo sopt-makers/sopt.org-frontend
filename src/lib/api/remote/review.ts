@@ -9,14 +9,19 @@ const client = axios.create({
   timeout: DEFAULT_TIMEOUT,
 });
 
-const getReviews = async (tab: ExtraPart, pageNo = 1): Promise<GetReviewsResponse> => {
+const getResponse = async (
+  generation = 1,
+  tab: ExtraPart,
+  pageNo = 1,
+): Promise<GetReviewsResponse> => {
   const partParameter = tab === PartExtraType.ALL ? {} : { part: tab };
+  const generationParameter = { generation: 30 };
   const pageParameter = { pageNo, limit: 6 };
-  const parameter = qs.stringify({ ...partParameter, ...pageParameter });
+  const parameter = qs.stringify({ ...partParameter, ...pageParameter, ...generationParameter });
 
   const { data } = await client.get(`/reviews?${parameter}`);
 
-  return { hasNextPage: data.hasNextPage, reviews: data.data };
+  return { hasNextPage: data.hasNextPage, response: data.data };
 };
 
 const getSampleReviews = async (): Promise<GetSampleReviewsResponse> => {
@@ -25,6 +30,6 @@ const getSampleReviews = async (): Promise<GetSampleReviewsResponse> => {
 };
 
 export const remoteReviewAPI: ReviewAPI = {
-  getReviews,
+  getResponse,
   getSampleReviews,
 };
