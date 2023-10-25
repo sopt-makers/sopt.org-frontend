@@ -51,7 +51,6 @@ const Carousel: React.FC<CarouselProps> = ({
   };
 
   const translateX = -currentIndex * itemWidth;
-  console.log(Array(children.length / stride));
 
   return (
     <S.Wrapper ref={wrapperRef}>
