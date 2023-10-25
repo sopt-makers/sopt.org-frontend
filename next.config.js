@@ -25,6 +25,7 @@ const nextConfig = {
       'images.velog.io',
       'media.disquiet.io',
       'scontent-ssn1-1.xx.fbcdn.net',
+      'storep-phinf.pstatic.net',
     ],
     formats: ['image/avif', 'image/webp'],
   },
