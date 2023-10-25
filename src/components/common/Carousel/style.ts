@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
+import { colors } from '@sopt-makers/colors';
 import arrowLeft from '@src/assets/icons/arrow_left_28x28.svg';
 import arrowRight from '@src/assets/icons/arrow_right_28x28.svg';
-import { colors } from '@src/lib/styles/colors';
 import { HideScrollbar } from '@src/lib/styles/scrollbar';
 import { CarouselArrowType } from '@src/lib/types/universal';
 

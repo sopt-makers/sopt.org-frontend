@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
+import { colors } from '@sopt-makers/colors';
 import Image from 'next/image';
 import icArrowStickRight from '@src/assets/icons/ic_arrow_stick_right.svg';
-import { colors } from '@src/lib/styles/colors';
 import { textSingularLineEllipsis } from '@src/lib/styles/textEllipsis';
 
 const GridWrapper = styled.div`
