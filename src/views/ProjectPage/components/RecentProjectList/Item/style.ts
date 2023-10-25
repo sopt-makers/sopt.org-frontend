@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import { colors } from '@sopt-makers/colors';
 import Image from 'next/image';
+import { css } from '@emotion/react';
 import icArrowStickRight from '@src/assets/icons/ic_arrow_stick_right.svg';
 import { textSingularLineEllipsis } from '@src/lib/styles/textEllipsis';
 
@@ -106,6 +107,16 @@ const Chip = styled.div`
   }
 `;
 
+const tryArrowBaseCss = css`
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid ${colors.gray30};
+  top: 50%;
+  transform: translateY(-50%);
+  background-image: url(${icArrowStickRight});
+`;
+
 const TryLink = styled.a`
   cursor: pointer;
   position: relative;
@@ -114,30 +125,40 @@ const TryLink = styled.a`
   font-weight: 500;
   line-height: 165%;
   letter-spacing: -0.24px;
+  padding-left: 10px;
   padding-top: 2px;
   padding-bottom: 2px;
-  padding-right: 31px;
+  padding-right: 36px;
+  border-radius: 15px;
+  transition: 200ms;
 
   &::after {
-    content: '';
-    right: 6px;
+    right: 11px;
     width: 18px;
     height: 18px;
-    position: absolute;
-    border-radius: 50%;
-    border: 1px solid ${colors.gray30};
-    top: 50%;
-    transform: translateY(-50%);
-    background-image: url(${icArrowStickRight});
+    ${tryArrowBaseCss}
+  }
+
+  &:hover {
+    background-color: ${colors.gray700};
+
+    &::after {
+      right: 11px;
+      width: 18px;
+      height: 18px;
+      ${tryArrowBaseCss}
+      transform: translateY(-50%) rotate(-45deg);
+    }
   }
 
   /* 모바일 뷰 */
   @media (max-width: 767px) {
     font-size: 14px;
     letter-spacing: -0.21px;
+    border-radius: 13px;
     &::after {
       content: '';
-      right: 4px;
+      right: 9px;
       width: 14px;
       height: 14px;
       position: absolute;
@@ -147,6 +168,15 @@ const TryLink = styled.a`
       transform: translateY(-50%);
       background-image: url(${icArrowStickRight});
       background-size: cover;
+    }
+    &:hover {
+      &::after {
+        right: 9px;
+        width: 14px;
+        height: 14px;
+        ${tryArrowBaseCss}
+        transform: translateY(-50%) rotate(-45deg);
+      }
     }
   }
 `;
