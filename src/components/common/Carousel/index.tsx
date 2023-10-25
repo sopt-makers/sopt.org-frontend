@@ -1,9 +1,10 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { CarouselArrowType, CarouselOverflowType } from '@src/lib/types/universal';
 import { S } from './style';
 
 interface CarouselProps {
   itemWidth: number;
+  stride?: number;
   leftArrowType?: CarouselArrowType;
   rightArrowType?: CarouselArrowType;
   overflowType?: CarouselOverflowType;
@@ -12,6 +13,7 @@ interface CarouselProps {
 
 const Carousel: React.FC<CarouselProps> = ({
   itemWidth,
+  stride = 1,
   leftArrowType = CarouselArrowType.External,
   rightArrowType = CarouselArrowType.External,
   overflowType = CarouselOverflowType.Blur,
@@ -21,12 +23,16 @@ const Carousel: React.FC<CarouselProps> = ({
   const [startX, setStartX] = useState(0);
   const wrapperRef = useRef<HTMLDivElement>(null);
 
+  useEffect(() => {
+    setCurrentIndex(0);
+  }, [stride, itemWidth]);
+
   const handlePrev = () => {
-    setCurrentIndex(Math.max(0, currentIndex - 1));
+    setCurrentIndex(Math.max(0, currentIndex - stride));
   };
 
   const handleNext = () => {
-    setCurrentIndex(Math.min(children.length - 1, currentIndex + 1));
+    setCurrentIndex(Math.min(children.length - 1, currentIndex + stride));
   };
 
   const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
@@ -45,10 +51,16 @@ const Carousel: React.FC<CarouselProps> = ({
   };
 
   const translateX = -currentIndex * itemWidth;
+  console.log(Array(children.length / stride));
 
   return (
     <S.Wrapper ref={wrapperRef}>
-      {overflowType === CarouselOverflowType.Blur && <S.RightBlur />}
+      {overflowType === CarouselOverflowType.Blur && (
+        <>
+          <S.LeftBlur />
+          <S.RightBlur />
+        </>
+      )}
       {currentIndex !== 0 && <S.LeftArrow type={leftArrowType} onClick={handlePrev} />}
       <S.CarouselViewport>
         <S.CarouselWrapper
@@ -61,9 +73,18 @@ const Carousel: React.FC<CarouselProps> = ({
           {children}
         </S.CarouselWrapper>
       </S.CarouselViewport>
-      {currentIndex !== children.length - 1 && (
+      {currentIndex !== children.length - stride && (
         <S.RightArrow type={rightArrowType} onClick={handleNext} />
       )}
+      <S.DotWrapper>
+        {Array.from({ length: Math.ceil(children.length / stride) }).map((dot, index) => (
+          <S.Dot
+            key={index}
+            onClick={() => setCurrentIndex(index * stride)}
+            selected={index === Math.floor(currentIndex / stride)}
+          />
+        ))}
+      </S.DotWrapper>
     </S.Wrapper>
   );
 };

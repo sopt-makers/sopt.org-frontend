@@ -50,23 +50,65 @@ const CarouselWrapper = styled.div<{
 
 const CarouselViewport = styled.div`
   width: 100%;
-  overflow: hidden;
 `;
 
-const RightBlur = styled.div`
+const Blur = styled.div`
   z-index: 2;
   position: absolute;
   height: 100%;
-  right: 0;
+  width: calc(50vw - 50%);
   top: 0;
-  width: 160px;
-  background: linear-gradient(to right, transparent, ${colors.background}, ${colors.background});
+  background: linear-gradient(
+    to right,
+    transparent 10px,
+    ${colors.background} 50px,
+    ${colors.background}
+  );
+`;
 
-  /* 모바일 뷰 */
-  @media (max-width: 765.9px) {
-    width: 40px;
-    background: linear-gradient(to right, transparent, ${colors.background});
+const LeftBlur = styled(Blur)`
+  left: calc(50% - 50vw);
+  transform: rotate(180deg);
+`;
+
+const RightBlur = styled(Blur)`
+  right: calc(50% - 50vw);
+`;
+
+const DotWrapper = styled.div`
+  margin-top: 24px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+`;
+
+const Dot = styled.div<{ selected: boolean }>`
+  position: relative;
+  width: 8px;
+  height: 8px;
+  background-color: ${({ selected }) => (selected ? colors.white : colors.gray800)};
+  border-radius: 50%;
+  cursor: pointer;
+
+  ::before {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    border-radius: 50%;
   }
 `;
 
-export const S = { Wrapper, LeftArrow, RightArrow, CarouselWrapper, CarouselViewport, RightBlur };
+export const S = {
+  Wrapper,
+  LeftArrow,
+  RightArrow,
+  CarouselWrapper,
+  CarouselViewport,
+  LeftBlur,
+  RightBlur,
+  DotWrapper,
+  Dot,
+};
