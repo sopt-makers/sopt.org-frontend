@@ -1,16 +1,15 @@
-import styled from '@emotion/styled';
 import { SerializedStyles } from '@emotion/react';
+import styled from '@emotion/styled';
 import { PropsWithChildren } from 'react';
 
 export function Layout({
   children,
   moreStyle,
 }: PropsWithChildren<{ moreStyle?: SerializedStyles }>) {
-  return <Main moreStyle={moreStyle}>{children}</Main>;
+  return <Main css={moreStyle}>{children}</Main>;
 }
 
-const Main = styled.div<{ moreStyle?: SerializedStyles }>`
-  ${({ moreStyle }) => moreStyle && moreStyle};
+const Main = styled.div`
   width: 100%;
 
   @media (max-width: 1279px) {
