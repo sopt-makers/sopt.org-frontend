@@ -17,11 +17,11 @@ const useFetch = ({
   selectedMajorCategory: generation,
   selectedSubCategory: part,
 }: useFetchProps) => {
-  console.log(selectedTab, generation, part);
   const tabAPI = selectedTab === 'review' ? 'reviewAPI' : 'sopticleAPI';
-  const { ref, count, setCount } = useInfiniteScroll();
-  const [canGetMoreResponse, setCanGetMoreResponse, setCanNotGetMoreSopticles] =
+  const [canGetMoreResponse, setCanGetMoreResponse, setCanNotGetMoreResponse] =
     useBooleanState(true);
+  const [isLoading, setIsLoading, setIsNotLoading] = useBooleanState(false);
+  const { ref, count, setCount } = useInfiniteScroll(isLoading);
 
   useEffect(() => {
     function initializeStates() {
@@ -31,14 +31,19 @@ const useFetch = ({
     return () => {
       initializeStates();
     };
-  }, [generation, setCanGetMoreResponse, setCount]);
+  }, [tabAPI, generation, part]);
 
   const willFetch = useCallback(async () => {
-    setCanNotGetMoreSopticles();
+    setIsLoading();
+    setCanNotGetMoreResponse();
+
     const response = await api[tabAPI]?.getResponse(generation, part, count);
-    response.hasNextPage ? setCanGetMoreResponse() : setCanNotGetMoreSopticles();
-    return [response.response];
-  }, [tabAPI, part, generation, count, setCanGetMoreResponse, setCanNotGetMoreSopticles]);
+    // nextpage가 있을 때에만 추가로 response 받아오기
+    response.hasNextPage ? setCanGetMoreResponse() : setCanNotGetMoreResponse();
+
+    setIsNotLoading();
+    return response.response;
+  }, [tabAPI, part, generation, count, setCanGetMoreResponse, setCanNotGetMoreResponse]);
 
   const state = useStackedFetchBase(willFetch, count === 1);
 

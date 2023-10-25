@@ -23,10 +23,10 @@ const getResponse = async (
 ): Promise<GetSopticlesResponse> => {
   const partParameter = tab === PartExtraType.ALL ? {} : { part: tab };
   const generationParameter = { generation: 30 };
-  const pageParameter = { pageNo };
+  const pageParameter = { pageNo, limit: 6 };
   const sessionStorageHandler = getStorageHandler('sessionStorage');
   const sessionId = sessionStorageHandler.getItemOrGenerate('session-id', nanoid);
-  const parameter = qs.stringify({ ...partParameter, ...pageParameter, ...generationParameter });
+  const parameter = qs.stringify({ ...partParameter, ...pageParameter });
 
   const { data } = await client.get<{ hasNextPage: boolean; data: BlogPostType[] }>(
     `/sopticle?${parameter}`,

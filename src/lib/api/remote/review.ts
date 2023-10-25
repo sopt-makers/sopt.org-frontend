@@ -17,7 +17,7 @@ const getResponse = async (
   const partParameter = tab === PartExtraType.ALL ? {} : { part: tab };
   const generationParameter = { generation: 30 };
   const pageParameter = { pageNo, limit: 6 };
-  const parameter = qs.stringify({ ...partParameter, ...pageParameter, ...generationParameter });
+  const parameter = qs.stringify({ ...partParameter, ...pageParameter });
 
   const { data } = await client.get(`/reviews?${parameter}`);
 
