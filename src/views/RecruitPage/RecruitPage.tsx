@@ -13,7 +13,7 @@ const BottomLogo = lazy(() => import('./components/BottomLogo'));
 
 function Recruit() {
   return (
-    <PageLayout moreStyle={{ backgroundColor: '#16161c' }} showScrollTopButton>
+    <PageLayout showScrollTopButton>
       <Root>
         <NotificationSection />
         <ContentWrapper>

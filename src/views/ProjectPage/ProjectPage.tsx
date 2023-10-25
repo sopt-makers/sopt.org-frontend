@@ -1,3 +1,4 @@
+import { css } from '@emotion/react';
 import { useState } from 'react';
 import PageLayout from '@src/components/common/PageLayout';
 import Select from '@src/components/common/Select';
@@ -13,7 +14,12 @@ function Projects() {
   const state = useFetch(selectedCategory);
 
   return (
-    <PageLayout showScrollTopButton>
+    <PageLayout
+      showScrollTopButton
+      moreStyle={css`
+        overflow-x: hidden;
+      `}
+    >
       <Root>
         <ContentWrapper>
           <RecentProjectList />
