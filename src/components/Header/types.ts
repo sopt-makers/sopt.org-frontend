@@ -6,18 +6,10 @@ export const enum MenuTapType {
   Parent = 'PARENT',
 }
 
-export type ParentMenuTap = {
-  type: MenuTapType.Parent;
-  title: string;
-  children: SingleMenuTap[];
-};
-
 export type SingleMenuTap = {
   type: MenuTapType.Router | MenuTapType.Anchor;
   title: string;
   href: string;
 };
 
-export type BaseMenuTap = SingleMenuTap | ParentMenuTap;
-
-export type MenuTapList = BaseMenuTap[];
+export type MenuTapList = SingleMenuTap[];

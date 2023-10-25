@@ -1,10 +1,10 @@
 import styled from '@emotion/styled';
-import { mainColor } from '@src/lib/styles/colors';
+import { colors } from '@sopt-makers/colors';
 
 export const Root = styled.footer`
   width: 100%;
   min-height: 162px;
-  background-color: #2a2a2a;
+  background-color: ${colors.gray800};
 
   /* 태블릿 + 데스크탑 뷰 */
   @media (min-width: 766px) {
@@ -51,7 +51,7 @@ export const TitleButton = styled.button`
   display: flex;
   align-items: center;
 
-  color: ${mainColor.soptWhite};
+  color: ${colors.gray10};
   font-size: 14px;
   font-weight: 700;
 

@@ -1,5 +1,5 @@
+import { colors } from '@sopt-makers/colors';
 import { css } from '@emotion/react';
-import { colors } from './colors';
 import font from './font';
 
 export const global = css`

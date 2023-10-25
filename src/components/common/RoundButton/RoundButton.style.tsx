@@ -1,25 +1,23 @@
 import styled from '@emotion/styled';
-import { mainColor } from '@src/lib/styles/colors';
+import { colors } from '@sopt-makers/colors';
 
 interface StyleProps {
   isReverse?: boolean;
 }
 
 export const Root = styled.button<StyleProps>`
-  border-radius: 24.5px;
-  background: ${(props: StyleProps) =>
-    props.isReverse ? mainColor.mainColor : mainColor.soptWhite};
+  display: flex;
+  align-items: center;
+
+  height: 50px;
+  padding: 10px 30px;
+  border-radius: 99px;
+  background: ${colors.gray10};
+
+  color: ${colors.gray950};
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 150%; /* 36px */
+  letter-spacing: -0.48px;
   cursor: pointer;
-
-  padding: 12px 40px;
-  line-height: 25px;
-  color: ${(props: StyleProps) => (props.isReverse ? mainColor.soptWhite : mainColor.mainColor)};
-
-  font-size: 20px;
-  font-weight: 700;
-
-  @media (max-width: 1279px) {
-    border-radius: 24px;
-    font-size: 18px;
-  }
 `;
