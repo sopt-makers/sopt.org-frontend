@@ -10,14 +10,14 @@ const client = axios.create({
 });
 
 const getResponse = async (
-  generation = 1,
-  tab: ExtraPart,
+  majorTab: number,
+  subTab: ExtraPart,
   pageNo = 1,
 ): Promise<GetReviewsResponse> => {
-  const partParameter = tab === PartExtraType.ALL ? {} : { part: tab };
-  const generationParameter = { generation: 30 };
+  const generationParameter = majorTab === 0 ? {} : { generation: majorTab };
+  const partParameter = subTab === PartExtraType.ALL ? {} : { part: subTab };
   const pageParameter = { pageNo, limit: 6 };
-  const parameter = qs.stringify({ ...partParameter, ...pageParameter });
+  const parameter = qs.stringify({ ...partParameter, ...pageParameter, ...generationParameter });
 
   const { data } = await client.get(`/reviews?${parameter}`);
 

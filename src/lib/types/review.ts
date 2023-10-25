@@ -11,6 +11,6 @@ export type GetReviewsResponse = {
 };
 
 export interface ReviewAPI {
-  getResponse(generation: number, tab: ExtraPart, page: number): Promise<GetReviewsResponse>;
+  getResponse(majorTab: number, subTab: ExtraPart, page: number): Promise<GetReviewsResponse>;
   getSampleReviews(): Promise<GetSampleReviewsResponse>;
 }
