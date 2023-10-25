@@ -38,7 +38,11 @@ export default function BlogPost({ selectedTap, blogPost }: BlogPostProps) {
       </div>
       <S.ThumbnailWrapper>
         <S.Thumbnail
-          src={blogPost.thumbnailUrl}
+          src={
+            blogPost.thumbnailUrl.charAt(0) !== 'h'
+              ? `https:${blogPost.thumbnailUrl}`
+              : blogPost.thumbnailUrl
+          }
           alt="게시물 썸네일"
           width={239}
           height={160}
