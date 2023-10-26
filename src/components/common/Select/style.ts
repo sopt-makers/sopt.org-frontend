@@ -42,7 +42,7 @@ const SelectTrigger = styled.button<{
 
 const SelectItem = styled.div<{ isSelected: boolean }>`
   background-color: ${({ isSelected }) => (isSelected ? colors.gray400 : 'transparent')};
-  padding: 7.5px 5px;
+  padding: 5px;
   border-radius: 4px;
   cursor: pointer;
   transition: 0.1s;
@@ -57,10 +57,10 @@ const SelectItemWrapper = styled.div`
   background-color: ${colors.gray600};
   z-index: 200;
   width: 110px;
-  height: 262px;
-  overflow: scroll;
-  border-radius: 20px;
-  padding: 9px 12px;
+  max-height: 262px;
+  overflow-y: scroll;
+  border-radius: 13px;
+  padding: 7px;
   margin-top: 8px;
   gap: 8px;
 
