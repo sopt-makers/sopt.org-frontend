@@ -1,7 +1,6 @@
 import styled from '@emotion/styled';
 import { colors } from '@sopt-makers/colors';
 import Link from 'next/link';
-import { css } from '@emotion/react';
 import { LOGO_IMAGE_URL } from '@src/assets/mainLogo/base64_logo';
 import useHeader from '@src/hooks/useHeader';
 import { GrowDown } from '@src/lib/styles/animation';
@@ -42,8 +41,8 @@ function MenuTap({ menuTap, handleIsSelected }: MenuTapProps) {
       );
     case MenuTapType.Router:
       return (
-        <MenuTitle isSelected={handleIsSelected(menuTap.href)}>
-          <Link href={menuTap.href}>{menuTap.title}</Link>
+        <MenuTitle href={menuTap.href} isSelected={handleIsSelected(menuTap.href)}>
+          {menuTap.title}
         </MenuTitle>
       );
   }
@@ -115,7 +114,7 @@ export const MenuTitleAnchor = styled(Link)`
   }
 `;
 
-export const MenuTitle = styled.div<MenuTitleProps>`
+export const MenuTitle = styled(Link)<MenuTitleProps>`
   font-size: 18px;
   height: 100%;
   line-height: 36px;
@@ -125,23 +124,16 @@ export const MenuTitle = styled.div<MenuTitleProps>`
   cursor: pointer;
   position: relative;
 
-  &:not(:last-child) {
-    padding-right: 40px;
-  }
+  padding: 0 20px 0 20px;
 
   &:hover {
     &::after {
       content: '';
       position: absolute;
       top: 3.5rem; /* this is bad practice */
-      left: -20px;
+      left: 0;
       width: 100%;
       border-bottom: 2px solid ${colors.white};
-    }
-    &:last-child {
-      &::after {
-        width: calc(100% + 40px);
-      }
     }
   }
 `;
