@@ -17,7 +17,7 @@ const SelectTrigger = styled.button<{
   width: ${({ selectedValue }) => (selectedValue === 'ANDROID' ? '132px' : '110px')};
   font-size: 16px;
   font-weight: 500;
-  padding: 9px 22px;
+  padding: 9px ${({ isSelectionExist }) => (isSelectionExist ? '16px' : '22px')};
   text-align: left;
   color: ${({ isSelectionExist }) => (isSelectionExist ? colors.white : colors.gray200)};
   border-radius: 20px;
@@ -42,7 +42,7 @@ const SelectTrigger = styled.button<{
 
 const SelectItem = styled.div<{ isSelected: boolean }>`
   background-color: ${({ isSelected }) => (isSelected ? colors.gray400 : 'transparent')};
-  padding: 6px 10px;
+  padding: 7.5px 5px;
   border-radius: 4px;
   cursor: pointer;
   transition: 0.1s;
