@@ -6,11 +6,7 @@ export function Layout({ children, moreStyle }: PropsWithChildren<{ moreStyle?: 
 }
 
 const Main = styled.div<{ moreStyle?: CSSProperties }>`
-  width: 100%;
-
-  @media (max-width: 1279px) {
-    display: flex;
-    flex-direction: column;
-    row-gap: 50px;
-  }
+  display: flex;
+  flex-direction: column;
+  row-gap: 50px;
 `;
