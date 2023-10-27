@@ -1,3 +1,4 @@
+import { track } from '@amplitude/analytics-browser';
 import Select from '@src/components/common/Select';
 import {
   activeGenerationCategoryList,
@@ -44,7 +45,10 @@ export default function BlogTab({
             return (
               <S.TabTitle
                 key={blogTab}
-                onClick={() => setSelectedTab(blogTab as BlogTabType)}
+                onClick={() => {
+                  setSelectedTab(blogTab as BlogTabType);
+                  track(`click_${blogTab}_part`, { part: selectedSubCategory });
+                }}
                 isSelected={selectedTab === blogTab}
               >
                 {tabInfo.title}

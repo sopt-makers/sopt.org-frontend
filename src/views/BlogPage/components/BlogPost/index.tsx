@@ -1,3 +1,4 @@
+import { track } from '@amplitude/analytics-browser';
 import { useEffect, useRef, useState } from 'react';
 import img_blog_default from '@src/assets/icons/img_blog_default.svg';
 import type { BlogPostType } from '@src/lib/types/blog';
@@ -30,7 +31,11 @@ export default function BlogPost({ selectedTap, blogPost }: BlogPostProps) {
   }, []);
 
   return (
-    <S.BlogPost href={blogPost.url}>
+    <S.BlogPost
+      onClick={() => {
+        track(`click_${selectedTap}_detail`);
+      }}
+    >
       <div>
         <Header selectedTap={selectedTap} blogPost={blogPost} />
         <S.Body>

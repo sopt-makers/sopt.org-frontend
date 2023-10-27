@@ -20,11 +20,9 @@ export default function Like({ blogPost }: LikeProps) {
   const clickLike = async (e: React.MouseEvent<HTMLDivElement>) => {
     e.stopPropagation();
     e.preventDefault();
-    console.log('click');
     const response = await api.sopticleAPI.postSopticleLike(blogPost.id, liked ?? true);
-    console.log('res', response);
     setLiked(response.currentLike);
-    track('click_sopticle_like', { sopticle_id: blogPost.id, is_like: response.currentLike });
+    track('click_article_like', { article_id: blogPost.id, is_like: response.currentLike });
     if (response.likeChanged)
       setLikesCount((prevLikeCount) =>
         response.currentLike ? prevLikeCount + 1 : prevLikeCount - 1,
