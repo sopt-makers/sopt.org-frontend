@@ -1,4 +1,4 @@
-import { ProjectCategoryType } from '@src/lib/types/project';
+import { ProjectCategoryType, ProjectPlatformType } from '@src/lib/types/project';
 
 export const activeProjectCategoryList: ProjectCategoryType[] = [
   ProjectCategoryType.ALL,
@@ -30,4 +30,16 @@ export const projectCategoryDescription: Record<ProjectCategoryType, string> = {
   [ProjectCategoryType.JOINTSEMINAR]:
     '기획, 디자인, 개발 파트가 배운 내용을 통해 간단한 아이디어를 시각화 해보는 프로젝트, 합동 세미나',
   [ProjectCategoryType.ETC]: '',
+};
+
+export const activeProjectPlatformList: ProjectPlatformType[] = [
+  ProjectPlatformType.ALL,
+  ProjectPlatformType.APP,
+  ProjectPlatformType.WEB,
+];
+
+export const projectPlatformLabel: Record<ProjectPlatformType, string> = {
+  [ProjectPlatformType.ALL]: '전체',
+  [ProjectPlatformType.APP]: '앱',
+  [ProjectPlatformType.WEB]: '웹',
 };

@@ -54,5 +54,15 @@ const Spacing = styled.div`
   }
 `;
 
-const S = { SectionTitle, Root, ContentWrapper, Spacing };
+const FilterWrapper = styled.div`
+  display: flex;
+  gap: 10px;
+
+  /* 모바일 뷰 */
+  @media (max-width: 767px) {
+    gap: 7px;
+  }
+`;
+
+const S = { SectionTitle, Root, ContentWrapper, Spacing, FilterWrapper };
 export default S;

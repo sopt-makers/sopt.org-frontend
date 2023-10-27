@@ -1,11 +1,11 @@
-import { ProjectCategoryType } from '@src/lib/types/project';
+import { ProjectCategoryType, ProjectPlatformType } from '@src/lib/types/project';
 import useFetch from '../../hooks/useFetch';
 import S from '../../styles';
 import RecentProjectListCarousel from './Carousel';
 import RecentProjectListItem from './Item';
 
 export default function RecentProjectList() {
-  const state = useFetch(ProjectCategoryType.ALL, 'updatedAt');
+  const state = useFetch(ProjectCategoryType.ALL, ProjectPlatformType.ALL, 'updatedAt');
 
   if (state._TAG !== 'OK') return null;
 
