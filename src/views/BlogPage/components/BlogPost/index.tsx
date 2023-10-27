@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import img_blog_default from '@src/assets/icons/img_blog_default.svg';
 import type { BlogPostType } from '@src/lib/types/blog';
 import { parsePartToKorean } from '@src/lib/utils/parsePartToKorean';
 import Header from '@src/views/BlogPage/components/BlogPost/Header';
@@ -15,6 +16,11 @@ interface BlogPostProps {
 export default function BlogPost({ selectedTap, blogPost }: BlogPostProps) {
   const titleRef = useRef<HTMLDivElement>(null);
   const [descriptionLine, setDescriptionLine] = useState(1);
+  const [error, setError] = useState(false);
+
+  const onThumbnailError = () => {
+    setError(true);
+  };
 
   useEffect(() => {
     if (titleRef.current) {
@@ -41,12 +47,15 @@ export default function BlogPost({ selectedTap, blogPost }: BlogPostProps) {
           src={
             blogPost.thumbnailUrl.charAt(0) !== 'h'
               ? `https:${blogPost.thumbnailUrl}`
+              : error
+              ? img_blog_default
               : blogPost.thumbnailUrl
           }
           alt="게시물 썸네일"
           width={239}
           height={160}
           loading="lazy"
+          onError={onThumbnailError}
         />
         {selectedTap === 'article' && <Like blogPost={blogPost} />}
       </S.ThumbnailWrapper>
