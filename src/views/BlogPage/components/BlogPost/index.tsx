@@ -34,6 +34,7 @@ export default function BlogPost({ selectedTap, blogPost }: BlogPostProps) {
     <S.BlogPost
       onClick={() => {
         track(`click_${selectedTap}_detail`);
+        window.open(blogPost.url);
       }}
     >
       <div>
