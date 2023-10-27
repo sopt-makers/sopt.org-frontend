@@ -14,14 +14,17 @@ import { ReactComponent as Web } from '../../assets/website-40x40.svg';
 import { ReactComponent as Youtube } from '../../assets/youtube-30x30.svg';
 import styles from './project-card.module.scss';
 
+// import * as S from './style';
+
 export function ProjectCard({ project }: { project: ProjectType }) {
+
   return (
     <Link href={`/project/${project.id}`} onClick={() => track('click_project_detail')}>
       <article className={`${styles.item} ${GTM_CLASS.projectCard}`}>
         {RepresentativeImageRender(project.name, project.logoImage, project?.thumbnailImage)}
         <div className={`${styles.content} ${GTM_CLASS.projectCard}`}>
           <div className={`${styles.types} ${GTM_CLASS.projectCard}`}>
-            {ServiceTypeRender(project.serviceTypes)}
+            {ServiceTypeRender(project.serviceType)}
             {GenerationRender(project?.generation)}
           </div>
           <div className={`${styles.text} ${GTM_CLASS.projectCard}`}>
@@ -37,6 +40,27 @@ export function ProjectCard({ project }: { project: ProjectType }) {
           </div>
         </div>
       </article>
+      {/* TODO: 서비스 이용 가능 및 창업 정보와 멤버 정보 추가 필요 
+      <S.ProjectCard>
+        <S.ProjectThumbnail
+          src={project.thumbnailImage ?? project.logoImage}
+          alt="프로젝트 썸네일"
+          width={324}
+          height={192}
+        />
+        <S.ProjectContent>
+          <S.ProjectHeader>
+            <S.ProjectTitle>{project.name}</S.ProjectTitle>
+            {project.serviceType.map((type, index) => (
+              <S.ProjectType key={type}>
+                <span>{type}</span>
+                {project.serviceType.length - 1 !== index && <S.Divider>∙</S.Divider>}
+              </S.ProjectType>
+            ))}
+          </S.ProjectHeader>
+          <S.ProjectSummary>{project.summary}</S.ProjectSummary>
+        </S.ProjectContent>
+      </S.ProjectCard> */}
     </Link>
   );
 }
@@ -113,7 +137,7 @@ function ProjectCardDesktopImage(name: string, logoImage: string, thumbnailImage
   );
 }
 
-function ServiceTypeRender(serviceTypes: string[]) {
+function ServiceTypeRender(serviceType: string[]) {
   const convertEngToKorean = (text: string) => {
     switch (text) {
       case 'APP':
@@ -125,7 +149,7 @@ function ServiceTypeRender(serviceTypes: string[]) {
     }
   };
 
-  return serviceTypes?.map((type) => {
+  return serviceType?.map((type) => {
     return <div key={shortid.generate()}>{convertEngToKorean(type)}</div>;
   });
 }
