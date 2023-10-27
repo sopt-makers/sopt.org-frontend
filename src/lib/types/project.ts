@@ -41,7 +41,7 @@ export interface ProjectType {
   thumbnailImage?: string;
   members: ProjectMemberType[];
   name: string;
-  serviceTypes: string[];
+  serviceType: string[];
   startAt: string;
   endAt: string;
   summary: string;

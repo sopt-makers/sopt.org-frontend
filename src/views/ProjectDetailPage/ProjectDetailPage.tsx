@@ -38,7 +38,7 @@ function ProjectDetailPage() {
     name,
     summary,
     generation,
-    serviceTypes,
+    serviceType,
     startAt,
     endAt,
     isFounding,
@@ -92,7 +92,7 @@ function ProjectDetailPage() {
                       </span>
                       <span>{generation ? generation + '기' : '-'}</span>
                       <span>
-                        {serviceTypes
+                        {serviceType
                           .map((type: string) => (type === 'WEB' ? '웹' : '앱'))
                           .join(', ')}
                       </span>
