@@ -27,3 +27,13 @@ export type BlogPostType = {
   /* review */
   subject?: string;
 };
+
+export enum PartCategoryType {
+  ALL = 'ALL',
+  PLAN = 'PLAN',
+  DESIGN = 'DESIGN',
+  ANDROID = 'ANDROID',
+  IOS = 'iOS',
+  WEB = 'WEB',
+  SERVER = 'SERVER',
+}

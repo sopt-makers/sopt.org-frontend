@@ -4,10 +4,10 @@ import { getStorageHandler } from '@src/lib/utils/storageHandler';
 export default function useStorage<T>(
   key: string,
   storageType: 'localStorage' | 'sessionStorage',
-  defaultValue?: T,
-): [value: T | null, setValue: (newValue: T) => void] {
+  defaultValue: T,
+): [value: T, setValue: (newValue: T) => void] {
   const handler = getStorageHandler(storageType);
-  const [valueInState, setValueInState] = useState<T | null>(null);
+  const [valueInState, setValueInState] = useState<T>(defaultValue);
 
   useEffect(() => {
     const storageItem = handler.getItem<T>(key);

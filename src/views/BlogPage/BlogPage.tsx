@@ -1,7 +1,7 @@
-import { useState } from 'react';
 import PageLayout from '@src/components/common/PageLayout';
+import useStorage from '@src/hooks/useStorage';
 import { activeGenerationCategoryList } from '@src/lib/constants/tabs';
-import { ExtraPart, PartExtraType } from '@src/lib/types/universal';
+import { PartCategoryType } from '@src/lib/types/blog';
 import { OvalSpinner } from '@src/views/ProjectPage/components';
 import BlogPostList from './components/BlogPostList';
 import BlogTab from './components/BlogTab';
@@ -10,11 +10,21 @@ import useFetch from './hooks/useFetch';
 import * as S from './style';
 
 export default function BlogPage() {
-  const [selectedTab, setSelectedTab] = useState<BlogTabType>(BlogTabType.REVIEW);
-  const [selectedMajorCategory, setMajorCategory] = useState<number>(
+  const [selectedTab, setSelectedTab] = useStorage(
+    'selectedTab',
+    'sessionStorage',
+    BlogTabType.REVIEW,
+  );
+  const [selectedMajorCategory, setMajorCategory] = useStorage(
+    'selectedMajorCategory',
+    'sessionStorage',
     activeGenerationCategoryList[0],
   );
-  const [selectedSubCategory, setSubCategory] = useState<ExtraPart>(PartExtraType.ALL);
+  const [selectedSubCategory, setSubCategory] = useStorage(
+    'selectedSubCategory',
+    'sessionStorage',
+    PartCategoryType.ALL,
+  );
 
   const {
     state: response,

@@ -1,5 +1,5 @@
+import { PartCategoryType } from '@src/lib/types/blog';
 import { BlogPostType } from './blog';
-import { ExtraPart } from './universal';
 
 export type GetSampleReviewsResponse = {
   reviews: BlogPostType[];
@@ -11,6 +11,10 @@ export type GetReviewsResponse = {
 };
 
 export interface ReviewAPI {
-  getResponse(majorTab: number, subTab: ExtraPart, page: number): Promise<GetReviewsResponse>;
+  getResponse(
+    majorTab: number,
+    subTab: PartCategoryType,
+    page: number,
+  ): Promise<GetReviewsResponse>;
   getSampleReviews(): Promise<GetSampleReviewsResponse>;
 }

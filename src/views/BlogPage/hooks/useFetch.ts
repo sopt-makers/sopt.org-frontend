@@ -2,14 +2,14 @@ import { useCallback, useEffect } from 'react';
 import useBooleanState from '@src/hooks/useBooleanState';
 import useStackedFetchBase from '@src/hooks/useStackedFetchBase';
 import { api } from '@src/lib/api';
-import { ExtraPart } from '@src/lib/types/universal';
+import { PartCategoryType } from '@src/lib/types/blog';
 import { BlogTabType } from '../components/BlogTab/types';
 import useInfiniteScroll from './useInfiniteScroll';
 
 interface useFetchProps {
   selectedTab: BlogTabType;
   selectedMajorCategory: number;
-  selectedSubCategory: ExtraPart;
+  selectedSubCategory: PartCategoryType;
 }
 
 const useFetch = ({

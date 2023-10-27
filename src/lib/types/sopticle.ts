@@ -1,5 +1,5 @@
+import { PartCategoryType } from '@src/lib/types/blog';
 import { BlogPostType } from './blog';
-import { ExtraPart } from './universal';
 
 export type GetSopticlesResponse = {
   hasNextPage: boolean;
@@ -11,6 +11,10 @@ export type PostSopticleLikeResponse = {
   likeChanged: boolean;
 };
 export interface SopticleAPI {
-  getResponse(majorTab: number, subTab: ExtraPart, page: number): Promise<GetSopticlesResponse>;
+  getResponse(
+    majorTab: number,
+    subTab: PartCategoryType,
+    page: number,
+  ): Promise<GetSopticlesResponse>;
   postSopticleLike(sopticleId: number, prevLike: boolean): Promise<PostSopticleLikeResponse>;
 }

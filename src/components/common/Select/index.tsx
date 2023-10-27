@@ -8,7 +8,7 @@ interface SelectProps<T extends LabelKeyType> {
   baseValue: T;
   baseLabel: string;
   selectedValue: T;
-  setSelectedValue: React.Dispatch<React.SetStateAction<T>>;
+  setSelectedValue: (newValue: T) => void;
   labels: Record<T, string>;
 }
 
@@ -25,6 +25,7 @@ export default function Select<T extends LabelKeyType>({
   const toggleSelect = () => setIsOpen(!isOpen);
 
   const handleSelect = (value: T) => {
+    console.log(value);
     setSelectedValue(value);
   };
 

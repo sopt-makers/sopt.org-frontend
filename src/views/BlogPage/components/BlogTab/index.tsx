@@ -6,17 +6,17 @@ import {
   generationCategoryLabel,
   partCategoryLabel,
 } from '@src/lib/constants/tabs';
-import { ExtraPart, PartExtraType } from '@src/lib/types/universal';
+import { PartCategoryType } from '@src/lib/types/blog';
 import * as S from './style';
 import { BlogTabMap, BlogTabType } from './types';
 
 interface BlogTanProps {
   selectedTab: BlogTabType;
-  setSelectedTab: React.Dispatch<React.SetStateAction<BlogTabType>>;
+  setSelectedTab: (newValue: BlogTabType) => void;
   selectedMajorCategory: number;
-  setMajorCategory: React.Dispatch<React.SetStateAction<number>>;
-  selectedSubCategory: ExtraPart;
-  setSubCategory: React.Dispatch<React.SetStateAction<ExtraPart>>;
+  setMajorCategory: (newValue: number) => void;
+  selectedSubCategory: PartCategoryType;
+  setSubCategory: (newValue: PartCategoryType) => void;
 }
 export default function BlogTab({
   selectedTab,
@@ -72,7 +72,7 @@ export default function BlogTab({
             baseLabel="파트"
             selectedValue={selectedSubCategory}
             setSelectedValue={setSubCategory}
-            baseValue={PartExtraType.ALL}
+            baseValue={PartCategoryType.ALL}
           />
         </S.SlectContainer>
       </S.Container>

@@ -1,4 +1,4 @@
-import { ExtraPart, Part, PartExtraType } from '@src/lib/types/universal';
+import { PartCategoryType } from '@src/lib/types/blog';
 
 export const activeGenerationCategoryList: number[] = [0];
 
@@ -14,22 +14,22 @@ for (let i = 31; i >= 24; i--) {
   generationCategoryLabel[i] = `${i}기`;
 }
 
-export const activePartCategoryList: ExtraPart[] = [
-  PartExtraType.ALL,
-  Part.PLAN,
-  Part.DESIGN,
-  Part.ANDROID,
-  Part.IOS,
-  Part.WEB,
-  Part.SERVER,
+export const activePartCategoryList: PartCategoryType[] = [
+  PartCategoryType.ALL,
+  PartCategoryType.PLAN,
+  PartCategoryType.DESIGN,
+  PartCategoryType.ANDROID,
+  PartCategoryType.IOS,
+  PartCategoryType.WEB,
+  PartCategoryType.SERVER,
 ];
 
-export const partCategoryLabel: Record<ExtraPart, string> = {
-  [PartExtraType.ALL]: '파트',
-  [Part.PLAN]: '기획',
-  [Part.DESIGN]: '디자인',
-  [Part.ANDROID]: '안드로이드',
-  [Part.IOS]: 'iOS',
-  [Part.WEB]: '웹',
-  [Part.SERVER]: '서버',
+export const partCategoryLabel: Record<PartCategoryType, string> = {
+  [PartCategoryType.ALL]: '파트',
+  [PartCategoryType.PLAN]: '기획',
+  [PartCategoryType.DESIGN]: '디자인',
+  [PartCategoryType.ANDROID]: '안드로이드',
+  [PartCategoryType.IOS]: 'iOS',
+  [PartCategoryType.WEB]: '웹',
+  [PartCategoryType.SERVER]: '서버',
 };
