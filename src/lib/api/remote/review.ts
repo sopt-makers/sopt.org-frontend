@@ -1,5 +1,5 @@
 import { BASE_URL, DEFAULT_TIMEOUT } from '@src/lib/constants/client';
-import { ExtraPart, PartExtraType } from '@src/lib/types/universal';
+import { PartCategoryType } from '@src/lib/types/blog';
 import axios from 'axios';
 import qs from 'qs';
 import { GetReviewsResponse, GetSampleReviewsResponse, ReviewAPI } from '../../types/review';
@@ -11,11 +11,11 @@ const client = axios.create({
 
 const getResponse = async (
   majorTab: number,
-  subTab: ExtraPart,
+  subTab: PartCategoryType,
   pageNo = 1,
 ): Promise<GetReviewsResponse> => {
   const generationParameter = majorTab === 0 ? {} : { generation: majorTab };
-  const partParameter = subTab === PartExtraType.ALL ? {} : { part: subTab };
+  const partParameter = subTab === PartCategoryType.ALL ? {} : { part: subTab };
   const pageParameter = { pageNo, limit: 6 };
   const parameter = qs.stringify({ ...partParameter, ...pageParameter, ...generationParameter });
 
