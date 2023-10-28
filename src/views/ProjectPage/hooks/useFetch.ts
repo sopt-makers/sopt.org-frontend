@@ -1,15 +1,20 @@
 import { useCallback } from 'react';
 import useFetchBase from '@src/hooks/useFetchBase';
 import { api } from '@src/lib/api';
-import { ProjectCategoryType, ProjectType } from '@src/lib/types/project';
+import { ProjectCategoryType, ProjectPlatformType, ProjectType } from '@src/lib/types/project';
 import { sortBy } from '@src/lib/utils/array';
 
-const useFetch = (selected?: ProjectCategoryType, sortProp?: keyof ProjectType) => {
+const useFetch = (
+  selectedCategory: ProjectCategoryType,
+  selectedPlatform: ProjectPlatformType = ProjectPlatformType.ALL,
+  sortProp?: keyof ProjectType,
+) => {
   const willFetch = useCallback(async () => {
-    const response = await api.projectAPI.getProjectList(selected);
+    const response = await api.projectAPI.getProjectList(selectedCategory, selectedPlatform);
     if (sortProp) return sortBy<ProjectType>(response.projects, sortProp);
     return response.projects;
-  }, [selected, sortProp]);
+  }, [selectedCategory, selectedPlatform, sortProp]);
+
   const state = useFetchBase(willFetch);
   return state;
 };

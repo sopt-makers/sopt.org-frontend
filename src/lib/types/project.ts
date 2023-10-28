@@ -1,3 +1,9 @@
+export enum ProjectPlatformType {
+  ALL = 'ALL',
+  WEB = 'WEB',
+  APP = 'APP',
+}
+
 export enum ProjectCategoryType {
   ALL = 'ALL',
   APPJAM = 'APPJAM',
@@ -59,5 +65,8 @@ export interface GetProjectListResponse {
 
 export interface ProjectAPI {
   getProjectDetail(projectId: number): Promise<GetProjectDetailResponse>;
-  getProjectList(category?: ProjectCategoryType): Promise<GetProjectListResponse>;
+  getProjectList(
+    category: ProjectCategoryType,
+    platform: ProjectPlatformType,
+  ): Promise<GetProjectListResponse>;
 }
