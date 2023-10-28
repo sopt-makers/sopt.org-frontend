@@ -8,5 +8,4 @@ export function Layout({ children, moreStyle }: PropsWithChildren<{ moreStyle?: 
 const Main = styled.div<{ moreStyle?: CSSProperties }>`
   display: flex;
   flex-direction: column;
-  row-gap: 50px;
 `;
