@@ -4,7 +4,6 @@ import { ProjectCategoryType, ProjectType } from '@src/lib/types/project';
 import ProjectCard from '@src/views/ProjectPage/components/project/ProjectCard';
 import ProjectCategoryDescription from '@src/views/ProjectPage/components/project/ProjectCategoryDescription';
 import ProjectListCount from '@src/views/ProjectPage/components/project/ProjectListCount';
-import cc from 'classcat';
 import { useInfiniteScroll } from '../../hooks/useInfiniteScroll';
 import { EmptyContent } from '../common/EmptyContent';
 import { OvalSpinner } from '../common/OvalSpinner';
@@ -18,7 +17,7 @@ interface ProjectListProp {
 
 export function ProjectList({ selectedCategory, state }: ProjectListProp) {
   return (
-    <div className={cc([styles['total-container']])}>
+    <div>
       {(() => {
         switch (state._TAG) {
           case 'IDLE':
@@ -43,7 +42,7 @@ export function ProjectList({ selectedCategory, state }: ProjectListProp) {
             return (
               <div>
                 <Condition statement={listLength > 0}>
-                  <S.ProjectListHeader>
+                  <S.ProjectListHeader selectedCategory={selectedCategory}>
                     <ProjectCategoryDescription selectedCategory={selectedCategory} />
                     <ProjectListCount count={listLength} />
                   </S.ProjectListHeader>

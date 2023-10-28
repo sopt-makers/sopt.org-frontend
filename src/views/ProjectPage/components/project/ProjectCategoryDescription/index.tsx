@@ -11,12 +11,16 @@ const DESCRIPTION_TEXT = {
   [ProjectCategoryType.ALL]: '',
 };
 
-interface ProjectCategoryDescriptionProps {
+export interface ProjectCategoryDescriptionProps {
   selectedCategory: ProjectCategoryType;
 }
 
 export default function ProjectCategoryDescription({
   selectedCategory,
 }: ProjectCategoryDescriptionProps) {
-  return <S.Description>{DESCRIPTION_TEXT[selectedCategory]}</S.Description>;
+  return (
+    <S.Description selectedCategory={selectedCategory}>
+      {DESCRIPTION_TEXT[selectedCategory]}
+    </S.Description>
+  );
 }
