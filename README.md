@@ -1,5 +1,6 @@
 # SOPT 공식 홈페이지
-[SOPT 공식 홈페이지 방문하기](https://www.sopt.org/)
+대학생 연합 IT 벤처창업동아리 [SOPT의 공식 홈페이지](https://www.sopt.org)입니다.
+![Frame 1000003582](https://github.com/sopt-makers/sopt.org-frontend/assets/62867581/76d6cdb2-2b5b-4f9c-a2f2-14fd64be3cb4)
 
 ## 시작하기
 
