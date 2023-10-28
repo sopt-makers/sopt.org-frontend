@@ -1,4 +1,4 @@
-import { useIsTablet } from '@src/hooks/useDevice';
+import { useMediaQuery } from 'react-responsive';
 import * as S from './style';
 
 interface ProjectListCountProps {
@@ -6,7 +6,7 @@ interface ProjectListCountProps {
 }
 
 export default function ProjectListCount({ count }: ProjectListCountProps) {
-  const isTablet = useIsTablet('900px', '1279px');
+  const isTablet = useMediaQuery({ query: '(min-width: 900px) and (max-width: 1279px)' });
 
   return (
     <S.Count>
