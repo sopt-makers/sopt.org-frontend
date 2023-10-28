@@ -9,7 +9,7 @@ export function Layout({
   return <Main css={moreStyle}>{children}</Main>;
 }
 
-const Main = styled.div<{ moreStyle?: CSSProperties }>`
+const Main = styled.div<{ moreStyle?: SerializedStyles }>`
   display: flex;
   flex-direction: column;
 `;
