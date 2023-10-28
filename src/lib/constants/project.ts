@@ -12,7 +12,4 @@ export const projectCategoryLabel: Record<ProjectCategoryType, string> = {
   [ProjectCategoryType.APPJAM]: '앱잼',
   [ProjectCategoryType.SOPKATHON]: '솝커톤',
   [ProjectCategoryType.SOPTERM]: '솝텀',
-  [ProjectCategoryType.STUDY]: '스터디',
-  [ProjectCategoryType.JOINTSEMINAR]: '합동 세미나',
-  [ProjectCategoryType.ETC]: '기타',
 };
