@@ -18,6 +18,10 @@ export interface ProjectCategoryDescriptionProps {
 export default function ProjectCategoryDescription({
   selectedCategory,
 }: ProjectCategoryDescriptionProps) {
+  if (selectedCategory === ProjectCategoryType.ALL) {
+    return <></>;
+  }
+
   return (
     <S.Description selectedCategory={selectedCategory}>
       {DESCRIPTION_TEXT[selectedCategory]}

@@ -1,16 +1,8 @@
 import styled from '@emotion/styled';
 import { colors } from '@sopt-makers/colors';
-import { css } from '@emotion/react';
-import { ProjectCategoryType } from '@src/lib/types/project';
 import { ProjectCategoryDescriptionProps } from '@src/views/ProjectPage/components/project/ProjectCategoryDescription';
 
 export const Description = styled.div<ProjectCategoryDescriptionProps>`
-  ${({ selectedCategory }) =>
-    selectedCategory === ProjectCategoryType.ALL &&
-    css`
-      display: none;
-    `};
-
   color: ${colors.gray100};
 
   /* Body/1_Medium_18 */
