@@ -1,12 +1,15 @@
 import { Condition } from '@src/components/common/Condition';
 import { State } from '@src/hooks/useFetchBase/types';
 import { ProjectCategoryType, ProjectType } from '@src/lib/types/project';
+import ProjectCard from '@src/views/ProjectPage/components/project/ProjectCard';
+import ProjectCategoryDescription from '@src/views/ProjectPage/components/project/ProjectCategoryDescription';
+import ProjectListCount from '@src/views/ProjectPage/components/project/ProjectListCount';
 import cc from 'classcat';
 import { useInfiniteScroll } from '../../hooks/useInfiniteScroll';
 import { EmptyContent } from '../common/EmptyContent';
 import { OvalSpinner } from '../common/OvalSpinner';
-import { ProjectCard, ProjectEnrollSection } from '../project';
 import styles from './project-list.module.scss';
+import * as S from './style';
 
 interface ProjectListProp {
   state: State<ProjectType[]>;
@@ -20,18 +23,16 @@ export function ProjectList({ selectedCategory, state }: ProjectListProp) {
         switch (state._TAG) {
           case 'IDLE':
             return (
-              <div className={styles['list-container']}>
-                {ProjectCategoryDescription(selectedCategory)}
+              <div>
+                <ProjectCategoryDescription selectedCategory={selectedCategory} />
                 {ProjectListSkeletonUI()}
-                <ProjectEnrollSection />
               </div>
             );
           case 'LOADING':
             return (
-              <div className={styles['list-container']}>
-                {ProjectCategoryDescription(selectedCategory)}
+              <div>
+                <ProjectCategoryDescription selectedCategory={selectedCategory} />
                 {ProjectListSkeletonUI()}
-                <ProjectEnrollSection />
               </div>
             );
           case 'ERROR':
@@ -40,17 +41,18 @@ export function ProjectList({ selectedCategory, state }: ProjectListProp) {
             const { data: projectList } = state;
             const listLength = projectList.length;
             return (
-              <div className={styles['list-container']}>
+              <div>
                 <Condition statement={listLength > 0}>
-                  {ProjectCategoryDescription(selectedCategory)}
-                  {ProjectListCount(listLength)}
+                  <S.ProjectListHeader>
+                    <ProjectCategoryDescription selectedCategory={selectedCategory} />
+                    <ProjectListCount count={listLength} />
+                  </S.ProjectListHeader>
                   {ProjectCardList(projectList)}
                 </Condition>
                 <Condition statement={listLength === 0}>
-                  {ProjectCategoryDescription(selectedCategory)}
+                  <ProjectCategoryDescription selectedCategory={selectedCategory} />
                   <EmptyContent />
                 </Condition>
-                <ProjectEnrollSection />
               </div>
             );
           }
@@ -77,78 +79,6 @@ function ProjectCardList(list: ProjectType[]) {
           </div>
         </div>
       )}
-    </>
-  );
-}
-
-function ProjectListCount(count: number) {
-  return (
-    <div className={styles['list-count']}>
-      <div>{count}개의 프로젝트</div>
-    </div>
-  );
-}
-
-function ProjectCategoryDescription(category: ProjectCategoryType) {
-  return (
-    <>
-      {(() => {
-        switch (category) {
-          case ProjectCategoryType.APPJAM:
-            return (
-              <div className={styles['category-description']}>
-                <p>5주간의 집중 협업을 통해 </p>
-                <p>
-                  <span>한 개의 온전한 프로덕트를 만드는 프로젝트, </span>
-                  <span className={styles['category-summary']}>APPJAM</span>
-                </p>
-              </div>
-            );
-          case ProjectCategoryType.SOPKATHON:
-            return (
-              <div className={styles['category-description']}>
-                <p>무박 2일간의 해커톤을 통해 아이디어를 </p>
-                <p>
-                  <span>빠르게 프로덕트로 만들어보는 프로젝트,</span>
-                  <span className={styles['category-summary']}>SOPKATHON</span>
-                </p>
-              </div>
-            );
-          case ProjectCategoryType.SOPTERM:
-            return (
-              <div className={styles['category-description']}>
-                <p>4개월간의 장기 협업을 통해 </p>
-                <p>
-                  <span>한 개의 온전한 프로덕트를 만드는 프로젝트,</span>
-                  <span className={styles['category-summary']}>SOPT-TERM</span>
-                </p>
-              </div>
-            );
-          case ProjectCategoryType.STUDY:
-            return (
-              <div className={styles['category-description']}>
-                <p>2개월간 지식 공유를 진행하며 아이디어를 </p>
-                <p>
-                  <span>시각화 하거나 프로덕트로 만들어보는 프로젝트,</span>
-                  <span className={styles['category-summary']}>스터디</span>
-                </p>
-              </div>
-            );
-          case ProjectCategoryType.JOINTSEMINAR:
-            return (
-              <div className={styles['category-description']}>
-                <p>기획, 디자인, 개발 파트가 배운 내용을 통해 </p>
-                <p>
-                  <span>간단한 아이디어를 시각화 해보는 프로젝트, </span>
-                  <span className={styles['category-summary']}>합동 세미나</span>
-                </p>
-              </div>
-            );
-          case ProjectCategoryType.ALL:
-          case ProjectCategoryType.ETC:
-          default:
-        }
-      })()}
     </>
   );
 }

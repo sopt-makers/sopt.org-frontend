@@ -3,9 +3,6 @@ export enum ProjectCategoryType {
   APPJAM = 'APPJAM',
   SOPKATHON = 'SOPKATHON',
   SOPTERM = 'SOPTERM',
-  STUDY = 'STUDY',
-  JOINTSEMINAR = 'JOINTSEMINAR',
-  ETC = 'ETC',
 }
 
 export enum LinkType {
