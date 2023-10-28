@@ -1,12 +1,10 @@
 import { Condition } from '@src/components/common/Condition';
 import { State } from '@src/hooks/useFetchBase/types';
 import { ProjectCategoryType, ProjectType } from '@src/lib/types/project';
-import ProjectCard from '@src/views/ProjectPage/components/project/ProjectCard';
+import ProjectCardList from '@src/views/ProjectPage/components/project/ProjectCardList';
 import ProjectCategoryDescription from '@src/views/ProjectPage/components/project/ProjectCategoryDescription';
 import ProjectListCount from '@src/views/ProjectPage/components/project/ProjectListCount';
-import { useInfiniteScroll } from '../../hooks/useInfiniteScroll';
 import { EmptyContent } from '../common/EmptyContent';
-import { OvalSpinner } from '../common/OvalSpinner';
 import styles from './project-list.module.scss';
 import * as S from './style';
 
@@ -46,7 +44,7 @@ export function ProjectList({ selectedCategory, state }: ProjectListProp) {
                     <ProjectCategoryDescription selectedCategory={selectedCategory} />
                     <ProjectListCount count={listLength} />
                   </S.ProjectListHeader>
-                  {ProjectCardList(projectList)}
+                  <ProjectCardList projectList={projectList} />
                 </Condition>
                 <Condition statement={listLength === 0}>
                   <ProjectCategoryDescription selectedCategory={selectedCategory} />
@@ -58,27 +56,6 @@ export function ProjectList({ selectedCategory, state }: ProjectListProp) {
         }
       })()}
     </div>
-  );
-}
-
-function ProjectCardList(list: ProjectType[]) {
-  const { data, isNextPage, ref } = useInfiniteScroll(list);
-
-  return (
-    <>
-      <section className={styles['card-list']}>
-        {data.map((project, index) => (
-          <ProjectCard key={index} project={project} />
-        ))}
-      </section>
-      {isNextPage && (
-        <div className={styles['observered']} ref={ref}>
-          <div className={styles['spinner']}>
-            <OvalSpinner />
-          </div>
-        </div>
-      )}
-    </>
   );
 }
 

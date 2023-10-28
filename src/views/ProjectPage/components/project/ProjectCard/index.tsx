@@ -1,25 +1,46 @@
 import { track } from '@amplitude/analytics-browser';
+import { useIsMobile } from '@src/hooks/useDevice';
 import { ProjectType } from '@src/lib/types/project';
 import * as S from './style';
 
 export default function ProjectCard({ project }: { project: ProjectType }) {
+  const isMobile = useIsMobile('899px');
+
   return (
     <S.ProjectCard href={`/project/${project.id}`} onClick={() => track('click_project_detail')}>
-      <S.ProjectThumbnail
-        src={project.thumbnailImage ?? project.logoImage}
-        alt="프로젝트 썸네일"
-        width={324}
-        height={192}
-      />
+      {!isMobile && (
+        <S.ProjectThumbnail
+          src={project.thumbnailImage ?? project.logoImage}
+          alt="프로젝트 썸네일"
+          width={324}
+          height={192}
+          loading="lazy"
+          placeholder="blur"
+          blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPU0zOtBwACNQES9P3nGQAAAABJRU5ErkJggg=="
+        />
+      )}
       <S.ProjectContent>
         <S.ProjectHeader>
-          <S.ProjectTitle>{project.name}</S.ProjectTitle>
-          {project.serviceType.map((type, index) => (
-            <S.ProjectType key={type}>
-              <span>{type}</span>
-              {project.serviceType.length - 1 !== index && <S.Divider>∙</S.Divider>}
-            </S.ProjectType>
-          ))}
+          {isMobile && (
+            <S.ProjectThumbnail
+              src={project.logoImage}
+              alt="프로젝트 로고"
+              width={40}
+              height={40}
+              loading="lazy"
+              placeholder="blur"
+              blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPU0zOtBwACNQES9P3nGQAAAABJRU5ErkJggg=="
+            />
+          )}
+          <S.ProjectText>
+            <S.ProjectTitle>{project.name}</S.ProjectTitle>
+            {project.serviceType.map((type, index) => (
+              <S.ProjectType key={type}>
+                <span>{type}</span>
+                {project.serviceType.length - 1 !== index && <S.Divider>∙</S.Divider>}
+              </S.ProjectType>
+            ))}
+          </S.ProjectText>
         </S.ProjectHeader>
         <S.ProjectSummary>{project.summary}</S.ProjectSummary>
       </S.ProjectContent>

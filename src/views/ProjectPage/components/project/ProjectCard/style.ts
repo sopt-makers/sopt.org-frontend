@@ -15,6 +15,14 @@ export const ProjectCard = styled(Link)`
   border-radius: 20px;
 
   cursor: pointer;
+
+  @media (max-width: 899px) {
+    width: 100%;
+    padding: 0 0 10px 0;
+    border: none;
+    border-bottom: 1px solid ${colors.gray900};
+    border-radius: 0;
+  }
 `;
 
 export const ProjectThumbnail = styled(Image)`
@@ -27,9 +35,18 @@ export const ProjectContent = styled.div`
   display: flex;
   flex-direction: column;
   gap: 4px;
+
+  @media (max-width: 899px) {
+    gap: 12px;
+  }
 `;
 
 export const ProjectHeader = styled.div`
+  display: flex;
+  gap: 12px;
+`;
+
+export const ProjectText = styled.div`
   display: flex;
   align-items: center;
   gap: 6px;
@@ -79,4 +96,17 @@ export const ProjectSummary = styled.div`
   font-weight: 400;
   line-height: 22px; /* 157.143% */
   letter-spacing: -0.21px;
+
+  @media (max-width: 899px) {
+    height: auto;
+    color: ${colors.gray30};
+
+    /* Body/4_R */
+    font-family: SUIT;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 153.846% */
+    letter-spacing: -0.195px;
+  }
 `;
