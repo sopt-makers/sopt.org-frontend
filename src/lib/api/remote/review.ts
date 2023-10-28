@@ -1,5 +1,5 @@
 import { BASE_URL, DEFAULT_TIMEOUT } from '@src/lib/constants/client';
-import { ExtraPart, PartExtraType } from '@src/lib/types/universal';
+import { PartCategoryType } from '@src/lib/types/blog';
 import axios from 'axios';
 import qs from 'qs';
 import { GetReviewsResponse, GetSampleReviewsResponse, ReviewAPI } from '../../types/review';
@@ -9,14 +9,19 @@ const client = axios.create({
   timeout: DEFAULT_TIMEOUT,
 });
 
-const getReviews = async (tab: ExtraPart, pageNo = 1): Promise<GetReviewsResponse> => {
-  const partParameter = tab === PartExtraType.ALL ? {} : { part: tab };
+const getResponse = async (
+  majorTab: number,
+  subTab: PartCategoryType,
+  pageNo = 1,
+): Promise<GetReviewsResponse> => {
+  const generationParameter = majorTab === 0 ? {} : { generation: majorTab };
+  const partParameter = subTab === PartCategoryType.ALL ? {} : { part: subTab };
   const pageParameter = { pageNo, limit: 6 };
-  const parameter = qs.stringify({ ...partParameter, ...pageParameter });
+  const parameter = qs.stringify({ ...partParameter, ...pageParameter, ...generationParameter });
 
   const { data } = await client.get(`/reviews?${parameter}`);
 
-  return { hasNextPage: data.hasNextPage, reviews: data.data };
+  return { hasNextPage: data.hasNextPage, response: data.data };
 };
 
 const getSampleReviews = async (): Promise<GetSampleReviewsResponse> => {
@@ -25,6 +30,6 @@ const getSampleReviews = async (): Promise<GetSampleReviewsResponse> => {
 };
 
 export const remoteReviewAPI: ReviewAPI = {
-  getReviews,
+  getResponse,
   getSampleReviews,
 };

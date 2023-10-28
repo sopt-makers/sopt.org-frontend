@@ -37,15 +37,15 @@ export function ActivityReview() {
             {reviews.data.map((review) => (
               <Link
                 key={review.id}
-                href={review.link}
+                href={review.url}
                 onClick={() => track('click_main_review_detail')}
               >
                 <article className={styles.card} role="presentation">
                   <h4 className={styles.cardTitle}>{review.title}</h4>
                   <div className={styles.descWrapper}>
                     <p className={styles.desc}>
-                      {parsePartToKorean(review.part)}파트 {review.semester}기{'\n'}
-                      <strong className={styles.descName}>{review.reviewer}</strong>
+                      {parsePartToKorean(review.part)}파트 {review.generation}기{'\n'}
+                      <strong className={styles.descName}>{review.author}</strong>
                     </p>
                     <div className={styles.arrow}>
                       <Image src={ArrowRightGrey} alt="이동" fill sizes="100%" />

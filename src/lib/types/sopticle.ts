@@ -1,22 +1,9 @@
-import { ExtraPart } from './universal';
-
-export type SopticleType = {
-  id: number;
-  title: string;
-  subtitle: string;
-  thumbnail: string;
-  author: string;
-  authorProfileUrl: string;
-  semester: number;
-  part: string;
-  link: string;
-  likesCount: number;
-  publishedAt: Date;
-};
+import { PartCategoryType } from '@src/lib/types/blog';
+import { BlogPostType } from './blog';
 
 export type GetSopticlesResponse = {
-  sopticles: SopticleType[];
   hasNextPage: boolean;
+  response: BlogPostType[];
 };
 
 export type PostSopticleLikeResponse = {
@@ -24,20 +11,10 @@ export type PostSopticleLikeResponse = {
   likeChanged: boolean;
 };
 export interface SopticleAPI {
-  getSopticles(tab: ExtraPart, page: number): Promise<GetSopticlesResponse>;
+  getResponse(
+    majorTab: number,
+    subTab: PartCategoryType,
+    page: number,
+  ): Promise<GetSopticlesResponse>;
   postSopticleLike(sopticleId: number, prevLike: boolean): Promise<PostSopticleLikeResponse>;
-}
-
-export interface SopticleResponseDto {
-  id: number;
-  title: string;
-  description: string;
-  thumbnailUrl: string;
-  author: string;
-  authorProfileImageUrl: string;
-  generation: number;
-  part: string;
-  sopticleUrl: string;
-  likeCount: number;
-  uploadedAt: string;
 }

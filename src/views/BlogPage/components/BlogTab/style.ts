@@ -100,3 +100,8 @@ export const TabDescription = styled.h1`
     color: ${colors.gray30};
   }
 `;
+
+export const SlectContainer = styled.section`
+  display: flex;
+  gap: 6px;
+`;

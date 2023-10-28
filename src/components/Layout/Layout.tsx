@@ -9,12 +9,7 @@ export function Layout({
   return <Main css={moreStyle}>{children}</Main>;
 }
 
-const Main = styled.div`
-  width: 100%;
-
-  @media (max-width: 1279px) {
-    display: flex;
-    flex-direction: column;
-    row-gap: 50px;
-  }
+const Main = styled.div<{ moreStyle?: CSSProperties }>`
+  display: flex;
+  flex-direction: column;
 `;

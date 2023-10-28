@@ -11,7 +11,7 @@ interface HeaderProps {
 export default function Header({ selectedTap, blogPost }: HeaderProps) {
   return (
     <S.Header>
-      {selectedTap === 'ARTICLE' ? (
+      {selectedTap === 'article' ? (
         <>
           <S.Profile>
             {blogPost.authorProfileImageUrl ? (

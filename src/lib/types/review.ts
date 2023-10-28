@@ -1,26 +1,20 @@
-import { ExtraPart } from './universal';
-
-export type ReviewType = {
-  id: number;
-  title: string;
-  reviewer: string;
-  semester: number;
-  part: string;
-  subject: string;
-  platform: string;
-  link: string;
-};
+import { PartCategoryType } from '@src/lib/types/blog';
+import { BlogPostType } from './blog';
 
 export type GetSampleReviewsResponse = {
-  reviews: ReviewType[];
+  reviews: BlogPostType[];
 };
 
 export type GetReviewsResponse = {
-  reviews: ReviewType[];
+  response: BlogPostType[];
   hasNextPage: boolean;
 };
 
 export interface ReviewAPI {
-  getReviews(tab: ExtraPart, page: number): Promise<GetReviewsResponse>;
+  getResponse(
+    majorTab: number,
+    subTab: PartCategoryType,
+    page: number,
+  ): Promise<GetReviewsResponse>;
   getSampleReviews(): Promise<GetSampleReviewsResponse>;
 }

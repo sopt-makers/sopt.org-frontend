@@ -23,6 +23,8 @@ export const Like = styled.div`
   letter-spacing: -0.21px;
 
   transition: opacity 0.1s ease-out;
+
+  z-index: 100;
   &:hover {
     opacity: 0.8;
   }
