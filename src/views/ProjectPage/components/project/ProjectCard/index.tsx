@@ -1,10 +1,10 @@
 import { track } from '@amplitude/analytics-browser';
-import { useIsMobile } from '@src/hooks/useDevice';
+import { useMediaQuery } from 'react-responsive';
 import { ProjectType } from '@src/lib/types/project';
 import * as S from './style';
 
 export default function ProjectCard({ project }: { project: ProjectType }) {
-  const isMobile = useIsMobile('899px');
+  const isMobile = useMediaQuery({ query: '(max-width: 899px)' });
 
   return (
     <S.ProjectCard href={`/project/${project.id}`} onClick={() => track('click_project_detail')}>
