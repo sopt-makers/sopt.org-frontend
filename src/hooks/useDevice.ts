@@ -33,3 +33,23 @@ export function useIsMobile(maxWidth = '765.9px') {
   }, [mobile]);
   return isMobile;
 }
+
+type DeviceType = 'desktop' | 'iOS' | 'Android';
+
+export function useDeviceType() {
+  const [deviceType, setDeviceType] = useState<DeviceType | undefined>('desktop');
+
+  useEffect(() => {
+    const userAgent = navigator.userAgent || navigator.vendor;
+
+    if (/iPad|iPhone|iPod/.test(userAgent)) {
+      setDeviceType('iOS');
+    } else if (/android/i.test(userAgent)) {
+      setDeviceType('Android');
+    } else {
+      setDeviceType('desktop');
+    }
+  }, []);
+
+  return deviceType;
+}

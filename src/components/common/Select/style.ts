@@ -24,7 +24,7 @@ const SelectTrigger = styled.button<{
   background-color: ${({ isSelectionExist }) =>
     isSelectionExist ? colors.gray700 : colors.gray600};
   border: 1px solid;
-  border-color: ${({ isSelectionExist }) => (isSelectionExist ? colors.gray200 : colors.gray700)};
+  border-color: ${({ isSelectionExist }) => (isSelectionExist ? colors.gray200 : colors.gray600)};
   &::after {
     content: '';
     background-repeat: no-repeat;
@@ -37,6 +37,13 @@ const SelectTrigger = styled.button<{
     height: 18px;
     background-image: url(${arrowDown});
     transform: ${({ isOpened }) => (isOpened ? 'rotate(180deg)' : 'none')};
+  }
+  @media (max-width: 765.9px) {
+    padding: 8px 12px;
+    border-radius: 16px;
+    font-size: 13px;
+    line-height: 150%;
+    letter-spacing: -0.13px;
   }
 `;
 

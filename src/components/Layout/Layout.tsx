@@ -1,8 +1,12 @@
 import styled from '@emotion/styled';
-import { CSSProperties, PropsWithChildren } from 'react';
+import { SerializedStyles } from '@emotion/react';
+import { PropsWithChildren } from 'react';
 
-export function Layout({ children, moreStyle }: PropsWithChildren<{ moreStyle?: CSSProperties }>) {
-  return <Main style={moreStyle}>{children}</Main>;
+export function Layout({
+  children,
+  moreStyle,
+}: PropsWithChildren<{ moreStyle?: SerializedStyles }>) {
+  return <Main css={moreStyle}>{children}</Main>;
 }
 
 const Main = styled.div<{ moreStyle?: CSSProperties }>`

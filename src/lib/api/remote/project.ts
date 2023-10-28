@@ -1,10 +1,12 @@
 import { BASE_URL, DEFAULT_TIMEOUT } from '@src/lib/constants/client';
 import axios from 'axios';
+import qs from 'qs';
 import {
   GetProjectDetailResponse,
   GetProjectListResponse,
   ProjectAPI,
   ProjectCategoryType,
+  ProjectPlatformType,
 } from '../../types/project';
 
 const client = axios.create({
@@ -21,9 +23,14 @@ const getProjectDetail = async (projectId: number): Promise<GetProjectDetailResp
   return { project: { ...data, serviceTypes } };
 };
 
-const getProjectList = async (category?: ProjectCategoryType): Promise<GetProjectListResponse> => {
-  const queryString = category !== ProjectCategoryType.ALL ? `?filter=${category}` : '';
-  const { data } = await client.get(`/projects${queryString}`);
+const getProjectList = async (
+  category: ProjectCategoryType,
+  platform: ProjectPlatformType,
+): Promise<GetProjectListResponse> => {
+  const categoryParameter = category === ProjectCategoryType.ALL ? {} : { filter: category };
+  const platformParameter = platform === ProjectPlatformType.ALL ? {} : { platform };
+  const parameter = qs.stringify({ ...categoryParameter, ...platformParameter });
+  const { data } = await client.get(`/projects?${parameter}`);
   return { projects: data };
 };
 
