@@ -44,18 +44,18 @@ export default function ActivityReview() {
           <ArrowLeft stroke={isLeftScrollable ? 'white' : 'grey'} />
         </ArrowWrapper>
         <Content ref={scrollableRef}>
-          {reviews.data.map((review) => (
+          {/* {reviews.data.map((review) => (
             <Link
               key={review.id}
-              href={review.link}
+              href={review.url}
               onClick={() => track('click_recruit_review_detail')}
             >
               <CardWrapper role="presentation">
                 <CardTitle>{review.title}</CardTitle>
                 <DescWrapper>
                   <Desc>
-                    {parsePartToKorean(review.part)}파트 {review.semester}기{'\n'}
-                    <DescName>{review.reviewer}</DescName>
+                    {parsePartToKorean(review.part)}파트 {review.generation}기{'\n'}
+                    <DescName>{review.author}</DescName>
                   </Desc>
                   <Arrow
                     src={arrowRightWhite}
@@ -66,7 +66,7 @@ export default function ActivityReview() {
                 </DescWrapper>
               </CardWrapper>
             </Link>
-          ))}
+          ))} */}
         </Content>
         <ArrowWrapper onClick={() => onClickRightButton(scrollableRef.current)}>
           <ArrowRight stroke={isRightScrollable ? 'white' : 'grey'} />

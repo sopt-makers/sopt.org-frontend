@@ -19,12 +19,6 @@ export function ProjectList({ selectedCategory, state }: ProjectListProp) {
       {(() => {
         switch (state._TAG) {
           case 'IDLE':
-            return (
-              <div>
-                <ProjectCategoryDescription selectedCategory={selectedCategory} />
-                {ProjectListSkeletonUI()}
-              </div>
-            );
           case 'LOADING':
             return (
               <div>

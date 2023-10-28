@@ -1,11 +1,11 @@
 import styled from '@emotion/styled';
 import { colors } from '@sopt-makers/colors';
 import Image from 'next/image';
-import Link from 'next/link';
 
-export const BlogPost = styled(Link)`
+export const BlogPost = styled.section`
   display: flex;
   justify-content: space-between;
+  width: 100%;
   gap: 36px;
 
   cursor: pointer;

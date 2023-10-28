@@ -1,6 +1,6 @@
+import { useCallback, useRef, useState } from 'react';
 import useOutsideClickListener from '@src/hooks/useOutsideClickListener';
 import { LabelKeyType } from '@src/lib/types/universal';
-import { useCallback, useRef, useState } from 'react';
 import { S } from './style';
 
 interface SelectProps<T extends LabelKeyType> {
@@ -8,7 +8,7 @@ interface SelectProps<T extends LabelKeyType> {
   baseValue: T;
   baseLabel: string;
   selectedValue: T;
-  setSelectedValue: React.Dispatch<React.SetStateAction<T>>;
+  setSelectedValue: (newValue: T) => void;
   labels: Record<T, string>;
 }
 
@@ -41,6 +41,7 @@ export default function Select<T extends LabelKeyType>({
         onClick={toggleSelect}
         isSelectionExist={selectedValue !== baseValue}
         isOpened={isOpen}
+        selectedValue={selectedValue}
       >
         {selectedValue === baseValue ? baseLabel : labels[selectedValue]}
       </S.SelectTrigger>

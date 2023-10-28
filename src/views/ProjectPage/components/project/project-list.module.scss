@@ -31,138 +31,61 @@ list-container는 description, count, card-list 영역을 가짐.
   }
 }
 
-.category-description {
+.selection-description {
+  width: 100%;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 160px;
-  background: linear-gradient(90deg, #000000 1.33%, rgba(0, 0, 0, 0) 100%);
-  border-radius: 10px;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 36px;
+  margin-bottom: 16px;
 
-  p {
-    display: flex;
-    justify-content: center;
-
-    color: rgba(255, 255, 255, 0.8);
-    font-style: normal;
-    font-weight: 500;
-    font-size: 24px;
+  @include mobile {
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 16px;
+    margin-bottom: 14px;
   }
+}
 
-  p:first-child {
-    padding-bottom: 10px;
-  }
-
-  .category-summary {
-    text-indent: 10px;
-    font-weight: 700;
-  }
-
-  @include desktop {
-    width: 100%;
-    margin-top: 36px;
-    margin-bottom: 36px;
-  }
-
-  @include tablet-medium {
-    width: 90%;
-    margin-top: 36px;
-    margin-bottom: 36px;
-
-    p {
-      font-weight: 500;
-      font-size: 20px;
-    }
-
-    .category-summary {
-      text-indent: 10px;
-      font-weight: 700;
-    }
-  }
+.category-description {
+  color: #C3C3C6;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 165%; 
+  letter-spacing: -0.27px;
 
   @include tablet-small {
-    width: 662px;
-    margin-top: 36px;
-    margin-bottom: 36px;
-    p {
-      font-weight: 500;
-      font-size: 20px;
-    }
-
-    .category-summary {
-      text-indent: 10px;
-      font-weight: 700;
-    }
+    font-size: 14px;
+    letter-spacing: -0.21px;
   }
 
   @include mobile {
-    width: 90%;
-    height: 130px;
-    margin-top: 16px;
-    margin-bottom: 16px;
-
-    p {
-      font-style: normal;
-      font-weight: 500;
-      font-size: 15px;
-    }
-
-    p:nth-child(2) {
-      display: flex;
-      flex-direction: column;
-      span {
-        display: flex;
-        justify-content: center;
-        font-style: normal;
-        font-weight: 500;
-        font-size: 15px;
-      }
-      span:first-child {
-        padding-bottom: 10px;
-      }
-      .category-summary {
-        font-weight: 700;
-      }
-    }
+    color: #F0F0F0;
+    font-size: 14px;
+    letter-spacing: -0.21px;
+    padding: 16px;
+    background-color: #202025;
+    border-radius: 16px;
   }
 }
 
 .list-count {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  color: #C3C3C6;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 165%; 
+  letter-spacing: -0.27px;
 
-  & > div {
-    display: flex;
-    justify-content: flex-end;
-    width: 90%;
-
-    color: #8e8e8e;
-    font-size: 18px;
-    line-height: 26px;
-    font-weight: 500;
-    opacity: 30%;
-    padding-bottom: 22px;
-
-    @include tablet-medium {
-      width: 90%;
-    }
-
-    @include tablet-small {
-      width: 662px;
-    }
-
-    @include mobile {
-      width: 90%;
-      font-style: normal;
-      font-weight: 500;
-      font-size: 12px;
-      padding: 0;
-      padding-bottom: 12px;
-    }
+  @include tablet-small {
+    font-size: 14px;
+    letter-spacing: -0.21px;
   }
+
+  @include mobile {
+    font-size: 14px;  
+    letter-spacing: -0.21px;
+  }
+  
 }
 
 .card-list {

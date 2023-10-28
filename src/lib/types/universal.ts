@@ -36,3 +36,15 @@ export type TabType = TabTypeOption<Part>;
 export type ExtraTabType = TabTypeOption<ExtraPart>;
 
 export type LabelKeyType = string | number | symbol;
+
+export enum CarouselArrowType {
+  External = 'external',
+  None = 'none',
+  // Internal = 'internal',
+  // Overlay = 'overlay',
+}
+
+export enum CarouselOverflowType {
+  Blur = 'blur',
+  Visible = 'visible',
+}
