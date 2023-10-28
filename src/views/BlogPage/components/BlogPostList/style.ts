@@ -35,7 +35,7 @@ export const EmptyBlogPostList = styled.section`
   font-weight: 700;
   line-height: 48px; /* 150% */
   letter-spacing: -0.64px;
-  margin-top: 78px;
+  margin-top: 108px;
   margin-bottom: 24px;
 
   /* 모바일 뷰 */
@@ -43,7 +43,7 @@ export const EmptyBlogPostList = styled.section`
     font-size: 18px;
     line-height: 28px; /* 155.556% */
     letter-spacing: -0.36px;
-    margin-top: 60px;
+    margin-top: 90px;
     margin-bottom: 16px;
   }
 `;

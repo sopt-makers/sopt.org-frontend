@@ -24,12 +24,7 @@ export default function BlogPostList({
   };
   return (
     <S.BlogPostListWrapper>
-      <S.BlogPostList>
-        {blogPostList?.map((blogPost) => (
-          <BlogPost key={blogPost.id} blogPost={blogPost} selectedTap={selectedTap} />
-        ))}
-      </S.BlogPostList>
-      {blogPostList.length === 0 && (
+      {blogPostList.length === 0 ? (
         <>
           <S.EmptyBlogPostList>
             {`아직 올라온 ${selectedTap === 'article' ? '아티클이' : '활동후기가'} 없어요`}
@@ -38,6 +33,12 @@ export default function BlogPostList({
             selectedTap === 'article' ? '아티클' : '활동후기'
           } 전체 보기`}</S.Total>
         </>
+      ) : (
+        <S.BlogPostList>
+          {blogPostList?.map((blogPost) => (
+            <BlogPost key={blogPost.id} blogPost={blogPost} selectedTap={selectedTap} />
+          ))}
+        </S.BlogPostList>
       )}
     </S.BlogPostListWrapper>
   );
