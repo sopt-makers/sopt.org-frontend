@@ -48,7 +48,12 @@ export default function BlogPage() {
         selectedSubCategory={selectedSubCategory}
         setSubCategory={setSubCategory}
       />
-      <BlogPostList selectedTap={selectedTab} blogPostList={response.data} />
+      <BlogPostList
+        selectedTap={selectedTab}
+        setMajorCategory={setMajorCategory}
+        setSubCategory={setSubCategory}
+        blogPostList={response.data}
+      />
       {(canGetMoreResponse || response._TAG === 'LOADING') && (
         <S.SpinnerWrapper ref={canGetMoreResponse ? ref : undefined}>
           <OvalSpinner />
