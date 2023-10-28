@@ -1,3 +1,4 @@
+import { colors } from '@sopt-makers/colors';
 import { css } from '@emotion/react';
 import font from './font';
 
@@ -80,7 +81,7 @@ export const global = css`
   }
 
   body {
-    background-color: #0f0f12;
+    background-color: ${colors.background};
     line-height: 1;
   }
 

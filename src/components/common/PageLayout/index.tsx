@@ -1,10 +1,10 @@
 import dynamic from 'next/dynamic';
-import { CSSProperties } from 'react';
+import { SerializedStyles } from '@emotion/react';
 import { Header, Layout } from '@src/components';
 
 type PageLayoutOwnProps = {
   showScrollTopButton?: boolean;
-  moreStyle?: CSSProperties;
+  moreStyle?: SerializedStyles;
 };
 
 const DynamicFooter = dynamic(() => import('@src/components/Footer'));

@@ -1,9 +1,11 @@
+import { css } from '@emotion/react';
 import { useState } from 'react';
 import PageLayout from '@src/components/common/PageLayout';
 import Select from '@src/components/common/Select';
 import { activeProjectCategoryList, projectCategoryLabel } from '@src/lib/constants/project';
 import { ProjectCategoryType } from '@src/lib/types/project';
 import { ProjectList } from './components';
+import RecentProjectList from './components/RecentProjectList';
 import useFetch from './hooks/useFetch';
 import { ContentWrapper, Root, SectionTitle } from './styles';
 
@@ -12,9 +14,15 @@ function Projects() {
   const state = useFetch(selectedCategory);
 
   return (
-    <PageLayout showScrollTopButton>
+    <PageLayout
+      showScrollTopButton
+      moreStyle={css`
+        overflow-x: hidden;
+      `}
+    >
       <Root>
         <ContentWrapper>
+          <RecentProjectList />
           <SectionTitle>SOPT에서 진행된 프로젝트 둘러보기</SectionTitle>
           <Select
             options={activeProjectCategoryList}
@@ -24,10 +32,7 @@ function Projects() {
             setSelectedValue={setCategory}
             baseValue={ProjectCategoryType.ALL}
           />
-          <ProjectList
-            state={state}
-            selectedCategory={selectedCategory ?? ProjectCategoryType.ALL}
-          />
+          <ProjectList state={state} selectedCategory={selectedCategory} />
         </ContentWrapper>
       </Root>
     </PageLayout>
