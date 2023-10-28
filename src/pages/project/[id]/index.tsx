@@ -7,7 +7,7 @@ import PageLayout from '@src/components/common/PageLayout';
 import SEO from '@src/components/common/SEO';
 import { api } from '@src/lib/api';
 import { GetProjectDetailResponse, ProjectLinkType } from '@src/lib/types/project';
-import { dateFormat } from '@src/utils/dateFormat';
+import { dateFormat } from '@src/lib/utils/dateFormat';
 import * as S from '@src/views/ProjectDetailPage/ProjectDetail.style';
 import { TeamMembersType } from '@src/views/ProjectDetailPage/types';
 import { getLinkNameAndSrcWithType } from '@src/views/ProjectDetailPage/utils/getLinkNameAndSrcWithType';
