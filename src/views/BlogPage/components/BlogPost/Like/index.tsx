@@ -15,7 +15,7 @@ interface LikeProps {
 export default function Like({ blogPost }: LikeProps) {
   const likeKey = `sopticle_liked_${blogPost.id}`;
   const [liked, setLiked] = useStorage(likeKey, 'localStorage', false);
-  const [likesCount, setLikesCount] = useState(blogPost.likeCount);
+  const [likesCount, setLikesCount] = useState(blogPost.likeCount || 0);
 
   const clickLike = async (e: React.MouseEvent<HTMLDivElement>) => {
     e.stopPropagation();
