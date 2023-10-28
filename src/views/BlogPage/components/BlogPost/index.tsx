@@ -62,6 +62,8 @@ export default function BlogPost({ selectedTap, blogPost }: BlogPostProps) {
           height={160}
           loading="lazy"
           onError={onThumbnailError}
+          placeholder="blur"
+          blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPU0zOtBwACNQES9P3nGQAAAABJRU5ErkJggg=="
         />
         {selectedTap === 'article' && <Like blogPost={blogPost} />}
       </S.ThumbnailWrapper>
