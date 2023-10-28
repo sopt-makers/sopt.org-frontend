@@ -18,9 +18,9 @@ const getProjectDetail = async (projectId: number): Promise<GetProjectDetailResp
   const { data } = await client.get(`/projects/${projectId}`);
   const dataServiceType = data.serviceType;
 
-  const serviceTypes = Array.isArray(dataServiceType) ? dataServiceType : [dataServiceType];
+  const serviceType = Array.isArray(dataServiceType) ? dataServiceType : [dataServiceType];
 
-  return { project: { ...data, serviceTypes } };
+  return { project: { ...data, serviceType } };
 };
 
 const getProjectList = async (

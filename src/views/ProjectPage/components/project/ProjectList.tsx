@@ -1,13 +1,12 @@
 import { Condition } from '@src/components/common/Condition';
 import { State } from '@src/hooks/useFetchBase/types';
-import { projectCategoryDescription } from '@src/lib/constants/project';
 import { ProjectCategoryType, ProjectType } from '@src/lib/types/project';
-import cc from 'classcat';
-import { useInfiniteScroll } from '../../hooks/useInfiniteScroll';
+import ProjectCardList from '@src/views/ProjectPage/components/project/ProjectCardList';
+import ProjectCategoryDescription from '@src/views/ProjectPage/components/project/ProjectCategoryDescription';
+import ProjectListCount from '@src/views/ProjectPage/components/project/ProjectListCount';
 import { EmptyContent } from '../common/EmptyContent';
-import { OvalSpinner } from '../common/OvalSpinner';
-import { ProjectCard, ProjectEnrollSection } from '../project';
 import styles from './project-list.module.scss';
+import * as S from './style';
 
 interface ProjectListProp {
   state: State<ProjectType[]>;
@@ -16,18 +15,15 @@ interface ProjectListProp {
 
 export function ProjectList({ selectedCategory, state }: ProjectListProp) {
   return (
-    <div className={cc([styles['total-container']])}>
+    <div>
       {(() => {
         switch (state._TAG) {
           case 'IDLE':
           case 'LOADING':
             return (
-              <div className={styles['list-container']}>
-                <div className={styles['selection-description']}>
-                  {ProjectCategoryDescription(selectedCategory)}
-                </div>
+              <div>
+                <ProjectCategoryDescription selectedCategory={selectedCategory} />
                 {ProjectListSkeletonUI()}
-                <ProjectEnrollSection />
               </div>
             );
           case 'ERROR':
@@ -36,19 +32,18 @@ export function ProjectList({ selectedCategory, state }: ProjectListProp) {
             const { data: projectList } = state;
             const listLength = projectList.length;
             return (
-              <div className={styles['list-container']}>
+              <div>
                 <Condition statement={listLength > 0}>
-                  <div className={styles['selection-description']}>
-                    {ProjectCategoryDescription(selectedCategory)}
-                    {ProjectListCount(listLength)}
-                  </div>
-                  {ProjectCardList(projectList)}
+                  <S.ProjectListHeader selectedCategory={selectedCategory}>
+                    <ProjectCategoryDescription selectedCategory={selectedCategory} />
+                    <ProjectListCount count={listLength} />
+                  </S.ProjectListHeader>
+                  <ProjectCardList projectList={projectList} />
                 </Condition>
                 <Condition statement={listLength === 0}>
-                  {ProjectCategoryDescription(selectedCategory)}
+                  <ProjectCategoryDescription selectedCategory={selectedCategory} />
                   <EmptyContent />
                 </Condition>
-                <ProjectEnrollSection />
               </div>
             );
           }
@@ -56,37 +51,6 @@ export function ProjectList({ selectedCategory, state }: ProjectListProp) {
       })()}
     </div>
   );
-}
-
-function ProjectCardList(list: ProjectType[]) {
-  const { data, isNextPage, ref } = useInfiniteScroll(list);
-
-  return (
-    <>
-      <section className={styles['card-list']}>
-        {data.map((project, index) => (
-          <ProjectCard key={index} project={project} />
-        ))}
-      </section>
-      {isNextPage && (
-        <div className={styles['observered']} ref={ref}>
-          <div className={styles['spinner']}>
-            <OvalSpinner />
-          </div>
-        </div>
-      )}
-    </>
-  );
-}
-
-function ProjectListCount(count: number) {
-  return <div className={styles['list-count']}>{count}개의 프로젝트</div>;
-}
-
-function ProjectCategoryDescription(category: ProjectCategoryType) {
-  const description = projectCategoryDescription[category];
-  if (description === '') return <p />;
-  return <p className={styles['category-description']}>{description}</p>;
 }
 
 function ProjectListSkeletonUI() {

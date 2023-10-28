@@ -9,7 +9,7 @@ import {
   projectPlatformLabel,
 } from '@src/lib/constants/project';
 import { ProjectCategoryType, ProjectPlatformType } from '@src/lib/types/project';
-import { ProjectList } from './components';
+import { ProjectList } from '@src/views/ProjectPage/components/project/ProjectList';
 import RecentProjectList from './components/RecentProjectList';
 import useFetch from './hooks/useFetch';
 import S from './styles';

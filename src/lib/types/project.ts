@@ -9,9 +9,6 @@ export enum ProjectCategoryType {
   APPJAM = 'APPJAM',
   SOPKATHON = 'SOPKATHON',
   SOPTERM = 'SOPTERM',
-  STUDY = 'STUDY',
-  JOINTSEMINAR = 'JOINTSEMINAR',
-  ETC = 'ETC',
 }
 
 export enum LinkType {
@@ -47,7 +44,7 @@ export interface ProjectType {
   thumbnailImage?: string;
   members: ProjectMemberType[];
   name: string;
-  serviceTypes: string[];
+  serviceType: string[];
   startAt: string;
   endAt: string;
   summary: string;
