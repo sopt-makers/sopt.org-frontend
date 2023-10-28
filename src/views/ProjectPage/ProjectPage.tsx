@@ -3,7 +3,7 @@ import PageLayout from '@src/components/common/PageLayout';
 import Select from '@src/components/common/Select';
 import { activeProjectCategoryList, projectCategoryLabel } from '@src/lib/constants/project';
 import { ProjectCategoryType } from '@src/lib/types/project';
-import { ProjectList } from './components';
+import { ProjectList } from '@src/views/ProjectPage/components/project/ProjectList';
 import useFetch from './hooks/useFetch';
 import { ContentWrapper, Root, SectionTitle } from './styles';
 
