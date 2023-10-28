@@ -25,7 +25,6 @@ export default function Select<T extends LabelKeyType>({
   const toggleSelect = () => setIsOpen(!isOpen);
 
   const handleSelect = (value: T) => {
-    console.log(value);
     setSelectedValue(value);
   };
 
