@@ -41,7 +41,7 @@ export default function BlogPage() {
   if (!(response._TAG === 'OK' || response._TAG === 'LOADING')) return null;
 
   return (
-    <PageLayout>
+    <PageLayout showScrollTopButton>
       <BlogTab
         selectedTab={selectedTab}
         setSelectedTab={setSelectedTab}
