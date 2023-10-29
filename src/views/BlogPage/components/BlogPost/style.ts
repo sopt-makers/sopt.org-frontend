@@ -11,7 +11,7 @@ export const BlogPost = styled.section`
   cursor: pointer;
   transition: opacity 0.2s linear;
   &:hover {
-    opacity: 0.8;
+    opacity: 0.7;
   }
 
   /* 모바일 뷰 */
