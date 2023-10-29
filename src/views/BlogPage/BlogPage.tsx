@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import PageLayout from '@src/components/common/PageLayout';
 import useStorage from '@src/hooks/useStorage';
 import { activeGenerationCategoryList } from '@src/lib/constants/tabs';
