@@ -3,7 +3,7 @@ import { useDeviceType, useIsDesktop, useIsMobile } from '@src/hooks/useDevice';
 import { CarouselArrowType, CarouselOverflowType } from '@src/lib/types/universal';
 
 export default function RecentProjectListCarousel({ children }: { children: JSX.Element[] }) {
-  const isDesktopSize = useIsDesktop('1920px');
+  const isDesktopSize = useIsDesktop('1280px');
   const isMobileSize = useIsMobile('899px');
   const deviceType = useDeviceType();
 
@@ -14,7 +14,7 @@ export default function RecentProjectListCarousel({ children }: { children: JSX.
   return (
     <Carousel
       stride={isDesktopSize ? 2 : 1}
-      itemWidth={isMobileSize ? 345 : 588}
+      itemWidth={isMobileSize ? 345 : 544}
       leftArrowType={arrowType}
       rightArrowType={arrowType}
       overflowType={overflowType}

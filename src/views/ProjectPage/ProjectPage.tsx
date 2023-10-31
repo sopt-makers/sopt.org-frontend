@@ -2,6 +2,7 @@ import { css } from '@emotion/react';
 import { useState } from 'react';
 import PageLayout from '@src/components/common/PageLayout';
 import Select from '@src/components/common/Select';
+import { useIsMobile } from '@src/hooks/useDevice';
 import {
   activeProjectCategoryList,
   activeProjectPlatformList,
@@ -19,6 +20,7 @@ function Projects() {
   const [selectedPlatform, setPlatform] = useState<ProjectPlatformType>(ProjectPlatformType.ALL);
 
   const state = useFetch(selectedCategory, selectedPlatform);
+  const isMobile = useIsMobile('899px');
 
   return (
     <PageLayout
@@ -31,7 +33,7 @@ function Projects() {
         <S.ContentWrapper>
           <RecentProjectList />
           <S.Spacing />
-          <S.SectionTitle>SOPT에서 진행된 프로젝트 둘러보기</S.SectionTitle>
+          <S.SectionTitle>SOPT{!isMobile && '에서 진행된'} 프로젝트 둘러보기</S.SectionTitle>
           <S.FilterWrapper>
             <Select
               options={activeProjectCategoryList}

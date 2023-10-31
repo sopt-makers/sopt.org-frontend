@@ -61,5 +61,41 @@ const FilterWrapper = styled.div`
   }
 `;
 
-const S = { SectionTitle, Root, ContentWrapper, Spacing, FilterWrapper };
+const PlaygroundLinkWrapper = styled.div`
+  color: ${colors.gray400};
+  /* Body/2_Medium_16 */
+  font-family: SUIT;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 165%; /* 26.4px */
+  letter-spacing: -0.24px;
+  margin-top: -44px;
+  margin-bottom: 28px;
+  display: flex;
+  gap: 4px;
+`;
+
+const PlaygroundLink = styled.a`
+  position: relative;
+  &::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color: ${colors.gray400};
+    left: 0;
+    bottom: 4px;
+  }
+`;
+
+const S = {
+  SectionTitle,
+  Root,
+  ContentWrapper,
+  Spacing,
+  FilterWrapper,
+  PlaygroundLinkWrapper,
+  PlaygroundLink,
+};
 export default S;
