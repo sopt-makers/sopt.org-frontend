@@ -2,10 +2,10 @@ import { Condition } from '@src/components/common/Condition';
 import { State } from '@src/hooks/useFetchBase/types';
 import { ProjectCategoryType, ProjectType } from '@src/lib/types/project';
 import ProjectCardList from '@src/views/ProjectPage/components/project/ProjectCardList';
+import ProjectCardSkeletonUI from '@src/views/ProjectPage/components/project/ProjectCardSkeletonUI';
 import ProjectCategoryDescription from '@src/views/ProjectPage/components/project/ProjectCategoryDescription';
 import ProjectListCount from '@src/views/ProjectPage/components/project/ProjectListCount';
 import { EmptyContent } from '../common/EmptyContent';
-import styles from './project-list.module.scss';
 import * as S from './style';
 
 interface ProjectListProp {
@@ -15,16 +15,19 @@ interface ProjectListProp {
 
 export function ProjectList({ selectedCategory, state }: ProjectListProp) {
   return (
-    <div>
+    <>
       {(() => {
         switch (state._TAG) {
           case 'IDLE':
           case 'LOADING':
             return (
-              <div>
-                <ProjectCategoryDescription selectedCategory={selectedCategory} />
-                {ProjectListSkeletonUI()}
-              </div>
+              <>
+                <S.ProjectListHeader selectedCategory={selectedCategory}>
+                  <ProjectCategoryDescription selectedCategory={selectedCategory} />
+                  <S.ProjectListCountSkeletonUI />
+                </S.ProjectListHeader>
+                <ProjectCardSkeletonUI />
+              </>
             );
           case 'ERROR':
             return <p>ERROR</p>;
@@ -32,7 +35,7 @@ export function ProjectList({ selectedCategory, state }: ProjectListProp) {
             const { data: projectList } = state;
             const listLength = projectList.length;
             return (
-              <div>
+              <>
                 <Condition statement={listLength > 0}>
                   <S.ProjectListHeader selectedCategory={selectedCategory}>
                     <ProjectCategoryDescription selectedCategory={selectedCategory} />
@@ -44,39 +47,11 @@ export function ProjectList({ selectedCategory, state }: ProjectListProp) {
                   <ProjectCategoryDescription selectedCategory={selectedCategory} />
                   <EmptyContent />
                 </Condition>
-              </div>
+              </>
             );
           }
         }
       })()}
-    </div>
-  );
-}
-
-function ProjectListSkeletonUI() {
-  const array = new Array(9).fill(undefined);
-  return (
-    <section className={styles['card-list']}>
-      {array.map((_, index) => {
-        return <CardSkeletonUI key={index} />;
-      })}
-    </section>
-  );
-}
-
-function CardSkeletonUI() {
-  return (
-    <article className={styles['skeleton']}>
-      <div className={styles['thumbnail']} />
-      <div className={styles['type-list']}>
-        <div className={styles['type']} />
-        <div className={styles['type']} />
-      </div>
-      <div className={styles['description']}>
-        <div className={styles['long-line']} />
-        <div className={styles['long-line']} />
-        <div className={styles['short-line']} />
-      </div>
-    </article>
+    </>
   );
 }

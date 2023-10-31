@@ -3,8 +3,8 @@ import { useDeviceType, useIsDesktop, useIsMobile } from '@src/hooks/useDevice';
 import { CarouselArrowType, CarouselOverflowType } from '@src/lib/types/universal';
 
 export default function RecentProjectListCarousel({ children }: { children: JSX.Element[] }) {
-  const isDesktopSize = useIsDesktop('1239px');
-  const isMobileSize = useIsMobile('767px');
+  const isDesktopSize = useIsDesktop('1920px');
+  const isMobileSize = useIsMobile('899px');
   const deviceType = useDeviceType();
 
   const arrowType = deviceType === 'desktop' ? CarouselArrowType.External : CarouselArrowType.None;

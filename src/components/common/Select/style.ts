@@ -38,7 +38,7 @@ const SelectTrigger = styled.button<{
     background-image: url(${arrowDown});
     transform: ${({ isOpened }) => (isOpened ? 'rotate(180deg)' : 'none')};
   }
-  @media (max-width: 765.9px) {
+  @media (max-width: 899px) {
     padding: 8px 12px;
     border-radius: 16px;
     font-size: 13px;

@@ -12,19 +12,17 @@ export default function ProjectCardList({ projectList }: ProjectCardList) {
   const { data, isNextPage, ref } = useInfiniteScroll(projectList);
 
   return (
-    <>
+    <S.ProjectFeed>
       <S.CardList>
         {data.map((project) => (
           <ProjectCard key={project.id} project={project} />
         ))}
       </S.CardList>
       {isNextPage && (
-        <div ref={ref}>
-          <div>
-            <OvalSpinner />
-          </div>
-        </div>
+        <S.SpinnerWrapper ref={ref}>
+          <OvalSpinner />
+        </S.SpinnerWrapper>
       )}
-    </>
+    </S.ProjectFeed>
   );
 }
