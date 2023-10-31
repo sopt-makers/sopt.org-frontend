@@ -150,10 +150,6 @@ export const Tag = styled.div`
   /* 모바일 뷰 */
   @media (max-width: 767px) {
     height: 20px;
-
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: -0.165px;
   }
 `;
 
