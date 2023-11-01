@@ -1,13 +1,13 @@
 import * as S from './style';
 
 export default function BlogPostSkeletonUI() {
-  const array = new Array(3).fill(0);
+  const BlogPostSkeletonUIList = [0, 1, 2];
 
   return (
     <S.BlogPostListWrapper>
       <S.BlogPostList>
-        {array.map((_, index) => (
-          <S.BlogPost key={index}>
+        {BlogPostSkeletonUIList.map((value) => (
+          <S.BlogPost key={value}>
             <S.HeaderWrapper>
               <S.Header></S.Header>
               <S.Body>
