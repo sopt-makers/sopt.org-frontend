@@ -39,6 +39,11 @@ export default function BlogPage() {
 
   if (!(response._TAG === 'OK' || response._TAG === 'LOADING')) return null;
 
+  const showTotalPostList = () => {
+    setMajorCategory(activeGenerationCategoryList[0]);
+    setSubCategory(PartCategoryType.ALL);
+  };
+
   return (
     <PageLayout showScrollTopButton>
       <BlogTab
@@ -50,15 +55,21 @@ export default function BlogPage() {
         setSubCategory={setSubCategory}
       />
       {response.data.length === 0 ? (
-        response._TAG === 'LOADING' && <BlogPostSkeletonUI />
+        response._TAG === 'LOADING' ? (
+          <BlogPostSkeletonUI />
+        ) : (
+          <S.EmptyBlogPostListWrapper>
+            <S.EmptyBlogPostList>
+              {`아직 올라온 ${selectedTab === 'article' ? '아티클이' : '활동후기가'} 없어요`}
+            </S.EmptyBlogPostList>
+            <S.Total onClick={showTotalPostList}>{`${
+              selectedTab === 'article' ? '아티클' : '활동후기'
+            } 전체 보기`}</S.Total>
+          </S.EmptyBlogPostListWrapper>
+        )
       ) : (
         <>
-          <BlogPostList
-            selectedTap={selectedTab}
-            setMajorCategory={setMajorCategory}
-            setSubCategory={setSubCategory}
-            blogPostList={response.data}
-          />
+          <BlogPostList selectedTap={selectedTab} blogPostList={response.data} />
           {(canGetMoreResponse || response._TAG === 'LOADING') && (
             <S.SpinnerWrapper ref={canGetMoreResponse ? ref : undefined}>
               <OvalSpinner />
