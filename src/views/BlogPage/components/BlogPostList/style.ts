@@ -1,5 +1,4 @@
 import styled from '@emotion/styled';
-import { colors } from '@sopt-makers/colors';
 
 export const BlogPostListWrapper = styled.div`
   display: flex;
