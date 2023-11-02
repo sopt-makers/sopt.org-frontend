@@ -16,7 +16,7 @@ const client = axios.create({
   timeout: DEFAULT_TIMEOUT,
 });
 
-const getResponse = async (
+export const getResponse = async (
   majorTab: number,
   subTab: PartCategoryType,
   pageNo = 1,
