@@ -7,7 +7,8 @@ import { OvalSpinner } from '@src/views/ProjectPage/components';
 import BlogPostList from './components/BlogPostList';
 import BlogTab from './components/BlogTab';
 import { BlogTabType } from './components/BlogTab/types';
-import useFetch from './hooks/useFetch';
+import { useGetResponse } from './hooks/queries/useGetResponse';
+import useInfiniteScroll from './hooks/useInfiniteScroll';
 import * as S from './style';
 
 export default function BlogPage() {
@@ -27,25 +28,22 @@ export default function BlogPage() {
     PartCategoryType.ALL,
   );
 
-  const {
-    state: response,
-    ref,
-    canGetMoreResponse,
-  } = useFetch({
+  const { response, hasNextPage, fetchNextPage, isFetching } = useGetResponse(
     selectedTab,
     selectedMajorCategory,
     selectedSubCategory,
-  });
-
-  if (!(response._TAG === 'OK' || response._TAG === 'LOADING')) return null;
+  );
+  const { ref } = useInfiniteScroll(fetchNextPage);
 
   const showTotalPostList = () => {
     setMajorCategory(activeGenerationCategoryList[0]);
     setSubCategory(PartCategoryType.ALL);
   };
 
+  if (!response) return null;
+
   return (
-    <PageLayout showScrollTopButton>
+    <PageLayout>
       <BlogTab
         selectedTab={selectedTab}
         setSelectedTab={setSelectedTab}
@@ -54,8 +52,9 @@ export default function BlogPage() {
         selectedSubCategory={selectedSubCategory}
         setSubCategory={setSubCategory}
       />
-      {response.data.length === 0 ? (
-        response._TAG === 'LOADING' ? (
+
+      {response.length === 0 ? (
+        isFetching ? (
           <BlogPostSkeletonUI />
         ) : (
           <S.EmptyBlogPostListWrapper>
@@ -69,9 +68,9 @@ export default function BlogPage() {
         )
       ) : (
         <>
-          <BlogPostList selectedTap={selectedTab} blogPostList={response.data} />
-          {(canGetMoreResponse || response._TAG === 'LOADING') && (
-            <S.SpinnerWrapper ref={canGetMoreResponse ? ref : undefined}>
+          <BlogPostList selectedTap={selectedTab} blogPostList={response} />
+          {(hasNextPage || isFetching) && (
+            <S.SpinnerWrapper ref={hasNextPage ? ref : undefined}>
               <OvalSpinner />
             </S.SpinnerWrapper>
           )}

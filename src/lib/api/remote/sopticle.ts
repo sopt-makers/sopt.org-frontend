@@ -28,14 +28,16 @@ const getResponse = async (
   const sessionId = sessionStorageHandler.getItemOrGenerate('session-id', nanoid);
   const parameter = qs.stringify({ ...partParameter, ...pageParameter, ...generationParameter });
 
-  const { data } = await client.get<{ hasNextPage: boolean; data: BlogPostType[] }>(
-    `/sopticle?${parameter}`,
-    { headers: { 'session-id': sessionId } },
-  );
+  const { data } = await client.get<{
+    hasNextPage: boolean;
+    data: BlogPostType[];
+    currentPage: number;
+  }>(`/sopticle?${parameter}`, { headers: { 'session-id': sessionId } });
 
   return {
     hasNextPage: data.hasNextPage,
     response: data.data,
+    currentPage: data.currentPage,
   };
 };
 

@@ -8,6 +8,7 @@ export type GetSampleReviewsResponse = {
 export type GetReviewsResponse = {
   response: BlogPostType[];
   hasNextPage: boolean;
+  currentPage: number;
 };
 
 export interface ReviewAPI {

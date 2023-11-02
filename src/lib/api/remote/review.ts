@@ -9,7 +9,7 @@ const client = axios.create({
   timeout: DEFAULT_TIMEOUT,
 });
 
-const getResponse = async (
+export const getResponse = async (
   majorTab: number,
   subTab: PartCategoryType,
   pageNo = 1,
@@ -21,7 +21,7 @@ const getResponse = async (
 
   const { data } = await client.get(`/reviews?${parameter}`);
 
-  return { hasNextPage: data.hasNextPage, response: data.data };
+  return { hasNextPage: data.hasNextPage, response: data.data, currentPage: data.currentPage };
 };
 
 const getSampleReviews = async (): Promise<GetSampleReviewsResponse> => {

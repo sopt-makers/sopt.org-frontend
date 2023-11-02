@@ -4,6 +4,7 @@ import { BlogPostType } from './blog';
 export type GetSopticlesResponse = {
   hasNextPage: boolean;
   response: BlogPostType[];
+  currentPage: number;
 };
 
 export type PostSopticleLikeResponse = {
