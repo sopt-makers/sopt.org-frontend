@@ -1,8 +1,8 @@
 import { BASE_URL, DEFAULT_TIMEOUT } from '@src/lib/constants/client';
-import { PartCategoryType } from '@src/lib/types/blog';
+import { BlogResponse, PartCategoryType } from '@src/lib/types/blog';
 import axios from 'axios';
 import qs from 'qs';
-import { GetReviewsResponse, GetSampleReviewsResponse, ReviewAPI } from '../../types/review';
+import { GetSampleReviewsResponse, ReviewAPI } from '../../types/review';
 
 const client = axios.create({
   baseURL: BASE_URL,
@@ -13,7 +13,7 @@ export const getResponse = async (
   majorTab: number,
   subTab: PartCategoryType,
   pageNo = 1,
-): Promise<GetReviewsResponse> => {
+): Promise<BlogResponse> => {
   const generationParameter = majorTab === 0 ? {} : { generation: majorTab };
   const partParameter = subTab === PartCategoryType.ALL ? {} : { part: subTab };
   const pageParameter = { pageNo, limit: 6 };
