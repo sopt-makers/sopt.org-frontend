@@ -2,12 +2,10 @@ import { useEffect } from 'react';
 import { FetchNextPageOptions, InfiniteQueryObserverResult } from 'react-query';
 import useBooleanState from '@src/hooks/useBooleanState';
 import useIntersectionObserver from '@src/hooks/useIntersectionObserver';
-import { GetReviewsResponse } from '@src/lib/types/review';
+import { BlogResponse } from '@src/lib/types/blog';
 
 export default function useInfiniteScroll(fetchNextPage: {
-  (options?: FetchNextPageOptions | undefined): Promise<
-    InfiniteQueryObserverResult<GetReviewsResponse, unknown>
-  >;
+  (options?: FetchNextPageOptions): Promise<InfiniteQueryObserverResult<BlogResponse>>;
   (): void;
 }) {
   const [hasObserved, setHasObserved, setHasUnObserved] = useBooleanState(false);
