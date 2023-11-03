@@ -62,6 +62,9 @@ const FilterWrapper = styled.div`
 `;
 
 const PlaygroundLinkWrapper = styled.div`
+  @media (max-width: 899px) {
+    display: none;
+  }
   color: ${colors.gray400};
   /* Body/2_Medium_16 */
   font-family: SUIT;
