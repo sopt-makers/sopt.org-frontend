@@ -1,11 +1,6 @@
 import { BASE_URL, DEFAULT_TIMEOUT } from '@src/lib/constants/client';
-import { BlogPostType } from '@src/lib/types/blog';
-import { PartCategoryType } from '@src/lib/types/blog';
-import {
-  GetSopticlesResponse,
-  PostSopticleLikeResponse,
-  SopticleAPI,
-} from '@src/lib/types/sopticle';
+import { BlogPostType, BlogResponse, PartCategoryType } from '@src/lib/types/blog';
+import { PostSopticleLikeResponse, SopticleAPI } from '@src/lib/types/sopticle';
 import { getStorageHandler } from '@src/lib/utils/storageHandler';
 import axios from 'axios';
 import { nanoid } from 'nanoid';
@@ -20,7 +15,7 @@ export const getResponse = async (
   majorTab: number,
   subTab: PartCategoryType,
   pageNo = 1,
-): Promise<GetSopticlesResponse> => {
+): Promise<BlogResponse> => {
   const generationParameter = majorTab === 0 ? {} : { generation: majorTab };
   const partParameter = subTab === PartCategoryType.ALL ? {} : { part: subTab };
   const pageParameter = { pageNo, limit: 6 };
