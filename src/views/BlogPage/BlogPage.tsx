@@ -1,3 +1,4 @@
+import { css } from '@emotion/react';
 import PageLayout from '@src/components/common/PageLayout';
 import useStorage from '@src/hooks/useStorage';
 import { activeGenerationCategoryList } from '@src/lib/constants/tabs';
@@ -43,7 +44,13 @@ export default function BlogPage() {
   if (!response) return null;
 
   return (
-    <PageLayout>
+    <PageLayout
+      showScrollTopButton
+      moreStyle={css`
+        justify-content: space-between;
+        height: 100vh;
+      `}
+    >
       <BlogTab
         selectedTab={selectedTab}
         setSelectedTab={setSelectedTab}
