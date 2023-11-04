@@ -8,12 +8,10 @@ interface ProjectCardList {
 
 export default function ProjectCardList({ projectList }: ProjectCardList) {
   return (
-    <S.ProjectFeed>
-      <S.CardList>
-        {projectList.map((project) => (
-          <ProjectCard key={project.id} project={project} />
-        ))}
-      </S.CardList>
-    </S.ProjectFeed>
+    <S.CardList>
+      {projectList.map((project) => (
+        <ProjectCard key={project.id} project={project} />
+      ))}
+    </S.CardList>
   );
 }
