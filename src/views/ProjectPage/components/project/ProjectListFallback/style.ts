@@ -1,11 +1,9 @@
 import styled from '@emotion/styled';
 import { colors } from '@sopt-makers/colors';
-import { ProjectCategoryType } from '@src/lib/types/project';
 
-export const ProjectListHeader = styled.div<{ selectedCategory: ProjectCategoryType }>`
+export const ProjectListHeader = styled.div`
   display: flex;
-  justify-content: ${({ selectedCategory }) =>
-    selectedCategory === ProjectCategoryType.ALL ? 'end' : 'space-between'};
+  justify-content: end;
   align-items: center;
   margin-bottom: 30px;
 
