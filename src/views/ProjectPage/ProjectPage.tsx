@@ -1,5 +1,5 @@
 import { css } from '@emotion/react';
-import { useState } from 'react';
+import { Suspense, useState } from 'react';
 import PageLayout from '@src/components/common/PageLayout';
 import Select from '@src/components/common/Select';
 import { useIsMobile } from '@src/hooks/useDevice';
@@ -11,15 +11,13 @@ import {
 } from '@src/lib/constants/project';
 import { ProjectCategoryType, ProjectPlatformType } from '@src/lib/types/project';
 import { ProjectList } from '@src/views/ProjectPage/components/project/ProjectList';
+import ProjectListFallback from '@src/views/ProjectPage/components/project/ProjectListFallback';
 import RecentProjectList from './components/RecentProjectList';
-import useFetch from './hooks/useFetch';
 import S from './styles';
 
 function Projects() {
   const [selectedCategory, setCategory] = useState<ProjectCategoryType>(ProjectCategoryType.ALL);
   const [selectedPlatform, setPlatform] = useState<ProjectPlatformType>(ProjectPlatformType.ALL);
-
-  const state = useFetch(selectedCategory, selectedPlatform);
   const isMobile = useIsMobile('899px');
 
   return (
@@ -52,7 +50,9 @@ function Projects() {
               baseValue={ProjectPlatformType.ALL}
             />
           </S.FilterWrapper>
-          <ProjectList state={state} selectedCategory={selectedCategory} />
+          <Suspense fallback={<ProjectListFallback selectedCategory={selectedCategory} />}>
+            <ProjectList selectedCategory={selectedCategory} selectedPlatform={selectedPlatform} />
+          </Suspense>
         </S.ContentWrapper>
       </S.Root>
     </PageLayout>
