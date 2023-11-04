@@ -2,7 +2,6 @@ import { css } from '@emotion/react';
 import { Suspense, useState } from 'react';
 import PageLayout from '@src/components/common/PageLayout';
 import Select from '@src/components/common/Select';
-import { useIsMobile } from '@src/hooks/useDevice';
 import {
   activeProjectCategoryList,
   activeProjectPlatformList,
@@ -18,7 +17,6 @@ import S from './styles';
 function Projects() {
   const [selectedCategory, setCategory] = useState<ProjectCategoryType>(ProjectCategoryType.ALL);
   const [selectedPlatform, setPlatform] = useState<ProjectPlatformType>(ProjectPlatformType.ALL);
-  const isMobile = useIsMobile('899px');
 
   return (
     <PageLayout
@@ -31,7 +29,9 @@ function Projects() {
         <S.ContentWrapper>
           <RecentProjectList />
           <S.Spacing />
-          <S.SectionTitle>SOPT{!isMobile && '에서 진행된'} 프로젝트 둘러보기</S.SectionTitle>
+          <S.SectionTitle>
+            SOPT<span>에서 진행된</span> 프로젝트 둘러보기
+          </S.SectionTitle>
           <S.FilterWrapper>
             <Select
               options={activeProjectCategoryList}
