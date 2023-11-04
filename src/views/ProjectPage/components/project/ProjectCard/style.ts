@@ -4,9 +4,12 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 export const ProjectCard = styled(Link)`
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+  display: grid;
+  grid-template-areas:
+    'thumbnail'
+    'header'
+    'summary';
+  grid-template-rows: 202px 32px 44px;
 
   width: 352px;
   /* height: 345px; */
@@ -17,6 +20,13 @@ export const ProjectCard = styled(Link)`
   cursor: pointer;
 
   @media (max-width: 899px) {
+    grid-template-areas:
+      'thumbnail header'
+      'summary summary';
+    grid-template-rows: none;
+    grid-template-columns: auto 1fr;
+    grid-gap: 12px;
+
     width: 100%;
     padding: 0 0 10px 0;
     border: none;
@@ -26,22 +36,18 @@ export const ProjectCard = styled(Link)`
 `;
 
 export const ProjectThumbnail = styled(Image)`
+  grid-area: thumbnail;
   border-radius: 8px;
-
   object-fit: cover;
-`;
-
-export const ProjectContent = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
 
   @media (max-width: 899px) {
-    gap: 12px;
+    width: 40px;
+    height: 40px;
   }
 `;
 
 export const ProjectHeader = styled.div`
+  grid-area: header;
   display: flex;
   gap: 12px;
 `;
@@ -81,6 +87,7 @@ export const Divider = styled.span`
 `;
 
 export const ProjectSummary = styled.div`
+  grid-area: summary;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
