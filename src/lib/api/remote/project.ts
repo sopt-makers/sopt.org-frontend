@@ -1,18 +1,15 @@
-import { BASE_URL, DEFAULT_TIMEOUT } from '@src/lib/constants/client';
+import { BASE_URL } from '@src/lib/constants/client';
 import axios from 'axios';
 import qs from 'qs';
 import {
   GetProjectDetailResponse,
-  GetProjectListResponse,
   ProjectAPI,
   ProjectCategoryType,
   ProjectPlatformType,
+  ProjectType,
 } from '../../types/project';
 
-const client = axios.create({
-  baseURL: BASE_URL,
-  timeout: DEFAULT_TIMEOUT,
-});
+const client = axios.create({ baseURL: BASE_URL });
 
 const getProjectDetail = async (projectId: number): Promise<GetProjectDetailResponse> => {
   const { data } = await client.get(`/projects/${projectId}`);
@@ -26,12 +23,12 @@ const getProjectDetail = async (projectId: number): Promise<GetProjectDetailResp
 const getProjectList = async (
   category: ProjectCategoryType,
   platform: ProjectPlatformType,
-): Promise<GetProjectListResponse> => {
+): Promise<ProjectType[]> => {
   const categoryParameter = category === ProjectCategoryType.ALL ? {} : { filter: category };
   const platformParameter = platform === ProjectPlatformType.ALL ? {} : { platform };
   const parameter = qs.stringify({ ...categoryParameter, ...platformParameter });
   const { data } = await client.get(`/projects?${parameter}`);
-  return { projects: data };
+  return data;
 };
 
 export const remoteProjectAPI: ProjectAPI = {

@@ -11,8 +11,8 @@ const useFetch = (
 ) => {
   const willFetch = useCallback(async () => {
     const response = await api.projectAPI.getProjectList(selectedCategory, selectedPlatform);
-    if (sortProp) return sortBy<ProjectType>(response.projects, sortProp);
-    return response.projects;
+    if (sortProp) return sortBy<ProjectType>(response, sortProp);
+    return response;
   }, [selectedCategory, selectedPlatform, sortProp]);
 
   const state = useFetchBase(willFetch);
