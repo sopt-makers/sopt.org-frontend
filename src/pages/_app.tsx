@@ -4,8 +4,8 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { Global } from '@emotion/react';
 import { useEffect } from 'react';
-import { useState } from 'react';
 import { QueryClient, QueryClientProvider } from 'react-query';
+import { ReactQueryDevtools } from 'react-query/devtools';
 import SEO from '@src/components/common/SEO';
 import GoogleTagManagerNoscript from '@src/components/googleTagManager/Noscript';
 import GoogleTagManagerScript from '@src/components/googleTagManager/Script';
@@ -14,6 +14,18 @@ import { AMPLITUDE_API_KEY } from '@src/lib/constants/client';
 import { global } from '@src/lib/styles/global';
 import { pageViewTrackingEnrichment } from '@src/lib/utils/pageViewTrackingEnrichment';
 
+export const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      retry: 0,
+      suspense: true,
+      refetchOnWindowFocus: false,
+      refetchOnMount: false,
+      refetchOnReconnect: false,
+    },
+  },
+});
+
 amplitude.add(pageViewTrackingEnrichment());
 amplitude.init(AMPLITUDE_API_KEY, {
   logLevel: amplitude.Types.LogLevel.Warn,
@@ -21,8 +33,6 @@ amplitude.init(AMPLITUDE_API_KEY, {
 });
 
 function MyApp({ Component, pageProps }: AppProps) {
-  const [queryClient] = useState(() => new QueryClient());
-
   const router = useRouter();
   useEffect(() => {
     router.events.on('routeChangeComplete', gtm.pageview);
@@ -76,6 +86,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Global styles={global} />
       <QueryClientProvider client={queryClient}>
         <Component {...pageProps} />
+        <ReactQueryDevtools initialIsOpen={false} />
       </QueryClientProvider>
       <GoogleTagManagerNoscript />
     </>
