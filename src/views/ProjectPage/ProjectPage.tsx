@@ -1,7 +1,8 @@
 import { css } from '@emotion/react';
-import { Suspense, useState } from 'react';
+import { Suspense } from 'react';
 import PageLayout from '@src/components/common/PageLayout';
 import Select from '@src/components/common/Select';
+import useStorage from '@src/hooks/useStorage';
 import {
   activeProjectCategoryList,
   activeProjectPlatformList,
@@ -15,8 +16,16 @@ import RecentProjectList from './components/RecentProjectList';
 import S from './styles';
 
 function Projects() {
-  const [selectedCategory, setCategory] = useState<ProjectCategoryType>(ProjectCategoryType.ALL);
-  const [selectedPlatform, setPlatform] = useState<ProjectPlatformType>(ProjectPlatformType.ALL);
+  const [selectedCategory, setCategory] = useStorage(
+    'projectCategory',
+    'sessionStorage',
+    ProjectCategoryType.ALL,
+  );
+  const [selectedPlatform, setPlatform] = useStorage(
+    'projectPlatform',
+    'sessionStorage',
+    ProjectPlatformType.ALL,
+  );
 
   return (
     <PageLayout
