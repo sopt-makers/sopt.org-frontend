@@ -16,12 +16,12 @@ import RecentProjectList from './components/RecentProjectList';
 import S from './styles';
 
 function Projects() {
-  const [selectedCategory, setCategory] = useStorage(
+  const [selectedCategory, setCategory] = useStorage<ProjectCategoryType>(
     'projectCategory',
     'sessionStorage',
     ProjectCategoryType.ALL,
   );
-  const [selectedPlatform, setPlatform] = useStorage(
+  const [selectedPlatform, setPlatform] = useStorage<ProjectPlatformType>(
     'projectPlatform',
     'sessionStorage',
     ProjectPlatformType.ALL,
@@ -59,7 +59,7 @@ function Projects() {
               baseValue={ProjectPlatformType.ALL}
             />
           </S.FilterWrapper>
-          <Suspense fallback={<ProjectListFallback selectedCategory={selectedCategory} />}>
+          <Suspense fallback={<ProjectListFallback />}>
             <ProjectList selectedCategory={selectedCategory} selectedPlatform={selectedPlatform} />
           </Suspense>
         </S.ContentWrapper>
