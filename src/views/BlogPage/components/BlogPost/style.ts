@@ -5,6 +5,7 @@ import Image from 'next/image';
 export const BlogPost = styled.section`
   display: flex;
   justify-content: space-between;
+  max-width: 900px;
   width: 100%;
   gap: 36px;
 
@@ -17,6 +18,7 @@ export const BlogPost = styled.section`
   /* 모바일 뷰 */
   @media (max-width: 767px) {
     gap: 16px;
+    width: 100%;
   }
 `;
 

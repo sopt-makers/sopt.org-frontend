@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-export const BlogPostListWrapper = styled.div`
+export const BlogPostList = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -9,20 +9,12 @@ export const BlogPostListWrapper = styled.div`
   padding-left: 20px;
   padding-right: 20px;
   margin-bottom: 108px;
-`;
-export const BlogPostList = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 80px;
-  max-width: 900px;
-  width: 100%;
 
   margin-top: 30px;
+  gap: 80px;
 
   /* 모바일 뷰 */
   @media (max-width: 767px) {
-    width: 100%;
     margin-top: 24px;
     gap: 36px;
   }
