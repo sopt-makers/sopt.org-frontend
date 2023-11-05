@@ -41,8 +41,6 @@ export default function BlogPage() {
     setSubCategory(PartCategoryType.ALL);
   };
 
-  if (!response) return null;
-
   return (
     <PageLayout
       showScrollTopButton
@@ -59,27 +57,28 @@ export default function BlogPage() {
         selectedSubCategory={selectedSubCategory}
         setSubCategory={setSubCategory}
       />
-
-      {response.length === 0 ? (
-        isFetching ? (
-          <BlogPostSkeletonUI />
-        ) : (
-          <S.EmptyBlogPostListWrapper>
-            <S.EmptyBlogPostList>
-              {`아직 올라온 ${selectedTab === 'article' ? '아티클이' : '활동후기가'} 없어요`}
-            </S.EmptyBlogPostList>
-            <S.Total onClick={showTotalPostList}>{`${
-              selectedTab === 'article' ? '아티클' : '활동후기'
-            } 전체 보기`}</S.Total>
-          </S.EmptyBlogPostListWrapper>
-        )
+      {!response ? (
+        <BlogPostSkeletonUI />
       ) : (
         <>
-          <BlogPostList selectedTap={selectedTab} blogPostList={response} />
-          {(hasNextPage || isFetching) && (
-            <S.SpinnerWrapper ref={hasNextPage ? ref : undefined}>
-              <OvalSpinner />
-            </S.SpinnerWrapper>
+          {response.length === 0 ? (
+            <S.EmptyBlogPostListWrapper>
+              <S.EmptyBlogPostList>
+                {`아직 올라온 ${selectedTab === 'article' ? '아티클이' : '활동후기가'} 없어요`}
+              </S.EmptyBlogPostList>
+              <S.Total onClick={showTotalPostList}>{`${
+                selectedTab === 'article' ? '아티클' : '활동후기'
+              } 전체 보기`}</S.Total>
+            </S.EmptyBlogPostListWrapper>
+          ) : (
+            <>
+              <BlogPostList selectedTap={selectedTab} blogPostList={response} />
+              {(hasNextPage || isFetching) && (
+                <S.SpinnerWrapper ref={hasNextPage ? ref : undefined}>
+                  <OvalSpinner />
+                </S.SpinnerWrapper>
+              )}
+            </>
           )}
         </>
       )}
