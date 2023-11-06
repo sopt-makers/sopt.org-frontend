@@ -5,18 +5,20 @@ import Image from 'next/image';
 export const BlogPost = styled.section`
   display: flex;
   justify-content: space-between;
+  max-width: 900px;
   width: 100%;
   gap: 36px;
 
   cursor: pointer;
   transition: opacity 0.2s linear;
   &:hover {
-    opacity: 0.8;
+    opacity: 0.7;
   }
 
   /* 모바일 뷰 */
   @media (max-width: 767px) {
     gap: 16px;
+    width: 100%;
   }
 `;
 

@@ -37,3 +37,9 @@ export enum PartCategoryType {
   WEB = 'WEB',
   SERVER = 'SERVER',
 }
+
+export type BlogResponse = {
+  hasNextPage: boolean;
+  response: BlogPostType[];
+  currentPage: number;
+};

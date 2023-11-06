@@ -41,7 +41,7 @@ export default function Select<T extends LabelKeyType>({
         onClick={toggleSelect}
         isSelectionExist={selectedValue !== baseValue}
         isOpened={isOpen}
-        selectedValue={selectedValue}
+        isWide={labels[selectedValue].length >= 5}
       >
         {selectedValue === baseValue ? baseLabel : labels[selectedValue]}
       </S.SelectTrigger>

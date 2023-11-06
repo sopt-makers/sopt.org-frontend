@@ -1,29 +1,31 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
+import { FetchNextPageOptions, InfiniteQueryObserverResult } from 'react-query';
 import useBooleanState from '@src/hooks/useBooleanState';
 import useIntersectionObserver from '@src/hooks/useIntersectionObserver';
+import { BlogResponse } from '@src/lib/types/blog';
 
-export default function useInfiniteScroll(isLoading: boolean) {
-  const [count, setCount] = useState(1);
+export default function useInfiniteScroll(fetchNextPage: {
+  (options?: FetchNextPageOptions): Promise<InfiniteQueryObserverResult<BlogResponse>>;
+  (): void;
+}) {
   const [hasObserved, setHasObserved, setHasUnObserved] = useBooleanState(false);
 
   const ref = useIntersectionObserver(
     async (entry, observer) => {
-      if (!hasObserved && entry.isIntersecting && !isLoading) {
-        setCount((prevCount) => prevCount + 1);
+      if (!hasObserved && entry.isIntersecting) {
+        fetchNextPage();
         setHasObserved();
       }
 
-      // 엔트리를 관찰 중단합니다.
       observer.unobserve(entry.target);
+      setHasUnObserved();
     },
     { rootMargin: '80px' },
   );
 
   useEffect(() => {
-    if (!isLoading) {
-      setHasUnObserved();
-    }
-  }, [isLoading]);
+    setHasUnObserved();
+  }, []);
 
-  return { ref, count, setCount };
+  return { ref };
 }

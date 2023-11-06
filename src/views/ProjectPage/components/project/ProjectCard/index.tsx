@@ -1,5 +1,6 @@
 import { track } from '@amplitude/analytics-browser';
 import { ProjectType } from '@src/lib/types/project';
+import ServiceInfo from '@src/views/ProjectPage/components/project/ProjectCard/ServiceInfo';
 import * as S from './style';
 
 export default function ProjectCard({ project }: { project: ProjectType }) {
@@ -26,7 +27,13 @@ export default function ProjectCard({ project }: { project: ProjectType }) {
         </S.ProjectText>
       </S.ProjectHeader>
       <S.ProjectSummary>{project.summary}</S.ProjectSummary>
-      {/* TODO: 서비스 이용 가능 및 창업 정보와 멤버 정보 추가 필요  */}
+      <S.ProjectDetail>
+        <S.ServiceDetail>
+          {project.isAvailable && <ServiceInfo text="서비스 이용 가능" />}
+          {project.isFounding && <ServiceInfo text="창업 중" />}
+        </S.ServiceDetail>
+        {/* TODO: 멤버 정보 추가 필요  */}
+      </S.ProjectDetail>
     </S.ProjectCard>
   );
 }

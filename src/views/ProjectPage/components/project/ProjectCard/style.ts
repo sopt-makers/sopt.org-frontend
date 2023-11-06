@@ -12,7 +12,7 @@ export const ProjectCard = styled(Link)`
   grid-template-rows: 202px 32px 44px;
 
   width: 352px;
-  /* height: 345px; */
+  height: 345px;
   padding: 14px;
   border: 1px solid ${colors.gray700};
   border-radius: 20px;
@@ -26,8 +26,9 @@ export const ProjectCard = styled(Link)`
     grid-template-rows: none;
     grid-template-columns: auto 1fr;
     grid-gap: 12px;
-
+    
     width: 100%;
+    height: auto;
     padding: 0 0 10px 0;
     border: none;
     border-bottom: 1px solid ${colors.gray900};
@@ -116,4 +117,16 @@ export const ProjectSummary = styled.div`
     line-height: 20px; /* 153.846% */
     letter-spacing: -0.195px;
   }
+`;
+
+export const ProjectDetail = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 30px;
+`;
+
+export const ServiceDetail = styled.div`
+  display: flex;
+  gap: 6px;
 `;
