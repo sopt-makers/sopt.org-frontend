@@ -8,12 +8,13 @@ export const ProjectCard = styled(Link)`
   grid-template-areas:
     'thumbnail'
     'header'
-    'summary';
-  grid-template-rows: 202px 32px 44px;
+    'summary'
+    'detail';
+  grid-template-rows: 202px 32px 54px 30px;
 
   width: 352px;
   height: 345px;
-  padding: 14px;
+  padding: 14px 14px 11px 14px;
   border: 1px solid ${colors.gray700};
   border-radius: 20px;
 
@@ -120,6 +121,8 @@ export const ProjectSummary = styled.div`
 `;
 
 export const ProjectDetail = styled.div`
+  grid-area: detail;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
