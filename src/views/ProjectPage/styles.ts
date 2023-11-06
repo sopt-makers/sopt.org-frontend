@@ -23,6 +23,8 @@ const Root = styled.div`
   align-items: center;
   min-height: 100vh;
   margin: 0 auto;
+  width: 100vw;
+  overflow-x: hidden;
 `;
 
 const ContentWrapper = styled.div`
