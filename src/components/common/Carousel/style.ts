@@ -30,7 +30,7 @@ const Wrapper = styled(HideScrollbar)<{ isSliding: boolean; lastIndex: boolean }
   }
 
   ::after {
-    right: 0;
+    right: -1px;
     background: linear-gradient(270deg, ${colors.gray950} 0%, transparent 100%);
 
     opacity: 0;
