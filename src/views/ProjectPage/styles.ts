@@ -14,6 +14,10 @@ const SectionTitle = styled.div`
     font-weight: 700;
     letter-spacing: -0.36px;
     margin-bottom: 20px;
+
+    & > span {
+      display: none;
+    }
   }
 `;
 

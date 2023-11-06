@@ -51,7 +51,7 @@ export default function BlogPost({ selectedTap, blogPost }: BlogPostProps) {
       <S.ThumbnailWrapper>
         <S.Thumbnail
           src={
-            blogPost.thumbnailUrl.charAt(0) !== 'h'
+            blogPost.thumbnailUrl?.charAt(0) !== 'h'
               ? `https:${blogPost.thumbnailUrl}`
               : error
               ? img_blog_default

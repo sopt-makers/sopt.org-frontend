@@ -56,14 +56,10 @@ export interface GetProjectDetailResponse {
   project: ProjectType;
 }
 
-export interface GetProjectListResponse {
-  projects: ProjectType[];
-}
-
 export interface ProjectAPI {
   getProjectDetail(projectId: number): Promise<GetProjectDetailResponse>;
   getProjectList(
     category: ProjectCategoryType,
     platform: ProjectPlatformType,
-  ): Promise<GetProjectListResponse>;
+  ): Promise<ProjectType[]>;
 }

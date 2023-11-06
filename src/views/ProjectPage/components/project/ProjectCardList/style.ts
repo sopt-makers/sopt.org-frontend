@@ -1,11 +1,5 @@
 import styled from '@emotion/styled';
 
-export const ProjectFeed = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 50px;
-`;
-
 export const CardList = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;

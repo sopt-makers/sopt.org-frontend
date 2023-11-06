@@ -53,7 +53,7 @@ export const ProjectContent = styled.div`
 export const ProjectThumbnail = styled.div`
   width: 324px;
   height: 192px;
-  background-color: ${colors.gray800};
+  background-color: ${colors.gray900};
   border-radius: 8px;
 
   @media (max-width: 899px) {
@@ -64,7 +64,7 @@ export const ProjectThumbnail = styled.div`
 export const ProjectLogo = styled.div`
   width: 40px;
   height: 40px;
-  background-color: ${colors.gray800};
+  background-color: ${colors.gray900};
   border-radius: 8px;
 
   @media (min-width: 900px) {
@@ -86,21 +86,21 @@ export const ProjectText = styled.div`
 export const ProjectTitle = styled.div`
   width: 100px;
   height: 28px;
-  background-color: ${colors.gray800};
+  background-color: ${colors.gray900};
   border-radius: 8px;
 `;
 
 export const ProjectType = styled.div`
   width: 39px;
   height: 28px;
-  background-color: ${colors.gray800};
+  background-color: ${colors.gray900};
   border-radius: 8px;
 `;
 
 export const ProjectSummary = styled.div`
   width: 270px;
   height: 22px;
-  background-color: ${colors.gray800};
+  background-color: ${colors.gray900};
   border-radius: 8px;
 
   @media (max-width: 899px) {

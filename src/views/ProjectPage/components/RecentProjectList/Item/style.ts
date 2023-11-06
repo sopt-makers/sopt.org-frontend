@@ -18,10 +18,11 @@ const GridWrapper = styled.div`
   /* 모바일 뷰 */
   @media (max-width: 899px) {
     width: 325px;
-    grid-template-areas: 'img detail' 'footer footer';
+    grid-template-areas:
+      'img detail'
+      'footer footer';
     grid-template-columns: 48px auto;
-    column-gap: 10px;
-    row-gap: 16px;
+    gap: 16px 10px;
     padding: 16px;
   }
 `;

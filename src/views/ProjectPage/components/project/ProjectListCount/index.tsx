@@ -1,4 +1,3 @@
-import { useMediaQuery } from 'react-responsive';
 import * as S from './style';
 
 interface ProjectListCountProps {
@@ -6,11 +5,9 @@ interface ProjectListCountProps {
 }
 
 export default function ProjectListCount({ count }: ProjectListCountProps) {
-  const isTablet = useMediaQuery({ query: '(min-width: 900px) and (max-width: 1279px)' });
-
   return (
     <S.Count>
-      {count}개{!isTablet && '의 프로젝트'}
+      {count}개<span>의 프로젝트</span>
     </S.Count>
   );
 }

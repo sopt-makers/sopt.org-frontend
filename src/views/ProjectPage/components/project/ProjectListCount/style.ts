@@ -12,6 +12,12 @@ export const Count = styled.div`
   line-height: 165%; /* 29.7px */
   letter-spacing: -0.27px;
 
+  @media (max-width: 1279px) and (min-width: 900px) {
+    & > span {
+      display: none;
+    }
+  }
+
   /* 모바일 뷰 */
   @media (max-width: 899px) {
     /* Body/3_Medium_14 */

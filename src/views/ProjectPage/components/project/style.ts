@@ -1,5 +1,4 @@
 import styled from '@emotion/styled';
-import { colors } from '@sopt-makers/colors';
 import { ProjectCategoryType } from '@src/lib/types/project';
 
 export const ProjectListHeader = styled.div<{ selectedCategory: ProjectCategoryType }>`
@@ -14,11 +13,4 @@ export const ProjectListHeader = styled.div<{ selectedCategory: ProjectCategoryT
     gap: 20px;
     margin-bottom: 28px;
   }
-`;
-
-export const ProjectListCountSkeletonUI = styled.div`
-  width: 89px;
-  height: 23px;
-  background-color: ${colors.gray800};
-  border-radius: 8px;
 `;
