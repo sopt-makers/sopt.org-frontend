@@ -36,7 +36,7 @@ const ContentWrapper = styled.div`
   flex-direction: column;
 
   width: 1112px;
-  padding: 100px 0;
+  padding: 188px 0;
 
   /* 태블릿 뷰 */
   @media (max-width: 1279px) and (min-width: 900px) {
@@ -46,6 +46,7 @@ const ContentWrapper = styled.div`
   /* 모바일 뷰 */
   @media (max-width: 899px) {
     width: 360px;
+    padding: 76px 0;
   }
 `;
 
