@@ -27,6 +27,7 @@ export const useGetResponse = (
     ({ pageParam = 1 }) => getTabResponse(selectedTab, generation, part, pageParam),
     {
       getNextPageParam: (lastPage) => (lastPage.hasNextPage ? lastPage.currentPage + 1 : undefined),
+      suspense: true,
     },
   );
 

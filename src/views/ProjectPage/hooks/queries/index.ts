@@ -12,5 +12,6 @@ export const useGetProjectList = (
   return useQuery(queryKey, () => api.projectAPI.getProjectList(category, platform), {
     select: (data) => (sortType ? sortBy<ProjectType>(data, 'updatedAt') : data),
     staleTime: 30000,
+    suspense: true,
   });
 };

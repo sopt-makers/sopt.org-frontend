@@ -4,14 +4,14 @@ import DefaultProfileImage from '@src/views/BlogPage/components/BlogPost/Default
 import * as S from './style';
 
 interface HeaderProps {
-  selectedTap: string;
+  selectedTab: string;
   blogPost: BlogPostType;
 }
 
-export default function Header({ selectedTap, blogPost }: HeaderProps) {
+export default function Header({ selectedTab, blogPost }: HeaderProps) {
   return (
     <S.Header>
-      {selectedTap === 'article' ? (
+      {selectedTab === 'article' ? (
         <>
           <S.Profile>
             {blogPost.authorProfileImageUrl ? (

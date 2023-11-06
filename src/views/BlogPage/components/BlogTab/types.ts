@@ -1,3 +1,5 @@
+import type { PartCategoryType } from '@src/lib/types/blog';
+
 export enum BlogTabType {
   REVIEW = 'review',
   ARTICLE = 'article',
@@ -9,3 +11,9 @@ type BlogTabContent = {
 };
 
 export type BlogTabMap = Record<BlogTabType, BlogTabContent>;
+
+export type selectedType = {
+  selectedTab: BlogTabType;
+  selectedMajorCategory: number;
+  selectedSubCategory: PartCategoryType;
+};
