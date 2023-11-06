@@ -24,7 +24,7 @@ export const Like = styled.div`
 
   transition: opacity 0.1s ease-out;
 
-  z-index: 100;
+  z-index: 99;
   &:hover {
     opacity: 0.8;
   }
