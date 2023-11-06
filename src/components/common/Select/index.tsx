@@ -46,7 +46,7 @@ export default function Select<T extends LabelKeyType>({
         {selectedValue === baseValue ? baseLabel : labels[selectedValue]}
       </S.SelectTrigger>
       {isOpen && (
-        <S.SelectItemWrapper ref={selectItemWrapperRef}>
+        <S.SelectItemWrapper ref={selectItemWrapperRef} isWide={labels[selectedValue].length >= 5}>
           {options.map((option, index) => (
             <S.SelectItem
               key={index}

@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import { colors } from '@sopt-makers/colors';
-import arrowDown from '@src/assets/icons/arrow_down.svg';
+import ic_chevron_down from '@src/assets/icons/ic_chevron_down.svg';
 
 const SelectWrapper = styled.div`
   position: relative;
@@ -16,14 +16,14 @@ const SelectTrigger = styled.button<{
   width: ${({ isWide }) => (isWide ? '132px' : '110px')};
   font-size: 16px;
   font-weight: 500;
-  padding: 9px ${({ isSelectionExist }) => (isSelectionExist ? '16px' : '22px')};
+  padding: 9px 22px;
   text-align: left;
   color: ${({ isSelectionExist }) => (isSelectionExist ? colors.white : colors.gray200)};
   border-radius: 20px;
   background-color: ${({ isSelectionExist }) =>
-    isSelectionExist ? colors.gray700 : colors.gray600};
+    isSelectionExist ? colors.gray800 : colors.gray700};
   border: 1px solid;
-  border-color: ${({ isSelectionExist }) => (isSelectionExist ? colors.gray200 : colors.gray600)};
+  border-color: ${({ isSelectionExist }) => (isSelectionExist ? colors.gray400 : colors.gray700)};
   &::after {
     content: '';
     background-repeat: no-repeat;
@@ -34,7 +34,7 @@ const SelectTrigger = styled.button<{
     transition: 0.2s;
     width: 10px;
     height: 18px;
-    background-image: url(${arrowDown});
+    background-image: url(${ic_chevron_down});
     transform: ${({ isOpened }) => (isOpened ? 'rotate(180deg)' : 'none')};
   }
   @media (max-width: 899px) {
@@ -47,28 +47,28 @@ const SelectTrigger = styled.button<{
 `;
 
 const SelectItem = styled.div<{ isSelected: boolean }>`
-  background-color: ${({ isSelected }) => (isSelected ? colors.gray400 : 'transparent')};
-  padding: 5px;
-  border-radius: 4px;
+  background-color: ${({ isSelected }) => (isSelected ? colors.gray600 : 'transparent')};
+  padding: 8px 5px;
+  border-radius: 6px;
   cursor: pointer;
   transition: 0.1s;
   color: ${colors.gray30};
 `;
 
-const SelectItemWrapper = styled.div`
+const SelectItemWrapper = styled.div<{ isWide: boolean }>`
   display: flex;
   flex-direction: column;
 
   position: absolute;
-  background-color: ${colors.gray600};
+  background-color: ${colors.gray700};
   z-index: 200;
-  width: 110px;
+  width: ${({ isWide }) => (isWide ? '132px' : '110px')};
   max-height: 262px;
   overflow-y: scroll;
   border-radius: 13px;
   padding: 7px;
   margin-top: 8px;
-  gap: 8px;
+  /* gap: 8px; */
 
   &:hover {
     ${SelectItem} {
