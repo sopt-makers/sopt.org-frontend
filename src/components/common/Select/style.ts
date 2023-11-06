@@ -1,7 +1,6 @@
 import styled from '@emotion/styled';
 import { colors } from '@sopt-makers/colors';
 import arrowDown from '@src/assets/icons/arrow_down.svg';
-import { LabelKeyType } from '@src/lib/types/universal';
 
 const SelectWrapper = styled.div`
   position: relative;
@@ -10,11 +9,11 @@ const SelectWrapper = styled.div`
 const SelectTrigger = styled.button<{
   isSelectionExist: boolean;
   isOpened: boolean;
-  selectedValue: LabelKeyType;
+  isWide: boolean;
 }>`
   cursor: pointer;
   position: relative;
-  width: ${({ selectedValue }) => (selectedValue === 'ANDROID' ? '132px' : '110px')};
+  width: ${({ isWide }) => (isWide ? '132px' : '110px')};
   font-size: 16px;
   font-weight: 500;
   padding: 9px ${({ isSelectionExist }) => (isSelectionExist ? '16px' : '22px')};
@@ -40,7 +39,7 @@ const SelectTrigger = styled.button<{
   }
   @media (max-width: 899px) {
     padding: 8px 12px;
-    border-radius: 16px;
+    border-radius: 99px;
     font-size: 13px;
     line-height: 150%;
     letter-spacing: -0.13px;

@@ -6,12 +6,12 @@ import icArrowStickRight from '@src/assets/icons/ic_arrow_stick_right.svg';
 import { textSingularLineEllipsis } from '@src/lib/styles/textEllipsis';
 
 const GridWrapper = styled.div`
-  width: 568px;
+  width: 524px;
   display: grid;
   grid-template-areas: 'img detail' 'img footer';
   grid-template-columns: 116px auto;
   column-gap: 16px;
-  background-color: ${colors.gray800};
+  background-color: ${colors.gray900};
   border-radius: 12px;
   padding: 24px;
   margin-right: 20px;
@@ -21,6 +21,8 @@ const GridWrapper = styled.div`
     grid-template-areas: 'img detail' 'footer footer';
     grid-template-columns: 48px auto;
     column-gap: 10px;
+    row-gap: 16px;
+    padding: 16px;
   }
 `;
 

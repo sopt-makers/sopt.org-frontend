@@ -19,7 +19,7 @@ const Arrow = styled.div<{ type: CarouselArrowType }>`
   background-color: ${colors.gray600};
   color: white;
   z-index: 2;
-  top: 50%;
+  top: calc(50% - 16px);
   transform: translateY(-50%);
   cursor: pointer;
   background-repeat: no-repeat;
