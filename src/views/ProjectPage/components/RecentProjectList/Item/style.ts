@@ -6,7 +6,7 @@ import icArrowStickRight from '@src/assets/icons/ic_arrow_stick_right.svg';
 import { textSingularLineEllipsis } from '@src/lib/styles/textEllipsis';
 
 const GridWrapper = styled.div`
-  width: 524px;
+  width: 544px;
   display: grid;
   grid-template-areas: 'img detail' 'img footer';
   grid-template-columns: 116px auto;
@@ -14,10 +14,10 @@ const GridWrapper = styled.div`
   background-color: ${colors.gray900};
   border-radius: 12px;
   padding: 24px;
-  margin-right: 20px;
+
   /* 모바일 뷰 */
   @media (max-width: 899px) {
-    width: 325px;
+    width: 320px;
     grid-template-areas:
       'img detail'
       'footer footer';
