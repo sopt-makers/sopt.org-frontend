@@ -10,11 +10,11 @@ import * as S from './style';
 const TWO_LINE_TITLE_HEIGHT = 72;
 
 interface BlogPostProps {
-  selectedTap: string;
+  selectedTab: string;
   blogPost: BlogPostType;
 }
 
-export default function BlogPost({ selectedTap, blogPost }: BlogPostProps) {
+export default function BlogPost({ selectedTab, blogPost }: BlogPostProps) {
   const titleRef = useRef<HTMLDivElement>(null);
   const [descriptionLine, setDescriptionLine] = useState(1);
   const [error, setError] = useState(false);
@@ -33,12 +33,12 @@ export default function BlogPost({ selectedTap, blogPost }: BlogPostProps) {
   return (
     <S.BlogPost
       onClick={() => {
-        track(`click_${selectedTap}_detail`);
+        track(`click_${selectedTab}_detail`);
         window.open(blogPost.url);
       }}
     >
       <div>
-        <Header selectedTap={selectedTap} blogPost={blogPost} />
+        <Header selectedTab={selectedTab} blogPost={blogPost} />
         <S.Body>
           <S.Title ref={titleRef}>{blogPost.title}</S.Title>
           <S.Description descriptionLine={descriptionLine}>{blogPost.description}</S.Description>
@@ -65,7 +65,7 @@ export default function BlogPost({ selectedTap, blogPost }: BlogPostProps) {
           placeholder="blur"
           blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPU0zOtBwACNQES9P3nGQAAAABJRU5ErkJggg=="
         />
-        {selectedTap === 'article' && <Like blogPost={blogPost} />}
+        {selectedTab === 'article' && <Like blogPost={blogPost} />}
       </S.ThumbnailWrapper>
     </S.BlogPost>
   );

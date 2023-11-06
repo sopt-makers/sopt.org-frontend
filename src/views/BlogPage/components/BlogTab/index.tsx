@@ -9,23 +9,22 @@ import {
 import { PartCategoryType } from '@src/lib/types/blog';
 import * as S from './style';
 import { BlogTabMap, BlogTabType } from './types';
+import { selectedType } from './types';
 
 interface BlogTanProps {
-  selectedTab: BlogTabType;
+  selected: selectedType;
   setSelectedTab: (newValue: BlogTabType) => void;
-  selectedMajorCategory: number;
   setMajorCategory: (newValue: number) => void;
-  selectedSubCategory: PartCategoryType;
   setSubCategory: (newValue: PartCategoryType) => void;
 }
 export default function BlogTab({
-  selectedTab,
+  selected,
   setSelectedTab,
-  selectedMajorCategory,
   setMajorCategory,
-  selectedSubCategory,
   setSubCategory,
 }: BlogTanProps) {
+  const { selectedTab, selectedMajorCategory, selectedSubCategory } = selected;
+
   const blogTabList: BlogTabMap = {
     review: {
       title: '활동후기',

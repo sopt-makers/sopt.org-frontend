@@ -1,13 +1,6 @@
 import styled from '@emotion/styled';
 import { colors } from '@sopt-makers/colors';
 
-export const SpinnerWrapper = styled.section`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 50px 0;
-`;
-
 export const EmptyBlogPostListWrapper = styled.section`
   display: flex;
   flex-direction: column;
