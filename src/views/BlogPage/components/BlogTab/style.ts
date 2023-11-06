@@ -37,11 +37,7 @@ export const TabContainer = styled.section`
   align-items: center;
 `;
 
-interface MenuTitleProps {
-  isSelected: boolean;
-}
-
-export const TabTitle = styled.article<MenuTitleProps>`
+export const TabTitle = styled.article<{ isSelected: boolean }>`
   font-size: 24px;
   height: 100%;
   line-height: 36px;

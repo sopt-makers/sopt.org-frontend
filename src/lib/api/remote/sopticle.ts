@@ -1,11 +1,6 @@
 import { BASE_URL, DEFAULT_TIMEOUT } from '@src/lib/constants/client';
-import { BlogPostType } from '@src/lib/types/blog';
-import { PartCategoryType } from '@src/lib/types/blog';
-import {
-  GetSopticlesResponse,
-  PostSopticleLikeResponse,
-  SopticleAPI,
-} from '@src/lib/types/sopticle';
+import { BlogPostType, BlogResponse, PartCategoryType } from '@src/lib/types/blog';
+import { PostSopticleLikeResponse, SopticleAPI } from '@src/lib/types/sopticle';
 import { getStorageHandler } from '@src/lib/utils/storageHandler';
 import axios from 'axios';
 import { nanoid } from 'nanoid';
@@ -16,11 +11,11 @@ const client = axios.create({
   timeout: DEFAULT_TIMEOUT,
 });
 
-const getResponse = async (
+export const getResponse = async (
   majorTab: number,
   subTab: PartCategoryType,
   pageNo = 1,
-): Promise<GetSopticlesResponse> => {
+): Promise<BlogResponse> => {
   const generationParameter = majorTab === 0 ? {} : { generation: majorTab };
   const partParameter = subTab === PartCategoryType.ALL ? {} : { part: subTab };
   const pageParameter = { pageNo, limit: 6 };
@@ -28,14 +23,16 @@ const getResponse = async (
   const sessionId = sessionStorageHandler.getItemOrGenerate('session-id', nanoid);
   const parameter = qs.stringify({ ...partParameter, ...pageParameter, ...generationParameter });
 
-  const { data } = await client.get<{ hasNextPage: boolean; data: BlogPostType[] }>(
-    `/sopticle?${parameter}`,
-    { headers: { 'session-id': sessionId } },
-  );
+  const { data } = await client.get<{
+    hasNextPage: boolean;
+    data: BlogPostType[];
+    currentPage: number;
+  }>(`/sopticle?${parameter}`, { headers: { 'session-id': sessionId } });
 
   return {
     hasNextPage: data.hasNextPage,
     response: data.data,
+    currentPage: data.currentPage,
   };
 };
 

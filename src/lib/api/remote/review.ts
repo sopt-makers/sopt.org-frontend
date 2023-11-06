@@ -1,19 +1,19 @@
 import { BASE_URL, DEFAULT_TIMEOUT } from '@src/lib/constants/client';
-import { PartCategoryType } from '@src/lib/types/blog';
+import { BlogResponse, PartCategoryType } from '@src/lib/types/blog';
 import axios from 'axios';
 import qs from 'qs';
-import { GetReviewsResponse, GetSampleReviewsResponse, ReviewAPI } from '../../types/review';
+import { GetSampleReviewsResponse, ReviewAPI } from '../../types/review';
 
 const client = axios.create({
   baseURL: BASE_URL,
   timeout: DEFAULT_TIMEOUT,
 });
 
-const getResponse = async (
+export const getResponse = async (
   majorTab: number,
   subTab: PartCategoryType,
   pageNo = 1,
-): Promise<GetReviewsResponse> => {
+): Promise<BlogResponse> => {
   const generationParameter = majorTab === 0 ? {} : { generation: majorTab };
   const partParameter = subTab === PartCategoryType.ALL ? {} : { part: subTab };
   const pageParameter = { pageNo, limit: 6 };
@@ -21,7 +21,7 @@ const getResponse = async (
 
   const { data } = await client.get(`/reviews?${parameter}`);
 
-  return { hasNextPage: data.hasNextPage, response: data.data };
+  return { hasNextPage: data.hasNextPage, response: data.data, currentPage: data.currentPage };
 };
 
 const getSampleReviews = async (): Promise<GetSampleReviewsResponse> => {
