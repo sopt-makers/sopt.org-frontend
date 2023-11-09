@@ -32,6 +32,7 @@ export default function Select<T extends LabelKeyType>({
 
   const selectItemWrapperRef = useRef<HTMLDivElement>(null);
   const selectTriggerRef = useRef<HTMLButtonElement>(null);
+  const currentSelectedValue = labels[selectedValue];
   useOutsideClickListener([selectItemWrapperRef, selectTriggerRef], closeSelectItem);
 
   return (
@@ -41,19 +42,24 @@ export default function Select<T extends LabelKeyType>({
         onClick={toggleSelect}
         isSelectionExist={selectedValue !== baseValue}
         isOpened={isOpen}
-        isWide={labels[selectedValue].length >= 5}
+        isWide={currentSelectedValue.length >= 5}
       >
-        {selectedValue === baseValue ? baseLabel : labels[selectedValue]}
+        <S.SelectTriggerContent isSelectionExist={selectedValue !== baseValue}>
+          {selectedValue === baseValue ? baseLabel : currentSelectedValue}
+        </S.SelectTriggerContent>
+        <S.Arrow isOpened={isOpen} />
       </S.SelectTrigger>
       {isOpen && (
-        <S.SelectItemWrapper ref={selectItemWrapperRef}>
+        <S.SelectItemWrapper ref={selectItemWrapperRef} isWide={currentSelectedValue.length >= 5}>
           {options.map((option, index) => (
             <S.SelectItem
               key={index}
               isSelected={selectedValue === option}
               onClick={() => handleSelect(option)}
             >
-              {labels[option]}
+              <S.SelectItmeContent isWide={currentSelectedValue.length >= 5}>
+                {labels[option]}
+              </S.SelectItmeContent>
             </S.SelectItem>
           ))}
         </S.SelectItemWrapper>
