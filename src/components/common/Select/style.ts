@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import { colors } from '@sopt-makers/colors';
-import ic_chevron_down from '@src/assets/icons/ic_chevron_down.svg';
+import chevronDown from '@src/assets/icons/chevronDown.svg';
 
 const SelectWrapper = styled.div`
   position: relative;
@@ -34,7 +34,7 @@ const SelectTrigger = styled.button<{
     transition: 0.2s;
     width: 10px;
     height: 18px;
-    background-image: url(${ic_chevron_down});
+    background-image: url(${chevronDown});
     transform: ${({ isOpened }) => (isOpened ? 'rotate(180deg)' : 'none')};
   }
   @media (max-width: 899px) {
