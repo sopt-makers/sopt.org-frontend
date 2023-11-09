@@ -77,17 +77,14 @@ const CarouselWrapper = styled.div<{
   translateX: number;
   itemWidth: number;
   itemCount: number;
+  gapWidth: number;
 }>`
   width: ${({ itemWidth, itemCount }) => itemWidth * itemCount}px;
   display: grid;
   grid-template-columns: ${({ itemWidth, itemCount }) => `repeat(${itemCount}, ${itemWidth}px)`};
   transition: transform 0.5s ease-in-out;
   transform: ${({ translateX }) => `translateX(${translateX}px)`};
-  gap: 24px;
-
-  @media (max-width: 899px) {
-    gap: 14px;
-  }
+  gap: ${({ gapWidth }) => `${gapWidth}px`};
 `;
 
 const CarouselViewport = styled.div`

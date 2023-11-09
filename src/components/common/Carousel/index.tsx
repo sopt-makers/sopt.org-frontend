@@ -79,6 +79,7 @@ export default function Carousel({
           translateX={translateX}
           itemWidth={itemWidth}
           itemCount={children.length}
+          gapWidth={gapWidth}
           onTouchStart={handleTouchStart}
           onTouchEnd={handleTouchEnd}
         >
