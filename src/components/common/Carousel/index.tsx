@@ -4,6 +4,7 @@ import { S } from './style';
 
 interface CarouselProps {
   itemWidth: number;
+  gapWidth: number;
   stride?: number;
   leftArrowType?: CarouselArrowType;
   rightArrowType?: CarouselArrowType;
@@ -15,6 +16,7 @@ const SWIPE_THRESHOLD = 50;
 
 export default function Carousel({
   itemWidth,
+  gapWidth,
   stride = 1,
   leftArrowType = CarouselArrowType.External,
   rightArrowType = CarouselArrowType.External,
@@ -24,17 +26,26 @@ export default function Carousel({
   const [currentIndex, setCurrentIndex] = useState(0);
   const [startX, setStartX] = useState(0);
   const wrapperRef = useRef<HTMLDivElement>(null);
+  const [isSliding, setIsSliding] = useState(false);
+  const lastIndex = currentIndex === children.length - 1;
 
   useEffect(() => {
     setCurrentIndex(0);
   }, [stride, itemWidth]);
 
+  const handleSlideStatus = () => {
+    setIsSliding(true);
+    setTimeout(() => setIsSliding(false), 300);
+  };
+
   const handlePrev = () => {
     setCurrentIndex(Math.max(0, currentIndex - stride));
+    handleSlideStatus();
   };
 
   const handleNext = () => {
     setCurrentIndex(Math.min(children.length - 1, currentIndex + stride));
+    handleSlideStatus();
   };
 
   const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
@@ -52,10 +63,10 @@ export default function Carousel({
     }
   };
 
-  const translateX = -currentIndex * itemWidth;
+  const translateX = -currentIndex * (itemWidth + gapWidth);
 
   return (
-    <S.Wrapper ref={wrapperRef}>
+    <S.Wrapper ref={wrapperRef} isSliding={isSliding} lastIndex={lastIndex}>
       {overflowType === CarouselOverflowType.Blur && (
         <>
           <S.LeftBlur />
@@ -68,6 +79,7 @@ export default function Carousel({
           translateX={translateX}
           itemWidth={itemWidth}
           itemCount={children.length}
+          gapWidth={gapWidth}
           onTouchStart={handleTouchStart}
           onTouchEnd={handleTouchEnd}
         >

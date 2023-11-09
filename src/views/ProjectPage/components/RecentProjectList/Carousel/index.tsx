@@ -14,7 +14,8 @@ export default function RecentProjectListCarousel({ children }: { children: JSX.
   return (
     <Carousel
       stride={isDesktopSize ? 2 : 1}
-      itemWidth={isMobileSize ? 345 : 544}
+      itemWidth={isMobileSize ? 320 : 544}
+      gapWidth={isMobileSize ? 14 : 24}
       leftArrowType={arrowType}
       rightArrowType={arrowType}
       overflowType={overflowType}

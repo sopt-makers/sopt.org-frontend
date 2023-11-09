@@ -1,13 +1,50 @@
 import styled from '@emotion/styled';
 import { colors } from '@sopt-makers/colors';
+import { css } from '@emotion/react';
 import arrowLeft from '@src/assets/icons/arrow_left_28x28.svg';
 import arrowRight from '@src/assets/icons/arrow_right_28x28.svg';
 import { HideScrollbar } from '@src/lib/styles/scrollbar';
 import { CarouselArrowType } from '@src/lib/types/universal';
 
-const Wrapper = styled(HideScrollbar)`
+const Wrapper = styled(HideScrollbar)<{ isSliding: boolean; lastIndex: boolean }>`
   width: 100%;
   position: relative;
+
+  ::before,
+  ::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    z-index: 5;
+
+    width: 70px;
+    height: 164px;
+  }
+
+  ::before {
+    left: 0;
+    background: linear-gradient(270deg, transparent 0%, ${colors.gray950} 100%);
+
+    opacity: ${({ isSliding }) => (isSliding ? '1' : '0')};
+    transition: opacity 0.3s ease-out;
+  }
+
+  ::after {
+    right: -1px;
+    background: linear-gradient(270deg, ${colors.gray950} 0%, transparent 100%);
+
+    opacity: 0;
+    ${({ isSliding }) =>
+      isSliding &&
+      css`
+        opacity: 1;
+        transition: opacity 0.3s ease-out;
+      `};
+
+    @media (max-width: 1279px) {
+      opacity: ${({ lastIndex }) => (lastIndex ? 0 : 1)};
+    }
+  }
 `;
 
 const Arrow = styled.div<{ type: CarouselArrowType }>`
@@ -40,12 +77,14 @@ const CarouselWrapper = styled.div<{
   translateX: number;
   itemWidth: number;
   itemCount: number;
+  gapWidth: number;
 }>`
   width: ${({ itemWidth, itemCount }) => itemWidth * itemCount}px;
   display: grid;
   grid-template-columns: ${({ itemWidth, itemCount }) => `repeat(${itemCount}, ${itemWidth}px)`};
   transition: transform 0.5s ease-in-out;
   transform: ${({ translateX }) => `translateX(${translateX}px)`};
+  gap: ${({ gapWidth }) => `${gapWidth}px`};
 `;
 
 const CarouselViewport = styled.div`
@@ -58,12 +97,7 @@ const Blur = styled.div`
   height: 100%;
   width: calc(50vw - 50%);
   top: 0;
-  background: linear-gradient(
-    to right,
-    transparent 10px,
-    ${colors.background} 50px,
-    ${colors.background}
-  );
+  background: ${colors.background};
 `;
 
 const LeftBlur = styled(Blur)`
