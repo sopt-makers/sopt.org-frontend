@@ -48,7 +48,7 @@ const Wrapper = styled(HideScrollbar)<{ isSliding: boolean; lastIndex: boolean }
 `;
 
 const Arrow = styled.div<{ type: CarouselArrowType }>`
-  ${({ type }) => type === CarouselArrowType.None && 'display: hidden;'}
+  ${({ type }) => type === CarouselArrowType.None && 'display: none;'}
   position: absolute;
   width: 40px;
   height: 40px;
