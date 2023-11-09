@@ -44,7 +44,7 @@ export default function ActivityReview() {
           <ArrowLeft stroke={isLeftScrollable ? 'white' : 'grey'} />
         </ArrowWrapper>
         <Content ref={scrollableRef}>
-          {/* {reviews.data.map((review) => (
+          {reviews.data.map((review) => (
             <Link
               key={review.id}
               href={review.url}
@@ -66,7 +66,7 @@ export default function ActivityReview() {
                 </DescWrapper>
               </CardWrapper>
             </Link>
-          ))} */}
+          ))}
         </Content>
         <ArrowWrapper onClick={() => onClickRightButton(scrollableRef.current)}>
           <ArrowRight stroke={isRightScrollable ? 'white' : 'grey'} />
