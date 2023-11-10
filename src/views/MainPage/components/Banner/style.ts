@@ -93,8 +93,8 @@ export const DownScrollIcon = styled(DownScroll)`
 
   /* 모바일 뷰 */
   @media (max-width: 375px) {
-    width: 18px;
-    height: 18px;
+    width: 28px;
+    height: 28px;
   }
 `;
 
