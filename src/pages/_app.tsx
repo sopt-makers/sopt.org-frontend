@@ -5,7 +5,7 @@ import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { Global } from '@emotion/react';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
 import SEO from '@src/components/common/SEO';
@@ -28,12 +28,19 @@ export const queryClient = new QueryClient({
 });
 
 amplitude.add(pageViewTrackingEnrichment());
-amplitude.init(AMPLITUDE_API_KEY, {
-  logLevel: amplitude.Types.LogLevel.Warn,
-  defaultTracking: true,
-});
 
 function MyApp({ Component, pageProps }: AppProps) {
+  const [isAmplitudeInitialized, setIsAmplitudeInitialized] = useState(false);
+  useEffect(() => {
+    if (!isAmplitudeInitialized) {
+      amplitude.init(AMPLITUDE_API_KEY, {
+        logLevel: amplitude.Types.LogLevel.Warn,
+        defaultTracking: true,
+      });
+      setIsAmplitudeInitialized(true);
+    }
+  }, [isAmplitudeInitialized]);
+
   const router = useRouter();
   useEffect(() => {
     router.events.on('routeChangeComplete', gtm.pageview);
