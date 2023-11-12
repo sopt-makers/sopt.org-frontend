@@ -4,7 +4,7 @@ import { colors } from '@sopt-makers/colors';
 export const Backgroud = styled.section`
   display: flex;
   max-width: 1920px;
-  height: 1080px;
+  height: 100vh;
   justify-content: center;
   align-items: center;
   background: ${colors.gray950};
