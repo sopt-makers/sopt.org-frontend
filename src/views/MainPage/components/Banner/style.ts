@@ -71,7 +71,7 @@ export const Title = styled.h1`
   font-weight: 700;
   line-height: 130%; /* 93.6px */
   letter-spacing: -0.72px;
-  background: linear-gradient(93deg, #fff 29.05%, #b7c8d8 89.19%);
+  background: linear-gradient(93deg, ${colors.white} 29.05%, #b7c8d8 89.19%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
