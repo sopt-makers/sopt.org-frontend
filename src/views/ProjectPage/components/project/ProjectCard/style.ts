@@ -62,6 +62,11 @@ export const ProjectText = styled.div`
 `;
 
 export const ProjectTitle = styled.div`
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+
   color: ${colors.gray10};
 
   /* Heading/6_B */
