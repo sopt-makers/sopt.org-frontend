@@ -13,14 +13,14 @@ export default function Banner() {
 
   return (
     <S.Container ref={containerRef}>
-      <S.Content>
-        <S.ContentWrapper>
+      <S.ContentWrapper>
+        <S.Content>
           <S.Title>함께라서 외칠 수 있는 열정</S.Title>
           <S.Title>오직 이곳 SOPT에서만.</S.Title>
           <S.RecruitButton>모집 알림 신청하기 &gt; </S.RecruitButton>
-        </S.ContentWrapper>
+        </S.Content>
         <S.DownScrollIcon onClick={onScrollMoveDown} />
-      </S.Content>
+      </S.ContentWrapper>
       <S.BannerWrapper>
         <S.BannerImage
           src={ImageMainPageBanner}
