@@ -14,12 +14,6 @@ export const BannerWrapper = styled.main`
   position: relative;
   width: 100vw;
   height: 100vh;
-
-  /* 모바일 뷰 */
-  @media (max-width: 375px) {
-    width: 100%;
-    object-fit: cover;
-  }
 `;
 
 export const BannerImage = styled(Image)`
@@ -96,10 +90,6 @@ export const DownScrollIcon = styled(DownScroll)`
     width: 28px;
     height: 28px;
   }
-`;
-
-export const DownIcon = styled.div`
-  cursor: pointer;
 `;
 
 export const RecruitButton = styled.div`
