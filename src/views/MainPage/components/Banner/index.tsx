@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import MainPageBanner from '@src/assets/images/main_banner.png';
+import ImageMainPageBanner from '@src/assets/images/main_banner.png';
 import * as S from './style';
 
 export default function Banner() {
@@ -23,7 +23,7 @@ export default function Banner() {
       </S.Content>
       <S.BannerWrapper>
         <S.BannerImage
-          src={MainPageBanner}
+          src={ImageMainPageBanner}
           alt="솝트 공식홈페이지 메인페이지 배너 사진"
           fill
           priority
