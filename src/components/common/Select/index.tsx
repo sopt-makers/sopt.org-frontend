@@ -57,9 +57,9 @@ export default function Select<T extends LabelKeyType>({
               isSelected={selectedValue === option}
               onClick={() => handleSelect(option)}
             >
-              <S.SelectItmeContent isWide={currentSelectedValue.length >= 5}>
+              <S.SelectItemContent isWide={currentSelectedValue.length >= 5}>
                 {labels[option]}
-              </S.SelectItmeContent>
+              </S.SelectItemContent>
             </S.SelectItem>
           ))}
         </S.SelectItemWrapper>

@@ -67,7 +67,7 @@ const SelectTriggerContent = styled.p<{
   font-weight: 500;
 `;
 
-const SelectItmeContent = styled.p<{
+const SelectItemContent = styled.p<{
   isWide: boolean;
 }>`
   margin-right: ${({ isWide }) => isWide && '42px'};
@@ -109,6 +109,6 @@ export const S = {
   SelectTrigger,
   SelectItem,
   SelectTriggerContent,
-  SelectItmeContent,
+  SelectItemContent,
   SelectItemWrapper,
 };
