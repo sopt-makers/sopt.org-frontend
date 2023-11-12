@@ -33,7 +33,11 @@ const Root = styled.div`
   /* 모바일 뷰 */
   @media (max-width: 899px) {
     align-items: flex-start;
-    margin: 0 20px;
+    padding: 0 50px;
+  }
+
+  @media (max-width: 375px) {
+    padding: 0 20px;
   }
 `;
 
@@ -51,7 +55,7 @@ const ContentWrapper = styled.div`
 
   /* 모바일 뷰 */
   @media (max-width: 899px) {
-    width: 360px;
+    width: 100%;
     padding: 76px 0;
   }
 `;
