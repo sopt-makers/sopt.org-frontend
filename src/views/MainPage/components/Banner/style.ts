@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { colors } from '@sopt-makers/colors';
 import Image from 'next/image';
-import { ReactComponent as DownScroll } from '@src/assets/icons/downScroll.svg';
+import { ReactComponent as IcDownScroll } from '@src/assets/icons/ic_downScroll.svg';
 
 export const Container = styled.section`
   position: relative;
@@ -82,7 +82,7 @@ export const Title = styled.h1`
   }
 `;
 
-export const DownScrollIcon = styled(DownScroll)`
+export const DownScrollIcon = styled(IcDownScroll)`
   cursor: pointer;
 
   /* 모바일 뷰 */

@@ -1,4 +1,4 @@
-import ImageMainPageBanner from '@src/assets/images/main_banner.png';
+import imgMainPageBanner from '@src/assets/images/img_mainBanner.png';
 import * as S from './style';
 
 export default function Banner() {
@@ -20,7 +20,7 @@ export default function Banner() {
         </S.ContentWrapper>
         <S.BannerWrapper>
           <S.BannerImage
-            src={ImageMainPageBanner}
+            src={imgMainPageBanner}
             alt="솝트 공식홈페이지 메인페이지 배너 사진"
             fill
             priority
