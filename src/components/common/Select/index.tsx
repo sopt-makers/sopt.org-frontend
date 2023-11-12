@@ -41,7 +41,7 @@ export default function Select<T extends LabelKeyType>({
   const breakPoint = pageBreakPoint[page];
 
   return (
-    <>
+    <div>
       <S.SelectTrigger
         ref={selectTriggerRef}
         onClick={toggleSelect}
@@ -80,6 +80,6 @@ export default function Select<T extends LabelKeyType>({
           ))}
         </S.SelectItemWrapper>
       )}
-    </>
+    </div>
   );
 }
