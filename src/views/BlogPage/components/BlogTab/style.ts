@@ -97,7 +97,7 @@ export const TabDescription = styled.h1`
   }
 `;
 
-export const SlectContainer = styled.section`
+export const SelectContainer = styled.section`
   display: flex;
   gap: 6px;
 `;

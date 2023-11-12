@@ -57,7 +57,7 @@ export default function BlogTab({
           })}
         </S.TabContainer>
         <S.TabDescription>{blogTabList[selectedTab]?.description}</S.TabDescription>
-        <S.SlectContainer>
+        <S.SelectContainer>
           <Select
             options={activeGenerationCategoryList}
             labels={generationCategoryLabel}
@@ -76,7 +76,7 @@ export default function BlogTab({
             baseValue={PartCategoryType.ALL}
             page={PageType.BLOG}
           />
-        </S.SlectContainer>
+        </S.SelectContainer>
       </S.Container>
     </S.Wrapper>
   );
