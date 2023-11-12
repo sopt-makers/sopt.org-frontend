@@ -1,7 +1,8 @@
 import { useCallback, useRef, useState } from 'react';
 import useOutsideClickListener from '@src/hooks/useOutsideClickListener';
-import { LabelKeyType } from '@src/lib/types/universal';
-import { S } from './style';
+import { pageBreakPoint } from '@src/lib/constants/project';
+import { LabelKeyType, PageType } from '@src/lib/types/universal';
+import * as S from './style';
 
 interface SelectProps<T extends LabelKeyType> {
   options: T[];
@@ -10,6 +11,7 @@ interface SelectProps<T extends LabelKeyType> {
   selectedValue: T;
   setSelectedValue: (newValue: T) => void;
   labels: Record<T, string>;
+  page: PageType;
 }
 
 export default function Select<T extends LabelKeyType>({
@@ -19,6 +21,7 @@ export default function Select<T extends LabelKeyType>({
   baseValue,
   baseLabel,
   labels,
+  page,
 }: SelectProps<T>) {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -35,35 +38,48 @@ export default function Select<T extends LabelKeyType>({
   const currentSelectedValue = labels[selectedValue];
   useOutsideClickListener([selectItemWrapperRef, selectTriggerRef], closeSelectItem);
 
+  const breakPoint = pageBreakPoint[page];
+
   return (
-    <div>
+    <>
       <S.SelectTrigger
         ref={selectTriggerRef}
         onClick={toggleSelect}
         isSelectionExist={selectedValue !== baseValue}
         isOpened={isOpen}
         isWide={currentSelectedValue.length >= 5}
+        breakPoint={breakPoint}
       >
-        <S.SelectTriggerContent isSelectionExist={selectedValue !== baseValue}>
+        <S.SelectTriggerContent
+          isSelectionExist={selectedValue !== baseValue}
+          breakPoint={breakPoint}
+        >
           {selectedValue === baseValue ? baseLabel : currentSelectedValue}
         </S.SelectTriggerContent>
         <S.Arrow isOpened={isOpen} />
       </S.SelectTrigger>
       {isOpen && (
-        <S.SelectItemWrapper ref={selectItemWrapperRef} isWide={currentSelectedValue.length >= 5}>
+        <S.SelectItemWrapper
+          ref={selectItemWrapperRef}
+          isWide={currentSelectedValue.length >= 5}
+          breakPoint={breakPoint}
+        >
           {options.map((option, index) => (
             <S.SelectItem
               key={index}
               isSelected={selectedValue === option}
               onClick={() => handleSelect(option)}
             >
-              <S.SelectItemContent isWide={currentSelectedValue.length >= 5}>
+              <S.SelectItemContent
+                isWide={currentSelectedValue.length >= 5}
+                breakPoint={breakPoint}
+              >
                 {labels[option]}
               </S.SelectItemContent>
             </S.SelectItem>
           ))}
         </S.SelectItemWrapper>
       )}
-    </div>
+    </>
   );
 }

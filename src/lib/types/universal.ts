@@ -48,3 +48,8 @@ export enum CarouselOverflowType {
   Blur = 'blur',
   Visible = 'visible',
 }
+
+export enum PageType {
+  BLOG = 'BLOG',
+  PROJECT = 'PROJECT',
+}

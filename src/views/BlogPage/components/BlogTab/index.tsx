@@ -7,6 +7,7 @@ import {
   partCategoryLabel,
 } from '@src/lib/constants/tabs';
 import { PartCategoryType } from '@src/lib/types/blog';
+import { PageType } from '@src/lib/types/universal';
 import * as S from './style';
 import { BlogTabMap, BlogTabType } from './types';
 import { selectedType } from './types';
@@ -64,6 +65,7 @@ export default function BlogTab({
             selectedValue={selectedMajorCategory}
             setSelectedValue={setMajorCategory}
             baseValue={activeGenerationCategoryList[0]}
+            page={PageType.BLOG}
           />
           <Select
             options={activePartCategoryList}
@@ -72,6 +74,7 @@ export default function BlogTab({
             selectedValue={selectedSubCategory}
             setSelectedValue={setSubCategory}
             baseValue={PartCategoryType.ALL}
+            page={PageType.BLOG}
           />
         </S.SlectContainer>
       </S.Container>
