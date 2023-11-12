@@ -19,6 +19,10 @@ const Wrapper = styled(HideScrollbar)<{ isSliding: boolean; lastIndex: boolean }
 
     width: 70px;
     height: 164px;
+
+    @media (max-width: 899px) {
+      display: none;
+    }
   }
 
   ::before {
@@ -61,6 +65,10 @@ const Arrow = styled.div<{ type: CarouselArrowType }>`
   cursor: pointer;
   background-repeat: no-repeat;
   background-position: center;
+
+  @media (max-width: 899px) {
+    display: none;
+  }
 `;
 
 const LeftArrow = styled(Arrow)<{ type: CarouselArrowType }>`
@@ -98,6 +106,10 @@ const Blur = styled.div`
   width: calc(50vw - 50%);
   top: 0;
   background: ${colors.background};
+
+  @media (max-width: 899px) {
+    display: none;
+  }
 `;
 
 const LeftBlur = styled(Blur)`
