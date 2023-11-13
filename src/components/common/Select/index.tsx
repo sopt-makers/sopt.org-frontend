@@ -1,7 +1,6 @@
 import { useCallback, useRef, useState } from 'react';
 import useOutsideClickListener from '@src/hooks/useOutsideClickListener';
-import { pageBreakPoint } from '@src/lib/constants/project';
-import { LabelKeyType, PageType } from '@src/lib/types/universal';
+import { LabelKeyType } from '@src/lib/types/universal';
 import * as S from './style';
 
 interface SelectProps<T extends LabelKeyType> {
@@ -11,7 +10,7 @@ interface SelectProps<T extends LabelKeyType> {
   selectedValue: T;
   setSelectedValue: (newValue: T) => void;
   labels: Record<T, string>;
-  page: PageType;
+  breakPoint: string;
 }
 
 export default function Select<T extends LabelKeyType>({
@@ -21,7 +20,7 @@ export default function Select<T extends LabelKeyType>({
   baseValue,
   baseLabel,
   labels,
-  page,
+  breakPoint,
 }: SelectProps<T>) {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -37,8 +36,6 @@ export default function Select<T extends LabelKeyType>({
   const selectTriggerRef = useRef<HTMLButtonElement>(null);
   const currentSelectedValue = labels[selectedValue];
   useOutsideClickListener([selectItemWrapperRef, selectTriggerRef], closeSelectItem);
-
-  const breakPoint = pageBreakPoint[page];
 
   return (
     <div>

@@ -1,5 +1,6 @@
 import { track } from '@amplitude/analytics-browser';
 import Select from '@src/components/common/Select';
+import { pageBreakPoint } from '@src/lib/constants/project';
 import {
   activeGenerationCategoryList,
   activePartCategoryList,
@@ -65,7 +66,7 @@ export default function BlogTab({
             selectedValue={selectedMajorCategory}
             setSelectedValue={setMajorCategory}
             baseValue={activeGenerationCategoryList[0]}
-            page={PageType.BLOG}
+            breakPoint={pageBreakPoint[PageType.BLOG]}
           />
           <Select
             options={activePartCategoryList}
@@ -74,7 +75,7 @@ export default function BlogTab({
             selectedValue={selectedSubCategory}
             setSelectedValue={setSubCategory}
             baseValue={PartCategoryType.ALL}
-            page={PageType.BLOG}
+            breakPoint={pageBreakPoint[PageType.BLOG]}
           />
         </S.SelectContainer>
       </S.Container>

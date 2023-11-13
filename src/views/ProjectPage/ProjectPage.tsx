@@ -6,6 +6,7 @@ import useStorage from '@src/hooks/useStorage';
 import {
   activeProjectCategoryList,
   activeProjectPlatformList,
+  pageBreakPoint,
   projectCategoryLabel,
   projectPlatformLabel,
 } from '@src/lib/constants/project';
@@ -50,7 +51,7 @@ function Projects() {
               selectedValue={selectedCategory}
               setSelectedValue={setCategory}
               baseValue={ProjectCategoryType.ALL}
-              page={PageType.PROJECT}
+              breakPoint={pageBreakPoint[PageType.PROJECT]}
             />
             <Select
               options={activeProjectPlatformList}
@@ -59,7 +60,7 @@ function Projects() {
               selectedValue={selectedPlatform}
               setSelectedValue={setPlatform}
               baseValue={ProjectPlatformType.ALL}
-              page={PageType.PROJECT}
+              breakPoint={pageBreakPoint[PageType.PROJECT]}
             />
           </S.FilterWrapper>
           <Suspense fallback={<ProjectListFallback />}>

@@ -25,7 +25,7 @@ export const SelectTrigger = styled.button<{
   border: 1px solid;
   border-color: ${({ isSelectionExist }) => (isSelectionExist ? colors.gray400 : colors.gray700)};
 
-  @media (max-width: ${({ breakPoint }) => `${breakPoint}px`}) {
+  @media (max-width: ${({ breakPoint }) => breakPoint}) {
     min-width: 76px;
     padding: 8px 12px;
     border-radius: 99px;
@@ -63,7 +63,7 @@ export const SelectTriggerContent = styled.p<{ isSelectionExist: boolean; breakP
   font-weight: 500;
   white-space: nowrap;
 
-  @media (max-width: ${({ breakPoint }) => `${breakPoint}px`}) {
+  @media (max-width: ${({ breakPoint }) => breakPoint}) {
     font-size: 13px;
   }
 `;
@@ -71,7 +71,7 @@ export const SelectTriggerContent = styled.p<{ isSelectionExist: boolean; breakP
 export const SelectItemContent = styled.p<{ isWide: boolean; breakPoint: string }>`
   margin-right: ${({ isWide }) => isWide && '42px'};
 
-  @media (max-width: ${({ breakPoint }) => `${breakPoint}px`}) {
+  @media (max-width: ${({ breakPoint }) => breakPoint}) {
     margin-right: ${({ isWide }) => isWide && '22px'};
     font-size: 13px;
   }
@@ -103,7 +103,7 @@ export const SelectItemWrapper = styled.div<{ isWide: boolean; breakPoint: strin
     }
   }
 
-  @media (max-width: ${({ breakPoint }) => `${breakPoint}px`}) {
+  @media (max-width: ${({ breakPoint }) => breakPoint}) {
     min-width: 76px;
   }
 `;
