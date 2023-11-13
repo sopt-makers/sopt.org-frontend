@@ -17,10 +17,7 @@ export const BannerWrapper = styled.main`
 `;
 
 export const BannerImage = styled(Image)`
-  /* 모바일 뷰 */
-  @media (max-width: 375px) {
-    object-fit: cover;
-  }
+  object-fit: cover;
 `;
 
 export const BannerGradient = styled.div`
