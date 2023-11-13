@@ -114,6 +114,7 @@ const DotWrapper = styled.div`
   display: flex;
   justify-content: center;
   gap: 12px;
+  width: 100%;
 `;
 
 const Dot = styled.div<{ selected: boolean }>`
