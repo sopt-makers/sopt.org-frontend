@@ -62,7 +62,7 @@ export function ActivityReview() {
             <ArrowRight stroke={isRightScrollable ? 'white' : 'lightGrey'} />
           </div>
         </div>
-        <Link href="/review" onClick={() => track('click_main_review_more')}>
+        <Link href="/blog" onClick={() => track('click_main_review_more')}>
           <h4 className={styles.moreLink}>활동후기 더보기</h4>
         </Link>
       </div>
