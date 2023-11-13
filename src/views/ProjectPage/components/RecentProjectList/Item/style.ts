@@ -3,7 +3,7 @@ import { colors } from '@sopt-makers/colors';
 import Image from 'next/image';
 import { css } from '@emotion/react';
 import icArrowStickRight from '@src/assets/icons/ic_arrow_stick_right.svg';
-import { textSingularLineEllipsis } from '@src/lib/styles/textEllipsis';
+import { textpluralLinesEllipsis } from '@src/lib/styles/textEllipsis';
 
 const GridWrapper = styled.div`
   width: 544px;
@@ -18,6 +18,7 @@ const GridWrapper = styled.div`
   /* 모바일 뷰 */
   @media (max-width: 899px) {
     width: 320px;
+    height: 139px;
     grid-template-areas:
       'img detail'
       'footer footer';
@@ -55,6 +56,7 @@ const DetailFooterWrapper = styled.div`
   justify-content: space-between;
   flex: 1;
   align-items: flex-end;
+  height: 26px;
 `;
 
 const TextName = styled.div`
@@ -72,7 +74,10 @@ const TextName = styled.div`
 `;
 
 const TextSummary = styled.div`
-  ${textSingularLineEllipsis}
+  display: -webkit-box;
+  ${textpluralLinesEllipsis(2)}
+  height: 39px;
+
   color: ${colors.gray100};
   max-width: 408px;
   font-size: 14px;
