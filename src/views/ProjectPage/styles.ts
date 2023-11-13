@@ -29,6 +29,7 @@ const Root = styled.div`
   margin: 0 auto;
   width: 100vw;
   overflow-x: hidden;
+  touch-action: pan-y;
 
   /* 모바일 뷰 */
   @media (max-width: 899px) {
