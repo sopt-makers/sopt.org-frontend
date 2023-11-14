@@ -1,18 +1,12 @@
 import * as S from './style';
 
-interface CarouselProps {
-  itemWidth: number;
-  stride: number;
-}
-
-export default function RecentProjectListSkeletonUI({ itemWidth }: CarouselProps) {
-  const recentProjectListDummyArray = [1, 2, 3];
+export default function RecentProjectListSkeletonUI() {
+  const recentProjectListDummyArray = [1, 2];
 
   return (
     <S.Wrapper>
-      <S.RightBlur />
       <S.CarouselViewport>
-        <S.CarouselWrapper itemWidth={itemWidth} itemCount={3}>
+        <S.CarouselWrapper>
           {recentProjectListDummyArray.map((index) => (
             <S.MarginWrapper key={index}>
               <S.GridWrapper>
@@ -29,7 +23,6 @@ export default function RecentProjectListSkeletonUI({ itemWidth }: CarouselProps
           ))}
         </S.CarouselWrapper>
       </S.CarouselViewport>
-      <S.RightArrow />
       <S.DotWrapper>
         {recentProjectListDummyArray.map((index) => (
           <S.Dot key={index} />

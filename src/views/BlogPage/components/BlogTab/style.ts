@@ -57,6 +57,8 @@ export const TabTitle = styled.article<{ isSelected: boolean }>`
   @media (max-width: 767px) {
     border-bottom: ${({ isSelected }) => isSelected && `1px solid ${colors.gray200}`};
     margin-right: 12px;
+    font-size: 18px;
+    padding-bottom: 6px;
   }
 
   &:hover {
