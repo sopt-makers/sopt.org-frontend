@@ -4,7 +4,6 @@ import { css } from '@emotion/react';
 import arrowLeft from '@src/assets/icons/arrow_left_28x28.svg';
 import arrowRight from '@src/assets/icons/arrow_right_28x28.svg';
 import { HideScrollbar } from '@src/lib/styles/scrollbar';
-import { CarouselArrowType } from '@src/lib/types/universal';
 
 const Wrapper = styled(HideScrollbar)<{ isSliding: boolean; lastIndex: boolean }>`
   width: 100%;
@@ -51,8 +50,7 @@ const Wrapper = styled(HideScrollbar)<{ isSliding: boolean; lastIndex: boolean }
   }
 `;
 
-const Arrow = styled.div<{ type: CarouselArrowType }>`
-  ${({ type }) => type === CarouselArrowType.None && 'display: none;'}
+const Arrow = styled.div`
   position: absolute;
   width: 40px;
   height: 40px;
@@ -71,12 +69,12 @@ const Arrow = styled.div<{ type: CarouselArrowType }>`
   }
 `;
 
-const LeftArrow = styled(Arrow)<{ type: CarouselArrowType }>`
+const LeftArrow = styled(Arrow)`
   left: -50px;
   background-image: url(${arrowLeft});
 `;
 
-const RightArrow = styled(Arrow)<{ type: CarouselArrowType }>`
+const RightArrow = styled(Arrow)`
   right: -50px;
   background-image: url(${arrowRight});
 `;
