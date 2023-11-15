@@ -9,6 +9,11 @@ export const Backgroud = styled.section`
   align-items: center;
   background: ${colors.gray950};
 
+  @media (max-width: 768px) and (min-width: 376px) {
+    width: 100vw;
+    justify-content: flex-start;
+  }
+
   /* 모바일 뷰 */
   @media (max-width: 375px) {
     padding: 0px 32px;
@@ -27,6 +32,15 @@ export const Title = styled.h1`
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+
+  /* 모바일 뷰 */
+  @media (max-width: 768px) and (min-width: 376px) {
+    font-size: 28px;
+    width: 433px;
+    word-break: keep-all;
+    text-align: left;
+    margin: auto;
+  }
 
   /* 모바일 뷰 */
   @media (max-width: 375px) {
