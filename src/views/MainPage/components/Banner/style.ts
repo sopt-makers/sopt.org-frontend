@@ -55,7 +55,7 @@ export const ContentWrapper = styled.article`
   padding-bottom: 5vh;
 
   /* 모바일 뷰 */
-  @media (max-width: 375px) {
+  @media (max-width: 768px) {
     padding-top: 450px;
     padding-bottom: 50px;
   }
@@ -74,7 +74,7 @@ export const Title = styled.h1`
   -webkit-text-fill-color: transparent;
 
   /* 모바일 뷰 */
-  @media (max-width: 375px) {
+  @media (max-width: 768px) {
     font-size: 28px;
   }
 `;
@@ -83,7 +83,7 @@ export const DownScrollIcon = styled(IcDownScroll)`
   cursor: pointer;
 
   /* 모바일 뷰 */
-  @media (max-width: 375px) {
+  @media (max-width: 768px) {
     width: 28px;
     height: 28px;
   }
@@ -114,7 +114,7 @@ export const RecruitButton = styled.div`
   line-height: 130%; /* 36.4px */
 
   /* 모바일 뷰 */
-  @media (max-width: 375px) {
+  @media (max-width: 768px) {
     margin-top: 28px;
     display: flex;
     width: 182px;
