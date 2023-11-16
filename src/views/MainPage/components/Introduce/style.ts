@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { colors } from '@sopt-makers/colors';
 
-export const Backgroud = styled.section`
+export const Background = styled.section`
   display: flex;
   max-width: 1920px;
   height: 100vh;
