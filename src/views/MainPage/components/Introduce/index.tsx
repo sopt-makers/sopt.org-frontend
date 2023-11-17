@@ -1,4 +1,4 @@
-import { useMotionTemplate, useScroll, useTransform } from 'framer-motion';
+import { useScroll, useTransform } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
 import { useIsMobile } from '@src/hooks/useDevice';
 import * as S from './style';
