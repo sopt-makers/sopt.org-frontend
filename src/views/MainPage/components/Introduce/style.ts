@@ -1,13 +1,15 @@
 import styled from '@emotion/styled';
 import { colors } from '@sopt-makers/colors';
+import { motion } from 'framer-motion';
 
 export const Background = styled.section`
   display: flex;
   max-width: 1920px;
-  height: 100vh;
+  height: 200vh;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   background: ${colors.gray950};
+  position: relative;
 
   @media (max-width: 768px) and (min-width: 376px) {
     width: 100vw;
@@ -22,18 +24,26 @@ export const Background = styled.section`
   }
 `;
 
-export const Title = styled.h1`
+export const Wrapper = styled.section`
+  height: 100vh;
+  top: 0;
+  position: -webkit-sticky;
+  position: sticky;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const Textcontainer = styled(motion.span)`
+  position: relative;
+  overflow: hidden;
+  display: block;
   text-align: center;
   font-size: 50px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
-  background: linear-gradient(93deg, #c9d8dd -34.77%, #fff -20.17%, #636770 6.12%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 
-  /* 모바일 뷰 */
   @media (max-width: 768px) and (min-width: 376px) {
     font-size: 28px;
     width: 433px;
@@ -48,5 +58,28 @@ export const Title = styled.h1`
     width: 250px;
     word-break: keep-all;
     text-align: left;
+    margin: auto;
   }
+`;
+
+export const MotionTitle = styled(motion.span)`
+  position: absolute;
+  left: 0;
+
+  :before {
+    content: attr(data-text);
+    display: inline-block;
+    opacity: 0.8;
+    background: linear-gradient(93deg, #c9d8dd 78.65%, #fff 128.82%, #c9d8dd 137.19%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+`;
+
+export const BackgroundTitle = styled.span`
+  background: linear-gradient(93deg, #c9d8dd -34.77%, #fff -14.77%, #636770 6.12%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 `;
