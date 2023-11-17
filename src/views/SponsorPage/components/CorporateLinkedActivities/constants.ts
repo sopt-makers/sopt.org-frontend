@@ -1,12 +1,12 @@
-import aws_seminar from '@src/views/MainPage/assets/sopt-corporate-activity/aws-seminar.png';
-import foundation_attention from '@src/views/MainPage/assets/sopt-corporate-activity/foundation-attention.png';
-import kb_dna from '@src/views/MainPage/assets/sopt-corporate-activity/kb-dna.png';
-import open_insight from '@src/views/MainPage/assets/sopt-corporate-activity/open-insight.png';
-import scon_it from '@src/views/MainPage/assets/sopt-corporate-activity/scon-it.png';
-import seeso_remote_work from '@src/views/MainPage/assets/sopt-corporate-activity/seeso-remote-work.png';
-import spark_lab from '@src/views/MainPage/assets/sopt-corporate-activity/spark-lab.png';
-import unithon from '@src/views/MainPage/assets/sopt-corporate-activity/unithon.png';
-import we_make_price_campus from '@src/views/MainPage/assets/sopt-corporate-activity/we-make-price-campus.png';
+import aws_seminar from '@src/assets/images/sopt-corporate-activity/aws-seminar.png';
+import foundation_attention from '@src/assets/images/sopt-corporate-activity/foundation-attention.png';
+import kb_dna from '@src/assets/images/sopt-corporate-activity/kb-dna.png';
+import open_insight from '@src/assets/images/sopt-corporate-activity/open-insight.png';
+import scon_it from '@src/assets/images/sopt-corporate-activity/scon-it.png';
+import seeso_remote_work from '@src/assets/images/sopt-corporate-activity/seeso-remote-work.png';
+import spark_lab from '@src/assets/images/sopt-corporate-activity/spark-lab.png';
+import unithon from '@src/assets/images/sopt-corporate-activity/unithon.png';
+import we_make_price_campus from '@src/assets/images/sopt-corporate-activity/we-make-price-campus.png';
 
 export const corporatedLinkedActivities = [
   {
