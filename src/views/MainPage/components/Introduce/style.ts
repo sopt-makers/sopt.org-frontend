@@ -32,7 +32,7 @@ export const Wrapper = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: auto;
+  margin: 0 auto;
 `;
 
 export const Textcontainer = styled(motion.span)`
