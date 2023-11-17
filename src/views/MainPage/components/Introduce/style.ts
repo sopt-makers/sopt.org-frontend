@@ -70,7 +70,6 @@ export const MotionTitle = styled(motion.span)`
   :before {
     content: attr(data-text);
     display: inline-block;
-    opacity: 0.8;
     background: linear-gradient(93deg, #c9d8dd 78.65%, #fff 128.82%, #c9d8dd 137.19%);
     background-clip: text;
     -webkit-background-clip: text;
