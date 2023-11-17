@@ -9,8 +9,8 @@ export const Wrapper = styled.header`
   justify-content: center;
   align-items: center;
   position: fixed;
-  background-color: ${colors.gray950};
-  backdrop-filter: blur(20px);
+  /* background-color: ${colors.gray950}; */
+  /* backdrop-filter: blur(20px); */
   z-index: 100;
   padding: 0 20px;
   top: 0;
