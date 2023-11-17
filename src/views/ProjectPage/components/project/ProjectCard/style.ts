@@ -23,11 +23,12 @@ export const ProjectCard = styled(Link)`
   @media (max-width: 899px) {
     grid-template-areas:
       'thumbnail header'
-      'summary summary';
+      'summary summary'
+      'detail detail';
     grid-template-rows: none;
     grid-template-columns: auto 1fr;
     grid-gap: 12px;
-    
+
     width: 100%;
     height: auto;
     padding: 0 0 10px 0;
@@ -61,6 +62,11 @@ export const ProjectText = styled.div`
 `;
 
 export const ProjectTitle = styled.div`
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+
   color: ${colors.gray10};
 
   /* Heading/6_B */

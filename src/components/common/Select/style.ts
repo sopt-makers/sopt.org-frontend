@@ -2,14 +2,11 @@ import styled from '@emotion/styled';
 import { colors } from '@sopt-makers/colors';
 import chevronDown from '@src/assets/icons/chevronDown.svg';
 
-const SelectWrapper = styled.div`
-  position: relative;
-`;
-
-const SelectTrigger = styled.button<{
+export const SelectTrigger = styled.button<{
   isSelectionExist: boolean;
   isOpened: boolean;
   isWide: boolean;
+  breakPoint: string;
 }>`
   display: flex;
   flex-direction: row;
@@ -28,7 +25,8 @@ const SelectTrigger = styled.button<{
   border: 1px solid;
   border-color: ${({ isSelectionExist }) => (isSelectionExist ? colors.gray400 : colors.gray700)};
 
-  @media (max-width: 899px) {
+  @media (max-width: ${({ breakPoint }) => breakPoint}) {
+    min-width: 76px;
     padding: 8px 12px;
     border-radius: 99px;
     font-size: 13px;
@@ -37,7 +35,7 @@ const SelectTrigger = styled.button<{
   }
 `;
 
-const Arrow = styled.div<{
+export const Arrow = styled.div<{
   isOpened: boolean;
 }>`
   background-repeat: no-repeat;
@@ -49,7 +47,7 @@ const Arrow = styled.div<{
   transform: ${({ isOpened }) => (isOpened ? 'rotate(180deg)' : 'none')};
 `;
 
-const SelectItem = styled.div<{ isSelected: boolean }>`
+export const SelectItem = styled.div<{ isSelected: boolean }>`
   background-color: ${({ isSelected }) => (isSelected ? colors.gray600 : 'transparent')};
   padding: 8px 5px;
   border-radius: 6px;
@@ -58,25 +56,28 @@ const SelectItem = styled.div<{ isSelected: boolean }>`
   color: ${colors.gray30};
 `;
 
-const SelectTriggerContent = styled.p<{
-  isSelectionExist: boolean;
-}>`
+export const SelectTriggerContent = styled.p<{ isSelectionExist: boolean; breakPoint: string }>`
   color: ${({ isSelectionExist }) => (isSelectionExist ? colors.white : colors.gray200)};
   margin-right: 8px;
   font-size: 16px;
   font-weight: 500;
-`;
+  white-space: nowrap;
 
-const SelectItmeContent = styled.p<{
-  isWide: boolean;
-}>`
-  margin-right: ${({ isWide }) => isWide && '42px'};
-  @media (max-width: 899px) {
-    margin-right: ${({ isWide }) => isWide && '22px'};
+  @media (max-width: ${({ breakPoint }) => breakPoint}) {
+    font-size: 13px;
   }
 `;
 
-const SelectItemWrapper = styled.div<{ isWide: boolean }>`
+export const SelectItemContent = styled.p<{ isWide: boolean; breakPoint: string }>`
+  margin-right: ${({ isWide }) => isWide && '42px'};
+
+  @media (max-width: ${({ breakPoint }) => breakPoint}) {
+    margin-right: ${({ isWide }) => isWide && '22px'};
+    font-size: 13px;
+  }
+`;
+
+export const SelectItemWrapper = styled.div<{ isWide: boolean; breakPoint: string }>`
   display: flex;
   flex-direction: column;
 
@@ -101,14 +102,8 @@ const SelectItemWrapper = styled.div<{ isWide: boolean }>`
       }
     }
   }
-`;
 
-export const S = {
-  SelectWrapper,
-  Arrow,
-  SelectTrigger,
-  SelectItem,
-  SelectTriggerContent,
-  SelectItmeContent,
-  SelectItemWrapper,
-};
+  @media (max-width: ${({ breakPoint }) => breakPoint}) {
+    min-width: 76px;
+  }
+`;

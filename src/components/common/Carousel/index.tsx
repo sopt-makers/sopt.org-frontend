@@ -9,6 +9,7 @@ interface CarouselProps {
   leftArrowType?: CarouselArrowType;
   rightArrowType?: CarouselArrowType;
   overflowType?: CarouselOverflowType;
+  isDesktop?: boolean;
   children: JSX.Element[];
 }
 
@@ -18,9 +19,7 @@ export default function Carousel({
   itemWidth,
   gapWidth,
   stride = 1,
-  leftArrowType = CarouselArrowType.External,
-  rightArrowType = CarouselArrowType.External,
-  overflowType = CarouselOverflowType.Blur,
+  isDesktop,
   children,
 }: CarouselProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -67,13 +66,11 @@ export default function Carousel({
 
   return (
     <S.Wrapper ref={wrapperRef} isSliding={isSliding} lastIndex={lastIndex}>
-      {overflowType === CarouselOverflowType.Blur && (
-        <>
-          <S.LeftBlur />
-          <S.RightBlur />
-        </>
-      )}
-      {currentIndex !== 0 && <S.LeftArrow type={leftArrowType} onClick={handlePrev} />}
+      <>
+        <S.LeftBlur />
+        <S.RightBlur />
+      </>
+      {currentIndex !== 0 && <S.LeftArrow onClick={handlePrev} />}
       <S.CarouselViewport>
         <S.CarouselWrapper
           translateX={translateX}
@@ -86,18 +83,18 @@ export default function Carousel({
           {children}
         </S.CarouselWrapper>
       </S.CarouselViewport>
-      {currentIndex !== children.length - stride && (
-        <S.RightArrow type={rightArrowType} onClick={handleNext} />
+      {currentIndex !== children.length - stride && <S.RightArrow onClick={handleNext} />}
+      {isDesktop && (
+        <S.DotWrapper>
+          {Array.from({ length: Math.ceil(children.length / stride) }).map((dot, index) => (
+            <S.Dot
+              key={index}
+              onClick={() => setCurrentIndex(index * stride)}
+              selected={index === Math.floor(currentIndex / stride)}
+            />
+          ))}
+        </S.DotWrapper>
       )}
-      <S.DotWrapper>
-        {Array.from({ length: Math.ceil(children.length / stride) }).map((dot, index) => (
-          <S.Dot
-            key={index}
-            onClick={() => setCurrentIndex(index * stride)}
-            selected={index === Math.floor(currentIndex / stride)}
-          />
-        ))}
-      </S.DotWrapper>
     </S.Wrapper>
   );
 }

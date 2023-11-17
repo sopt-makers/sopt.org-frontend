@@ -1,4 +1,5 @@
 import { ProjectCategoryType, ProjectPlatformType } from '@src/lib/types/project';
+import { PageType } from '@src/lib/types/universal';
 
 export const activeProjectCategoryList: ProjectCategoryType[] = [
   ProjectCategoryType.ALL,
@@ -34,4 +35,9 @@ export const projectPlatformLabel: Record<ProjectPlatformType, string> = {
   [ProjectPlatformType.ALL]: '전체',
   [ProjectPlatformType.APP]: '앱',
   [ProjectPlatformType.WEB]: '웹',
+};
+
+export const pageBreakPoint: Record<PageType, string> = {
+  [PageType.BLOG]: '767px',
+  [PageType.PROJECT]: '899px',
 };
