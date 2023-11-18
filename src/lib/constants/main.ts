@@ -2,7 +2,7 @@ import { default as ImgIntroCard1 } from '@src/assets/images/img_intro_card1.png
 import { default as ImgIntroCard2 } from '@src/assets/images/img_intro_card2.png';
 import { default as ImgIntroCard3 } from '@src/assets/images/img_intro_card3.png';
 
-export const introCardList = [
+export const INTRO_CONTENT_LIST = [
   {
     id: 1,
     title: '열정이 이끄는\n최고 수준의 몰입',
@@ -25,3 +25,5 @@ export const introCardList = [
     src: ImgIntroCard3.src,
   },
 ];
+
+export const INTRO_CONTENT_LENGTH = 3;

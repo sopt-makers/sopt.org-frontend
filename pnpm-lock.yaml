@@ -17,6 +17,7 @@ specifiers:
   '@testing-library/user-event': ^14.2.0
   '@trivago/prettier-plugin-sort-imports': ^4.0.0
   '@types/jest': ^28.1.1
+  '@types/lodash': ^4.14.201
   '@types/nanoid': ^3.0.0
   '@types/node': 17.0.38
   '@types/qs': 6.9.7
@@ -46,6 +47,7 @@ specifiers:
   jest: ^28.1.0
   jest-environment-jsdom: ^28.1.0
   lint-staged: ^11.1.4
+  lodash: ^4.17.21
   nanoid: 4.0.2
   next: 13.3.0
   node-mocks-http: ^1.11.0
@@ -79,6 +81,7 @@ dependencies:
   classcat: 5.0.4
   dayjs: 1.11.9
   framer-motion: 10.16.4_biqbaboplfbrettd7655fr4n2y
+  lodash: 4.17.21
   nanoid: 4.0.2
   next: 13.3.0_i7fbsmp6luydialx2h65cfhsq4
   qs: 6.11.1
@@ -103,6 +106,7 @@ devDependencies:
   '@testing-library/user-event': 14.4.3_szfc7t2zqsdonxwckqxkjn2the
   '@trivago/prettier-plugin-sort-imports': 4.2.0_prettier@2.8.8
   '@types/jest': 28.1.8
+  '@types/lodash': 4.14.201
   '@types/nanoid': 3.0.0
   '@types/node': 17.0.38
   '@types/react': 18.0.10
@@ -2437,6 +2441,10 @@ packages:
 
   /@types/json5/0.0.29:
     resolution: {integrity: sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ==}
+    dev: true
+
+  /@types/lodash/4.14.201:
+    resolution: {integrity: sha512-y9euML0cim1JrykNxADLfaG0FgD1g/yTHwUs/Jg9ZIU7WKj2/4IW9Lbb1WZbvck78W/lfGXFfe+u2EGfIJXdLQ==}
     dev: true
 
   /@types/nanoid/3.0.0:
@@ -5761,7 +5769,6 @@ packages:
 
   /lodash/4.17.21:
     resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}
-    dev: true
 
   /log-update/4.0.0:
     resolution: {integrity: sha512-9fkkDevMefjg0mmzWFBW8YkFP91OrizzkW3diF7CpG+S2EYdy4+TVfGwz1zeF8x7hCx1ovSPTOE9Ngib74qqUg==}

@@ -1,4 +1,4 @@
-export type IntroCardType = {
+export type IntroContentType = {
   id: number;
   title: string;
   detail: string;
