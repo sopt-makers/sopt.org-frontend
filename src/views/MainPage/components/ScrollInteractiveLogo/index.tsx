@@ -9,8 +9,8 @@ export default function ScrollInteractiveLogo() {
     offset: ['start end', 'end end'],
   });
 
-  const soptLogoScale = useTransform(scrollYProgress, [0, 0.5, 1], [1, 1, 4]);
-  const whiteBackgroundOpacity = useTransform(scrollYProgress, [0, 0.5, 0.96, 1], [0, 0, 1, 1]);
+  const soptLogoScale = useTransform(scrollYProgress, [0, 0.5, 1], [1, 1, 2]);
+  const whiteBackgroundOpacity = useTransform(scrollYProgress, [0, 0.48, 0.92, 1], [0, 0, 1, 1]);
 
   return (
     <S.Container ref={containerRef}>

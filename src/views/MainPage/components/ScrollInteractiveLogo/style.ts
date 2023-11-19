@@ -29,8 +29,8 @@ export const Logo = styled.div`
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
-  width: 420px;
-  height: 112px;
+  width: 258px;
+  height: 70px;
   /* 모바일 뷰 */
   @media (max-width: 899px) {
     width: 192px;
