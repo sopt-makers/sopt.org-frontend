@@ -46,13 +46,13 @@ export default function IntroContent({ content }: IntroContentProps) {
     visible: { opacity: 1, transition: { opacity: { delay: 0.5, duration: 1 } } },
   };
 
-  const ref = useRef<HTMLDivElement>(null);
-  const [LineTop, setLineTop] = useState(0);
+  const contentRef = useRef<HTMLDivElement>(null);
+  const [lineTop, setLineTop] = useState(0);
 
   useEffect(() => {
     const handleResize = throttle(() => {
-      if (ref.current) {
-        setLineTop(ref.current.offsetTop);
+      if (contentRef.current) {
+        setLineTop(contentRef.current.offsetTop);
       }
     }, 500);
 
@@ -62,7 +62,7 @@ export default function IntroContent({ content }: IntroContentProps) {
   }, []);
 
   return (
-    <S.IntroContentWrapper key={content.id}>
+    <S.IntroContentWrapper>
       <S.HeaderShadow />
       {content.id !== INTRO_CONTENT_LENGTH && (
         <S.MotionSvg
@@ -70,14 +70,14 @@ export default function IntroContent({ content }: IntroContentProps) {
           initial="hidden"
           whileInView="visible"
           viewport={{ amount: 0.1 }}
-          top={LineTop}
+          top={lineTop}
         >
           <motion.line x1="10" y1="10" x2="10" y2="99.8%" stroke="#d7f5ff" variants={lineDraw} />
         </S.MotionSvg>
       )}
       <S.IntroContent>
         <S.ContentWithCircle
-          ref={ref}
+          ref={contentRef}
           initial="initial"
           whileInView="visible"
           variants={contentMotion}
