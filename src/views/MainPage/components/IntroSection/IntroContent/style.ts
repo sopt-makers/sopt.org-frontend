@@ -35,12 +35,16 @@ export const IntroWrapper = styled(motion.div)`
 
 export const Intro = styled.div`
   position: relative;
+
+  @media (min-width: 769px) {
+    padding: 0 75px;
+  }
 `;
 
 export const AnimatedLine = styled(motion.svg)`
   position: absolute;
   top: 65px;
-  left: -53px;
+  left: 16px;
   z-index: 20;
 
   width: 20px;
@@ -61,7 +65,7 @@ export const Circle = styled(motion.div)`
 
   position: absolute;
   top: -148px;
-  left: -410.91px;
+  left: -340.91px;
   z-index: 30;
 
   width: 735.833px;
@@ -104,6 +108,7 @@ export const Content = styled(motion.div)`
     'title image'
     'desc image';
   grid-template-rows: auto 1fr;
+  grid-template-columns: minmax(250px, 1fr) minmax(323px, 1fr);
   grid-gap: 24px 57px;
 
   position: relative;
@@ -111,7 +116,7 @@ export const Content = styled(motion.div)`
 
   @media (max-width: 1440px) and (min-width: 769px) {
     grid-template-rows: auto 1fr;
-    grid-gap: 24px 0px;
+    grid-gap: 24px 15px;
   }
 
   @media (max-width: 768px) {
@@ -120,15 +125,14 @@ export const Content = styled(motion.div)`
       'title'
       'desc';
     grid-template-rows: auto auto 1fr;
+    grid-template-columns: none;
     grid-gap: 16px;
-
     font-size: 28px;
   }
 `;
 
 export const ContentTitle = styled(motion.h2)`
   grid-area: title;
-  width: 590px;
   margin-top: 38px;
 
   background: linear-gradient(93deg, #e1edf0 78.65%, #fff 128.82%, #e6eff2 137.19%);
@@ -158,7 +162,6 @@ export const ContentTitle = styled(motion.h2)`
 
 export const ContentDetail = styled(motion.h3)`
   grid-area: desc;
-  width: 590px;
 
   color: #b9c7c8;
   font-family: SUIT;
@@ -189,8 +192,12 @@ export const ContentImage = styled(Image)`
   border-radius: 50px;
 
   @media (max-width: 1440px) and (min-width: 769px) {
-    width: 540px;
-    height: 360px;
+    width: 100%;
+    max-width: 540px;
+    min-width: 323px;
+    min-height: 215px;
+    height: auto;
+    border-radius: 36px;
   }
 
   @media (max-width: 768px) {
