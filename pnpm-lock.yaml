@@ -41,7 +41,7 @@ specifiers:
   eslint-plugin-prettier: ^4.0.0
   eslint-plugin-react: ^7.30.0
   eslint-plugin-react-hooks: ^4.5.0
-  framer-motion: ^10.16.4
+  framer-motion: 10.16.5
   git-cz: ^4.9.0
   husky: ^8.0.1
   jest: ^28.1.0
@@ -80,7 +80,7 @@ dependencies:
   axios: 0.27.2
   classcat: 5.0.4
   dayjs: 1.11.9
-  framer-motion: 10.16.4_biqbaboplfbrettd7655fr4n2y
+  framer-motion: 10.16.5_biqbaboplfbrettd7655fr4n2y
   lodash: 4.17.21
   nanoid: 4.0.2
   next: 13.3.0_i7fbsmp6luydialx2h65cfhsq4
@@ -4478,8 +4478,8 @@ packages:
       combined-stream: 1.0.8
       mime-types: 2.1.35
 
-  /framer-motion/10.16.4_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-p9V9nGomS3m6/CALXqv6nFGMuFOxbWsmaOrdmhyQimMIlLl3LC7h7l86wge/Js/8cRu5ktutS/zlzgR7eBOtFA==}
+  /framer-motion/10.16.5_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-GEzVjOYP2MIpV9bT/GbhcsBNoImG3/2X3O/xVNWmktkv9MdJ7P/44zELm/7Fjb+O3v39SmKFnoDQB32giThzpg==}
     peerDependencies:
       react: ^18.0.0
       react-dom: ^18.0.0
