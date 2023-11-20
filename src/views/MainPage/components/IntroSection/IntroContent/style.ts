@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 
-export const IntroContentWrapper = styled.section`
+export const Layout = styled.article`
   position: relative;
   height: 100vh;
 `;
@@ -14,44 +14,47 @@ export const Shadow = styled.div`
   height: 120px;
 `;
 
-export const HeaderShadow = styled(Shadow)`
+export const Header = styled(Shadow)`
   top: 0;
   background: linear-gradient(180deg, #0f1012 0%, rgba(15, 16, 16, 0) 100%);
 `;
 
-export const FooterShadow = styled(Shadow)`
+export const Footer = styled(Shadow)`
   bottom: 0;
   background: linear-gradient(360deg, #0f1012 0%, rgba(15, 16, 16, 0) 100%);
 `;
 
-export const MotionSvg = styled(motion.svg)<{ top: number }>`
-  position: absolute;
-  top: ${({ top }) => `${top + 160}px`};
-  left: 317px;
-  z-index: 20;
-
-  width: 20px;
-  height: calc(100vh + 2px);
-
-  stroke-width: 4px;
-  stroke-linecap: round;
-`;
-
-export const IntroContent = styled.div`
+export const IntroWrapper = styled(motion.div)`
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
   width: 100vw;
   height: 100vh;
-  overflow: hidden;
 `;
 
-export const ContentWithCircle = styled(motion.div)`
+export const Intro = styled.div`
   position: relative;
 `;
 
-export const Circle = styled.div`
+export const AnimatedLine = styled(motion.svg)`
+  position: absolute;
+  top: 65px;
+  left: -53px;
+  z-index: 20;
+
+  width: 20px;
+  height: calc(100vh + 2px);
+  stroke-width: 4px;
+  stroke-linecap: round;
+
+  @media (max-width: 768px) {
+    top: 284px;
+    left: 12px;
+  }
+`;
+
+export const Circle = styled(motion.div)`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -177,6 +180,7 @@ export const ContentDetail = styled(motion.h3)`
     font-size: 16px;
     letter-spacing: -0.32px;
     white-space: normal;
+    word-break: keep-all;
   }
 `;
 
@@ -197,19 +201,26 @@ export const ContentImage = styled(Image)`
   }
 `;
 
-export const BackLight = styled(motion.div)`
+export const BackLight = styled.div<{ isContentVisible: boolean }>`
   position: absolute;
-  top: -114.94px;
-  left: calc(100vw - 80%);
   z-index: -99;
 
-  width: 1954px;
-  height: 1084px;
-  transform: rotate(7.639deg);
-  flex-shrink: 0;
+  width: 100vw;
+  height: 100vh;
+
   background: radial-gradient(45.16% 45.16% at 50% 50%, #2c3242 0%, rgba(15, 15, 18, 0) 100%);
+  background-position: calc(50% + 300px) center;
+  background-repeat: no-repeat;
+  background-size: 1300px 1000px;
+
+  opacity: ${({ isContentVisible }) => (isContentVisible ? '1' : '0')};
+  transition: opacity 0.3s ease-in-out;
+
+  @media (max-width: 1440px) and (min-width: 769px) {
+    background-size: 1000px 800px;
+  }
 
   @media (max-width: 768px) {
-    display: none;
+    opacity: 0;
   }
 `;
