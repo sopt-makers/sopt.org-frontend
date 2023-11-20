@@ -1,3 +1,5 @@
+import { keyframes } from '@emotion/react';
+
 export const ArrowDownAnimation = `
 @keyframes ArrowDown {
   from {
@@ -173,5 +175,14 @@ export const GrowDown = `
     to {
       transform: scaleY(100%) translateY(0%);
     }
+  }
+`;
+
+export const BackgroundMove = keyframes`
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
   }
 `;
