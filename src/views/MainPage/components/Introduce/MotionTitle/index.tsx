@@ -16,16 +16,16 @@ export default function MotionTitle({ contentRef, content }: MotionTitleProps) {
     offset: ['end center', 'start start'],
   });
 
-  const [clipPathValue, setClipPathValue] = useState<string>('inset(0% 0% 0% 0%)');
-  const [opacityValue, setOpacityValue] = useState<number>(0);
+  const [style, setStyle] = useState<{ opacity?: number; clipPath?: string }>();
   const scrollValue = useTransform(scrollYProgress, [1, 0.4], ['100%', '0%']);
 
   useEffect(() => {
     const unsubscribe = scrollValue.on('change', (value) => {
       const percentValue = Number(value.split('%')[0]);
-      isMobileSize
-        ? setOpacityValue((100 - percentValue) / 100)
-        : setClipPathValue(`inset(0% ${percentValue}% 0% 0%)`);
+      const newStyle = isMobileSize
+        ? { opacity: (100 - percentValue) / 100 }
+        : { clipPath: `inset(0% ${percentValue}% 0% 0%)` };
+      setStyle(newStyle);
     });
 
     return () => {
@@ -33,23 +33,5 @@ export default function MotionTitle({ contentRef, content }: MotionTitleProps) {
     };
   }, [scrollValue, isMobileSize]);
 
-  return (
-    <>
-      {isMobileSize ? (
-        <S.MotionTitle
-          style={{
-            opacity: opacityValue,
-          }}
-          data-text={content}
-        />
-      ) : (
-        <S.MotionTitle
-          style={{
-            clipPath: clipPathValue,
-          }}
-          data-text={content}
-        />
-      )}
-    </>
-  );
+  return <S.MotionTitle style={style} data-text={content} />;
 }
