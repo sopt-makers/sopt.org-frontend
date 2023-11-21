@@ -45,7 +45,7 @@ export const Textcontainer = styled(motion.span)`
   font-weight: 700;
   line-height: normal;
 
-  @media (max-width: 768px) and (min-width: 376px) {
+  @media (max-width: 768px) and (min-width: 433px) {
     font-size: 28px;
     width: 433px;
     word-break: keep-all;
@@ -54,7 +54,7 @@ export const Textcontainer = styled(motion.span)`
   }
 
   /* 모바일 뷰 */
-  @media (max-width: 375px) {
+  @media (max-width: 432px) {
     font-size: 28px;
     width: 250px;
     word-break: keep-all;
