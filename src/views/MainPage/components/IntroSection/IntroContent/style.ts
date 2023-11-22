@@ -2,28 +2,6 @@ import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 
-export const Layout = styled.article`
-  position: relative;
-  height: 100vh;
-`;
-
-export const Shadow = styled.div`
-  position: absolute;
-  z-index: 10;
-  width: 100%;
-  height: 120px;
-`;
-
-export const Header = styled(Shadow)`
-  top: 0;
-  background: linear-gradient(180deg, #0f1012 0%, rgba(15, 16, 16, 0) 100%);
-`;
-
-export const Footer = styled(Shadow)`
-  bottom: 0;
-  background: linear-gradient(360deg, #0f1012 0%, rgba(15, 16, 16, 0) 100%);
-`;
-
 export const IntroWrapper = styled(motion.div)`
   display: flex;
   justify-content: center;
@@ -38,6 +16,7 @@ export const Intro = styled.div`
 
   @media (min-width: 769px) {
     padding: 0 75px;
+    /* padding: 0 60px 0 104px; */
   }
 `;
 
@@ -45,12 +24,17 @@ export const AnimatedLine = styled(motion.svg)`
   position: absolute;
   top: 65px;
   left: 16px;
-  z-index: 20;
+  z-index: -1;
 
   width: 20px;
   height: calc(100vh + 2px);
   stroke-width: 4px;
   stroke-linecap: round;
+
+  /* @media (max-width: 1440px) and (min-width: 769px) {
+    top: 43px;
+    left: 57px;
+  } */
 
   @media (max-width: 768px) {
     top: 284px;
@@ -66,7 +50,7 @@ export const Circle = styled(motion.div)`
   position: absolute;
   top: -148px;
   left: -340.91px;
-  z-index: 30;
+  z-index: 10;
 
   width: 735.833px;
   height: 430px;
@@ -89,6 +73,8 @@ export const Circle = styled(motion.div)`
     grid-template-rows: auto 1fr;
     grid-gap: 24px 0px;
     top: -158px;
+    /* top: -170px;
+    left: -300.91px; */
   }
 
   @media (max-width: 768px) {
@@ -110,9 +96,11 @@ export const Content = styled(motion.div)`
   grid-template-rows: auto 1fr;
   grid-template-columns: minmax(250px, 1fr) minmax(323px, 1fr);
   grid-gap: 24px 57px;
+  /* grid-template-columns: minmax(459px, 1fr) minmax(160px, 1fr);
+  grid-gap: 24px minmax(36px, 57px); */
 
   position: relative;
-  z-index: 40;
+  z-index: 20;
 
   @media (max-width: 1440px) and (min-width: 769px) {
     grid-template-rows: auto 1fr;
@@ -149,6 +137,7 @@ export const ContentTitle = styled(motion.h2)`
 
   @media (max-width: 1440px) and (min-width: 769px) {
     margin-top: 28px;
+    /* margin-top: 16px; */
     font-size: 40px;
   }
 
@@ -196,6 +185,8 @@ export const ContentImage = styled(Image)`
     max-width: 540px;
     min-width: 323px;
     min-height: 215px;
+    /* min-width 제거 */
+    /* min-height: 200px; */
     height: auto;
     border-radius: 36px;
   }

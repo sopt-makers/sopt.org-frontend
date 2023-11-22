@@ -38,46 +38,42 @@ export default function IntroContent({ content }: IntroContentProps) {
   const [isContentVisible, setIsContentVisible] = useState(false);
 
   return (
-    <S.Layout>
-      <S.Header />
-      <S.IntroWrapper>
-        <S.Intro>
-          {content.id !== INTRO_CONTENT_LENGTH && (
-            <S.AnimatedLine
-              viewBox="0 0 20 calc(100vh + 2px)"
-              initial="initial"
-              whileInView="visible"
-              viewport={{ amount: 0.2 }}
-            >
-              <motion.line x1="10" y1="10" x2="10" y2="100%" stroke="#d7f5ff" variants={lineDraw} />
-            </S.AnimatedLine>
-          )}
-          <motion.div
+    <S.IntroWrapper>
+      <S.Intro>
+        {content.id !== INTRO_CONTENT_LENGTH && (
+          <S.AnimatedLine
+            viewBox="0 0 20 calc(100vh + 2px)"
             initial="initial"
             whileInView="visible"
-            variants={contentDraw}
-            viewport={{ amount: 0.5 }}
-            onViewportEnter={() => setIsContentVisible(true)}
-            onViewportLeave={() => setIsContentVisible(false)}
+            viewport={{ amount: 0.2 }}
           >
-            <S.Circle>
-              <IcEllipseBlue />
-            </S.Circle>
-            <S.Content
-              initial="initial"
-              whileInView="visible"
-              variants={upMotion}
-              viewport={{ amount: 0.2 }}
-            >
-              <S.ContentTitle>{content.title}</S.ContentTitle>
-              <S.ContentDetail>{content.detail}</S.ContentDetail>
-              <S.ContentImage src={content.src} width={707} height={471} alt="SOPT 소개 이미지" />
-            </S.Content>
-          </motion.div>
-        </S.Intro>
-        <S.BackLight isContentVisible={isContentVisible} />
-      </S.IntroWrapper>
-      <S.Footer />
-    </S.Layout>
+            <motion.line x1="10" y1="10" x2="10" y2="100%" stroke="#d7f5ff" variants={lineDraw} />
+          </S.AnimatedLine>
+        )}
+        <motion.div
+          initial="initial"
+          whileInView="visible"
+          variants={contentDraw}
+          viewport={{ amount: 0.5 }}
+          onViewportEnter={() => setIsContentVisible(true)}
+          onViewportLeave={() => setIsContentVisible(false)}
+        >
+          <S.Circle>
+            <IcEllipseBlue />
+          </S.Circle>
+          <S.Content
+            initial="initial"
+            whileInView="visible"
+            variants={upMotion}
+            viewport={{ amount: 0.2 }}
+          >
+            <S.ContentTitle>{content.title}</S.ContentTitle>
+            <S.ContentDetail>{content.detail}</S.ContentDetail>
+            <S.ContentImage src={content.src} width={707} height={471} alt="SOPT 소개 이미지" />
+          </S.Content>
+        </motion.div>
+      </S.Intro>
+      <S.BackLight isContentVisible={isContentVisible} />
+    </S.IntroWrapper>
   );
 }
