@@ -27,7 +27,7 @@ export const AnimatedLine = styled(motion.svg)`
   z-index: -1;
 
   width: 20px;
-  height: calc(100vh + 2px);
+  height: 100vh;
   stroke-width: 4px;
   stroke-linecap: round;
 

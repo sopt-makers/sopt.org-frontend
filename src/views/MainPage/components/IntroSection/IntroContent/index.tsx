@@ -41,12 +41,7 @@ export default function IntroContent({ content }: IntroContentProps) {
     <S.IntroWrapper>
       <S.Intro>
         {content.id !== INTRO_CONTENT_LENGTH && (
-          <S.AnimatedLine
-            viewBox="0 0 20 calc(100vh + 2px)"
-            initial="initial"
-            whileInView="visible"
-            viewport={{ amount: 0.2 }}
-          >
+          <S.AnimatedLine initial="initial" whileInView="visible" viewport={{ amount: 0.2 }}>
             <motion.line x1="10" y1="10" x2="10" y2="100%" stroke="#d7f5ff" variants={lineDraw} />
           </S.AnimatedLine>
         )}
@@ -69,7 +64,13 @@ export default function IntroContent({ content }: IntroContentProps) {
           >
             <S.ContentTitle>{content.title}</S.ContentTitle>
             <S.ContentDetail>{content.detail}</S.ContentDetail>
-            <S.ContentImage src={content.src} width={707} height={471} alt="SOPT 소개 이미지" />
+            <S.ContentImage
+              src={content.src}
+              width={707}
+              height={471}
+              loading="lazy"
+              alt="SOPT 소개 이미지"
+            />
           </S.Content>
         </motion.div>
       </S.Intro>
