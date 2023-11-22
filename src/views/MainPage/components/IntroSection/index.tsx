@@ -6,9 +6,11 @@ export default function IntroCardList() {
   return (
     <S.IntroSection>
       <S.Header />
-      {INTRO_CONTENT_LIST.map((content) => (
-        <IntroContent key={content.id} content={content} />
-      ))}
+      <div style={{ overflow: 'hidden' }}>
+        {INTRO_CONTENT_LIST.map((content) => (
+          <IntroContent key={content.id} content={content} />
+        ))}
+      </div>
       <S.Footer />
     </S.IntroSection>
   );
