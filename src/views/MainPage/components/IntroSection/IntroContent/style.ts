@@ -22,17 +22,17 @@ export const Intro = styled.div`
 
 export const AnimatedLine = styled(motion.svg)`
   position: absolute;
-  top: 43px;
+  top: 46px;
   left: 57px;
   z-index: -1;
 
   width: 20px;
-  height: 100vh;
+  height: calc(100vh + 7px);
   stroke-width: 4px;
   stroke-linecap: round;
 
   @media (max-width: 768px) {
-    top: 284px;
+    top: 285px;
     left: 42px;
   }
 `;
@@ -104,7 +104,7 @@ export const Content = styled(motion.div)`
       'image'
       'title'
       'desc';
-    grid-template-rows: auto auto 1fr;
+    grid-template-rows: auto auto 103px;
     grid-template-columns: none;
     grid-gap: 16px;
     font-size: 28px;
