@@ -201,22 +201,17 @@ export const ContentImage = styled(Image)`
 
 export const BackLight = styled.div<{ isContentVisible: boolean }>`
   position: absolute;
+  top: 0;
+  left: 385.37px;
   z-index: -99;
 
-  width: 100vw;
-  height: 100vh;
-
+  width: 1954px;
+  height: 1084px;
+  transform: rotate(7.639deg);
   background: radial-gradient(45.16% 45.16% at 50% 50%, #2c3242 0%, rgba(15, 15, 18, 0) 100%);
-  background-position: calc(50% + 300px) center;
-  background-repeat: no-repeat;
-  background-size: 1300px 1000px;
 
   opacity: ${({ isContentVisible }) => (isContentVisible ? '1' : '0')};
   transition: opacity 0.3s ease-in-out;
-
-  @media (max-width: 1440px) and (min-width: 769px) {
-    background-size: 1000px 800px;
-  }
 
   @media (max-width: 768px) {
     opacity: 0;
