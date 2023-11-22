@@ -47,7 +47,6 @@ specifiers:
   jest: ^28.1.0
   jest-environment-jsdom: ^28.1.0
   lint-staged: ^11.1.4
-  lodash: ^4.17.21
   nanoid: 4.0.2
   next: 13.3.0
   node-mocks-http: ^1.11.0
@@ -81,7 +80,6 @@ dependencies:
   classcat: 5.0.4
   dayjs: 1.11.9
   framer-motion: 10.16.5_biqbaboplfbrettd7655fr4n2y
-  lodash: 4.17.21
   nanoid: 4.0.2
   next: 13.3.0_i7fbsmp6luydialx2h65cfhsq4
   qs: 6.11.1
@@ -5769,6 +5767,7 @@ packages:
 
   /lodash/4.17.21:
     resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}
+    dev: true
 
   /log-update/4.0.0:
     resolution: {integrity: sha512-9fkkDevMefjg0mmzWFBW8YkFP91OrizzkW3diF7CpG+S2EYdy4+TVfGwz1zeF8x7hCx1ovSPTOE9Ngib74qqUg==}
