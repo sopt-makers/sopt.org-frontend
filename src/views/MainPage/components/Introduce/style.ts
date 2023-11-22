@@ -35,7 +35,7 @@ export const Wrapper = styled.section`
   margin: 0 auto;
 `;
 
-export const Textcontainer = styled(motion.span)`
+export const TextContainer = styled(motion.span)`
   position: relative;
   overflow: hidden;
   display: block;

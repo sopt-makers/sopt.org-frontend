@@ -16,10 +16,10 @@ export default function Introduce() {
   return (
     <S.Background ref={contentRef}>
       <S.Wrapper>
-        <S.Textcontainer style={{ scale: scaleValue }}>
+        <S.TextContainer style={{ scale: scaleValue }}>
           <MotionTitle contentRef={contentRef} content={content} />
           <S.BackgroundTitle>{content}</S.BackgroundTitle>
-        </S.Textcontainer>
+        </S.TextContainer>
       </S.Wrapper>
     </S.Background>
   );
