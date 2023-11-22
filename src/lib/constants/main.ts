@@ -26,4 +26,5 @@ export const INTRO_CONTENT_LIST = [
   },
 ];
 
-export const INTRO_CONTENT_LENGTH = 3;
+export const FIRST_INTRO_CONTENT = 1;
+export const LAST_INTRO_CONTENT = 3;

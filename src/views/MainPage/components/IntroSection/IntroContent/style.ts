@@ -11,6 +11,23 @@ export const IntroWrapper = styled(motion.div)`
   height: 100vh;
 `;
 
+export const Shadow = styled.div`
+  position: absolute;
+  z-index: 90;
+  width: 100%;
+  height: 120px;
+`;
+
+export const Header = styled(Shadow)`
+  top: 0;
+  background: linear-gradient(180deg, #0f1012 0%, rgba(15, 16, 16, 0) 100%);
+`;
+
+export const Footer = styled(Shadow)`
+  bottom: 0;
+  background: linear-gradient(360deg, #0f1012 0%, rgba(15, 16, 16, 0) 100%);
+`;
+
 export const Intro = styled.div`
   position: relative;
   padding: 0 60px 0 104px;
@@ -196,12 +213,12 @@ export const ContentImage = styled(Image)`
 
 export const BackLight = styled.div<{ isContentVisible: boolean }>`
   position: absolute;
-  top: 0;
+  top: -114.94px;
   left: 385.37px;
   z-index: -99;
 
   width: 1954px;
-  height: 100vh;
+  height: 1084px;
   transform: rotate(7.639deg);
   background: radial-gradient(45.16% 45.16% at 50% 50%, #2c3242 0%, rgba(15, 15, 18, 0) 100%);
 

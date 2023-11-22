@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { ReactComponent as IcEllipseBlue } from '@src/assets/icons/ic_ellipse_blue.svg';
-import { INTRO_CONTENT_LENGTH } from '@src/lib/constants/main';
+import { FIRST_INTRO_CONTENT, LAST_INTRO_CONTENT } from '@src/lib/constants/main';
 import { IntroContentType } from '@src/lib/types/main';
 import * as S from './style';
 
@@ -39,8 +39,9 @@ export default function IntroContent({ content }: IntroContentProps) {
 
   return (
     <S.IntroWrapper>
+      {content.id === FIRST_INTRO_CONTENT && <S.Header />}
       <S.Intro>
-        {content.id !== INTRO_CONTENT_LENGTH && (
+        {content.id !== LAST_INTRO_CONTENT && (
           <S.AnimatedLine initial="initial" whileInView="visible" viewport={{ amount: 0.2 }}>
             <motion.line x1="10" y1="10" x2="10" y2="100%" stroke="#d7f5ff" variants={lineDraw} />
           </S.AnimatedLine>
@@ -75,6 +76,7 @@ export default function IntroContent({ content }: IntroContentProps) {
         </motion.div>
       </S.Intro>
       <S.BackLight isContentVisible={isContentVisible} />
+      {content.id === LAST_INTRO_CONTENT && <S.Footer />}
     </S.IntroWrapper>
   );
 }
