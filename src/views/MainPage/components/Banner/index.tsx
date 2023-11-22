@@ -1,4 +1,5 @@
 import imgMainPageBanner from '@src/assets/images/img_mainBanner.png';
+import RecruitButton from './RecruitButton';
 import * as S from './style';
 
 export default function Banner() {
@@ -14,7 +15,7 @@ export default function Banner() {
           <S.Content>
             <S.Title>함께라서 외칠 수 있는 열정</S.Title>
             <S.Title>오직 이곳 SOPT에서만.</S.Title>
-            <S.RecruitButton>모집 알림 신청하기 &gt; </S.RecruitButton>
+            <RecruitButton>모집 알림 신청하기 &gt; </RecruitButton>
           </S.Content>
           <S.DownScrollIcon onClick={onScrollMoveDown} />
         </S.ContentWrapper>

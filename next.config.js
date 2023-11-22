@@ -37,6 +37,20 @@ const nextConfig = {
 
     return config;
   },
+  async redirects() {
+    return [
+      {
+        source: '/review',
+        destination: '/blog',
+        permanent: false,
+      },
+      {
+        source: '/sopticle',
+        destination: '/blog',
+        permanent: false,
+      },
+    ];
+  },
 };
 
 module.exports = nextConfig;
