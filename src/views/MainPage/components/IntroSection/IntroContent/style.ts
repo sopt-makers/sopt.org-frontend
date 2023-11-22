@@ -31,11 +31,6 @@ export const AnimatedLine = styled(motion.svg)`
   stroke-width: 4px;
   stroke-linecap: round;
 
-  @media (max-width: 1440px) and (min-width: 769px) {
-    top: 43px;
-    left: 57px;
-  }
-
   @media (max-width: 768px) {
     top: 284px;
     left: 42px;
@@ -206,7 +201,7 @@ export const BackLight = styled.div<{ isContentVisible: boolean }>`
   z-index: -99;
 
   width: 1954px;
-  height: 1084px;
+  height: 100vh;
   transform: rotate(7.639deg);
   background: radial-gradient(45.16% 45.16% at 50% 50%, #2c3242 0%, rgba(15, 15, 18, 0) 100%);
 
