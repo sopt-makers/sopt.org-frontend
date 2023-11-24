@@ -8,7 +8,7 @@ export default function Introduce() {
   const contentRef = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({
     target: contentRef,
-    offset: ['end center', 'start start'],
+    offset: ['end center', 'start'],
   });
 
   const scaleValue = useTransform(scrollYProgress, [1, 0.4], [0.9, 1]);
