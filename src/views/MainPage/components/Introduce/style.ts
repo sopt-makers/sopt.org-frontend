@@ -65,6 +65,7 @@ export const TextContainer = styled(motion.span)`
 export const MotionTitle = styled(motion.span)`
   position: absolute;
   left: 0;
+  opacity: 0;
 
   :before {
     content: attr(data-text);

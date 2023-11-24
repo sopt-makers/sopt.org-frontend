@@ -22,7 +22,7 @@ export default function Introduce() {
       const percentValue = Number(value.split('%')[0]);
       const newStyle = isMobileSize
         ? { opacity: (100 - percentValue) / 100 }
-        : { clipPath: `inset(0% ${percentValue}% 0% 0%)` };
+        : { clipPath: `inset(0% ${percentValue}% 0% 0%)`, opacity: 1 };
       setStyle(newStyle);
     });
 
