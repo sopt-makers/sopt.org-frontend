@@ -4,7 +4,6 @@ import { motion } from 'framer-motion';
 
 export const Background = styled.section`
   display: flex;
-  max-width: 1920px;
   height: 200vh;
   justify-content: center;
   align-items: flex-start;
