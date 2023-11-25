@@ -7,7 +7,7 @@ type FlippableCardProps = {
   backContent: React.ReactNode;
 };
 
-function FlippableCard({ frontContent, backContent }: FlippableCardProps) {
+export default function FlippableCard({ frontContent, backContent }: FlippableCardProps) {
   const [isFlipped, setIsFlipped, setIsUnflipped] = useBooleanState(false);
 
   const variants = {
@@ -28,5 +28,3 @@ function FlippableCard({ frontContent, backContent }: FlippableCardProps) {
     </div>
   );
 }
-
-export default FlippableCard;

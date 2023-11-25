@@ -10,33 +10,39 @@ type OwnOrganizationCardProps = {
   backSideBg: string;
 };
 
-function Footer(props: Pick<OwnOrganizationCardProps, 'nameKor' | 'nameEng'>) {
+function Footer({ nameKor, nameEng }: Pick<OwnOrganizationCardProps, 'nameKor' | 'nameEng'>) {
   return (
     <S.FooterWrapper>
-      <S.FooterKorName>{props.nameKor}</S.FooterKorName>
-      <S.FooterEngName>{props.nameEng}</S.FooterEngName>
+      <S.FooterKorName>{nameKor}</S.FooterKorName>
+      <S.FooterEngName>{nameEng}</S.FooterEngName>
     </S.FooterWrapper>
   );
 }
 
-export default function OwnOrganizationCard(props: OwnOrganizationCardProps) {
+export default function OwnOrganizationCard({
+  nameKor,
+  nameEng,
+  description,
+  frontSideBg,
+  backSideBg,
+}: OwnOrganizationCardProps) {
   return (
     <FlippableCard
       frontContent={
-        <S.CardWrapper background={`url(${props.frontSideBg}) center`}>
-          <Footer nameKor={props.nameKor} nameEng={props.nameEng} />
+        <S.CardWrapper background={`url(${frontSideBg}) center`}>
+          <Footer nameKor={nameKor} nameEng={nameEng} />
         </S.CardWrapper>
       }
       backContent={
-        <S.CardWrapper background={props.backSideBg}>
+        <S.CardWrapper background={backSideBg}>
           <S.ContentWrapper>
-            {props.description.map((textNode, index) => (
+            {description.map((textNode, index) => (
               <S.TextWrapper key={index} weight={textNode.weight}>
                 {textNode.content}
               </S.TextWrapper>
             ))}
           </S.ContentWrapper>
-          <Footer nameKor={props.nameKor} nameEng={props.nameEng} />
+          <Footer nameKor={nameKor} nameEng={nameEng} />
         </S.CardWrapper>
       }
     />
