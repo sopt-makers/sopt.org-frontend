@@ -15,14 +15,13 @@ export default function Introduce() {
   const content = '전국 최대 규모의 대학생 IT 연합 동아리, SOPT를 소개합니다.';
 
   const [style, setStyle] = useState<{ opacity?: number; clipPath?: string }>();
-  const scrollValue = useTransform(scrollYProgress, [1, 0.4], ['100%', '0%']);
+  const scrollValue = useTransform(scrollYProgress, [1, 0.4], [100, 0]);
 
   useEffect(() => {
     const unsubscribe = scrollValue.on('change', (value) => {
-      const percentValue = Number(value.split('%')[0]);
       const newStyle = isMobileSize
-        ? { opacity: (100 - percentValue) / 100 }
-        : { clipPath: `inset(0% ${percentValue}% 0% 0%)`, opacity: 1 };
+        ? { opacity: 1 - value / 100 }
+        : { clipPath: `inset(0% ${value}% 0% 0%)`, opacity: 1 };
       setStyle(newStyle);
     });
 
