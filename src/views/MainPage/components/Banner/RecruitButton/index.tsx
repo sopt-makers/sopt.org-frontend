@@ -9,7 +9,10 @@ export default function RecruitButton({ children }: PropsWithChildren<object>) {
     const rect = event.currentTarget.getBoundingClientRect();
     const x = event.clientX - rect.left;
     const y = event.clientY - rect.top;
-    setBlurPosition({ x, y });
+    setBlurPosition((prev) => ({
+      x: (9 * prev.x + x) / 10,
+      y: (9 * prev.y + y) / 10,
+    }));
   };
 
   return (
