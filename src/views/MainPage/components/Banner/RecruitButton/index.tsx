@@ -9,17 +9,14 @@ export default function RecruitButton({ children }: PropsWithChildren<object>) {
     const rect = event.currentTarget.getBoundingClientRect();
     const x = event.clientX - rect.left;
     const y = event.clientY - rect.top;
-    setBlurPosition((prev) => ({
-      x: (9 * prev.x + x) / 10,
-      y: (9 * prev.y + y) / 10,
-    }));
+    setBlurPosition({ x, y });
   };
 
   return (
     <Link href="/recruit">
       <S.RecruitButtonWrapper>
         <S.MouseTrackerWrapper onMouseMove={handleMouseMove} x={blurPosition.x} y={blurPosition.y}>
-          {children}
+          <div>{children}</div>
         </S.MouseTrackerWrapper>
       </S.RecruitButtonWrapper>
     </Link>
