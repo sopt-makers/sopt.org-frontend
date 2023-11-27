@@ -16,7 +16,7 @@ export default function IntroContent({ content }: IntroContentProps) {
   };
 
   const upMotion = {
-    initial: { y: 10 },
+    initial: { y: 20 },
     visible: {
       y: 0,
       transition: { type: 'spring', damping: 20, stiffness: 120, y: { delay: 0.3, duration: 0.8 } },
