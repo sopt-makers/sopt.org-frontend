@@ -105,7 +105,7 @@ export const Content = styled(motion.div)`
     'title image'
     'desc image';
   grid-template-rows: auto 1fr;
-  grid-template-columns: 590px minmax(323px, 1fr);
+  grid-template-columns: 590px minmax(323px, 707px);
   grid-gap: 24px 57px;
 
   position: relative;
