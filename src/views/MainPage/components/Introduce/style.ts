@@ -4,7 +4,6 @@ import { motion } from 'framer-motion';
 
 export const Background = styled.section`
   display: flex;
-  max-width: 1920px;
   height: 200vh;
   justify-content: center;
   align-items: flex-start;
@@ -60,6 +59,21 @@ export const TextContainer = styled(motion.span)`
     word-break: keep-all;
     text-align: left;
     margin: auto;
+  }
+`;
+
+export const MotionTitle = styled(motion.span)`
+  position: absolute;
+  left: 0;
+  opacity: 0;
+
+  ::before {
+    content: attr(data-text);
+    display: inline-block;
+    background: linear-gradient(93deg, #c9d8dd 78.65%, #fff 128.82%, #c9d8dd 137.19%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 `;
 
