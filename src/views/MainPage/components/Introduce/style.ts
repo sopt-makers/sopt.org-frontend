@@ -67,7 +67,7 @@ export const MotionTitle = styled(motion.span)`
   left: 0;
   opacity: 0;
 
-  :before {
+  ::before {
     content: attr(data-text);
     display: inline-block;
     background: linear-gradient(93deg, #c9d8dd 78.65%, #fff 128.82%, #c9d8dd 137.19%);
