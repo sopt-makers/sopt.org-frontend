@@ -4,3 +4,8 @@ export type IntroContentType = {
   detail: string;
   src: string;
 };
+
+export type TextColorType = {
+  content: string;
+  color: 'yellow' | 'white';
+};
