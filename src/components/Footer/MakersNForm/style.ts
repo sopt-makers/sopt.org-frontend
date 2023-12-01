@@ -15,7 +15,7 @@ const FooterForm = styled.div<{ hide: boolean }>`
   background-color: #1c1d1e;
 
   transition: transform 0.3s;
-  z-index: 99;
+  z-index: 100;
 
   ${({ hide }) =>
     hide
