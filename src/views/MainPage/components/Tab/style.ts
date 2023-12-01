@@ -1,10 +1,19 @@
 import styled from '@emotion/styled';
-import { colors } from '@sopt-makers/colors';
 
 export const Wrapper = styled.section`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  margin-bottom: 38px;
+
+  /* 태블릿 뷰 */
+  @media (max-width: 768px) and (min-width: 376px) {
+    margin-bottom: 26px;
+  }
+  /* 모바일 뷰 */
+  @media (max-width: 375px) {
+    margin-bottom: 14px;
+  }
 `;
 
 export const Tab = styled.h2`
