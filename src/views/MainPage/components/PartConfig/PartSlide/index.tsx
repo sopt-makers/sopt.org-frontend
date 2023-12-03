@@ -6,16 +6,16 @@ import * as S from './style';
 
 interface PartSlideProps {
   part: Part;
-  handleSwipe: (direction: number) => void;
+  handleCarouselSwipe: (direction: number) => void;
 }
 
-export default function PartSlide({ part, handleSwipe }: PartSlideProps) {
+export default function PartSlide({ part, handleCarouselSwipe }: PartSlideProps) {
   const { value, label, description } = partList[part];
 
   return (
     <S.PartCarousel>
       <S.LeftArrow>
-        <IcArrowLeft onClick={() => handleSwipe(-1)} />
+        <IcArrowLeft onClick={() => handleCarouselSwipe(-1)} />
       </S.LeftArrow>
       <S.Wrapper>
         <S.PartDetail>
@@ -27,7 +27,7 @@ export default function PartSlide({ part, handleSwipe }: PartSlideProps) {
         </S.PartDetail>
       </S.Wrapper>
       <S.RightArrow>
-        <IcArrowRight onClick={() => handleSwipe(1)} />
+        <IcArrowRight onClick={() => handleCarouselSwipe(1)} />
       </S.RightArrow>
     </S.PartCarousel>
   );

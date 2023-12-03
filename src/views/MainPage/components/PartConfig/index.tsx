@@ -1,76 +1,50 @@
-import { useEffect, useRef, useState } from 'react';
-import { tabs } from '@src/lib/constants/tabs';
-import { Part } from '@src/lib/types/universal';
+import { useState } from 'react';
+import useInfiniteCarousel from '@src/hooks/useInfiniteCarousel';
+import { tabs as carouselList } from '@src/lib/constants/tabs';
+import { TabType } from '@src/lib/types/universal';
 import PartButton from '@src/views/MainPage/components/PartConfig/PartButton.tsx';
 import PartSlide from '@src/views/MainPage/components/PartConfig/PartSlide';
 import * as S from './style';
 
-const TOTAL_PART = tabs.length;
-
 export default function PartConfig() {
-  const [partIndex, setPartIndex] = useState(1);
-  const [selectedPart, setSelectedPart] = useState(Part.PLAN);
-  const carouselRef = useRef<HTMLDivElement>(null);
+  const [partIndex, setPartIndex] = useState(0);
+  const { carouselRef, infiniteCarouselList, handleSwipe } = useInfiniteCarousel<TabType>(
+    carouselList,
+    '(-100vw - 20px)',
+  );
 
-  const handleSelectPart = (part: Part) => {
-    setSelectedPart(part);
+  const handleSelectPart = (clickedIndex: number) => {
+    setPartIndex(clickedIndex);
+    handleSwipe(clickedIndex - partIndex);
   };
 
-  const [tempList, setTempList] = useState(tabs);
-
-  useEffect(() => {
-    const startTab = tabs[0];
-    const endTab = tabs[tabs.length - 1];
-    const newTabs = [endTab, ...tabs, startTab];
-    setTempList(newTabs);
-  }, []);
-
-  const moveToNthSlide = (index: number) => {
-    setTimeout(() => {
-      setPartIndex(index);
-      if (carouselRef.current) {
-        carouselRef.current.style.transition = '';
-      }
-    }, 500);
-  };
-
-  const handleSwipe = (direction: number) => {
+  const handleCarouselSwipe = (direction: number) => {
+    const totalSlide = carouselList.length;
     const newIndex = partIndex + direction;
-
-    if (newIndex === TOTAL_PART + 1) {
-      moveToNthSlide(1);
-    } else if (newIndex === 0) {
-      moveToNthSlide(TOTAL_PART);
+    if (direction === 1) {
+      setPartIndex(newIndex === totalSlide ? 0 : newIndex);
+    } else {
+      setPartIndex(newIndex === -1 ? totalSlide - 1 : newIndex);
     }
-    setPartIndex((prev) => prev + direction);
-
-    if (carouselRef.current) {
-      carouselRef.current.style.transition = 'all 0.5s ease-in-out';
-    }
+    handleSwipe(direction);
   };
-
-  useEffect(() => {
-    if (carouselRef.current) {
-      carouselRef.current.style.transform = `translateX(calc(${partIndex} * (-100vw - 20px)))`;
-    }
-  }, [partIndex]);
 
   return (
     <S.PartConfig>
       <S.PartButtonList>
-        {tabs.map((part) => (
+        {carouselList.map(({ label }, index) => (
           <PartButton
-            key={part.value}
-            part={part}
-            isSelected={selectedPart === part.value}
-            onSelectPart={handleSelectPart}
+            key={index}
+            label={label}
+            isSelected={index === partIndex}
+            handleSelectPart={handleSelectPart}
           />
         ))}
       </S.PartButtonList>
       <S.CarouselWrapper>
         <S.Carousel ref={carouselRef}>
-          {tempList.map((part, index) => (
-            <PartSlide key={index} part={part.value} handleSwipe={handleSwipe} />
+          {infiniteCarouselList.map(({ value }, index) => (
+            <PartSlide key={index} part={value} handleCarouselSwipe={handleCarouselSwipe} />
           ))}
         </S.Carousel>
       </S.CarouselWrapper>
