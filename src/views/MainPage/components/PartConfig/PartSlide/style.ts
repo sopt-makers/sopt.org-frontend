@@ -2,12 +2,42 @@ import styled from '@emotion/styled';
 import { colors } from '@sopt-makers/colors';
 
 export const PartCarousel = styled.div`
-  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-shrink: 0;
+
+  width: 100vw;
   height: 428px;
 
-  padding: 77px 100px 62px 157px;
+  padding: 77px 0 62px 0;
   border-radius: 19px;
   background: linear-gradient(98deg, #1a2035 33.84%, #304f84 96.92%);
+`;
+
+export const LeftArrow = styled.div`
+  display: flex;
+  align-items: center;
+  margin-left: 30px;
+
+  & > svg:hover {
+    cursor: pointer;
+  }
+`;
+
+export const RightArrow = styled.div`
+  display: flex;
+  align-items: center;
+  margin-right: 30px;
+
+  & > svg:hover {
+    cursor: pointer;
+  }
+`;
+
+export const Wrapper = styled.div`
+  display: flex;
+  width: 100%;
+  padding-left: 84px;
 `;
 
 export const PartDetail = styled.div`

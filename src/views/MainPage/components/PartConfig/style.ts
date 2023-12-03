@@ -10,3 +10,13 @@ export const PartButtonList = styled.div`
   display: flex;
   gap: 15px;
 `;
+
+export const CarouselWrapper = styled.div`
+  width: 100vw;
+  overflow: hidden;
+`;
+
+export const Carousel = styled.div`
+  display: flex;
+  column-gap: 20px;
+`;
