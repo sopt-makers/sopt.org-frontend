@@ -8,7 +8,7 @@ export const PartSlide = styled.div`
   flex-shrink: 0;
   position: relative;
 
-  width: 100vw;
+  width: 100%;
   height: 428px;
 
   padding: 77px 0 62px 0;

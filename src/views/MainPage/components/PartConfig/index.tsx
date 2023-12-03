@@ -10,7 +10,7 @@ export default function PartConfig() {
   const [partIndex, setPartIndex] = useState(0);
   const { carouselRef, infiniteCarouselList, handleSwipe } = useInfiniteCarousel<TabType>(
     carouselList,
-    '(-100vw - 20px)',
+    '(-100% - 20px)',
   );
 
   const handleSelectPart = (clickedIndex: number) => {

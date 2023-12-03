@@ -1,15 +1,16 @@
 import { useEffect, useRef, useState } from 'react';
 
 const useInfiniteCarousel = <T>(carouselList: Array<T>, x: string) => {
-  const [infiniteCarouselList, setInfiniteCarouselList] = useState(carouselList);
-  const [currentIndex, setCurrentIndex] = useState(1);
-  const carouselRef = useRef<HTMLDivElement>(null);
   const TOTAL_SLIDE = carouselList.length;
+  const [infiniteCarouselList, setInfiniteCarouselList] = useState(carouselList);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const carouselRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const firstSide = carouselList[0];
     const lastSlide = carouselList[TOTAL_SLIDE - 1];
     setInfiniteCarouselList([lastSlide, ...carouselList, firstSide]);
+    setCurrentIndex(1);
   }, [carouselList, TOTAL_SLIDE]);
 
   const moveToNthSlide = (index: number) => {

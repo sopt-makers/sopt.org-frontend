@@ -17,7 +17,7 @@ export default function PartSlide({ part, handleCarouselSwipe }: PartSlideProps)
     visible: {
       opacity: 1,
       y: 0,
-      transition: { opacity: { delay: 0.2, duration: 0.6 }, y: { delay: 0.2, duration: 1 } },
+      transition: { opacity: { delay: 0.4, duration: 0.6 }, y: { delay: 0.4, duration: 1 } },
     },
   };
 

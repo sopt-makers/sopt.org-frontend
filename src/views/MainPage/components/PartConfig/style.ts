@@ -12,7 +12,7 @@ export const PartButtonList = styled.div`
 `;
 
 export const CarouselWrapper = styled.div`
-  width: 100vw;
+  width: 100%;
   overflow: hidden;
 `;
 
