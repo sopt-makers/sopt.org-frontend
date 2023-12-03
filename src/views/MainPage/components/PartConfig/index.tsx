@@ -35,6 +35,7 @@ export default function PartConfig() {
         {carouselList.map(({ label }, index) => (
           <PartButton
             key={index}
+            index={index}
             label={label}
             isSelected={index === partIndex}
             handleSelectPart={handleSelectPart}
