@@ -1,10 +1,12 @@
 import styled from '@emotion/styled';
 import { colors } from '@sopt-makers/colors';
+import { motion } from 'framer-motion';
 
-export const PartCarousel = styled.div`
+export const PartSlide = styled.div`
   display: flex;
   justify-content: space-between;
   flex-shrink: 0;
+  position: relative;
 
   width: 100vw;
   height: 428px;
@@ -93,4 +95,20 @@ export const PartDescription = styled.div`
   font-weight: 400;
   line-height: 162%; /* 30.78px */
   letter-spacing: -0.38px;
+`;
+
+export const Keyword = styled(motion.div)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 18px 25px;
+  border-radius: 33px;
+
+  color: #1b2136;
+  font-family: SUIT;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 162%; /* 35.64px */
+  letter-spacing: -0.44px;
 `;
