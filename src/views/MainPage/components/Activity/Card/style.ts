@@ -54,19 +54,26 @@ export const CardKorNav = styled.nav`
   margin-top: 26px;
   z-index: 3;
 
-  /* 태블릿 뷰 */
-  @media (max-width: 768px) and (min-width: 376px) {
-  }
-
-  /* 모바일 뷰 */
-  @media (max-width: 375px) {
+  @media (max-width: 428px) and (min-width: 376px) {
     font-size: 12px;
     line-height: 16.258px; /* 135.48% */
     letter-spacing: -0.48px;
 
-    padding: 6.753px 17.488px;
+    padding: 6px 18px;
     margin-left: 14px;
     margin-top: 14px;
+    border-radius: 8px;
+  }
+
+  @media (max-width: 375px) {
+    font-size: 10px;
+    line-height: 14.188px; /* 135.48% */
+    letter-spacing: -0.419px;
+
+    padding: 5px 15px;
+    margin-left: 12px;
+    margin-top: 12px;
+    border-radius: 6px;
   }
 `;
 
@@ -87,11 +94,6 @@ export const Blur = styled(motion.div)`
 
   padding: 26px;
 
-  /* 태블릿 뷰 */
-  @media (max-width: 768px) and (min-width: 376px) {
-  }
-
-  /* 모바일 뷰 */
   @media (max-width: 375px) {
     padding: 14px;
   }
@@ -101,11 +103,15 @@ export const CardEngNav = styled.p`
   color: rgba(255, 255, 255, 0.7);
   text-align: right;
   font-family: SUIT;
-  font-size: 19px;
+  font-size: 20px;
   font-style: normal;
   font-weight: 400;
   line-height: 28.288px; /* 148.887% */
   letter-spacing: -0.38px;
+
+  @media (max-width: 428px) {
+    font-size: 18px;
+  }
 `;
 
 export const ContentWrapper = styled.main`
@@ -118,9 +124,13 @@ export const ContentWrapper = styled.main`
 export const Content = styled.span<{ color: string }>`
   color: ${({ color }) => (color === 'yellow' ? '#ffe454' : '#fff')};
   font-family: SUIT;
-  font-size: 17.696px;
+  font-size: 18px;
   font-style: normal;
   font-weight: 400;
   line-height: 30.476px;
   letter-spacing: -0.708px;
+
+  @media (max-width: 428px) {
+    font-size: 11px;
+  }
 `;
