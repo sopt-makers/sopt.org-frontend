@@ -10,7 +10,12 @@ export const useGetProjectList = (
 ) => {
   const queryKey = ['getProjectList', category, platform];
   return useQuery(queryKey, () => api.projectAPI.getProjectList(category, platform), {
-    select: (data) => (sortType ? sortBy<ProjectType>(data, 'updatedAt') : data),
+    select: (data) => {
+      const filteredData = data.filter(({ link }) =>
+        link.some(({ title }) => ['website', 'appStore', 'googlePlay'].includes(title)),
+      );
+      return sortType ? sortBy<ProjectType>(filteredData, 'updatedAt') : filteredData;
+    },
     staleTime: 30000,
     suspense: true,
   });
