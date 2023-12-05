@@ -49,7 +49,7 @@ export const pageBreakPoint: Record<PageType, string> = {
   [PageType.PROJECT]: '899px',
 };
 
-export const StaticReleaseProjectList: StaticProjectType[] = [
+export const staticReleaseProjectList: StaticProjectType[] = [
   {
     name: '엄빠도 어렸다',
     summary: '긍정적인 소비 습관을 만드는 절약 SNS',
