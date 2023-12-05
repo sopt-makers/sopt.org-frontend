@@ -1,8 +1,8 @@
 import { useDeviceType } from '@src/hooks/useDevice';
-import { LinkType, ProjectLinkType, ProjectType } from '@src/lib/types/project';
+import { LinkType, ProjectLinkType, ProjectType, StaticProjectType } from '@src/lib/types/project';
 import { S } from './style';
 
-type RecentProjectListItemProps = ProjectType;
+type RecentProjectListItemProps = ProjectType | StaticProjectType;
 
 const linkToRecord = (links: ProjectLinkType[]): Record<LinkType, string | undefined> => {
   const record: Record<LinkType, string | undefined> = {

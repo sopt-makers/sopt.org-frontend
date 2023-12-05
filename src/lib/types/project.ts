@@ -52,6 +52,14 @@ export interface ProjectType {
   uploadedAt: string;
 }
 
+export interface StaticProjectType {
+  generation: number;
+  link: ProjectLinkType[];
+  logoImage: string;
+  name: string;
+  summary: string;
+}
+
 export interface GetProjectDetailResponse {
   project: ProjectType;
 }

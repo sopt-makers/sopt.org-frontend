@@ -1,12 +1,13 @@
 import Carousel from '@src/components/common/Carousel';
 import { useDeviceType, useIsDesktop, useIsMobile } from '@src/hooks/useDevice';
+import { StaticReleaseProjectList } from '@src/lib/constants/project';
 import { ProjectCategoryType, ProjectPlatformType, ProjectType } from '@src/lib/types/project';
 import RecentProjectListItem from '@src/views/ProjectPage/components/RecentProjectList/Item';
 import { useGetProjectList } from '@src/views/ProjectPage/hooks/queries';
 
 export default function RecentProjectListCarousel() {
   const { data } = useGetProjectList(ProjectCategoryType.ALL, ProjectPlatformType.ALL);
-  const recentProjectList = data as ProjectType[];
+  const recentProjectList = [...StaticReleaseProjectList, ...(data as ProjectType[]).slice(0, 4)];
 
   const isDesktopSize = useIsDesktop('1280px');
   const isMobileSize = useIsMobile('899px');
@@ -21,8 +22,8 @@ export default function RecentProjectListCarousel() {
       gapWidth={isMobileSize ? 14 : 24}
       isDesktop={isDesktop}
     >
-      {recentProjectList.slice(0, 6).map((project) => (
-        <RecentProjectListItem key={project.id} {...project} />
+      {recentProjectList.map((project, index) => (
+        <RecentProjectListItem key={index} {...project} />
       ))}
     </Carousel>
   );
