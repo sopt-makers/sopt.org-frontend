@@ -156,6 +156,7 @@ const TryLink = styled.a`
       height: 18px;
       ${tryArrowBaseCss}
       transform: translateY(-50%) rotate(-45deg);
+      transition: 200ms ease;
     }
   }
 
