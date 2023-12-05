@@ -21,7 +21,6 @@ export const FooterKorName = styled.div`
   background: rgba(117, 97, 79, 0.33);
   backdrop-filter: blur(2.949289321899414px);
   border-radius: 14px;
-  color: #fff;
 
   font-size: 22px;
   font-weight: 600;

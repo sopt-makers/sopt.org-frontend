@@ -1,5 +1,6 @@
 import React from 'react';
 import useBooleanState from '@src/hooks/useBooleanState';
+import { useDeviceType } from '@src/hooks/useDevice';
 import * as S from './style';
 
 type FlippableCardProps = {
@@ -7,8 +8,18 @@ type FlippableCardProps = {
   backContent: React.ReactNode;
 };
 
+const useFlippableCard = () => {
+  const [isFlipped, setIsFlipped, setIsUnflipped, toggleFlipped] = useBooleanState(false);
+  const deviceType = useDeviceType();
+
+  if (deviceType === 'desktop') {
+    return { isFlipped, onMouseEnter: setIsFlipped, onMouseLeave: setIsUnflipped };
+  }
+  return { isFlipped, onClick: toggleFlipped };
+};
+
 export default function FlippableCard({ frontContent, backContent }: FlippableCardProps) {
-  const [isFlipped, setIsFlipped, setIsUnflipped] = useBooleanState(false);
+  const { isFlipped, ...eventListeners } = useFlippableCard();
 
   const variants = {
     front: { rotateY: 0 },
@@ -16,7 +27,7 @@ export default function FlippableCard({ frontContent, backContent }: FlippableCa
   };
 
   return (
-    <div onMouseEnter={setIsFlipped} onMouseLeave={setIsUnflipped}>
+    <div {...eventListeners}>
       <S.CardWrapper
         animate={isFlipped ? 'back' : 'front'}
         variants={variants}
