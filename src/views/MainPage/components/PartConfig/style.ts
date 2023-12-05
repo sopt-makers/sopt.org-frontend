@@ -1,4 +1,11 @@
 import styled from '@emotion/styled';
+import Link from 'next/link';
+
+export const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 20.39px;
+`;
 
 export const PartConfig = styled.section`
   display: flex;
@@ -19,4 +26,16 @@ export const CarouselWrapper = styled.div`
 export const Carousel = styled.div`
   display: flex;
   column-gap: 20px;
+`;
+
+export const RequiredAbility = styled(Link)`
+  color: #415678;
+  text-align: right;
+  font-family: SUIT;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 162%; /* 32.4px */
+  letter-spacing: -0.8px;
+  text-decoration-line: underline;
 `;

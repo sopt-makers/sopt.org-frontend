@@ -30,25 +30,28 @@ export default function PartConfig() {
   };
 
   return (
-    <S.PartConfig>
-      <S.PartButtonList>
-        {carouselList.map(({ label }, index) => (
-          <PartButton
-            key={index}
-            index={index}
-            label={label}
-            isSelected={index === partIndex}
-            handleSelectPart={handleSelectPart}
-          />
-        ))}
-      </S.PartButtonList>
-      <S.CarouselWrapper>
-        <S.Carousel ref={carouselRef}>
-          {infiniteCarouselList.map(({ value }, index) => (
-            <PartSlide key={index} part={value} handleCarouselSwipe={handleCarouselSwipe} />
+    <S.Wrapper>
+      <S.PartConfig>
+        <S.PartButtonList>
+          {carouselList.map(({ label }, index) => (
+            <PartButton
+              key={index}
+              index={index}
+              label={label}
+              isSelected={index === partIndex}
+              handleSelectPart={handleSelectPart}
+            />
           ))}
-        </S.Carousel>
-      </S.CarouselWrapper>
-    </S.PartConfig>
+        </S.PartButtonList>
+        <S.CarouselWrapper>
+          <S.Carousel ref={carouselRef}>
+            {infiniteCarouselList.map(({ value }, index) => (
+              <PartSlide key={index} part={value} handleCarouselSwipe={handleCarouselSwipe} />
+            ))}
+          </S.Carousel>
+        </S.CarouselWrapper>
+      </S.PartConfig>
+      <S.RequiredAbility href="/recruit#chapter-info">필요 역량이 궁금하다면?</S.RequiredAbility>
+    </S.Wrapper>
   );
 }
