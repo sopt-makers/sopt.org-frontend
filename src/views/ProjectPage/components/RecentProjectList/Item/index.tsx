@@ -26,14 +26,18 @@ const getTryLink = (
   link: ProjectLinkType[],
   deviceType?: 'desktop' | 'iOS' | 'Android',
 ): string | undefined => {
+  if (link.length === 0) return;
+  if (link.length === 1) return link[0].url;
+
   const linkRecord = linkToRecord(link);
   if (deviceType === 'iOS' && linkRecord['appStore']) {
     return linkRecord['appStore'];
-  }
-  if (deviceType === 'Android' && linkRecord['googlePlay']) {
+  } else if (deviceType === 'Android' && linkRecord['googlePlay']) {
     return linkRecord['googlePlay'];
+  } else if (deviceType === 'desktop' && linkRecord['website']) {
+    return linkRecord['website'];
   }
-  return linkRecord['website'];
+  return linkRecord.appStore || link[0].url;
 };
 
 export default function RecentProjectListItem(props: RecentProjectListItemProps) {
