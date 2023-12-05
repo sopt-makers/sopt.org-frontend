@@ -53,3 +53,8 @@ export enum PageType {
   BLOG = 'BLOG',
   PROJECT = 'PROJECT',
 }
+
+export type TextWeightType = {
+  content: string;
+  weight: 'normal' | 'bold';
+};

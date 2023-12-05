@@ -32,7 +32,13 @@ export default function PartSlide({ part, handleCarouselSwipe }: PartSlideProps)
             <S.PartBadge>{value}</S.PartBadge>
             <S.PartTitle>{label}</S.PartTitle>
           </S.PartTop>
-          <S.PartDescription>{description}</S.PartDescription>
+          <S.PartDescription>
+            {description.map(({ content, weight }, index) => (
+              <S.Content key={index} weight={weight}>
+                {content}
+              </S.Content>
+            ))}
+          </S.PartDescription>
         </S.PartDetail>
         {keywordList[part].map(({ content, ...style }, index) => (
           <S.Keyword

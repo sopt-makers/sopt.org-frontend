@@ -86,13 +86,16 @@ export const PartTitle = styled.div`
 `;
 
 export const PartDescription = styled.div`
+  display: inline;
   width: 460px;
+`;
 
+export const Content = styled.span<{ weight: 'normal' | 'bold' }>`
   color: #fff;
   font-family: SUIT;
   font-size: 19px;
   font-style: normal;
-  font-weight: 400;
+  font-weight: ${({ weight }) => weight};
   line-height: 162%; /* 30.78px */
   letter-spacing: -0.38px;
 `;
