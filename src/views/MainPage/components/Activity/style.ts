@@ -5,7 +5,7 @@ export const Background = styled.section`
   background-color: ${colors.white};
 `;
 
-export const CardWapper = styled.main`
+export const CardWrapper = styled.main`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   justify-items: center;

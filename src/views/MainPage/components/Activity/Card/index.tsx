@@ -20,7 +20,7 @@ export default function Card({ img, navKor, navEng, description }: CardProps) {
 
   return (
     <S.Background initial="rest" whileHover="hover" animate="rest">
-      <S.CardImage src={img} alt="카드 이미지" fill />
+      <S.CardImage src={img} alt="카드 이미지" fill sizes="100%" />
       <S.Gradient />
       <S.CardKorNav>{navKor}</S.CardKorNav>
       <S.Blur variants={blurMotion}>

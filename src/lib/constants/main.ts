@@ -7,17 +7,10 @@ import { default as ImgSeminar } from '@src/assets/images/img_seminar.jpg';
 import { default as ImgSoptkaton } from '@src/assets/images/img_soptkaton.jpg';
 import { default as ImgSoptterm } from '@src/assets/images/img_soptterm.jpg';
 import { default as ImgStudy } from '@src/assets/images/img_study.jpg';
-import { TextColorType } from '../types/main';
+import { ActivityType } from '../types/main';
 
 export const FIRST_INTRO_CONTENT = 1;
 export const LAST_INTRO_CONTENT = 3;
-
-export interface ActivityType {
-  img: string;
-  navKor: string;
-  navEng: string;
-  description: TextColorType[];
-}
 
 export const Activity: ActivityType[] = [
   {
@@ -79,7 +72,7 @@ export const Activity: ActivityType[] = [
     navKor: '정기 세미나',
     navEng: 'Seminar',
     description: [
-      { content: '활동 기간 동안', color: 'white' },
+      { content: '활동 기간 동안 ', color: 'white' },
       { content: '총 8회의 파트별 세미나', color: 'yellow' },
       {
         content:
@@ -109,7 +102,7 @@ export const Activity: ActivityType[] = [
       { content: '운영팀', color: 'yellow' },
       { content: '에서는 SOPT 회원들의 원활한 ', color: 'white' },
       { content: '네트워킹', color: 'yellow' },
-      { content: '을 위한 다양한 행사를 기획해요.', color: 'white' },
+      { content: '을 위한 다양한 행사를 기획해요. ', color: 'white' },
       { content: '미디어팀', color: 'yellow' },
       { content: '에서는 SOPT의 활동과 관련된 ', color: 'white' },
       { content: '콘텐츠를 제작', color: 'yellow' },

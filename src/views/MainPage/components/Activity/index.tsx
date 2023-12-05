@@ -12,8 +12,8 @@ export default function CardHover() {
         description={
           'SOPT에서는 매 기수 내 정기적으로 진행되는 다양한 활동들이 있어요. \n 각 파트원들과 친목 및 실력을 쌓을 수 있는 행사들을 통해, SOPT를 보다 즐겨봅시다.'
         }
-      ></Tab>
-      <S.CardWapper>
+      />
+      <S.CardWrapper>
         {Activity.map(({ img, navKor, navEng, description }) => {
           return (
             <Card
@@ -25,7 +25,7 @@ export default function CardHover() {
             />
           );
         })}
-      </S.CardWapper>
+      </S.CardWrapper>
     </S.Background>
   );
 }
