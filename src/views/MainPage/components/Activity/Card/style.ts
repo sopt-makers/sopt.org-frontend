@@ -93,8 +93,12 @@ export const Blur = styled(motion.div)`
 
   padding: 26px;
 
-  @media (max-width: 375px) {
+  @media (max-width: 428px) and (min-width: 376px) {
     padding: 14px;
+  }
+
+  @media (max-width: 375px) {
+    padding: 12px;
   }
 `;
 
