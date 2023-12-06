@@ -9,7 +9,6 @@ export const Background = styled(motion.main)`
   height: 295px;
   border-radius: 19px;
 
-  cursor: pointer;
   position: relative;
   z-index: 2;
 `;
