@@ -45,11 +45,46 @@ export const MouseTrackerWrapper = styled.div<{ x: number; y: number }>`
   cursor: pointer;
   height: 60px;
   padding: 15px 28px;
-  &:hover {
-    background-image: ${({ x, y }) =>
-      `radial-gradient(circle 36px at ${x}px ${y}px, #3E5E7D90, transparent),
-       radial-gradient(circle 80px at ${x}px ${y}px, #3E5E7D50, transparent),
-       radial-gradient(circle 108px at ${x}px ${y}px, #3E5E7D50, transparent)`};
+  background: transparent;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: radial-gradient(
+        circle 36px at ${(props) => props.x}px ${(props) => props.y}px,
+        #3e5e7d90,
+        transparent
+      ),
+      radial-gradient(
+        circle 80px at ${(props) => props.x}px ${(props) => props.y}px,
+        #3e5e7d50,
+        transparent
+      ),
+      radial-gradient(
+        circle 108px at ${(props) => props.x}px ${(props) => props.y}px,
+        #3e5e7d50,
+        transparent
+      );
+    opacity: 0;
+    transition-duration: 0.4s;
+    transition-delay: 0.2s;
   }
-  transition: background 300ms ease;
+
+  &:hover::before {
+    opacity: 1;
+  }
+
+  > * {
+    transition: transform 0.2s;
+  }
+
+  &:hover > * {
+    transform: scale(0.96);
+  }
 `;
