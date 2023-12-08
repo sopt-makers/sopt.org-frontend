@@ -11,7 +11,7 @@ export const Wrapper = styled.div`
     overflow-x: scroll;
   }
 
-  @media (max-width: 375px) {
+  @media (max-width: 428px) {
     gap: 14px;
   }
 `;
