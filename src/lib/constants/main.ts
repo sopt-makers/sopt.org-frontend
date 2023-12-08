@@ -1,6 +1,8 @@
 import { default as ImgIntroCard1 } from '@src/assets/images/img_intro_card1.png';
 import { default as ImgIntroCard2 } from '@src/assets/images/img_intro_card2.png';
 import { default as ImgIntroCard3 } from '@src/assets/images/img_intro_card3.png';
+import { default as ImgMakersCard } from '@src/assets/images/img_main_makers_card.png';
+import { default as ImgMindCard } from '@src/assets/images/img_main_mind_card.png';
 import { TextWeightType } from '../types/universal';
 
 export const INTRO_CONTENT_LIST = [
@@ -55,7 +57,7 @@ export const OWN_ORGANIZATION_LIST: {
         weight: 'normal',
       },
     ],
-    frontSideBg: ImgIntroCard3.src,
+    frontSideBg: ImgMakersCard.src,
     backSideBg: '#FF7C53',
   },
   {
@@ -76,7 +78,7 @@ export const OWN_ORGANIZATION_LIST: {
       },
       { content: 'MIND도 도전하겠습니다.', weight: 'normal' },
     ],
-    frontSideBg: ImgIntroCard2.src,
+    frontSideBg: ImgMindCard.src,
     backSideBg: '#F66FF8',
   },
 ];

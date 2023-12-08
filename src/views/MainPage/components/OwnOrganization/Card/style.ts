@@ -3,6 +3,8 @@ import { colors } from '@sopt-makers/colors';
 
 export const CardWrapper = styled.div<{ background: string }>`
   background: ${({ background }) => background};
+  background-position: center;
+  background-size: contain;
   border-radius: 19px;
   padding: 39px 0;
   width: 712px;
