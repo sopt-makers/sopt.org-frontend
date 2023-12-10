@@ -1,7 +1,8 @@
 import { default as ImgIntroCard1 } from '@src/assets/images/img_intro_card1.png';
 import { default as ImgIntroCard2 } from '@src/assets/images/img_intro_card2.png';
 import { default as ImgIntroCard3 } from '@src/assets/images/img_intro_card3.png';
-import { Part, TextWeightType } from '@src/lib/types/universal';
+import { KeywordListType, PartListType } from '@src/lib/types/main';
+import { Part } from '@src/lib/types/universal';
 
 export const INTRO_CONTENT_LIST = [
   {
@@ -29,9 +30,6 @@ export const INTRO_CONTENT_LIST = [
 
 export const FIRST_INTRO_CONTENT = 1;
 export const LAST_INTRO_CONTENT = 3;
-
-type PartInfoType = { value: string; label: string; description: TextWeightType[] };
-export type PartListType = Record<Part, PartInfoType>;
 
 export const partList: PartListType = {
   [Part.PLAN]: {
@@ -138,15 +136,6 @@ export const partList: PartListType = {
     ],
   },
 };
-
-type KeywordType = {
-  content: string;
-  backgroundColor: string;
-  color: string;
-  top: string;
-  right: string;
-};
-export type KeywordListType = Record<Part, KeywordType[]>;
 
 export const keywordList: KeywordListType = {
   [Part.PLAN]: [
