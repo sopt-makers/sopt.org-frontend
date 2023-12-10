@@ -7,7 +7,7 @@ import { default as ImgSeminar } from '@src/assets/images/img_seminar.jpg';
 import { default as ImgSoptkaton } from '@src/assets/images/img_soptkaton.jpg';
 import { default as ImgSoptterm } from '@src/assets/images/img_soptterm.jpg';
 import { default as ImgStudy } from '@src/assets/images/img_study.jpg';
-import { KeywordListType, PartListType, ActivityType } from '@src/lib/types/main';
+import { ActivityType, KeywordListType, PartListType } from '@src/lib/types/main';
 import { Part } from '@src/lib/types/universal';
 
 export const FIRST_INTRO_CONTENT = 1;
@@ -245,26 +245,48 @@ export const partList: PartListType = {
   },
 };
 
+const yellowStyle = {
+  backgroundColor: '#FFB800',
+  color: '#1B2136',
+};
+
+const blueStyle = {
+  backgroundColor: 'rgba(64, 106, 255, 0.70)',
+  color: '#fff',
+};
+
+const indigoStyle = {
+  backgroundColor: 'rgba(27, 33, 54, 0.70)',
+  color: '#fff',
+};
+
+const skyStyle = {
+  backgroundColor: '#65D1FF',
+  color: '#1B2136',
+};
+
+const greenStyle = {
+  backgroundColor: '#9FFF40',
+  color: '#1B2136',
+};
+
 export const keywordList: KeywordListType = {
   [Part.PLAN]: [
     {
       content: '린스타트업 기초',
-      backgroundColor: '#FFB800',
-      color: '#1B2136',
+      ...yellowStyle,
       top: '92.97px',
       right: '217.71px',
     },
     {
       content: 'IT 프로덕트 기획',
-      backgroundColor: 'rgba(27, 33, 54, 0.70)',
-      color: '#fff',
+      ...indigoStyle,
       top: '157.13px',
       right: '353.2px',
     },
     {
       content: '전반적인 매니징',
-      backgroundColor: 'rgba(64, 106, 255, 0.70)',
-      color: '#fff',
+      ...blueStyle,
       top: '282.28px',
       right: '241.04px',
     },
@@ -272,22 +294,19 @@ export const keywordList: KeywordListType = {
   [Part.DESIGN]: [
     {
       content: '피그마와 같은 협업툴',
-      backgroundColor: '#65D1FF',
-      color: '#1B2136',
+      ...skyStyle,
       top: '92.97px',
       right: '175.71px',
     },
     {
       content: 'UX/UI 전반적 과정',
-      backgroundColor: 'rgba(27, 33, 54, 0.70)',
-      color: '#fff',
+      ...indigoStyle,
       top: '157.13px',
       right: '328.2px',
     },
     {
       content: '새로운 프로덕트',
-      backgroundColor: 'rgba(64, 106, 255, 0.70)',
-      color: '#fff',
+      ...blueStyle,
       top: '282.28px',
       right: '241.04px',
     },
@@ -295,29 +314,26 @@ export const keywordList: KeywordListType = {
   [Part.ANDROID]: [
     {
       content: 'UI 구현 기초/심화',
-      backgroundColor: '#FFB800',
-      color: '#1B2136',
+      ...yellowStyle,
       top: '117.6px',
       right: '118.42px',
     },
     {
       content: 'Kotlin 언어 활용',
-      backgroundColor: 'rgba(27, 33, 54, 0.70)',
-      color: '#fff',
+      ...indigoStyle,
       top: '96px',
       right: '307.71px',
     },
     {
       content: '서버 통신',
-      backgroundColor: 'rgba(64, 106, 255, 0.70)',
-      color: '#fff',
+      ...blueStyle,
       top: '232px',
       right: '141.08px',
     },
     {
       content: '페어 프로그래밍',
-      backgroundColor: '#9FFF40',
-      color: '#1B2136',
+
+      ...greenStyle,
       top: '278.38px',
       right: '241.04px',
     },
@@ -325,15 +341,13 @@ export const keywordList: KeywordListType = {
   [Part.IOS]: [
     {
       content: 'iOS 앱 서비스',
-      backgroundColor: 'rgba(27, 33, 54, 0.70)',
-      color: '#fff',
+      ...indigoStyle,
       top: '82.31px',
       right: '294.93px',
     },
     {
       content: 'Swift와 UI Kit',
-      backgroundColor: '#FFB800',
-      color: '#1B2136',
+      ...yellowStyle,
       top: '117.6px',
       right: '129.08px',
     },
@@ -346,8 +360,7 @@ export const keywordList: KeywordListType = {
     },
     {
       content: '왕초보 스터디',
-      backgroundColor: 'rgba(64, 106, 255, 0.70)',
-      color: '#fff',
+      ...blueStyle,
       top: '275.88px',
       right: '365.24px',
     },
@@ -355,22 +368,19 @@ export const keywordList: KeywordListType = {
   [Part.WEB]: [
     {
       content: '웹 서비스 개발',
-      backgroundColor: '#FFB800',
-      color: '#1B2136',
+      ...yellowStyle,
       top: '92.97px',
       right: '231.71px',
     },
     {
       content: '기초부터 심화까지',
-      backgroundColor: 'rgba(27, 33, 54, 0.70)',
-      color: '#fff',
+      ...indigoStyle,
       top: '157.13px',
       right: '339.2px',
     },
     {
       content: 'UI구현과 서버 통신',
-      backgroundColor: '#65D1FF',
-      color: '#1B2136',
+      ...skyStyle,
       top: '282.28px',
       right: '216.04px',
     },
@@ -378,29 +388,25 @@ export const keywordList: KeywordListType = {
   [Part.SERVER]: [
     {
       content: '서버 애플리케이션 구축',
-      backgroundColor: '#9FFF40',
-      color: '#1B2136',
+      ...greenStyle,
       top: '92.97px',
       right: '156.71px',
     },
     {
       content: '관계형 데이터베이스',
-      backgroundColor: 'rgba(27, 33, 54, 0.70)',
-      color: '#fff',
+      ...indigoStyle,
       top: '157.13px',
       right: '101.2px',
     },
     {
       content: 'AWS 기반',
-      backgroundColor: '#65D1FF',
-      color: '#1B2136',
+      ...skyStyle,
       top: '192px',
       right: '400.2px',
     },
     {
       content: 'Spring 프레임 워크',
-      backgroundColor: 'rgba(64, 106, 255, 0.70)',
-      color: '#fff',
+      ...blueStyle,
       top: '282.28px',
       right: '208.04px',
     },
