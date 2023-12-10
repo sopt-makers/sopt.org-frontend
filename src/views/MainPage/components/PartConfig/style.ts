@@ -1,5 +1,10 @@
 import styled from '@emotion/styled';
+import { colors } from '@sopt-makers/colors';
 import Link from 'next/link';
+
+export const Background = styled.section`
+  background-color: ${colors.white};
+`;
 
 export const Wrapper = styled.div`
   display: flex;

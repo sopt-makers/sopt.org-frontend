@@ -1,5 +1,6 @@
 import PageLayout from '@src/components/common/PageLayout';
 import IntroSection from '@src/views/MainPage/components/IntroSection';
+import PartConfig from '@src/views/MainPage/components/PartConfig';
 import Activity from './components/Activity';
 import Banner from './components/Banner';
 import Introduce from './components/Introduce';
@@ -13,6 +14,7 @@ function MainPage() {
       <IntroSection />
       <ScrollInteractiveLogo />
       <Activity />
+      <PartConfig />
     </PageLayout>
   );
 }
