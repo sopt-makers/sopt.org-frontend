@@ -16,7 +16,7 @@ export default function RecruitButton({ children }: PropsWithChildren<object>) {
     <Link href="/recruit">
       <S.RecruitButtonWrapper>
         <S.MouseTrackerWrapper onMouseMove={handleMouseMove} x={blurPosition.x} y={blurPosition.y}>
-          {children}
+          <div>{children}</div>
         </S.MouseTrackerWrapper>
       </S.RecruitButtonWrapper>
     </Link>
