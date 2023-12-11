@@ -11,6 +11,20 @@ export const Background = styled(motion.main)`
 
   position: relative;
   z-index: 2;
+
+  @media (max-width: 428px) and (min-width: 376px) {
+    border-radius: 21px;
+    max-width: 296px;
+    width: 100%;
+    height: 188px;
+  }
+
+  @media (max-width: 375px) {
+    border-radius: 21px;
+    max-width: 258px;
+    width: 100%;
+    height: 164px;
+  }
 `;
 
 export const Gradient = styled.div`
@@ -54,7 +68,7 @@ export const CardKorNav = styled.nav`
   z-index: 3;
 
   @media (max-width: 428px) and (min-width: 376px) {
-    font-size: 12px;
+    font-size: 13px;
     line-height: 16.258px; /* 135.48% */
     letter-spacing: -0.48px;
 
@@ -113,7 +127,7 @@ export const CardEngNav = styled.p`
   letter-spacing: -0.38px;
 
   @media (max-width: 428px) {
-    font-size: 18px;
+    font-size: 12px;
   }
 `;
 
@@ -135,5 +149,6 @@ export const Content = styled.span<{ color: string }>`
 
   @media (max-width: 428px) {
     font-size: 11px;
+    line-height: 19px;
   }
 `;
