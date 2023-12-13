@@ -1,10 +1,14 @@
 import { useEffect, useRef, useState } from 'react';
 
+const SWIPE_THRESHOLD = 50;
+
 const useInfiniteCarousel = <T>(carouselList: Array<T>, x: string) => {
   const TOTAL_SLIDE = carouselList.length;
   const [infiniteCarouselList, setInfiniteCarouselList] = useState(carouselList);
   const [currentIndex, setCurrentIndex] = useState(0);
   const carouselRef = useRef<HTMLDivElement>(null);
+  const [slideIndex, setSlideIndex] = useState(0);
+  const [touchStartX, setTouchStartX] = useState(0);
 
   useEffect(() => {
     const firstSide = carouselList[0];
@@ -36,13 +40,52 @@ const useInfiniteCarousel = <T>(carouselList: Array<T>, x: string) => {
     }
   };
 
+  const handleSelectSlide = (clickedIndex: number) => {
+    setSlideIndex(clickedIndex);
+    handleSwipe(clickedIndex - slideIndex);
+  };
+
+  const handleCarouselSwipe = (direction: number) => {
+    const totalSlide = carouselList.length;
+    const newIndex = slideIndex + direction;
+    if (direction === 1) {
+      setSlideIndex(newIndex === totalSlide ? 0 : newIndex);
+    } else {
+      setSlideIndex(newIndex === -1 ? totalSlide - 1 : newIndex);
+    }
+    handleSwipe(direction);
+  };
+
+  const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
+    setTouchStartX(e.touches[0].clientX);
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent<HTMLDivElement>) => {
+    const endX = e.changedTouches[0].clientX;
+    const deltaX = touchStartX - endX;
+    if (deltaX > SWIPE_THRESHOLD) {
+      handleCarouselSwipe(1);
+    } else if (deltaX < -SWIPE_THRESHOLD) {
+      handleCarouselSwipe(-1);
+    }
+  };
+
   useEffect(() => {
     if (carouselRef.current) {
       carouselRef.current.style.transform = `translateX(calc(${currentIndex} * ${x}))`;
     }
   }, [currentIndex, x]);
 
-  return { carouselRef, infiniteCarouselList, handleSwipe };
+  return {
+    carouselRef,
+    infiniteCarouselList,
+    slideIndex,
+    handleSelectSlide,
+    handleCarouselSwipe,
+    handleSwipe,
+    handleTouchStart,
+    handleTouchEnd,
+  };
 };
 
 export default useInfiniteCarousel;

@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import useDrag from '@src/hooks/useDrag';
 import useInfiniteCarousel from '@src/hooks/useInfiniteCarousel';
 import { tabs as carouselList } from '@src/lib/constants/tabs';
@@ -9,28 +8,16 @@ import Tab from '@src/views/MainPage/components/Tab';
 import * as S from './style';
 
 export default function PartConfig() {
-  const [partIndex, setPartIndex] = useState(0);
   const { dragRef, handleMouseDown, handleMouseMove, initDragging } = useDrag();
-  const { carouselRef, infiniteCarouselList, handleSwipe } = useInfiniteCarousel<TabType>(
-    carouselList,
-    '(-100% - 20px)',
-  );
-
-  const handleSelectPart = (clickedIndex: number) => {
-    setPartIndex(clickedIndex);
-    handleSwipe(clickedIndex - partIndex);
-  };
-
-  const handleCarouselSwipe = (direction: number) => {
-    const totalSlide = carouselList.length;
-    const newIndex = partIndex + direction;
-    if (direction === 1) {
-      setPartIndex(newIndex === totalSlide ? 0 : newIndex);
-    } else {
-      setPartIndex(newIndex === -1 ? totalSlide - 1 : newIndex);
-    }
-    handleSwipe(direction);
-  };
+  const {
+    carouselRef,
+    infiniteCarouselList,
+    slideIndex,
+    handleSelectSlide,
+    handleCarouselSwipe,
+    handleTouchStart,
+    handleTouchEnd,
+  } = useInfiniteCarousel<TabType>(carouselList, '(-100% - 20px)');
 
   return (
     <S.Background>
@@ -56,14 +43,18 @@ export default function PartConfig() {
                   key={index}
                   index={index}
                   label={label}
-                  isSelected={index === partIndex}
-                  handleSelectPart={handleSelectPart}
+                  isSelected={index === slideIndex}
+                  handleSelectPart={handleSelectSlide}
                 />
               ))}
             </S.PartButtonList>
           </S.ButtonWrapper>
           <S.CarouselWrapper>
-            <S.Carousel ref={carouselRef}>
+            <S.Carousel
+              ref={carouselRef}
+              onTouchStart={handleTouchStart}
+              onTouchEnd={handleTouchEnd}
+            >
               {infiniteCarouselList.map(({ value }, index) => (
                 <PartSlide key={index} part={value} handleCarouselSwipe={handleCarouselSwipe} />
               ))}
