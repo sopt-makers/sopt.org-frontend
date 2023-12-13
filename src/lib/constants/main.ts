@@ -277,139 +277,265 @@ export const keywordList: KeywordListType = {
     {
       content: '린스타트업 기초',
       ...yellowStyle,
-      top: '92.97px',
-      right: '11.34vw',
+      desktop: {
+        top: '92.97px',
+        right: '11.34vw',
+      },
+      mobile: {
+        top: '258px',
+        right: '66px',
+      },
     },
     {
       content: 'IT 프로덕트 기획',
       ...indigoStyle,
-      top: '157.13px',
-      right: '18.39vw',
+      desktop: {
+        top: '157.13px',
+        right: '18.39vw',
+      },
+      mobile: {
+        top: '297px',
+        right: '223px',
+      },
     },
     {
       content: '전반적인 매니징',
       ...blueStyle,
-      top: '282.28px',
-      right: '12.55vw',
+      desktop: {
+        top: '282.28px',
+        right: '12.55vw',
+      },
+      mobile: {
+        top: '383px',
+        right: '85px',
+      },
     },
   ],
   [Part.DESIGN]: [
     {
       content: '피그마와 같은 협업툴',
       ...skyStyle,
-      top: '92.97px',
-      right: '9.15vw',
+      desktop: {
+        top: '92.97px',
+        right: '9.15vw',
+      },
+      mobile: {
+        top: '259px',
+        right: '44px',
+      },
     },
     {
       content: 'UX/UI 전반적 과정',
       ...indigoStyle,
-      top: '157.13px',
-      right: '17.09vw',
+      desktop: {
+        top: '157.13px',
+        right: '17.09vw',
+      },
+      mobile: {
+        top: '306px',
+        right: '155px',
+      },
     },
     {
       content: '새로운 프로덕트',
       ...blueStyle,
-      top: '282.28px',
-      right: '12.55vw',
+      desktop: {
+        top: '282.28px',
+        right: '12.55vw',
+      },
+      mobile: {
+        top: '386px',
+        right: '92px',
+      },
     },
   ],
   [Part.ANDROID]: [
     {
       content: 'UI 구현 기초/심화',
       ...yellowStyle,
-      top: '117.6px',
-      right: '6.16vw',
+      desktop: {
+        top: '117.6px',
+        right: '6.16vw',
+      },
+      mobile: {
+        top: '303px',
+        right: '49px',
+      },
     },
     {
       content: 'Kotlin 언어 활용',
       ...indigoStyle,
-      top: '96px',
-      right: 'calc(115px + 10vw)',
+      desktop: {
+        top: '96px',
+        right: 'calc(115px + 10vw)',
+      },
+      mobile: {
+        top: '287px',
+        right: '188px',
+      },
     },
     {
       content: '서버 통신',
       ...blueStyle,
-      top: '232px',
-      right: '7.34vw',
+      desktop: {
+        top: '232px',
+        right: '7.34vw',
+      },
+      mobile: {
+        top: '373px',
+        right: '68px',
+      },
     },
     {
       content: '페어 프로그래밍',
       ...greenStyle,
-      top: '278.38px',
-      right: 'calc(50px + 10vw)',
+      desktop: {
+        top: '278.38px',
+        right: 'calc(50px + 10vw)',
+      },
+      mobile: {
+        top: '379px',
+        right: '221px',
+      },
     },
   ],
   [Part.IOS]: [
     {
       content: 'iOS 앱 서비스',
       ...indigoStyle,
-      top: '82.31px',
-      right: 'calc(102px + 10vw)',
+      desktop: {
+        top: '82.31px',
+        right: 'calc(102px + 10vw)',
+      },
+      mobile: {
+        top: '305px',
+        right: '170px',
+      },
     },
     {
       content: 'Swift와 UI Kit',
       ...yellowStyle,
-      top: '117.6px',
-      right: '6.72vw',
+      desktop: {
+        top: '117.6px',
+        right: '6.72vw',
+      },
+      mobile: {
+        top: '324px',
+        right: '49px',
+      },
     },
     {
       content: '보충 및 심화 세미나',
       backgroundColor: '#D65438',
       color: '#fff',
-      top: '223.74px',
-      right: 'calc(33px + 5vw)',
+      desktop: {
+        top: '223.74px',
+        right: 'calc(33px + 5vw)',
+      },
+      mobile: {
+        top: '400px',
+        right: '129px',
+      },
     },
     {
       content: '왕초보 스터디',
       ...blueStyle,
-      top: '275.88px',
-      right: '19.02vw',
+      desktop: {
+        top: '275.88px',
+        right: '19.02vw',
+      },
+      mobile: {
+        top: '360px',
+        right: '307px',
+      },
     },
   ],
   [Part.WEB]: [
     {
       content: '웹 서비스 개발',
       ...yellowStyle,
-      top: '92.97px',
-      right: '12.06vw',
+      desktop: {
+        top: '92.97px',
+        right: '12.06vw',
+      },
+      mobile: {
+        top: '262px',
+        right: '84px',
+      },
     },
     {
       content: '기초부터 심화까지',
       ...indigoStyle,
-      top: '157.13px',
-      right: '17.66vw',
+      desktop: {
+        top: '157.13px',
+        right: '17.66vw',
+      },
+      mobile: {
+        top: '314px',
+        right: '211px',
+      },
     },
     {
       content: 'UI구현과 서버 통신',
       ...skyStyle,
-      top: '282.28px',
-      right: '11.25vw',
+      desktop: {
+        top: '282.28px',
+        right: '11.25vw',
+      },
+      mobile: {
+        top: '382px',
+        right: '64px',
+      },
     },
   ],
   [Part.SERVER]: [
     {
       content: '서버 애플리케이션 구축',
       ...greenStyle,
-      top: '92.97px',
-      right: '8.16vw',
+      desktop: {
+        top: '92.97px',
+        right: '8.16vw',
+      },
+      mobile: {
+        top: '301px',
+        right: '93px',
+      },
     },
     {
       content: '관계형 데이터베이스',
       ...indigoStyle,
-      top: '157.13px',
-      right: 'calc(30px + 3.69vw)',
+      desktop: {
+        top: '157.13px',
+        right: 'calc(30px + 3.69vw)',
+      },
+      mobile: {
+        top: '346px',
+        right: '40px',
+      },
     },
     {
       content: 'AWS 기반',
       ...skyStyle,
-      top: '192px',
-      right: 'calc(110px + 15.1vw)',
+      desktop: {
+        top: '192px',
+        right: 'calc(110px + 15.1vw)',
+      },
+      mobile: {
+        top: '323px',
+        right: '332px',
+      },
     },
     {
       content: 'Spring 프레임 워크',
       ...blueStyle,
-      top: '282.28px',
-      right: '10.83vw',
+      desktop: {
+        top: '282.28px',
+        right: '10.83vw',
+      },
+      mobile: {
+        top: '389px',
+        right: '192px',
+      },
     },
   ],
 };

@@ -1,5 +1,6 @@
 import { ReactComponent as IcArrowLeft } from '@src/assets/icons/ic_arrow_left.svg';
 import { ReactComponent as IcArrowRight } from '@src/assets/icons/ic_arrow_right.svg';
+import { useIsMobile } from '@src/hooks/useDevice';
 import { keywordList, partList } from '@src/lib/constants/main';
 import { Part } from '@src/lib/types/universal';
 import * as S from './style';
@@ -11,7 +12,7 @@ interface PartSlideProps {
 
 export default function PartSlide({ part, handleCarouselSwipe }: PartSlideProps) {
   const { value, label, description } = partList[part];
-
+  const isMobile = useIsMobile('768px');
   const contentDraw = {
     initial: (custom: number) => ({ opacity: 0, y: 10 * (custom % 2) + 10 }),
     visible: {
@@ -40,18 +41,21 @@ export default function PartSlide({ part, handleCarouselSwipe }: PartSlideProps)
             ))}
           </S.PartDescription>
         </S.PartDetail>
-        {keywordList[part].map(({ content, ...style }, index) => (
-          <S.Keyword
-            key={index}
-            custom={index}
-            initial="initial"
-            whileInView="visible"
-            variants={contentDraw}
-            style={{ position: 'absolute', ...style }}
-          >
-            {content}
-          </S.Keyword>
-        ))}
+        {keywordList[part].map(({ content, desktop, mobile, ...style }, index) => {
+          const responsiveStyle = isMobile ? mobile : desktop;
+          return (
+            <S.Keyword
+              key={index}
+              custom={index}
+              initial="initial"
+              whileInView="visible"
+              variants={contentDraw}
+              style={{ position: 'absolute', ...style, ...responsiveStyle }}
+            >
+              {content}
+            </S.Keyword>
+          );
+        })}
       </S.Wrapper>
       <S.RightArrow>
         <IcArrowRight onClick={() => handleCarouselSwipe(1)} />

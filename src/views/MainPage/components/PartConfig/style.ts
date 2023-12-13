@@ -21,6 +21,10 @@ export const PartConfig = styled.section`
 export const PartButtonList = styled.div`
   display: flex;
   gap: 15px;
+
+  @media (max-width: 768px) {
+    gap: 12.39px;
+  }
 `;
 
 export const CarouselWrapper = styled.div`
