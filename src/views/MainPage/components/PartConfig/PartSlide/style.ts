@@ -19,7 +19,7 @@ export const PartSlide = styled.div`
 export const LeftArrow = styled.div`
   display: flex;
   align-items: center;
-  margin-left: 30px;
+  margin-left: 1.5625vw;
 
   & > svg:hover {
     cursor: pointer;
@@ -29,7 +29,7 @@ export const LeftArrow = styled.div`
 export const RightArrow = styled.div`
   display: flex;
   align-items: center;
-  margin-right: 30px;
+  margin-right: 1.5625vw;
 
   & > svg:hover {
     cursor: pointer;
@@ -39,7 +39,7 @@ export const RightArrow = styled.div`
 export const Wrapper = styled.div`
   display: flex;
   width: 100%;
-  padding-left: 84px;
+  padding-left: 4.375vw;
 `;
 
 export const PartDetail = styled.div`
@@ -47,6 +47,7 @@ export const PartDetail = styled.div`
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
+  width: calc(250px + 11vw);
 `;
 
 export const PartTop = styled.div`
@@ -78,7 +79,7 @@ export const PartTitle = styled.div`
 
   color: #fff;
   font-family: SUIT;
-  font-size: 56px;
+  font-size: calc(48px + 0.41vw);
   font-style: normal;
   font-weight: 600;
   line-height: 100%; /* 56px */
@@ -87,13 +88,12 @@ export const PartTitle = styled.div`
 
 export const PartDescription = styled.div`
   display: inline;
-  width: 460px;
 `;
 
 export const Content = styled.span<{ weight: 'normal' | 'bold' }>`
   color: #fff;
   font-family: SUIT;
-  font-size: 19px;
+  font-size: calc(16px + 0.2vw);
   font-style: normal;
   font-weight: ${({ weight }) => weight};
   line-height: 162%; /* 30.78px */
@@ -104,12 +104,12 @@ export const Keyword = styled(motion.div)`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 18px 25px;
+  padding: calc(13px + 0.26vw) calc(20px + 0.26vw);
   border-radius: 33px;
 
   color: #1b2136;
   font-family: SUIT;
-  font-size: 22px;
+  font-size: calc(16px + 0.3vw);
   font-style: normal;
   font-weight: 600;
   line-height: 162%; /* 35.64px */
