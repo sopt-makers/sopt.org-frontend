@@ -11,7 +11,7 @@ const ChapterInfo = () => {
   const [selectedTab, setSelectedTab] = useState<Part>(Part.PLAN);
 
   return (
-    <Wrapper>
+    <Wrapper id="chapter-info">
       <SectionTitleWrapper>
         <SectionTitleTranslate>Positions</SectionTitleTranslate>
         <SectionTitle>{'SOPT는 33기는 총 6개의 파트로\n이루어져 있어요.'}</SectionTitle>
