@@ -21,6 +21,10 @@ export const PartConfig = styled.section`
 export const ButtonWrapper = styled.div`
   width: 100%;
   overflow-x: scroll;
+
+  &:hover {
+    cursor: grab;
+  }
 `;
 
 export const PartButtonList = styled.div`

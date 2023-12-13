@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import useDrag from '@src/hooks/useDrag';
 import useInfiniteCarousel from '@src/hooks/useInfiniteCarousel';
 import { tabs as carouselList } from '@src/lib/constants/tabs';
 import { TabType } from '@src/lib/types/universal';
@@ -9,6 +10,7 @@ import * as S from './style';
 
 export default function PartConfig() {
   const [partIndex, setPartIndex] = useState(0);
+  const { dragRef, handleMouseDown, handleMouseMove, initDragging } = useDrag();
   const { carouselRef, infiniteCarouselList, handleSwipe } = useInfiniteCarousel<TabType>(
     carouselList,
     '(-100% - 20px)',
@@ -41,7 +43,13 @@ export default function PartConfig() {
       />
       <S.Wrapper>
         <S.PartConfig>
-          <S.ButtonWrapper>
+          <S.ButtonWrapper
+            ref={dragRef}
+            onMouseDown={handleMouseDown}
+            onMouseMove={handleMouseMove}
+            onMouseLeave={initDragging}
+            onMouseUp={initDragging}
+          >
             <S.PartButtonList>
               {carouselList.map(({ label }, index) => (
                 <PartButton
