@@ -18,12 +18,23 @@ export const PartConfig = styled.section`
   gap: 23.61px;
 `;
 
+export const ButtonWrapper = styled.div`
+  width: 100%;
+  overflow-x: scroll;
+`;
+
 export const PartButtonList = styled.div`
   display: flex;
   gap: 15px;
 
   @media (max-width: 768px) {
+    width: 776px;
     gap: 12.39px;
+  }
+
+  @media (max-width: 428px) {
+    width: 446px;
+    gap: 7.12px;
   }
 `;
 

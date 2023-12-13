@@ -41,17 +41,19 @@ export default function PartConfig() {
       />
       <S.Wrapper>
         <S.PartConfig>
-          <S.PartButtonList>
-            {carouselList.map(({ label }, index) => (
-              <PartButton
-                key={index}
-                index={index}
-                label={label}
-                isSelected={index === partIndex}
-                handleSelectPart={handleSelectPart}
-              />
-            ))}
-          </S.PartButtonList>
+          <S.ButtonWrapper>
+            <S.PartButtonList>
+              {carouselList.map(({ label }, index) => (
+                <PartButton
+                  key={index}
+                  index={index}
+                  label={label}
+                  isSelected={index === partIndex}
+                  handleSelectPart={handleSelectPart}
+                />
+              ))}
+            </S.PartButtonList>
+          </S.ButtonWrapper>
           <S.CarouselWrapper>
             <S.Carousel ref={carouselRef}>
               {infiniteCarouselList.map(({ value }, index) => (
