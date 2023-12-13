@@ -1,6 +1,7 @@
-import { ReactComponent as IcArrowLeft } from '@src/assets/icons/ic_arrow_left.svg';
-import { ReactComponent as IcArrowRight } from '@src/assets/icons/ic_arrow_right.svg';
-import { useIsMobile } from '@src/hooks/useDevice';
+import Image from 'next/image';
+import IcArrowLeft from '@src/assets/icons/ic_arrow_left.svg';
+import IcArrowRight from '@src/assets/icons/ic_arrow_right.svg';
+import { useIsMobile, useIsTablet } from '@src/hooks/useDevice';
 import { keywordList, partList } from '@src/lib/constants/main';
 import { Part } from '@src/lib/types/universal';
 import * as S from './style';
@@ -12,7 +13,8 @@ interface PartSlideProps {
 
 export default function PartSlide({ part, handleCarouselSwipe }: PartSlideProps) {
   const { value, label, description } = partList[part];
-  const isMobile = useIsMobile('768px');
+  const isTablet = useIsTablet('429px', '768px');
+  const isMobile = useIsMobile('428px');
   const contentDraw = {
     initial: (custom: number) => ({ opacity: 0, y: 10 * (custom % 2) + 10 }),
     visible: {
@@ -25,7 +27,13 @@ export default function PartSlide({ part, handleCarouselSwipe }: PartSlideProps)
   return (
     <S.PartSlide>
       <S.LeftArrow>
-        <IcArrowLeft onClick={() => handleCarouselSwipe(-1)} />
+        <Image
+          src={IcArrowLeft}
+          width="42"
+          height="42"
+          alt="왼쪽 화살표"
+          onClick={() => handleCarouselSwipe(-1)}
+        />
       </S.LeftArrow>
       <S.Wrapper>
         <S.PartDetail>
@@ -41,8 +49,8 @@ export default function PartSlide({ part, handleCarouselSwipe }: PartSlideProps)
             ))}
           </S.PartDescription>
         </S.PartDetail>
-        {keywordList[part].map(({ content, desktop, mobile, ...style }, index) => {
-          const responsiveStyle = isMobile ? mobile : desktop;
+        {keywordList[part].map(({ content, desktop, tablet, mobile, ...style }, index) => {
+          const responsiveStyle = isMobile ? mobile : isTablet ? tablet : desktop;
           return (
             <S.Keyword
               key={index}
@@ -58,7 +66,13 @@ export default function PartSlide({ part, handleCarouselSwipe }: PartSlideProps)
         })}
       </S.Wrapper>
       <S.RightArrow>
-        <IcArrowRight onClick={() => handleCarouselSwipe(1)} />
+        <Image
+          src={IcArrowRight}
+          width="42"
+          height="42"
+          alt="오른쪽 화살표"
+          onClick={() => handleCarouselSwipe(1)}
+        />
       </S.RightArrow>
     </S.PartSlide>
   );

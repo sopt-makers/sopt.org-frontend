@@ -20,33 +20,57 @@ export const PartSlide = styled.div`
     border-radius: none;
     background: none;
   }
+
+  @media (max-width: 428px) {
+    height: 280.74px;
+  }
 `;
 
-export const LeftArrow = styled.div`
+export const Arrow = styled.div`
   display: flex;
+  justify-content: center;
   align-items: center;
   margin: 0 0 0 1.5625vw;
 
-  & > svg:hover {
+  & > img:hover {
     cursor: pointer;
   }
 
   @media (max-width: 768px) {
-    margin: 0 20.98px 0 0;
+    width: 26px;
+    margin: 0 2.73vw 0 0;
+  }
+
+  @media (max-width: 428px) {
+    margin: 0 2.72vw 0 0;
+    width: 15.293px;
+    & > img {
+      height: 24.138px;
+    }
   }
 `;
 
-export const RightArrow = styled.div`
-  display: flex;
-  align-items: center;
-  margin: 0 1.5625vw 0 0;
-
-  & > svg:hover {
-    cursor: pointer;
-  }
+export const LeftArrow = styled(Arrow)`
+  margin: 0 0 0 1.5625vw;
 
   @media (max-width: 768px) {
-    margin: 0 0 0 20.98px;
+    margin: 0 2.73vw 0 0;
+  }
+
+  @media (max-width: 428px) {
+    margin: 0 2.72vw 0 0;
+  }
+`;
+
+export const RightArrow = styled(Arrow)`
+  margin: 0 1.5625vw 0 0;
+
+  @media (max-width: 768px) {
+    margin: 0 0 0 2.73vw;
+  }
+
+  @media (max-width: 428px) {
+    margin: 0 0 0 2.72vw;
   }
 `;
 
@@ -57,9 +81,14 @@ export const Wrapper = styled.div`
 
   @media (max-width: 768px) {
     position: relative;
-    padding: 50.49px 49.98px 0 49.97px;
+    padding: 6.57vw 6.5vw 0 6.5vw;
     border-radius: 19px;
     background: linear-gradient(98deg, #1a2035 33.84%, #304f84 96.92%);
+  }
+
+  @media (max-width: 428px) {
+    padding: 6.78vw 6.71vw 0 6.71vw;
+    border-radius: 10.919px;
   }
 `;
 
@@ -84,13 +113,17 @@ export const PartTop = styled.div`
   @media (max-width: 768px) {
     gap: 5px;
   }
+
+  @media (max-width: 428px) {
+    gap: 2.87px;
+  }
 `;
 
 export const PartBadge = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  /* gap: 10px; */
 
   width: fit-content;
   padding: 6px 15px;
@@ -100,10 +133,25 @@ export const PartBadge = styled.div`
   background: rgba(255, 255, 255, 0.2);
 
   color: ${colors.white};
+  font-family: SUIT;
+  font-size: 19px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 100%; /* 19px */
+  letter-spacing: -0.38px;
 
   @media (max-width: 768px) {
-    gap: 8.164px;
+    border-radius: 8.836px;
+    font-size: 15px;
+    letter-spacing: -0.3px;
     padding: 4.899px 12.247px;
+  }
+
+  @media (max-width: 428px) {
+    border-radius: 5.078px;
+    padding: 2.815px 7.038px;
+    font-size: 9px;
+    letter-spacing: -0.18px;
   }
 `;
 
@@ -122,12 +170,18 @@ export const PartTitle = styled.div`
 
   @media (max-width: 768px) {
     height: 53.88px;
-
-    font-size: 38px;
+    font-size: max(30px, 4.94vw);
     line-height: 96%; /* 36.48px */
     letter-spacing: -0.76px;
 
-    margin-bottom: 14px;
+    margin-bottom: 1.82vw;
+  }
+
+  @media (max-width: 428px) {
+    height: max(28px, 7.21vw);
+    font-size: max(20px, 5.14vw);
+    letter-spacing: -0.44px;
+    margin-bottom: 1.88vw;
   }
 `;
 
@@ -145,8 +199,13 @@ export const Content = styled.span<{ weight: 'normal' | 'bold' }>`
   letter-spacing: -0.38px;
 
   @media (max-width: 768px) {
-    font-size: 17px;
+    font-size: max(14px, 2.21vw);
     letter-spacing: -0.34px;
+  }
+
+  @media (max-width: 428px) {
+    font-size: max(9px, 2.33vw);
+    letter-spacing: -0.2px;
   }
 `;
 
@@ -169,5 +228,11 @@ export const Keyword = styled(motion.div)`
     padding: 13.115px 18.215px;
     font-size: 16px;
     letter-spacing: -0.32px;
+  }
+
+  @media (max-width: 428px) {
+    padding: max(6px, 1.76vw) max(8px, 2.44vw);
+    font-size: 9px;
+    letter-spacing: -0.18px;
   }
 `;

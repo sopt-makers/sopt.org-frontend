@@ -23,14 +23,9 @@ type KeywordType = {
   content: string;
   backgroundColor: string;
   color: string;
-  desktop: {
-    top: string;
-    right: string;
-  };
-  mobile: {
-    top: string;
-    right: string;
-  };
+  desktop: { top: string; right: string };
+  tablet: { top: string; right: string };
+  mobile: { top: string; right: string };
 };
 
 export type KeywordListType = Record<Part, KeywordType[]>;
