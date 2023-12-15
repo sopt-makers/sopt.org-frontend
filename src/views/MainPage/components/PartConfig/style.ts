@@ -56,10 +56,19 @@ export const RequiredAbility = styled(Link)`
   color: #415678;
   text-align: right;
   font-family: SUIT;
-  font-size: 20px;
+  font-size: 17px;
   font-style: normal;
   font-weight: 400;
   line-height: 162%; /* 32.4px */
   letter-spacing: -0.8px;
   text-decoration-line: underline;
+
+  @media (max-width: 768px) {
+    text-align: center;
+    font-size: 15px;
+  }
+
+  @media (max-width: 428px) {
+    font-size: 10px;
+  }
 `;
