@@ -24,7 +24,7 @@ export default function CardHover() {
           {Activity.map(({ img, navKor, navEng, description }) => {
             return (
               <Card
-                key={navKor}
+                key={navEng}
                 img={img}
                 navKor={navKor}
                 navEng={navEng}
