@@ -15,4 +15,23 @@ export const PartButton = styled.button<{ isSelected: boolean }>`
   letter-spacing: -0.84px;
 
   cursor: pointer;
+
+  @media (max-width: 768px) {
+    width: 118.982px;
+    height: 41.313px;
+
+    font-size: 17.352px;
+    line-height: 21.552px; /* 124.206% */
+    letter-spacing: -0.694px;
+  }
+
+  @media (max-width: 428px) {
+    width: 68.38px;
+    height: 23.743px;
+    border-radius: 5.698px;
+
+    font-size: 10px;
+    line-height: 12.386px; /* 123.859% */
+    letter-spacing: -0.4px;
+  }
 `;
