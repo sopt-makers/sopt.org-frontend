@@ -4,6 +4,8 @@ const SWIPE_THRESHOLD = 50;
 const NEXT = 1;
 const PREVIOUS = -1;
 
+type DirectionType = typeof PREVIOUS | typeof NEXT;
+
 const useInfiniteCarousel = <T>(carouselList: Array<T>, x: string) => {
   const TOTAL_SLIDE = carouselList.length;
   const [infiniteCarouselList, setInfiniteCarouselList] = useState(carouselList);
@@ -47,7 +49,7 @@ const useInfiniteCarousel = <T>(carouselList: Array<T>, x: string) => {
     handleSwipe(clickedIndex - slideIndex);
   };
 
-  const handleCarouselSwipe = (direction: number) => {
+  const handleCarouselSwipe = (direction: DirectionType) => {
     const totalSlide = carouselList.length;
     const newIndex = slideIndex + direction;
     if (direction === NEXT) {
