@@ -1,3 +1,5 @@
+import { Part, TextWeightType } from '@src/lib/types/universal';
+
 export type IntroContentType = {
   id: number;
   title: string;
@@ -16,3 +18,22 @@ export interface ActivityType {
   navEng: string;
   description: TextColorType[];
 }
+
+type KeywordType = {
+  content: string;
+  backgroundColor: string;
+  color: string;
+  desktop: { top: string; right: string };
+  tablet: { top: string; right: string };
+  mobile: { top: string; right: string };
+};
+
+export type KeywordListType = Record<Part, KeywordType[]>;
+
+type PartInfoType = {
+  value: string;
+  label: string;
+  description: TextWeightType[];
+};
+
+export type PartListType = Record<Part, PartInfoType>;
