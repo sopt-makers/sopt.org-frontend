@@ -4,7 +4,7 @@ const SWIPE_THRESHOLD = 50;
 const NEXT = 1;
 const PREVIOUS = -1;
 
-type DirectionType = typeof PREVIOUS | typeof NEXT;
+export type DirectionType = typeof PREVIOUS | typeof NEXT;
 
 const useInfiniteCarousel = <T>(carouselList: Array<T>, x: string) => {
   const TOTAL_SLIDE = carouselList.length;

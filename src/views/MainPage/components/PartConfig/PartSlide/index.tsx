@@ -2,13 +2,14 @@ import Image from 'next/image';
 import IcArrowLeft from '@src/assets/icons/ic_arrow_left.svg';
 import IcArrowRight from '@src/assets/icons/ic_arrow_right.svg';
 import { useIsMobile, useIsTablet } from '@src/hooks/useDevice';
+import { DirectionType } from '@src/hooks/useInfiniteCarousel';
 import { keywordList, partList } from '@src/lib/constants/main';
 import { Part } from '@src/lib/types/universal';
 import * as S from './style';
 
 interface PartSlideProps {
   part: Part;
-  handleCarouselSwipe: (direction: number) => void;
+  handleCarouselSwipe: (direction: DirectionType) => void;
 }
 
 export default function PartSlide({ part, handleCarouselSwipe }: PartSlideProps) {
@@ -58,7 +59,7 @@ export default function PartSlide({ part, handleCarouselSwipe }: PartSlideProps)
               initial="initial"
               whileInView="visible"
               variants={contentDraw}
-              style={{  ...style, ...responsiveStyle }}
+              style={{ ...style, ...responsiveStyle }}
             >
               {content}
             </S.Keyword>
