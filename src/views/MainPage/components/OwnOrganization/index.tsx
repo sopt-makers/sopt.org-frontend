@@ -5,7 +5,7 @@ import * as S from './style';
 
 export default function OwnOrganization() {
   return (
-    <S.Background>
+    <div>
       <Tab
         tab={'(3) 자체 운영 기구'}
         title={'SOPT를 운영하는 자체 기구'}
@@ -18,6 +18,6 @@ export default function OwnOrganization() {
           <OwnOrganizationCard key={organization.nameEng} {...organization} />
         ))}
       </S.Wrapper>
-    </S.Background>
+    </div>
   );
 }

@@ -1,10 +1,6 @@
 import styled from '@emotion/styled';
 import { colors } from '@sopt-makers/colors';
 
-export const Background = styled.section`
-  background-color: ${colors.white};
-`;
-
 export const CardWrapper = styled.main`
   display: grid;
   grid-template-columns: repeat(3, 1fr);

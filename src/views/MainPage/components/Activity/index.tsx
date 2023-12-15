@@ -6,10 +6,10 @@ import MobileCard from './MobileCard';
 import * as S from './style';
 
 export default function CardHover() {
-  const isMobileSize = useIsMobile('768px');
+  const isMobileSize = useIsMobile('428px');
 
   return (
-    <S.Background>
+    <div>
       <Tab
         tab={'(1) 기수내 정기 행사'}
         title={'매 기수 진행되는, 다양한 활동들!'}
@@ -34,6 +34,6 @@ export default function CardHover() {
           })}
         </S.CardWrapper>
       )}
-    </S.Background>
+    </div>
   );
 }
