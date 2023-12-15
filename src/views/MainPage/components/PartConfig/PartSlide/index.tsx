@@ -58,7 +58,7 @@ export default function PartSlide({ part, handleCarouselSwipe }: PartSlideProps)
               initial="initial"
               whileInView="visible"
               variants={contentDraw}
-              style={{ position: 'absolute', ...style, ...responsiveStyle }}
+              style={{  ...style, ...responsiveStyle }}
             >
               {content}
             </S.Keyword>

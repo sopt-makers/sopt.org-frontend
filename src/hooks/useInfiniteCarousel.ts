@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 
 const SWIPE_THRESHOLD = 50;
+const NEXT = 1;
+const PREVIOUS = -1;
 
 const useInfiniteCarousel = <T>(carouselList: Array<T>, x: string) => {
   const TOTAL_SLIDE = carouselList.length;
@@ -48,7 +50,7 @@ const useInfiniteCarousel = <T>(carouselList: Array<T>, x: string) => {
   const handleCarouselSwipe = (direction: number) => {
     const totalSlide = carouselList.length;
     const newIndex = slideIndex + direction;
-    if (direction === 1) {
+    if (direction === NEXT) {
       setSlideIndex(newIndex === totalSlide ? 0 : newIndex);
     } else {
       setSlideIndex(newIndex === -1 ? totalSlide - 1 : newIndex);
@@ -64,9 +66,9 @@ const useInfiniteCarousel = <T>(carouselList: Array<T>, x: string) => {
     const endX = e.changedTouches[0].clientX;
     const deltaX = touchStartX - endX;
     if (deltaX > SWIPE_THRESHOLD) {
-      handleCarouselSwipe(1);
+      handleCarouselSwipe(NEXT);
     } else if (deltaX < -SWIPE_THRESHOLD) {
-      handleCarouselSwipe(-1);
+      handleCarouselSwipe(PREVIOUS);
     }
   };
 

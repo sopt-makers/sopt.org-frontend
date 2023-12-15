@@ -213,6 +213,8 @@ export const Keyword = styled(motion.div)`
   display: flex;
   justify-content: center;
   align-items: center;
+  position: absolute;
+
   padding: calc(13px + 0.26vw) calc(20px + 0.26vw);
   border-radius: 33px;
 
