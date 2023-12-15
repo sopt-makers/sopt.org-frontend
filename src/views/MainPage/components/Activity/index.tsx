@@ -1,9 +1,13 @@
+import { useIsMobile } from '@src/hooks/useDevice';
 import { Activity } from '@src/lib/constants/main';
 import Tab from '../Tab';
 import Card from './Card';
+import MobileCard from './MobileCard';
 import * as S from './style';
 
 export default function CardHover() {
+  const isMobileSize = useIsMobile('768px');
+
   return (
     <S.Background>
       <Tab
@@ -13,19 +17,23 @@ export default function CardHover() {
           'SOPT에서는 매 기수 내 정기적으로 진행되는 다양한 활동들이 있어요. \n 각 파트원들과 친목 및 실력을 쌓을 수 있는 행사들을 통해, SOPT를 보다 즐겨봅시다.'
         }
       />
-      <S.CardWrapper>
-        {Activity.map(({ img, navKor, navEng, description }) => {
-          return (
-            <Card
-              key={navKor}
-              img={img}
-              navKor={navKor}
-              navEng={navEng}
-              description={description}
-            />
-          );
-        })}
-      </S.CardWrapper>
+      {isMobileSize ? (
+        <MobileCard />
+      ) : (
+        <S.CardWrapper>
+          {Activity.map(({ img, navKor, navEng, description }) => {
+            return (
+              <Card
+                key={navEng}
+                img={img}
+                navKor={navKor}
+                navEng={navEng}
+                description={description}
+              />
+            );
+          })}
+        </S.CardWrapper>
+      )}
     </S.Background>
   );
 }
