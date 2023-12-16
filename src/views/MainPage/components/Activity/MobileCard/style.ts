@@ -1,10 +1,8 @@
 import styled from '@emotion/styled';
-import { colors } from '@sopt-makers/colors';
 
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 12px;
 `;
 
 export const Container = styled.section`
