@@ -21,62 +21,60 @@ export default function MobileCard() {
   } = useInfiniteCarousel<ActivityTypeList>(activityCarouselList, '(-100% - 20px)');
 
   return (
-    <S.Wrapper>
-      <S.Container>
-        <S.Carousel ref={carouselRef} onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
-          {infiniteCarouselList.map(({ value }, index) => {
-            const { img, navKor, navEng, description } = Activity[value];
-            return (
-              <S.Slide key={index}>
-                <S.LeftArrow>
-                  <Image
-                    src={IcArrowLeft}
-                    width="42"
-                    height="42"
-                    alt="왼쪽 화살표"
-                    onClick={() => handleCarouselSwipe(-1)}
-                  />
-                </S.LeftArrow>
-                <Card
-                  key={navEng}
-                  img={img}
-                  navKor={navKor}
-                  navEng={navEng}
-                  description={description}
+    <S.Container>
+      <S.Carousel ref={carouselRef} onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
+        {infiniteCarouselList.map(({ value }, index) => {
+          const { img, navKor, navEng, description } = Activity[value];
+          return (
+            <S.Slide key={index}>
+              <S.LeftArrow>
+                <Image
+                  src={IcArrowLeft}
+                  width="42"
+                  height="42"
+                  alt="왼쪽 화살표"
+                  onClick={() => handleCarouselSwipe(-1)}
                 />
-                <S.RightArrow>
-                  <Image
-                    src={IcArrowRight}
-                    width="42"
-                    height="42"
-                    alt="오른쪽 화살표"
-                    onClick={() => handleCarouselSwipe(1)}
-                  />
-                </S.RightArrow>
-              </S.Slide>
+              </S.LeftArrow>
+              <Card
+                key={navEng}
+                img={img}
+                navKor={navKor}
+                navEng={navEng}
+                description={description}
+              />
+              <S.RightArrow>
+                <Image
+                  src={IcArrowRight}
+                  width="42"
+                  height="42"
+                  alt="오른쪽 화살표"
+                  onClick={() => handleCarouselSwipe(1)}
+                />
+              </S.RightArrow>
+            </S.Slide>
+          );
+        })}
+      </S.Carousel>
+      <S.ButtonWrapper
+        ref={dragRef}
+        onMouseDown={handleMouseDown}
+        onMouseMove={handleMouseMove}
+        onMouseLeave={initDragging}
+        onMouseUp={initDragging}
+      >
+        <S.PartButtonList>
+          {[0, 1, 2, 3, 4, 5].map((index) => {
+            return (
+              <S.DotButton
+                key={index}
+                isSelected={index === slideIndex}
+                onClick={() => handleSelectSlide(index)}
+              />
             );
           })}
-        </S.Carousel>
-        <S.ButtonWrapper
-          ref={dragRef}
-          onMouseDown={handleMouseDown}
-          onMouseMove={handleMouseMove}
-          onMouseLeave={initDragging}
-          onMouseUp={initDragging}
-        >
-          <S.PartButtonList>
-            {[0, 1, 2, 3, 4, 5].map((index) => {
-              return (
-                <S.DotButton
-                  key={index}
-                  isSelected={index === slideIndex}
-                  onClick={() => handleSelectSlide(index)}
-                />
-              );
-            })}
-          </S.PartButtonList>
-        </S.ButtonWrapper>
-      </S.Container>
-    </S.Wrapper>
+        </S.PartButtonList>
+      </S.ButtonWrapper>
+    </S.Container>
   );
 }
