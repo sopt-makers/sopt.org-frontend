@@ -27,7 +27,7 @@ export enum PartExtraType {
 
 export type ExtraPart = PartExtraType | Part;
 
-export type TabTypeOption<T> = {
+type TabTypeOption<T> = {
   value: T;
   label: string;
 };
