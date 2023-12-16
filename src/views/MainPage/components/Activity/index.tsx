@@ -6,7 +6,7 @@ import MobileCard from './MobileCard';
 import * as S from './style';
 
 export default function CardHover() {
-  const isMobileSize = useIsMobile('428px');
+  const isMobileSize = useIsMobile('768px');
 
   return (
     <div>

@@ -24,13 +24,13 @@ export const Activity: ActivityType[] = [
       { content: '3~5주간 ', color: 'yellow' },
       {
         content:
-          '기획, 디자인, 개발 파트가 팀을 이뤄 하나의 웹 또는 앱 서비스를 제작하는 SOPT 내 장기 프로젝트예요. IT 창업을 위한 협업 과정을 경험하고, 최종 ',
+          '기획, 디자인, 개발 파트가 팀을 이뤄 하나의 웹 또는 앱 서비스를 제작하는 SOPT 내 장기 프로젝트예요. ',
         color: 'white',
       },
       { content: '데모데이 ', color: 'yellow' },
       { content: '에서 ', color: 'white' },
-      { content: '각 파트 현직자들', color: 'yellow' },
-      { content: '과 결과물을 공유하고 피드백을 받아요.', color: 'white' },
+      { content: '각 파트 현직자', color: 'yellow' },
+      { content: '들에게 결과물에 대한 피드백을 받아요.', color: 'white' },
     ],
   },
   {
@@ -45,8 +45,7 @@ export const Activity: ActivityType[] = [
       },
       { content: '단기 프로젝트', color: 'yellow' },
       {
-        content:
-          '예요. 앱잼에 앞서 팀 단위의 협업 과정을 빠르게 경험하며, IT 프로젝트에 대한 협업 감각을 익힐 수 있어요.',
+        content: '예요. 협업 감각을 익힐 수 있어요.',
         color: 'white',
       },
     ],
@@ -79,7 +78,7 @@ export const Activity: ActivityType[] = [
       { content: '총 8회의 파트별 세미나', color: 'yellow' },
       {
         content:
-          '를 통해 각자 자신의 파트에서 실력을 다져요. 각 파트장의 강연, 파트원간의 지식 공유, 외부 연사 초정 등 다양한 유형의 세미나가 진행돼요.',
+          '를 통해 각자 자신의 파트에서 실력을 다져요. 각 파트장의 강연, 파트원간의 지식 공유, 외부 연사 초정 등 다양한 세미나가 진행돼요.',
         color: 'white',
       },
     ],
@@ -89,10 +88,10 @@ export const Activity: ActivityType[] = [
     navKor: '스터디',
     navEng: 'Study',
     description: [
-      { content: '각 파트의 실력을 심도있게 다질 수 있는 ', color: 'white' },
+      { content: '실력을 심도있게 다질 수 있는 ', color: 'white' },
       { content: '스터디와 다양한 파트원들과 친목을 쌓을 수 있는 네트워킹', color: 'yellow' },
       {
-        content: '이 열려요. 자율적으로 참여하며 SOPT 활동을 더욱 유익하게 만들어 나갈 수 있어요.',
+        content: '이 열려요. 자율적으로 개설하고 참여할 수 있어요.',
         color: 'white',
       },
     ],
@@ -107,7 +106,7 @@ export const Activity: ActivityType[] = [
       { content: '네트워킹', color: 'yellow' },
       { content: '을 위한 다양한 행사를 기획해요. ', color: 'white' },
       { content: '미디어팀', color: 'yellow' },
-      { content: '에서는 SOPT의 활동과 관련된 ', color: 'white' },
+      { content: '에서는 SOPT와 관련된 ', color: 'white' },
       { content: '콘텐츠를 제작', color: 'yellow' },
       {
         content: '하여 SOPT를 대내외적으로 알려요.',
