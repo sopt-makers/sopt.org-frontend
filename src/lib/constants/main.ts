@@ -9,14 +9,14 @@ import { default as ImgSeminar } from '@src/assets/images/img_seminar.jpg';
 import { default as ImgSoptkaton } from '@src/assets/images/img_soptkaton.jpg';
 import { default as ImgSoptterm } from '@src/assets/images/img_soptterm.jpg';
 import { default as ImgStudy } from '@src/assets/images/img_study.jpg';
-import { ActivityType, KeywordListType, PartListType } from '@src/lib/types/main';
+import { ActivityListType, ActivityType, KeywordListType, PartListType } from '@src/lib/types/main';
 import { Part, TextWeightType } from '@src/lib/types/universal';
 
 export const FIRST_INTRO_CONTENT = 1;
 export const LAST_INTRO_CONTENT = 3;
 
-export const Activity: ActivityType[] = [
-  {
+export const Activity: ActivityListType = {
+  [ActivityType.APPJAM]: {
     img: ImgAppjam.src,
     navKor: '앱잼',
     navEng: 'App jam',
@@ -33,7 +33,7 @@ export const Activity: ActivityType[] = [
       { content: '들에게 결과물에 대한 피드백을 받아요.', color: 'white' },
     ],
   },
-  {
+  [ActivityType.SOPKATHON]: {
     img: ImgSoptkaton.src,
     navKor: '솝커톤',
     navEng: 'Sopkaton',
@@ -50,7 +50,7 @@ export const Activity: ActivityType[] = [
       },
     ],
   },
-  {
+  [ActivityType.SOPTERM]: {
     img: ImgSoptterm.src,
     navKor: '솝텀',
     navEng: 'Sopt-term',
@@ -69,7 +69,7 @@ export const Activity: ActivityType[] = [
       { content: '를 진행할 수 있어요.', color: 'white' },
     ],
   },
-  {
+  [ActivityType.SEMINAR]: {
     img: ImgSeminar.src,
     navKor: '정기 세미나',
     navEng: 'Seminar',
@@ -83,7 +83,7 @@ export const Activity: ActivityType[] = [
       },
     ],
   },
-  {
+  [ActivityType.STUDY]: {
     img: ImgStudy.src,
     navKor: '스터디',
     navEng: 'Study',
@@ -96,7 +96,7 @@ export const Activity: ActivityType[] = [
       },
     ],
   },
-  {
+  [ActivityType.EVENTS]: {
     img: ImgEvent.src,
     navKor: '행사',
     navEng: 'Events',
@@ -114,7 +114,7 @@ export const Activity: ActivityType[] = [
       },
     ],
   },
-];
+};
 
 export const INTRO_CONTENT_LIST = [
   {

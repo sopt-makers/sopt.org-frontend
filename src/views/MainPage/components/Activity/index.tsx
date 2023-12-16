@@ -21,7 +21,7 @@ export default function CardHover() {
         <MobileCard />
       ) : (
         <S.CardWrapper>
-          {Activity.map(({ img, navKor, navEng, description }) => {
+          {Object.values(Activity).map(({ img, navKor, navEng, description }) => {
             return (
               <Card
                 key={navEng}
