@@ -9,6 +9,10 @@ export const Background = styled.section`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  @media (max-width: 428px) {
+    height: 288px;
+  }
 `;
 
 export const Title = styled.h1`
