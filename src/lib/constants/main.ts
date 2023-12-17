@@ -5,11 +5,21 @@ import { default as ImgIntroCard2 } from '@src/assets/images/img_intro_card2.png
 import { default as ImgIntroCard3 } from '@src/assets/images/img_intro_card3.png';
 import { default as ImgMakersCard } from '@src/assets/images/img_main_makers_card.png';
 import { default as ImgMindCard } from '@src/assets/images/img_main_mind_card.png';
+import { default as ImgRecentNews1 } from '@src/assets/images/img_recent_news_1.png';
+import { default as ImgRecentNews2 } from '@src/assets/images/img_recent_news_2.jpg';
+import { default as ImgRecentNews3 } from '@src/assets/images/img_recent_news_3.jpg';
+import { default as ImgRecentNews4 } from '@src/assets/images/img_recent_news_4.webp';
+import { default as ImgRecentNews5 } from '@src/assets/images/img_recent_news_5.png';
 import { default as ImgSeminar } from '@src/assets/images/img_seminar.jpg';
 import { default as ImgSoptkaton } from '@src/assets/images/img_soptkaton.jpg';
 import { default as ImgSoptterm } from '@src/assets/images/img_soptterm.jpg';
 import { default as ImgStudy } from '@src/assets/images/img_study.jpg';
-import { ActivityType, KeywordListType, PartListType } from '@src/lib/types/main';
+import {
+  ActivityType,
+  KeywordListType,
+  PartListType,
+  RecentNewsListType,
+} from '@src/lib/types/main';
 import { Part, TextWeightType } from '@src/lib/types/universal';
 
 export const FIRST_INTRO_CONTENT = 1;
@@ -483,5 +493,33 @@ export const OWN_ORGANIZATION_LIST: {
     ],
     frontSideBg: ImgMindCard.src,
     backSideBg: '#F66FF8',
+  },
+];
+
+export const RecentNewsList: RecentNewsListType[] = [
+  {
+    title: 'SOPT effect : 창업가 초청 토크 세션',
+    url: 'https://www.instagram.com/p/CyfhEG9vfYd/?igshid=MXN0YWlnaGppbXZrZw==',
+    src: ImgRecentNews1.src,
+  },
+  {
+    title: 'DO SOPT OT',
+    url: 'https://www.instagram.com/reel/CySiLMNPRAk/?igshid=MW1icW5rZWI3dXJrbQ==',
+    src: ImgRecentNews2.src,
+  },
+  {
+    title: '[매쉬업엔젤스 X SOPT] Open Office Hours',
+    url: 'https://disquiet.io/@mashupangels/makerlog/%EB%A7%A4%EC%89%AC%EC%97%85%EC%97%94%EC%A0%A4%EC%8A%A4-open-office-hours-%EC%B0%B8%EC%97%AC%EC%9E%90%EB%A5%BC-%EB%AA%A8%EC%A7%91%ED%95%A9%EB%8B%88%EB%8B%A4-1697441246806',
+    src: ImgRecentNews3.src,
+  },
+  {
+    title: 'MIND 23 : IT PEOPLE CONFERENCE',
+    url: 'https://disquiet.io/product/mind-23-%EC%98%A4%EB%8A%98%EB%8F%84-%EB%A9%88%EC%B6%94%EC%A7%80-%EC%95%8A%EB%8A%94-it%EC%9D%B8%EB%93%A4',
+    src: ImgRecentNews4.src,
+  },
+  {
+    title: 'DO SOPT 1차 행사',
+    url: 'https://www.instagram.com/p/Cz3GJOpvcBz/?img_index=1',
+    src: ImgRecentNews5.src,
   },
 ];

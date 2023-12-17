@@ -5,6 +5,7 @@ import Activity from './components/Activity';
 import Banner from './components/Banner';
 import Introduce from './components/Introduce';
 import OwnOrganization from './components/OwnOrganization';
+import RecentNews from './components/RecentNews';
 import RecruitMessage from './components/RecruitMessage';
 import ScrollInteractiveLogo from './components/ScrollInteractiveLogo';
 
@@ -18,6 +19,7 @@ function MainPage() {
       <Activity />
       <PartConfig />
       <OwnOrganization />
+      <RecentNews />
       <RecruitMessage />
     </PageLayout>
   );
