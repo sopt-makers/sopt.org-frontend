@@ -3,15 +3,19 @@ import { colors } from '@sopt-makers/colors';
 
 export const Background = styled.section`
   background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #090b12 6.18%, #090b12 98.83%);
-  height: 100vh;
+  height: 1100px;
 
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 
+  @media (max-width: 768px) and (min-width: 429px) {
+    height: 960px;
+  }
+
   @media (max-width: 428px) {
-    height: 288px;
+    height: 360px;
   }
 `;
 
