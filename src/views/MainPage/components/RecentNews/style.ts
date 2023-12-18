@@ -74,32 +74,42 @@ export const SliderList = styled.ul`
   display: flex;
   position: relative;
   width: calc(313px * 10);
-  animation: autoPlay 5s linear infinite;
+  animation: desktopAutoPlay 7s linear infinite;
 
   @media (max-width: 768px) and (min-width: 429px) {
-    animation: autoPlay 7s linear infinite;
     width: calc(264px * 10);
+    animation: tabletAutoPlay 10s linear infinite;
   }
 
   @media (max-width: 428px) {
-    animation: autoPlay 12s linear infinite;
+    animation: mobileAutoPlay 12s linear infinite;
     width: calc(148px * 10);
   }
 
-  @keyframes autoPlay {
+  @keyframes desktopAutoPlay {
     0% {
       transition: translateX(0);
     }
     100% {
       transform: translateX(calc(-313px * 5));
+    }
+  }
 
-      @media (max-width: 768px) and (min-width: 429px) {
-        transform: translateX(calc(-264px * 5));
-      }
+  @keyframes tabletAutoPlay {
+    0% {
+      transition: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(-264px * 5));
+    }
+  }
 
-      @media (max-width: 428px) {
-        transform: translateX(calc(-148px * 5));
-      }
+  @keyframes mobileAutoPlay {
+    0% {
+      transition: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(-148px * 5));
     }
   }
 `;

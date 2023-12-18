@@ -45,6 +45,7 @@ export const Title = styled.h1`
   @media (max-width: 428px) {
     font-size: 9px;
     letter-spacing: -0.285px;
+    margin: 14px;
   }
 `;
 
