@@ -4,9 +4,9 @@ import * as S from './style';
 
 export default function IntroCardList() {
   return (
-    <S.IntroSection>
+    <S.IntroSection >
       <S.Header />
-      <div style={{ overflow: 'hidden' }}>
+      <div id="value" style={{ overflow: 'hidden' }}>
         {INTRO_CONTENT_LIST.map((content) => (
           <IntroContent key={content.id} content={content} />
         ))}

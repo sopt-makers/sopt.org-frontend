@@ -17,42 +17,41 @@ export type RefHandler = {
 };
 
 function BottomLayout() {
-  const ac = useInView();
-  const re = useInView();
-  const ne = useInView();
+  const activity = useInView();
+  const review = useInView();
+  const news = useInView();
 
   const targetRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: targetRef, offset: ['start center', 'start'] });
 
-  const viewList = [false, ac.isInView, re.isInView, ne.isInView];
+  const viewList = [false, activity.isInView, review.isInView, news.isInView];
   const minIndex = viewList.findIndex((value) => value === true);
 
-  const backgroundColor1 = useTransform(scrollYProgress, [0, 1], ['#FFF', '#090B12']);
-  const backgroundColor2 = useTransform(scrollYProgress, [0, 1], ['#F6F8FC', '#0D111F']);
-  const backgroundColor3 = useTransform(scrollYProgress, [0, 1], ['#fbfcfe', '#fbfcfef']);
-
-  const color = useTransform(scrollYProgress, [0, 1], ['#a8acbae0', '#747885']);
+  const wrapperBackground = useTransform(scrollYProgress, [0, 1], ['#FFF', '#090B12']);
+  const layoutBackground = useTransform(scrollYProgress, [0, 1], ['#F6F8FC', '#0D111F']);
+  const menuBackground = useTransform(scrollYProgress, [0, 1], ['#fbfcfe', '#fbfcfef']);
+  const menuColor = useTransform(scrollYProgress, [0, 1], ['#a8acbae0', '#747885']);
 
   return (
-    <S.Wrapper style={{ backgroundColor: backgroundColor1 }}>
+    <S.Wrapper style={{ backgroundColor: wrapperBackground }}>
       <S.FloatingMenu>
         {MenuList.map(({ name, id }, index) => (
           <S.MenuWrapper
             key={id}
             isInView={minIndex === index}
-            style={{ backgroundColor: backgroundColor3, color }}
+            style={{ backgroundColor: menuBackground, color: menuColor }}
           >
             <S.Menu href={`#${id}`}>{name}</S.Menu>
           </S.MenuWrapper>
         ))}
       </S.FloatingMenu>
-      <S.Layout style={{ backgroundColor: backgroundColor2 }}>
-        <ActivitySection ref={ac.ref} />
+      <S.Layout style={{ backgroundColor: layoutBackground }}>
+        <ActivitySection ref={activity.ref} />
         <div ref={targetRef} />
-        <div id="review" ref={re.ref} style={{ height: '100vh', background: 'blue' }}>
+        <div id="review" ref={review.ref} style={{ height: '100vh', background: 'blue' }}>
           Reviews
         </div>
-        <div id="news" ref={ne.ref} style={{ height: '100vh', background: 'yellow' }}>
+        <div id="news" ref={news.ref} style={{ height: '100vh', background: 'yellow' }}>
           News
         </div>
       </S.Layout>
