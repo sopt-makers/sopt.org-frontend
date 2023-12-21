@@ -12,12 +12,47 @@ export type TextColorType = {
   color: 'yellow' | 'white';
 };
 
-export interface ActivityType {
+export enum ActivityType {
+  APPJAM = 'APPJAM',
+  SOPKATHON = 'SOPKATHON',
+  SOPTERM = 'SOPTERM',
+  STUDY = 'STUDY',
+  SEMINAR = 'SEMINAR',
+  EVENTS = 'EVENTS',
+}
+
+export interface ActivityContentType {
   img: string;
   navKor: string;
   navEng: string;
   description: TextColorType[];
 }
+
+export const activity: ActivityTypeList[] = [
+  {
+    value: ActivityType.APPJAM,
+  },
+  {
+    value: ActivityType.SOPKATHON,
+  },
+  {
+    value: ActivityType.SOPTERM,
+  },
+  {
+    value: ActivityType.STUDY,
+  },
+  {
+    value: ActivityType.SEMINAR,
+  },
+  {
+    value: ActivityType.EVENTS,
+  },
+];
+
+export type ActivityListType = Record<ActivityType, ActivityContentType>;
+export type ActivityTypeList = {
+  value: ActivityType;
+};
 
 type KeywordType = {
   content: string;

@@ -6,7 +6,7 @@ import MobileCard from './MobileCard';
 import * as S from './style';
 
 export default function CardHover() {
-  const isMobileSize = useIsMobile('428px');
+  const isMobileSize = useIsMobile('768px');
 
   return (
     <div>
@@ -21,7 +21,7 @@ export default function CardHover() {
         <MobileCard />
       ) : (
         <S.CardWrapper>
-          {Activity.map(({ img, navKor, navEng, description }) => {
+          {Object.values(Activity).map(({ img, navKor, navEng, description }) => {
             return (
               <Card
                 key={navEng}

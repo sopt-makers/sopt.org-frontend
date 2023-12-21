@@ -43,10 +43,9 @@ export const CardImage = styled(Image)`
 
 export const CardKorNav = styled.nav`
   display: inline-flex;
-  padding: 11.75px 30.43px;
+  padding: 10px 30px;
   justify-content: center;
   align-items: center;
-  gap: 5.83px;
   border-radius: 13.763px;
   border: 1.278px solid rgba(255, 255, 255, 0.5);
   background: rgba(255, 255, 255, 0.33);
