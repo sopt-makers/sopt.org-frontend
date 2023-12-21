@@ -4,10 +4,11 @@ import { motion } from 'framer-motion';
 
 export const Wrapper = styled.div`
   position: relative;
-  padding: 0 88px;
+  padding-top: 200px;
+  padding-bottom: 600px;
 `;
 
-export const TitleWrapper = styled.div`
+export const TitleWrapper = styled.div<{ activeIdx: number }>`
   position: sticky;
   color: white;
   top: 200px;
@@ -16,8 +17,10 @@ export const TitleWrapper = styled.div`
   @media (max-width: 1440px) {
     top: 0;
     padding-top: 120px;
-    padding-bottom: 60px;
-    background: linear-gradient(to bottom, ${colors.background} 80%, transparent);
+    padding-bottom: 80px;
+    background: ${({ activeIdx }) =>
+      activeIdx > 1 ? 'linear-gradient(to bottom, #0D111F 80%, transparent)' : 'transparent'};
+    transition: 0.4s;
   }
 `;
 
@@ -25,7 +28,6 @@ export const CardWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-
   @media (max-width: 1440px) {
     padding-top: 200px;
   }

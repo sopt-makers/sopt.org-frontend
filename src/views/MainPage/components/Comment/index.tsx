@@ -4,7 +4,7 @@ import { SOPT_COMMENT_LIST } from '@src/lib/constants/main';
 import CommentCard from './Card';
 import * as S from './style';
 
-export default function Comment() {
+export default function CommentSection() {
   const [activeIdx, setActiveIdx] = useState(0);
   const controls = useAnimationControls();
 
@@ -19,7 +19,7 @@ export default function Comment() {
 
   return (
     <S.Wrapper>
-      <S.TitleWrapper>
+      <S.TitleWrapper activeIdx={activeIdx}>
         <S.SectionTitle>Q. 솝트 어때요?</S.SectionTitle>
         <S.Summary animate={controls} color={SOPT_COMMENT_LIST[activeIdx]?.color}>
           {SOPT_COMMENT_LIST[activeIdx]?.summary}
