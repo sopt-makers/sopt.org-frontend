@@ -1,7 +1,7 @@
 import { useAnimationControls } from 'framer-motion';
 import { useState } from 'react';
 import { SOPT_COMMENT_LIST } from '@src/lib/constants/main';
-import CommentCard from './Card';
+import CommentCards from './Cards';
 import * as S from './style';
 
 export default function CommentSection() {
@@ -25,19 +25,7 @@ export default function CommentSection() {
           {SOPT_COMMENT_LIST[activeIdx]?.summary}
         </S.Summary>
       </S.TitleWrapper>
-      <S.CardWrapper>
-        {SOPT_COMMENT_LIST.map((comment, idx) => (
-          <CommentCard
-            key={idx}
-            idx={idx}
-            isActive={activeIdx === idx}
-            setIsActive={changeActiveIdx}
-            color={comment.color}
-            comment={comment.comment}
-            commenter={comment.commenter}
-          />
-        ))}
-      </S.CardWrapper>
+      <CommentCards activeIdx={activeIdx} changeActiveIdx={changeActiveIdx} />
     </S.Wrapper>
   );
 }
