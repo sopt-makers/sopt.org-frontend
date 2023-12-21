@@ -53,7 +53,7 @@ function BottomLayout() {
         <div id="review" ref={review.ref} style={{ height: '100vh', background: 'blue' }}>
           Reviews
         </div>
-        <RecentNews/>
+        <RecentNews ref={news.ref} />
         <RecruitMessage />
       </S.Layout>
     </S.Wrapper>
