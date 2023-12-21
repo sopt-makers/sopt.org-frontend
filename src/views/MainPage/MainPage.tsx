@@ -1,12 +1,8 @@
 import PageLayout from '@src/components/common/PageLayout';
+import BottomLayout from '@src/views/MainPage/components/BottomLayout';
 import IntroSection from '@src/views/MainPage/components/IntroSection';
-import PartConfig from '@src/views/MainPage/components/PartConfig';
-import Activity from './components/Activity';
 import Banner from './components/Banner';
 import Introduce from './components/Introduce';
-import OwnOrganization from './components/OwnOrganization';
-import RecentNews from './components/RecentNews';
-import RecruitMessage from './components/RecruitMessage';
 import ScrollInteractiveLogo from './components/ScrollInteractiveLogo';
 
 function MainPage() {
@@ -16,11 +12,7 @@ function MainPage() {
       <Introduce />
       <IntroSection />
       <ScrollInteractiveLogo />
-      <Activity />
-      <PartConfig />
-      <OwnOrganization />
-      <RecentNews />
-      <RecruitMessage />
+      <BottomLayout />
     </PageLayout>
   );
 }

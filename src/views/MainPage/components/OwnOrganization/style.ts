@@ -15,8 +15,3 @@ export const Wrapper = styled.div`
     gap: 14px;
   }
 `;
-
-export const Background = styled.section`
-  background-color: ${colors.white};
-  padding-top: 146px;
-`;

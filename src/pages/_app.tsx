@@ -1,4 +1,6 @@
 import * as amplitude from '@amplitude/analytics-browser';
+import isValidProp from '@emotion/is-prop-valid';
+import { MotionConfig } from 'framer-motion';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
@@ -84,7 +86,9 @@ function MyApp({ Component, pageProps }: AppProps) {
       <GoogleTagManagerScript />
       <Global styles={global} />
       <QueryClientProvider client={queryClient}>
-        <Component {...pageProps} />
+        <MotionConfig isValidProp={isValidProp}>
+          <Component {...pageProps} />
+        </MotionConfig>
         <ReactQueryDevtools initialIsOpen={false} />
       </QueryClientProvider>
       <GoogleTagManagerNoscript />

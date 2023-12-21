@@ -2,7 +2,6 @@ import styled from '@emotion/styled';
 import { colors } from '@sopt-makers/colors';
 
 export const Background = styled.section`
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #090b12 6.18%, #090b12 98.83%);
   height: 1100px;
 
   display: flex;

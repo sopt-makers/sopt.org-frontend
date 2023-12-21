@@ -20,7 +20,7 @@ export default function PartConfig() {
   } = useInfiniteCarousel<TabType>(carouselList, '(-100% - 20px)');
 
   return (
-    <S.Background>
+    <div>
       <Tab
         tab={'(2) 파트 구성'}
         title={'6개의 파트로 이루어져 있어요.'}
@@ -63,6 +63,6 @@ export default function PartConfig() {
         </S.PartConfig>
         <S.RequiredAbility href="/recruit#chapter-info">필요 역량이 궁금하다면?</S.RequiredAbility>
       </S.Wrapper>
-    </S.Background>
+    </div>
   );
 }
