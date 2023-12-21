@@ -72,3 +72,8 @@ type PartInfoType = {
 };
 
 export type PartListType = Record<Part, PartInfoType>;
+export interface RecentNewsListType {
+  title: string;
+  url: string;
+  src: string;
+}
