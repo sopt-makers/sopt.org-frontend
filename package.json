@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@amplitude/analytics-browser": "^2.3.0",
+    "@emotion/is-prop-valid": "^1.2.1",
     "@emotion/react": "^11.9.0",
     "@emotion/styled": "^11.8.1",
     "@sopt-makers/colors": "^2.2.0",
