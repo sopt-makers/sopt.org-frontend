@@ -2,6 +2,8 @@ import { useScroll, useTransform } from 'framer-motion';
 import { RefObject, useRef } from 'react';
 import useInView from '@src/hooks/useInView';
 import ActivitySection from '@src/views/MainPage/components/ActivitySection';
+import RecentNews from '@src/views/MainPage/components/RecentNews';
+import RecruitMessage from '@src/views/MainPage/components/RecruitMessage';
 import * as S from './style';
 
 const MenuList = [
@@ -51,9 +53,8 @@ function BottomLayout() {
         <div id="review" ref={review.ref} style={{ height: '100vh', background: 'blue' }}>
           Reviews
         </div>
-        <div id="news" ref={news.ref} style={{ height: '100vh', background: 'yellow' }}>
-          News
-        </div>
+        <RecentNews/>
+        <RecruitMessage />
       </S.Layout>
     </S.Wrapper>
   );
