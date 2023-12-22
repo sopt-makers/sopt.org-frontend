@@ -3,8 +3,10 @@ import { default as ImgEvent } from '@src/assets/images/img_event.jpg';
 import { default as ImgIntroCard1 } from '@src/assets/images/img_intro_card1.png';
 import { default as ImgIntroCard2 } from '@src/assets/images/img_intro_card2.png';
 import { default as ImgIntroCard3 } from '@src/assets/images/img_intro_card3.png';
-import { default as ImgMakersCard } from '@src/assets/images/img_main_makers_card.png';
-import { default as ImgMindCard } from '@src/assets/images/img_main_mind_card.png';
+import { default as ImgMakersCardMo } from '@src/assets/images/img_main_makers_card_mo.png';
+import { default as ImgMakersCardPc } from '@src/assets/images/img_main_makers_card_pc.png';
+import { default as ImgMindCardMo } from '@src/assets/images/img_main_mind_card_mo.png';
+import { default as ImgMindCardPc } from '@src/assets/images/img_main_mind_card_pc.png';
 import { default as ImgRecentNews1 } from '@src/assets/images/img_recent_news_1.png';
 import { default as ImgRecentNews2 } from '@src/assets/images/img_recent_news_2.jpg';
 import { default as ImgRecentNews3 } from '@src/assets/images/img_recent_news_3.jpg';
@@ -450,7 +452,7 @@ export const OWN_ORGANIZATION_LIST: {
   nameKor: string;
   nameEng: string;
   description: TextWeightType[];
-  frontSideBg: string;
+  frontSideBg: { mo: string; pc: string };
   backSideBg: string;
 }[] = [
   {
@@ -471,7 +473,7 @@ export const OWN_ORGANIZATION_LIST: {
         weight: 'normal',
       },
     ],
-    frontSideBg: ImgMakersCard.src,
+    frontSideBg: { pc: ImgMakersCardPc.src, mo: ImgMakersCardMo.src },
     backSideBg: '#FF7C53',
   },
   {
@@ -492,7 +494,7 @@ export const OWN_ORGANIZATION_LIST: {
       },
       { content: 'MIND도 도전하겠습니다.', weight: 'normal' },
     ],
-    frontSideBg: ImgMindCard.src,
+    frontSideBg: { pc: ImgMindCardPc.src, mo: ImgMindCardMo.src },
     backSideBg: '#F66FF8',
   },
 ];
