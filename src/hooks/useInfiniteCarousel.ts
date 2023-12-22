@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { MutableRefObject, useEffect, useRef, useState } from 'react';
 
 const SWIPE_THRESHOLD = 50;
 const NEXT = 1;
@@ -6,7 +6,11 @@ const PREVIOUS = -1;
 
 export type DirectionType = typeof PREVIOUS | typeof NEXT;
 
-const useInfiniteCarousel = <T>(carouselList: Array<T>, x: string) => {
+const useInfiniteCarousel = <T>(
+  carouselList: Array<T>,
+  x: string,
+  dotRef?: MutableRefObject<HTMLElement[]>,
+) => {
   const TOTAL_SLIDE = carouselList.length;
   const [infiniteCarouselList, setInfiniteCarouselList] = useState(carouselList);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -51,13 +55,24 @@ const useInfiniteCarousel = <T>(carouselList: Array<T>, x: string) => {
 
   const handleCarouselSwipe = (direction: DirectionType) => {
     const totalSlide = carouselList.length;
-    const newIndex = slideIndex + direction;
+    const nextIndex = slideIndex + direction;
+    let newIndex;
     if (direction === NEXT) {
-      setSlideIndex(newIndex === totalSlide ? 0 : newIndex);
+      newIndex = nextIndex === totalSlide ? 0 : nextIndex;
+      setSlideIndex(newIndex);
     } else {
-      setSlideIndex(newIndex === -1 ? totalSlide - 1 : newIndex);
+      newIndex = nextIndex === -1 ? totalSlide - 1 : nextIndex;
+      setSlideIndex(newIndex);
     }
     handleSwipe(direction);
+
+    if (dotRef) {
+      dotRef.current[newIndex].scrollIntoView({
+        behavior: 'smooth',
+        block: 'nearest',
+        inline: 'nearest',
+      });
+    }
   };
 
   const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {

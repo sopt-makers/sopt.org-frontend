@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import IcArrowLeft from '@src/assets/icons/ic_arrow_left.svg';
 import IcArrowRight from '@src/assets/icons/ic_arrow_right.svg';
 import useDrag from '@src/hooks/useDrag';
@@ -13,6 +13,7 @@ import * as S from './style';
 
 export default function PartConfig() {
   const { dragRef, handleMouseDown, handleMouseMove, initDragging } = useDrag();
+  const partRef = useRef<HTMLButtonElement[]>([]);
   const {
     carouselRef,
     infiniteCarouselList,
@@ -21,16 +22,7 @@ export default function PartConfig() {
     handleCarouselSwipe,
     handleTouchStart,
     handleTouchEnd,
-  } = useInfiniteCarousel<TabType>(carouselList, '(-100% - 20px)');
-  const partRef = useRef<HTMLButtonElement[]>([]);
-
-  useEffect(() => {
-    partRef.current[slideIndex].scrollIntoView({
-      behavior: 'smooth',
-      block: 'nearest',
-      inline: 'nearest',
-    });
-  }, [partRef, slideIndex]);
+  } = useInfiniteCarousel<TabType>(carouselList, '(-100% - 20px)', partRef);
 
   return (
     <div>
