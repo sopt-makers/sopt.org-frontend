@@ -1,10 +1,9 @@
 import styled from '@emotion/styled';
 import { colors } from '@sopt-makers/colors';
+import Link from 'next/link';
 import { BackgroundMove } from '@src/lib/styles/animation';
 
-export const RecruitButtonWrapper = styled.div`
-  cursor: pointer;
-
+export const RecruitButtonWrapper = styled(Link)`
   margin-top: 40px;
   display: inline-flex;
   justify-content: center;
@@ -42,7 +41,6 @@ export const RecruitButtonWrapper = styled.div`
 export const MouseTrackerWrapper = styled.div<{ x: number; y: number }>`
   border-radius: 99px;
   border: none;
-  cursor: pointer;
   height: 60px;
   padding: 15px 28px;
   background: transparent;
