@@ -15,7 +15,7 @@ const useFlippableCard = () => {
   if (deviceType === 'desktop') {
     return { isFlipped, onMouseEnter: setIsFlipped, onMouseLeave: setIsUnflipped };
   }
-  return { isFlipped, onClick: toggleFlipped };
+  return { isFlipped, onClick: () => toggleFlipped() };
 };
 
 export default function FlippableCard({ frontContent, backContent }: FlippableCardProps) {
