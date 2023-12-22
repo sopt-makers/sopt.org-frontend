@@ -1,3 +1,7 @@
+import Image from 'next/image';
+import { useRef } from 'react';
+import IcArrowLeft from '@src/assets/icons/ic_arrow_left.svg';
+import IcArrowRight from '@src/assets/icons/ic_arrow_right.svg';
 import useDrag from '@src/hooks/useDrag';
 import useInfiniteCarousel from '@src/hooks/useInfiniteCarousel';
 import { tabs as carouselList } from '@src/lib/constants/tabs';
@@ -9,6 +13,7 @@ import * as S from './style';
 
 export default function PartConfig() {
   const { dragRef, handleMouseDown, handleMouseMove, initDragging } = useDrag();
+  const partRef = useRef<HTMLButtonElement[]>([]);
   const {
     carouselRef,
     infiniteCarouselList,
@@ -17,7 +22,7 @@ export default function PartConfig() {
     handleCarouselSwipe,
     handleTouchStart,
     handleTouchEnd,
-  } = useInfiniteCarousel<TabType>(carouselList, '(-100% - 20px)');
+  } = useInfiniteCarousel<TabType>(carouselList, '(-100% - 20px)', partRef);
 
   return (
     <div>
@@ -40,6 +45,7 @@ export default function PartConfig() {
             <S.PartButtonList>
               {carouselList.map(({ label }, index) => (
                 <PartButton
+                  ref={(el: HTMLButtonElement) => (partRef.current[index] = el)}
                   key={index}
                   index={index}
                   label={label}
@@ -50,15 +56,33 @@ export default function PartConfig() {
             </S.PartButtonList>
           </S.ButtonWrapper>
           <S.CarouselWrapper>
+            <S.LeftArrow>
+              <Image
+                src={IcArrowLeft}
+                width="42"
+                height="42"
+                alt="왼쪽 화살표"
+                onClick={() => handleCarouselSwipe(-1)}
+              />
+            </S.LeftArrow>
             <S.Carousel
               ref={carouselRef}
               onTouchStart={handleTouchStart}
               onTouchEnd={handleTouchEnd}
             >
               {infiniteCarouselList.map(({ value }, index) => (
-                <PartSlide key={index} part={value} handleCarouselSwipe={handleCarouselSwipe} />
+                <PartSlide key={index} part={value} />
               ))}
             </S.Carousel>
+            <S.RightArrow>
+              <Image
+                src={IcArrowRight}
+                width="42"
+                height="42"
+                alt="오른쪽 화살표"
+                onClick={() => handleCarouselSwipe(1)}
+              />
+            </S.RightArrow>
           </S.CarouselWrapper>
         </S.PartConfig>
         <S.RequiredAbility href="/recruit#chapter-info">필요 역량이 궁금하다면?</S.RequiredAbility>

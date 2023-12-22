@@ -42,20 +42,21 @@ export const Carousel = styled.div`
 export const Slide = styled.div`
   display: flex;
   flex-shrink: 0;
-  position: relative;
   width: 100%;
   align-items: center;
   height: auto;
   justify-content: center;
-
-  position: static;
 `;
 
 export const Arrow = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 0 0 1.5625vw;
+
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 99;
 
   & > img:hover {
     cursor: pointer;
@@ -63,11 +64,9 @@ export const Arrow = styled.div`
 
   @media (max-width: 768px) {
     width: 26px;
-    margin: 0 2.73vw 0 0;
   }
 
   @media (max-width: 428px) {
-    margin: 0 2.72vw 0 0;
     width: 15.293px;
     & > img {
       height: 24.138px;
@@ -76,25 +75,15 @@ export const Arrow = styled.div`
 `;
 
 export const LeftArrow = styled(Arrow)`
-  margin: 0 0 0 1.5625vw;
-
-  @media (max-width: 768px) {
-    margin: 0 2.73vw 0 0;
-  }
-
-  @media (max-width: 428px) {
-    margin: 0 2.72vw 0 0;
-  }
+  left: 0;
 `;
 
 export const RightArrow = styled(Arrow)`
-  margin: 0 1.5625vw 0 0;
+  right: 0;
+`;
 
-  @media (max-width: 768px) {
-    margin: 0 0 0 2.73vw;
-  }
-
-  @media (max-width: 428px) {
-    margin: 0 0 0 2.72vw;
-  }
+export const CarouselWrapper = styled.div`
+  position: relative;
+  overflow: hidden;
+  border-radius: 19px;
 `;
