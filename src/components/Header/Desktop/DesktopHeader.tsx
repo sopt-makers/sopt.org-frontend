@@ -110,6 +110,7 @@ export const MenuTitle = styled(Link)<MenuTitleProps>`
   ${({ menuColor }) =>
     menuColor === 'SPECIAL' &&
     css`
+      margin-left: 20px;
       border-radius: 5.869px;
       border: 1.027px solid #4786ff;
       background: rgba(71, 134, 255, 0.28);
