@@ -77,3 +77,14 @@ export interface RecentNewsListType {
   url: string;
   src: string;
 }
+
+export type SoptCommentType = {
+  summary: string;
+  color: string;
+  comment: string;
+  commenter: {
+    name: string;
+    history: string;
+    part: string;
+  };
+};

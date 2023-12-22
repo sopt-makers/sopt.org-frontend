@@ -20,6 +20,7 @@ import {
   KeywordListType,
   PartListType,
   RecentNewsListType,
+  SoptCommentType,
 } from '@src/lib/types/main';
 import { Part, TextWeightType } from '@src/lib/types/universal';
 
@@ -513,5 +514,85 @@ export const RecentNewsList: RecentNewsListType[] = [
     title: 'DO SOPT 1차 행사',
     url: 'https://www.instagram.com/p/Cz3GJOpvcBz/?img_index=1',
     src: ImgRecentNews5.src,
+  },
+];
+
+export const SOPT_COMMENT_LIST: SoptCommentType[] = [
+  {
+    summary: '후회없는 활동',
+    color: '#FFD161',
+    comment:
+      '후회없는 활동. 좋은 사람들도 많이 만났고 기획분야를 제대로 배울 수 있었던 기회였어요. 대학생활 마지막 대외 활동이었지만, 회사 일을 하면서도 미련을 못버리고 메이커스나 솝텀을 기웃거려요. 엄청 오랜 기간동안 애정을 담고 있는 단체예요.',
+    commenter: {
+      name: '김나연',
+      history: '25, 26, 27기 활동',
+      part: '기획',
+    },
+  },
+  {
+    summary: '넓어지는 시야',
+    color: '#DFFF61',
+    comment:
+      '솝트는 제 성장의 밑거름이자 둘도 없는 추억이에요. 배울 점 많은 회원들과 다양한 경험을 하며 기획자로서, 그리고 한 명의 인간으로서 성장할 수 있었어요. 단 한 톨 만큼의 후회도 없는 소중한 시간이었습니다.',
+    commenter: {
+      name: '문수빈',
+      history: '29, 31기 활동',
+      part: '기획',
+    },
+  },
+  {
+    summary: '유의미한 배움',
+    color: '#CBD0FF',
+    comment:
+      '솝트에서 안드로이드를 처음 접하게 되었는데요, 세미나로 내용을 익히고 과제를 하며 금잔디 조원들과 디스코드에서 코드 띄워 놓고 토론도 해보고 코드리뷰로 서로 도움을 주고 받으며 성장했습니다. 그리고 솝커톤으로 무박2일의 개발 경험도 가져보고 앱잼으로 밤낮 없이 합숙하고 끝내 릴리즈 경험까지! 그리고 가장 중요한 저희 팀이 생겼습니다! 너무 유의미하고 재미있는 1년이었어요.',
+    commenter: {
+      name: '김하정',
+      history: '31, 32기 활동',
+      part: '안드로이드',
+    },
+  },
+  {
+    summary: '함께하는 도전,\n열정의 실천',
+    color: '#FFBEFC',
+    comment:
+      'IT에 대한 배경지식이 많이 부족한 상태로 왔었지만, 정말 후회없고 행복한 시간이었어요. 모르는 것에 대해 부끄러워하는 것이 아닌 함께 알려주고 성장하는 문화, 도전을 두려워하지 않는 멋진 사람들, 활동하며 배우고 체화하게 되는 세미나 내용 등 SOPT와 함께 열정을 실천하는 과정에서 정말 많이 배우고 즐거웠어요.',
+    commenter: {
+      name: '이승헌',
+      history: '30, 33기 활동',
+      part: '기획',
+    },
+  },
+  {
+    summary: '깊이있는 학습,\n협업의 즐거움',
+    color: '#DFFF61',
+    comment:
+      'YB 때는 개발의 시작을 SOPT에서 했는데 다양한 분야의 동료들과 협업하며 도움을 받아 빠르게 성장할 수 있었어요. OB 때는 기술적인 고민들을 동료들과 나누며 더욱 깊이있게 학습해 내실을 다질 수 있었고, 이를 YB들에게 공유하면서 소통하며 협업하는 것의 즐거움과 함께 성장하는 가치를 배울 수 있어 좋았어요.',
+    commenter: {
+      name: '한승현',
+      history: '28, 29, 30기 활동',
+      part: '안드로이드',
+    },
+  },
+  {
+    summary: '성취감과 자신감',
+    color: '#CBD0FF',
+    comment:
+      '열정 넘치는 사람들과 함께하면서 긍정적인 에너지를 많이 얻었고, 혼자였다면 해내기 어려웠을 일들을 성취하는데 많은 도움이 되었어요. 미친듯이 몰입하는 경험을 통해 성취감 및 자신감을 얻었을뿐만 아니라, 앱잼 등 프로젝트를 진행하며 효율적으로 협업하는 방법을 배웠어요.',
+    commenter: {
+      name: '권소희',
+      history: '27, 28, 29, 31기 활동',
+      part: '웹',
+    },
+  },
+  {
+    summary: '인생의 터닝포인트',
+    color: '#FFBEFC',
+    comment:
+      '활동을 더 일찍 시작하지 못한 것이 유일하게 남는 후회일 정도로 SOPT를 통해 많이 성장했다고 느껴요. 커리어적인 부분에서 방향성을 정할 수 있었던, 인생의 터닝포인트와 같은 활동이었어요.',
+    commenter: {
+      name: '권소희',
+      history: '27, 28, 29, 31기 활동',
+      part: '웹',
+    },
   },
 ];

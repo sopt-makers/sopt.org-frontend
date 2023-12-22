@@ -14,7 +14,7 @@ export const Wrapper = styled(motion.section)`
   background-color: ${colors.white};
 
   @media (max-width: 768px) {
-    padding: 0 5.98vw;
+    padding: 0;
   }
 `;
 
@@ -92,7 +92,9 @@ export const Layout = styled(motion.div)`
   background: #f6f8fc;
 
   @media (max-width: 768px) {
+    width: 100%;
     padding: 65px 6.25vw 0 6.25vw;
+    border-radius: 20.946px 20.946px 0 0;
   }
 
   @media (max-width: 428px) {
