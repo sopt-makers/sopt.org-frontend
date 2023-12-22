@@ -22,7 +22,7 @@ export const Wrapper = styled(motion.div)`
   }
 
   @media (max-width: 976px) {
-    width: 540px;
+    width: 520px;
     height: 324px;
     padding: 32px 36px;
     font-size: 18px;
