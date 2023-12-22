@@ -48,7 +48,7 @@ export const Activity: ActivityListType = {
   [ActivityType.SOPKATHON]: {
     img: ImgSoptkaton.src,
     navKor: '솝커톤',
-    navEng: 'Sopkaton',
+    navEng: 'Sopkathon',
     description: [
       { content: '무박 2일 ', color: 'yellow' },
       {
