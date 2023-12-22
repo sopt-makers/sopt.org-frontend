@@ -26,54 +26,6 @@ export const PartSlide = styled.div`
   }
 `;
 
-export const Arrow = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 0 0 1.5625vw;
-
-  & > img:hover {
-    cursor: pointer;
-  }
-
-  @media (max-width: 1200px) {
-    width: 26px;
-    margin: 0 2.73vw 0 0;
-  }
-
-  @media (max-width: 428px) {
-    margin: 0 2.72vw 0 0;
-    width: 15.293px;
-    & > img {
-      height: 24.138px;
-    }
-  }
-`;
-
-export const LeftArrow = styled(Arrow)`
-  margin: 0 0 0 1.5625vw;
-
-  @media (max-width: 1200px) {
-    margin: 0 2.73vw 0 0;
-  }
-
-  @media (max-width: 428px) {
-    margin: 0 2.72vw 0 0;
-  }
-`;
-
-export const RightArrow = styled(Arrow)`
-  margin: 0 1.5625vw 0 0;
-
-  @media (max-width: 1200px) {
-    margin: 0 0 0 2.73vw;
-  }
-
-  @media (max-width: 428px) {
-    margin: 0 0 0 2.72vw;
-  }
-`;
-
 export const Wrapper = styled.div`
   display: flex;
   width: 100%;
