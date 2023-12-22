@@ -90,6 +90,7 @@ export const Layout = styled(motion.div)`
   padding: 68px 4vw 0 4vw;
   border-radius: 20.946px;
   background: #f6f8fc;
+  z-index: 1;
 
   @media (max-width: 768px) {
     padding: 65px 6.25vw 0 6.25vw;
