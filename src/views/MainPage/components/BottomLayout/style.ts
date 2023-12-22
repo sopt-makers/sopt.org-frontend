@@ -23,7 +23,7 @@ export const FloatingMenu = styled.div`
   flex-direction: column;
   gap: 9.27px;
   position: sticky;
-  top: 0;
+  top: 104px;
 
   height: fit-content;
 
