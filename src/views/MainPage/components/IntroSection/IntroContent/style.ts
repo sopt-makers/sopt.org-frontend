@@ -211,13 +211,13 @@ export const ContentImage = styled(Image)`
 
 export const BackLight = styled.div<{ isContentVisible: boolean }>`
   position: absolute;
-  top: calc(300px - 5vw);
+  top: 50%;
   left: calc(300px - 5vw);
   z-index: -99;
 
   width: max(1500px, 101.77vw);
   height: max(900px, 56.45vw);
-  transform: rotate(7.639deg);
+  transform: rotate(7.639deg) translateY(-50%); 
   background: radial-gradient(45.16% 45.16% at 50% 50%, #2c3242 0%, rgba(15, 15, 18, 0) 100%);
 
   opacity: ${({ isContentVisible }) => (isContentVisible ? '1' : '0')};
