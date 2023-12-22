@@ -15,7 +15,7 @@ export function Header() {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
 
-      scrollPosition === 0 ? setIsTransparent(false) : setIsTransparent(true);
+      scrollPosition <= 0 ? setIsTransparent(false) : setIsTransparent(true);
     };
 
     window.addEventListener('scroll', handleScroll);
