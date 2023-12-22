@@ -1,13 +1,12 @@
 export type MenuState = 'idle' | 'open' | 'close';
 
 export const enum MenuTapType {
-  Router = 'ROUTER',
-  Anchor = 'ANCHOR',
-  Parent = 'PARENT',
+  DEFAULT = 'DEFAULT',
+  SPECIAL = 'SPECIAL',
 }
 
 export type SingleMenuTap = {
-  type: MenuTapType.Router | MenuTapType.Anchor;
+  type: MenuTapType.DEFAULT | MenuTapType.SPECIAL;
   title: string;
   href: string;
 };
