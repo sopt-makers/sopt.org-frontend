@@ -46,8 +46,8 @@ export const Slide = styled.div`
   width: 100%;
   align-items: center;
   height: auto;
+  justify-content: center;
 
-  justify-content: normal;
   position: static;
 `;
 
