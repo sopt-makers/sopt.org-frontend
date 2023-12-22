@@ -1,16 +1,17 @@
 import styled from '@emotion/styled';
 import { colors } from '@sopt-makers/colors';
+import Link from 'next/link';
 import Slider from 'react-slick';
 import { ReactComponent as IconInstagram } from '@src/assets/icons/ic_instagram.svg';
 
 export const TitleWrapper = styled.section`
-  margin-left: 78px;
+  margin-left: 10px;
 
   @media (max-width: 768px) and (min-width: 429px) {
-    margin-left: 48px;
+    margin-left: 16px;
   }
   @media (max-width: 428px) {
-    margin-left: 28px;
+    margin-left: 0px;
   }
 `;
 
@@ -74,7 +75,7 @@ export const SliderList = styled.ul`
   display: flex;
   position: relative;
   width: calc(313px * 10);
-  animation: desktopAutoPlay 7s linear infinite;
+  animation: desktopAutoPlay 10s linear infinite;
 
   @media (max-width: 768px) and (min-width: 429px) {
     width: calc(264px * 10);
@@ -141,8 +142,8 @@ export const GoToInstagram = styled.section`
 `;
 
 export const IcInstagram = styled(IconInstagram)`
-  width: 23px;
-  height: 23px;
+  width: 17px;
+  height: 17px;
 
   @media (max-width: 428px) {
     width: 12px;
@@ -150,7 +151,7 @@ export const IcInstagram = styled(IconInstagram)`
   }
 `;
 
-export const Description = styled.p`
+export const Description = styled(Link)`
   color: #ededed;
   font-family: SUIT;
   font-size: 15.998px;
@@ -167,14 +168,15 @@ export const Description = styled.p`
     font-size: 9.194px;
     line-height: 15.436px; /* 167.895% */
     letter-spacing: -0.368px;
+    margin-left: 4px;
   }
 `;
 
 export const Gradient = styled.div`
-  width: 112.967px;
-  height: 380px;
+  width: 44.967px;
+  height: 382px;
   position: absolute;
-  top: 0;
+  top: -1px;
   z-index: 50;
   margin-top: 72px;
 
@@ -190,9 +192,10 @@ export const Gradient = styled.div`
 
 export const LeftGradient = styled(Gradient)`
   background: linear-gradient(90deg, #0d1120 12.15%, rgba(13, 17, 32, 0.01) 82.86%);
+  left: -1px;
 `;
 
 export const RightGradient = styled(Gradient)`
   background: linear-gradient(270deg, #0d1120 12.15%, rgba(13, 17, 32, 0.01) 82.86%);
-  right: 0;
+  right: -1px;
 `;
