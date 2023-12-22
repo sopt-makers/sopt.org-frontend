@@ -42,6 +42,10 @@ export const CarouselWrapper = styled.div`
   width: 100%;
   overflow: hidden;
   border-radius: 19px;
+
+  @media (max-width: 428px) {
+    border-radius: 10.919px;
+  }
 `;
 
 export const Carousel = styled.div`

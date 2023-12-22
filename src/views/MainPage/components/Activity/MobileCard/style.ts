@@ -85,4 +85,5 @@ export const RightArrow = styled(Arrow)`
 export const CarouselWrapper = styled.div`
   position: relative;
   overflow: hidden;
+  border-radius: 19px;
 `;
