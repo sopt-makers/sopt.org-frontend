@@ -22,9 +22,9 @@ export default function CommentCard({
   commenter,
 }: CommentCardProps) {
   const desktop = useMediaQuery({
-    query: '(max-width: 1440px)',
+    query: '(max-width: 1480px)',
   });
-  const margin = desktop ? '-300px 0px -300px 0px' : '-100px 0px -600px 0px';
+  const margin = desktop ? '-324px 0px -300px 0px' : '-100px 0px -648px 0px';
 
   const wrapperRef = useRef(null);
 

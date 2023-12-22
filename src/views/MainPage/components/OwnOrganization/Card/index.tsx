@@ -1,4 +1,5 @@
 import FlippableCard from '@src/components/common/FlippableCard';
+import { useIsMobile } from '@src/hooks/useDevice';
 import { TextWeightType } from '@src/lib/types/universal';
 import * as S from './style';
 
@@ -6,7 +7,7 @@ type OwnOrganizationCardProps = {
   nameKor: string;
   nameEng: string;
   description: TextWeightType[];
-  frontSideBg: string;
+  frontSideBg: { mo: string; pc: string };
   backSideBg: string;
 };
 
@@ -26,10 +27,13 @@ export default function OwnOrganizationCard({
   frontSideBg,
   backSideBg,
 }: OwnOrganizationCardProps) {
+  const isMobile = useIsMobile('1440px');
+  const backgroundSrc = isMobile ? frontSideBg.mo : frontSideBg.pc;
+
   return (
     <FlippableCard
       frontContent={
-        <S.CardWrapper background={`url(${frontSideBg}) center`}>
+        <S.CardWrapper background={`url(${backgroundSrc}) center`}>
           <Footer nameKor={nameKor} nameEng={nameEng} />
         </S.CardWrapper>
       }

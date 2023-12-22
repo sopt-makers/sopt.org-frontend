@@ -4,6 +4,7 @@ import icSoptLogoWhite from '@src/assets/icons/ic_logo_sopt_white.svg';
 export const Container = styled.div`
   height: 250vh;
   width: 100vw;
+  margin-bottom: -60vh;
 `;
 
 export const Wrapper = styled.div`
@@ -14,6 +15,7 @@ export const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow-x: hidden;
 `;
 
 export const LogoWrapper = styled.div`
