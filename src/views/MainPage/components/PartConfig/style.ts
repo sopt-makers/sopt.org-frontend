@@ -38,8 +38,10 @@ export const PartButtonList = styled.div`
 `;
 
 export const CarouselWrapper = styled.div`
+  position: relative;
   width: 100%;
   overflow: hidden;
+  border-radius: 19px;
 `;
 
 export const Carousel = styled.div`
@@ -65,5 +67,47 @@ export const RequiredAbility = styled(Link)`
 
   @media (max-width: 428px) {
     font-size: 10px;
+  }
+`;
+
+export const Arrow = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 99;
+
+  & > img:hover {
+    cursor: pointer;
+  }
+
+  @media (max-width: 1200px) {
+    width: 26px;
+  }
+
+  @media (max-width: 428px) {
+    width: 15.293px;
+    & > img {
+      height: 24.138px;
+    }
+  }
+`;
+
+export const LeftArrow = styled(Arrow)`
+  left: 1.5625vw;
+
+  @media (max-width: 1200px) {
+    left: 0;
+  }
+`;
+
+export const RightArrow = styled(Arrow)`
+  right: 1.5625vw;
+
+  @media (max-width: 1200px) {
+    right: 0;
   }
 `;

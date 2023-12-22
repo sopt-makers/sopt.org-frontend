@@ -13,7 +13,7 @@ export const PartSlide = styled.div`
   background: linear-gradient(98deg, #1a2035 33.84%, #304f84 96.92%);
 
   @media (max-width: 1200px) {
-    justify-content: normal;
+    justify-content: center;
     position: static;
 
     height: 488.493px;
@@ -77,9 +77,10 @@ export const RightArrow = styled(Arrow)`
 export const Wrapper = styled.div`
   display: flex;
   width: 100%;
-  padding: 77px 0 62px 4.375vw;
+  padding: 77px 0 62px calc(4.375vw + 1.5625vw + 42px);
 
   @media (max-width: 1200px) {
+    width: calc(100% - 5.46vw - 54px);
     position: relative;
     padding: 4.57vw 5.5vw 0 5.5vw;
     border-radius: 19px;
@@ -91,6 +92,7 @@ export const Wrapper = styled.div`
   }
 
   @media (max-width: 428px) {
+    width: calc(100% - 5.46vw - 31px);
     padding: 6.78vw 6.71vw 0 6.71vw;
     border-radius: 10.919px;
   }
