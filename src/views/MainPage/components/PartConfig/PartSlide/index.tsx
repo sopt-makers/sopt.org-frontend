@@ -14,7 +14,7 @@ interface PartSlideProps {
 
 export default function PartSlide({ part, handleCarouselSwipe }: PartSlideProps) {
   const { value, label, description } = partList[part];
-  const isTablet = useIsTablet('429px', '768px');
+  const isTablet = useIsTablet('429px', '1200px');
   const isMobile = useIsMobile('428px');
   const contentDraw = {
     initial: (custom: number) => ({ opacity: 0, y: 10 * (custom % 2) + 10 }),

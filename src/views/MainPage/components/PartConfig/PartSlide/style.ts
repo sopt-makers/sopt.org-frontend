@@ -12,7 +12,7 @@ export const PartSlide = styled.div`
   border-radius: 19px;
   background: linear-gradient(98deg, #1a2035 33.84%, #304f84 96.92%);
 
-  @media (max-width: 768px) {
+  @media (max-width: 1200px) {
     justify-content: normal;
     position: static;
 
@@ -36,7 +36,7 @@ export const Arrow = styled.div`
     cursor: pointer;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 1200px) {
     width: 26px;
     margin: 0 2.73vw 0 0;
   }
@@ -53,7 +53,7 @@ export const Arrow = styled.div`
 export const LeftArrow = styled(Arrow)`
   margin: 0 0 0 1.5625vw;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1200px) {
     margin: 0 2.73vw 0 0;
   }
 
@@ -65,7 +65,7 @@ export const LeftArrow = styled(Arrow)`
 export const RightArrow = styled(Arrow)`
   margin: 0 1.5625vw 0 0;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1200px) {
     margin: 0 0 0 2.73vw;
   }
 
@@ -79,11 +79,15 @@ export const Wrapper = styled.div`
   width: 100%;
   padding: 77px 0 62px 4.375vw;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1200px) {
     position: relative;
-    padding: 6.57vw 6.5vw 0 6.5vw;
+    padding: 4.57vw 5.5vw 0 5.5vw;
     border-radius: 19px;
     background: linear-gradient(98deg, #1a2035 33.84%, #304f84 96.92%);
+  }
+
+  @media (max-width: 768px) {
+    padding: 6.57vw 6.5vw 0 6.5vw;
   }
 
   @media (max-width: 428px) {
@@ -97,9 +101,9 @@ export const PartDetail = styled.div`
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
-  width: calc(250px + 11vw);
+  width: calc(70px + 20vw);
 
-  @media (max-width: 768px) {
+  @media (max-width: 1200px) {
     justify-content: normal;
     width: 100%;
   }
@@ -110,8 +114,8 @@ export const PartTop = styled.div`
   flex-direction: column;
   gap: 17px;
 
-  @media (max-width: 768px) {
-    gap: 5px;
+  @media (max-width: 1200px) {
+    gap: calc(3px + 0.4vw);
   }
 
   @media (max-width: 428px) {
@@ -123,7 +127,6 @@ export const PartBadge = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  /* gap: 10px; */
 
   width: fit-content;
   padding: 6px 15px;
@@ -140,7 +143,7 @@ export const PartBadge = styled.div`
   line-height: 100%; /* 19px */
   letter-spacing: -0.38px;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1200px) {
     border-radius: 8.836px;
     font-size: 15px;
     letter-spacing: -0.3px;
@@ -168,9 +171,9 @@ export const PartTitle = styled.div`
   line-height: 100%; /* 56px */
   letter-spacing: -1.12px;
 
-  @media (max-width: 768px) {
-    height: 53.88px;
-    font-size: max(30px, 4.94vw);
+  @media (max-width: 1200px) {
+    height: calc(40px + 1.8vw);
+    font-size: max(30px, 4.34vw);
     line-height: 96%; /* 36.48px */
     letter-spacing: -0.76px;
 
@@ -198,8 +201,13 @@ export const Content = styled.span<{ weight: 'normal' | 'bold' }>`
   line-height: 162%; /* 30.78px */
   letter-spacing: -0.38px;
 
+  @media (max-width: 1200px) {
+    font-size: 18px;
+    letter-spacing: -0.34px;
+  }
+
   @media (max-width: 768px) {
-    font-size: max(14px, 2.21vw);
+    font-size: max(16px, 2.41vw);
     letter-spacing: -0.34px;
   }
 
@@ -226,9 +234,15 @@ export const Keyword = styled(motion.div)`
   line-height: 162%; /* 35.64px */
   letter-spacing: -0.44px;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1200px) {
     padding: 13.115px 18.215px;
-    font-size: 16px;
+    font-size: max(16px, 1.5vw);
+    letter-spacing: -0.32px;
+  }
+
+  @media (max-width: 768px) {
+    padding: 11.115px 16.215px;
+    font-size: max(14px, 2vw);
     letter-spacing: -0.32px;
   }
 

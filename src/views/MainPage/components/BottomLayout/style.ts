@@ -98,6 +98,6 @@ export const Layout = styled(motion.div)`
   }
 
   @media (max-width: 428px) {
-    padding: 37.36px 28px 0 28px;
+    padding: 37.36px 6.54vw 0 6.54vw;
   }
 `;
