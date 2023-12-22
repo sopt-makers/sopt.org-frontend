@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { useEffect } from 'react';
 import useHeader from '@src/hooks/useHeader';
 import { menuTapList } from '../menuTapList';
-import { MenuState, MenuTapType, SingleMenuTap } from '../types';
+import { MenuState } from '../types';
 import * as S from './HeaderMenu.style';
 
 function useNoScroll(isMenuShown: MenuState) {
@@ -26,30 +26,6 @@ interface HeaderMenuProps {
   handleHeaderToggleButton: () => void;
 }
 
-type MenuTapProps = {
-  menuTap: SingleMenuTap;
-  handleIsSelected: (path: string) => boolean;
-};
-
-function MenuTap({ menuTap, handleIsSelected }: MenuTapProps) {
-  switch (menuTap.type) {
-    case MenuTapType.Anchor:
-      return (
-        <S.MenuTitle>
-          <S.MenuTitleAnchor href={menuTap.href} target="_blank" rel="noreferrer">
-            {menuTap.title}
-          </S.MenuTitleAnchor>
-        </S.MenuTitle>
-      );
-    case MenuTapType.Router:
-      return (
-        <S.MenuTitle isSelected={handleIsSelected(menuTap.href)}>
-          <Link href={menuTap.href}>{menuTap.title}</Link>
-        </S.MenuTitle>
-      );
-  }
-}
-
 function HeaderMenu({ isMenuShown, handleHeaderToggleButton }: HeaderMenuProps) {
   useNoScroll(isMenuShown);
 
@@ -61,7 +37,13 @@ function HeaderMenu({ isMenuShown, handleHeaderToggleButton }: HeaderMenuProps) 
         <S.ContentsWrap>
           <S.MenuTitlesWrap>
             {menuTapList.map((menuTap) => (
-              <MenuTap key={menuTap.title} menuTap={menuTap} handleIsSelected={handleIsSelected} />
+              <S.MenuTitle
+                menuColor={menuTap.type}
+                key={menuTap.title}
+                isSelected={handleIsSelected(menuTap.href)}
+              >
+                <Link href={menuTap.href}>{menuTap.title}</Link>
+              </S.MenuTitle>
             ))}
             <S.Background onClick={() => handleHeaderToggleButton()} />
           </S.MenuTitlesWrap>

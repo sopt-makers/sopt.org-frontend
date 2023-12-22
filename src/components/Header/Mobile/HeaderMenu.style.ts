@@ -3,6 +3,7 @@ import { colors } from '@sopt-makers/colors';
 import Link from 'next/link';
 import { css } from '@emotion/react';
 import { FadeIn, FadeInDown, FadeOut, FadeOutUp } from '@src/lib/styles/animation';
+import { MenuTapType } from '../types';
 
 type MenuType = 'idle' | 'open' | 'close';
 
@@ -12,6 +13,7 @@ interface CloseButtonProps extends RootProps {
 
 interface MenuTitleProps {
   isSelected?: boolean;
+  menuColor: MenuTapType;
 }
 
 interface RootProps {
@@ -29,8 +31,8 @@ export const Root = styled.div<RootProps>`
   width: 100%;
   height: 100vh;
 
-  ${(props) => {
-    switch (props.isMenuShown) {
+  ${({ isMenuShown }) => {
+    switch (isMenuShown) {
       case 'open':
         return css`
           ${FadeInDown()}
@@ -79,8 +81,8 @@ export const CloseButton = styled.button<CloseButtonProps>`
   width: 28px;
   height: 28px;
 
-  ${(props) => {
-    switch (props.isMenuShown) {
+  ${({ isMenuShown }) => {
+    switch (isMenuShown) {
       case 'open':
         return css`
           ${FadeIn}
@@ -141,11 +143,21 @@ export const MenuTitle = styled.div<MenuTitleProps>`
 
   color: ${({ isSelected }) => (isSelected ? '#fff' : 'rgba(255, 255, 255, 0.5)')};
   cursor: pointer;
+  width: fit-content;
 
   &:not(:last-child) {
-    padding-left: 30px;
-    padding-right: 40px;
+    margin-left: 30px;
   }
+
+  ${({ menuColor }) =>
+    menuColor === 'SPECIAL' &&
+    css`
+      padding: 0 20px;
+      border-radius: 5.869px;
+      border: 1.027px solid #4786ff;
+      background: rgba(71, 134, 255, 0.28);
+      color: #267dff;
+    `}
 `;
 
 export const Rules = styled(Link)`
