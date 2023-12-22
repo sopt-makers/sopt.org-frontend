@@ -61,6 +61,12 @@ export const FooterKorName = styled.div`
     padding: 7px 0;
     font-size: 12px;
     line-height: 13px;
+
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 19px;
+    letter-spacing: -0.44px;
   }
 `;
 

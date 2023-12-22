@@ -13,6 +13,7 @@ export const Wrapper = styled.div`
   }
   @media (max-width: 520px) {
     height: inherit;
+    padding-bottom: 200px;
   }
 `;
 
@@ -106,7 +107,8 @@ export const Summary = styled(motion.div)<{ color: string }>`
     font-weight: 600;
     line-height: 32px;
     letter-spacing: -0.9px;
-    height: 120px;
+    padding-top: 12px;
+    height: 80px;
   }
 `;
 
