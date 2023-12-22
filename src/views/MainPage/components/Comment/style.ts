@@ -10,9 +10,11 @@ export const Wrapper = styled.div`
   padding-bottom: 800px;
   @media (max-width: 768px) {
     height: 130vh;
+    padding-top: 0;
   }
   @media (max-width: 520px) {
     height: inherit;
+    padding-top: 0;
     padding-bottom: 200px;
   }
 `;

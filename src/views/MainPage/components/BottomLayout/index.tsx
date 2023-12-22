@@ -30,8 +30,16 @@ function BottomLayout() {
   const viewList = [false, activity.isInView, review.isInView, news.isInView];
   const minIndex = viewList.findIndex((value) => value === true);
 
-  const wrapperBackground = useTransform(scrollYProgress, [0, 1], ['#FFF', '#090B12']);
-  const layoutBackground = useTransform(scrollYProgress, [0, 1], ['#F6F8FC', '#0D111F']);
+  const wrapperBackground = useTransform(
+    scrollYProgress,
+    [0, 0.76, 1],
+    ['#FFF', '#090B12', '#090B12'],
+  );
+  const layoutBackground = useTransform(
+    scrollYProgress,
+    [0, 0.76, 1],
+    ['#F6F8FC', '#0D111F', '#0D111F'],
+  );
   const menuBackground = useTransform(scrollYProgress, [0, 1], ['#fbfcfe', '#fbfcfef']);
   const menuColor = useTransform(scrollYProgress, [0, 1], ['#a8acbae0', '#747885']);
 
