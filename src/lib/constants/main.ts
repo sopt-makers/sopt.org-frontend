@@ -186,14 +186,14 @@ export const partList: PartListType = {
       { content: 'Kotlin 언어를 활용', weight: 'bold' },
       { content: '해 안드로이드 ', weight: 'normal' },
       { content: 'UI 구현 기초/심화', weight: 'bold' },
-      { content: '부터 ', weight: 'normal' },
+      { content: ', ', weight: 'normal' },
       { content: '서버 통신 ', weight: 'bold' },
       {
-        content: '등 앱 제작에 필요한 내용들을 배웁니다. 안드로이드에 몰입할 수 있는 세미나, ',
+        content: '등 앱 제작에 필요한 내용들을 배웁니다. 세미나, ',
         weight: 'normal',
       },
       { content: '페어 프로그래밍', weight: 'bold' },
-      { content: '을 통한 실습, 스터디, 합동세미나 등 여러 활동에 참여합니다.', weight: 'normal' },
+      { content: '을 통한 실습 등 여러 활동에 참여합니다.', weight: 'normal' },
     ],
   },
   [Part.IOS]: {
@@ -201,22 +201,18 @@ export const partList: PartListType = {
     label: 'iOS',
     description: [
       { content: 'Swift와 UI Kit', weight: 'bold' },
-      { content: '를 이용해서 ', weight: 'normal' },
+      { content: '를 이용해 ', weight: 'normal' },
       { content: 'iOS 앱 서비스', weight: 'bold' },
       {
-        content: '를 만들 수 있는 능력을 기를 수 있습니다. iOS가 처음인 분들을 위한',
+        content: '를 만들 수 있습니다. iOS가 처음인 분들을 위한',
         weight: 'normal',
       },
       { content: '왕초보 스터디', weight: 'bold' },
       { content: '와 ', weight: 'normal' },
       { content: '보충 세미나', weight: 'bold' },
-      { content: ', 그리고 실력적 도약을 위한 ', weight: 'normal' },
+      { content: ', 실력적 도약을 위한 ', weight: 'normal' },
       { content: '심화 세미나', weight: 'bold' },
-      {
-        content:
-          '까지. 자신의 성장을 위해 열정적으로 도전하는 사람들과 함께 활동에 필요한 부분들을 학습할 수 있습니다.',
-        weight: 'normal',
-      },
+      { content: '까지 존재합니다.', weight: 'normal' },
     ],
   },
   [Part.WEB]: {
@@ -226,7 +222,6 @@ export const partList: PartListType = {
       { content: 'UI 구현, 서버 통신 등 ', weight: 'normal' },
       { content: '웹 서비스 개발', weight: 'bold' },
       { content: '에 필요한 역량들을 ', weight: 'normal' },
-      { content: '기초부터 심화까지 ', weight: 'bold' },
       {
         content:
           '학습합니다. 또한 기획자, 디자이너, 서버 개발자와의 협업 경험을 통해 개발 협업 방식을 익힐 수 있습니다.',
@@ -241,16 +236,13 @@ export const partList: PartListType = {
       { content: 'Spring 프레임 워크', weight: 'bold' },
       { content: ', ', weight: 'normal' },
       { content: '관계형 데이터베이스', weight: 'bold' },
-      {
-        content: '와',
-        weight: 'normal',
-      },
+      { content: '와', weight: 'normal' },
       { content: 'AWS를 기반', weight: 'bold' },
       { content: '으로 ', weight: 'normal' },
-      { content: '서버 애플리케이션을 구축', weight: 'bold' },
+      { content: '서버를 구축', weight: 'bold' },
       {
         content:
-          '하고 운영하는 과정을 학습합니다. 또한 세미나, 코드리뷰, 스터디를 통해 개발 실력을 증진시키고, 기획자, 디자이너, 클라이언트 개발자와의 협업을 통해 협업 방식을 익힐 수 있습니다.',
+          '및 운영하는 과정을 학습합니다. 세미나, 코드리뷰, 스터디를 통해 개발 실력을 증진시킵니다.',
         weight: 'normal',
       },
     ],
