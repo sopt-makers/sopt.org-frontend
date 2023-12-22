@@ -1,4 +1,4 @@
-import { useIsDesktop } from '@src/hooks/useDevice';
+import { useIsMobile } from '@src/hooks/useDevice';
 import { SOPT_COMMENT_LIST } from '@src/lib/constants/main';
 import CommentCardDesktop from '../Card/Desktop';
 import CommentCardMobile from '../Card/Mobile';
@@ -10,10 +10,10 @@ type CommentCardsProps = {
 };
 
 export default function CommentCards({ activeIdx, changeActiveIdx }: CommentCardsProps) {
-  const isDesktop = useIsDesktop('768px');
-  if (isDesktop)
-    return <CommentCardsDesktop activeIdx={activeIdx} changeActiveIdx={changeActiveIdx} />;
-  return <CommentCardsMobile activeIdx={activeIdx} changeActiveIdx={changeActiveIdx} />;
+  const isMobile = useIsMobile('768px');
+  if (isMobile)
+    return <CommentCardsMobile activeIdx={activeIdx} changeActiveIdx={changeActiveIdx} />;
+  return <CommentCardsDesktop activeIdx={activeIdx} changeActiveIdx={changeActiveIdx} />;
 }
 
 function CommentCardsDesktop({ activeIdx, changeActiveIdx }: CommentCardsProps) {

@@ -8,12 +8,6 @@ import icRightArrow from '@src/assets/icons/ic_arrow_right.svg';
 export const Wrapper = styled.div`
   position: relative;
   @media (max-width: 768px) {
-    height: 130vh;
-    padding-top: 0;
-  }
-  @media (max-width: 520px) {
-    height: inherit;
-    padding-top: 0;
     padding-bottom: 200px;
   }
 `;
@@ -57,13 +51,13 @@ export const CardWrapper = styled.div`
   }
   @media (max-width: 768px) {
     padding-top: 64px;
+    padding-bottom: 0;
     flex-direction: row;
     align-items: center;
     gap: 22px;
   }
   @media (max-width: 520px) {
     padding-top: 32px;
-    padding-bottom: 0;
     gap: 12px;
   }
 `;
