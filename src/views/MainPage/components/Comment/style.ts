@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import { colors } from '@sopt-makers/colors';
 import { motion } from 'framer-motion';
+import icArrowComment from '@src/assets/icons/ic_arrow_comment.svg';
 import icLeftArrow from '@src/assets/icons/ic_arrow_left.svg';
 import icRightArrow from '@src/assets/icons/ic_arrow_right.svg';
 
@@ -96,12 +97,16 @@ export const Summary = styled(motion.div)<{ color: string }>`
   letter-spacing: -2.31px;
   white-space: pre-line;
   padding-top: 36px;
+  padding-left: 76px;
+  position: relative;
+
   @media (max-width: 768px) {
     font-size: 57px;
     font-weight: 600;
     line-height: 60px;
     letter-spacing: -1.71px;
     height: 156px;
+    padding-left: 48px;
   }
   @media (max-width: 520px) {
     font-size: 30px;
@@ -111,6 +116,30 @@ export const Summary = styled(motion.div)<{ color: string }>`
     letter-spacing: -0.9px;
     padding-top: 12px;
     height: 80px;
+    padding-left: 32px;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 52px;
+    mask-image: url(${icArrowComment});
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    background-color: ${({ color }) => color};
+    width: 58px;
+    height: 58px;
+    @media (max-width: 768px) {
+      width: 40px;
+      height: 40px;
+      top: 48px;
+    }
+    @media (max-width: 520px) {
+      width: 22px;
+      height: 22px;
+      top: 18px;
+    }
   }
 `;
 
