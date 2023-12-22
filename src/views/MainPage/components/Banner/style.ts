@@ -48,7 +48,6 @@ export const ContentWrapper = styled.article`
   align-items: center;
   justify-content: space-between;
   width: 100vw;
-  height: 100vh;
   padding-top: 50vh;
   position: absolute;
   z-index: 2;
@@ -58,6 +57,7 @@ export const ContentWrapper = styled.article`
   @media (max-width: 768px) {
     padding-top: 450px;
     padding-bottom: 50px;
+    gap: 20px;
   }
 `;
 
