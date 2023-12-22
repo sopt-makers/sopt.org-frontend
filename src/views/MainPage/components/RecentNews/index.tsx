@@ -23,7 +23,9 @@ function RecentNews(_props: unknown, ref: React.Ref<HTMLDivElement>) {
       </S.SliderWrapper>
       <S.GoToInstagram>
         <S.IcInstagram />
-        <S.Description>더 많은 소식이 궁금하다면</S.Description>
+        <S.Description href="https://www.instagram.com/sopt_official/">
+          더 많은 소식이 궁금하다면
+        </S.Description>
       </S.GoToInstagram>
     </div>
   );

@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import { PropsWithChildren, useState } from 'react';
 import * as S from './style';
 
@@ -13,12 +12,10 @@ export default function RecruitButton({ children }: PropsWithChildren<object>) {
   };
 
   return (
-    <Link href="/recruit">
-      <S.RecruitButtonWrapper>
-        <S.MouseTrackerWrapper onMouseMove={handleMouseMove} x={blurPosition.x} y={blurPosition.y}>
-          <div>{children}</div>
-        </S.MouseTrackerWrapper>
-      </S.RecruitButtonWrapper>
-    </Link>
+    <S.RecruitButtonWrapper href="/recruit">
+      <S.MouseTrackerWrapper onMouseMove={handleMouseMove} x={blurPosition.x} y={blurPosition.y}>
+        <div>{children}</div>
+      </S.MouseTrackerWrapper>
+    </S.RecruitButtonWrapper>
   );
 }

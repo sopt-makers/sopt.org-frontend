@@ -1,10 +1,9 @@
 import styled from '@emotion/styled';
 import { colors } from '@sopt-makers/colors';
+import Link from 'next/link';
 import { BackgroundMove } from '@src/lib/styles/animation';
 
-export const RecruitButtonWrapper = styled.div`
-  cursor: pointer;
-
+export const RecruitButtonWrapper = styled(Link)`
   margin-top: 40px;
   display: inline-flex;
   justify-content: center;
@@ -29,10 +28,6 @@ export const RecruitButtonWrapper = styled.div`
   /* 모바일 뷰 */
   @media (max-width: 375px) {
     margin-top: 28px;
-    display: flex;
-    width: 182px;
-    height: 44px;
-    padding: 15px 0;
     font-size: 18px;
     line-height: 28px; /* 155.556% */
     letter-spacing: -0.36px;
@@ -42,16 +37,19 @@ export const RecruitButtonWrapper = styled.div`
 export const MouseTrackerWrapper = styled.div<{ x: number; y: number }>`
   border-radius: 99px;
   border: none;
-  cursor: pointer;
   height: 60px;
   padding: 15px 28px;
   background: transparent;
   position: relative;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   /* 모바일 뷰 */
   @media (max-width: 375px) {
-    padding: 15px 0;
+    padding: 15px 18px;
+    height: 44px;
   }
 
   &::before {
