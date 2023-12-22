@@ -4,7 +4,15 @@ import Link from 'next/link';
 import Slider from 'react-slick';
 import { ReactComponent as IconInstagram } from '@src/assets/icons/ic_instagram.svg';
 
-export const TitleWrapper = styled.section`
+export const RecentNews = styled.section`
+  padding-top: 75px;
+
+  @media (max-width: 768px) {
+    padding-top: 0;
+  }
+`;
+
+export const TitleWrapper = styled.div`
   margin-left: 10px;
 
   @media (max-width: 768px) and (min-width: 429px) {

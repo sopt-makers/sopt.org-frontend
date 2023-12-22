@@ -62,6 +62,7 @@ function BottomLayout() {
         <div id="review" ref={review.ref}>
           <Comment />
         </div>
+        <div style={{ height: '5px' }} />
         <RecentNews ref={news.ref} />
         <RecruitMessage />
       </S.Layout>
