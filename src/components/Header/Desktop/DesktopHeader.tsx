@@ -1,11 +1,12 @@
 import styled from '@emotion/styled';
 import { colors } from '@sopt-makers/colors';
 import Link from 'next/link';
+import { css } from '@emotion/react';
 import { LOGO_IMAGE_URL } from '@src/assets/mainLogo/base64_logo';
 import useHeader from '@src/hooks/useHeader';
 import { GrowDown } from '@src/lib/styles/animation';
 import { menuTapList } from '../menuTapList';
-import { MenuTapType, SingleMenuTap } from '../types';
+import { MenuTapType } from '../types';
 
 function DesktopHeader() {
   const { handleClickLogo, handleIsSelected } = useHeader();
@@ -18,7 +19,14 @@ function DesktopHeader() {
         </CenterAligner>
         <MenuTitlesWrapper>
           {menuTapList.map((menuTap) => (
-            <MenuTap key={menuTap.title} menuTap={menuTap} handleIsSelected={handleIsSelected} />
+            <MenuTitle
+              menuColor={menuTap.type}
+              key={menuTap.title}
+              href={menuTap.href}
+              isSelected={handleIsSelected(menuTap.href)}
+            >
+              {menuTap.title}
+            </MenuTitle>
           ))}
         </MenuTitlesWrapper>
       </Wrapper>
@@ -26,35 +34,16 @@ function DesktopHeader() {
   );
 }
 
-type MenuTapProps = {
-  menuTap: SingleMenuTap;
-  handleIsSelected: (path: string | string[]) => boolean;
-};
-
-function MenuTap({ menuTap, handleIsSelected }: MenuTapProps) {
-  switch (menuTap.type) {
-    case MenuTapType.Anchor:
-      return (
-        <MenuTitleAnchor href={menuTap.href} target="_blank" rel="noreferrer">
-          {menuTap.title}
-        </MenuTitleAnchor>
-      );
-    case MenuTapType.Router:
-      return (
-        <MenuTitle href={menuTap.href} isSelected={handleIsSelected(menuTap.href)}>
-          {menuTap.title}
-        </MenuTitle>
-      );
-  }
-}
-
 interface MenuTitleProps {
   isSelected?: boolean;
   isOpened?: boolean;
+  menuColor: MenuTapType;
 }
 
 export const Wrapper = styled.div`
   max-width: 1200px;
+  padding: auto 20px;
+  height: 100%;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -91,32 +80,12 @@ export const Logo = styled.button`
 `;
 
 export const MenuTitlesWrapper = styled.div`
-  height: 100%;
-
   display: flex;
   align-items: center;
 `;
 
-export const MenuTitleAnchor = styled(Link)`
-  font-size: 18px;
-  height: 100%;
-  line-height: 36px;
-  font-weight: 500;
-  display: block;
-  color: inherit;
-  text-decoration: none;
-  color: white;
-  background-color: #504ebf;
-  padding: 6px 32px;
-  border-radius: 30px;
-  &:hover {
-    background-color: #413fac;
-  }
-`;
-
 export const MenuTitle = styled(Link)<MenuTitleProps>`
   font-size: 18px;
-  height: 100%;
   line-height: 36px;
   font-weight: ${({ isSelected }) => (isSelected ? '700' : '500')};
 
@@ -133,9 +102,20 @@ export const MenuTitle = styled(Link)<MenuTitleProps>`
       top: 3.5rem; /* this is bad practice */
       left: 0;
       width: 100%;
-      border-bottom: 2px solid ${colors.white};
+      border-bottom: ${({ menuColor }) =>
+        menuColor !== 'SPECIAL' ? `2px solid ${colors.white}` : 'none'};
     }
   }
+
+  ${({ menuColor }) =>
+    menuColor === 'SPECIAL' &&
+    css`
+      margin-left: 20px;
+      border-radius: 5.869px;
+      border: 1.027px solid #4786ff;
+      background: rgba(71, 134, 255, 0.28);
+      color: #267dff;
+    `}
 `;
 
 export default DesktopHeader;

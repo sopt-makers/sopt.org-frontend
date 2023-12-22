@@ -56,7 +56,7 @@ export const ContentWrapper = styled.article`
 
   /* 모바일 뷰 */
   @media (max-width: 768px) {
-    padding-top: 450px;
+    padding-top: 60vh;
     padding-bottom: 50px;
   }
 `;

@@ -2,7 +2,8 @@ import styled from '@emotion/styled';
 import { colors } from '@sopt-makers/colors';
 
 export const Background = styled.section`
-  height: 1100px;
+  margin-top: 400px;
+  margin-bottom: 800px;
 
   display: flex;
   flex-direction: column;
@@ -10,11 +11,13 @@ export const Background = styled.section`
   justify-content: center;
 
   @media (max-width: 768px) and (min-width: 429px) {
-    height: 960px;
+    margin-top: 250px;
+    margin-bottom: 500px;
   }
 
   @media (max-width: 428px) {
-    height: 360px;
+    margin-top: 100px;
+    margin-bottom: 200px;
   }
 `;
 
@@ -22,7 +25,7 @@ export const Title = styled.h1`
   color: ${colors.white};
   text-align: center;
   font-family: SUIT;
-  font-size: 40px;
+  font-size: 30px;
   font-style: normal;
   font-weight: 700;
   line-height: 140%; /* 56px */
@@ -30,7 +33,7 @@ export const Title = styled.h1`
   margin-bottom: 11px;
 
   @media (max-width: 768px) and (min-width: 429px) {
-    font-size: 34px;
+    font-size: 30px;
     letter-spacing: -0.68px;
   }
   @media (max-width: 428px) {
@@ -43,7 +46,7 @@ export const Description = styled.p`
   color: rgba(255, 255, 255, 0.7);
   text-align: center;
   font-family: SUIT;
-  font-size: 24px;
+  font-size: 22px;
   font-style: normal;
   font-weight: 400;
   line-height: 140%; /* 33.6px */
@@ -51,7 +54,6 @@ export const Description = styled.p`
   margin-bottom: 75px;
 
   @media (max-width: 768px) and (min-width: 429px) {
-    font-size: 22px;
     line-height: 142%; /* 17.04px */
     letter-spacing: -0.24px;
     margin-bottom: 34px;
@@ -67,26 +69,22 @@ export const GoToRecruit = styled.a`
   border-radius: 25px;
   border: 2.218px solid #5b88f8;
   background: #40578d;
-  height: 83.701px;
-  padding: 27px 44px;
+  padding: 19px 31px;
   justify-content: center;
   align-items: center;
 
   color: #e8f1ff;
   font-family: SUIT;
-  font-size: 30px;
+  font-size: 20px;
   font-style: normal;
   font-weight: 500;
   line-height: 30px; /* 100% */
   letter-spacing: -0.6px;
 
   @media (max-width: 768px) and (min-width: 429px) {
-    padding: 20.758px 33.828px;
     border-radius: 19.221px;
     border: 1.705px solid #5b88f8;
-    height: 64.352px;
 
-    font-size: 23px;
     line-height: 23.065px; /* 100.282% */
     letter-spacing: -0.46px;
   }

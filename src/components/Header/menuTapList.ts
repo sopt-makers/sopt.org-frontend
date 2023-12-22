@@ -2,28 +2,28 @@ import { MenuTapList, MenuTapType } from './types';
 
 export const menuTapList: MenuTapList = [
   {
-    type: MenuTapType.Router,
-    title: 'ABOUT',
+    type: MenuTapType.DEFAULT,
+    title: '소개',
     href: '/about',
   },
   {
-    type: MenuTapType.Router,
+    type: MenuTapType.DEFAULT,
     title: '프로젝트',
     href: '/project',
   },
   {
-    type: MenuTapType.Router,
-    title: '블로그',
+    type: MenuTapType.DEFAULT,
+    title: '활동 후기',
     href: '/blog',
   },
   {
-    type: MenuTapType.Router,
+    type: MenuTapType.DEFAULT,
     title: '후원',
     href: '/sponsor',
   },
   {
-    type: MenuTapType.Router,
-    title: '리크루팅',
+    type: MenuTapType.SPECIAL,
+    title: '지원하기',
     href: '/recruit',
   },
 ];

@@ -3,8 +3,10 @@ import { default as ImgEvent } from '@src/assets/images/img_event.jpg';
 import { default as ImgIntroCard1 } from '@src/assets/images/img_intro_card1.png';
 import { default as ImgIntroCard2 } from '@src/assets/images/img_intro_card2.png';
 import { default as ImgIntroCard3 } from '@src/assets/images/img_intro_card3.png';
-import { default as ImgMakersCard } from '@src/assets/images/img_main_makers_card.png';
-import { default as ImgMindCard } from '@src/assets/images/img_main_mind_card.png';
+import { default as ImgMakersCardMo } from '@src/assets/images/img_main_makers_card_mo.png';
+import { default as ImgMakersCardPc } from '@src/assets/images/img_main_makers_card_pc.png';
+import { default as ImgMindCardMo } from '@src/assets/images/img_main_mind_card_mo.png';
+import { default as ImgMindCardPc } from '@src/assets/images/img_main_mind_card_pc.png';
 import { default as ImgRecentNews1 } from '@src/assets/images/img_recent_news_1.png';
 import { default as ImgRecentNews2 } from '@src/assets/images/img_recent_news_2.jpg';
 import { default as ImgRecentNews3 } from '@src/assets/images/img_recent_news_3.jpg';
@@ -48,7 +50,7 @@ export const Activity: ActivityListType = {
   [ActivityType.SOPKATHON]: {
     img: ImgSoptkaton.src,
     navKor: '솝커톤',
-    navEng: 'Sopkaton',
+    navEng: 'Sopkathon',
     description: [
       { content: '무박 2일 ', color: 'yellow' },
       {
@@ -442,7 +444,7 @@ export const OWN_ORGANIZATION_LIST: {
   nameKor: string;
   nameEng: string;
   description: TextWeightType[];
-  frontSideBg: string;
+  frontSideBg: { mo: string; pc: string };
   backSideBg: string;
 }[] = [
   {
@@ -463,7 +465,7 @@ export const OWN_ORGANIZATION_LIST: {
         weight: 'normal',
       },
     ],
-    frontSideBg: ImgMakersCard.src,
+    frontSideBg: { pc: ImgMakersCardPc.src, mo: ImgMakersCardMo.src },
     backSideBg: '#FF7C53',
   },
   {
@@ -484,7 +486,7 @@ export const OWN_ORGANIZATION_LIST: {
       },
       { content: 'MIND도 도전하겠습니다.', weight: 'normal' },
     ],
-    frontSideBg: ImgMindCard.src,
+    frontSideBg: { pc: ImgMindCardPc.src, mo: ImgMindCardMo.src },
     backSideBg: '#F66FF8',
   },
 ];
@@ -533,10 +535,10 @@ export const SOPT_COMMENT_LIST: SoptCommentType[] = [
     summary: '넓어지는 시야',
     color: '#DFFF61',
     comment:
-      '솝트는 제 성장의 밑거름이자 둘도 없는 추억이에요. 배울 점 많은 회원들과 다양한 경험을 하며 기획자로서, 그리고 한 명의 인간으로서 성장할 수 있었어요. 단 한 톨 만큼의 후회도 없는 소중한 시간이었습니다.',
+      '나름 많은 경험을 해왔다고 자부했는데, SOPT에서 제가 여전히 "우물 안 개구리"라는 것을 깨달았어요. SOPT를 통해 세상을 더 넓은 시야로 볼 수 있게 됐습니다. 자신의 것을 아낌없이 공유하는 건강한 조직과 똑똑한 사람들에게 많이 그리고 즐겁게 배웠어요.',
     commenter: {
-      name: '문수빈',
-      history: '29, 31기 활동',
+      name: '조성아',
+      history: '32기 활동',
       part: '기획',
     },
   },
@@ -574,7 +576,7 @@ export const SOPT_COMMENT_LIST: SoptCommentType[] = [
     },
   },
   {
-    summary: '성취감과 자신감',
+    summary: '성취감, 자신감',
     color: '#CBD0FF',
     comment:
       '열정 넘치는 사람들과 함께하면서 긍정적인 에너지를 많이 얻었고, 혼자였다면 해내기 어려웠을 일들을 성취하는데 많은 도움이 되었어요. 미친듯이 몰입하는 경험을 통해 성취감 및 자신감을 얻었을뿐만 아니라, 앱잼 등 프로젝트를 진행하며 효율적으로 협업하는 방법을 배웠어요.',
@@ -585,7 +587,7 @@ export const SOPT_COMMENT_LIST: SoptCommentType[] = [
     },
   },
   {
-    summary: '인생의 터닝포인트',
+    summary: '인생의\n터닝포인트',
     color: '#FFBEFC',
     comment:
       '활동을 더 일찍 시작하지 못한 것이 유일하게 남는 후회일 정도로 SOPT를 통해 많이 성장했다고 느껴요. 커리어적인 부분에서 방향성을 정할 수 있었던, 인생의 터닝포인트와 같은 활동이었어요.',
