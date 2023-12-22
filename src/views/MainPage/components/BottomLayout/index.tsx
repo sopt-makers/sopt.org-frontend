@@ -4,6 +4,7 @@ import useInView from '@src/hooks/useInView';
 import ActivitySection from '@src/views/MainPage/components/ActivitySection';
 import RecentNews from '@src/views/MainPage/components/RecentNews';
 import RecruitMessage from '@src/views/MainPage/components/RecruitMessage';
+import Comment from '../Comment';
 import * as S from './style';
 
 const MenuList = [
@@ -50,8 +51,8 @@ function BottomLayout() {
       <S.Layout style={{ backgroundColor: layoutBackground }}>
         <ActivitySection ref={activity.ref} />
         <div ref={targetRef} />
-        <div id="review" ref={review.ref} style={{ height: '100vh', background: 'blue' }}>
-          Reviews
+        <div id="review" ref={review.ref}>
+          <Comment />
         </div>
         <RecentNews ref={news.ref} />
         <RecruitMessage />
