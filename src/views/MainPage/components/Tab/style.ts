@@ -42,6 +42,7 @@ export const Title = styled.h1`
   letter-spacing: -1.35px;
 
   margin-bottom: 16px;
+  word-break: keep-all;
 
   @media (max-width: 768px) and (min-width: 429px) {
     font-size: 36px;
@@ -63,6 +64,7 @@ export const Description = styled.p`
   font-weight: 400;
   line-height: 28px; /* 164.706% */
   letter-spacing: -0.68px;
+  word-break: keep-all;
 
   @media (max-width: 768px) and (min-width: 429px) {
     font-size: 16px;
