@@ -32,7 +32,7 @@ export const RecruitButtonWrapper = styled.div`
     display: flex;
     width: 182px;
     height: 44px;
-    padding: 15px 18px;
+    padding: 15px 0;
     font-size: 18px;
     line-height: 28px; /* 155.556% */
     letter-spacing: -0.36px;
@@ -48,6 +48,11 @@ export const MouseTrackerWrapper = styled.div<{ x: number; y: number }>`
   background: transparent;
   position: relative;
   overflow: hidden;
+
+  /* 모바일 뷰 */
+  @media (max-width: 375px) {
+    padding: 15px 0;
+  }
 
   &::before {
     content: '';
