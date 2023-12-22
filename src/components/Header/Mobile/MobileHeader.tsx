@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { colors } from '@sopt-makers/colors';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
@@ -19,7 +20,7 @@ function MobileHeader() {
 
   return (
     <>
-      <StyledHeader>
+      <StyledHeader isMenuShown={isMenuShown === 'open'}>
         <Logo onClick={() => router.push('/')} />
         <ToggleButton onClick={handleHeaderToggleButton}>
           <Image src={isMenuShown === 'open' ? xButton.src : menuBar} alt="메뉴 토글 버튼" fill />
@@ -32,13 +33,16 @@ function MobileHeader() {
   );
 }
 
-export const StyledHeader = styled.div`
+export const StyledHeader = styled.div<{ isMenuShown: boolean }>`
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
   z-index: 10;
-  background-color: transparent;
+  background-color: ${({ isMenuShown }) => (isMenuShown ? colors.gray950 : 'initial')};
+  padding: 0 20px;
+  height: 100%;
+  transition: background-color 0.6s;
 `;
 
 export const Logo = styled.button`
