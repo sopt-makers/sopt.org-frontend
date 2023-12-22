@@ -3,7 +3,7 @@ import { MenuTapList, MenuTapType } from './types';
 export const menuTapList: MenuTapList = [
   {
     type: MenuTapType.DEFAULT,
-    title: '지금 SOPT',
+    title: '소개',
     href: '/about',
   },
   {
