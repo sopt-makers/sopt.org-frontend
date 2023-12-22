@@ -12,17 +12,20 @@ export const Background = styled(motion.main)`
   position: relative;
   z-index: 2;
 
+  @media (max-width: 768px) {
+    width: calc(100% - 5.46vw - 54px);
+  }
+
   @media (max-width: 428px) and (min-width: 376px) {
     border-radius: 21px;
     max-width: 296px;
-    width: 100%;
+    width: calc(100% - 5.46vw - 31px);
     height: 188px;
   }
 
   @media (max-width: 375px) {
     border-radius: 21px;
     max-width: 258px;
-    width: 100%;
     height: 164px;
   }
 `;

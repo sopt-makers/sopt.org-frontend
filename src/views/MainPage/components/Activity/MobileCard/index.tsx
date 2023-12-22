@@ -22,40 +22,51 @@ export default function MobileCard() {
 
   return (
     <S.Container>
-      <S.Carousel ref={carouselRef} onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
-        {infiniteCarouselList.map(({ value }, index) => {
-          const { img, navKor, navEng, description } = Activity[value];
-          return (
-            <S.Slide key={index}>
-              <S.LeftArrow>
-                <Image
-                  src={IcArrowLeft}
-                  width="42"
-                  height="42"
-                  alt="왼쪽 화살표"
-                  onClick={() => handleCarouselSwipe(-1)}
+      <S.CarouselWrapper>
+        <S.LeftArrow>
+          <Image
+            src={IcArrowLeft}
+            width="42"
+            height="42"
+            alt="왼쪽 화살표"
+            onClick={() => handleCarouselSwipe(-1)}
+          />
+        </S.LeftArrow>
+        <S.Carousel ref={carouselRef} onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
+          {infiniteCarouselList.map(({ value }, index) => {
+            const { img, navKor, navEng, description } = Activity[value];
+            return (
+              <S.Slide key={index}>
+                <Card
+                  key={navEng}
+                  img={img}
+                  navKor={navKor}
+                  navEng={navEng}
+                  description={description}
                 />
-              </S.LeftArrow>
-              <Card
-                key={navEng}
-                img={img}
-                navKor={navKor}
-                navEng={navEng}
-                description={description}
-              />
-              <S.RightArrow>
-                <Image
-                  src={IcArrowRight}
-                  width="42"
-                  height="42"
-                  alt="오른쪽 화살표"
-                  onClick={() => handleCarouselSwipe(1)}
-                />
-              </S.RightArrow>
-            </S.Slide>
-          );
-        })}
-      </S.Carousel>
+              </S.Slide>
+            );
+          })}
+        </S.Carousel>
+        <S.RightArrow>
+          <Image
+            src={IcArrowRight}
+            width="42"
+            height="42"
+            alt="오른쪽 화살표"
+            onClick={() => handleCarouselSwipe(1)}
+          />
+        </S.RightArrow>
+      </S.CarouselWrapper>
+      <S.RightArrow>
+        <Image
+          src={IcArrowRight}
+          width="42"
+          height="42"
+          alt="오른쪽 화살표"
+          onClick={() => handleCarouselSwipe(1)}
+        />
+      </S.RightArrow>
       <S.ButtonWrapper
         ref={dragRef}
         onMouseDown={handleMouseDown}
