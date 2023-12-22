@@ -1,3 +1,4 @@
+import { forwardRef, Ref } from 'react';
 import * as S from './style';
 
 interface PartButtonProps {
@@ -7,10 +8,22 @@ interface PartButtonProps {
   handleSelectPart: (index: number) => void;
 }
 
-export default function PartButton({ index, label, isSelected, handleSelectPart }: PartButtonProps) {
+function PartButton(
+  { index, label, isSelected, handleSelectPart }: PartButtonProps,
+  ref: Ref<HTMLButtonElement>,
+) {
   return (
-    <S.PartButton isSelected={isSelected} onClick={() => handleSelectPart(index)}>
+    <S.PartButton
+      ref={ref}
+      isSelected={isSelected}
+      onClick={(e) => {
+        handleSelectPart(index);
+        e.currentTarget.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'nearest' });
+      }}
+    >
       {label}
     </S.PartButton>
   );
 }
+
+export default forwardRef(PartButton);
