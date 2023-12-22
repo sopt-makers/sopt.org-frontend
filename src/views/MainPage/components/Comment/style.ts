@@ -7,7 +7,7 @@ import icRightArrow from '@src/assets/icons/ic_arrow_right.svg';
 export const Wrapper = styled.div`
   position: relative;
   padding-top: 200px;
-  padding-bottom: 800px;
+  padding-bottom: 240px;
   @media (max-width: 768px) {
     height: 130vh;
     padding-top: 0;
@@ -44,7 +44,7 @@ export const CardWrapper = styled.div`
   align-items: flex-end;
   @media (max-width: 1440px) {
     padding-top: 200px;
-    padding-bottom: 600px;
+    padding-bottom: 240px;
   }
   @media (max-width: 768px) {
     padding-top: 64px;
