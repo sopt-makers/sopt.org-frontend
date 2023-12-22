@@ -84,8 +84,6 @@ export const Circle = styled(motion.div)`
   @media (max-width: 1440px) and (min-width: 769px) {
     grid-template-rows: auto 1fr;
     grid-gap: 24px 0px;
-    top: -170px;
-    left: -300.91px;
   }
 
   @media (max-width: 768px) {
@@ -105,8 +103,8 @@ export const Content = styled(motion.div)`
     'title image'
     'desc image';
   grid-template-rows: auto 1fr;
-  grid-template-columns: 590px minmax(323px, 707px);
-  grid-gap: 24px 57px;
+  grid-template-columns: max(540px, 30vw) minmax(323px, auto);
+  grid-gap: 24px max(36px, 2.96vw);
 
   position: relative;
   z-index: 20;
@@ -130,7 +128,7 @@ export const Content = styled(motion.div)`
 
 export const ContentTitle = styled(motion.h2)`
   grid-area: title;
-  margin-top: 38px;
+  margin-top: 1.97vw;
 
   background: linear-gradient(93deg, #e1edf0 78.65%, #fff 128.82%, #e6eff2 137.19%);
   background-clip: text;
@@ -138,7 +136,7 @@ export const ContentTitle = styled(motion.h2)`
   -webkit-text-fill-color: transparent;
 
   font-family: SUIT;
-  font-size: 48px;
+  font-size: max(40px, 2.5vw);
   font-style: normal;
   font-weight: 700;
   line-height: normal;
@@ -162,7 +160,7 @@ export const ContentDetail = styled(motion.h3)`
 
   color: #b9c7c8;
   font-family: SUIT;
-  font-size: 24px;
+  font-size: max(20px, 1.25vw);
   font-style: normal;
   font-weight: 500;
   line-height: 160%; /* 38.4px */
@@ -171,7 +169,6 @@ export const ContentDetail = styled(motion.h3)`
 
   @media (max-width: 1440px) and (min-width: 769px) {
     font-size: 20px;
-    letter-spacing: -0.4px;
     word-break: keep-all;
   }
 
@@ -191,12 +188,13 @@ export const ContentDetail = styled(motion.h3)`
 
 export const ContentImage = styled(Image)`
   grid-area: image;
-  width: 100%;
+  width: max(540px, 36.8vw);
   height: auto;
-  border-radius: 50px;
+  border-radius: max(36px, 2.6vw);
   object-fit: cover;
 
   @media (max-width: 1440px) and (min-width: 769px) {
+    width: 100%;
     max-width: 540px;
     min-height: 270px;
     border-radius: 36px;
@@ -213,12 +211,12 @@ export const ContentImage = styled(Image)`
 
 export const BackLight = styled.div<{ isContentVisible: boolean }>`
   position: absolute;
-  top: -114.94px;
-  left: 385.37px;
+  top: calc(300px - 5vw);
+  left: calc(300px - 5vw);
   z-index: -99;
 
-  width: 1954px;
-  height: 1084px;
+  width: max(1500px, 101.77vw);
+  height: max(900px, 56.45vw);
   transform: rotate(7.639deg);
   background: radial-gradient(45.16% 45.16% at 50% 50%, #2c3242 0%, rgba(15, 15, 18, 0) 100%);
 
