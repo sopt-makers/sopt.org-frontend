@@ -584,7 +584,7 @@ export const SOPT_COMMENT_LIST: SoptCommentType[] = [
     },
   },
   {
-    summary: '성취감과 자신감',
+    summary: '성취감, 자신감',
     color: '#CBD0FF',
     comment:
       '열정 넘치는 사람들과 함께하면서 긍정적인 에너지를 많이 얻었고, 혼자였다면 해내기 어려웠을 일들을 성취하는데 많은 도움이 되었어요. 미친듯이 몰입하는 경험을 통해 성취감 및 자신감을 얻었을뿐만 아니라, 앱잼 등 프로젝트를 진행하며 효율적으로 협업하는 방법을 배웠어요.',
@@ -595,7 +595,7 @@ export const SOPT_COMMENT_LIST: SoptCommentType[] = [
     },
   },
   {
-    summary: '인생의 터닝포인트',
+    summary: '인생의\n터닝포인트',
     color: '#FFBEFC',
     comment:
       '활동을 더 일찍 시작하지 못한 것이 유일하게 남는 후회일 정도로 SOPT를 통해 많이 성장했다고 느껴요. 커리어적인 부분에서 방향성을 정할 수 있었던, 인생의 터닝포인트와 같은 활동이었어요.',

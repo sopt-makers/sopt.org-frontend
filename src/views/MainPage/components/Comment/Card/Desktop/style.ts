@@ -15,6 +15,19 @@ export const Wrapper = styled(motion.div)`
   font-weight: 400;
   line-height: 35.5px; /* 177.5% */
   letter-spacing: -0.8px;
+  @media (max-width: 1640px) {
+    width: 660px;
+    height: 324px;
+    padding: 32px 36px;
+  }
+
+  @media (max-width: 976px) {
+    width: 540px;
+    height: 324px;
+    padding: 32px 36px;
+    font-size: 18px;
+    line-height: 30px;
+  }
 `;
 
 export const Footer = styled.div`
