@@ -13,7 +13,7 @@ export const menuTapList: MenuTapList = [
   },
   {
     type: MenuTapType.DEFAULT,
-    title: '활동 후기',
+    title: '블로그',
     href: '/blog',
   },
   {
