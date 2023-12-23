@@ -13,6 +13,11 @@ export const CardWrapper = styled.div<{ background: string }>`
   flex-direction: column;
   justify-content: flex-end;
 
+  @media (max-width: 1580px) {
+    width: 580px;
+    height: 380px;
+  }
+
   @media (max-width: 1440px) {
     width: 512px;
     height: 432px;
