@@ -58,15 +58,6 @@ export default function MobileCard() {
           />
         </S.RightArrow>
       </S.CarouselWrapper>
-      <S.RightArrow>
-        <Image
-          src={IcArrowRight}
-          width="42"
-          height="42"
-          alt="오른쪽 화살표"
-          onClick={() => handleCarouselSwipe(1)}
-        />
-      </S.RightArrow>
       <S.ButtonWrapper
         ref={dragRef}
         onMouseDown={handleMouseDown}
