@@ -19,6 +19,9 @@ export const TitleShadow = styled(motion.div)`
   top: 0;
   left: 0;
   background: linear-gradient(#0d111f 72%, transparent);
+  @media (max-width: 768px) {
+    height: 100%;
+  }
 `;
 
 export const TitleWrapper = styled.div`
@@ -88,6 +91,10 @@ export const SectionTitle = styled.div`
     line-height: 24.28px; /* 115.617% */
     letter-spacing: -0.63px;
   }
+  @media (max-height: 860px) and (max-width: 1480px) {
+    font-size: 32px;
+    line-height: 32px;
+  }
 `;
 
 export const SectionSubTitle = styled.p`
@@ -131,12 +138,19 @@ export const Summary = styled(motion.div)<{ color: string }>`
     font-size: 68px;
     height: 185px;
   }
+  @media (max-width: 1480px) {
+    white-space: unset;
+    height: auto;
+  }
+
+  @media (max-width: 1100px) {
+    white-space: pre-line;
+  }
 
   @media (max-width: 976px) {
     font-size: 60px;
     padding-top: 28px;
     padding-left: 60px;
-    height: 160px;
   }
 
   @media (max-width: 768px) {
@@ -144,7 +158,6 @@ export const Summary = styled(motion.div)<{ color: string }>`
     font-weight: 600;
     line-height: 60px;
     letter-spacing: -1.71px;
-    height: 156px;
     padding-left: 48px;
   }
   @media (max-width: 520px) {
@@ -154,8 +167,13 @@ export const Summary = styled(motion.div)<{ color: string }>`
     line-height: 32px;
     letter-spacing: -0.9px;
     padding-top: 12px;
-    height: 80px;
     padding-left: 32px;
+  }
+  @media (max-height: 860px) and (max-width: 1480px) {
+    font-size: 46px;
+    line-height: 48px;
+    padding-left: 48px;
+    padding-top: 24px;
   }
 
   &::before {
@@ -183,6 +201,11 @@ export const Summary = styled(motion.div)<{ color: string }>`
       width: 22px;
       height: 22px;
       top: 18px;
+    }
+    @media (max-height: 860px) and (max-width: 1480px) {
+      width: 38px;
+      height: 38px;
+      top: 30px;
     }
   }
 `;
