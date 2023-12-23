@@ -43,9 +43,6 @@ export default function CommentCard({
     ? '-486px 0px -324px 0px'
     : '-648px 0px -324px 0px';
 
-  useEffect(() => {
-    console.log(margin);
-  }, [margin]);
   const wrapperRef = useRef(null);
 
   const isInView = useInView(wrapperRef, { margin });
