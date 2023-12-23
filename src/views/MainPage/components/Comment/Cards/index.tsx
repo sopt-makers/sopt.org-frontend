@@ -28,6 +28,7 @@ function CommentCardsDesktop({ activeIdx, changeActiveIdx }: CommentCardsProps) 
   }, []);
 
   useEffect(() => {
+    console.log(activeIndices);
     if (activeIndices.length > 0 && activeIndices[0] !== activeIdx) {
       changeActiveIdx(activeIndices[0]);
     }

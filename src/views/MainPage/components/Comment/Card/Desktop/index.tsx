@@ -29,18 +29,23 @@ export default function CommentCard({
   const mediumHeight = useMediaQuery({ query: '(max-height: 1000px)' });
   const longHeight = useMediaQuery({ query: '(min-height: 1100px' });
 
-  const margin = veryShortHeight
-    ? '0'
-    : desktop
+  const margin = desktop
     ? longHeight
       ? '-600px 0px 0px 0px'
       : shortHeight
       ? '-500px 0px -200px 0px'
+      : veryShortHeight
+      ? '-500px 0px 0px 0px'
       : '-600px 0px -200px 0px'
+    : shortHeight
+    ? '-300px 0px -200px 0px'
     : mediumHeight
     ? '-486px 0px -324px 0px'
     : '-648px 0px -324px 0px';
 
+  useEffect(() => {
+    console.log(margin);
+  }, [margin]);
   const wrapperRef = useRef(null);
 
   const isInView = useInView(wrapperRef, { margin });
