@@ -5,9 +5,12 @@ export const Wrapper = styled.div`
   gap: 28px;
   overflow-x: hidden;
 
+  @media (max-width: 1580px) {
+    overflow-x: scroll;
+  }
+
   @media (max-width: 1440px) {
     gap: 24px;
-    overflow-x: scroll;
   }
   @media (max-width: 512px) {
     gap: 16px;
