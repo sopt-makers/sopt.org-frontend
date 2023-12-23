@@ -3,7 +3,7 @@ import { colors } from '@sopt-makers/colors';
 
 export const Background = styled.section`
   margin-top: 400px;
-  margin-bottom: 800px;
+  margin-bottom: 600px;
 
   display: flex;
   flex-direction: column;
@@ -12,12 +12,12 @@ export const Background = styled.section`
 
   @media (max-width: 768px) and (min-width: 429px) {
     margin-top: 250px;
-    margin-bottom: 500px;
+    margin-bottom: 375px;
   }
 
   @media (max-width: 428px) {
     margin-top: 100px;
-    margin-bottom: 200px;
+    margin-bottom: 150px;
   }
 `;
 
