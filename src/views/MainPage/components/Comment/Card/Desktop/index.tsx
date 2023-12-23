@@ -1,12 +1,12 @@
 import { useInView } from 'framer-motion';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
 import { SoptCommentType } from '@src/lib/types/main';
 import * as S from './style';
 
 interface CommentCardProps {
   idx: number;
-  setIsActive: (idx: number) => void;
+  setIsActive: (idx: number, isActive: boolean) => void;
   isActive: boolean;
   color: SoptCommentType['color'];
   comment: SoptCommentType['comment'];
@@ -24,21 +24,36 @@ export default function CommentCard({
   const desktop = useMediaQuery({
     query: '(max-width: 1480px)',
   });
-  const longScreen = useMediaQuery({ query: '(min-height: 1100px' });
+  const veryShortHeight = useMediaQuery({ query: '(max-height: 700px)' });
+  const shortHeight = useMediaQuery({ query: '(max-height: 860px)' });
+  const mediumHeight = useMediaQuery({ query: '(max-height: 1000px)' });
+  const longHeight = useMediaQuery({ query: '(min-height: 1100px' });
 
-  const margin = desktop
-    ? longScreen
-      ? '-324px 0px -648px 0px'
-      : '-324px 0px -324px 0px'
-    : '-100px 0px -648px 0px';
+  const margin = veryShortHeight
+    ? '0'
+    : desktop
+    ? longHeight
+      ? '-600px 0px 0px 0px'
+      : shortHeight
+      ? '-500px 0px -200px 0px'
+      : '-600px 0px -200px 0px'
+    : mediumHeight
+    ? '-486px 0px -324px 0px'
+    : '-648px 0px -324px 0px';
 
   const wrapperRef = useRef(null);
 
   const isInView = useInView(wrapperRef, { margin });
 
+  const [isInViewState, setIsInViewState] = useState(false);
+
   useEffect(() => {
-    if (isInView) setIsActive(idx);
-  }, [isInView, idx, setIsActive]);
+    setIsInViewState(isInView);
+  }, [isInView]);
+
+  useEffect(() => {
+    setIsActive(idx, isInViewState);
+  }, [isInViewState, idx, setIsActive]);
 
   return (
     <S.Wrapper

@@ -28,6 +28,11 @@ export const Wrapper = styled(motion.div)`
     font-size: 18px;
     line-height: 30px;
   }
+
+  @media (max-height: 860px) and (max-width: 1480px) {
+    height: 280px;
+    padding: 20px 28px;
+  }
 `;
 
 export const Footer = styled.div`

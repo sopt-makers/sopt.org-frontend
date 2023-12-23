@@ -1,3 +1,4 @@
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { useIsMobile } from '@src/hooks/useDevice';
 import { SOPT_COMMENT_LIST } from '@src/lib/constants/main';
 import CommentCardDesktop from '../Card/Desktop';
@@ -17,6 +18,21 @@ export default function CommentCards({ activeIdx, changeActiveIdx }: CommentCard
 }
 
 function CommentCardsDesktop({ activeIdx, changeActiveIdx }: CommentCardsProps) {
+  const [activeIndices, setActiveIndices] = useState<number[]>([]);
+  const activeIndexSet = useRef<Set<number>>(new Set());
+
+  const setIsActive = useCallback((idx: number, isActive: boolean) => {
+    if (isActive) activeIndexSet.current.add(idx);
+    else activeIndexSet.current.delete(idx);
+    setActiveIndices(Array.from(activeIndexSet.current));
+  }, []);
+
+  useEffect(() => {
+    if (activeIndices.length > 0 && activeIndices[0] !== activeIdx) {
+      changeActiveIdx(activeIndices[0]);
+    }
+  }, [activeIndices, changeActiveIdx, activeIdx]);
+
   return (
     <S.CardWrapper>
       {SOPT_COMMENT_LIST.map((comment, idx) => (
@@ -24,7 +40,7 @@ function CommentCardsDesktop({ activeIdx, changeActiveIdx }: CommentCardsProps) 
           key={idx}
           idx={idx}
           isActive={activeIdx === idx}
-          setIsActive={changeActiveIdx}
+          setIsActive={setIsActive}
           color={comment.color}
           comment={comment.comment}
           commenter={comment.commenter}
