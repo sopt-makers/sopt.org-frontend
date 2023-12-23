@@ -28,6 +28,7 @@ export default function CommentSection() {
     <S.Wrapper>
       <S.TitleWrapper ref={wrapperRef}>
         {!isWideScreen && !isMobile && <S.TitleShadow style={{ opacity: titleShadowOpacity }} />}
+        <S.SectionSubTitle>활동 후기</S.SectionSubTitle>
         <S.SectionTitle>Q. 솝트 어때요?</S.SectionTitle>
         <S.Summary animate={controls} color={SOPT_COMMENT_LIST[activeIdx]?.color}>
           {SOPT_COMMENT_LIST[activeIdx]?.summary}

@@ -15,7 +15,7 @@ export const Wrapper = styled.div`
 export const TitleShadow = styled(motion.div)`
   position: absolute;
   width: 100%;
-  height: calc(100% + 80px);
+  height: calc(100% + 120px);
   top: 0;
   left: 0;
   background: linear-gradient(#0d111f 72%, transparent);
@@ -87,6 +87,30 @@ export const SectionTitle = styled.div`
     font-weight: 500;
     line-height: 24.28px; /* 115.617% */
     letter-spacing: -0.63px;
+  }
+`;
+
+export const SectionSubTitle = styled.p`
+  color: #5b88f8;
+  font-family: SUIT;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 46.311px; /* 257.282% */
+  letter-spacing: -0.36px;
+  margin-bottom: 8px;
+  position: relative;
+  z-index: 1;
+
+  @media (max-width: 768px) and (min-width: 429px) {
+    font-size: 18px;
+    line-height: 46.311px; /* 257.282% */
+    letter-spacing: -0.36px;
+  }
+  @media (max-width: 428px) {
+    font-size: 11px;
+    line-height: 26.615px; /* 241.956% */
+    letter-spacing: -0.22px;
   }
 `;
 

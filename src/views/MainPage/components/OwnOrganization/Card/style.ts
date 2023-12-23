@@ -21,8 +21,8 @@ export const CardWrapper = styled.div<{ background: string }>`
   }
 
   @media (max-width: 768px) {
-    width: max(416px, min(100vw - 200px, 512px));
-    height: calc(max(432px, min(100vw - 200px, 512px)) * 0.84);
+    width: max(392px, min(100vw - 200px, 512px));
+    height: calc(max(416px, min(100vw - 200px, 512px)) * 0.84);
   }
 
   @media (max-width: 428px) {
@@ -55,6 +55,17 @@ export const FooterKorName = styled.div`
     line-height: 24.425px;
   }
 
+  @media (max-width: 512px) {
+    border-radius: 12px;
+    width: 96px;
+    padding: 10px 0;
+    font-size: 18px;
+    line-height: 24.425px;
+    font-size: 18px;
+    line-height: 20px;
+    letter-spacing: -0.904px;
+  }
+
   @media (max-width: 428px) {
     border-radius: 6px;
     width: 74px;
@@ -83,6 +94,10 @@ export const FooterEngName = styled.div`
   @media (max-width: 1440px) {
     font-size: 19px;
     line-height: 13.9px;
+  }
+
+  @media (max-width: 512px) {
+    font-size: 17px;
   }
 
   @media (max-width: 428px) {
@@ -130,6 +145,11 @@ export const TextWrapper = styled.span<{ weight: 'normal' | 'bold' }>`
     font-size: 18px;
     line-height: 31px; /* 172.222% */
     letter-spacing: -0.72px;
+  }
+
+  @media (max-width: 512px) {
+    font-size: 16px;
+    line-height: 26px;
   }
 
   @media (max-width: 428px) {

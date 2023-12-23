@@ -1,5 +1,4 @@
 import styled from '@emotion/styled';
-import { colors } from '@sopt-makers/colors';
 
 export const Wrapper = styled.div`
   display: flex;
@@ -9,6 +8,9 @@ export const Wrapper = styled.div`
   @media (max-width: 1440px) {
     gap: 24px;
     overflow-x: scroll;
+  }
+  @media (max-width: 512px) {
+    gap: 16px;
   }
 
   @media (max-width: 428px) {

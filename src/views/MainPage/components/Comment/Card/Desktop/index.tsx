@@ -24,7 +24,13 @@ export default function CommentCard({
   const desktop = useMediaQuery({
     query: '(max-width: 1480px)',
   });
-  const margin = desktop ? '-324px 0px -300px 0px' : '-100px 0px -648px 0px';
+  const longScreen = useMediaQuery({ query: '(min-height: 1100px' });
+
+  const margin = desktop
+    ? longScreen
+      ? '-324px 0px -648px 0px'
+      : '-324px 0px -324px 0px'
+    : '-100px 0px -648px 0px';
 
   const wrapperRef = useRef(null);
 
