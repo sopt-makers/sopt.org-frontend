@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { colors } from '@sopt-makers/colors';
 
 export const ContainerLayout = styled.section`
   display: flex;
@@ -12,7 +13,7 @@ export const Container = styled.section`
   position: relative;
   padding: 180px 0;
   width: 1200px;
-  text-align: center;
+  align-items: center;
 
   @media (max-width: 1199px) and (min-width: 769px) {
     padding: 150px 0;
@@ -132,4 +133,19 @@ export const Name = styled.p`
     font-size: 12px;
     line-height: 19px;
   }
+`;
+
+export const RequestSponsorButton = styled.a`
+  margin-top: 56px;
+  display: inline-flex;
+  height: 56px;
+  padding: 16px 26px;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+  width: fit-content;
+  border-radius: 12px;
+  background: ${colors.white};
+  text-align: center;
 `;

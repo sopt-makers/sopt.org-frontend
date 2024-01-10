@@ -54,6 +54,9 @@ function CoporatePartner() {
             <ArrowRight stroke={isRightScrollable ? 'white' : 'grey'} />
           </S.ArrowWrapper>
         </S.ContentWrapper>
+        <S.RequestSponsorButton href="mailto:president@sopt.org?cc=v_president@sopt.org&subject=[후원/협력] {기관 }명의 SOPT 후원/협력 제안에 관한 건">
+          후원 문의하기
+        </S.RequestSponsorButton>
       </S.Container>
     </S.ContainerLayout>
   );
