@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { colors } from '@sopt-makers/colors';
+import { css } from '@emotion/react';
 import { FadeInDown } from '@src/lib/styles/animation';
 
 export const ItemContainer = styled.div<{ src: string; isInView: boolean; order: number }>`
@@ -41,25 +42,21 @@ export const ItemContainer = styled.div<{ src: string; isInView: boolean; order:
   }
 `;
 
-export type BlurStrengthType = 'none' | 'small' | 'medium' | 'strong';
-const backgroundBlur: Record<BlurStrengthType, number> = {
-  none: 0,
-  small: 10,
-  medium: 20,
-  strong: 60,
-};
-
-export const BackgroundBlur = styled.div<{ strength: BlurStrengthType; isHovered: boolean }>`
+export const BackgroundBlur = styled.div<{ isHovered: boolean }>`
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, ${({ strength }) => backgroundBlur[strength]}%);
   transition: 0.3s;
   border-radius: 10px;
 
-  ${({ isHovered }) => isHovered && 'backdrop-filter: blur(3.5px)'};
+  ${({ isHovered }) =>
+    isHovered &&
+    css`
+      backdrop-filter: blur(3.5px);
+      background-color: rgba(0, 0, 0, 60%);
+    `};
 `;
 
 export const CoreValue = styled.div`
