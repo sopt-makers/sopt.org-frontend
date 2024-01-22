@@ -1,27 +1,21 @@
 import styled from '@emotion/styled';
 
-export const MarginBanner = styled.div`
-  height: 630px;
+export const CoreValueSection = styled.section`
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+
+  margin-top: 83px;
 
   /* 태블릿 뷰 */
-  @media (max-width: 1199px) and (min-width: 766px) {
-    height: 380px;
+  @media (max-width: 768px) {
+    gap: 44px;
+    margin-top: 72.19px;
   }
-  /* 모바일 뷰 */
-  @media (max-width: 765.9px) {
-    height: 178px;
-  }
-`;
 
-export const CoreValueSectionWrapper = styled.div`
-  padding-top: 136px;
-
-  /* 태블릿 뷰 */
-  @media (max-width: 1199px) and (min-width: 766px) {
-    padding-top: 92px;
-  }
   /* 모바일 뷰 */
-  @media (max-width: 765.9px) {
-    padding-top: 46px;
+  @media (max-width: 428px) {
+    gap: 27px;
+    margin-top: 69.48px;
   }
 `;
