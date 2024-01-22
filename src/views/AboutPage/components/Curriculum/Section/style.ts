@@ -3,8 +3,8 @@ import styled from '@emotion/styled';
 export const CurriculumSection = styled.section`
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 48px;
-
   margin-top: 275px;
 
   /* 태블릿 뷰 */

@@ -1,60 +1,70 @@
 import styled from '@emotion/styled';
+import { colors } from '@sopt-makers/colors';
 import { css } from '@emotion/react';
 
 export const TabBar = styled.ul`
-  width: 100%;
-  height: 68px;
-
   display: flex;
   justify-content: center;
-
-  font-size: 28px;
-  font-weight: 400;
-  color: rgba(255, 255, 255, 0.5);
+  gap: min(26px, 1.35vw);
+  width: 100%;
 
   /* 태블릿 뷰 */
-  @media (max-width: 1199px) and (min-width: 766px) {
-    height: 38px;
-    font-size: 18px;
+  @media (max-width: 768px) {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 13px 19.3px;
   }
-  /* 모바일 뷰 */
-  @media (max-width: 765.9px) {
-    min-height: 36px;
-    font-size: 12px;
-    font-weight: 500;
-    color: rgba(255, 255, 255, 0.6);
 
-    flex-wrap: wrap;
-    & > li {
-      min-width: 72px;
-      max-width: 72px;
-    }
+  /* 모바일 뷰 */
+  @media (max-width: 428px) {
+    gap: 13px 13.46px;
   }
 `;
 
 export const Tab = styled.li<{ selected: boolean }>`
-  flex: 1;
+  max-width: 178px;
+  width: calc(80px + 5vw);
+  padding: 20px 16px;
+  border-radius: 10px;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 
+  color: rgba(255, 255, 255, 0.5);
+  text-align: center;
+  font-family: SUIT;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 100%; /* 20px */
+  letter-spacing: -0.4px;
   cursor: pointer;
-  &:hover {
-    color: #ffffff;
-  }
+
   ${({ selected }) =>
     selected &&
     css`
+      background-color: rgba(33, 33, 44);
+      color: ${colors.white};
       font-weight: 700;
-      color: #ffffff;
-      border-bottom: 3px solid #ffffff;
-      /* 모바일 뷰 */
-      @media (max-width: 765.9px) {
-        font-weight: 500;
-        border-bottom: none;
-        background: rgba(255, 255, 255, 0.1);
-        border-radius: 10px;
-      }
     `};
+
+  /* 태블릿 뷰 */
+  @media (max-width: 768px) {
+    width: 130.254px;
+    padding: 14.635px 11.708px;
+    border-radius: 7.318px;
+    font-size: 14.635px;
+    letter-spacing: -0.293px;
+  }
+
+  /* 모바일 뷰 */
+  @media (max-width: 428px) {
+    width: 92.127px;
+    padding: 10.351px 8.281px;
+    border-radius: 5.176px;
+    font-size: 10.351px;
+    letter-spacing: -0.207px;
+  }
 `;
