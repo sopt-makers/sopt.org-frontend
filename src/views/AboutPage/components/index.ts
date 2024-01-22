@@ -1,7 +1,7 @@
 import Banner from './Banner';
-import CirriculumSection from './Cirriculum/Section';
 import CoreValueSection from './CoreValue/Section';
+import CurriculumSection from './Curriculum/Section';
 import MemberSection from './Member/Section';
 import RecordSection from './Record/Section';
 
-export { Banner, CirriculumSection, CoreValueSection, MemberSection, RecordSection };
+export { Banner, CurriculumSection, CoreValueSection, MemberSection, RecordSection };

@@ -5,8 +5,8 @@ import PageLayout from '@src/components/common/PageLayout';
 import { api } from '@src/lib/api';
 import {
   Banner,
-  CirriculumSection,
   CoreValueSection,
+  CurriculumSection,
   RecordSection,
 } from '@src/views/AboutPage/components';
 
@@ -21,7 +21,7 @@ const AboutPage = ({ aboutInfo }: InferGetServerSidePropsType<typeof getStaticPr
           mainDescription={aboutInfo.aboutInfo.coreValue.mainDescription}
           coreValues={aboutInfo.aboutInfo.coreValue.eachValues}
         />
-        <CirriculumSection cirriculums={aboutInfo.aboutInfo.curriculums} />
+        <CurriculumSection curriculums={aboutInfo.aboutInfo.curriculums} />
         <RecordSection
           generation={aboutInfo.aboutInfo.generation}
           records={aboutInfo.aboutInfo.records}
