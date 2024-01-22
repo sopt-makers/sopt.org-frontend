@@ -1,6 +1,6 @@
 import Flex from '@src/components/common/Flex';
 import { Part } from '@src/lib/types/universal';
-import SectionTitle from '../../common/SectionTitle';
+import SectionTop from '@src/views/AboutPage/components/common/SectionTop';
 import CirriculumContent from '../Content';
 
 type CirriculumSectionProps = {
@@ -10,7 +10,7 @@ type CirriculumSectionProps = {
 const CirriculumSection = ({ cirriculums }: CirriculumSectionProps) => {
   return (
     <Flex dir="column" gap={{ mobile: 24, tablet: 48, desktop: 60 }}>
-      <SectionTitle>모집 파트 & 커리큘럼</SectionTitle>
+      <SectionTop engTitle="Curriculum" korTitle="파트별 커리큘럼" />
       <CirriculumContent cirriculums={cirriculums} />
     </Flex>
   );
