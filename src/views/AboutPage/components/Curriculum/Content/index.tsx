@@ -26,7 +26,9 @@ const CurriculumContent = ({ curriculums }: CurriculumContentProps) => {
           src={curriculums[currentPart]}
           alt={`${parsePartToKorean(currentPart)}파트 커리큘럼 이미지`}
           fill
-          style={{ objectFit: 'cover', borderRadius: '10px' }}
+          quality={70}
+          sizes="(max-width: 428px) 361px, (max-width: 768px) 662px, 1200px"
+          style={{ objectFit: 'contain', borderRadius: '10px' }}
         />
       </S.ImageWrapper>
     </S.CurriculumContent>

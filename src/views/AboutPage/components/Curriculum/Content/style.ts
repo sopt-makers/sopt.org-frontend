@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 export const CurriculumContent = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 33px;
+  gap: min(33px, 1.71875vw);
 
   /* 태블릿 뷰 */
   @media (max-width: 768px) {
@@ -19,7 +19,9 @@ export const CurriculumContent = styled.div`
 export const ImageWrapper = styled.div`
   position: relative;
   max-width: 1200px;
-  height: calc(438.3px + 18vw);
+  height: calc(300px + 25.72vw);
+  background-color: #0A0A0A;
+  border-radius: 10px;
 
   /* 태블릿 뷰 */
   @media (max-width: 768px) {

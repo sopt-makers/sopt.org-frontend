@@ -28,6 +28,7 @@ const nextConfig = {
       'storep-phinf.pstatic.net',
     ],
     formats: ['image/avif', 'image/webp'],
+    deviceSizes: [428, 768, 1200, 1920],
   },
   webpack: (config) => {
     config.module.rules.push({
