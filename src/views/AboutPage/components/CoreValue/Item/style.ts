@@ -14,8 +14,9 @@ export const ItemContainer = styled.div<{ src: string; isInView: boolean; order:
 
   padding: min(35.98px, 1.87vw) 0 min(80.5px, 4.19vw) 0;
   border-radius: 10px;
-  background: center bottom 0 / min(287.828px, calc(150px + 7.13vw)) no-repeat #17181c
-    url(${({ src }) => src});
+  background: center bottom 0 no-repeat #17181c url(${({ src }) => src});
+  background-size: min(200px + 9.37vw) min(170px + 7.96vw);
+
   opacity: 0;
 
   ${FadeInDown(50)}
@@ -31,14 +32,13 @@ export const ItemContainer = styled.div<{ src: string; isInView: boolean; order:
   @media (max-width: 768px) {
     width: 380px;
     height: 323px;
-    background-size: 287.828px;
+    background-size: 100%;
   }
 
   /* 모바일 뷰 */
   @media (max-width: 428px) {
     width: 268.769px;
     height: 228.454px;
-    background-size: 197.211px;
   }
 `;
 
