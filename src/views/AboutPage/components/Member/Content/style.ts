@@ -1,16 +1,22 @@
 import styled from '@emotion/styled';
 
 export const CardContainer = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-  /* 태블릿 뷰 */
-  @media (max-width: 1199px) and (min-width: 766px) {
-    gap: 20px;
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+  gap: 34px;
+  width: 1200px;
+
+  @media (max-width: 1440px) and (min-width: 766px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    width: 576px;
   }
   /* 모바일 뷰 */
   @media (max-width: 765.9px) {
-    gap: 10px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    width: 350px;
   }
 `;
 

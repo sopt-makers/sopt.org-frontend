@@ -1,7 +1,7 @@
-import styled from '@emotion/styled';
 import Flex from '@src/components/common/Flex';
-import SectionTitle from '../../common/SectionTitle';
+import SectionTop from '../../common/SectionTop';
 import MemberContent from '../Content';
+import * as St from './style';
 
 type MemberSectionProps = {
   generation: number;
@@ -14,22 +14,16 @@ const MemberSection = ({ generation }: MemberSectionProps) => {
       gap={{ mobile: 24, tablet: 48, desktop: 60 }}
       style={{ position: 'relative' }}
     >
-      {/* member 2뎁스 탭  개발 이 삭제 필요 */}
-      <ScrollGhost id="members" />
-      <SectionTitle>{generation - 1}기 활동 멤버들</SectionTitle>
+      <St.MarginTop />
+      <SectionTop
+        engTitle="Executives"
+        korTitle={`${generation}기 임원진`}
+        description="200명의 활동 회원들이 열정을 외칠 수 있도록, 33기 DO SOPT를 이끄는 임원진들이에요."
+      />
+      {/* TODO : 서버에서 description을 받아오도록 수정 */}
       <MemberContent />
     </Flex>
   );
 };
-
-const ScrollGhost = styled.div`
-  position: absolute;
-  top: -100px;
-
-  /* 모바일 뷰 */
-  @media (max-width: 765.9px) {
-    top: -60px;
-  }
-`;
 
 export default MemberSection;

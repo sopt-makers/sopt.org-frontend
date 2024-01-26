@@ -1,53 +1,59 @@
-import { track } from '@amplitude/analytics-browser';
-import { useMemo, useState } from 'react';
+import { useMemo } from 'react';
 import DataErrorBanner from '@src/components/DataErrorBanner';
 import Flex from '@src/components/common/Flex';
-import { ExtraPart, ExtraTabType } from '@src/lib/types/universal';
-import { PartExtraType } from '@src/lib/types/universal';
 import { emptyMembers } from '@src/views/AboutPage/constant/emptyMembers';
 import useFetchMember from '@src/views/AboutPage/hooks/useFetchMemeber';
-import useResponsiveMember from '@src/views/AboutPage/hooks/useResponsiveMember';
 import { OvalSpinner } from '@src/views/ProjectPage/components';
-import TabBar from '../../common/TabBar';
 import MemberCard from '../Card';
 import * as St from './style';
 
 const MemberContent = () => {
-  const { memberCardsCount, shouldNotShownWithError } = useResponsiveMember();
-
-  const [currentPart, setCurrentPart] = useState<ExtraPart>(PartExtraType.ALL);
-  const state = useFetchMember(currentPart);
+  const state = useFetchMember();
 
   const errorContent = state._TAG === 'ERROR' && <DataErrorBanner />;
-  const handleTabClick = (tab: ExtraTabType) => {
-    setCurrentPart(tab.value);
-    track('click_about_member_part', { part: tab.label });
-  };
-  const tabBarContent = !(state._TAG === 'ERROR' && shouldNotShownWithError) && (
-    <TabBar onTabClick={handleTabClick} selectedTab={currentPart} includesExtra={true} />
-  );
-  const cardContent = useMemo(() => {
-    if (state._TAG === 'OK')
-      return state.data.members.map(({ id, name, src, description, part }) => (
-        <MemberCard key={id} imgSrc={src} name={name} description={description} part={part} />
-      ));
 
-    if (state._TAG === 'ERROR')
-      return emptyMembers(memberCardsCount).map(({ id, name, src, description, part }) => (
-        <MemberCard key={id} imgSrc={src} name={name} description={description} part={part} />
-      ));
+  const cardContent = useMemo(() => {
+    if (state._TAG === 'OK' || state._TAG === 'ERROR')
+      return (state._TAG === 'OK' ? state.data.members : emptyMembers(6)).map(
+        ({
+          id,
+          name,
+          position,
+          description,
+          currentProject,
+          imageSrc,
+          gmail,
+          linkedin,
+          github,
+        }) => (
+          <MemberCard
+            key={id}
+            name={name}
+            position={position}
+            description={description}
+            currentProject={currentProject}
+            imageSrc={imageSrc}
+            gmail={gmail}
+            linkedin={linkedin}
+            github={github}
+          />
+        ),
+      );
 
     return (
       <St.OvalSpinnerWrapper>
         <OvalSpinner />
       </St.OvalSpinnerWrapper>
     );
-  }, [state, memberCardsCount]);
+  }, [state]);
 
   return (
-    <Flex dir="column" gap={{ mobile: 18, tablet: 24, desktop: 48 }}>
+    <Flex
+      dir="column"
+      gap={{ mobile: 18, tablet: 24, desktop: 48 }}
+      style={{ alignItems: 'center' }}
+    >
       {errorContent}
-      {tabBarContent}
       <St.CardContainer>{cardContent}</St.CardContainer>
     </Flex>
   );
