@@ -39,19 +39,19 @@ const MemberCard = ({
       <St.Desc>{description || '-'}</St.Desc>
       <St.LinkWrapper>
         {gmail && (
-          <a href={`mailto:${gmail}`}>
+          <St.AnchorIconWrapper href={`mailto:${gmail}`}>
             <IcMail />
-          </a>
+          </St.AnchorIconWrapper>
         )}
         {linkedin && (
-          <a href={`https://www.linkedin.com/in/${linkedin}`}>
+          <St.AnchorIconWrapper href={`https://www.linkedin.com/in/${linkedin}`}>
             <IcLinkedin />
-          </a>
+          </St.AnchorIconWrapper>
         )}
         {github && (
-          <a href={`https://github.com/${github}`}>
+          <St.AnchorIconWrapper href={`https://github.com/${github}`}>
             <IcGithub />
-          </a>
+          </St.AnchorIconWrapper>
         )}
       </St.LinkWrapper>
     </St.Card>
