@@ -1,16 +1,12 @@
-import Flex from '@src/components/common/Flex';
 import { AboutInfoType } from '@src/lib/types/about';
 import RecordItem from '../Item';
+import * as St from './style';
 
 type RecordListProps = Pick<AboutInfoType, 'records'>;
 
 const RecordList = (props: RecordListProps) => {
   return (
-    <Flex
-      dir={{ mobile: 'column', tablet: 'row', desktop: 'row' }}
-      gap={{ mobile: 16, tablet: 20, desktop: 30 }}
-      style={{ justifyContent: 'center', alignItems: 'center' }}
-    >
+    <St.Wrapper>
       <RecordItem
         type="block"
         title="활동 멤버"
@@ -31,7 +27,7 @@ const RecordList = (props: RecordListProps) => {
         countString="개"
         href="/study"
       />
-    </Flex>
+    </St.Wrapper>
   );
 };
 
