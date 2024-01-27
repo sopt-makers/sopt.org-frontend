@@ -1,16 +1,16 @@
-import Flex from '@src/components/common/Flex';
 import { AboutInfoType } from '@src/lib/types/about';
-import SectionTitle from '../../common/SectionTitle';
+import SectionTop from '../../common/SectionTop';
 import RecordList from '../List';
+import * as St from './style';
 
 type RecordSectionProps = Pick<AboutInfoType, 'generation' | 'records'>;
 
 const RecordSection = (props: RecordSectionProps) => {
   return (
-    <Flex dir="column" gap={{ mobile: 24, tablet: 48, desktop: 64 }}>
-      <SectionTitle>{props.generation - 1}기 활동 레코드</SectionTitle>
+    <St.Wrapper>
+      <SectionTop engTitle="Activity Records" korTitle={`${props.generation - 1}기 활동 레코드`} />
       <RecordList records={props.records} />
-    </Flex>
+    </St.Wrapper>
   );
 };
 

@@ -1,20 +1,31 @@
 import styled from '@emotion/styled';
 import Link from 'next/link';
-import arrowRight from '@src/assets/icons/arrow_right_16x16.svg';
+import { css } from '@emotion/react';
 
-export const LinkWrapper = styled(Link)`
-  width: 100%;
-  background-color: #000000;
-  border-radius: 10px;
+const wrapperStyle = css`
+  width: 380px;
   height: 280px;
+  background-color: #141518;
+  border-radius: 10px;
+
   /* 태블릿 뷰 */
-  @media (max-width: 1199px) and (min-width: 766px) {
-    height: 180px;
+  @media (max-width: 1440px) and (min-width: 766px) {
+    width: 204px;
+    height: 150px;
   }
   /* 모바일 뷰 */
   @media (max-width: 765.9px) {
-    height: 120px;
+    width: 204px;
+    height: 150px;
   }
+`;
+
+export const LinkWrapper = styled(Link)`
+  ${wrapperStyle}
+`;
+
+export const BlockWrapper = styled.div`
+  ${wrapperStyle}
 `;
 
 export const Title = styled.div`
@@ -23,12 +34,12 @@ export const Title = styled.div`
   color: white;
 
   /* 태블릿 뷰 */
-  @media (max-width: 1199px) and (min-width: 766px) {
-    font-size: 18px;
+  @media (max-width: 1440px) and (min-width: 766px) {
+    font-size: 10px;
   }
   /* 모바일 뷰 */
   @media (max-width: 765.9px) {
-    font-size: 12px;
+    font-size: 10px;
   }
 `;
 
@@ -39,38 +50,13 @@ export const Count = styled.div`
   color: white;
   line-height: 60px;
   /* 태블릿 뷰 */
-  @media (max-width: 1199px) and (min-width: 766px) {
-    font-size: 28px;
-    line-height: 40px;
+  @media (max-width: 1440px) and (min-width: 766px) {
+    font-size: 24px;
+    line-height: 32px;
   }
   /* 모바일 뷰 */
   @media (max-width: 765.9px) {
-    font-size: 18px;
-    line-height: 18px;
-  }
-
-  &::after {
-    position: absolute;
-    content: '';
-    mask-image: url(${arrowRight});
-    mask-repeat: no-repeat;
-    mask-size: cover;
-    background-color: #787878;
-    width: 32px;
-    height: 40px;
-    margin-top: 9px;
-
-    /* 태블릿 뷰 */
-    @media (max-width: 1199px) and (min-width: 766px) {
-      width: 16px;
-      height: 20px;
-      margin-top: 9px;
-    }
-    /* 모바일 뷰 */
-    @media (max-width: 765.9px) {
-      width: 12px;
-      height: 15px;
-      margin-top: 1px;
-    }
+    font-size: 14px;
+    line-height: 32px;
   }
 `;
