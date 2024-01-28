@@ -21,11 +21,10 @@ const RecordList = (props: RecordListProps) => {
         href="/project"
       />
       <RecordItem
-        type="link"
+        type="block"
         title="스터디"
         countNumber={props.records.studyCount}
         countString="개"
-        href="/study"
       />
     </St.Wrapper>
   );
