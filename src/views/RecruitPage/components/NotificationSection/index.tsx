@@ -53,7 +53,7 @@ const NotificationSection = () => {
         <Input
           type="email"
           placeholder="메일을 입력해주세요"
-          pattern="[a-zA-Z0-9]+[@][a-zA-Z0-9]+[.]+[a-zA-Z]+[.]*[a-zA-Z]*"
+          pattern="[a-zA-Z0-9]+([.][a-zA-Z0-9]+)*[@][a-zA-Z0-9]+([.][a-zA-Z]+)*"
           ref={emailInputRef}
           onClick={() => track('click_recruit_notification_input')}
         />
