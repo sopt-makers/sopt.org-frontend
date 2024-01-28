@@ -9,10 +9,28 @@ export interface CoreValueType {
 export interface MemberType {
   id: number;
   name: string;
+  position: PositionType;
+  currentProject: string;
   description?: string;
-  part: string;
-  src?: string;
+  imageSrc?: string;
+  gmail?: string;
+  linkedin?: string;
+  github?: string;
 }
+
+export type PositionType =
+  | '회장'
+  | '부회장'
+  | '총무'
+  | '미디어 팀장'
+  | '운영 팀장'
+  | '기획 파트장'
+  | '디자인 파트장'
+  | '안드로이드 파트장'
+  | 'iOS 파트장'
+  | '웹 파트장'
+  | '서버 파트장'
+  | '';
 
 export interface AboutInfoType {
   generation: number;
@@ -56,7 +74,7 @@ export interface GetStudyInfoResponse {
 
 export interface AboutAPI {
   getAboutInfo(): Promise<GetAboutInfoResponse>;
-  getMemberInfo(part?: Part): Promise<GetMembersInfoResponse>;
+  getMemberInfo(): Promise<GetMembersInfoResponse>;
   getStudyInfo(generation?: number): Promise<GetStudyInfoResponse>;
 }
 

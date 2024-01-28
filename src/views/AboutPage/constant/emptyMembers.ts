@@ -5,8 +5,10 @@ export const emptyMembers = (count: number): MemberType[] => {
   return Array.from({ length: count }).map((_, idx) => ({
     id: idx,
     name: '-',
+    position: '',
+    currentProject: '',
     description: '-',
     part: '-',
-    src: NullImage.src,
+    imageSrc: NullImage.src,
   }));
 };

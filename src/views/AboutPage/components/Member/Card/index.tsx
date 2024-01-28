@@ -1,22 +1,59 @@
+import { ReactComponent as IcGithub } from '@src/assets/icons/ic_github.svg';
+import { ReactComponent as IcLinkedin } from '@src/assets/icons/ic_linkedin.svg';
+import { ReactComponent as IcMail } from '@src/assets/icons/mail.svg';
 import NullImage from '@src/assets/images/null_image.png';
+import { PositionType } from '@src/lib/types/about';
 import * as St from './style';
 
 type MeberCardProps = {
-  imgSrc?: string;
   name: string;
+  position: PositionType;
   description?: string;
-  part: string;
+  currentProject: string;
+  imageSrc?: string;
+  gmail?: string;
+  linkedin?: string;
+  github?: string;
 };
 
-const MemberCard = ({ imgSrc, name, description, part }: MeberCardProps) => {
+const MemberCard = ({
+  name,
+  position,
+  description,
+  currentProject,
+  imageSrc,
+  gmail,
+  linkedin,
+  github,
+}: MeberCardProps) => {
   return (
     <St.Card>
       <St.ImageWrapper>
-        <St.ProfileImage src={imgSrc || NullImage.src} alt={`${name}의 프로필`} fill />
+        <St.ProfileImage src={imageSrc || NullImage.src} alt={`${name}의 프로필`} fill />
       </St.ImageWrapper>
-      <St.Name>{name}</St.Name>
+      <St.NameWrapper>
+        <St.Position>{position}</St.Position>
+        <St.Name>{name}</St.Name>
+      </St.NameWrapper>
+      <St.CurrentProject>{currentProject}</St.CurrentProject>
       <St.Desc>{description || '-'}</St.Desc>
-      <St.Part>{part}</St.Part>
+      <St.LinkWrapper>
+        {gmail && (
+          <St.AnchorIconWrapper href={`mailto:${gmail}`}>
+            <IcMail />
+          </St.AnchorIconWrapper>
+        )}
+        {linkedin && (
+          <St.AnchorIconWrapper href={`https://www.linkedin.com/in/${linkedin}`}>
+            <IcLinkedin />
+          </St.AnchorIconWrapper>
+        )}
+        {github && (
+          <St.AnchorIconWrapper href={`https://github.com/${github}`}>
+            <IcGithub />
+          </St.AnchorIconWrapper>
+        )}
+      </St.LinkWrapper>
     </St.Card>
   );
 };

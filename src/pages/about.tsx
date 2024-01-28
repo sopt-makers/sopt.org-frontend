@@ -22,11 +22,11 @@ const AboutPage = ({ aboutInfo }: InferGetServerSidePropsType<typeof getStaticPr
           coreValues={aboutInfo.aboutInfo.coreValue.eachValues}
         />
         <CurriculumSection curriculums={aboutInfo.aboutInfo.curriculums} />
+        <MemberSection generation={aboutInfo.aboutInfo.generation} />
         <RecordSection
           generation={aboutInfo.aboutInfo.generation}
           records={aboutInfo.aboutInfo.records}
         />
-        <MemberSection generation={aboutInfo.aboutInfo.generation} />
       </Root>
     </PageLayout>
   );

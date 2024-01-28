@@ -4,11 +4,11 @@ import {
   GetMembersInfoResponse,
   GetStudyInfoResponse,
 } from '@src/lib/types/about';
-import { CoreValueResponseDto, MemberResponseDto, StudyResponseDto } from '@src/lib/types/dto';
+import { CoreValueResponseDto, StudyResponseDto } from '@src/lib/types/dto';
 import { Part } from '@src/lib/types/universal';
 import { parseStringToPart } from '@src/lib/utils/parseStringToPart';
 import axios from 'axios';
-import qs from 'qs';
+import { mockAboutAPI } from '../mock/about';
 
 const client = axios.create({
   baseURL: BASE_URL,
@@ -51,43 +51,8 @@ const getAboutInfo = async (): Promise<GetAboutInfoResponse> => {
   };
 };
 
-const partToFilterParam: Record<Part, number> = {
-  PLAN: 1,
-  DESIGN: 2,
-  WEB: 3,
-  SERVER: 4,
-  ANDROID: 5,
-  iOS: 6,
-};
-
-const getMemberInfoParams = (part?: Part): { filter?: number; generation: number } => {
-  const generation = 32;
-
-  if (!part) return { generation };
-
-  const filter = partToFilterParam[part];
-
-  return { filter, generation };
-};
-
-const getMemberInfo = async (part?: Part): Promise<GetMembersInfoResponse> => {
-  const parameter = qs.stringify(getMemberInfoParams(part));
-
-  const {
-    data: { members },
-  } = await client.get<{ members: MemberResponseDto[] }>(`/member?${parameter}`);
-
-  return {
-    members: members
-      .filter((member) => member.name && member.part)
-      .map((member) => ({
-        id: member.id,
-        name: member.name,
-        description: member.introduction,
-        part: member.part,
-        src: member.profileImage,
-      })),
-  };
+const getMemberInfo = async (): Promise<GetMembersInfoResponse> => {
+  return mockAboutAPI.getMemberInfo(); // todo : implement server connection
 };
 
 const getStudyInfo = async (): Promise<GetStudyInfoResponse> => {

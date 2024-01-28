@@ -1,36 +1,29 @@
 import styled from '@emotion/styled';
+import { colors } from '@sopt-makers/colors';
 import Image from 'next/image';
-import { textSingularLineEllipsis } from '@src/lib/styles/textEllipsis';
+import icSchool from '@src/assets/icons/ic_school.svg';
 
 export const Card = styled.article`
   display: flex;
   flex-direction: column;
   align-items: center;
 
-  width: 270px;
-  height: 400px;
+  height: 484px;
 
-  margin-bottom: 60px;
-  padding: 38px 49px;
+  padding: 30px 0;
 
   background: #000000;
   border-radius: 10px;
 
   /* 태블릿 뷰 */
-  @media (max-width: 1199px) and (min-width: 766px) {
-    width: 209px;
-    height: 300px;
-
-    margin-bottom: 40px;
-    padding: 26px 40px;
+  @media (max-width: 768px) and (min-width: 428px) {
+    height: 377px;
+    padding: 26px;
   }
   /* 모바일 뷰 */
-  @media (max-width: 765.9px) {
-    width: 160px;
-    height: 265px;
-
-    margin-bottom: 32px;
-    padding: 18px 17px;
+  @media (max-width: 427.9px) {
+    height: 214px;
+    padding: 12px 0;
   }
 `;
 
@@ -48,91 +41,192 @@ export const ImageWrapper = styled.div`
   overflow: hidden;
 
   /* 태블릿, 모바일 뷰 */
-  @media (max-width: 1199px) {
-    width: 126px;
-    height: 126px;
+  @media (max-width: 768px) and (min-width: 428px) {
+    width: 120px;
+    height: 120px;
+  }
+  /* 태블릿, 모바일 뷰 */
+  @media (max-width: 427.9px) {
+    width: 80px;
+    height: 80px;
+  }
+`;
+
+export const NameWrapper = styled.div`
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40px;
+
+  /* 태블릿 뷰 */
+  @media (max-width: 768px) and (min-width: 428px) {
+    margin-top: 30px;
+    gap: 3px;
+  }
+  /* 모바일 뷰 */
+  @media (max-width: 427.9px) {
+    margin-top: 18px;
+    gap: 2px;
+  }
+`;
+
+export const Position = styled.span`
+  padding: 6px 7px;
+  color: ${colors.white};
+
+  text-align: center;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 26px; /* 152.941% */
+  letter-spacing: -0.34px;
+
+  /* 태블릿 뷰 */
+  @media (max-width: 768px) and (min-width: 428px) {
+    padding: 4px;
+    font-size: 12.413px;
+    line-height: 18.984px; /* 152.941% */
+    letter-spacing: -0.248px;
+  }
+  /* 모바일 뷰 */
+  @media (max-width: 427.9px) {
+    padding: 3px;
+    font-size: 7.535px;
+    line-height: 11.524px; /* 152.941% */
+    letter-spacing: -0.151px;
   }
 `;
 
 export const Name = styled.strong`
-  ${textSingularLineEllipsis}
-  width: 100%;
   text-align: center;
-
-  margin-top: 24px;
-
-  font-weight: 700;
   font-size: 28px;
 
-  color: #ffffff;
+  color: ${colors.white};
+  font-weight: 600;
+  line-height: 100%; /* 28px */
+  letter-spacing: -0.28px;
 
   /* 태블릿 뷰 */
-  @media (max-width: 1199px) and (min-width: 766px) {
-    margin-top: 16px;
-
+  @media (max-width: 768px) and (min-width: 428px) {
     font-size: 18px;
   }
   /* 모바일 뷰 */
-  @media (max-width: 765.9px) {
-    margin-top: 16px;
-
+  @media (max-width: 427.9px) {
     font-size: 16px;
   }
 `;
 
-export const Desc = styled.p`
-  ${textSingularLineEllipsis}
-  width: 100%;
-  height: 26px;
+export const Desc = styled.span`
   text-align: center;
 
-  margin-top: 8px;
-  font-size: 18px;
-  line-height: 26px;
-
-  color: rgba(255, 255, 255, 0.5);
+  margin-top: 15px;
+  font-size: 15px;
+  font-style: normal;
+  line-height: 26px; /* 173.333% */
+  letter-spacing: -0.3px;
+  color: ${colors.white};
+  background-color: #21212c;
+  padding: 10px 16px;
+  border-radius: 10px;
+  /* 태블릿 뷰 */
+  @media (max-width: 768px) and (min-width: 428px) {
+    font-size: 10.952px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18.984px; /* 173.333% */
+    letter-spacing: -0.219px;
+    padding: 7px 12px;
+    border-radius: 8px;
+  }
   /* 모바일 뷰 */
-  @media (max-width: 765.9px) {
-    margin-top: 4px;
-    font-size: 16px;
+  @media (max-width: 427.9px) {
+    font-size: 6.648px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 11.524px; /* 173.333% */
+    letter-spacing: -0.133px;
+    padding: 4px 7px;
+    border-radius: 4px;
   }
 `;
 
-export const Part = styled.div`
-  ${textSingularLineEllipsis}
-  max-width: 100%;
+export const CurrentProject = styled.span`
+  position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url(${icSchool});
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 24px;
+    height: 24px;
+    /* 태블릿 뷰 */
+    @media (max-width: 768px) and (min-width: 428px) {
+      width: 18px;
+      height: 18px;
+    }
+    /* 모바일 뷰 */
+    @media (max-width: 427.9px) {
+      width: 12px;
+      height: 12px;
+    }
+  }
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  margin-top: 12px;
-  padding: 10px 16px;
-
-  background: #333333;
-  border-radius: 30px;
-
-  font-size: 18px;
-  line-height: 26px;
-
-  color: #ffffff;
+  height: 24px;
+  padding-left: 28px;
+  color: #bcbcbc;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 26px; /* 173.333% */
+  letter-spacing: -0.3px;
+  margin-top: 16px;
 
   /* 태블릿 뷰 */
-  @media (max-width: 1199px) and (min-width: 766px) {
-    margin-top: 8px;
-    padding: 10px 16px;
-
-    background: #333333;
-    border-radius: 30px;
-
-    font-size: 18px;
-    line-height: 26px;
+  @media (max-width: 768px) and (min-width: 428px) {
+    height: 18px;
+    padding-left: 20px;
+    font-size: 10.952px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18.984px; /* 173.333% */
+    letter-spacing: -0.219px;
+    margin-top: 12px;
   }
   /* 모바일 뷰 */
-  @media (max-width: 765.9px) {
-    margin-top: 6px;
+  @media (max-width: 427.9px) {
+    height: 12px;
+    padding-left: 13px;
+    font-size: 6.648px;
+    font-weight: 400;
+    line-height: 11.524px; /* 173.333% */
+    letter-spacing: -0.133px;
+    margin-top: 8px;
+  }
+`;
 
-    font-size: 12px;
-    line-height: 15px;
+export const LinkWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 16px;
+  flex: 1;
+  height: 100%;
+  /* 태블릿 뷰 */
+  @media (max-width: 768px) and (min-width: 428px) {
+    gap: 12px;
+  }
+  /* 모바일 뷰 */
+  @media (max-width: 427.9px) {
+    gap: 0;
+  }
+`;
+
+export const AnchorIconWrapper = styled.a`
+  /* 모바일 뷰 */
+  @media (max-width: 427.9px) {
+    transform: scale(0.7);
   }
 `;
