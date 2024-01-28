@@ -1,5 +1,4 @@
-import Image from 'next/image';
-import * as St from './style';
+import * as S from './style';
 
 interface BannerProps {
   imageSrc: string;
@@ -7,20 +6,9 @@ interface BannerProps {
 }
 
 const Banner = (props: BannerProps) => {
-  const { imageSrc, title } = props;
+  const { imageSrc } = props;
 
-  return (
-    <St.ImageWrapper>
-      <Image
-        src={imageSrc}
-        alt="솝트 공식홈페이지 어바웃페이지 배너 사진"
-        fill
-        style={{ objectFit: 'cover' }}
-        priority
-      />
-      <St.HeadTitle>{title}</St.HeadTitle>
-    </St.ImageWrapper>
-  );
+  return <S.Banner src={imageSrc}></S.Banner>;
 };
 
 export default Banner;

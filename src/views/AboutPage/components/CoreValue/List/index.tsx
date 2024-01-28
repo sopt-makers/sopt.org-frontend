@@ -1,6 +1,6 @@
-import Flex from '@src/components/common/Flex';
 import { CoreValueType } from '@src/lib/types/about';
 import CoreValueItem from '../Item';
+import * as S from './style';
 
 type CoreValueListProps = {
   coreValues: CoreValueType[];
@@ -8,14 +8,11 @@ type CoreValueListProps = {
 
 const CoreValueList = ({ coreValues }: CoreValueListProps) => {
   return (
-    <Flex
-      dir={{ mobile: 'column', tablet: 'row', desktop: 'row' }}
-      gap={{ mobile: 20, tablet: 20, desktop: 30 }}
-    >
+    <S.CoreValueList>
       {coreValues.map((coreValue, idx) => (
         <CoreValueItem order={idx} coreValue={coreValue} key={coreValue.title} />
       ))}
-    </Flex>
+    </S.CoreValueList>
   );
 };
 

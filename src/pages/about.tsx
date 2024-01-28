@@ -5,8 +5,8 @@ import PageLayout from '@src/components/common/PageLayout';
 import { api } from '@src/lib/api';
 import {
   Banner,
-  CirriculumSection,
   CoreValueSection,
+  CurriculumSection,
   RecordSection,
 } from '@src/views/AboutPage/components';
 
@@ -21,7 +21,7 @@ const AboutPage = ({ aboutInfo }: InferGetServerSidePropsType<typeof getStaticPr
           mainDescription={aboutInfo.aboutInfo.coreValue.mainDescription}
           coreValues={aboutInfo.aboutInfo.coreValue.eachValues}
         />
-        <CirriculumSection cirriculums={aboutInfo.aboutInfo.curriculums} />
+        <CurriculumSection curriculums={aboutInfo.aboutInfo.curriculums} />
         <RecordSection
           generation={aboutInfo.aboutInfo.generation}
           records={aboutInfo.aboutInfo.records}
@@ -47,19 +47,6 @@ export default AboutPage;
 const Root = styled.main`
   display: flex;
   flex-direction: column;
-  gap: 180px;
-  width: 1200px;
+  justify-content: center;
   min-height: 100vh;
-  margin: 0 auto;
-
-  /* 태블릿 뷰 */
-  @media (max-width: 1199px) and (min-width: 766px) {
-    width: 667px;
-    gap: 140px;
-  }
-  /* 모바일 뷰 */
-  @media (max-width: 765.9px) {
-    width: 332px;
-    gap: 80px;
-  }
 `;
