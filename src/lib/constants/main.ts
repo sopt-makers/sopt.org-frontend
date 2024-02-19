@@ -455,13 +455,7 @@ export const OWN_ORGANIZATION_LIST: {
       { content: 'SOPT에 필요한 프로덕트를 만드는 정식 기구', weight: 'bold' },
       {
         content:
-          '입니다. 3천여 명의 구성원들을 연결하고 새로운 가치를 제공하기 위한 방법을 끊임없이 고민해요. ',
-        weight: 'normal',
-      },
-      { content: '앞으로도 SOPT를 지속적으로 운영하고자, ', weight: 'bold' },
-      {
-        content:
-          '어떻게 하면 우리의 활동이 더 즐거울 수 있을지, 대내외적으로 잘 알릴 수 있을지 고민할 거예요. ',
+          '입니다. 3천명이 넘는 SOPT 구성원의 연결되지 못한 가치를 발견하고, SOPT 활동을 더욱 편리하고 즐겁게 할 수 있도록 도우며, SOPT를 대내외적으로 더 잘 알리기 위해 앞으로도 고민할 거예요.',
         weight: 'normal',
       },
     ],
