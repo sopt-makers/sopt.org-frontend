@@ -26,6 +26,15 @@ export const Container = styled(Link)<{$isYellow:boolean}>`
     color: #FFF;
   `};
 
+  /* 색 변환 부드럽게 */
+  transition: background-color 0.5s, color 0.5s;
+  & h1 {
+    transition: color 0.5s;
+  }
+  & path, circle {
+    transition: stroke 0.5s;
+  }
+
   /* 태블릿 뷰 */
   @media (max-width: 768px) and (min-width: 429px) {
     margin-top: 48px;

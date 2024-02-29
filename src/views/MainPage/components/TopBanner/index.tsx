@@ -3,17 +3,19 @@ import { ReactComponent as IcView } from '@src/assets/icons/ic_view.svg';
 import { ReactComponent as IcTimer } from '@src/assets/icons/ic_timer.svg';
 import Timer from '@src/components/common/Timer';
 import { useEffect, useState } from 'react';
+import { useIsMobile } from '@src/hooks/useDevice';
 
 export default function TopBanner() {
   const TARGET_DATE = new Date('2024-03-08:18:00');
+  const isMobile = useIsMobile();
+  const CHANGE_POSITION = isMobile ? 495 : 605;
 
   const [isYellow, setIsYellow] = useState<boolean>(false);
 
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
-
-      scrollPosition <= 605 ? setIsYellow(false) : setIsYellow(true);
+      scrollPosition <= CHANGE_POSITION ? setIsYellow(false) : setIsYellow(true);
     };
 
     window.addEventListener('scroll', handleScroll);
