@@ -2,7 +2,6 @@ import * as S from './style';
 import { ReactComponent as IcView } from '@src/assets/icons/ic_view.svg';
 import { ReactComponent as IcTimer } from '@src/assets/icons/ic_timer.svg';
 
-
 export default function TopBanner() {
   return (
     <S.Container>
@@ -20,7 +19,6 @@ export default function TopBanner() {
       </S.Description>
     </S.Wrapper>
     </S.Container>
-  )
+  );
 }
-
 

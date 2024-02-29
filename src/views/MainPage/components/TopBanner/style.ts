@@ -21,7 +21,7 @@ export const Container = styled.section`
     margin-top: 48px;
     padding : 13px 20px;
   }
-`
+`;
 export const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
@@ -47,7 +47,7 @@ export const Title = styled.h1`
   @media (max-width: 428px) {
     font-size: 12px;
   }
-`
+`;
 
 export const Description = styled.div`
   display: flex;
@@ -62,15 +62,15 @@ export const Description = styled.div`
     width: 100%;
     font-size: 11px;
   }
-`
+`;
 export const Timer = styled.div`
   display: flex;
   align-items: center;
   gap: 10px;
-`
+`;
 
 export const View = styled.div`
   display: flex;
   align-items: center;
   gap: 10px;
-`
+`;
