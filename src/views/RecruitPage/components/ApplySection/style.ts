@@ -1,21 +1,12 @@
 import styled from '@emotion/styled';
 import { StaticImageData } from 'next/image';
 
-export const BlurOverlay = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
+export const Values = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: 40px;
   width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    rgba(24, 24, 24, 0.6),
-    rgba(24, 24, 24, 0.6),
-    rgba(24, 24, 24, 0.6),
-    rgba(24, 24, 24, 0.6),
-    rgba(24, 24, 24, 0.9),
-    rgba(24, 24, 24, 1)
-  );
-  z-index: 1;
+
 `;
 
 export const ApplyButton = styled.a`
@@ -29,7 +20,7 @@ export const ApplyButton = styled.a`
   font-weight: 700;
   line-height: 100%; /* 22px */
   letter-spacing: -0.44px;
-  background-color: #1dedae;
+  background-color: #BDEC00;
   z-index: 2;
   /* 태블릿 뷰 */
   @media (max-width: 1299px) and (min-width: 766px) {
@@ -65,31 +56,7 @@ export const Title = styled.div`
   }
 `;
 
-export const Chip = styled.div`
-  padding: 6px 0;
-  width: 198px;
-  border-radius: 17px;
-  border: 1.682px solid #1ba072;
-  background: rgba(29, 237, 162, 0.1);
-  color: #1deda2;
-  text-align: center;
-  z-index: 2;
-  line-height: 100%;
-
-  /* 태블릿 뷰 */
-  @media (max-width: 1299px) and (min-width: 766px) {
-    padding: 6px 0;
-    font-size: 16px;
-    width: 184px;
-  }
-  /* 모바일 뷰 */
-  @media (max-width: 765.9px) {
-    font-size: 12px;
-    width: 164px;
-  }
-`;
-
-export const Wrapper = styled.div<{imgMainValue: StaticImageData}>`
+export const Wrapper = styled.div<{imgRecruitBg: StaticImageData}>`
   width: 100vw;
   height: 580px;
   position: relative;
@@ -97,24 +64,10 @@ export const Wrapper = styled.div<{imgMainValue: StaticImageData}>`
   align-items: center;
   display: flex;
   flex-direction: column;
-  padding-top: 90px;
-  background-image: url(${({ imgMainValue })=>imgMainValue.src});
-  background-position: center bottom -60px;
-  background-size: auto 285px;
-  background-repeat: no-repeat;
+  margin-top: 80px;
 
-  /* 태블릿 뷰 */
-  @media (max-width: 1299px) and (min-width: 766px) {
-    padding-top: 0;
-    height: 440px;
-    background-size: auto 160px;
-    background-position: center bottom;
-  }
-  /* 모바일 뷰 */
-  @media (max-width: 765.9px) {
-    padding-top: 0;
-    height: 440px;
-    background-size: auto 120px;
-    background-position: center bottom 40px;
-  }
+  background-image: url(${({ imgRecruitBg })=>imgRecruitBg.src});
+  background-repeat: no-repeat;  
+  background-size: cover; 
+  background-position: center;
 `;

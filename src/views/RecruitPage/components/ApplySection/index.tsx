@@ -1,14 +1,20 @@
-import imgMainValue from '@src/assets/images/img_mainvalue_logos.png';
+import imgRecruitBg from '@src/assets/images/img_recruit_bg.png';
 import * as S from './style';
+import { ReactComponent as ValueShare } from '@src/assets/icons/value_share.svg';
+import { ReactComponent as ValueChallenge } from '@src/assets/icons/value_challenge.svg';
+import { ReactComponent as ValueLink } from '@src/assets/icons/value_link.svg';
 
 const ApplySection = () => {
   return (
-    <S.Wrapper imgMainValue={imgMainValue}>
-      <S.Chip>YB RECRUITING</S.Chip>
-      <div style={{ height: '13px' }} />
-      <S.Title>SOPT의 33번째 열정이 되어주세요!</S.Title>
-      <div style={{ height: '49px' }} />
-      <S.BlurOverlay />
+    <S.Wrapper imgRecruitBg={imgRecruitBg}>
+      <S.Values>
+        <ValueShare/>
+        <ValueChallenge/>
+        <ValueLink/>
+      </S.Values>
+      <div style={{ height: '62px' }} />
+      <S.Title>SOPT의 34번째 열정을 기다리고 있어요!</S.Title>
+      <div style={{ height: '16px' }} />
       <S.ApplyButton href="https://sopt-recruiting.web.app/recruiting/apply/yb" target="_blank">
         지원하기
       </S.ApplyButton>

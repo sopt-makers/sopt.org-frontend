@@ -38,6 +38,8 @@ const Root = styled.div`
   align-items: center;
   min-height: 100vh;
   margin: 0 auto;
+
+  background-color: #101111;
 `;
 
 const ContentWrapper = styled.div`
