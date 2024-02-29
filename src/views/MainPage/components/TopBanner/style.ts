@@ -7,7 +7,7 @@ export const Container = styled(Link)<{$isYellow:boolean}>`
   justify-content: center;
   position: fixed;
 
-  padding : 17px 20px;
+  padding : 13px 20px;
   margin-top: 80px;
   width: 100%;
   z-index: 100;
@@ -15,7 +15,7 @@ export const Container = styled(Link)<{$isYellow:boolean}>`
   ${({ $isYellow })=>$isYellow ? css`
     background-color: #BDEC00;
     color: #101111;
-    & h1 {
+    & h1,p {
       color: #101111;
     }
     & path,circle {
@@ -42,13 +42,13 @@ export const Container = styled(Link)<{$isYellow:boolean}>`
   /* 모바일 뷰 */
   @media (max-width: 428px) {
     margin-top: 48px;
-    padding : 13px 20px;
+    padding : 8px 20px;
   }
 `;
 export const Wrapper = styled.section`
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  gap: 18px;
 
   max-width: 1200px;
   width: 100%;
@@ -58,11 +58,13 @@ export const Wrapper = styled.section`
     flex-direction: column;
     justify-content: start;
     align-items: baseline;
+    gap: 1px;
   }
 `;
 
 export const Title = styled.h1`
   text-align: center;
+  line-height: 130%;
 
   /* 모바일 뷰 */
   @media (max-width: 428px) {
@@ -72,7 +74,9 @@ export const Title = styled.h1`
 
 export const Description = styled.div`
   display: flex;
-  gap: 40px;
+  justify-content: space-between;
+
+  flex-grow: 1;
 
   text-align: center;
   font-weight: 500;
@@ -92,9 +96,22 @@ export const Timer = styled.div`
   width: 128px;
   gap: 10px;
   justify-content: flex-start;
+
+  /* 태블릿 뷰 */
+  @media (max-width: 768px) and (min-width: 429px) {
+    & > svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  /* 모바일 뷰 */
+  @media (max-width: 428px) {
+    gap: 4px;
+  }
 `;
 
-export const View = styled.div`
+export const View = styled.p`
   display: flex;
   align-items: center;
   gap: 10px;

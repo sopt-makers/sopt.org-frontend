@@ -1,5 +1,4 @@
 import * as S from './style';
-import { ReactComponent as IcView } from '@src/assets/icons/ic_view.svg';
 import { ReactComponent as IcTimer } from '@src/assets/icons/ic_timer.svg';
 import Timer from '@src/components/common/Timer';
 import { useEffect, useState } from 'react';
@@ -28,15 +27,16 @@ export default function TopBanner() {
   return (
     <S.Container href="/recruit" $isYellow={isYellow}>
     <S.Wrapper>
-      <S.Title>SOPT의 34번째 열정이 되어주세요! &nbsp; &gt;
-      </S.Title>
+      <div>
+        <S.Title>SOPT의 34번째 열정이 되어주세요!</S.Title>
+      </div>
       <S.Description>
         <S.Timer>
-            <IcTimer/>
+            {isMobile ? <IcTimer width={14} height={14} viewBox='0 0 24 24'/> : <IcTimer/>}
             <Timer targetDate={TARGET_DATE} endMessage='모집 마감'/>
         </S.Timer>
         <S.View>
-            <IcView/><span>0000명</span>
+            <span>오늘 0000명이 방문했어요 &nbsp; &gt;</span>
         </S.View>
       </S.Description>
     </S.Wrapper>
