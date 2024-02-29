@@ -27,7 +27,7 @@ export const RecruitButtonWrapper = styled(Link)`
   line-height: 130%; /* 36.4px */
 
   /* 모바일 뷰 */
-  @media (max-width: 375px) {
+  @media (max-width: 428px) {
     margin-top: 28px;
     font-size: 18px;
     line-height: 28px; /* 155.556% */
