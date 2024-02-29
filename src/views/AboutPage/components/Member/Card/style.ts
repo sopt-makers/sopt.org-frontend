@@ -12,7 +12,7 @@ export const Card = styled.article`
 
   padding: 30px 0;
 
-  background: #000000;
+  background: #181818;
   border-radius: 10px;
 
   /* 태블릿 뷰 */
@@ -125,7 +125,7 @@ export const Desc = styled.span`
   line-height: 26px; /* 173.333% */
   letter-spacing: -0.3px;
   color: ${colors.white};
-  background-color: #21212c;
+  background-color: #222220;
   padding: 10px 16px;
   border-radius: 10px;
   /* 태블릿 뷰 */

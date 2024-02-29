@@ -14,7 +14,7 @@ export const ItemContainer = styled.div<{ src: string; isInView: boolean; order:
 
   padding: min(35.98px, 1.87vw) 0 min(80.5px, 4.19vw) 0;
   border-radius: 10px;
-  background: center bottom 0 no-repeat #17181c url(${({ src }) => src});
+  background: center bottom 0 no-repeat #181818 url(${({ src }) => src});
   background-size: min(200px + 9.37vw) min(170px + 7.96vw);
 
   opacity: 0;
@@ -96,7 +96,7 @@ export const ValueNumber = styled.div`
   width: 25.154px;
   height: 25.154px;
   border-radius: 6px;
-  background: #363a45;
+  background: #364536;
 
   color: ${colors.white};
   font-family: SUIT;

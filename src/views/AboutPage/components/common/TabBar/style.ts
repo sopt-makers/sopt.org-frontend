@@ -45,7 +45,7 @@ export const Tab = styled.li<{ selected: boolean }>`
   ${({ selected }) =>
     selected &&
     css`
-      background-color: rgba(33, 33, 44);
+      background-color: #222220;
       color: ${colors.white};
       font-weight: 700;
     `};
