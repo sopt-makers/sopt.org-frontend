@@ -70,4 +70,8 @@ export const Wrapper = styled.div<{imgRecruitBg: StaticImageData}>`
   background-repeat: no-repeat;  
   background-size: cover; 
   background-position: center;
+
+  @media (max-width: 767px) {
+    margin-top: 48px;
+  }
 `;
