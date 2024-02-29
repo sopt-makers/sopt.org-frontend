@@ -5,6 +5,7 @@ import ChapterInfo from './components/ChapterInfo';
 import NotificationSection from './components/NotificationSection';
 import RecruiteeInfo from './components/RecruteeInfo';
 import Schedule from './components/Schedule';
+import ApplySection from './components/ApplySection';
 
 const FaqInfo = lazy(() => import('./components/FAQ'));
 const Contact = lazy(() => import('./components/Contact'));
@@ -15,7 +16,8 @@ function Recruit() {
   return (
     <PageLayout showScrollTopButton>
       <Root>
-        <NotificationSection />
+        {/* <NotificationSection /> */}
+        <ApplySection/>
         <ContentWrapper>
           <RecruiteeInfo />
           <ChapterInfo />
