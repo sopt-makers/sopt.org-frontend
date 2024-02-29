@@ -1,7 +1,8 @@
+import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import Link from 'next/link';
 
-export const Container = styled(Link)`
+export const Container = styled(Link)<{$isYellow:boolean}>`
   display: flex;
   justify-content: center;
   position: fixed;
@@ -9,9 +10,21 @@ export const Container = styled(Link)`
   padding : 17px 20px;
   margin-top: 80px;
   width: 100%;
-
-  background-color: #222220;
   z-index: 100;
+
+  ${({ $isYellow })=>$isYellow ? css`
+    background-color: #BDEC00;
+    color: #101111;
+    & h1 {
+      color: #101111;
+    }
+    & path,circle {
+      stroke: #101111;
+    }
+  ` : css`
+    background-color: #222220;
+    color: #FFF;
+  `};
 
   /* 태블릿 뷰 */
   @media (max-width: 768px) and (min-width: 429px) {
@@ -30,8 +43,6 @@ export const Wrapper = styled.section`
 
   max-width: 1200px;
   width: 100%;
-
-  color: white;
 
   /* 모바일 뷰 */
   @media (max-width: 428px) {
