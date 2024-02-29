@@ -66,7 +66,11 @@ export const Description = styled.div`
 export const Timer = styled.div`
   display: flex;
   align-items: center;
+
+  /* 아이콘 위치 이동 방지*/
+  width: 128px;
   gap: 10px;
+  justify-content: flex-start;
 `;
 
 export const View = styled.div`
