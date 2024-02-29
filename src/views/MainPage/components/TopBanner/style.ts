@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
+import Link from 'next/link';
 
-export const Container = styled.section`
+export const Container = styled(Link)`
   display: flex;
   justify-content: center;
   position: fixed;
@@ -9,7 +10,7 @@ export const Container = styled.section`
   margin-top: 80px;
   width: 100%;
 
-  background-color: black;
+  background-color: #222220;
   z-index: 100;
 
   /* 태블릿 뷰 */
@@ -22,7 +23,7 @@ export const Container = styled.section`
     padding : 13px 20px;
   }
 `;
-export const Wrapper = styled.div`
+export const Wrapper = styled.section`
   display: flex;
   justify-content: space-between;
   align-items: center;

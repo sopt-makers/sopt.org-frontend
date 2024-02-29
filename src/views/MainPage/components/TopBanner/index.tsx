@@ -7,9 +7,9 @@ export default function TopBanner() {
   const TARGET_DATE = new Date('2024-03-08:18:00');
 
   return (
-    <S.Container>
+    <S.Container href="/recruit">
     <S.Wrapper>
-      <S.Title>SOPT의 34번째 열정이 되어주세요!  &gt;
+      <S.Title>SOPT의 34번째 열정이 되어주세요! &nbsp; &gt;
       </S.Title>
       <S.Description>
         <S.Timer>
