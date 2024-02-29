@@ -33,7 +33,7 @@ const Styled = {
     transition: 0.2s;
     display: flex;
     flex-direction: column;
-    background: ${({ isOpened }) => (isOpened ? '#21212C' : '#1a1a20')};
+    background: ${({ isOpened }) => (isOpened ? '#222220' : '#181818')};
     border-radius: 30px;
     padding: 40px 50px;
     cursor: pointer;
@@ -65,7 +65,7 @@ const Styled = {
     color: #ffffff;
     &::before {
       content: 'Q. ';
-      color: #1deda2;
+      color: #BDEC00;
     }
 
     /* 모바일 뷰 */
@@ -101,7 +101,7 @@ const Styled = {
 
     &::before {
       content: 'A. ';
-      color: #1deda2;
+      color: #BDEC00;
     }
     /* 태블릿 뷰 */
     @media (max-width: 1919.9px) and (min-width: 766px) {
