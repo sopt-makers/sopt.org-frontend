@@ -10,7 +10,7 @@ export const Container = styled(Link)<{$isYellow:boolean}>`
   padding : 13px 20px;
   margin-top: 80px;
   width: 100%;
-  z-index: 100;
+  z-index: 95;
 
   ${({ $isYellow })=>$isYellow ? css`
     background-color: #BDEC00;
