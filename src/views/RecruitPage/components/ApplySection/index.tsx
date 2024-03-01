@@ -15,7 +15,7 @@ const ApplySection = () => {
       <div style={{ height: '62px' }} />
       <S.Title>SOPT의 34번째 열정을 기다리고 있어요!</S.Title>
       <div style={{ height: '16px' }} />
-      <S.ApplyButton href="https://sopt-recruiting.web.app/recruiting/apply/yb" target="_blank">
+      <S.ApplyButton href="https://sopt-recruiting.web.app/recruiting/application/yb" target="_blank">
         지원하기
       </S.ApplyButton>
     </S.Wrapper>

@@ -11,7 +11,7 @@ const Schedule = () => {
       <GridWrapper>
         <OddText> YB 서류 접수</OddText>
         <EvenText>
-          3월 3일 <Highlight>11시</Highlight> - 3월 8일 <Highlight>18시</Highlight>
+          3월 3일 <Highlight>10시</Highlight> - 3월 8일 <Highlight>18시</Highlight>
         </EvenText>
         <OddText>YB 면접</OddText>
         <EvenText>3월 16일 - 3월 17일</EvenText>
