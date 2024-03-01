@@ -6,7 +6,7 @@ import NotificationSection from './components/NotificationSection';
 import RecruiteeInfo from './components/RecruteeInfo';
 import Schedule from './components/Schedule';
 import ApplySection from './components/ApplySection';
-import useCheckTime from '../MainPage/hooks/useCheckTime';
+import useCheckTime from '../../hooks/useCheckTime';
 
 const FaqInfo = lazy(() => import('./components/FAQ'));
 const Contact = lazy(() => import('./components/Contact'));
@@ -14,8 +14,7 @@ const ActivityReview = lazy(() => import('./components/ActivityReview'));
 const BottomLogo = lazy(() => import('./components/BottomLogo'));
 
 function Recruit() {
-  const START_DATE = new Date('2024-03-02:01:00');
-  const isStarted = useCheckTime(START_DATE); 
+  const isStarted = useCheckTime(); 
 
   return (
     <PageLayout showScrollTopButton>
