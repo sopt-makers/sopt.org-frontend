@@ -2,7 +2,7 @@ import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import Link from 'next/link';
 
-export const Container = styled(Link)<{$isYellow:boolean}>`
+export const Container = styled(Link)<{isYellow:boolean}>`
   display: flex;
   justify-content: center;
   position: fixed;
@@ -12,7 +12,7 @@ export const Container = styled(Link)<{$isYellow:boolean}>`
   width: 100%;
   z-index: 95;
 
-  ${({ $isYellow })=>$isYellow ? css`
+  ${({ isYellow })=>isYellow ? css`
     background-color: #BDEC00;
     color: #101111;
     & h1,p {

@@ -3,11 +3,13 @@ import { ReactComponent as IcTimer } from '@src/assets/icons/ic_timer.svg';
 import Timer from '@src/components/common/Timer';
 import { useEffect, useState } from 'react';
 import { useIsMobile } from '@src/hooks/useDevice';
+import useFetch from '../../hooks/useFetch';
 
 export default function TopBanner() {
   const TARGET_DATE = new Date('2024-03-08:18:00');
   const isMobile = useIsMobile();
   const CHANGE_POSITION = isMobile ? 495 : 605;
+  const data = useFetch();  // 방문자 조회 
 
   const [isYellow, setIsYellow] = useState<boolean>(false);
 
@@ -25,7 +27,7 @@ export default function TopBanner() {
   });
 
   return (
-    <S.Container href="/recruit" $isYellow={isYellow}>
+    <S.Container href="/recruit" isYellow={isYellow}>
     <S.Wrapper>
       <div>
         <S.Title>SOPT의 34번째 열정이 되어주세요!</S.Title>
@@ -35,9 +37,9 @@ export default function TopBanner() {
             {isMobile ? <IcTimer width={14} height={14} viewBox='0 0 24 24'/> : <IcTimer/>}
             <Timer targetDate={TARGET_DATE} endMessage='모집 마감'/>
         </S.Timer>
-        <S.View>
-            <span>오늘 0000명이 방문했어요 &nbsp; &gt;</span>
-        </S.View>
+        {data && <S.View>
+            <span>오늘 {data.Count}명이 방문했어요 &nbsp; &gt;</span>
+        </S.View>}
       </S.Description>
     </S.Wrapper>
     </S.Container>

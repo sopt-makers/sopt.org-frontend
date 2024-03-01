@@ -5,8 +5,10 @@ import Banner from './components/Banner';
 import Introduce from './components/Introduce';
 import ScrollInteractiveLogo from './components/ScrollInteractiveLogo';
 import TopBanner from './components/TopBanner';
+import usePost from './hooks/usePost';
 
 function MainPage() {
+  usePost();  // 방문자 증가
   return (
     <PageLayout>
       <TopBanner/>
