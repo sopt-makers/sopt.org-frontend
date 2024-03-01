@@ -3,12 +3,8 @@ import * as S from './style';
 import { ReactComponent as ValueShare } from '@src/assets/icons/value_share.svg';
 import { ReactComponent as ValueChallenge } from '@src/assets/icons/value_challenge.svg';
 import { ReactComponent as ValueLink } from '@src/assets/icons/value_link.svg';
-import { useIsMobile, useIsTablet } from '@src/hooks/useDevice';
 
 const ApplySection = () => {
-  const isMobile = useIsMobile();
-  const isTablet = useIsTablet();
-
   return (
     <S.Wrapper imgRecruitBg={imgRecruitBg}>
       <S.Values>
@@ -16,7 +12,7 @@ const ApplySection = () => {
         <ValueChallenge/>
         <ValueLink/>
       </S.Values>
-      <S.Title><span>SOPT의 34번째 열정을</span> <span>기다리고 있어요!</span></S.Title>
+      <S.Title><span>SOPT의 34번째 열정을</span><span>기다리고 있어요!</span></S.Title>
       <S.ApplyButton href="https://sopt-recruiting.web.app/recruiting/application/yb" target="_blank">
         지원하기
       </S.ApplyButton>
