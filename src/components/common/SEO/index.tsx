@@ -17,7 +17,7 @@ function SEO(props: HeadProps) {
       <meta property="twitter:site" content="https://sopt.org/" />
       <meta
         name="twitter:image"
-        content="https://s3.ap-northeast-2.amazonaws.com/sopt.org/admin/origin/img_sopt_homepage.png"
+        content="https://s3.ap-northeast-2.amazonaws.com/sopt.org/admin/origin/34th_OG_IMG.png"
       />
       <meta property="twitter:image:alt" content="SOPT 공식 홈페이지 이미지" />
 
@@ -32,7 +32,7 @@ function SEO(props: HeadProps) {
         property="og:image"
         content={
           projectImageURL ||
-          'https://s3.ap-northeast-2.amazonaws.com/sopt.org/admin/origin/img_sopt_homepage.png'
+          'https://s3.ap-northeast-2.amazonaws.com/sopt.org/admin/origin/34th_OG_IMG.png'
         }
       />
       <meta property="og:image:alt" content="SOPT 공식 홈페이지 이미지" />
