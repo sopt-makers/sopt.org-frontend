@@ -14,7 +14,8 @@ export const RecruitButtonWrapper = styled(Link)`
       rgba(112, 149, 185, 0) 0%,
       rgba(184, 200, 216, 0) 100%
     ),
-    linear-gradient(92deg, #e5eaef -4.46%, #fff 18.02%, #b7c8d8 78.53%);
+    linear-gradient(274deg, #BDEC00 10.57%, #F0FFB6 100%);
+
   background-size: 200% 200%;
   animation: ${BackgroundMove} 3s linear 0s infinite alternate;
   color: ${colors.gray800};
@@ -26,7 +27,7 @@ export const RecruitButtonWrapper = styled(Link)`
   line-height: 130%; /* 36.4px */
 
   /* 모바일 뷰 */
-  @media (max-width: 375px) {
+  @media (max-width: 428px) {
     margin-top: 28px;
     font-size: 18px;
     line-height: 28px; /* 155.556% */
