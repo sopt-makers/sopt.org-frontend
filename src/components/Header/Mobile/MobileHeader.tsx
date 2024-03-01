@@ -5,10 +5,10 @@ import { useRouter } from 'next/router';
 import { useState } from 'react';
 import menuBar from '@src/assets/icons/menuBar.svg';
 import xButton from '@src/assets/icons/xButton.png';
-import { LOGO_IMAGE_URL } from '@src/assets/mainLogo/base64_logo';
 import { Condition } from '@src/components/common/Condition';
 import { MenuState } from '../types';
 import HeaderMenu from './HeaderMenu';
+import { imgLogoSopt } from '@src/assets/mainLogo';
 
 function MobileHeader() {
   const router = useRouter();
@@ -48,7 +48,7 @@ export const StyledHeader = styled.div<{ isMenuShown: boolean }>`
 export const Logo = styled.button`
   width: 63px;
   height: 21px;
-  background: url(${LOGO_IMAGE_URL}) center no-repeat;
+  background: url(${imgLogoSopt.src}) center no-repeat;
   background-size: 100% 100%;
   cursor: pointer;
 `;
