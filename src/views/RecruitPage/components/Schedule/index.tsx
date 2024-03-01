@@ -11,14 +11,14 @@ const Schedule = () => {
       <GridWrapper>
         <OddText> YB 서류 접수</OddText>
         <EvenText>
-          9월 4일 <Highlight>11시</Highlight> - 9월 9일 <Highlight>18시</Highlight>
+          3월 3일 <Highlight>10시</Highlight> - 3월 8일 <Highlight>18시</Highlight>
         </EvenText>
         <OddText>YB 면접</OddText>
-        <EvenText>9월 16일 - 9월 17일</EvenText>
+        <EvenText>3월 16일 - 3월 17일</EvenText>
         <OddText>YB 최종 결과 발표</OddText>
-        <EvenText>9월 20일</EvenText>
+        <EvenText>3월 20일</EvenText>
         <OddText>오리엔테이션</OddText>
-        <EvenText>9월 23일</EvenText>
+        <EvenText>3월 23일</EvenText>
       </GridWrapper>
     </Wrapper>
   );
@@ -45,7 +45,7 @@ const GridWrapper = styled.div`
   row-gap: 25px;
   column-gap: 220px;
   border-radius: 30px;
-  background-color: #1a1a20;
+  background-color: #181818;
   padding: 85px 88px;
 
   /* 태블릿 뷰 */
@@ -90,7 +90,7 @@ const OddText = styled.div`
 `;
 
 const Highlight = styled.span`
-  color: #1deda2;
+  color: #BDEC00;
   font-size: 24px;
   font-weight: 400;
   letter-spacing: -0.48px;

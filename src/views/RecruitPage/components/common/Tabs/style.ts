@@ -13,7 +13,7 @@ export const Tab = styled.div<{ selected: boolean }>`
   padding: 20px 0;
   border-radius: 10px;
   color: ${({ selected }) => (selected ? '#FFFFFF' : '#cccccc')};
-  background-color: ${({ selected }) => (selected ? '#FFFFFF1A' : 'inherit')};
+  background-color: ${({ selected }) => (selected ? '#222220' : 'inherit')};
   font-size: 18px;
 
   min-width: 160px;

@@ -14,7 +14,7 @@ const ChapterInfo = () => {
     <Wrapper id="chapter-info">
       <SectionTitleWrapper>
         <SectionTitleTranslate>Positions</SectionTitleTranslate>
-        <SectionTitle>{'SOPT는 33기는 총 6개의 파트로\n이루어져 있어요.'}</SectionTitle>
+        <SectionTitle>{'SOPT 34기는 총 6개의 파트로 이루어져 있어요.'}</SectionTitle>
       </SectionTitleWrapper>
       <TabBar
         type="without-all"
@@ -23,7 +23,7 @@ const ChapterInfo = () => {
         amplitudeTrackingName={'click_recruit_description_part'}
       />
       <Flex dir="column" gap="15px">
-        <BlueChip>{parsePartToKorean(selectedTab)} 파트가 배우는 것</BlueChip>
+        <BlueChip>{parsePartToKorean(selectedTab)} 파트는 이런 걸 배워요</BlueChip>
         <InfoWrapper>{infoMap[selectedTab].info}</InfoWrapper>
       </Flex>
       <Flex dir="column" gap="15px">
@@ -39,45 +39,33 @@ const ChapterInfo = () => {
 };
 
 const BaseChip = styled.div`
-  border-radius: 30px;
-  align-self: flex-start;
-  border-width: 2px;
-  border-style: solid;
-  padding: 13px 28px;
-  line-height: 22px;
+  line-height: 42px;
   font-size: 22px;
 
   /* 태블릿 뷰 */
   @media (max-width: 1299px) and (min-width: 766px) {
-    padding: 8px 20px;
     font-size: 18px;
   }
 
   @media (max-width: 765.9px) {
-    padding: 6px 12px;
     line-height: 18px;
     font-size: 12px;
-    border-width: 1px;
   }
 `;
 
 const BlueChip = styled(BaseChip)`
-  border-color: #51c0ff;
-  color: #51c0ff;
-  background: #1b2530;
+  color: #fff;
   &:before {
     content: '✏️';
-    padding-right: 10px;
+    padding: 0px 10px;
   }
 `;
 
 const GreenChip = styled(BaseChip)`
-  border-color: #1deda2;
-  color: #1deda2;
-  background: #172928;
+  color: #BDEC00;
   &:before {
     content: '👍';
-    padding-right: 10px;
+    padding: 0px 10px;
   }
 `;
 
@@ -123,7 +111,7 @@ const BaseText = styled.div`
 
 const InfoWrapper = styled(BaseText)`
   border-radius: 30px;
-  background: #1b2530;
+  background: #222220;
   padding: 48px 80px;
 
   /* 태블릿 뷰 */
@@ -140,14 +128,14 @@ const InfoWrapper = styled(BaseText)`
 
 const FitWrapper = styled(BaseText)`
   border-radius: 30px;
-  background: #172928;
+  background: #21270F;
   padding: 60px 80px;
   display: flex;
   flex-direction: column;
   line-height: 40px;
   gap: 12px;
   & div::before {
-    content: '✅';
+    content: '-';
     padding-right: 10px;
   }
   /* 태블릿 뷰 */
