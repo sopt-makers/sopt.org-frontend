@@ -43,7 +43,7 @@ export const ContentWrapper = styled.div`
     padding: 0 24px;
   }
 `;
-export const MoreLinkWrapper = styled.a`
+export const MoreLinkWrapper = styled.p`
   color: #fff;
   font-size: 25px;
   font-weight: 500;
