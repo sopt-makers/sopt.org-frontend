@@ -99,7 +99,7 @@ export const Content = styled.div`
 
 export const CardWrapper = styled.div`
   cursor: pointer;
-  background-color: #1a1a20;
+  background-color: #181818;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
