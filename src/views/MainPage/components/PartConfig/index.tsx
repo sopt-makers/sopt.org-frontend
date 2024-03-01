@@ -85,7 +85,7 @@ export default function PartConfig() {
             </S.RightArrow>
           </S.CarouselWrapper>
         </S.PartConfig>
-        <S.RequiredAbility href="/recruit#chapter-info">필요 역량이 궁금하다면?</S.RequiredAbility>
+        <S.RequiredAbility href="/recruit#chapter-info">각 파트에 대해 더 궁금한 점이 있다면?</S.RequiredAbility>
       </S.Wrapper>
     </div>
   );
