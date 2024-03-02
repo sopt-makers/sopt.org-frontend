@@ -5,7 +5,7 @@ import { css } from '@emotion/react';
 const wrapperStyle = css`
   width: 380px;
   height: 280px;
-  background-color: #141518;
+  background-color: #181818;
   border-radius: 10px;
 
   @media (max-width: 996px) and (min-width: 766px) {

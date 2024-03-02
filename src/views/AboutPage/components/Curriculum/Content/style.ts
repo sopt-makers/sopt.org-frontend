@@ -20,7 +20,6 @@ export const ImageWrapper = styled.div`
   position: relative;
   max-width: 1200px;
   height: calc(300px + 25.72vw);
-  background-color: #0A0A0A;
   border-radius: 10px;
 
   /* 태블릿 뷰 */

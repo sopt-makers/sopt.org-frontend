@@ -89,7 +89,7 @@ export const Description = styled.p`
   font-size: 19px;
   font-style: normal;
   font-weight: 500;
-  line-height: 140%; /* 26.6px */
+  line-height: 151%; /* 26.6px */
   letter-spacing: -0.38px;
 
   white-space: pre-line;

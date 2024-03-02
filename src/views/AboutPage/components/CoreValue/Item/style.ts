@@ -12,10 +12,10 @@ export const ItemContainer = styled.div<{ src: string; isInView: boolean; order:
   max-height: 323px;
   height: calc(196px + 6.6vw);
 
-  padding: min(35.98px, 1.87vw) 0 min(80.5px, 4.19vw) 0;
+  padding: min(35.98px, 5vw) 0 min(80.5px, 4.19vw) 0;
   border-radius: 10px;
-  background: center bottom 0 no-repeat #17181c url(${({ src }) => src});
-  background-size: min(200px + 9.37vw) min(170px + 7.96vw);
+  background: center bottom 0px no-repeat #181818 url(${({ src }) => src});
+  background-size: min(170px + 7vw) min(170px + 7vw);
 
   opacity: 0;
 
@@ -32,13 +32,15 @@ export const ItemContainer = styled.div<{ src: string; isInView: boolean; order:
   @media (max-width: 768px) {
     width: 380px;
     height: 323px;
-    background-size: 100%;
+    background-size: 90%;
+    background-position: center bottom -20px;
   }
 
   /* 모바일 뷰 */
   @media (max-width: 428px) {
     width: 268.769px;
     height: 228.454px;
+    background-position: center bottom -20px;
   }
 `;
 
@@ -96,7 +98,7 @@ export const ValueNumber = styled.div`
   width: 25.154px;
   height: 25.154px;
   border-radius: 6px;
-  background: #363a45;
+  background: #364536;
 
   color: ${colors.white};
   font-family: SUIT;

@@ -2,11 +2,11 @@ import styled from '@emotion/styled';
 import { colors } from '@sopt-makers/colors';
 import Link from 'next/link';
 import { css } from '@emotion/react';
-import { LOGO_IMAGE_URL } from '@src/assets/mainLogo/base64_logo';
 import useHeader from '@src/hooks/useHeader';
 import { GrowDown } from '@src/lib/styles/animation';
 import { menuTapList } from '../menuTapList';
 import { MenuTapType } from '../types';
+import { imgLogoSopt } from '@src/assets/mainLogo';
 
 function DesktopHeader() {
   const { handleClickLogo, handleIsSelected } = useHeader();
@@ -68,12 +68,11 @@ export const Logo = styled.button`
   width: 87px;
   height: 30px;
 
-  background: url(${LOGO_IMAGE_URL}) center no-repeat;
+  background: url(${imgLogoSopt.src}) center no-repeat;
   background-size: 100% 100%;
   cursor: pointer;
 
-  /* 모바일 뷰 */
-  @media (max-width: 1279px) {
+  @media (max-width: 940px) {
     width: 63px;
     height: 21px;
   }

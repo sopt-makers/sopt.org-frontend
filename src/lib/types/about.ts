@@ -30,6 +30,7 @@ export type PositionType =
   | 'iOS 파트장'
   | '웹 파트장'
   | '서버 파트장'
+  | '메이커스 팀장'
   | '';
 
 export interface AboutInfoType {

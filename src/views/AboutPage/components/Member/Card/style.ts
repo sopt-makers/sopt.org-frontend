@@ -8,22 +8,18 @@ export const Card = styled.article`
   flex-direction: column;
   align-items: center;
 
-  height: 484px;
+  padding: 40px 0 30px 0;
 
-  padding: 30px 0;
-
-  background: #000000;
+  background: #181818;
   border-radius: 10px;
 
   /* 태블릿 뷰 */
   @media (max-width: 768px) and (min-width: 428px) {
-    height: 377px;
-    padding: 26px;
+    padding: 30px 0 22px 0;
   }
   /* 모바일 뷰 */
   @media (max-width: 427.9px) {
-    height: 214px;
-    padding: 12px 0;
+    padding: 17px 0 14px 0;
   }
 `;
 
@@ -57,16 +53,16 @@ export const NameWrapper = styled.div`
   gap: 4px;
   align-items: center;
   justify-content: center;
-  margin-top: 40px;
+  margin: 40px 0 16px 0;
 
   /* 태블릿 뷰 */
   @media (max-width: 768px) and (min-width: 428px) {
-    margin-top: 30px;
+    margin: 24px 0 10px 0;
     gap: 3px;
   }
   /* 모바일 뷰 */
   @media (max-width: 427.9px) {
-    margin-top: 18px;
+    margin: 13px 0 7px 0;
     gap: 2px;
   }
 `;
@@ -119,17 +115,18 @@ export const Name = styled.strong`
 export const Desc = styled.span`
   text-align: center;
 
-  margin-top: 15px;
+  margin: 16px 0 30px 0;
   font-size: 15px;
   font-style: normal;
   line-height: 26px; /* 173.333% */
   letter-spacing: -0.3px;
   color: ${colors.white};
-  background-color: #21212c;
+  background-color: #222220;
   padding: 10px 16px;
   border-radius: 10px;
   /* 태블릿 뷰 */
   @media (max-width: 768px) and (min-width: 428px) {
+    margin: 12px 0 28px 0;
     font-size: 10.952px;
     font-style: normal;
     font-weight: 400;
@@ -140,6 +137,7 @@ export const Desc = styled.span`
   }
   /* 모바일 뷰 */
   @media (max-width: 427.9px) {
+    margin: 8px 0 18px 0;
     font-size: 6.648px;
     font-style: normal;
     font-weight: 400;
@@ -182,7 +180,6 @@ export const CurrentProject = styled.span`
   font-weight: 400;
   line-height: 26px; /* 173.333% */
   letter-spacing: -0.3px;
-  margin-top: 16px;
 
   /* 태블릿 뷰 */
   @media (max-width: 768px) and (min-width: 428px) {
@@ -193,7 +190,6 @@ export const CurrentProject = styled.span`
     font-weight: 400;
     line-height: 18.984px; /* 173.333% */
     letter-spacing: -0.219px;
-    margin-top: 12px;
   }
   /* 모바일 뷰 */
   @media (max-width: 427.9px) {
@@ -203,14 +199,13 @@ export const CurrentProject = styled.span`
     font-weight: 400;
     line-height: 11.524px; /* 173.333% */
     letter-spacing: -0.133px;
-    margin-top: 8px;
   }
 `;
 
 export const LinkWrapper = styled.div`
   display: flex;
   justify-content: center;
-  align-items: flex-end;
+  align-items: center;
   gap: 16px;
   flex: 1;
   height: 100%;
