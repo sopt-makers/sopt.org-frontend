@@ -108,14 +108,14 @@ export const CardWrapper = styled.div`
   height: 300px;
   padding: 38px 34px;
   @media (max-width: 765.9px) {
-    min-width: 194px;
-    height: 139px;
-    padding: 20px;
+    min-width: 232px;
+    height: 218px;
+    padding: 40px 26px;
   }
   @media (max-width: 1299px) and (min-width: 766px) {
-    min-width: 320px;
-    height: 300px;
-    padding: 38px 34px;
+    min-width: 310px;
+    height: 250px;
+    padding: 40px 28px;
   }
 `;
 
@@ -131,12 +131,13 @@ export const CardTitle = styled.div`
   font-size: 25px;
   line-height: 40px;
   @media (max-width: 765.9px) {
-    font-size: 12px;
-    line-height: 20px;
+    font-size: 16px;
+    line-height: 25px;
+    letter-spacing: -0.32px;
   }
   @media (max-width: 1299px) and (min-width: 766px) {
-    font-size: 25px;
-    line-height: 40px;
+    font-size: 18px;
+    line-height: 29px;
   }
 `;
 
@@ -147,17 +148,18 @@ export const DescWrapper = styled.div`
 `;
 
 export const Desc = styled.div`
-  color: #c8c8c8;
+  color: #848484;
   font-weight: 500;
-  font-size: 25px;
-  line-height: 40px;
+  font-size: 22px;
+  line-height: 32px;
   white-space: pre-wrap;
   @media (max-width: 765.9px) {
-    font-size: 12px;
+    font-size: 14px;
+    line-height: 22px;
   }
   @media (max-width: 1299px) and (min-width: 766px) {
-    font-size: 25px;
-    line-height: 40px;
+    font-size: 16px;
+    line-height: 23px;
     white-space: pre-wrap;
   }
 `;
