@@ -54,7 +54,7 @@ export const Wrapper = styled.section`
   width: 100%;
 
   /* 모바일 뷰 */
-  @media (max-width: 428px) {
+  @media (max-width: 570px) {
     flex-direction: column;
     justify-content: start;
     align-items: baseline;
@@ -82,9 +82,13 @@ export const Description = styled.div`
   font-weight: 500;
 
   /* 모바일 뷰 */
-  @media (max-width: 428px) {
+  @media (max-width: 570px) {
     justify-content: space-between;
     width: 100%;
+  }
+
+  /* 모바일 뷰 */
+  @media (max-width: 428px) {
     font-size: 11px;
   }
 `;
