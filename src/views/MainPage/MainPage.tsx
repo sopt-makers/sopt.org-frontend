@@ -4,10 +4,17 @@ import IntroSection from '@src/views/MainPage/components/IntroSection';
 import Banner from './components/Banner';
 import Introduce from './components/Introduce';
 import ScrollInteractiveLogo from './components/ScrollInteractiveLogo';
+import TopBanner from './components/TopBanner';
+import usePost from './hooks/usePost';
+import useCheckTime from '../../hooks/useCheckTime';
 
 function MainPage() {
+  const isStarted = useCheckTime(); // 모집 시작 여부
+  usePost();  // 방문자 증가
+  
   return (
     <PageLayout>
+      {isStarted && <TopBanner/>}
       <Banner />
       <Introduce />
       <IntroSection />

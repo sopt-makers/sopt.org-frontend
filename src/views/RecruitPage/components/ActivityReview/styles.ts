@@ -43,7 +43,7 @@ export const ContentWrapper = styled.div`
     padding: 0 24px;
   }
 `;
-export const MoreLinkWrapper = styled.a`
+export const MoreLinkWrapper = styled.p`
   color: #fff;
   font-size: 25px;
   font-weight: 500;
@@ -99,7 +99,7 @@ export const Content = styled.div`
 
 export const CardWrapper = styled.div`
   cursor: pointer;
-  background-color: #1a1a20;
+  background-color: #181818;
   border-radius: 10px;
   display: flex;
   flex-direction: column;

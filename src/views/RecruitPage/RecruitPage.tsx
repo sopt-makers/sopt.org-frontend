@@ -5,6 +5,8 @@ import ChapterInfo from './components/ChapterInfo';
 import NotificationSection from './components/NotificationSection';
 import RecruiteeInfo from './components/RecruteeInfo';
 import Schedule from './components/Schedule';
+import ApplySection from './components/ApplySection';
+import useCheckTime from '../../hooks/useCheckTime';
 
 const FaqInfo = lazy(() => import('./components/FAQ'));
 const Contact = lazy(() => import('./components/Contact'));
@@ -12,10 +14,12 @@ const ActivityReview = lazy(() => import('./components/ActivityReview'));
 const BottomLogo = lazy(() => import('./components/BottomLogo'));
 
 function Recruit() {
+  const isStarted = useCheckTime(); 
+
   return (
     <PageLayout showScrollTopButton>
       <Root>
-        <NotificationSection />
+        {isStarted ? <ApplySection/> : <NotificationSection />}
         <ContentWrapper>
           <RecruiteeInfo />
           <ChapterInfo />
@@ -36,6 +40,8 @@ const Root = styled.div`
   align-items: center;
   min-height: 100vh;
   margin: 0 auto;
+
+  background-color: #101111;
 `;
 
 const ContentWrapper = styled.div`
