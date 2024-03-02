@@ -93,7 +93,6 @@ export const Timer = styled.div`
   align-items: center;
 
   /* 아이콘 위치 이동 방지*/
-  width: 128px;
   gap: 10px;
   justify-content: flex-start;
 
