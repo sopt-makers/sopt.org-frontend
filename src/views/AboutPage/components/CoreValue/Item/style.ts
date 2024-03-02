@@ -7,15 +7,13 @@ export const ItemContainer = styled.div<{ src: string; isInView: boolean; order:
   color: white;
   position: relative;
 
-  max-width: 380px;
-  width: calc(230px + 7.8vw);
-  max-height: 323px;
-  height: calc(196px + 6.6vw);
+  width: 380px;
+  height: 323px;
 
   padding: min(35.98px, 5vw) 0 min(80.5px, 4.19vw) 0;
   border-radius: 10px;
   background: center bottom 0px no-repeat #181818 url(${({ src }) => src});
-  background-size: min(170px + 7vw) min(170px + 7vw);
+  background-size: calc(170px + 7vw);
 
   opacity: 0;
 
@@ -30,16 +28,14 @@ export const ItemContainer = styled.div<{ src: string; isInView: boolean; order:
 
   /* 태블릿 뷰 */
   @media (max-width: 768px) {
-    width: 380px;
-    height: 323px;
     background-size: 90%;
     background-position: center bottom -20px;
   }
 
   /* 모바일 뷰 */
   @media (max-width: 428px) {
-    width: 268.769px;
-    height: 228.454px;
+    width: 269px;
+    height: 228px;
     background-position: center bottom -20px;
   }
 `;
@@ -142,7 +138,7 @@ export const ValueDescription = styled.div<{ isHovered: boolean }>`
   white-space: pre-line;
   word-break: keep-all;
 
-  width: 237.081px;
+  width: 237px;
   height: 117px;
 
   display: flex;
@@ -153,7 +149,7 @@ export const ValueDescription = styled.div<{ isHovered: boolean }>`
   color: #fff;
   text-align: center;
   font-family: SUIT;
-  font-size: min(23px, calc(17px + 0.26vw));
+  font-size: 23px;
 
   font-style: normal;
   font-weight: 500;
@@ -163,11 +159,6 @@ export const ValueDescription = styled.div<{ isHovered: boolean }>`
   opacity: 0;
   ${({ isHovered }) => isHovered && 'opacity: 1'};
 
-  /* 태블릿 뷰 */
-  @media (max-width: 768px) {
-    font-size: 23px;
-    line-height: 39px;
-  }
 
   /* 모바일 뷰 */
   @media (max-width: 428px) {
