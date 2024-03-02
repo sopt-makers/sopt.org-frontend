@@ -9,14 +9,7 @@ export const RecruitButtonWrapper = styled(Link)`
   justify-content: center;
   align-items: center;
   border-radius: 99px;
-  background: radial-gradient(
-      9.16% 35.18% at 50% 50%,
-      rgba(112, 149, 185, 0) 0%,
-      rgba(184, 200, 216, 0) 100%
-    ),
-    linear-gradient(274deg, #BDEC00 10.57%, #F0FFB6 100%);
-
-  background-size: 200% 200%;
+  background: linear-gradient(274deg, #BDEC00 10%, #F0FFB6 100%);
   animation: ${BackgroundMove} 3s linear 0s infinite alternate;
   color: ${colors.gray800};
   text-align: center;
@@ -33,6 +26,10 @@ export const RecruitButtonWrapper = styled(Link)`
     line-height: 28px; /* 155.556% */
     letter-spacing: -0.36px;
   }
+
+  &:hover {
+    background: #F0FFAA;
+  }
 `;
 
 export const MouseTrackerWrapper = styled.div<{ x: number; y: number }>`
@@ -48,7 +45,7 @@ export const MouseTrackerWrapper = styled.div<{ x: number; y: number }>`
   justify-content: center;
 
   /* 모바일 뷰 */
-  @media (max-width: 375px) {
+  @media (max-width: 428px) {
     padding: 15px 18px;
     height: 44px;
   }
@@ -61,18 +58,13 @@ export const MouseTrackerWrapper = styled.div<{ x: number; y: number }>`
     right: 0;
     bottom: 0;
     background-image: radial-gradient(
-        circle 36px at ${(props) => props.x}px ${(props) => props.y}px,
-        #3e5e7d90,
+        circle 110px at ${(props) => props.x}px ${(props) => props.y}px,
+        #BDEC00,
         transparent
       ),
       radial-gradient(
-        circle 80px at ${(props) => props.x}px ${(props) => props.y}px,
-        #3e5e7d50,
-        transparent
-      ),
-      radial-gradient(
-        circle 108px at ${(props) => props.x}px ${(props) => props.y}px,
-        #3e5e7d50,
+        circle 180px at ${(props) => props.x}px ${(props) => props.y}px,
+        #FDFFAA,
         transparent
       );
     opacity: 0;
