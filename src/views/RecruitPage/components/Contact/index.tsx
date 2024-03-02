@@ -107,17 +107,19 @@ const GridWrapper = styled.div`
   grid-template-columns: auto auto;
   justify-content: space-between;
   row-gap: 80px;
+  column-gap: 160px;
   margin-top: 80px;
   /* 태블릿 뷰 */
   @media (max-width: 1299px) and (min-width: 766px) {
-    row-gap: 50px;
-    margin-top: 40px;
+    grid-template-columns: 1fr;
+    row-gap: 60px;
+    margin-top: 48px;
   }
   /* 모바일 뷰 */
   @media (max-width: 765.9px) {
     grid-template-columns: 1fr;
-    row-gap: 20px;
-    margin-top: 20px;
+    row-gap: 40px;
+    margin-top: 30px;
   }
 `;
 
