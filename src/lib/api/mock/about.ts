@@ -61,7 +61,7 @@ const getMemberInfo = async (): Promise<GetMembersInfoResponse> => ({
       description: '솝트의 지금, 여러분과 함께',
       imageSrc: '/images/members/1.png',
       gmail: 'president@sopt.org',
-      linkedin: 'https://www.linkedin.com/in/seungwoo-cho-7a5676236/',
+      linkedin: 'seungwoo-cho-7a5676236',
     },
     {
       id: 2,
@@ -72,7 +72,7 @@ const getMemberInfo = async (): Promise<GetMembersInfoResponse> => ({
       imageSrc: '/images/members/2.png',
       gmail: 'manager@sopt.org',
       github: 'seeunplayer',
-      linkedin: 'https://www.linkedin.com/in/tina-park-755ab8230/?locale=ko_KR',
+      linkedin: 'tina-park-755ab8230',
     },
     {
       id: 3,
@@ -83,7 +83,7 @@ const getMemberInfo = async (): Promise<GetMembersInfoResponse> => ({
       imageSrc: '/images/members/3.png',
       gmail: 'makers@sopt.org',
       github: 'yummygyudon',
-      linkedin:'https://www.linkedin.com/in/yummygyudon/',
+      linkedin:'yummygyudon',
     },
     {
       id: 4,
