@@ -6,7 +6,7 @@ import { useIsMobile } from '@src/hooks/useDevice';
 import useFetch from '../../hooks/useFetch';
 
 export default function TopBanner() {
-  const TARGET_DATE = new Date('2024-03-08:18:00');
+  const TARGET_DATE = new Date('2024-03-08 18:00:00');
   const isMobile = useIsMobile();
   const CHANGE_POSITION = isMobile ? 495 : 605;
   const data = useFetch();  // 방문자 조회 
