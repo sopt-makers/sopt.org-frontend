@@ -10,14 +10,14 @@ import { contactInDisplayOrder, contactMap } from './constant';
 
 const Contact = () => {
   return (
-    <div>
-      <Wrapper>
+    <Wrapper>
+      <SectionWrapper>
         <SectionTitleWrapper>
           <SectionTitleTranslate>Inquiry</SectionTitleTranslate>
           <SectionTitle>문의하기</SectionTitle>
         </SectionTitleWrapper>
         <SectionSubTitle>SOPT 지원에 대해 궁금한 것이 더 있나요?</SectionSubTitle>
-      </Wrapper>
+      </SectionWrapper>
       <GridWrapper>
         {contactInDisplayOrder.map((contact) => {
           const contactItem = contactMap[contact];
@@ -48,11 +48,18 @@ const Contact = () => {
           );
         })}
       </GridWrapper>
-    </div>
+    </Wrapper>
   );
 };
 
 const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+`;
+
+const SectionWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -76,7 +83,7 @@ const ItemWrapper = styled.div`
   }
   /* 모바일 뷰 */
   @media (max-width: 765.9px) {
-    gap: 36px;
+    gap: 16px;
   }
 `;
 
