@@ -75,16 +75,6 @@ const getMemberInfo = async (): Promise<GetMembersInfoResponse> => ({
       linkedin: 'tina-park-755ab8230',
     },
     {
-      id: 4,
-      name: '정채은',
-      position: '미디어 팀장',
-      currentProject: 'YELL:O, PINGLE',
-      description: '이상적인 기억을 기록합니다.',
-      imageSrc: '/images/members/4.png',
-      gmail: 'media@sopt.org',
-      github: 'chaentopia',
-    },
-    {
       id: 5,
       name: '곽성준',
       position: '운영 팀장',
@@ -93,6 +83,16 @@ const getMemberInfo = async (): Promise<GetMembersInfoResponse> => ({
       imageSrc: '/images/members/5.png',
       gmail: 'master@sopt.org',
       github: 'sjk4618',
+    },
+    {
+      id: 4,
+      name: '정채은',
+      position: '미디어 팀장',
+      currentProject: 'YELL:O, PINGLE',
+      description: '이상적인 기억을 기록합니다.',
+      imageSrc: '/images/members/4.png',
+      gmail: 'media@sopt.org',
+      github: 'chaentopia',
     },
     {
       id: 3,
