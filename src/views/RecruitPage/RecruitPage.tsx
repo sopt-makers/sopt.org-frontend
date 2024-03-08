@@ -14,12 +14,12 @@ const ActivityReview = lazy(() => import('./components/ActivityReview'));
 const BottomLogo = lazy(() => import('./components/BottomLogo'));
 
 function Recruit() {
-  const isStarted = useCheckTime(); 
+  const isValid = useCheckTime(); 
 
   return (
     <PageLayout showScrollTopButton>
       <Root>
-        {isStarted ? <ApplySection/> : <NotificationSection />}
+        {isValid ? <ApplySection/> : <NotificationSection />}
         <ContentWrapper>
           <RecruiteeInfo />
           <ChapterInfo />
