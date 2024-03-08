@@ -9,12 +9,12 @@ import usePost from './hooks/usePost';
 import useCheckTime from '../../hooks/useCheckTime';
 
 function MainPage() {
-  const isStarted = useCheckTime(); // 모집 시작 여부
+  const isValid = useCheckTime(); // 모집 시작 여부
   usePost();  // 방문자 증가
   
   return (
     <PageLayout>
-      {isStarted && <TopBanner/>}
+      {isValid && <TopBanner/>}
       <Banner />
       <Introduce />
       <IntroSection />
