@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import Link from 'next/link';
 
 export const Root = styled.main`
   display: flex;
@@ -36,7 +37,7 @@ export const CodeText = styled.div`
   display: flex;
   align-items: center;
 `;
-export const ContactButton = styled.button`
+export const ContactLink = styled(Link)`
   position: absolute;
   bottom: 169px;
 

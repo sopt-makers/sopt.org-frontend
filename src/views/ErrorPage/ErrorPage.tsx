@@ -22,13 +22,24 @@ function ErrorPage({ code } : ErrorPageProps) {
     <>
       <Header />
       <S.Root>
-        <S.CodeText>
-          {CODE_IMG[CODE_KEY]}
-        </S.CodeText>
-        <S.ErrorText>{ERROR_MESSAGE[CODE_KEY]}</S.ErrorText>
-        <RoundButton onClick={handleButtonClick}>
-          {ERROR_BUTTON[CODE_KEY]}
-        </RoundButton>
+        <S.Section>
+          <S.CodeText>
+            {CODE_IMG[CODE_KEY]}
+          </S.CodeText>
+          <S.ErrorText>{ERROR_MESSAGE[CODE_KEY]}</S.ErrorText>
+          <RoundButton onClick={handleButtonClick}>
+            {ERROR_BUTTON[CODE_KEY]}
+          </RoundButton>
+        </S.Section>
+        {code === 500 && (
+          <S.ContactLink
+            href="https://walla.my/sopt_official"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            문의하기
+          </S.ContactLink>
+        )}
       </S.Root>
     </>
   );
