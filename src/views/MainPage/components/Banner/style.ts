@@ -52,7 +52,7 @@ export const ContentWrapper = styled.article`
   padding-top: 50vh;
   position: absolute;
   z-index: 2;
-  padding-bottom: 5vh;
+  padding-bottom: 55px;
 
   /* 모바일 뷰 */
   @media (max-width: 768px) {
