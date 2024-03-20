@@ -2,9 +2,9 @@ import { useRouter } from 'next/router';
 import { Header } from '@src/components';
 import RoundButton from '@src/components/common/RoundButton';
 import * as S from './styles';
-import { ReactComponent as Ic404Front } from './assets/ic_404_front.svg';
-import { ReactComponent as Ic404Back } from './assets/ic_404_back.svg';
-import { ReactComponent as Ic404Ghost } from './assets/ic_404_ghost.svg';
+import ERROR_MESSAGE from './constants/errorMessage';
+import { Ic404Back, Ic404Front, Ic404Ghost, Ic500Back, Ic500Cone, Ic500Front } from './assets';
+import ERROR_BUTTON from './constants/errorButton';
 
 function Wrong404() {
   const router = useRouter();
@@ -13,18 +13,31 @@ function Wrong404() {
     router.push('/');
   };
 
+  const CODE_IMG = {
+    CODE404:
+      <>
+        <Ic404Front/>
+        <Ic404Ghost/>
+        <Ic404Back/>
+      </>,
+    CODE500: 
+      <>
+        <Ic500Front />
+        <Ic500Cone />
+        <Ic500Back />
+      </>,
+  };
+
   return (
     <>
       <Header />
       <S.Root>
         <S.CodeText>
-          <Ic404Front/>
-          <Ic404Ghost/>
-          <Ic404Back/>
+          {CODE_IMG.CODE500}
         </S.CodeText>
-        <S.ErrorText>존재하지 않는 페이지예요</S.ErrorText>
+        <S.ErrorText>{ERROR_MESSAGE.CODE500}</S.ErrorText>
         <RoundButton onClick={handleButtonClick}>
-          홈으로 가기
+          {ERROR_BUTTON.CODE500}
         </RoundButton>
       </S.Root>
     </>
