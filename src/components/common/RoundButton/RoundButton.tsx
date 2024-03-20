@@ -4,12 +4,11 @@ import * as S from './RoundButton.style';
 interface ButtonProps
   extends DetailedHTMLProps<HTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
   children: string | ReactElement;
-  isReverse?: boolean;
 }
 
-function RoundButton({ children, isReverse = false, ...props }: ButtonProps) {
+function RoundButton({ children, ...props }: ButtonProps) {
   return (
-    <S.Root isReverse={isReverse} {...props}>
+    <S.Root {...props}>
       {children}
     </S.Root>
   );

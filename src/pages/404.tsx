@@ -16,7 +16,7 @@ function Wrong() {
       <Header />
       <Styled.Root>
         <span>잘못된 경로예요</span>
-        <RoundButton onClick={handleButtonClick} isReverse={true}>
+        <RoundButton onClick={handleButtonClick}>
           홈으로 가기
         </RoundButton>
       </Styled.Root>
