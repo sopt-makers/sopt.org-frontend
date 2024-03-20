@@ -1,16 +1,12 @@
 import styled from '@emotion/styled';
 import { colors } from '@sopt-makers/colors';
 
-interface StyleProps {
-  isReverse?: boolean;
-}
-
-export const Root = styled.button<StyleProps>`
+export const Root = styled.button`
   display: flex;
   align-items: center;
 
-  height: 50px;
-  padding: 10px 30px;
+  height: 60px;
+  padding: 12px 28px;
   border-radius: 99px;
   background: ${colors.gray10};
 

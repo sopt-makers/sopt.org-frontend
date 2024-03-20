@@ -1,5 +1,5 @@
 import { DetailedHTMLProps, HTMLAttributes, ReactElement } from 'react';
-import * as S from './RoundButton.style';
+import * as S from './style';
 
 interface ButtonProps
   extends DetailedHTMLProps<HTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
@@ -8,7 +8,7 @@ interface ButtonProps
 
 function RoundButton({ children, ...props }: ButtonProps) {
   return (
-    <S.Root {...props}>
+    <S.Root type='button' {...props}>
       {children}
     </S.Root>
   );
