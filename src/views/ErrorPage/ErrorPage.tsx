@@ -6,12 +6,16 @@ import ERROR_MESSAGE from './constants/errorMessage';
 import ERROR_BUTTON from './constants/errorButton';
 import CODE_IMG from './constants/errorCode';
 
-function Wrong404() {
+interface ErrorPageProps {
+  code: 404 | 500;
+}
+
+function ErrorPage({ code } : ErrorPageProps) {
   const router = useRouter();
+  const CODE_KEY : 'CODE404' | 'CODE500' = `CODE${code}`;
 
   const handleButtonClick = () => {
-    router.push('/');
-    router.back();
+    code===404? router.push('/') : router.back();
   };
 
   return (
@@ -19,15 +23,16 @@ function Wrong404() {
       <Header />
       <S.Root>
         <S.CodeText>
-          {CODE_IMG.CODE500}
+          {CODE_IMG[CODE_KEY]}
         </S.CodeText>
-        <S.ErrorText>{ERROR_MESSAGE.CODE500}</S.ErrorText>
+        <S.ErrorText>{ERROR_MESSAGE[CODE_KEY]}</S.ErrorText>
         <RoundButton onClick={handleButtonClick}>
-          {ERROR_BUTTON.CODE500}
+          {ERROR_BUTTON[CODE_KEY]}
         </RoundButton>
       </S.Root>
     </>
   );
 }
 
-export default Wrong404;
+export const Page404 = () => <ErrorPage code={404} />;
+export const Page500 = () => <ErrorPage code={500} />;
