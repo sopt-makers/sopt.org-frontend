@@ -3,29 +3,15 @@ import { Header } from '@src/components';
 import RoundButton from '@src/components/common/RoundButton';
 import * as S from './styles';
 import ERROR_MESSAGE from './constants/errorMessage';
-import { Ic404Back, Ic404Front, Ic404Ghost, Ic500Back, Ic500Cone, Ic500Front } from './assets';
 import ERROR_BUTTON from './constants/errorButton';
+import CODE_IMG from './constants/errorCode';
 
 function Wrong404() {
   const router = useRouter();
 
   const handleButtonClick = () => {
     router.push('/');
-  };
-
-  const CODE_IMG = {
-    CODE404:
-      <>
-        <Ic404Front/>
-        <Ic404Ghost/>
-        <Ic404Back/>
-      </>,
-    CODE500: 
-      <>
-        <Ic500Front />
-        <Ic500Cone />
-        <Ic500Back />
-      </>,
+    router.back();
   };
 
   return (
