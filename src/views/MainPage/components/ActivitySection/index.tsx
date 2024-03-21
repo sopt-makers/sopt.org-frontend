@@ -6,7 +6,7 @@ import * as S from './style';
 
 function ActivitySection(_props: unknown, ref: React.Ref<HTMLDivElement>) {
   return (
-    <S.Wrapper id="activity" ref={ref}>
+    <S.Wrapper ref={ref}>
       <Activity />
       <PartConfig />
       <OwnOrganization />

@@ -2,6 +2,10 @@ import styled from '@emotion/styled';
 import Link from 'next/link';
 
 export const Wrapper = styled.div`
+  padding-top: 104px;
+`;
+
+export const ContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 20.39px;

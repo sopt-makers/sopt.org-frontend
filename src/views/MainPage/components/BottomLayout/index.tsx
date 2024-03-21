@@ -8,10 +8,10 @@ import Comment from '../Comment';
 import * as S from './style';
 
 const MenuList = [
-  { name: 'Value', id: 'value' },
   { name: 'Activity', id: 'activity' },
+  { name: 'Part', id: 'part' },
+  { name: 'Team', id: 'team' },
   { name: 'Review', id: 'review' },
-  { name: 'Recent news', id: 'news' },
 ];
 
 export type RefHandler = {
@@ -44,7 +44,7 @@ function BottomLayout() {
   const menuColor = useTransform(scrollYProgress, [0, 1], ['#a8acbae0', '#747885']);
 
   return (
-    <S.Wrapper style={{ backgroundColor: wrapperBackground }}>
+    <S.Wrapper id="activity" style={{ backgroundColor: wrapperBackground }}>
       <S.FloatingMenu>
         {MenuList.map(({ name, id }, index) => (
           <S.MenuWrapper

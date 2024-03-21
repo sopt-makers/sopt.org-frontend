@@ -25,14 +25,14 @@ export default function PartConfig() {
   } = useInfiniteCarousel<TabType>(carouselList, '(-100% - 20px)', partRef);
 
   return (
-    <div>
+    <S.Wrapper id="part">
       <Tab
         title={'6개의 파트로 이루어져 있어요.'}
         description={
           'SOPT에서는 기획, 디자인, 개발 등 여러 파트원들이 한 프로젝트에 참여하며\n협업하는 경험을 배울 수 있습니다. 부족해도 괜찮아요, 함께 배우면 되니까요!'
         }
       />
-      <S.Wrapper>
+      <S.ContentWrapper>
         <S.PartConfig>
           <S.ButtonWrapper
             ref={dragRef}
@@ -87,7 +87,7 @@ export default function PartConfig() {
         <S.RequiredAbility href="/recruit#chapter-info">
           각 파트에 대해 더 궁금한 점이 있다면?
         </S.RequiredAbility>
-      </S.Wrapper>
-    </div>
+      </S.ContentWrapper>
+    </S.Wrapper>
   );
 }

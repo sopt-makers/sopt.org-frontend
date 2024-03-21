@@ -1,6 +1,10 @@
 import styled from '@emotion/styled';
 
 export const Wrapper = styled.div`
+  padding-top: 104px;
+`;
+
+export const ContentWrapper = styled.div`
   display: flex;
   gap: 28px;
   overflow-x: hidden;

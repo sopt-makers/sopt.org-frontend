@@ -10,7 +10,7 @@ export const Wrapper = styled(motion.section)`
   gap: 12.25px;
 
   width: 100%;
-  padding: 0 2.86vw;
+  padding: 104px 2.86vw 0;
   background-color: ${colors.white};
 
   @media (max-width: 768px) {
