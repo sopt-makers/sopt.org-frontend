@@ -4,13 +4,13 @@ import RoundButton from '@src/components/common/RoundButton';
 import * as S from './styles';
 import ERROR_MESSAGE from './constants/errorMessage';
 import ERROR_BUTTON from './constants/errorButton';
-import CODE_IMG from './constants/errorCode';
+import ErrorCode from './components/ErrorCode';
 
 interface ErrorPageProps {
   code: 404 | 500;
 }
 
-function ErrorPage({ code } : ErrorPageProps) {
+function ErrorPage({ code }: ErrorPageProps) {
   const router = useRouter();
   const CODE_KEY : 'CODE404' | 'CODE500' = `CODE${code}`;
 
@@ -22,15 +22,15 @@ function ErrorPage({ code } : ErrorPageProps) {
     <>
       <Header />
       <S.Root>
-        <S.Section>
+        <S.TopSection>
           <S.CodeText>
-            {CODE_IMG[CODE_KEY]}
+            <ErrorCode code={code}/>
           </S.CodeText>
           <S.ErrorText>{ERROR_MESSAGE[CODE_KEY]}</S.ErrorText>
           <RoundButton onClick={handleButtonClick}>
             {ERROR_BUTTON[CODE_KEY]}
           </RoundButton>
-        </S.Section>
+        </S.TopSection>
         {code === 500 && (
           <S.ContactLink
             href="https://walla.my/sopt_official"
