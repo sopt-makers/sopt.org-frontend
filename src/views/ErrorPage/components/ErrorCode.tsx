@@ -13,17 +13,37 @@ export default function ErrorCode({ code }: ErrorCodeProps) {
     icon: isTablet ? 140 : 165,
   };
 
+  const codeVariant = {
+    initial: { gap: '6px' },
+    whileHover: { gap: '159px' },
+  };
+
+  const iconVariant = {
+    initial: { opacity: 0 },
+    whileHover: { opacity: 1 },
+  };
+
+  const animationProps = {
+    initial : 'initial',
+    whileHover : 'whileHover',
+    transition : { duration: 0.3 },
+  };
+
   return (
-    <S.ErrorCode>
+    <S.ErrorCode {...animationProps} variants={codeVariant}>
     {code === 404 ? (
       <>
         {!isMobile && <Ic404Front height={SIZE.height} />}
-        {isMobile ? <Ic404GhostDark /> : <Ic404Ghost height={SIZE.icon}/>}
+        <S.ErrorIcon {...animationProps} variants = { iconVariant }>
+          {isMobile ? <Ic404GhostDark /> : <Ic404Ghost height={SIZE.icon}/>}   
+        </S.ErrorIcon>
         {!isMobile && <Ic404Back height={SIZE.height} />}
       </>) : (
       <>
         {!isMobile && <Ic500Front height={SIZE.height} />}
-        {isMobile ? <Ic500ConeDark /> : <Ic500Cone height={SIZE.icon}/>}
+          <S.ErrorIcon {...animationProps} variants = { iconVariant }>
+          {isMobile ? <Ic500ConeDark /> : <Ic500Cone height={SIZE.icon}/>}
+        </S.ErrorIcon>
         {!isMobile && <Ic500Back height={SIZE.height} />}
       </>
       )}
