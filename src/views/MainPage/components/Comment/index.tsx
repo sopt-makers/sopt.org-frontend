@@ -5,7 +5,7 @@ import { SOPT_COMMENT_LIST } from '@src/lib/constants/main';
 import CommentCards from './Cards';
 import * as S from './style';
 
-export default function CommentSection() {
+export default function Comment() {
   const [activeIdx, setActiveIdx] = useState(0);
   const controls = useAnimationControls();
   const isWideScreen = useIsDesktop('1480px');
@@ -28,7 +28,6 @@ export default function CommentSection() {
     <S.Wrapper>
       <S.TitleWrapper ref={wrapperRef}>
         {!isWideScreen && !isMobile && <S.TitleShadow style={{ opacity: titleShadowOpacity }} />}
-        <S.SectionSubTitle>활동 후기</S.SectionSubTitle>
         <S.SectionTitle>Q. 솝트 어때요?</S.SectionTitle>
         <S.Summary animate={controls} color={SOPT_COMMENT_LIST[activeIdx]?.color}>
           {SOPT_COMMENT_LIST[activeIdx]?.summary}

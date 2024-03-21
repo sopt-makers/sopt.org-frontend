@@ -97,30 +97,6 @@ export const SectionTitle = styled.div`
   }
 `;
 
-export const SectionSubTitle = styled.p`
-  color: #5b88f8;
-  font-family: SUIT;
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 46.311px; /* 257.282% */
-  letter-spacing: -0.36px;
-  margin-bottom: 8px;
-  position: relative;
-  z-index: 1;
-
-  @media (max-width: 768px) and (min-width: 429px) {
-    font-size: 18px;
-    line-height: 46.311px; /* 257.282% */
-    letter-spacing: -0.36px;
-  }
-  @media (max-width: 428px) {
-    font-size: 11px;
-    line-height: 26.615px; /* 241.956% */
-    letter-spacing: -0.22px;
-  }
-`;
-
 export const Summary = styled(motion.div)<{ color: string }>`
   color: ${({ color }) => color};
 

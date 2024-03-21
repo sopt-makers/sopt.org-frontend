@@ -27,7 +27,6 @@ export default function PartConfig() {
   return (
     <div>
       <Tab
-        tab={'(2) 파트 구성'}
         title={'6개의 파트로 이루어져 있어요.'}
         description={
           'SOPT에서는 기획, 디자인, 개발 등 여러 파트원들이 한 프로젝트에 참여하며\n협업하는 경험을 배울 수 있습니다. 부족해도 괜찮아요, 함께 배우면 되니까요!'
@@ -85,7 +84,9 @@ export default function PartConfig() {
             </S.RightArrow>
           </S.CarouselWrapper>
         </S.PartConfig>
-        <S.RequiredAbility href="/recruit#chapter-info">각 파트에 대해 더 궁금한 점이 있다면?</S.RequiredAbility>
+        <S.RequiredAbility href="/recruit#chapter-info">
+          각 파트에 대해 더 궁금한 점이 있다면?
+        </S.RequiredAbility>
       </S.Wrapper>
     </div>
   );
