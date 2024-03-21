@@ -11,15 +11,12 @@ export const Root = styled.button`
   background: ${colors.gray10};
 
   color: ${colors.gray950};
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 600;
   line-height: 150%; /* 36px */
   letter-spacing: -0.48px;
   cursor: pointer;
 
-  @media (max-width: 768px) and (min-width: 428px) {
-    font-size: 20px;
-  }
   @media (max-width: 428px) {
     padding: 8px 22px;
     font-size: 18px;

@@ -43,9 +43,6 @@ export const ContactLink = styled(Link)`
 
   cursor: pointer;
 
-  @media (max-width: 768px) and (min-width: 428px) {
-    font-size: 20px;
-  }
   @media (max-width: 428px) {
     font-size: 18px;
   }
