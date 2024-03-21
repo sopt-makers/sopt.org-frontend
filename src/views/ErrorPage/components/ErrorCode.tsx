@@ -38,10 +38,12 @@ export default function ErrorCode({ code }: ErrorCodeProps) {
             <Ic404Back height={SIZE.height} />
           </>
         }
-        <S.ErrorIcon {...animationProps} variants = { iconVariant }>
-          {isMobile ? <Ic404GhostDark /> : <Ic404Ghost height={SIZE.icon}/>}   
-        </S.ErrorIcon>
-      </>
+        {isMobile ? <Ic404GhostDark /> :
+          <S.ErrorIcon {...animationProps} variants={iconVariant}>
+            <Ic404Ghost height={SIZE.icon} />
+          </S.ErrorIcon>
+        }
+        </>
       ) : (
       <>
         {!isMobile &&
@@ -50,9 +52,11 @@ export default function ErrorCode({ code }: ErrorCodeProps) {
             <Ic500Back height={SIZE.height} />
           </>
         }
-        <S.ErrorIcon {...animationProps} variants = { iconVariant }>
-          {isMobile ? <Ic500ConeDark /> : <Ic500Cone height={SIZE.icon}/>}
-        </S.ErrorIcon>
+        {isMobile ? <Ic500ConeDark /> :
+          <S.ErrorIcon {...animationProps} variants={iconVariant}>
+            <Ic500Cone height={SIZE.icon} />
+          </S.ErrorIcon>
+        }
       </>
       )}
     </S.ErrorCode>
