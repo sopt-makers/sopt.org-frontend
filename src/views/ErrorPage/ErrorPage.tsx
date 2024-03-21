@@ -23,9 +23,7 @@ function ErrorPage({ code }: ErrorPageProps) {
       <Header />
       <S.Root>
         <S.TopSection>
-          <S.CodeText>
             <ErrorCode code={code}/>
-          </S.CodeText>
           <S.ErrorText>{ERROR_MESSAGE[CODE_KEY]}</S.ErrorText>
           <RoundButton onClick={handleButtonClick}>
             {ERROR_BUTTON[CODE_KEY]}

@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { motion } from 'framer-motion';
 import Link from 'next/link';
 
 export const Root = styled.main`
@@ -29,11 +30,6 @@ export const ErrorText = styled.p`
   line-height: 150%;
   letter-spacing: -0.96px;
 `;
-export const CodeText = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 6px;
-`;
 export const ContactLink = styled(Link)`
   position: fixed;
   bottom: 17vh;
@@ -53,4 +49,9 @@ export const ContactLink = styled(Link)`
   @media (max-width: 428px) {
     font-size: 18px;
   }
+`;
+export const ErrorCode = styled(motion.div)`
+  display: flex;
+  align-items: center;
+  gap: 6px;
 `;
