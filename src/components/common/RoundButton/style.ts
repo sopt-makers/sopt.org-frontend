@@ -16,4 +16,12 @@ export const Root = styled.button`
   line-height: 150%; /* 36px */
   letter-spacing: -0.48px;
   cursor: pointer;
+
+  @media (max-width: 768px) and (min-width: 428px) {
+    font-size: 20px;
+  }
+  @media (max-width: 428px) {
+    padding: 8px 22px;
+    font-size: 18px;
+  }
 `;

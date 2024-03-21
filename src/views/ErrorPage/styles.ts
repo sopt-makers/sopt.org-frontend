@@ -11,24 +11,20 @@ export const Root = styled.main`
 
   width: 100%;
   height: 100vh;
+  padding-bottom: 20vh;
 `;
-export const Section = styled.section`
+export const TopSection = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 22px;
-
-  position: absolute;
-  top: 268px;
+  gap: 34px;
 
   width: 100%;
 `;
 export const ErrorText = styled.p`
-  margin-bottom: 26px;
-
   color: #FCFCFC;
 
-  font-size: 48px;
+  font-size: calc(24px + 1vw);
   font-weight: 600;
   line-height: 150%;
   letter-spacing: -0.96px;
@@ -36,10 +32,11 @@ export const ErrorText = styled.p`
 export const CodeText = styled.div`
   display: flex;
   align-items: center;
+  gap: 6px;
 `;
 export const ContactLink = styled(Link)`
-  position: absolute;
-  bottom: 169px;
+  position: fixed;
+  bottom: 17vh;
 
   color: #FFF;
   font-size: 24px;
@@ -49,4 +46,11 @@ export const ContactLink = styled(Link)`
   text-decoration-line: underline;
 
   cursor: pointer;
+
+  @media (max-width: 768px) and (min-width: 428px) {
+    font-size: 20px;
+  }
+  @media (max-width: 428px) {
+    font-size: 18px;
+  }
 `;
