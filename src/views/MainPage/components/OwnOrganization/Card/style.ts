@@ -8,22 +8,23 @@ export const CardWrapper = styled.div<{ background: string }>`
   background-repeat: no-repeat;
   border-radius: 19px;
   padding: 39px 0;
+  max-width: 712px;
   height: 380px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
 
   @media (max-width: 1580px) {
-    width: 580px;
+    width: 100%;
     height: 380px;
   }
-
+  /* 
   @media (max-width: 1440px) {
-    width: 512px;
+    width: 100%;
     height: 432px;
     padding-top: 39px;
     padding-bottom: 23px;
-  }
+  } */
 
   @media (max-width: 768px) {
     width: max(392px, min(100vw - 200px, 512px));

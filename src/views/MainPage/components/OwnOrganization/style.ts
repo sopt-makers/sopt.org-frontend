@@ -5,13 +5,13 @@ export const Wrapper = styled.div`
 `;
 
 export const ContentWrapper = styled.div`
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 28px;
-  overflow-x: hidden;
 
-  @media (max-width: 1580px) {
+  /* @media (max-width: 1580px) {
     overflow-x: scroll;
-  }
+  } */
 
   @media (max-width: 1440px) {
     gap: 24px;

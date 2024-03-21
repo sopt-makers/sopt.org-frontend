@@ -4,7 +4,7 @@ export const Wrapper = styled.section`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-bottom: 38px;
+  margin-bottom: 31px;
 
   /* 태블릿 뷰 */
   @media (max-width: 768px) and (min-width: 429px) {
@@ -65,6 +65,7 @@ export const Description = styled.p`
   line-height: 28px; /* 164.706% */
   letter-spacing: -0.68px;
   word-break: keep-all;
+  white-space: pre-line;
 
   @media (max-width: 768px) and (min-width: 429px) {
     font-size: 16px;

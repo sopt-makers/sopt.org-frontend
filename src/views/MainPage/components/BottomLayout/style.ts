@@ -87,7 +87,7 @@ export const Menu = styled(Link)`
 export const Layout = styled(motion.div)`
   flex: 1;
   width: 80%;
-  padding: 0 4vw 0 4vw;
+  padding: 0 4vw;
   border-radius: 20.946px 20.946px 0 0;
   background: #f6f8fc;
   z-index: 1;

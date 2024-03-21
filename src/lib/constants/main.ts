@@ -5,6 +5,8 @@ import { default as ImgIntroCard2 } from '@src/assets/images/img_intro_card2.png
 import { default as ImgIntroCard3 } from '@src/assets/images/img_intro_card3.png';
 import { default as ImgMakersCardMo } from '@src/assets/images/img_main_makers_card_mo.png';
 import { default as ImgMakersCardPc } from '@src/assets/images/img_main_makers_card_pc.png';
+import { default as ImgManageCardPc } from '@src/assets/images/img_main_manage_card_pc.png';
+import { default as ImgMediaCardPc } from '@src/assets/images/img_main_media_card_pc.png';
 import { default as ImgMindCardMo } from '@src/assets/images/img_main_mind_card_mo.png';
 import { default as ImgMindCardPc } from '@src/assets/images/img_main_mind_card_pc.png';
 import { default as ImgRecentNews1 } from '@src/assets/images/img_recent_news_1.png';
@@ -448,17 +450,78 @@ export const OWN_ORGANIZATION_LIST: {
   backSideBg: string;
 }[] = [
   {
+    nameKor: '운영팀',
+    nameEng: 'Manage',
+    description: [
+      { content: '운영팀은 솝트의 ', weight: 'normal' },
+      { content: '1, 2차 행사와 다양한 이벤트를 직접 브랜딩, 기획, 진행하며', weight: 'bold' },
+      {
+        content:
+          ' 회원들간의 네트워킹을 도모해요. 솝트 구성원들이 재미있게 행사를 즐기고, 다양한 사람들과의 네트워킹을 통해 ',
+        weight: 'normal',
+      },
+      { content: '더욱 더 소중하고 기억에 남는 솝트 생활', weight: 'bold' },
+      {
+        content: '을 만들어 가실 수 있도록 도와요.',
+        weight: 'normal',
+      },
+    ],
+    frontSideBg: { pc: ImgManageCardPc.src, mo: ImgMakersCardMo.src },
+    backSideBg: '#FFC700',
+  },
+  {
+    nameKor: '미디어팀',
+    nameEng: 'Media',
+
+    description: [
+      { content: '미디어팀은 솝트의 핵심 가치를 실현하는 ', weight: 'normal' },
+      {
+        content:
+          '구성원들의 다양한 활동을 기록하고 인스타그램과 유튜브 등의 매체를 통해 솝트를 대내외적으로 홍보해요.',
+        weight: 'bold',
+      },
+      {
+        content:
+          ' 다양한 활동 스케치 영상, 인터뷰 등 솝트에서의 잊지 못할 기억을 기록하고 있어요. ',
+        weight: 'normal',
+      },
+    ],
+    frontSideBg: { pc: ImgMediaCardPc.src, mo: ImgMakersCardMo.src },
+    backSideBg: '#3E74FD',
+  },
+  {
+    nameKor: '마인드',
+    nameEng: 'Mind',
+    description: [
+      { content: '솝트 MIND는 솝트 내외에 ', weight: 'normal' },
+      { content: '기업가정신과 창업도전 문화 확산 목적', weight: 'bold' },
+      {
+        content:
+          '으로 하는 기구입니다. 매 기수 솝트 앱잼 팀이 더 적극적이고 똑똑하게 창업에 도전할 수 있도록 필요한 콘텐츠와 시스템을 고민하고 있어요. ',
+        weight: 'normal',
+      },
+      {
+        content:
+          '솝트가 창업동아리 임을 잊지 않도록, 그리고 전국에 열정으로 도전하는 솝트의 MIND가 널리 공유되도록',
+        weight: 'bold',
+      },
+      { content: ' MIND도 도전하겠습니다.', weight: 'normal' },
+    ],
+    frontSideBg: { pc: ImgMindCardPc.src, mo: ImgMindCardMo.src },
+    backSideBg: '#F66FF8',
+  },
+  {
     nameKor: '메이커스',
     nameEng: 'Makers',
     description: [
-      { content: 'SOPT를 한 기수 이상 수료한 사람들이 모여 ', weight: 'normal' },
-      { content: 'SOPT에 필요한 프로덕트를 만드는 정식 기구', weight: 'bold' },
+      { content: '솝트를 한 기수 이상 수료한 사람들이 모여 ', weight: 'normal' },
+      { content: '솝트에 필요한 프로덕트를 만드는', weight: 'bold' },
       {
         content:
-          '입니다. 3천여 명의 구성원들을 연결하고 새로운 가치를 제공하기 위한 방법을 끊임없이 고민해요. ',
+          ' 정식 기구 입니다. 3천여 명의 구성원들을 연결하고 새로운 가치를 제공하기 위한 방법을 끊임없이 고민해요. ',
         weight: 'normal',
       },
-      { content: '앞으로도 SOPT를 지속적으로 운영하고자, ', weight: 'bold' },
+      { content: '앞으로도 솝트를 지속적으로 운영하고자, ', weight: 'bold' },
       {
         content:
           '어떻게 하면 우리의 활동이 더 즐거울 수 있을지, 대내외적으로 잘 알릴 수 있을지 고민할 거예요. ',
@@ -467,27 +530,6 @@ export const OWN_ORGANIZATION_LIST: {
     ],
     frontSideBg: { pc: ImgMakersCardPc.src, mo: ImgMakersCardMo.src },
     backSideBg: '#FF7C53',
-  },
-  {
-    nameKor: '마인드',
-    nameEng: 'Mind',
-    description: [
-      { content: 'SOPT MIND는 SOPT 내외에 ', weight: 'normal' },
-      { content: '기업가정신과 창업도전 문화 확산 목적', weight: 'bold' },
-      {
-        content:
-          '으로 설립된 기구입니다. 매 기수 SOPT 앱잼 팀이 더 적극적이고 똑똑하게 창업에 도전할 수 있도록 필요한 컨텐츠와 시스템을 고민하고 있어요. ',
-        weight: 'normal',
-      },
-      {
-        content:
-          'SOPT가 창업동아리임을 잊지 않도록, 그리고 전국에 열정으로 도전하는 SOPT의 MIND가 널리 공유되도록 ',
-        weight: 'bold',
-      },
-      { content: 'MIND도 도전하겠습니다.', weight: 'normal' },
-    ],
-    frontSideBg: { pc: ImgMindCardPc.src, mo: ImgMindCardMo.src },
-    backSideBg: '#F66FF8',
   },
 ];
 
