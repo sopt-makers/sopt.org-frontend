@@ -25,7 +25,7 @@ export default function Comment() {
   const titleShadowOpacity = useTransform(scrollYProgress, [0, 0.9, 1], [0, 0, 1]);
 
   return (
-    <S.Wrapper>
+    <S.Wrapper id="review">
       <S.TitleWrapper ref={wrapperRef}>
         {!isWideScreen && !isMobile && <S.TitleShadow style={{ opacity: titleShadowOpacity }} />}
         <S.SectionTitle>Q. 솝트 어때요?</S.SectionTitle>

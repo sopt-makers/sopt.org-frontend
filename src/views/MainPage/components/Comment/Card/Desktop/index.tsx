@@ -65,7 +65,7 @@ export default function CommentCard({
       }}
       animate={{
         backgroundColor: isActive ? color : '#232634',
-        color: isActive ? '#23305C' : '#767A89',
+        color: isActive ? '#fff' : '#767A89',
         scale: isActive ? 1 : 0.92,
       }}
       transition={{ duration: 0.8 }}

@@ -18,7 +18,7 @@ export const TitleShadow = styled(motion.div)`
   height: calc(100% + 120px);
   top: 0;
   left: 0;
-  background: linear-gradient(#0d111f 72%, transparent);
+  background: linear-gradient(#f6f8fc 72%, transparent);
   @media (max-width: 768px) {
     height: 100%;
   }
@@ -66,14 +66,14 @@ export const CardWrapper = styled.div`
 `;
 
 export const SectionTitle = styled.div`
-  color: ${colors.white};
+  position: relative;
+  color: ${colors.black};
   font-family: SUIT;
   font-size: 55px;
   font-style: normal;
   font-weight: 500;
   line-height: 61.6px; /* 112% */
   letter-spacing: -1.65px;
-  position: relative;
   z-index: 2;
   @media (max-width: 768px) and (min-width: 1480px) {
     padding-bottom: 200px;

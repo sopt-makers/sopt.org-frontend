@@ -2,6 +2,7 @@ import { forwardRef } from 'react';
 import Activity from '@src/views/MainPage/components/Activity';
 import OwnOrganization from '@src/views/MainPage/components/OwnOrganization';
 import PartConfig from '@src/views/MainPage/components/PartConfig';
+import Comment from '../Comment';
 import * as S from './style';
 
 function ActivitySection(_props: unknown, ref: React.Ref<HTMLDivElement>) {
@@ -10,6 +11,7 @@ function ActivitySection(_props: unknown, ref: React.Ref<HTMLDivElement>) {
       <Activity />
       <PartConfig />
       <OwnOrganization />
+      <Comment />
     </S.Wrapper>
   );
 }

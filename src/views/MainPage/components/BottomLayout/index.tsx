@@ -44,7 +44,7 @@ function BottomLayout() {
   const menuColor = useTransform(scrollYProgress, [0, 1], ['#a8acbae0', '#747885']);
 
   return (
-    <S.Wrapper id="activity" style={{ backgroundColor: wrapperBackground }}>
+    <S.Wrapper id="activity" style={{ backgroundColor: '#fff' }}>
       <S.FloatingMenu>
         {MenuList.map(({ name, id }, index) => (
           <S.MenuWrapper
@@ -56,13 +56,13 @@ function BottomLayout() {
           </S.MenuWrapper>
         ))}
       </S.FloatingMenu>
-      <S.Layout style={{ backgroundColor: layoutBackground }}>
+      <S.Layout style={{ backgroundColor: '#f6f8fc' }}>
         <ActivitySection ref={activity.ref} />
-        <div ref={targetRef} />
+        {/* <div ref={targetRef} />
         <div id="review" ref={review.ref}>
           <Comment />
         </div>
-        <div style={{ height: '5px' }} />
+        <div style={{ height: '5px' }} /> */}
         <RecentNews ref={news.ref} />
         <RecruitMessage />
       </S.Layout>
