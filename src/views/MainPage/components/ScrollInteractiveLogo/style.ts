@@ -26,10 +26,13 @@ export const Logo = styled.div`
   width: 415px;
   height: 144px;
 
-  /* 모바일 뷰 */
-  @media (max-width: 899px) {
-    width: 192px;
-    height: 52px;
+  @media (max-width: 768px) {
+    width: 225px;
+    height: 84px;
+  }
+
+  @media (max-width: 376px) {
+    height: 78px;
   }
 `;
 
