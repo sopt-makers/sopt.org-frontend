@@ -4,7 +4,7 @@ import { useIsMobile } from '@src/hooks/useDevice';
 import * as S from './style';
 
 export default function Introduce() {
-  const isMobileSize = useIsMobile('768px');
+  const isMobileSize = useIsMobile('774px');
   const contentRef = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({
     target: contentRef,
@@ -12,7 +12,9 @@ export default function Introduce() {
   });
 
   const scaleValue = useTransform(scrollYProgress, [1, 0.4], [0.9, 1]);
-  const content = '전국 최대 규모의 대학생 IT 연합 동아리, SOPT를 소개합니다.';
+  const content = !isMobileSize
+    ? '전국 최대 규모의 대학생 연합 IT 벤처 창업 동아리,\n솝트를 소개합니다'
+    : '전국 최대 규모의\n대학생 연합 IT 벤처 창업 동아리,\n솝트를 소개합니다';
 
   const [style, setStyle] = useState<{ opacity?: number; clipPath?: string }>();
   const scrollValue = useTransform(scrollYProgress, [1, 0.4], [100, 0]);
