@@ -5,7 +5,9 @@ import { default as ImgIntroCard2 } from '@src/assets/images/img_intro_card2.png
 import { default as ImgIntroCard3 } from '@src/assets/images/img_intro_card3.png';
 import { default as ImgMakersCardMo } from '@src/assets/images/img_main_makers_card_mo.png';
 import { default as ImgMakersCardPc } from '@src/assets/images/img_main_makers_card_pc.png';
+import { default as ImgManageCardMc } from '@src/assets/images/img_main_manage_card_mo.png';
 import { default as ImgManageCardPc } from '@src/assets/images/img_main_manage_card_pc.png';
+import { default as ImgMediaCardMc } from '@src/assets/images/img_main_media_card_mo.png';
 import { default as ImgMediaCardPc } from '@src/assets/images/img_main_media_card_pc.png';
 import { default as ImgMindCardMo } from '@src/assets/images/img_main_mind_card_mo.png';
 import { default as ImgMindCardPc } from '@src/assets/images/img_main_mind_card_pc.png';
@@ -464,7 +466,7 @@ export const OWN_ORGANIZATION_LIST: {
         weight: 'normal',
       },
     ],
-    frontSideBg: { pc: ImgManageCardPc.src, mo: ImgMakersCardMo.src },
+    frontSideBg: { pc: ImgManageCardPc.src, mo: ImgManageCardMc.src },
     backSideBg: '#FFC700',
   },
   {
@@ -484,7 +486,7 @@ export const OWN_ORGANIZATION_LIST: {
         weight: 'normal',
       },
     ],
-    frontSideBg: { pc: ImgMediaCardPc.src, mo: ImgMakersCardMo.src },
+    frontSideBg: { pc: ImgMediaCardPc.src, mo: ImgMediaCardMc.src },
     backSideBg: '#3E74FD',
   },
   {
