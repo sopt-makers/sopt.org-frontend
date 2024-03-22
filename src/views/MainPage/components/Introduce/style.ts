@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 export const Background = styled.section`
   display: flex;
-  height: 200vh;
+  height: 135vh;
   justify-content: center;
   align-items: flex-start;
   background: ${colors.gray950};

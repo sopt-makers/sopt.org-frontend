@@ -11,13 +11,13 @@ export default function Introduce() {
     offset: isMobileSize ? ['end end', 'start end'] : ['end center', 'start'],
   });
 
-  const scaleValue = useTransform(scrollYProgress, [1, 0.4], [0.9, 1]);
+  const scaleValue = useTransform(scrollYProgress, [1, 0.7], [0.9, 1]);
   const content = !isMobileSize
     ? '전국 최대 규모의 대학생 연합 IT 벤처 창업 동아리,\n솝트를 소개합니다'
     : '전국 최대 규모의\n대학생 연합 IT 벤처 창업 동아리,\n솝트를 소개합니다';
 
   const [style, setStyle] = useState<{ opacity?: number; clipPath?: string }>();
-  const scrollValue = useTransform(scrollYProgress, [1, 0.4], [100, 0]);
+  const scrollValue = useTransform(scrollYProgress, [1, 0.7], [100, 0]);
 
   useEffect(() => {
     const unsubscribe = scrollValue.on('change', (value) => {
