@@ -37,16 +37,17 @@ export const Activity: ActivityListType = {
     navKor: '앱잼',
     navEng: 'App jam',
     description: [
-      { content: '3~5주간 ', color: 'yellow' },
+      { content: '4~5주간 ', color: 'yellow' },
       {
         content:
-          '기획, 디자인, 개발 파트가 팀을 이뤄 하나의 웹 또는 앱 서비스를 제작하는 SOPT 내 장기 프로젝트예요. ',
+          '기획, 디자인, 개발 파트가 팀을 이뤄 하나의 웹 또는 앱 서비스를 제작하는 솝트 내 장기 ',
         color: 'white',
       },
-      { content: '데모데이 ', color: 'yellow' },
-      { content: '에서 ', color: 'white' },
-      { content: '각 파트 현직자', color: 'yellow' },
-      { content: '들에게 결과물에 대한 피드백을 받아요.', color: 'white' },
+      { content: '해커톤', color: 'yellow' },
+      {
+        content: '예요. 데모데이 에서 각 파트 현직자들에게 결과물에 대한 피드백을 받아요.',
+        color: 'white',
+      },
     ],
   },
   [ActivityType.SOPKATHON]: {
@@ -54,14 +55,15 @@ export const Activity: ActivityListType = {
     navKor: '솝커톤',
     navEng: 'Sopkathon',
     description: [
-      { content: '무박 2일 ', color: 'yellow' },
+      { content: '무박 2일', color: 'yellow' },
       {
-        content: '간 기획, 디자인, 개발 파트가 팀을 이뤄 최소 단위의 서비스를 제작하는 SOPT내 ',
+        content: '간 기획, 디자인, 개발 파트가 팀을 이뤄 최소 단위의 서비스를 제작하는 솝트내 ',
         color: 'white',
       },
-      { content: '단기 프로젝트', color: 'yellow' },
+      { content: '단기 해커톤', color: 'yellow' },
       {
-        content: '예요. 협업 감각을 익힐 수 있어요.',
+        content:
+          '예요. 앱잼에 앞서 팀 단위의 협업 과정을 빠르게 경험하며, IT 프로젝트에 대한 협업 감각을 익힐 수 있어요.',
         color: 'white',
       },
     ],
@@ -117,15 +119,11 @@ export const Activity: ActivityListType = {
     navKor: '행사',
     navEng: 'Events',
     description: [
-      { content: '운영팀', color: 'yellow' },
-      { content: '에서는 SOPT 회원들의 원활한 ', color: 'white' },
-      { content: '네트워킹', color: 'yellow' },
-      { content: '을 위한 다양한 행사를 기획해요. ', color: 'white' },
-      { content: '미디어팀', color: 'yellow' },
-      { content: '에서는 SOPT와 관련된 ', color: 'white' },
-      { content: '콘텐츠를 제작', color: 'yellow' },
+      { content: '솝트 내 운영팀이 기획한 ', color: 'white' },
+      { content: '1차, 2차 행사', color: 'yellow' },
       {
-        content: '하여 SOPT를 대내외적으로 알려요.',
+        content:
+          '가 열려요. 행사 내 다양한 콘텐츠를 통해 모든 파트 회원들과 자연스럽게 유대감을 쌓고 잊지 못 할 즐거운 추억을 만들어요.',
         color: 'white',
       },
     ],
