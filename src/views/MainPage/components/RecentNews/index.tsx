@@ -1,11 +1,10 @@
-import { forwardRef } from 'react';
 import { RecentNewsList } from '@src/lib/constants/main';
 import Card from './Card';
 import * as S from './style';
 
-function RecentNews(_props: unknown, ref: React.Ref<HTMLDivElement>) {
+export default function RecentNews() {
   return (
-    <S.RecentNews id="news" ref={ref}>
+    <S.RecentNews id="news">
       <S.Title>솝트의 최신 소식이 궁금하다면!</S.Title>
       <S.SliderWrapper>
         <S.LeftGradient />
@@ -29,5 +28,3 @@ function RecentNews(_props: unknown, ref: React.Ref<HTMLDivElement>) {
     </S.RecentNews>
   );
 }
-
-export default forwardRef(RecentNews);

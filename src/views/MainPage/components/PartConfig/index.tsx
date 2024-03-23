@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { useRef } from 'react';
+import { Ref, forwardRef, useRef } from 'react';
 import IcArrowLeft from '@src/assets/icons/ic_arrow_left.svg';
 import IcArrowRight from '@src/assets/icons/ic_arrow_right.svg';
 import useDrag from '@src/hooks/useDrag';
@@ -11,7 +11,7 @@ import PartSlide from '@src/views/MainPage/components/PartConfig/PartSlide';
 import Tab from '@src/views/MainPage/components/Tab';
 import * as S from './style';
 
-export default function PartConfig() {
+function PartConfig(_props: unknown, ref: Ref<HTMLDivElement>) {
   const { dragRef, handleMouseDown, handleMouseMove, initDragging } = useDrag();
   const partRef = useRef<HTMLButtonElement[]>([]);
   const {
@@ -25,7 +25,7 @@ export default function PartConfig() {
   } = useInfiniteCarousel<TabType>(carouselList, '(-100% - 20px)', partRef);
 
   return (
-    <S.Wrapper id="part">
+    <S.Wrapper id="part" ref={ref}>
       <Tab
         title={'6개의 파트로 이루어져 있어요.'}
         description={
@@ -91,3 +91,5 @@ export default function PartConfig() {
     </S.Wrapper>
   );
 }
+
+export default forwardRef(PartConfig);

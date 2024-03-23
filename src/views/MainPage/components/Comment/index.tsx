@@ -1,11 +1,11 @@
 import { useAnimationControls, useScroll, useTransform } from 'framer-motion';
-import { useRef, useState } from 'react';
+import { Ref, forwardRef, useRef, useState } from 'react';
 import { useIsDesktop, useIsMobile } from '@src/hooks/useDevice';
 import { SOPT_COMMENT_LIST } from '@src/lib/constants/main';
 import CommentCards from './Cards';
 import * as S from './style';
 
-export default function Comment() {
+function Comment(_props: unknown, ref: Ref<HTMLDivElement>) {
   const [activeIdx, setActiveIdx] = useState(0);
   const controls = useAnimationControls();
   const isWideScreen = useIsDesktop('1480px');
@@ -25,7 +25,7 @@ export default function Comment() {
   const titleShadowOpacity = useTransform(scrollYProgress, [0, 0.9, 1], [0, 0, 1]);
 
   return (
-    <S.Wrapper id="review">
+    <S.Wrapper id="review" ref={ref}>
       <S.TitleWrapper ref={wrapperRef}>
         {!isWideScreen && !isMobile && <S.TitleShadow style={{ opacity: titleShadowOpacity }} />}
         <S.SectionTitle>Q. 솝트 어때요?</S.SectionTitle>
@@ -37,3 +37,5 @@ export default function Comment() {
     </S.Wrapper>
   );
 }
+
+export default forwardRef(Comment);

@@ -1,11 +1,12 @@
+import { Ref, forwardRef } from 'react';
 import { OWN_ORGANIZATION_LIST } from '@src/lib/constants/main';
 import Tab from '../Tab';
 import OwnOrganizationCard from './Card';
 import * as S from './style';
 
-export default function OwnOrganization() {
+function OwnOrganization(_props: unknown, ref: Ref<HTMLDivElement>) {
   return (
-    <S.Wrapper id="team">
+    <S.Wrapper id="team" ref={ref}>
       <Tab
         title={'솝트가 운영하는 자체 기구'}
         description={
@@ -20,3 +21,5 @@ export default function OwnOrganization() {
     </S.Wrapper>
   );
 }
+
+export default forwardRef(OwnOrganization);

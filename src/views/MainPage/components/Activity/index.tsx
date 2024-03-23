@@ -1,3 +1,4 @@
+import { Ref, forwardRef } from 'react';
 import { useIsMobile } from '@src/hooks/useDevice';
 import { Activity } from '@src/lib/constants/main';
 import Tab from '../Tab';
@@ -5,11 +6,11 @@ import Card from './Card';
 import MobileCard from './MobileCard';
 import * as S from './style';
 
-export default function CardHover() {
+function CardHover(_props: unknown, ref: Ref<HTMLDivElement>) {
   const isMobileSize = useIsMobile('768px');
 
   return (
-    <div>
+    <div ref={ref}>
       <Tab
         title={'매 기수 진행되는, 다양한 활동들!'}
         description={
@@ -36,3 +37,5 @@ export default function CardHover() {
     </div>
   );
 }
+
+export default forwardRef(CardHover);

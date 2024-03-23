@@ -20,13 +20,14 @@ export type RefHandler = {
 
 function BottomLayout() {
   const activity = useInView();
+  const part = useInView();
+  const team = useInView();
   const review = useInView();
-  const news = useInView();
 
   const targetRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: targetRef, offset: ['start center', 'start'] });
 
-  const viewList = [false, activity.isInView, review.isInView, news.isInView];
+  const viewList = [activity.isInView, part.isInView, team.isInView, review.isInView];
   const minIndex = viewList.findIndex((value) => value === true);
 
   const wrapperBackground = useTransform(scrollYProgress, [0, 0.9], ['#fff', '#000']);
@@ -49,7 +50,12 @@ function BottomLayout() {
           ))}
         </S.FloatingMenu>
         <S.Layout style={{ backgroundColor: layoutBackground }}>
-          <ActivitySection ref={activity.ref} />
+          <ActivitySection
+            activityInView={activity}
+            partInView={part}
+            teamInView={team}
+            reviewInView={review}
+          />
         </S.Layout>
       </S.Wrapper>
       <div ref={targetRef} />
