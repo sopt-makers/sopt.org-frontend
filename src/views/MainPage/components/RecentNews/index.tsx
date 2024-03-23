@@ -6,9 +6,7 @@ import * as S from './style';
 function RecentNews(_props: unknown, ref: React.Ref<HTMLDivElement>) {
   return (
     <S.RecentNews id="news" ref={ref}>
-      <S.TitleWrapper>
-        <S.Title>SOPT의 최신 소식이 궁금하다면!</S.Title>
-      </S.TitleWrapper>
+      <S.Title>솝트의 최신 소식이 궁금하다면!</S.Title>
       <S.SliderWrapper>
         <S.LeftGradient />
         <S.View>

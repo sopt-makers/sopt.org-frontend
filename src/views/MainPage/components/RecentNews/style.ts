@@ -5,21 +5,18 @@ import Slider from 'react-slick';
 import { ReactComponent as IconInstagram } from '@src/assets/icons/ic_instagram.svg';
 
 export const RecentNews = styled.section`
-  padding-top: 75px;
+  padding: 589px 0 65px;
+
+  @media (max-width: 1440px) {
+    padding-top: 384px;
+  }
 
   @media (max-width: 768px) {
-    padding-top: 0;
+    padding-top: 253px 0 42px;
   }
-`;
 
-export const TitleWrapper = styled.div`
-  margin-left: 10px;
-
-  @media (max-width: 768px) and (min-width: 429px) {
-    margin-left: 16px;
-  }
-  @media (max-width: 428px) {
-    margin-left: 0px;
+  @media (max-width: 376px) {
+    padding-top: 157px 0 24px;
   }
 `;
 
@@ -31,8 +28,9 @@ export const Title = styled.h1`
   font-weight: 600;
   line-height: 50.64px; /* 112.534% */
   letter-spacing: -1.8px;
+  text-align: center;
 
-  @media (max-width: 768px) and (min-width: 429px) {
+  @media (max-width: 768px) {
     font-size: 36px;
     font-weight: 600;
     line-height: 50.64px; /* 140.668% */
@@ -128,10 +126,10 @@ export const GoToInstagram = styled.section`
 `;
 
 export const IcInstagram = styled(IconInstagram)`
-  width: 17px;
-  height: 17px;
+  width: 21px;
+  height: 21px;
 
-  @media (max-width: 428px) {
+  @media (max-width: 376px) {
     width: 12px;
     height: 12px;
   }
@@ -140,7 +138,7 @@ export const IcInstagram = styled(IconInstagram)`
 export const Description = styled(Link)`
   color: #ededed;
   font-family: SUIT;
-  font-size: 15.998px;
+  font-size: 16px;
   font-style: normal;
   font-weight: 500;
   line-height: 26.859px; /* 167.895% */
@@ -150,7 +148,7 @@ export const Description = styled(Link)`
 
   cursor: pointer;
 
-  @media (max-width: 428px) {
+  @media (max-width: 376px) {
     font-size: 9.194px;
     line-height: 15.436px; /* 167.895% */
     letter-spacing: -0.368px;
@@ -164,7 +162,7 @@ export const Gradient = styled.div`
   position: absolute;
   top: -1px;
   z-index: 50;
-  margin-top: 72px;
+  margin-top: 51px;
 
   @media (max-width: 768px) and (min-width: 429px) {
     height: 315px;

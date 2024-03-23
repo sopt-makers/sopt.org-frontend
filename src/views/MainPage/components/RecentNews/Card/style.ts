@@ -4,9 +4,9 @@ import Image from 'next/image';
 
 export const Background = styled.main`
   width: 286px;
-  height: 380px;
+  height: 381px;
   border-radius: 14px;
-  margin-top: 72px;
+  margin-top: 51px;
   margin-right: 27px;
   position: relative;
 
@@ -19,7 +19,7 @@ export const Background = styled.main`
     width: 237px;
   }
 
-  @media (max-width: 428px) {
+  @media (max-width: 376px) {
     margin-top: 24px;
     width: 136px;
     height: 182px;
