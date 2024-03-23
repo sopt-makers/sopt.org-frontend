@@ -15,7 +15,7 @@ export const RecentNews = styled.section`
     padding-top: 253px 0 42px;
   }
 
-  @media (max-width: 376px) {
+  @media (max-width: 444px) {
     padding-top: 157px 0 24px;
   }
 `;
@@ -37,7 +37,7 @@ export const Title = styled.h1`
     letter-spacing: -1.08px;
   }
 
-  @media (max-width: 428px) {
+  @media (max-width: 444px) {
     font-size: 21px;
     line-height: 29.103px; /* 138.588% */
     letter-spacing: -0.63px;
@@ -50,7 +50,7 @@ export const View = styled.div`
   overflow: hidden;
   margin-bottom: 60px;
 
-  @media (max-width: 428px) {
+  @media (max-width: 444px) {
     margin-bottom: 40px;
   }
 `;
@@ -66,7 +66,7 @@ export const SliderList = styled.ul`
     animation: tabletAutoPlay 20s linear infinite;
   }
 
-  @media (max-width: 428px) {
+  @media (max-width: 444px) {
     animation: mobileAutoPlay 20s linear infinite;
     width: calc(148px * 10);
   }
@@ -107,7 +107,7 @@ export const StyledSlider = styled(Slider)`
   .slick-track {
     margin-bottom: 60px;
 
-    @media (max-width: 428px) {
+    @media (max-width: 444px) {
       margin-bottom: 40px;
     }
   }
@@ -129,7 +129,7 @@ export const IcInstagram = styled(IconInstagram)`
   width: 21px;
   height: 21px;
 
-  @media (max-width: 376px) {
+  @media (max-width: 444px) {
     width: 12px;
     height: 12px;
   }
@@ -148,7 +148,7 @@ export const Description = styled(Link)`
 
   cursor: pointer;
 
-  @media (max-width: 376px) {
+  @media (max-width: 444px) {
     font-size: 9.194px;
     line-height: 15.436px; /* 167.895% */
     letter-spacing: -0.368px;
@@ -168,7 +168,7 @@ export const Gradient = styled.div`
     height: 315px;
   }
 
-  @media (max-width: 428px) {
+  @media (max-width: 444px) {
     margin-top: 24px;
     height: 182px;
   }

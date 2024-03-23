@@ -11,9 +11,11 @@ function RecentNews(_props: unknown, ref: React.Ref<HTMLDivElement>) {
         <S.LeftGradient />
         <S.View>
           <S.SliderList>
-            {RecentNewsList.concat(RecentNewsList).map(({ title, url, src }, index) => {
-              return <Card key={index} title={title} url={url} src={src} />;
-            })}
+            {RecentNewsList.concat(RecentNewsList)
+              .concat(RecentNewsList)
+              .map(({ title, url, src }, index) => {
+                return <Card key={index} title={title} url={url} src={src} />;
+              })}
           </S.SliderList>
         </S.View>
         <S.RightGradient />
