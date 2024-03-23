@@ -7,21 +7,25 @@ import icRightArrow from '@src/assets/icons/ic_arrow_right.svg';
 
 export const Wrapper = styled.div`
   position: relative;
+  padding-top: 256px;
+
   @media (max-width: 768px) {
+    padding-top: 149px;
     padding-bottom: 200px;
+  }
+
+  @media (max-width: 376px) {
+    padding-top: 111px;
   }
 `;
 
 export const TitleShadow = styled(motion.div)`
   position: absolute;
   width: 100%;
-  height: calc(100% + 120px);
+  height: auto;
   top: 0;
   left: 0;
   background: linear-gradient(#f6f8fc 72%, transparent);
-  @media (max-width: 768px) {
-    height: 100%;
-  }
 `;
 
 export const TitleWrapper = styled.div`
@@ -34,7 +38,6 @@ export const TitleWrapper = styled.div`
 
   @media (max-width: 1480px) {
     top: 0;
-    padding-top: 120px;
     transition: 0.4s;
   }
   @media (max-width: 768px) {
