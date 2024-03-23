@@ -12,7 +12,10 @@ export const Root = styled.main`
 
   width: 100%;
   height: 100vh;
+  min-height: 400px;
   padding-bottom: 20vh;
+
+  overflow: scroll;
 `;
 export const TopSection = styled.section`
   display: flex;
@@ -23,7 +26,7 @@ export const TopSection = styled.section`
   width: 100%;
 `;
 export const ErrorText = styled.p`
-  color: #FCFCFC;
+  color: #fcfcfc;
 
   font-size: calc(24px + 1vw);
   font-weight: 600;
@@ -31,10 +34,10 @@ export const ErrorText = styled.p`
   letter-spacing: -0.96px;
 `;
 export const ContactLink = styled(Link)`
-  position: fixed;
+  position: absolute;
   bottom: 17vh;
 
-  color: #FFF;
+  color: #fff;
   font-size: 24px;
   font-weight: 600;
   line-height: 150%; /* 36px */
