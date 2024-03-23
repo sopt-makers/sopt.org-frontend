@@ -1,10 +1,9 @@
-import { useScroll, useTransform } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { RefObject, useRef } from 'react';
 import useInView from '@src/hooks/useInView';
 import ActivitySection from '@src/views/MainPage/components/ActivitySection';
 import RecentNews from '@src/views/MainPage/components/RecentNews';
 import RecruitMessage from '@src/views/MainPage/components/RecruitMessage';
-import Comment from '../Comment';
 import * as S from './style';
 
 const MenuList = [
@@ -30,43 +29,35 @@ function BottomLayout() {
   const viewList = [false, activity.isInView, review.isInView, news.isInView];
   const minIndex = viewList.findIndex((value) => value === true);
 
-  const wrapperBackground = useTransform(
-    scrollYProgress,
-    [0, 0.76, 1],
-    ['#FFF', '#090B12', '#090B12'],
-  );
-  const layoutBackground = useTransform(
-    scrollYProgress,
-    [0, 0.76, 1],
-    ['#F6F8FC', '#0D111F', '#0D111F'],
-  );
+  const wrapperBackground = useTransform(scrollYProgress, [0, 0.9], ['#fff', '#000']);
+  const layoutBackground = useTransform(scrollYProgress, [0, 0.9], ['#f6f8fc', '#000']);
   const menuBackground = useTransform(scrollYProgress, [0, 1], ['#fbfcfe', '#fbfcfef']);
   const menuColor = useTransform(scrollYProgress, [0, 1], ['#a8acbae0', '#747885']);
 
   return (
-    <S.Wrapper id="activity" style={{ backgroundColor: '#fff' }}>
-      <S.FloatingMenu>
-        {MenuList.map(({ name, id }, index) => (
-          <S.MenuWrapper
-            key={id}
-            isInView={minIndex === index}
-            style={{ backgroundColor: menuBackground, color: menuColor }}
-          >
-            <S.Menu href={`#${id}`}>{name}</S.Menu>
-          </S.MenuWrapper>
-        ))}
-      </S.FloatingMenu>
-      <S.Layout style={{ backgroundColor: '#f6f8fc' }}>
-        <ActivitySection ref={activity.ref} />
-        {/* <div ref={targetRef} />
-        <div id="review" ref={review.ref}>
-          <Comment />
-        </div>
-        <div style={{ height: '5px' }} /> */}
-        <RecentNews ref={news.ref} />
+    <>
+      <S.Wrapper id="activity" style={{ backgroundColor: wrapperBackground }}>
+        <S.FloatingMenu>
+          {MenuList.map(({ name, id }, index) => (
+            <S.MenuWrapper
+              key={id}
+              isInView={minIndex === index}
+              style={{ backgroundColor: menuBackground, color: menuColor }}
+            >
+              <S.Menu href={`#${id}`}>{name}</S.Menu>
+            </S.MenuWrapper>
+          ))}
+        </S.FloatingMenu>
+        <S.Layout style={{ backgroundColor: layoutBackground }}>
+          <ActivitySection ref={activity.ref} />
+        </S.Layout>
+      </S.Wrapper>
+      <div ref={targetRef} />
+      <motion.div style={{ backgroundColor: wrapperBackground }}>
+        <RecentNews />
         <RecruitMessage />
-      </S.Layout>
-    </S.Wrapper>
+      </motion.div>
+    </>
   );
 }
 
