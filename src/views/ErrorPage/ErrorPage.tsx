@@ -1,10 +1,10 @@
 import { useRouter } from 'next/router';
 import { Header } from '@src/components';
 import RoundButton from '@src/components/common/RoundButton';
-import * as S from './styles';
-import ERROR_MESSAGE from './constants/errorMessage';
-import ERROR_BUTTON from './constants/errorButton';
 import ErrorCode from './components/ErrorCode';
+import ERROR_BUTTON from './constants/errorButton';
+import ERROR_MESSAGE from './constants/errorMessage';
+import * as S from './styles';
 
 interface ErrorPageProps {
   code: 404 | 500;
@@ -12,10 +12,10 @@ interface ErrorPageProps {
 
 function ErrorPage({ code }: ErrorPageProps) {
   const router = useRouter();
-  const CODE_KEY : 'CODE404' | 'CODE500' = `CODE${code}`;
+  const CODE_KEY: 'CODE404' | 'CODE500' = `CODE${code}`;
 
   const handleButtonClick = () => {
-    code===404? router.push('/') : router.back();
+    code === 404 ? router.push('/') : router.back();
   };
 
   return (
@@ -23,11 +23,9 @@ function ErrorPage({ code }: ErrorPageProps) {
       <Header />
       <S.Root>
         <S.TopSection>
-            <ErrorCode code={code}/>
+          <ErrorCode code={code} />
           <S.ErrorText>{ERROR_MESSAGE[CODE_KEY]}</S.ErrorText>
-          <RoundButton onClick={handleButtonClick}>
-            {ERROR_BUTTON[CODE_KEY]}
-          </RoundButton>
+          <RoundButton onClick={handleButtonClick}>{ERROR_BUTTON[CODE_KEY]}</RoundButton>
         </S.TopSection>
         {code === 500 && (
           <S.ContactLink
