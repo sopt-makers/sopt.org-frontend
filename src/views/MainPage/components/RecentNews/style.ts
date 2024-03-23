@@ -59,15 +59,15 @@ export const SliderList = styled.ul`
   display: flex;
   position: relative;
   width: calc(313px * 10);
-  animation: desktopAutoPlay 10s linear infinite;
+  animation: desktopAutoPlay 20s linear infinite;
 
   @media (max-width: 768px) and (min-width: 429px) {
     width: calc(264px * 10);
-    animation: tabletAutoPlay 10s linear infinite;
+    animation: tabletAutoPlay 20s linear infinite;
   }
 
   @media (max-width: 428px) {
-    animation: mobileAutoPlay 12s linear infinite;
+    animation: mobileAutoPlay 20s linear infinite;
     width: calc(148px * 10);
   }
 
