@@ -1,5 +1,4 @@
 import styled from '@emotion/styled';
-import { motion } from 'framer-motion';
 import Link from 'next/link';
 
 export const Root = styled.main`
@@ -49,17 +48,4 @@ export const ContactLink = styled(Link)`
   @media (max-width: 428px) {
     font-size: 18px;
   }
-`;
-export const ErrorCode = styled(motion.div)`
-  display: flex;
-  align-items: center;
-  gap: 6px;
-
-  position: relative;
-`;
-export const ErrorIcon = styled(motion.div)`
-  display: flex;
-  justify-content: center;
-  position: absolute;
-  width: 100%;
 `;
