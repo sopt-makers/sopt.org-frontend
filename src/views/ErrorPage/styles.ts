@@ -10,9 +10,9 @@ export const Root = styled.main`
   position: relative;
 
   width: 100%;
-  height: 100vh;
+  height: 100dvh;
   min-height: 400px;
-  padding-bottom: 20vh;
+  padding-bottom: 20dvh;
 
   overflow: scroll;
 `;
@@ -38,7 +38,7 @@ export const ErrorText = styled.p`
 `;
 export const ContactLink = styled(Link)`
   position: absolute;
-  bottom: 17vh;
+  bottom: 17dvh;
 
   color: #fff;
   font-size: 24px;
