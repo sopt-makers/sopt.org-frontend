@@ -18,7 +18,7 @@ export default function ErrorCode({ code }: ErrorCodeProps) {
   const isMobile = useIsMobile('428px');
   const SIZE = {
     height: 92,
-    icon: 150,
+    icon: 140,
   };
 
   const codeVariant = {

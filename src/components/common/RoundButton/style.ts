@@ -5,7 +5,6 @@ export const Root = styled.button`
   display: flex;
   align-items: center;
 
-  height: 60px;
   padding: 12px 28px;
   border-radius: 99px;
   background: ${colors.gray10};
