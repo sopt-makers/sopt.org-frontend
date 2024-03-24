@@ -8,33 +8,25 @@ export const CardWrapper = styled.div<{ background: string }>`
   background-repeat: no-repeat;
   border-radius: 19px;
   padding: 39px 0;
+  max-width: 712px;
+  width: 100%;
   height: 380px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
 
-  @media (max-width: 1580px) {
-    width: 580px;
-    height: 380px;
-  }
-
   @media (max-width: 1440px) {
-    width: 512px;
-    height: 432px;
-    padding-top: 39px;
-    padding-bottom: 23px;
+    max-width: 511px;
   }
 
   @media (max-width: 768px) {
-    width: max(392px, min(100vw - 200px, 512px));
-    height: calc(max(416px, min(100vw - 200px, 512px)) * 0.84);
+    max-width: 511px;
+    height: 434px;
   }
 
-  @media (max-width: 428px) {
-    width: 293px;
-    height: 250px;
-    padding-top: 20px;
-    padding-bottom: 13px;
+  @media (max-width: 376px) {
+    max-width: 294px;
+    height: 249px;
   }
 `;
 

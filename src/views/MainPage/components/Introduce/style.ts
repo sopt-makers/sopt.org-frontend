@@ -4,23 +4,11 @@ import { motion } from 'framer-motion';
 
 export const Background = styled.section`
   display: flex;
-  height: 200vh;
+  height: 135vh;
   justify-content: center;
   align-items: flex-start;
   background: ${colors.gray950};
   position: relative;
-
-  @media (max-width: 768px) and (min-width: 376px) {
-    width: 100vw;
-    justify-content: flex-start;
-  }
-
-  /* 모바일 뷰 */
-  @media (max-width: 375px) {
-    padding: 0px 32px;
-    display: flex;
-    justify-content: flex-start;
-  }
 `;
 
 export const Wrapper = styled.section`
@@ -42,23 +30,19 @@ export const TextContainer = styled(motion.span)`
   font-size: 50px;
   font-style: normal;
   font-weight: 700;
-  line-height: normal;
+  line-height: 73px;
+  white-space: pre-line;
 
-  @media (max-width: 768px) and (min-width: 433px) {
-    font-size: 28px;
-    width: 433px;
-    word-break: keep-all;
-    text-align: left;
-    margin: auto;
+  @media (max-width: 1440px) {
+    font-size: 40px;
+    line-height: normal;
   }
 
-  /* 모바일 뷰 */
-  @media (max-width: 432px) {
-    font-size: 28px;
-    width: 250px;
+  @media (max-width: 774px) {
+    font-size: 25px;
+    line-height: 38px;
+    letter-spacing: -2%;
     word-break: keep-all;
-    text-align: left;
-    margin: auto;
   }
 `;
 

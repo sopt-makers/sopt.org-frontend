@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import { colors } from '@sopt-makers/colors';
 
 export const Background = styled.section`
-  margin-top: 400px;
+  margin-top: 505px;
   margin-bottom: 600px;
 
   display: flex;
@@ -10,13 +10,18 @@ export const Background = styled.section`
   align-items: center;
   justify-content: center;
 
-  @media (max-width: 768px) and (min-width: 429px) {
-    margin-top: 250px;
+  @media (max-width: 1440px) {
+    margin-top: 349px;
     margin-bottom: 375px;
   }
 
-  @media (max-width: 428px) {
-    margin-top: 100px;
+  @media (max-width: 768px) {
+    margin-top: 221px;
+    margin-bottom: 221px;
+  }
+
+  @media (max-width: 376px) {
+    margin-top: 154px;
     margin-bottom: 150px;
   }
 `;
@@ -25,20 +30,19 @@ export const Title = styled.h1`
   color: ${colors.white};
   text-align: center;
   font-family: SUIT;
-  font-size: 30px;
+  font-size: 40px;
   font-style: normal;
   font-weight: 700;
   line-height: 140%; /* 56px */
-  letter-spacing: -0.8px;
+  letter-spacing: -2%;
   margin-bottom: 11px;
 
-  @media (max-width: 768px) and (min-width: 429px) {
-    font-size: 30px;
-    letter-spacing: -0.68px;
+  @media (max-width: 768px) {
+    font-size: 34px;
   }
-  @media (max-width: 428px) {
+
+  @media (max-width: 376px) {
     font-size: 20px;
-    letter-spacing: -0.4px;
   }
 `;
 
@@ -46,19 +50,20 @@ export const Description = styled.p`
   color: rgba(255, 255, 255, 0.7);
   text-align: center;
   font-family: SUIT;
-  font-size: 22px;
+  font-size: 24px;
   font-style: normal;
   font-weight: 400;
   line-height: 140%; /* 33.6px */
-  letter-spacing: -0.48px;
+  letter-spacing: -2%;
   margin-bottom: 75px;
 
-  @media (max-width: 768px) and (min-width: 429px) {
+  @media (max-width: 768px) {
+    font-size: 21px;
     line-height: 142%; /* 17.04px */
-    letter-spacing: -0.24px;
-    margin-bottom: 34px;
+    margin-bottom: 59px;
   }
-  @media (max-width: 428px) {
+
+  @media (max-width: 376px) {
     font-size: 12px;
     margin-bottom: 34px;
   }
@@ -67,32 +72,39 @@ export const Description = styled.p`
 export const GoToRecruit = styled.a`
   cursor: pointer;
   border-radius: 25px;
-  border: 2.218px solid #5b88f8;
+  box-shadow: 0 0 0 2.218px #5b88f8 inset;
   background: #40578d;
-  padding: 19px 31px;
+  width: 281px;
+  height: 83px;
+  display: flex;
   justify-content: center;
   align-items: center;
 
   color: #e8f1ff;
   font-family: SUIT;
-  font-size: 20px;
+  font-size: 30px;
   font-style: normal;
   font-weight: 500;
   line-height: 30px; /* 100% */
   letter-spacing: -0.6px;
 
-  @media (max-width: 768px) and (min-width: 429px) {
-    border-radius: 19.221px;
-    border: 1.705px solid #5b88f8;
+  @media (max-width: 768px) {
+    width: 216px;
+    height: 64px;
 
+    border-radius: 19.221px;
+    box-shadow: 0 0 0 1.705px #5b88f8 inset;
+
+    font-size: 23px;
     line-height: 23.065px; /* 100.282% */
     letter-spacing: -0.46px;
   }
-  @media (max-width: 428px) {
-    padding: 11.93px 19.441px;
+
+  @media (max-width: 376px) {
+    width: 124px;
+    height: 36px;
     border-radius: 11.046px;
-    border: 0.98px solid #5b88f8;
-    height: 36.983px;
+    box-shadow: 0 0 0 0.98px #5b88f8 inset;
 
     font-size: 13.218px;
     line-height: 13.256px; /* 100.282% */

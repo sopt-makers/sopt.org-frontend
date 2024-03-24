@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { colors } from '@sopt-makers/colors';
 
 export const Wrapper = styled.div<{ color: string }>`
   background-color: ${({ color }) => color};
@@ -14,6 +15,7 @@ export const Wrapper = styled.div<{ color: string }>`
   font-weight: 400;
   line-height: 33.3px; /* 177.5% */
   letter-spacing: -0.8px;
+  color: ${colors.white};
 
   @media (max-width: 520px) {
     height: 280px;

@@ -1,16 +1,17 @@
 import { useAnimationControls, useScroll, useTransform } from 'framer-motion';
-import { useRef, useState } from 'react';
+import { Ref, forwardRef, useRef, useState } from 'react';
 import { useIsDesktop, useIsMobile } from '@src/hooks/useDevice';
 import { SOPT_COMMENT_LIST } from '@src/lib/constants/main';
 import CommentCards from './Cards';
 import * as S from './style';
 
-export default function CommentSection() {
+function Comment(_props: unknown, ref: Ref<HTMLDivElement>) {
   const [activeIdx, setActiveIdx] = useState(0);
   const controls = useAnimationControls();
   const isWideScreen = useIsDesktop('1480px');
-  const isMobile = useIsMobile('768px');
   const wrapperRef = useRef(null);
+  const isMobileSize = useIsMobile('768px');
+  const tab = isMobileSize ? 'Review' : '';
 
   const changeActiveIdx = (idx: number) => {
     setActiveIdx(idx);
@@ -25,10 +26,12 @@ export default function CommentSection() {
   const titleShadowOpacity = useTransform(scrollYProgress, [0, 0.9, 1], [0, 0, 1]);
 
   return (
-    <S.Wrapper>
+    <S.Wrapper id="review" ref={ref}>
       <S.TitleWrapper ref={wrapperRef}>
-        {!isWideScreen && !isMobile && <S.TitleShadow style={{ opacity: titleShadowOpacity }} />}
-        <S.SectionSubTitle>활동 후기</S.SectionSubTitle>
+        {!isWideScreen && !isMobileSize && (
+          <S.TitleShadow style={{ opacity: titleShadowOpacity }} />
+        )}
+        {tab && <S.SectionSubTitle>{tab}</S.SectionSubTitle>}
         <S.SectionTitle>Q. 솝트 어때요?</S.SectionTitle>
         <S.Summary animate={controls} color={SOPT_COMMENT_LIST[activeIdx]?.color}>
           {SOPT_COMMENT_LIST[activeIdx]?.summary}
@@ -38,3 +41,5 @@ export default function CommentSection() {
     </S.Wrapper>
   );
 }
+
+export default forwardRef(Comment);

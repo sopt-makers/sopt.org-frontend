@@ -1,7 +1,8 @@
 import Image from 'next/image';
-import { useRef } from 'react';
+import { Ref, forwardRef, useRef } from 'react';
 import IcArrowLeft from '@src/assets/icons/ic_arrow_left.svg';
 import IcArrowRight from '@src/assets/icons/ic_arrow_right.svg';
+import { useIsMobile } from '@src/hooks/useDevice';
 import useDrag from '@src/hooks/useDrag';
 import useInfiniteCarousel from '@src/hooks/useInfiniteCarousel';
 import { tabs as carouselList } from '@src/lib/constants/tabs';
@@ -11,7 +12,7 @@ import PartSlide from '@src/views/MainPage/components/PartConfig/PartSlide';
 import Tab from '@src/views/MainPage/components/Tab';
 import * as S from './style';
 
-export default function PartConfig() {
+function PartConfig(_props: unknown, ref: Ref<HTMLDivElement>) {
   const { dragRef, handleMouseDown, handleMouseMove, initDragging } = useDrag();
   const partRef = useRef<HTMLButtonElement[]>([]);
   const {
@@ -23,17 +24,19 @@ export default function PartConfig() {
     handleTouchStart,
     handleTouchEnd,
   } = useInfiniteCarousel<TabType>(carouselList, '(-100% - 20px)', partRef);
+  const isMobileSize = useIsMobile('768px');
+  const tab = isMobileSize ? 'Part' : '';
 
   return (
-    <div>
+    <S.Wrapper id="part" ref={ref}>
       <Tab
-        tab={'(2) 파트 구성'}
+        tab={tab}
         title={'6개의 파트로 이루어져 있어요.'}
         description={
-          'SOPT에서는 기획, 디자인, 개발 등 여러 파트원들이 한 프로젝트에 참여하며\n협업하는 경험을 배울 수 있습니다. 부족해도 괜찮아요, 함께 배우면 되니까요!'
+          '솝트에서는 기획, 디자인, 개발 등 여러 파트원들이 한 프로젝트에 참여하며\n협업하는 경험을 쌓을 수 있어요. 부족해도 괜찮아요, 함께 배우면 되니까요!'
         }
       />
-      <S.Wrapper>
+      <S.ContentWrapper>
         <S.PartConfig>
           <S.ButtonWrapper
             ref={dragRef}
@@ -85,8 +88,12 @@ export default function PartConfig() {
             </S.RightArrow>
           </S.CarouselWrapper>
         </S.PartConfig>
-        <S.RequiredAbility href="/recruit#chapter-info">각 파트에 대해 더 궁금한 점이 있다면?</S.RequiredAbility>
-      </S.Wrapper>
-    </div>
+        <S.RequiredAbility href="/recruit#chapter-info">
+          각 파트에 대해 더 궁금한 점이 있다면?
+        </S.RequiredAbility>
+      </S.ContentWrapper>
+    </S.Wrapper>
   );
 }
+
+export default forwardRef(PartConfig);

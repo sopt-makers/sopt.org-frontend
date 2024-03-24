@@ -1,7 +1,7 @@
 import imgMainPageBanner from '@src/assets/images/img_mainBanner.png';
+import useCheckTime from '@src/hooks/useCheckTime';
 import RecruitButton from './RecruitButton';
 import * as S from './style';
-import useCheckTime from '@src/hooks/useCheckTime';
 
 export default function Banner() {
   const isValid = useCheckTime(); // 모집 여부
@@ -18,7 +18,9 @@ export default function Banner() {
           <S.Content>
             <S.Title>함께라서 외칠 수 있는 열정</S.Title>
             <S.Title>오직 이곳 SOPT에서만.</S.Title>
-            <RecruitButton>{isValid ? '34기 YB 지원하기 ' : '모집 알림 신청하기 '}&gt; </RecruitButton>
+            <RecruitButton>
+              {isValid ? '34기 YB 지원하기 ' : '모집 알림 신청하기 '}&gt;{' '}
+            </RecruitButton>
           </S.Content>
           <S.DownScrollIcon onClick={onScrollMoveDown} />
         </S.ContentWrapper>

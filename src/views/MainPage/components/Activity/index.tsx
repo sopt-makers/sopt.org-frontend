@@ -1,3 +1,4 @@
+import { Ref, forwardRef } from 'react';
 import { useIsMobile } from '@src/hooks/useDevice';
 import { Activity } from '@src/lib/constants/main';
 import Tab from '../Tab';
@@ -5,16 +6,17 @@ import Card from './Card';
 import MobileCard from './MobileCard';
 import * as S from './style';
 
-export default function CardHover() {
+function CardHover(_props: unknown, ref: Ref<HTMLDivElement>) {
   const isMobileSize = useIsMobile('768px');
+  const tab = isMobileSize ? 'Activity' : '';
 
   return (
-    <div>
+    <div ref={ref}>
       <Tab
-        tab={'(1) 기수 내 정기 행사'}
+        tab={tab}
         title={'매 기수 진행되는, 다양한 활동들!'}
         description={
-          'SOPT에서는 매 기수 내 정기적으로 진행되는 다양한 활동들이 있어요. \n 각 파트원들과 친목 및 실력을 쌓을 수 있는 행사들을 통해, SOPT를 보다 즐겨봅시다.'
+          '솝트에서는 매 기수 내 정기적으로 진행되는 다양한 활동들이 있어요.\n 각 파트원들과 친목 및 실력을 쌓을 수 있는 행사들을 통해, 솝트를 더 즐겁게 보낼 수 있어요.'
         }
       />
       {isMobileSize ? (
@@ -37,3 +39,5 @@ export default function CardHover() {
     </div>
   );
 }
+
+export default forwardRef(CardHover);

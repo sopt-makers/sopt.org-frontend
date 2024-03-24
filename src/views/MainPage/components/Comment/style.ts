@@ -7,21 +7,25 @@ import icRightArrow from '@src/assets/icons/ic_arrow_right.svg';
 
 export const Wrapper = styled.div`
   position: relative;
+  padding-top: 256px;
+
   @media (max-width: 768px) {
+    padding-top: 149px;
     padding-bottom: 200px;
+  }
+
+  @media (max-width: 376px) {
+    padding-top: 111px;
   }
 `;
 
 export const TitleShadow = styled(motion.div)`
   position: absolute;
   width: 100%;
-  height: calc(100% + 120px);
+  height: auto;
   top: 0;
   left: 0;
-  background: linear-gradient(#0d111f 72%, transparent);
-  @media (max-width: 768px) {
-    height: 100%;
-  }
+  background: linear-gradient(#f6f8fc 72%, transparent);
 `;
 
 export const TitleWrapper = styled.div`
@@ -34,7 +38,6 @@ export const TitleWrapper = styled.div`
 
   @media (max-width: 1480px) {
     top: 0;
-    padding-top: 120px;
     transition: 0.4s;
   }
   @media (max-width: 768px) {
@@ -66,14 +69,14 @@ export const CardWrapper = styled.div`
 `;
 
 export const SectionTitle = styled.div`
-  color: ${colors.white};
+  position: relative;
+  color: ${colors.black};
   font-family: SUIT;
   font-size: 55px;
   font-style: normal;
   font-weight: 500;
   line-height: 61.6px; /* 112% */
   letter-spacing: -1.65px;
-  position: relative;
   z-index: 2;
   @media (max-width: 768px) and (min-width: 1480px) {
     padding-bottom: 200px;
@@ -100,21 +103,15 @@ export const SectionTitle = styled.div`
 export const SectionSubTitle = styled.p`
   color: #5b88f8;
   font-family: SUIT;
-  font-size: 18px;
   font-style: normal;
   font-weight: 600;
+  margin-bottom: 10px;
+  font-size: 20px;
   line-height: 46.311px; /* 257.282% */
-  letter-spacing: -0.36px;
-  margin-bottom: 8px;
-  position: relative;
+  letter-spacing: -2%;
   z-index: 1;
 
-  @media (max-width: 768px) and (min-width: 429px) {
-    font-size: 18px;
-    line-height: 46.311px; /* 257.282% */
-    letter-spacing: -0.36px;
-  }
-  @media (max-width: 428px) {
+  @media (max-width: 376px) {
     font-size: 11px;
     line-height: 26.615px; /* 241.956% */
     letter-spacing: -0.22px;

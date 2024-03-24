@@ -18,25 +18,21 @@ export const Wrapper = styled.div`
   overflow-x: hidden;
 `;
 
-export const LogoWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 35px;
-`;
-
 export const Logo = styled.div`
   background-image: url(${icSoptLogoWhite});
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
-  width: 258px;
-  height: 70px;
-  /* 모바일 뷰 */
-  @media (max-width: 899px) {
-    width: 192px;
-    height: 52px;
+  width: 415px;
+  height: 144px;
+
+  @media (max-width: 768px) {
+    width: 225px;
+    height: 84px;
+  }
+
+  @media (max-width: 376px) {
+    height: 78px;
   }
 `;
 

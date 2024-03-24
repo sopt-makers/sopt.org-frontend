@@ -10,7 +10,7 @@ export const Wrapper = styled(motion.section)`
   gap: 12.25px;
 
   width: 100%;
-  padding: 0 2.86vw;
+  padding: 104px 2.86vw 0;
   background-color: ${colors.white};
 
   @media (max-width: 768px) {
@@ -87,7 +87,7 @@ export const Menu = styled(Link)`
 export const Layout = styled(motion.div)`
   flex: 1;
   width: 80%;
-  padding: 0 4vw 0 4vw;
+  padding: 0 4vw;
   border-radius: 20.946px 20.946px 0 0;
   background: #f6f8fc;
   z-index: 1;

@@ -19,10 +19,7 @@ export default function ScrollInteractiveLogo() {
           <S.WhiteBackground />
         </motion.div>
         <motion.div style={{ scale: soptLogoScale }}>
-          <S.LogoWrapper>
-            <S.DescriptionText>SHOUT OUR PASSION TOGETHER</S.DescriptionText>
-            <S.Logo />
-          </S.LogoWrapper>
+          <S.Logo />
         </motion.div>
       </S.Wrapper>
     </S.Container>

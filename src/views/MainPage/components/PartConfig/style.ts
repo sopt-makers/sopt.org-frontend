@@ -2,6 +2,18 @@ import styled from '@emotion/styled';
 import Link from 'next/link';
 
 export const Wrapper = styled.div`
+  padding-top: 104px;
+
+  @media (max-width: 768px) {
+    padding-top: 125px;
+  }
+
+  @media (max-width: 376px) {
+    padding-top: 74px;
+  }
+`;
+
+export const ContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 20.39px;
