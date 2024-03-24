@@ -6,16 +6,19 @@ export const Wrapper = styled.div`
 
 export const ContentWrapper = styled.div`
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
   gap: 28px;
-
-  /* @media (max-width: 1580px) {
-    overflow-x: scroll;
-  } */
+  grid-template-columns: repeat(2, 1fr);
 
   @media (max-width: 1440px) {
+    grid-template-columns: repeat(auto-fit, minmax(385px, 1fr));
     gap: 24px;
   }
+
+  @media (max-width: 768px) {
+    display: flex;
+    overflow-x: scroll;
+  }
+
   @media (max-width: 512px) {
     gap: 16px;
   }

@@ -7,7 +7,7 @@ type OwnOrganizationCardProps = {
   nameKor: string;
   nameEng: string;
   description: TextWeightType[];
-  frontSideBg: { mo: string; pc: string };
+  frontSideBg: { mo: string; pc: string; ta?: string; bigPc?: string };
   backSideBg: string;
 };
 
@@ -27,8 +27,21 @@ export default function OwnOrganizationCard({
   frontSideBg,
   backSideBg,
 }: OwnOrganizationCardProps) {
-  const isMobile = useIsMobile('1440px');
-  const backgroundSrc = isMobile ? frontSideBg.mo : frontSideBg.pc;
+  const isPC = useIsMobile('1440px');
+  const isTablet = useIsMobile('768px');
+  const isMobile = useIsMobile('376px');
+
+  const backgroundSrc = frontSideBg.bigPc
+    ? isMobile
+      ? frontSideBg.mo
+      : isTablet
+      ? frontSideBg.ta
+      : isPC
+      ? frontSideBg.pc
+      : frontSideBg.bigPc
+    : isPC
+    ? frontSideBg.mo
+    : frontSideBg.pc;
 
   return (
     <FlippableCard

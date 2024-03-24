@@ -17,32 +17,16 @@ export const CardWrapper = styled.div<{ background: string }>`
 
   @media (max-width: 1440px) {
     max-width: 511px;
+  }
+
+  @media (max-width: 768px) {
+    width: 511px;
     height: 434px;
   }
 
-  @media (max-width: 375px) {
-    max-width: 294px;
+  @media (max-width: 376px) {
+    width: 294px;
     height: 249px;
-  }
-
-  /* 
-  @media (max-width: 1440px) {
-    width: 100%;
-    height: 432px;
-    padding-top: 39px;
-    padding-bottom: 23px;
-  } */
-
-  @media (max-width: 768px) {
-    width: max(392px, min(100vw - 200px, 512px));
-    height: calc(max(416px, min(100vw - 200px, 512px)) * 0.84);
-  }
-
-  @media (max-width: 428px) {
-    width: 293px;
-    height: 250px;
-    padding-top: 20px;
-    padding-bottom: 13px;
   }
 `;
 
