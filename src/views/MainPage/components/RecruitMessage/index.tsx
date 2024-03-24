@@ -1,4 +1,5 @@
 import { useIsMobile } from '@src/hooks/useDevice';
+import RecruitButton from '../Banner/RecruitButton';
 import * as S from './style';
 
 export default function RecruitMessage() {
@@ -10,7 +11,7 @@ export default function RecruitMessage() {
       <S.Description>
         아직 모집기간이 아니예요.{isMobileSize && <br />}알림 신청을 하시면, 가을에 찾아갈게요!
       </S.Description>
-      <S.GoToRecruit>모집시 알림 받기</S.GoToRecruit>
+      <RecruitButton>모집시 알림 받기 &gt;</RecruitButton>
     </S.Background>
   );
 }
