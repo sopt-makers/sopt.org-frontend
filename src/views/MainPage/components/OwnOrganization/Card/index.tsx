@@ -7,7 +7,7 @@ type OwnOrganizationCardProps = {
   nameKor: string;
   nameEng: string;
   description: TextWeightType[];
-  frontSideBg: { mo: string; pc: string; ta?: string; bigPc?: string };
+  frontSideBg: { mo: string; pc: string; ta: string; bigPc: string };
   backSideBg: string;
 };
 

@@ -3,12 +3,18 @@ import { default as ImgEvent } from '@src/assets/images/img_event.jpg';
 import { default as ImgIntroCard1 } from '@src/assets/images/img_intro_card1.png';
 import { default as ImgIntroCard2 } from '@src/assets/images/img_intro_card2.png';
 import { default as ImgIntroCard3 } from '@src/assets/images/img_intro_card3.png';
+import { default as ImgMakersCardBigPc } from '@src/assets/images/img_main_makers_card_big_pc.png';
 import { default as ImgMakersCardMo } from '@src/assets/images/img_main_makers_card_mo.png';
 import { default as ImgMakersCardPc } from '@src/assets/images/img_main_makers_card_pc.png';
-import { default as ImgManageCardMc } from '@src/assets/images/img_main_manage_card_mo.png';
+import { default as ImgMakersCardTa } from '@src/assets/images/img_main_makers_card_ta.png';
+import { default as ImgManageCardBigPc } from '@src/assets/images/img_main_manage_card_big_pc.png';
+import { default as ImgManageCardMo } from '@src/assets/images/img_main_manage_card_mo.png';
 import { default as ImgManageCardPc } from '@src/assets/images/img_main_manage_card_pc.png';
-import { default as ImgMediaCardMc } from '@src/assets/images/img_main_media_card_mo.png';
+import { default as ImgManageCardTa } from '@src/assets/images/img_main_manage_card_ta.png';
+import { default as ImgMediaCardBigPc } from '@src/assets/images/img_main_media_card_big_pc.png';
+import { default as ImgMediaCardMo } from '@src/assets/images/img_main_media_card_mo.png';
 import { default as ImgMediaCardPc } from '@src/assets/images/img_main_media_card_pc.png';
+import { default as ImgMediaCardTa } from '@src/assets/images/img_main_media_card_ta.png';
 import { default as ImgMindCardBigPc } from '@src/assets/images/img_main_mind_card_big_pc.png';
 import { default as ImgMindCardMo } from '@src/assets/images/img_main_mind_card_mo.png';
 import { default as ImgMindCardPc } from '@src/assets/images/img_main_mind_card_pc.png';
@@ -448,7 +454,7 @@ export const OWN_ORGANIZATION_LIST: {
   nameKor: string;
   nameEng: string;
   description: TextWeightType[];
-  frontSideBg: { mo: string; pc: string; ta?: string; bigPc?: string };
+  frontSideBg: { mo: string; pc: string; ta: string; bigPc: string };
   backSideBg: string;
 }[] = [
   {
@@ -468,7 +474,12 @@ export const OWN_ORGANIZATION_LIST: {
         weight: 'normal',
       },
     ],
-    frontSideBg: { pc: ImgManageCardPc.src, mo: ImgManageCardMc.src },
+    frontSideBg: {
+      bigPc: ImgManageCardBigPc.src,
+      pc: ImgManageCardPc.src,
+      ta: ImgManageCardTa.src,
+      mo: ImgManageCardMo.src,
+    },
     backSideBg: '#FFC700',
   },
   {
@@ -488,7 +499,12 @@ export const OWN_ORGANIZATION_LIST: {
         weight: 'normal',
       },
     ],
-    frontSideBg: { pc: ImgMediaCardPc.src, mo: ImgMediaCardMc.src },
+    frontSideBg: {
+      bigPc: ImgMediaCardBigPc.src,
+      pc: ImgMediaCardPc.src,
+      ta: ImgMediaCardTa.src,
+      mo: ImgMediaCardMo.src,
+    },
     backSideBg: '#3E74FD',
   },
   {
@@ -535,7 +551,12 @@ export const OWN_ORGANIZATION_LIST: {
         weight: 'normal',
       },
     ],
-    frontSideBg: { pc: ImgMakersCardPc.src, mo: ImgMakersCardMo.src },
+    frontSideBg: {
+      bigPc: ImgMakersCardBigPc.src,
+      pc: ImgMakersCardPc.src,
+      ta: ImgMakersCardTa.src,
+      mo: ImgMakersCardMo.src,
+    },
     backSideBg: '#FF7C53',
   },
 ];
