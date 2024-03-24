@@ -31,13 +31,13 @@ export const Title = styled.h1`
   text-align: center;
 
   @media (max-width: 768px) {
-    font-size: 36px;
+    font-size: 30px;
     font-weight: 600;
     line-height: 50.64px; /* 140.668% */
     letter-spacing: -1.08px;
   }
 
-  @media (max-width: 444px) {
+  @media (max-width: 376px) {
     font-size: 21px;
     line-height: 29.103px; /* 138.588% */
     letter-spacing: -0.63px;
