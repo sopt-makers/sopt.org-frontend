@@ -31,17 +31,13 @@ export default function OwnOrganizationCard({
   const isTablet = useIsMobile('768px');
   const isMobile = useIsMobile('376px');
 
-  const backgroundSrc = frontSideBg.bigPc
-    ? isMobile
-      ? frontSideBg.mo
-      : isTablet
-      ? frontSideBg.ta
-      : isPC
-      ? frontSideBg.pc
-      : frontSideBg.bigPc
-    : isPC
+  const backgroundSrc = isMobile
     ? frontSideBg.mo
-    : frontSideBg.pc;
+    : isTablet
+    ? frontSideBg.ta
+    : isPC
+    ? frontSideBg.pc
+    : frontSideBg.bigPc;
 
   return (
     <FlippableCard

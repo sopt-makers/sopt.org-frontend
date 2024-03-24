@@ -61,7 +61,7 @@ export const global = css`
     -webkit-touch-callout: none;
     /* -webkit-user-select:none; */
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    scroll-behavior: smooth !important;
+    scroll-behavior: smooth;
   }
 
   * {

@@ -10,6 +10,58 @@ import Tab from '../Tab';
 import OwnOrganizationCard from './Card';
 import * as S from './style';
 
+function DesktopViewContent() {
+  return (
+    <S.ContentWrapper>
+      {OWN_ORGANIZATION_LIST.map((organization) => (
+        <OwnOrganizationCard key={organization.nameEng} {...organization} />
+      ))}
+    </S.ContentWrapper>
+  );
+}
+
+function MobileViewContent() {
+  const {
+    carouselRef,
+    infiniteCarouselList,
+    handleCarouselSwipe,
+    handleTouchStart,
+    handleTouchEnd,
+  } = useInfiniteCarousel<OwnOrganizationCardProps>(OWN_ORGANIZATION_LIST, '(-100% - 20px)');
+
+  return (
+    <S.CarouselWrapper>
+      <S.LeftArrow>
+        <Image
+          src={IcArrowLeft}
+          width="42"
+          height="42"
+          alt="왼쪽 화살표"
+          onClick={() => handleCarouselSwipe(-1)}
+        />
+      </S.LeftArrow>
+      <S.Carousel ref={carouselRef} onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
+        {infiniteCarouselList.map((organization, index) => {
+          return (
+            <S.Slide key={index}>
+              <OwnOrganizationCard {...organization} />
+            </S.Slide>
+          );
+        })}
+      </S.Carousel>
+      <S.RightArrow>
+        <Image
+          src={IcArrowRight}
+          width="42"
+          height="42"
+          alt="오른쪽 화살표"
+          onClick={() => handleCarouselSwipe(1)}
+        />
+      </S.RightArrow>
+    </S.CarouselWrapper>
+  );
+}
+
 type OwnOrganizationCardProps = {
   nameKor: string;
   nameEng: string;
@@ -22,14 +74,6 @@ function OwnOrganization(_props: unknown, ref: Ref<HTMLDivElement>) {
   const isMobileSize = useIsMobile('768px');
   const tab = isMobileSize ? 'Team' : '';
 
-  const {
-    carouselRef,
-    infiniteCarouselList,
-    handleCarouselSwipe,
-    handleTouchStart,
-    handleTouchEnd,
-  } = useInfiniteCarousel<OwnOrganizationCardProps>(OWN_ORGANIZATION_LIST, '(-100% - 20px)');
-
   return (
     <S.Wrapper id="team" ref={ref}>
       <Tab
@@ -39,50 +83,8 @@ function OwnOrganization(_props: unknown, ref: Ref<HTMLDivElement>) {
           '솝트에는 자체적으로 운영하는 네 가지의 팀이 있습니다.\n솝트의 보다 유연하고 열정적인 경험을 위해 노력하죠.'
         }
       />
-      {!isMobileSize && (
-        <S.ContentWrapper>
-          {OWN_ORGANIZATION_LIST.map((organization) => (
-            <OwnOrganizationCard key={organization.nameEng} {...organization} />
-          ))}
-        </S.ContentWrapper>
-      )}
-      {isMobileSize && (
-        <>
-          <S.CarouselWrapper>
-            <S.LeftArrow>
-              <Image
-                src={IcArrowLeft}
-                width="42"
-                height="42"
-                alt="왼쪽 화살표"
-                onClick={() => handleCarouselSwipe(-1)}
-              />
-            </S.LeftArrow>
-            <S.Carousel
-              ref={carouselRef}
-              onTouchStart={handleTouchStart}
-              onTouchEnd={handleTouchEnd}
-            >
-              {infiniteCarouselList.map((organization, index) => {
-                return (
-                  <S.Slide key={index}>
-                    <OwnOrganizationCard {...organization} />
-                  </S.Slide>
-                );
-              })}
-            </S.Carousel>
-            <S.RightArrow>
-              <Image
-                src={IcArrowRight}
-                width="42"
-                height="42"
-                alt="오른쪽 화살표"
-                onClick={() => handleCarouselSwipe(1)}
-              />
-            </S.RightArrow>
-          </S.CarouselWrapper>
-        </>
-      )}
+      {!isMobileSize && <DesktopViewContent />}
+      {isMobileSize && <MobileViewContent />}
     </S.Wrapper>
   );
 }

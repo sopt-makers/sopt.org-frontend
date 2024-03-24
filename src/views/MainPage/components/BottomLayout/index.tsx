@@ -45,7 +45,9 @@ function BottomLayout() {
               isInView={minIndex === index}
               style={{ backgroundColor: menuBackground, color: menuColor }}
             >
-              <S.Menu href={`#${id}`}>{name}</S.Menu>
+              <S.Menu href={`#${id}`} scroll={false}>
+                {name}
+              </S.Menu>
             </S.MenuWrapper>
           ))}
         </S.FloatingMenu>
