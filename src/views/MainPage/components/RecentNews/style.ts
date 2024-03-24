@@ -12,11 +12,11 @@ export const RecentNews = styled.section`
   }
 
   @media (max-width: 768px) {
-    padding-top: 253px 0 42px;
+    padding: 253px 0 42px;
   }
 
   @media (max-width: 444px) {
-    padding-top: 157px 0 24px;
+    padding: 157px 0 24px;
   }
 `;
 

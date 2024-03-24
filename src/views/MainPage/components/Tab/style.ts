@@ -7,11 +7,11 @@ export const Wrapper = styled.section`
   margin-bottom: 31px;
 
   /* 태블릿 뷰 */
-  @media (max-width: 768px) and (min-width: 429px) {
+  @media (max-width: 768px) {
     margin-bottom: 26px;
   }
   /* 모바일 뷰 */
-  @media (max-width: 428px) {
+  @media (max-width: 376px) {
     margin-bottom: 14px;
   }
 `;
@@ -19,16 +19,19 @@ export const Wrapper = styled.section`
 export const Tab = styled.h2`
   color: #5b88f8;
   font-family: SUIT;
-  font-size: 18px;
   font-style: normal;
   font-weight: 600;
+  margin-bottom: 10px;
+  font-size: 20px;
   line-height: 46.311px; /* 257.282% */
-  letter-spacing: -0.36px;
+  letter-spacing: -2%;
+  z-index: 1;
 
-  margin-bottom: 8px;
-
-  @media (max-width: 428px) {
+  @media (max-width: 376px) {
     font-size: 11px;
+    line-height: 26.615px; /* 241.956% */
+    letter-spacing: -0.22px;
+    margin-bottom: 0px;
   }
 `;
 
@@ -44,15 +47,16 @@ export const Title = styled.h1`
   margin-bottom: 16px;
   word-break: keep-all;
 
-  @media (max-width: 768px) and (min-width: 429px) {
+  @media (max-width: 768px) {
     font-size: 36px;
     letter-spacing: -1.08px;
   }
 
-  @media (max-width: 428px) {
+  @media (max-width: 376px) {
     font-size: 21px;
     line-height: 29.103px; /* 138.588% */
     letter-spacing: -0.63px;
+    margin-bottom: 3.5px;
   }
 `;
 
@@ -67,13 +71,13 @@ export const Description = styled.p`
   word-break: keep-all;
   white-space: pre-line;
 
-  @media (max-width: 768px) and (min-width: 429px) {
+  @media (max-width: 768px) {
     font-size: 16px;
     line-height: 26px; /* 162.5% */
     letter-spacing: -0.64px;
   }
 
-  @media (max-width: 428px) {
+  @media (max-width: 376px) {
     font-size: 10px;
     line-height: 14.942px; /* 149.424% */
     letter-spacing: -0.4px;

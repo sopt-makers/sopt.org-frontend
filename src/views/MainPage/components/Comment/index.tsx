@@ -9,8 +9,9 @@ function Comment(_props: unknown, ref: Ref<HTMLDivElement>) {
   const [activeIdx, setActiveIdx] = useState(0);
   const controls = useAnimationControls();
   const isWideScreen = useIsDesktop('1480px');
-  const isMobile = useIsMobile('768px');
   const wrapperRef = useRef(null);
+  const isMobileSize = useIsMobile('768px');
+  const tab = isMobileSize ? 'Review' : '';
 
   const changeActiveIdx = (idx: number) => {
     setActiveIdx(idx);
@@ -27,7 +28,10 @@ function Comment(_props: unknown, ref: Ref<HTMLDivElement>) {
   return (
     <S.Wrapper id="review" ref={ref}>
       <S.TitleWrapper ref={wrapperRef}>
-        {!isWideScreen && !isMobile && <S.TitleShadow style={{ opacity: titleShadowOpacity }} />}
+        {!isWideScreen && !isMobileSize && (
+          <S.TitleShadow style={{ opacity: titleShadowOpacity }} />
+        )}
+        {tab && <S.SectionSubTitle>{tab}</S.SectionSubTitle>}
         <S.SectionTitle>Q. 솝트 어때요?</S.SectionTitle>
         <S.Summary animate={controls} color={SOPT_COMMENT_LIST[activeIdx]?.color}>
           {SOPT_COMMENT_LIST[activeIdx]?.summary}

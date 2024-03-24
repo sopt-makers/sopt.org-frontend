@@ -2,6 +2,14 @@ import styled from '@emotion/styled';
 
 export const Wrapper = styled.div`
   padding-top: 104px;
+
+  @media (max-width: 768px) {
+    padding-top: 125px;
+  }
+
+  @media (max-width: 376px) {
+    padding-top: 74px;
+  }
 `;
 
 export const ContentWrapper = styled.div`
@@ -49,6 +57,14 @@ export const Slide = styled.div`
   height: 428px;
   padding: 0 6.5vw;
   border-radius: 19px;
+
+  @media (max-width: 768px) {
+    height: 434px;
+  }
+
+  @media (max-width: 376px) {
+    height: 249px;
+  }
 `;
 
 export const Arrow = styled.div`

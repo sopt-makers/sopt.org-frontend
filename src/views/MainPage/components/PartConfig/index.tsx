@@ -2,6 +2,7 @@ import Image from 'next/image';
 import { Ref, forwardRef, useRef } from 'react';
 import IcArrowLeft from '@src/assets/icons/ic_arrow_left.svg';
 import IcArrowRight from '@src/assets/icons/ic_arrow_right.svg';
+import { useIsMobile } from '@src/hooks/useDevice';
 import useDrag from '@src/hooks/useDrag';
 import useInfiniteCarousel from '@src/hooks/useInfiniteCarousel';
 import { tabs as carouselList } from '@src/lib/constants/tabs';
@@ -23,10 +24,13 @@ function PartConfig(_props: unknown, ref: Ref<HTMLDivElement>) {
     handleTouchStart,
     handleTouchEnd,
   } = useInfiniteCarousel<TabType>(carouselList, '(-100% - 20px)', partRef);
+  const isMobileSize = useIsMobile('768px');
+  const tab = isMobileSize ? 'Part' : '';
 
   return (
     <S.Wrapper id="part" ref={ref}>
       <Tab
+        tab={tab}
         title={'6개의 파트로 이루어져 있어요.'}
         description={
           '솝트에서는 기획, 디자인, 개발 등 여러 파트원들이 한 프로젝트에 참여하며\n협업하는 경험을 쌓을 수 있어요. 부족해도 괜찮아요, 함께 배우면 되니까요!'

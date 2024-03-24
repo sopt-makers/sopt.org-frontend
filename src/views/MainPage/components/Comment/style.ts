@@ -100,6 +100,24 @@ export const SectionTitle = styled.div`
   }
 `;
 
+export const SectionSubTitle = styled.p`
+  color: #5b88f8;
+  font-family: SUIT;
+  font-style: normal;
+  font-weight: 600;
+  margin-bottom: 10px;
+  font-size: 20px;
+  line-height: 46.311px; /* 257.282% */
+  letter-spacing: -2%;
+  z-index: 1;
+
+  @media (max-width: 376px) {
+    font-size: 11px;
+    line-height: 26.615px; /* 241.956% */
+    letter-spacing: -0.22px;
+  }
+`;
+
 export const Summary = styled(motion.div)<{ color: string }>`
   color: ${({ color }) => color};
 
