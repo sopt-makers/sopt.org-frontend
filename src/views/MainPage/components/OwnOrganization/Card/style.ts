@@ -20,12 +20,12 @@ export const CardWrapper = styled.div<{ background: string }>`
   }
 
   @media (max-width: 768px) {
-    width: 511px;
+    max-width: 511px;
     height: 434px;
   }
 
   @media (max-width: 376px) {
-    width: 294px;
+    max-width: 294px;
     height: 249px;
   }
 `;
