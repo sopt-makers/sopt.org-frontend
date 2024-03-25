@@ -33,7 +33,7 @@ function PartConfig(_props: unknown, ref: Ref<HTMLDivElement>) {
         tab={tab}
         title={'6개의 파트로 이루어져 있어요.'}
         description={
-          '솝트에서는 기획, 디자인, 개발 등 여러 파트원들이 한 프로젝트에 참여하며\n협업하는 경험을 쌓을 수 있어요. 부족해도 괜찮아요, 함께 배우면 되니까요!'
+          '솝트에서는 기획, 디자인, 개발 등 여러 파트원들이 한 프로젝트에 참여하며\n협업 경험을 쌓을 수 있어요. 부족해도 괜찮아요, 함께 배우면 되니까요!'
         }
       />
       <S.ContentWrapper>

@@ -83,7 +83,7 @@ export const Activity: ActivityListType = {
     navKor: '솝텀',
     navEng: 'Sopt-term',
     description: [
-      { content: 'SOPT를 ', color: 'white' },
+      { content: '솝트를 ', color: 'white' },
       {
         content: '한 기수 이상 수료한 회원',
         color: 'yellow',
@@ -145,14 +145,14 @@ export const INTRO_CONTENT_LIST = [
     id: 1,
     title: '열정이 이끄는\n최고 수준의 몰입',
     detail:
-      '열정 하나로 뭉친 SOPT는 끊임 없이 집중하며 성장합니다.\n언제나 어떤 일에 대해서든 최고 수준의 몰입을 유지합니다.',
+      '열정 하나로 뭉친 솝트는 끊임 없이 집중하며 성장합니다.\n언제나 어떤 일에 대해서든 최고 수준의 몰입을 유지합니다.',
     src: ImgIntroCard1.src,
   },
   {
     id: 2,
     title: '가진 것은 무엇이든\n나누는 문화',
     detail:
-      'SOPT에서는 모두가 자신의 지식과 경험을\n적극적으로 나눕니다. 이를 통해 다양한 관점에서\n세상의 문제를 해결할 수 있습니다.',
+      '솝트에서는 모두가 자신의 지식과 경험을\n적극적으로 나눕니다. 이를 통해 다양한 관점에서\n세상의 문제를 해결할 수 있습니다.',
     src: ImgIntroCard2.src,
   },
   {
