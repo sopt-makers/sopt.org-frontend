@@ -68,7 +68,7 @@ export type KeywordListType = Record<Part, KeywordType[]>;
 type PartInfoType = {
   value: string;
   label: string;
-  description: TextWeightType[];
+  description: string;
 };
 
 export type PartListType = Record<Part, PartInfoType>;

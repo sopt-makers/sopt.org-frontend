@@ -28,13 +28,7 @@ export default function PartSlide({ part }: PartSlideProps) {
             <S.PartBadge>{value}</S.PartBadge>
             <S.PartTitle>{label}</S.PartTitle>
           </S.PartTop>
-          <S.PartDescription>
-            {description.map(({ content, weight }, index) => (
-              <S.Content key={index} weight={weight}>
-                {content}
-              </S.Content>
-            ))}
-          </S.PartDescription>
+          <S.PartDescription>{description}</S.PartDescription>
         </S.PartDetail>
         {keywordList[part].map(({ content, desktop, tablet, mobile, ...style }, index) => {
           const responsiveStyle = isMobile ? mobile : isTablet ? tablet : desktop;
