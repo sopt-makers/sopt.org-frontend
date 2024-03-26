@@ -1,4 +1,4 @@
-import { Part, TextWeightType } from '@src/lib/types/universal';
+import { Part } from '@src/lib/types/universal';
 
 export type IntroContentType = {
   id: number;
