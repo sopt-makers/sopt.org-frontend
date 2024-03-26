@@ -12,9 +12,16 @@ import SEO from '@src/components/common/SEO';
 import GoogleTagManagerNoscript from '@src/components/googleTagManager/Noscript';
 import GoogleTagManagerScript from '@src/components/googleTagManager/Script';
 import * as gtm from '@src/components/googleTagManager/gtm';
+import KakaoScript from '@src/components/kakao/Script';
 import { AMPLITUDE_API_KEY } from '@src/lib/constants/client';
 import { global } from '@src/lib/styles/global';
 import { pageViewTrackingEnrichment } from '@src/lib/utils/pageViewTrackingEnrichment';
+
+declare global {
+  interface Window {
+    Kakao: any;
+  }
+}
 
 export const queryClient = new QueryClient({
   defaultOptions: {
@@ -91,6 +98,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       </Head>
       <SEO />
       <GoogleTagManagerScript />
+      <KakaoScript />
       <Global styles={global} />
       <QueryClientProvider client={queryClient}>
         <MotionConfig isValidProp={isValidProp}>
