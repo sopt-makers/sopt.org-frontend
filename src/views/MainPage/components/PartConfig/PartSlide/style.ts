@@ -154,6 +154,7 @@ export const Content = styled.span<{ weight: 'normal' | 'bold' }>`
   font-weight: ${({ weight }) => weight};
   line-height: 162%; /* 30.78px */
   letter-spacing: -0.38px;
+  word-break: keep-all;
 
   @media (max-width: 1200px) {
     font-size: 18px;

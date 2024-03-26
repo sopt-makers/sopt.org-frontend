@@ -72,8 +72,7 @@ export const Activity: ActivityListType = {
       },
       { content: '단기 해커톤', color: 'yellow' },
       {
-        content:
-          '예요. 앱잼에 앞서 팀 단위의 협업 과정을 빠르게 경험하며, IT 프로젝트에 대한 협업 감각을 익힐 수 있어요.',
+        content: '예요. 팀 단위의 협업과정을 빠르게 경험할 수 있어요.',
         color: 'white',
       },
     ],
@@ -169,75 +168,53 @@ export const partList: PartListType = {
     value: 'Plan',
     label: '기획',
     description: [
-      { content: '린스타트업에 기초', weight: 'bold' },
       {
-        content: '하여 고객 시장 분석 - 문제정의 - 가설 검증 - 솔루션/BM 도출- 전략 수립까지 ',
+        content:
+          '린스타트업에 기초해 고객 문제정의 - 고객 발굴 - 검증 과정을 거쳐 비즈니스 전략과 핵심지표 설계까지 고객 관점 프로덕트를 만들고 운영하기 위한 모든 과정을 다룹니다.',
         weight: 'normal',
       },
-      { content: 'IT 프로덕트를 기획', weight: 'bold' },
-      { content: '하고 ', weight: 'normal' },
-      { content: '매니징하는 전과정을 경험', weight: 'bold' },
-      { content: '합니다.', weight: 'normal' },
     ],
   },
   [Part.DESIGN]: {
     value: 'Design',
     label: '디자인',
     description: [
-      { content: '피그마와 같은 협업툴', weight: 'bold' },
-      { content: '을 통해 ', weight: 'normal' },
-      { content: 'UX/UI 디자인의 전반적인 과정', weight: 'bold' },
-      { content: '을 배우고 기획자, 개발자와 함께 ', weight: 'normal' },
-      { content: '새로운 프로덕트', weight: 'bold' },
-      { content: '를 만들어 내는 과정에 참여합니다.', weight: 'normal' },
+      {
+        content:
+          'Figma를 활용하여 UX/UI 디자인의 전반적인 프로세스를 배우고, 세미나에서 학습한 UX심리학, 브랜딩, 디자인 시스템 등의 이론을 기획자, 개발자와의 협업 과정에 적용해 보며 근거에 기반한 문제 해결을 경험합니다.',
+        weight: 'normal',
+      },
     ],
   },
   [Part.ANDROID]: {
     value: 'Android',
     label: '안드로이드',
     description: [
-      { content: 'Kotlin 언어를 활용', weight: 'bold' },
-      { content: '해 안드로이드 ', weight: 'normal' },
-      { content: 'UI 구현 기초/심화', weight: 'bold' },
-      { content: ', ', weight: 'normal' },
-      { content: '서버 통신 ', weight: 'bold' },
       {
-        content: '등 앱 제작에 필요한 내용들을 배웁니다. 세미나, ',
+        content:
+          'Kotlin 언어를 활용해 안드로이드 UI(XML/Compose) 구현 기초/심화, 서버 통신 등 앱 제작에 필요한 내용들을 배웁니다. 세미나, 정규 미미나를 통해 다양한 문제 상황을 해결할 수 있는 역량을 기르며 타 파트와의 협업을 통해 직접 서비스를 제작하는 경험을 얻을 수 있습니다.',
         weight: 'normal',
       },
-      { content: '페어 프로그래밍', weight: 'bold' },
-      { content: '을 통한 실습 등 여러 활동에 참여합니다.', weight: 'normal' },
     ],
   },
   [Part.IOS]: {
     value: 'iOS',
     label: 'iOS',
     description: [
-      { content: 'Swift와 UI Kit', weight: 'bold' },
-      { content: '를 이용해 ', weight: 'normal' },
-      { content: 'iOS 앱 서비스', weight: 'bold' },
       {
-        content: '를 만들 수 있습니다. iOS가 처음인 분들을 위한',
+        content:
+          'Swift와 UI Kit를 이용해 iOS 앱 서비스를 만들 수 있습니다. iOS가 처음인 분들을 위한왕초보 스터디와 보충 세미나, 실력적 도약을 위한 심화 세미나까지 존재합니다.',
         weight: 'normal',
       },
-      { content: '왕초보 스터디', weight: 'bold' },
-      { content: '와 ', weight: 'normal' },
-      { content: '보충 세미나', weight: 'bold' },
-      { content: ', 실력적 도약을 위한 ', weight: 'normal' },
-      { content: '심화 세미나', weight: 'bold' },
-      { content: '까지 존재합니다.', weight: 'normal' },
     ],
   },
   [Part.WEB]: {
     value: 'Web',
     label: '웹',
     description: [
-      { content: 'UI 구현, 서버 통신 등 ', weight: 'normal' },
-      { content: '웹 서비스 개발', weight: 'bold' },
-      { content: '에 필요한 역량들을 ', weight: 'normal' },
       {
         content:
-          '학습합니다. 또한 기획자, 디자이너, 서버 개발자와의 협업 경험을 통해 개발 협업 방식을 익힐 수 있습니다.',
+          'HTML, CSS, JavaScript로 기초를 다지고 React를 활용해 UI구현, 서버 통신, 다양한 라이브러리 사용 등 웹 서비스 개발에 필요한 역량들을 기초부터 심화까지 학습합니다. 또한 기획자, 디자이너, 서버 개발자와의 협업을 통해 나만의 웹 서비스를 만드는 경험을 해보실 수 있습니다.',
         weight: 'normal',
       },
     ],
@@ -246,16 +223,9 @@ export const partList: PartListType = {
     value: 'Server',
     label: '서버',
     description: [
-      { content: 'Spring 프레임 워크', weight: 'bold' },
-      { content: ', ', weight: 'normal' },
-      { content: '관계형 데이터베이스', weight: 'bold' },
-      { content: '와', weight: 'normal' },
-      { content: 'AWS를 기반', weight: 'bold' },
-      { content: '으로 ', weight: 'normal' },
-      { content: '서버를 구축', weight: 'bold' },
       {
         content:
-          '및 운영하는 과정을 학습합니다. 세미나, 코드리뷰, 스터디를 통해 개발 실력을 증진시킵니다.',
+          '세미나를 통해 Spring 프레임워크, 관계형 데이터베이스, AWS, Docker를 기반으로 실제 서비스를 위한 서버 구축의 전반적인 내용을 배웁니다.또한 스터디와 코드리뷰, 미니 세미나를 등 개발 실력의 도약과 기획파트, 디자인파트, 클라이언트 파트와 협업을 통해 협업 방식을 익힐 수 있습니다.',
         weight: 'normal',
       },
     ],
