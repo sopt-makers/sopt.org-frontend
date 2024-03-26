@@ -9,9 +9,9 @@ export const Root = styled.main`
   position: relative;
 
   width: 100%;
-  height: 100vh;
+  height: 100dvh;
   min-height: 400px;
-  padding-bottom: 20vh;
+  padding-bottom: 20dvh;
 
   overflow: scroll;
 `;
@@ -26,14 +26,18 @@ export const TopSection = styled.section`
 export const ErrorText = styled.p`
   color: #fcfcfc;
 
-  font-size: calc(24px + 1vw);
+  font-size: 28px;
   font-weight: 600;
   line-height: 150%;
   letter-spacing: -0.96px;
+
+  @media (max-width: 428px) {
+    font-size: 24px;
+  }
 `;
 export const ContactButton = styled.button`
   position: absolute;
-  bottom: 17vh;
+  bottom: 17dvh;
 
   color: #fff;
   font-size: 24px;
