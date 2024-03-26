@@ -34,6 +34,18 @@ const FooterLink = styled(Link)`
   padding: 17px 10px;
 
   color: #c0c5c9;
+  line-height: normal;
+
+  &:hover {
+    cursor: pointer;
+    color: #ffffff;
+  }
+`;
+const FooterButton = styled.button`
+  padding: 17px 10px;
+
+  color: #c0c5c9;
+  font-size: 100%;
 
   &:hover {
     cursor: pointer;
@@ -44,6 +56,7 @@ const FooterLink = styled(Link)`
 const St = {
   FooterForm,
   FooterLink,
+  FooterButton,
 };
 
 export default St;
