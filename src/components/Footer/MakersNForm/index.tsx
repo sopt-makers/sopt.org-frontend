@@ -5,6 +5,12 @@ import St from './style';
 const MakersNForm: FC = () => {
   const { isScrollingDown, isScrollTop } = useScrollPosition();
 
+  const handleClickKakao = () => {
+    window.Kakao.Channel.chat({
+      channelPublicId: '_sxaIWG',
+    });
+  };
+
   return (
     <St.FooterForm hide={isScrollingDown && !isScrollTop}>
       <St.FooterLink
@@ -14,9 +20,9 @@ const MakersNForm: FC = () => {
       >
         만든 사람들
       </St.FooterLink>
-      <St.FooterLink href="https://pf.kakao.com/_sxaIWG" target="_blank" rel="noopener noreferrer">
+      <St.FooterButton type="button" onClick={handleClickKakao}>
         의견 제안하기
-      </St.FooterLink>
+      </St.FooterButton>
     </St.FooterForm>
   );
 };
