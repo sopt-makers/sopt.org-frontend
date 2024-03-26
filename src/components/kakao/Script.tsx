@@ -1,10 +1,9 @@
 import Script from 'next/script';
 
 export default function KakaoScript() {
-  function handleOnLoad() {
+  const handleOnLoad = () => {
     window.Kakao.init(process.env.NEXT_PUBLIC_KAKAO_KEY);
-    console.log(window.Kakao.isInitialized());
-  }
+  };
 
   return (
     <Script
