@@ -15,7 +15,7 @@ export const Wrapper = styled(motion.div)`
   font-weight: 400;
   line-height: 35.5px; /* 177.5% */
   letter-spacing: -0.8px;
-  @media (max-width: 1640px) {
+  @media (max-width: 1600px) {
     width: 660px;
     height: 324px;
     padding: 32px 36px;

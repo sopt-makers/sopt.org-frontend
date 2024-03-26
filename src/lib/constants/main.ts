@@ -72,8 +72,7 @@ export const Activity: ActivityListType = {
       },
       { content: '단기 해커톤', color: 'yellow' },
       {
-        content:
-          '예요. 앱잼에 앞서 팀 단위의 협업 과정을 빠르게 경험하며, IT 프로젝트에 대한 협업 감각을 익힐 수 있어요.',
+        content: '예요. 팀 단위의 협업과정을 빠르게 경험할 수 있어요.',
         color: 'white',
       },
     ],
@@ -83,7 +82,7 @@ export const Activity: ActivityListType = {
     navKor: '솝텀',
     navEng: 'Sopt-term',
     description: [
-      { content: 'SOPT를 ', color: 'white' },
+      { content: '솝트를 ', color: 'white' },
       {
         content: '한 기수 이상 수료한 회원',
         color: 'yellow',
@@ -145,14 +144,14 @@ export const INTRO_CONTENT_LIST = [
     id: 1,
     title: '열정이 이끄는\n최고 수준의 몰입',
     detail:
-      '열정 하나로 뭉친 SOPT는 끊임 없이 집중하며 성장합니다.\n언제나 어떤 일에 대해서든 최고 수준의 몰입을 유지합니다.',
+      '열정 하나로 뭉친 솝트는 끊임 없이 집중하며 성장합니다.\n언제나 어떤 일에 대해서든 최고 수준의 몰입을 유지합니다.',
     src: ImgIntroCard1.src,
   },
   {
     id: 2,
     title: '가진 것은 무엇이든\n나누는 문화',
     detail:
-      'SOPT에서는 모두가 자신의 지식과 경험을\n적극적으로 나눕니다. 이를 통해 다양한 관점에서\n세상의 문제를 해결할 수 있습니다.',
+      '솝트에서는 모두가 자신의 지식과 경험을\n적극적으로 나눕니다. 이를 통해 다양한 관점에서\n세상의 문제를 해결할 수 있습니다.',
     src: ImgIntroCard2.src,
   },
   {
@@ -168,97 +167,38 @@ export const partList: PartListType = {
   [Part.PLAN]: {
     value: 'Plan',
     label: '기획',
-    description: [
-      { content: '린스타트업에 기초', weight: 'bold' },
-      {
-        content: '하여 고객 시장 분석 - 문제정의 - 가설 검증 - 솔루션/BM 도출- 전략 수립까지 ',
-        weight: 'normal',
-      },
-      { content: 'IT 프로덕트를 기획', weight: 'bold' },
-      { content: '하고 ', weight: 'normal' },
-      { content: '매니징하는 전과정을 경험', weight: 'bold' },
-      { content: '합니다.', weight: 'normal' },
-    ],
+    description:
+      '린스타트업에 기초해 고객 문제정의 - 고객 발굴 - 검증 과정을 거쳐 비즈니스 전략과 핵심지표 설계까지 고객 관점 프로덕트를 만들고 운영하기 위한 모든 과정을 다룹니다.',
   },
   [Part.DESIGN]: {
     value: 'Design',
     label: '디자인',
-    description: [
-      { content: '피그마와 같은 협업툴', weight: 'bold' },
-      { content: '을 통해 ', weight: 'normal' },
-      { content: 'UX/UI 디자인의 전반적인 과정', weight: 'bold' },
-      { content: '을 배우고 기획자, 개발자와 함께 ', weight: 'normal' },
-      { content: '새로운 프로덕트', weight: 'bold' },
-      { content: '를 만들어 내는 과정에 참여합니다.', weight: 'normal' },
-    ],
+    description:
+      'Figma를 활용하여 UX/UI 디자인의 전반적인 프로세스를 배우고, 세미나에서 학습한 UX심리학, 브랜딩, 디자인 시스템 등의 이론을 기획자, 개발자와의 협업 과정에 적용해 보며 근거에 기반한 문제 해결을 경험합니다.',
   },
   [Part.ANDROID]: {
     value: 'Android',
     label: '안드로이드',
-    description: [
-      { content: 'Kotlin 언어를 활용', weight: 'bold' },
-      { content: '해 안드로이드 ', weight: 'normal' },
-      { content: 'UI 구현 기초/심화', weight: 'bold' },
-      { content: ', ', weight: 'normal' },
-      { content: '서버 통신 ', weight: 'bold' },
-      {
-        content: '등 앱 제작에 필요한 내용들을 배웁니다. 세미나, ',
-        weight: 'normal',
-      },
-      { content: '페어 프로그래밍', weight: 'bold' },
-      { content: '을 통한 실습 등 여러 활동에 참여합니다.', weight: 'normal' },
-    ],
+    description:
+      'Kotlin 언어를 활용해 안드로이드 UI(XML/Compose) 구현 기초/심화, 서버 통신 등 앱 제작에 필요한 내용들을 배웁니다. 세미나, 정규 미미나를 통해 다양한 문제 상황을 해결할 수 있는 역량을 기르며 타 파트와의 협업을 통해 직접 서비스를 제작하는 경험을 얻을 수 있습니다.',
   },
   [Part.IOS]: {
     value: 'iOS',
     label: 'iOS',
-    description: [
-      { content: 'Swift와 UI Kit', weight: 'bold' },
-      { content: '를 이용해 ', weight: 'normal' },
-      { content: 'iOS 앱 서비스', weight: 'bold' },
-      {
-        content: '를 만들 수 있습니다. iOS가 처음인 분들을 위한',
-        weight: 'normal',
-      },
-      { content: '왕초보 스터디', weight: 'bold' },
-      { content: '와 ', weight: 'normal' },
-      { content: '보충 세미나', weight: 'bold' },
-      { content: ', 실력적 도약을 위한 ', weight: 'normal' },
-      { content: '심화 세미나', weight: 'bold' },
-      { content: '까지 존재합니다.', weight: 'normal' },
-    ],
+    description:
+      'Swift와 UI Kit를 이용해 iOS 앱 서비스를 만들 수 있습니다. iOS가 처음인 분들을 위한왕초보 스터디와 보충 세미나, 실력적 도약을 위한 심화 세미나까지 존재합니다.',
   },
   [Part.WEB]: {
     value: 'Web',
     label: '웹',
-    description: [
-      { content: 'UI 구현, 서버 통신 등 ', weight: 'normal' },
-      { content: '웹 서비스 개발', weight: 'bold' },
-      { content: '에 필요한 역량들을 ', weight: 'normal' },
-      {
-        content:
-          '학습합니다. 또한 기획자, 디자이너, 서버 개발자와의 협업 경험을 통해 개발 협업 방식을 익힐 수 있습니다.',
-        weight: 'normal',
-      },
-    ],
+    description:
+      'HTML, CSS, JavaScript로 기초를 다지고 React를 활용해 UI구현, 서버 통신, 다양한 라이브러리 사용 등 웹 서비스 개발에 필요한 역량들을 기초부터 심화까지 학습합니다. 또한 기획자, 디자이너, 서버 개발자와의 협업을 통해 나만의 웹 서비스를 만드는 경험을 해보실 수 있습니다.',
   },
   [Part.SERVER]: {
     value: 'Server',
     label: '서버',
-    description: [
-      { content: 'Spring 프레임 워크', weight: 'bold' },
-      { content: ', ', weight: 'normal' },
-      { content: '관계형 데이터베이스', weight: 'bold' },
-      { content: '와', weight: 'normal' },
-      { content: 'AWS를 기반', weight: 'bold' },
-      { content: '으로 ', weight: 'normal' },
-      { content: '서버를 구축', weight: 'bold' },
-      {
-        content:
-          '및 운영하는 과정을 학습합니다. 세미나, 코드리뷰, 스터디를 통해 개발 실력을 증진시킵니다.',
-        weight: 'normal',
-      },
-    ],
+    description:
+      '세미나를 통해 Spring 프레임워크, 관계형 데이터베이스, AWS, Docker를 기반으로 실제 서비스를 위한 서버 구축의 전반적인 내용을 배웁니다.또한 스터디와 코드리뷰, 미니 세미나를 등 개발 실력의 도약과 기획파트, 디자인파트, 클라이언트 파트와 협업을 통해 협업 방식을 익힐 수 있습니다.',
   },
 };
 
@@ -339,29 +279,29 @@ export const keywordList: KeywordListType = {
       content: 'UI 구현 기초/심화',
       ...yellowStyle,
       desktop: { top: '117.6px', right: '6.16vw' },
-      tablet: { top: '303px', right: '6.38vw' },
-      mobile: { top: '175px', right: '6.07vw' },
+      tablet: { top: '305px', right: '6.38vw' },
+      mobile: { top: '174px', right: '6.07vw' },
     },
     {
       content: 'Kotlin 언어 활용',
       ...indigoStyle,
       desktop: { top: '96px', right: 'calc(115px + 10vw)' },
-      tablet: { top: '287px', right: 'calc(110px + 10.15vw)' },
-      mobile: { top: '163px', right: 'calc(50px + 14.06vw)' },
+      tablet: { top: '289px', right: 'calc(110px + 10.15vw)' },
+      mobile: { top: '165px', right: 'calc(50px + 14.06vw)' },
     },
     {
       content: '서버 통신',
       ...blueStyle,
       desktop: { top: '232px', right: '7.34vw' },
-      tablet: { top: '373px', right: '8.85vw' },
-      mobile: { top: '218px', right: '10.74vw' },
+      tablet: { top: '372px', right: '8.85vw' },
+      mobile: { top: '210px', right: '10.74vw' },
     },
     {
       content: '페어 프로그래밍',
       ...greenStyle,
       desktop: { top: '278.38px', right: 'calc(50px + 10vw)' },
-      tablet: { top: '379px', right: '28.77vw' },
-      mobile: { top: '225px', right: '29.43vw' },
+      tablet: { top: '378px', right: '28.77vw' },
+      mobile: { top: '213px', right: '29.43vw' },
     },
   ],
   [Part.IOS]: [
@@ -400,22 +340,22 @@ export const keywordList: KeywordListType = {
       content: '웹 서비스 개발',
       ...yellowStyle,
       desktop: { top: '92.97px', right: '12.06vw' },
-      tablet: { top: '262px', right: '10.93vw' },
-      mobile: { top: '158px', right: '13.08vw' },
+      tablet: { top: '301px', right: '10.93vw' },
+      mobile: { top: '170px', right: '13.08vw' },
     },
     {
       content: '기초부터 심화까지',
       ...indigoStyle,
       desktop: { top: '157.13px', right: '17.66vw' },
-      tablet: { top: '314px', right: '27.47vw' },
-      mobile: { top: '188px', right: '29vw' },
+      tablet: { top: '354px', right: '27.47vw' },
+      mobile: { top: '200px', right: '29vw' },
     },
     {
       content: 'UI구현과 서버 통신',
       ...skyStyle,
       desktop: { top: '282.28px', right: '11.25vw' },
       tablet: { top: '382px', right: '8.33vw' },
-      mobile: { top: '228px', right: '10.74vw' },
+      mobile: { top: '215px', right: '10.74vw' },
     },
   ],
   [Part.SERVER]: [
@@ -612,15 +552,16 @@ export const SOPT_COMMENT_LIST: SoptCommentType[] = [
       part: '기획',
     },
   },
+
   {
-    summary: '유의미한 배움',
+    summary: '인생의\n터닝포인트',
     color: '#3E74FD',
     comment:
-      '솝트에서 안드로이드를 처음 접하게 되었는데요, 세미나로 내용을 익히고 과제를 하며 금잔디 조원들과 디스코드에서 코드 띄워 놓고 토론도 해보고 코드리뷰로 서로 도움을 주고 받으며 성장했습니다. 그리고 솝커톤으로 무박2일의 개발 경험도 가져보고 앱잼으로 밤낮 없이 합숙하고 끝내 릴리즈 경험까지! 그리고 가장 중요한 저희 팀이 생겼습니다! 너무 유의미하고 재미있는 1년이었어요.',
+      '활동을 더 일찍 시작하지 못한 것이 유일하게 남는 후회일 정도로 SOPT를 통해 많이 성장했다고 느껴요. 커리어적인 부분에서 방향성을 정할 수 있었던, 인생의 터닝포인트와 같은 활동이었어요.',
     commenter: {
-      name: '김하정',
-      history: '31, 32기 활동',
-      part: '안드로이드',
+      name: '권소희',
+      history: '27, 28, 29, 31기 활동',
+      part: '웹',
     },
   },
   {
@@ -657,14 +598,14 @@ export const SOPT_COMMENT_LIST: SoptCommentType[] = [
     },
   },
   {
-    summary: '인생의\n터닝포인트',
+    summary: '유의미한 배움',
     color: '#3E74FD',
     comment:
-      '활동을 더 일찍 시작하지 못한 것이 유일하게 남는 후회일 정도로 SOPT를 통해 많이 성장했다고 느껴요. 커리어적인 부분에서 방향성을 정할 수 있었던, 인생의 터닝포인트와 같은 활동이었어요.',
+      '솝트에서 안드로이드를 처음 접하게 되었는데요, 세미나로 내용을 익히고 과제를 하며 금잔디 조원들과 디스코드에서 코드 띄워 놓고 토론도 해보고 코드리뷰로 서로 도움을 주고 받으며 성장했습니다. 그리고 솝커톤으로 무박2일의 개발 경험도 가져보고 앱잼으로 밤낮 없이 합숙하고 끝내 릴리즈 경험까지! 그리고 가장 중요한 저희 팀이 생겼습니다! 너무 유의미하고 재미있는 1년이었어요.',
     commenter: {
-      name: '권소희',
-      history: '27, 28, 29, 31기 활동',
-      part: '웹',
+      name: '김하정',
+      history: '31, 32기 활동',
+      part: '안드로이드',
     },
   },
 ];

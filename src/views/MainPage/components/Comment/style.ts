@@ -22,10 +22,14 @@ export const Wrapper = styled.div`
 export const TitleShadow = styled(motion.div)`
   position: absolute;
   width: 100%;
-  height: auto;
-  top: 0;
+  height: calc(100% + 250px);
+  top: -120px;
   left: 0;
   background: linear-gradient(#f6f8fc 72%, transparent);
+
+  @media (max-width: 768px) {
+    height: 100%;
+  }
 `;
 
 export const TitleWrapper = styled.div`
@@ -36,8 +40,8 @@ export const TitleWrapper = styled.div`
   z-index: 2;
   margin-bottom: 200px;
 
-  @media (max-width: 1480px) {
-    top: 0;
+  @media (max-width: 1600px) {
+    top: 120px;
     transition: 0.4s;
   }
   @media (max-width: 768px) {
@@ -52,7 +56,7 @@ export const CardWrapper = styled.div`
   flex-direction: column;
   align-items: flex-end;
   padding-bottom: 200px;
-  @media (max-width: 1480px) {
+  @media (max-width: 1600px) {
     padding-bottom: 240px;
   }
   @media (max-width: 768px) {
@@ -78,7 +82,7 @@ export const SectionTitle = styled.div`
   line-height: 61.6px; /* 112% */
   letter-spacing: -1.65px;
   z-index: 2;
-  @media (max-width: 768px) and (min-width: 1480px) {
+  @media (max-width: 768px) and (min-width: 1600px) {
     padding-bottom: 200px;
   }
   @media (max-width: 768px) {
@@ -94,7 +98,7 @@ export const SectionTitle = styled.div`
     line-height: 24.28px; /* 115.617% */
     letter-spacing: -0.63px;
   }
-  @media (max-height: 860px) and (max-width: 1480px) {
+  @media (max-height: 860px) and (max-width: 1600px) {
     font-size: 32px;
     line-height: 32px;
   }
@@ -135,7 +139,7 @@ export const Summary = styled(motion.div)<{ color: string }>`
     font-size: 68px;
     height: 185px;
   }
-  @media (max-width: 1480px) {
+  @media (max-width: 1600px) {
     white-space: unset;
     height: auto;
   }
@@ -166,7 +170,7 @@ export const Summary = styled(motion.div)<{ color: string }>`
     padding-top: 12px;
     padding-left: 32px;
   }
-  @media (max-height: 860px) and (max-width: 1480px) {
+  @media (max-height: 860px) and (max-width: 1600px) {
     font-size: 46px;
     line-height: 48px;
     padding-left: 48px;
@@ -199,7 +203,7 @@ export const Summary = styled(motion.div)<{ color: string }>`
       height: 22px;
       top: 18px;
     }
-    @media (max-height: 860px) and (max-width: 1480px) {
+    @media (max-height: 860px) and (max-width: 1600px) {
       width: 38px;
       height: 38px;
       top: 30px;
