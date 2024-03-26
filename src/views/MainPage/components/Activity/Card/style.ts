@@ -95,7 +95,7 @@ export const CardKorNav = styled.nav`
 export const Blur = styled(motion.div)`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-end;
 
   position: absolute;
   top: 0;
@@ -116,28 +116,6 @@ export const Blur = styled(motion.div)`
   @media (max-width: 375px) {
     padding: 12px;
   }
-`;
-
-export const CardEngNav = styled.p`
-  color: rgba(255, 255, 255, 0.7);
-  text-align: right;
-  font-family: SUIT;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 28.288px; /* 148.887% */
-  letter-spacing: -0.38px;
-
-  @media (max-width: 428px) {
-    font-size: 12px;
-  }
-`;
-
-export const ContentWrapper = styled.main`
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  word-break: keep-all;
 `;
 
 export const Content = styled.span<{ color: string }>`

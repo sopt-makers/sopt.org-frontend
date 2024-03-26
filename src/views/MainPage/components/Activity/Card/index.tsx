@@ -35,13 +35,12 @@ export default function Card({ img, navKor, navEng, description }: CardProps) {
     <S.Background {...eventListeners}>
       <S.CardImage src={img} alt="카드 이미지" fill sizes="100%" />
       <S.Gradient />
-      <S.CardKorNav>{navKor}</S.CardKorNav>
+      <S.CardKorNav>{isShownDescription ? navEng : navKor}</S.CardKorNav>
       <S.Blur
         animate={isShownDescription ? 'blurShown' : 'blurRest'}
         variants={variants}
         transition={{ duration: 0.5 }}
       >
-        <S.CardEngNav>{navEng}</S.CardEngNav>
         <motion.div
           animate={isShownDescription ? 'textShown' : 'textRest'}
           variants={variants}
