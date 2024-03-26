@@ -19,7 +19,15 @@ import { pageViewTrackingEnrichment } from '@src/lib/utils/pageViewTrackingEnric
 
 declare global {
   interface Window {
-    Kakao: any;
+    Kakao: Kakao;
+  }
+
+  interface Kakao {
+    init: (appKey?: string) => void;
+    initialized: () => boolean;
+    Channel: {
+      chat: (setting: { channelPublicId: string }) => void;
+    };
   }
 }
 
