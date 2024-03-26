@@ -5,11 +5,11 @@ import St from './style';
 const MakersNForm: FC = () => {
   const { isScrollingDown, isScrollTop } = useScrollPosition();
 
-  function handleClickKakao() {
+  const handleClickKakao = () => {
     window.Kakao.Channel.chat({
       channelPublicId: '_sxaIWG',
     });
-  }
+  };
 
   return (
     <St.FooterForm hide={isScrollingDown && !isScrollTop}>

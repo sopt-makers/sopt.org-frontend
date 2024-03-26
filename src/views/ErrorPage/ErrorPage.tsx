@@ -18,6 +18,12 @@ function ErrorPage({ code }: ErrorPageProps) {
     code === 404 ? router.push('/') : router.back();
   };
 
+  const handleClickKakao = () => {
+    window.Kakao.Channel.chat({
+      channelPublicId: '_sxaIWG',
+    });
+  };
+
   return (
     <>
       <Header />
@@ -28,13 +34,9 @@ function ErrorPage({ code }: ErrorPageProps) {
           <RoundButton onClick={handleButtonClick}>{ERROR_BUTTON[CODE_KEY]}</RoundButton>
         </S.TopSection>
         {code === 500 && (
-          <S.ContactLink
-            href="https://walla.my/sopt_official"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <S.ContactButton type="button" onClick={handleClickKakao}>
             문의하기
-          </S.ContactLink>
+          </S.ContactButton>
         )}
       </S.Root>
     </>

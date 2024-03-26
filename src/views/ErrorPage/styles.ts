@@ -1,5 +1,4 @@
 import styled from '@emotion/styled';
-import Link from 'next/link';
 
 export const Root = styled.main`
   display: flex;
@@ -32,7 +31,7 @@ export const ErrorText = styled.p`
   line-height: 150%;
   letter-spacing: -0.96px;
 `;
-export const ContactLink = styled(Link)`
+export const ContactButton = styled.button`
   position: absolute;
   bottom: 17vh;
 
