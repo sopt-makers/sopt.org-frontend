@@ -29,7 +29,7 @@ function ErrorPage({ code }: ErrorPageProps) {
         </S.TopSection>
         {code === 500 && (
           <S.ContactLink
-            href="https://walla.my/sopt_official"
+            href="https://pf.kakao.com/_sxaIWG"
             target="_blank"
             rel="noopener noreferrer"
           >

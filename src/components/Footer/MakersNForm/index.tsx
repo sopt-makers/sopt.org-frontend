@@ -14,11 +14,7 @@ const MakersNForm: FC = () => {
       >
         만든 사람들
       </St.FooterLink>
-      <St.FooterLink
-        href="https://walla.my/sopt_official"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
+      <St.FooterLink href="https://pf.kakao.com/_sxaIWG" target="_blank" rel="noopener noreferrer">
         의견 제안하기
       </St.FooterLink>
     </St.FooterForm>
