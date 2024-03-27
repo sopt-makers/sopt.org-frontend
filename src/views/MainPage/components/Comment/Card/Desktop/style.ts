@@ -33,6 +33,10 @@ export const Wrapper = styled(motion.div)`
     height: 280rem;
     padding: 20rem 28rem;
   }
+
+  & > * {
+    font-size: 100%;
+  }
 `;
 
 export const Footer = styled.div`
@@ -41,4 +45,8 @@ export const Footer = styled.div`
   align-items: flex-end;
   gap: 8rem;
   font-weight: 600;
+
+  & > * {
+    font-size: 100%;
+  }
 `;

@@ -145,6 +145,10 @@ export const MenuTitle = styled.div<MenuTitleProps>`
   cursor: pointer;
   width: fit-content;
 
+  & * {
+    font-size: 100%;
+  }
+
   &:not(:last-child) {
     margin-left: 30rem;
   }
