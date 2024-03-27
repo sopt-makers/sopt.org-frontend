@@ -25,7 +25,7 @@ const FooterForm = styled.div<{ hide: boolean }>`
       : ''}
 
   /* 모바일 뷰 */
-  @media (max-width: 765rem) {
+  @media (max-width: 765px) {
     padding: 0 0 0 10rem;
   }
 `;

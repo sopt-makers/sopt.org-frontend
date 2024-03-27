@@ -8,7 +8,7 @@ export const ProjectListHeader = styled.div`
   margin-bottom: 30rem;
 
   /* 모바일 뷰 */
-  @media (max-width: 899rem) {
+  @media (max-width: 899px) {
     flex-direction: column;
     gap: 20rem;
     margin-bottom: 28rem;
@@ -21,7 +21,7 @@ export const ProjectListCountSkeletonUI = styled.div`
   background-color: ${colors.gray900};
   border-radius: 8rem;
 
-  @media (max-width: 1279rem) and (min-width: 900rem) {
+  @media (max-width: 1279px) and (min-width: 900px) {
     width: 33rem;
   }
 `;

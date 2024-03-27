@@ -32,7 +32,7 @@ export const Intro = styled.div`
   position: relative;
   padding: 0 60rem 0 104rem;
 
-  @media (max-width: 768rem) {
+  @media (max-width: 768px) {
     padding: 0 30rem;
   }
 `;
@@ -44,11 +44,11 @@ export const AnimatedLine = styled(motion.svg)`
   z-index: -1;
 
   width: 20rem;
-  height: calc(100vh + 7rem);
+  height: calc(100vh + 7px);
   stroke-width: 4rem;
   stroke-linecap: round;
 
-  @media (max-width: 768rem) {
+  @media (max-width: 768px) {
     top: 285rem;
     left: 42rem;
   }
@@ -81,12 +81,12 @@ export const Circle = styled(motion.div)`
     height: 130rem;
   }
 
-  @media (max-width: 1440rem) and (min-width: 769rem) {
+  @media (max-width: 1440px) and (min-width: 769px) {
     grid-template-rows: auto 1fr;
     grid-gap: 24rem 0rem;
   }
 
-  @media (max-width: 768rem) {
+  @media (max-width: 768px) {
     top: 80.19rem;
     left: -315.83rem;
 
@@ -109,12 +109,12 @@ export const Content = styled(motion.div)`
   position: relative;
   z-index: 20;
 
-  @media (max-width: 1440rem) and (min-width: 769rem) {
+  @media (max-width: 1440px) and (min-width: 769px) {
     grid-template-columns: minmax(400rem, 1fr) minmax(auto, 1fr);
     grid-gap: 24rem 36rem;
   }
 
-  @media (max-width: 768rem) {
+  @media (max-width: 768px) {
     grid-template-areas:
       'image'
       'title'
@@ -142,12 +142,12 @@ export const ContentTitle = styled(motion.h2)`
   line-height: normal;
   white-space: pre-wrap;
 
-  @media (max-width: 1440rem) and (min-width: 769rem) {
+  @media (max-width: 1440px) and (min-width: 769px) {
     margin-top: 28rem;
     font-size: 40rem;
   }
 
-  @media (max-width: 768rem) {
+  @media (max-width: 768px) {
     width: fit-content;
     margin-top: 48rem;
     margin-left: 58rem;
@@ -167,16 +167,16 @@ export const ContentDetail = styled(motion.h3)`
   letter-spacing: -0.48rem;
   white-space: pre-wrap;
 
-  @media (max-width: 1440rem) and (min-width: 769rem) {
+  @media (max-width: 1440px) and (min-width: 769px) {
     font-size: 20rem;
     word-break: keep-all;
   }
 
-  @media (max-width: 1091rem) and (min-width: 769rem) {
+  @media (max-width: 1091px) and (min-width: 769px) {
     white-space: normal;
   }
 
-  @media (max-width: 768rem) {
+  @media (max-width: 768px) {
     max-width: 259rem;
     margin-left: 58rem;
     font-size: 16rem;
@@ -193,14 +193,14 @@ export const ContentImage = styled(Image)`
   border-radius: max(36rem, 2.6vw);
   object-fit: cover;
 
-  @media (max-width: 1440rem) and (min-width: 769rem) {
+  @media (max-width: 1440px) and (min-width: 769px) {
     width: 100%;
     max-width: 540rem;
     min-height: 270rem;
     border-radius: 36rem;
   }
 
-  @media (max-width: 768rem) {
+  @media (max-width: 768px) {
     max-width: 323rem;
     min-width: 264rem;
     height: 215rem;
@@ -223,7 +223,7 @@ export const BackLight = styled.div<{ isContentVisible: boolean }>`
   opacity: ${({ isContentVisible }) => (isContentVisible ? '1' : '0')};
   transition: opacity 0.3s ease-in-out;
 
-  @media (max-width: 768rem) {
+  @media (max-width: 768px) {
     opacity: 0;
   }
 `;

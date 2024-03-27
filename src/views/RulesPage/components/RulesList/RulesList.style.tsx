@@ -7,7 +7,7 @@ export const Ul = styled.ul`
       border: none;
     }
   }
-  @media screen and (max-width: 1280rem) {
+  @media screen and (max-width: 1280px) {
     margin-top: 31rem;
   }
 `;

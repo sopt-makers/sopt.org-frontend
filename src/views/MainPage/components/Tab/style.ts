@@ -7,11 +7,11 @@ export const Wrapper = styled.section`
   margin-bottom: 31rem;
 
   /* 태블릿 뷰 */
-  @media (max-width: 768rem) {
+  @media (max-width: 768px) {
     margin-bottom: 26rem;
   }
   /* 모바일 뷰 */
-  @media (max-width: 376rem) {
+  @media (max-width: 376px) {
     margin-bottom: 14rem;
   }
 `;
@@ -27,7 +27,7 @@ export const Tab = styled.h2`
   letter-spacing: -2%;
   z-index: 1;
 
-  @media (max-width: 376rem) {
+  @media (max-width: 376px) {
     font-size: 11rem;
     line-height: 26.615rem; /* 241.956% */
     letter-spacing: -0.22rem;
@@ -47,12 +47,12 @@ export const Title = styled.h1`
   margin-bottom: 16rem;
   word-break: keep-all;
 
-  @media (max-width: 768rem) {
+  @media (max-width: 768px) {
     font-size: 36rem;
     letter-spacing: -1.08rem;
   }
 
-  @media (max-width: 376rem) {
+  @media (max-width: 376px) {
     font-size: 21rem;
     line-height: 29.103rem; /* 138.588% */
     letter-spacing: -0.63rem;
@@ -71,13 +71,13 @@ export const Description = styled.p`
   word-break: keep-all;
   white-space: pre-line;
 
-  @media (max-width: 768rem) {
+  @media (max-width: 768px) {
     font-size: 16rem;
     line-height: 26rem; /* 162.5% */
     letter-spacing: -0.64rem;
   }
 
-  @media (max-width: 376rem) {
+  @media (max-width: 376px) {
     font-size: 10rem;
     line-height: 14.942rem; /* 149.424% */
     letter-spacing: -0.4rem;

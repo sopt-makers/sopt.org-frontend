@@ -27,13 +27,13 @@ export const ItemContainer = styled.div<{ src: string; isInView: boolean; order:
   }
 
   /* 태블릿 뷰 */
-  @media (max-width: 768rem) {
+  @media (max-width: 768px) {
     background-size: 90%;
     background-position: center bottom -20rem;
   }
 
   /* 모바일 뷰 */
-  @media (max-width: 428rem) {
+  @media (max-width: 428px) {
     width: 269rem;
     height: 228rem;
     background-position: center bottom -20rem;
@@ -75,11 +75,11 @@ export const ValueTop = styled.div`
   gap: 11rem;
 
   /* 태블릿 뷰 */
-  @media (max-width: 768rem) {
+  @media (max-width: 768px) {
     font-size: 24rem;
   }
   /* 모바일 뷰 */
-  @media (max-width: 428rem) {
+  @media (max-width: 428px) {
     font-size: 24rem;
     line-height: 33rem;
   }
@@ -105,7 +105,7 @@ export const ValueNumber = styled.div`
   letter-spacing: -0.17rem;
 
   /* 모바일 뷰 */
-  @media (max-width: 428rem) {
+  @media (max-width: 428px) {
     width: 17.791rem;
     height: 17.791rem;
 
@@ -126,7 +126,7 @@ export const ValueTitle = styled.h2`
   text-align: center;
 
   /* 모바일 뷰 */
-  @media (max-width: 428rem) {
+  @media (max-width: 428px) {
     font-size: 19.097rem;
     line-height: 42.437rem; /* 222.222% */
     letter-spacing: -0.191rem;
@@ -160,7 +160,7 @@ export const ValueDescription = styled.div<{ isHovered: boolean }>`
   ${({ isHovered }) => isHovered && 'opacity: 1'};
 
   /* 모바일 뷰 */
-  @media (max-width: 428rem) {
+  @media (max-width: 428px) {
     width: 159rem;
     font-size: 16rem;
     line-height: 30rem;

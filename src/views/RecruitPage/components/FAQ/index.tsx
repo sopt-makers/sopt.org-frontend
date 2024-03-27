@@ -52,11 +52,11 @@ const W = styled.div`
   flex-direction: column;
   gap: 70rem;
   /* 태블릿 뷰 */
-  @media (max-width: 1299rem) and (min-width: 766rem) {
+  @media (max-width: 1299px) and (min-width: 766px) {
     gap: 40rem;
   }
   /* 모바일 뷰 */
-  @media (max-width: 765.9rem) {
+  @media (max-width: 765.9px) {
     gap: 24rem;
   }
 `;
@@ -66,11 +66,11 @@ const Wrapper = styled.div`
   flex-direction: column;
   gap: 20rem;
   /* 태블릿 뷰 */
-  @media (max-width: 1299rem) and (min-width: 766rem) {
+  @media (max-width: 1299px) and (min-width: 766px) {
     gap: 20rem;
   }
   /* 모바일 뷰 */
-  @media (max-width: 765.9rem) {
+  @media (max-width: 765.9px) {
     gap: 2rem;
   }
 `;

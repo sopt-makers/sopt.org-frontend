@@ -45,8 +45,8 @@ export const projectPlatformLabel: Record<ProjectPlatformType, string> = {
 };
 
 export const pageBreakPoint: Record<PageType, string> = {
-  [PageType.BLOG]: '767rem',
-  [PageType.PROJECT]: '899rem',
+  [PageType.BLOG]: '767px',
+  [PageType.PROJECT]: '899px',
 };
 
 export const staticReleaseProjectList: StaticProjectType[] = [

@@ -53,12 +53,12 @@ const ContentWrapper = styled.div`
   padding: 100rem 0;
 
   /* 태블릿 뷰 */
-  @media (max-width: 1299rem) and (min-width: 766rem) {
+  @media (max-width: 1299px) and (min-width: 766px) {
     width: 700rem;
     gap: 120rem;
   }
   /* 모바일 뷰 */
-  @media (max-width: 765.9rem) {
+  @media (max-width: 765.9px) {
     width: 360rem;
     gap: 80rem;
   }

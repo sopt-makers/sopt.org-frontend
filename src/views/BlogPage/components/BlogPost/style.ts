@@ -16,7 +16,7 @@ export const BlogPost = styled.section`
   }
 
   /* 모바일 뷰 */
-  @media (max-width: 767rem) {
+  @media (max-width: 767px) {
     gap: 16rem;
     width: 100%;
   }
@@ -26,7 +26,7 @@ export const Body = styled.div`
   height: 94rem;
 
   /* 모바일 뷰 */
-  @media (max-width: 767rem) {
+  @media (max-width: 767px) {
     display: flex;
     align-items: center;
     height: 53rem;
@@ -50,7 +50,7 @@ export const Title = styled.div`
   letter-spacing: -0.48rem;
 
   /* 모바일 뷰 */
-  @media (max-width: 767rem) {
+  @media (max-width: 767px) {
     font-size: 16rem;
     letter-spacing: -0.24rem;
   }
@@ -71,7 +71,7 @@ export const Description = styled.div<{ descriptionLine: number }>`
   letter-spacing: -0.24rem;
 
   /* 모바일 뷰 */
-  @media (max-width: 767rem) {
+  @media (max-width: 767px) {
     display: none;
   }
 `;
@@ -82,7 +82,7 @@ export const TagList = styled.div`
   margin-top: 10rem;
 
   /* 모바일 뷰 */
-  @media (max-width: 767rem) {
+  @media (max-width: 767px) {
     margin-top: 18rem;
   }
 `;
@@ -104,7 +104,7 @@ export const Tag = styled.div`
   letter-spacing: -0.18rem;
 
   /* 모바일 뷰 */
-  @media (max-width: 767rem) {
+  @media (max-width: 767px) {
     height: 20rem;
 
     font-size: 11rem;
@@ -122,7 +122,7 @@ export const ThumbnailWrapper = styled.div`
   width: 239rem;
 
   /* 모바일 뷰 */
-  @media (max-width: 767rem) {
+  @media (max-width: 767px) {
     width: 105rem;
   }
 `;
@@ -132,7 +132,7 @@ export const Thumbnail = styled(Image)`
   object-fit: cover;
 
   /* 모바일 뷰 */
-  @media (max-width: 767rem) {
+  @media (max-width: 767px) {
     width: 105rem;
     height: 70rem;
     border-radius: 5rem;

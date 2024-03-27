@@ -6,10 +6,10 @@ export const ContainerWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 108rem;
-  @media (max-width: 765.9rem) {
+  @media (max-width: 765.9px) {
     gap: 40rem;
   }
-  @media (max-width: 1299rem) and (min-width: 766rem) {
+  @media (max-width: 1299px) and (min-width: 766px) {
     gap: 30rem;
   }
 `;
@@ -21,10 +21,10 @@ export const TitleWrapper = styled.div`
   width: 100%;
   flex-direction: row;
   justify-content: space-between;
-  @media (max-width: 765.9rem) {
+  @media (max-width: 765.9px) {
     gap: 8rem;
   }
-  @media (max-width: 1299rem) and (min-width: 766rem) {
+  @media (max-width: 1299px) and (min-width: 766px) {
     gap: 24rem;
   }
 `;
@@ -34,11 +34,11 @@ export const ContentWrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  @media (max-width: 765.9rem) {
+  @media (max-width: 765.9px) {
     width: 100vw;
     padding: 0 16rem;
   }
-  @media (max-width: 1299rem) and (min-width: 766rem) {
+  @media (max-width: 1299px) and (min-width: 766px) {
     width: 100vw;
     padding: 0 24rem;
   }
@@ -52,20 +52,20 @@ export const MoreLinkWrapper = styled.p`
   opacity: 0.6;
   border-bottom: 1rem solid #959595;
 
-  @media (max-width: 1299rem) and (min-width: 766rem) {
+  @media (max-width: 1299px) and (min-width: 766px) {
     font-size: 20rem;
     font-weight: 400;
     line-height: 100%; /* 20rem */
     letter-spacing: -0.2rem;
   }
 
-  @media (max-width: 765.9rem) {
+  @media (max-width: 765.9px) {
     font-size: 16rem;
   }
 `;
 
 export const ArrowWrapper = styled.div`
-  @media (max-width: 1299rem) {
+  @media (max-width: 1299px) {
     display: none;
   }
   display: flex;
@@ -86,12 +86,12 @@ export const Content = styled.div`
   gap: 24rem;
   max-width: 1008rem;
 
-  @media (max-width: 1299rem) and (min-width: 766rem) {
+  @media (max-width: 1299px) and (min-width: 766px) {
     overflow-x: scroll;
     gap: 24rem;
   }
 
-  @media (max-width: 765.9rem) {
+  @media (max-width: 765.9px) {
     overflow-x: scroll;
     gap: 16rem;
   }
@@ -107,12 +107,12 @@ export const CardWrapper = styled.div`
   min-width: 320rem;
   height: 300rem;
   padding: 38rem 34rem;
-  @media (max-width: 765.9rem) {
+  @media (max-width: 765.9px) {
     min-width: 232rem;
     height: 218rem;
     padding: 40rem 26rem;
   }
-  @media (max-width: 1299rem) and (min-width: 766rem) {
+  @media (max-width: 1299px) and (min-width: 766px) {
     min-width: 310rem;
     height: 250rem;
     padding: 40rem 28rem;
@@ -130,12 +130,12 @@ export const CardTitle = styled.div`
   font-weight: 500;
   font-size: 25rem;
   line-height: 40rem;
-  @media (max-width: 765.9rem) {
+  @media (max-width: 765.9px) {
     font-size: 16rem;
     line-height: 25rem;
     letter-spacing: -0.32rem;
   }
-  @media (max-width: 1299rem) and (min-width: 766rem) {
+  @media (max-width: 1299px) and (min-width: 766px) {
     font-size: 18rem;
     line-height: 29rem;
   }
@@ -153,11 +153,11 @@ export const Desc = styled.div`
   font-size: 22rem;
   line-height: 32rem;
   white-space: pre-wrap;
-  @media (max-width: 765.9rem) {
+  @media (max-width: 765.9px) {
     font-size: 14rem;
     line-height: 22rem;
   }
-  @media (max-width: 1299rem) and (min-width: 766rem) {
+  @media (max-width: 1299px) and (min-width: 766px) {
     font-size: 16rem;
     line-height: 23rem;
     white-space: pre-wrap;
@@ -167,7 +167,7 @@ export const Desc = styled.div`
 export const DescName = styled.div`
   font-weight: 700;
   line-height: 100%;
-  @media (max-width: 765.9rem) {
+  @media (max-width: 765.9px) {
     font-weight: 500;
   }
 `;
@@ -175,11 +175,11 @@ export const DescName = styled.div`
 export const Arrow = styled(Image)`
   width: 30rem;
   height: 30rem;
-  @media (max-width: 765.9rem) {
+  @media (max-width: 765.9px) {
     width: 17rem;
     height: 15rem;
   }
-  @media (max-width: 1299rem) and (min-width: 766rem) {
+  @media (max-width: 1299px) and (min-width: 766px) {
     width: 30rem;
     height: 30rem;
   }

@@ -7,12 +7,12 @@ export const SectionTop = styled.div`
   gap: 10.46rem;
 
   /* 태블릿 뷰 */
-  @media (max-width: 768rem) {
+  @media (max-width: 768px) {
     gap: 10.54rem;
   }
 
   /* 모바일 뷰 */
-  @media (max-width: 428rem) {
+  @media (max-width: 428px) {
     gap: 10.46rem;
   }
 `;
@@ -23,12 +23,12 @@ export const SectionTitle = styled.div`
   gap: 1rem;
 
   /* 태블릿 뷰 */
-  @media (max-width: 768rem) {
+  @media (max-width: 768px) {
     gap: 1.5rem;
   }
 
   /* 모바일 뷰 */
-  @media (max-width: 428rem) {
+  @media (max-width: 428px) {
     gap: 2rem;
   }
 `;
@@ -45,13 +45,13 @@ export const EngTitle = styled.h1`
   letter-spacing: -0.34rem;
 
   /* 태블릿 뷰 */
-  @media (max-width: 768rem) {
+  @media (max-width: 768px) {
     font-size: 14rem;
     letter-spacing: -0.28rem;
   }
 
   /* 모바일 뷰 */
-  @media (max-width: 428rem) {
+  @media (max-width: 428px) {
     font-size: 9rem;
     letter-spacing: -0.18rem;
   }
@@ -69,13 +69,13 @@ export const KorTitle = styled.h1`
   letter-spacing: -0.58rem;
 
   /* 태블릿 뷰 */
-  @media (max-width: 768rem) {
+  @media (max-width: 768px) {
     font-size: 22rem;
     letter-spacing: -0.44rem;
   }
 
   /* 모바일 뷰 */
-  @media (max-width: 428rem) {
+  @media (max-width: 428px) {
     font-size: 15rem;
     letter-spacing: -0.3rem;
   }
@@ -96,13 +96,13 @@ export const Description = styled.p`
   word-break: keep-all;
 
   /* 태블릿 뷰 */
-  @media (max-width: 768rem) {
+  @media (max-width: 768px) {
     font-size: 16rem;
     letter-spacing: -0.32rem;
   }
 
   /* 모바일 뷰 */
-  @media (max-width: 428rem) {
+  @media (max-width: 428px) {
     font-size: 11rem;
     letter-spacing: -0.22rem;
   }

@@ -10,17 +10,17 @@ export const Background = styled.section`
   align-items: center;
   justify-content: center;
 
-  @media (max-width: 1440rem) {
+  @media (max-width: 1440px) {
     margin-top: 349rem;
     margin-bottom: 375rem;
   }
 
-  @media (max-width: 768rem) {
+  @media (max-width: 768px) {
     margin-top: 221rem;
     margin-bottom: 221rem;
   }
 
-  @media (max-width: 376rem) {
+  @media (max-width: 376px) {
     margin-top: 154rem;
     margin-bottom: 150rem;
   }
@@ -37,11 +37,11 @@ export const Title = styled.h1`
   letter-spacing: -2%;
   margin-bottom: 11rem;
 
-  @media (max-width: 768rem) {
+  @media (max-width: 768px) {
     font-size: 34rem;
   }
 
-  @media (max-width: 376rem) {
+  @media (max-width: 376px) {
     font-size: 20rem;
   }
 `;
@@ -57,13 +57,13 @@ export const Description = styled.p`
   letter-spacing: -2%;
   margin-bottom: 75rem;
 
-  @media (max-width: 768rem) {
+  @media (max-width: 768px) {
     font-size: 21rem;
     line-height: 142%; /* 17.04rem */
     margin-bottom: 59rem;
   }
 
-  @media (max-width: 376rem) {
+  @media (max-width: 376px) {
     font-size: 12rem;
     margin-bottom: 34rem;
   }
@@ -88,7 +88,7 @@ export const GoToRecruit = styled.a`
   line-height: 30rem; /* 100% */
   letter-spacing: -0.6rem;
 
-  @media (max-width: 768rem) {
+  @media (max-width: 768px) {
     width: 216rem;
     height: 64rem;
 
@@ -100,7 +100,7 @@ export const GoToRecruit = styled.a`
     letter-spacing: -0.46rem;
   }
 
-  @media (max-width: 376rem) {
+  @media (max-width: 376px) {
     width: 124rem;
     height: 36rem;
     border-radius: 11.046rem;

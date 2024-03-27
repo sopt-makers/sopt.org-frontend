@@ -11,11 +11,11 @@ const Container = styled.article`
   border-radius: 10rem;
 
   /* 태블릿 뷰 */
-  @media (max-width: 1199.9rem) and (min-width: 766rem) {
+  @media (max-width: 1199.9px) and (min-width: 766px) {
     height: 60rem;
   }
   /* 모바일 뷰 */
-  @media (max-width: 765.9rem) {
+  @media (max-width: 765.9px) {
     align-items: start;
 
     height: 72rem;
@@ -28,11 +28,11 @@ const Caution = styled.div`
   margin: 0 28rem 0 48rem;
 
   /* 태블릿 뷰 */
-  @media (max-width: 1199.9rem) and (min-width: 766rem) {
+  @media (max-width: 1199.9px) and (min-width: 766px) {
     margin: 0 12rem 0 32rem;
   }
   /* 모바일 뷰 */
-  @media (max-width: 765.9rem) {
+  @media (max-width: 765.9px) {
     margin: 0 16rem 0 20rem;
   }
 `;
@@ -44,11 +44,11 @@ const Texts = styled.div`
   color: #ffffff;
 
   /* 태블릿 뷰 */
-  @media (max-width: 1199.9rem) and (min-width: 766rem) {
+  @media (max-width: 1199.9px) and (min-width: 766px) {
     font-size: 18rem;
   }
   /* 모바일 뷰 */
-  @media (max-width: 765.9rem) {
+  @media (max-width: 765.9px) {
     flex-direction: column;
     font-size: 15rem;
     line-height: 22.5rem;
@@ -61,7 +61,7 @@ const Strong = styled.strong`
   font-weight: 700;
 
   /* 태블릿 뷰 */
-  @media (max-width: 1199.9rem) and (min-width: 766rem) {
+  @media (max-width: 1199.9px) and (min-width: 766px) {
     margin-right: 7rem;
   }
 `;

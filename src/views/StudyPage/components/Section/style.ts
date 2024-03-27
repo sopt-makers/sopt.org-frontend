@@ -5,11 +5,11 @@ export const Wrapper = styled.div`
   padding-bottom: 240rem;
 
   /* 태블릿 뷰 */
-  @media (max-width: 1199rem) and (min-width: 766rem) {
+  @media (max-width: 1199px) and (min-width: 766px) {
     padding-top: 36rem;
   }
   /* 모바일 뷰 */
-  @media (max-width: 765.9rem) {
+  @media (max-width: 765.9px) {
     padding-top: 28rem;
   }
 `;
@@ -25,12 +25,12 @@ const Span = styled.span`
   letter-spacing: -1%;
 
   /* 태블릿 뷰 */
-  @media (max-width: 1199rem) and (min-width: 766rem) {
+  @media (max-width: 1199px) and (min-width: 766px) {
     font-size: 26rem;
     line-height: 26rem;
   }
   /* 모바일 뷰 */
-  @media (max-width: 765.9rem) {
+  @media (max-width: 765.9px) {
     font-size: 15rem;
     line-height: 25rem;
   }

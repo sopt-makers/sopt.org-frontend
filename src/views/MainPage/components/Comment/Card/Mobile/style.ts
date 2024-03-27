@@ -17,7 +17,7 @@ export const Wrapper = styled.div<{ color: string }>`
   letter-spacing: -0.8rem;
   color: ${colors.white};
 
-  @media (max-width: 520rem) {
+  @media (max-width: 520px) {
     height: 280rem;
     border-radius: 12rem;
     padding: 24rem 20rem;

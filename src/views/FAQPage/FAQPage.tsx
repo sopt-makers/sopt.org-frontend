@@ -20,11 +20,11 @@ const Root = styled.div`
   margin: 0 auto;
 
   /* 태블릿 뷰 */
-  @media (max-width: 1919rem) and (min-width: 766rem) {
+  @media (max-width: 1919px) and (min-width: 766px) {
     width: 766rem;
   }
   /* 모바일 뷰 */
-  @media (max-width: 765.9rem) {
+  @media (max-width: 765.9px) {
     width: 360rem;
   }
 `;

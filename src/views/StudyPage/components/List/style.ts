@@ -8,13 +8,13 @@ export const GridWrapper = styled.div`
   column-gap: 60rem;
 
   /* 태블릿 뷰 */
-  @media (max-width: 1199rem) and (min-width: 766rem) {
+  @media (max-width: 1199px) and (min-width: 766px) {
     grid-template-columns: 1fr 1fr;
     row-gap: 30rem;
     column-gap: 70rem;
   }
   /* 모바일 뷰 */
-  @media (max-width: 765.9rem) {
+  @media (max-width: 765.9px) {
     grid-template-columns: 1fr;
     column-gap: 30rem;
   }

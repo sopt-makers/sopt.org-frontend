@@ -4,11 +4,11 @@ import Link from 'next/link';
 export const Wrapper = styled.div`
   padding-top: 104rem;
 
-  @media (max-width: 768rem) {
+  @media (max-width: 768px) {
     padding-top: 125rem;
   }
 
-  @media (max-width: 376rem) {
+  @media (max-width: 376px) {
     padding-top: 74rem;
   }
 `;
@@ -38,12 +38,12 @@ export const PartButtonList = styled.div`
   display: flex;
   gap: 15rem;
 
-  @media (max-width: 1200rem) {
+  @media (max-width: 1200px) {
     width: 776rem;
     gap: 12.39rem;
   }
 
-  @media (max-width: 428rem) {
+  @media (max-width: 428px) {
     width: 446rem;
     gap: 7.12rem;
   }
@@ -55,7 +55,7 @@ export const CarouselWrapper = styled.div`
   overflow: hidden;
   border-radius: 19rem;
 
-  @media (max-width: 428rem) {
+  @media (max-width: 428px) {
     border-radius: 10.919rem;
   }
 `;
@@ -76,12 +76,12 @@ export const RequiredAbility = styled(Link)`
   letter-spacing: -0.8rem;
   text-decoration-line: underline;
 
-  @media (max-width: 1200rem) {
+  @media (max-width: 1200px) {
     text-align: center;
     font-size: 15rem;
   }
 
-  @media (max-width: 428rem) {
+  @media (max-width: 428px) {
     font-size: 10rem;
   }
 `;
@@ -100,11 +100,11 @@ export const Arrow = styled.div`
     cursor: pointer;
   }
 
-  @media (max-width: 1200rem) {
+  @media (max-width: 1200px) {
     width: 26rem;
   }
 
-  @media (max-width: 428rem) {
+  @media (max-width: 428px) {
     width: 15.293rem;
     & > img {
       height: 24.138rem;
@@ -115,7 +115,7 @@ export const Arrow = styled.div`
 export const LeftArrow = styled(Arrow)`
   left: 1.5625vw;
 
-  @media (max-width: 1200rem) {
+  @media (max-width: 1200px) {
     left: 0;
   }
 `;
@@ -123,7 +123,7 @@ export const LeftArrow = styled(Arrow)`
 export const RightArrow = styled(Arrow)`
   right: 1.5625vw;
 
-  @media (max-width: 1200rem) {
+  @media (max-width: 1200px) {
     right: 0;
   }
 `;

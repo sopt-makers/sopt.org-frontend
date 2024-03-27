@@ -12,18 +12,18 @@ export const Background = styled(motion.main)`
   position: relative;
   z-index: 2;
 
-  @media (max-width: 768rem) {
-    width: calc(100% - 5.46vw - 54rem);
+  @media (max-width: 768px) {
+    width: calc(100% - 5.46vw - 54px);
   }
 
-  @media (max-width: 428rem) and (min-width: 376rem) {
+  @media (max-width: 428px) and (min-width: 376px) {
     border-radius: 21rem;
     max-width: 296rem;
-    width: calc(100% - 5.46vw - 31rem);
+    width: calc(100% - 5.46vw - 31px);
     height: 188rem;
   }
 
-  @media (max-width: 375rem) {
+  @media (max-width: 375px) {
     border-radius: 21rem;
     max-width: 258rem;
     height: 164rem;
@@ -52,7 +52,7 @@ export const CardKorNav = styled.nav`
   border-radius: 13.763rem;
   border: 1.278rem solid rgba(255, 255, 255, 0.5);
   background: rgba(255, 255, 255, 0.33);
-  backdrop-filter: blur(2.949289321899414rem);
+  backdrop-filter: blur(2.949289321899414px);
 
   color: ${colors.white};
   font-family: SUIT;
@@ -69,7 +69,7 @@ export const CardKorNav = styled.nav`
   margin-top: 26rem;
   z-index: 3;
 
-  @media (max-width: 428rem) and (min-width: 376rem) {
+  @media (max-width: 428px) and (min-width: 376px) {
     font-size: 13rem;
     line-height: 16.258rem; /* 135.48% */
     letter-spacing: -0.48rem;
@@ -80,7 +80,7 @@ export const CardKorNav = styled.nav`
     border-radius: 8rem;
   }
 
-  @media (max-width: 375rem) {
+  @media (max-width: 375px) {
     font-size: 10rem;
     line-height: 14.188rem; /* 135.48% */
     letter-spacing: -0.419rem;
@@ -104,16 +104,16 @@ export const Blur = styled(motion.div)`
 
   border-radius: 19rem;
   background: rgba(38, 51, 70, 0.74);
-  backdrop-filter: blur(6.881675720214844rem);
+  backdrop-filter: blur(6.881675720214844px);
   z-index: 2;
 
   padding: 26rem;
 
-  @media (max-width: 428rem) and (min-width: 376rem) {
+  @media (max-width: 428px) and (min-width: 376px) {
     padding: 14rem;
   }
 
-  @media (max-width: 375rem) {
+  @media (max-width: 375px) {
     padding: 12rem;
   }
 `;
@@ -127,7 +127,7 @@ export const Content = styled.span<{ color: string }>`
   line-height: 30.476rem;
   letter-spacing: -0.708rem;
 
-  @media (max-width: 428rem) {
+  @media (max-width: 428px) {
     font-size: 11rem;
     line-height: 19rem;
   }

@@ -8,18 +8,18 @@ const wrapperStyle = css`
   background-color: #181818;
   border-radius: 10rem;
 
-  @media (max-width: 996rem) and (min-width: 766rem) {
+  @media (max-width: 996px) and (min-width: 766px) {
     width: 285rem;
     height: 210rem;
   }
 
   /* 태블릿 뷰 */
-  @media (max-width: 766rem) and (min-width: 428rem) {
+  @media (max-width: 766px) and (min-width: 428px) {
     width: 204rem;
     height: 150rem;
   }
   /* 모바일 뷰 */
-  @media (max-width: 428rem) {
+  @media (max-width: 428px) {
     width: 204rem;
     height: 150rem;
   }

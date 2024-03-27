@@ -9,11 +9,11 @@ export const Wrapper = styled(HideScrollbar)`
 export const CarouselWrapper = styled.div`
   width: 1088rem;
   display: grid;
-  grid-template-columns: repeat(2, 544rem);
+  grid-template-columns: repeat(2, 544px);
   gap: 24rem;
-  @media (max-width: 899rem) {
+  @media (max-width: 899px) {
     width: 654rem;
-    grid-template-columns: repeat(2, 320rem);
+    grid-template-columns: repeat(2, 320px);
     gap: 14rem;
   }
 `;
@@ -55,7 +55,7 @@ export const GridWrapper = styled.div`
   padding: 24rem;
   margin-right: 20rem;
   /* 모바일 뷰 */
-  @media (max-width: 899rem) {
+  @media (max-width: 899px) {
     width: 320rem;
     height: 122rem;
     grid-template-areas:
@@ -76,7 +76,7 @@ export const Title = styled.div`
   margin-bottom: 6rem;
   background-color: ${colors.gray700};
   /* 모바일 뷰 */
-  @media (max-width: 899rem) {
+  @media (max-width: 899px) {
     height: 24rem;
   }
 `;
@@ -86,7 +86,7 @@ export const Description = styled.div`
   height: 21rem;
   background-color: ${colors.gray700};
   /* 모바일 뷰 */
-  @media (max-width: 899rem) {
+  @media (max-width: 899px) {
     height: 19.5rem;
   }
 `;
@@ -101,7 +101,7 @@ export const ThumbnailImage = styled.div`
   border-radius: 10rem;
   background-color: ${colors.gray700};
   /* 모바일 뷰 */
-  @media (max-width: 899rem) {
+  @media (max-width: 899px) {
     width: 48rem;
     height: 48rem;
   }
@@ -120,7 +120,7 @@ export const Chip = styled.div`
   border-radius: 6rem;
   background-color: ${colors.gray700};
   /* 모바일 뷰 */
-  @media (max-width: 899rem) {
+  @media (max-width: 899px) {
     height: 26rem;
     padding: 5rem 8rem;
   }

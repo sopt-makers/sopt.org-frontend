@@ -31,7 +31,7 @@ export const ErrorText = styled.p`
   line-height: 150%;
   letter-spacing: -0.96rem;
 
-  @media (max-width: 428rem) {
+  @media (max-width: 428px) {
     font-size: 24rem;
   }
 `;
@@ -48,7 +48,7 @@ export const ContactButton = styled.button`
 
   cursor: pointer;
 
-  @media (max-width: 428rem) {
+  @media (max-width: 428px) {
     font-size: 18rem;
   }
 `;

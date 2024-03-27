@@ -14,7 +14,7 @@ export const BlogPostList = styled.div`
   gap: 80rem;
 
   /* 모바일 뷰 */
-  @media (max-width: 767rem) {
+  @media (max-width: 767px) {
     margin-top: 24rem;
     gap: 36rem;
   }

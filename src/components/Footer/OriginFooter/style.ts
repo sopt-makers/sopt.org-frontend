@@ -7,12 +7,12 @@ export const Root = styled.footer`
   background-color: #202020;
 
   /* 태블릿 + 데스크탑 뷰 */
-  @media (min-width: 766rem) {
+  @media (min-width: 766px) {
     scroll-snap-align: center;
   }
 
   /* 모바일 뷰 */
-  @media (max-width: 765.9rem) {
+  @media (max-width: 765.9px) {
     height: 264rem;
   }
 `;
@@ -22,20 +22,20 @@ export const ContentWrap = styled.div`
   justify-content: space-between;
 
   /* 데스크탑 뷰 */
-  @media (min-width: 1200rem) {
+  @media (min-width: 1200px) {
     max-width: 1100rem;
     margin: 0rem auto;
     padding-top: 35rem;
   }
 
   /* 태블릿 뷰 */
-  @media (max-width: 1199rem) and (min-width: 766rem) {
+  @media (max-width: 1199px) and (min-width: 766px) {
     margin: 0rem 40rem;
     padding-top: 35rem;
   }
 
   /* 모바일 뷰 */
-  @media (max-width: 765.9rem) {
+  @media (max-width: 765.9px) {
     display: block;
 
     padding-top: 30rem;
@@ -68,7 +68,7 @@ export const CopyrightText = styled.p`
   font-weight: 400;
 
   /* 모바일 뷰 */
-  @media (max-width: 765.9rem) {
+  @media (max-width: 765.9px) {
     font-size: 12rem;
   }
 `;
@@ -76,7 +76,7 @@ export const CopyrightText = styled.p`
 export const ChannelsWrap = styled.div`
   width: 190rem;
   /* 모바일 뷰 */
-  @media (max-width: 765.9rem) {
+  @media (max-width: 765.9px) {
     margin-top: 40rem;
   }
 `;
@@ -88,7 +88,7 @@ export const ChannelTitleText = styled.p`
   font-weight: 500;
 
   /* 모바일 뷰 */
-  @media (max-width: 765.9rem) {
+  @media (max-width: 765.9px) {
     margin-bottom: 20rem;
   }
 `;

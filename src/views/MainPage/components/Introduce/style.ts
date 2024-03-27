@@ -33,12 +33,12 @@ export const TextContainer = styled(motion.span)`
   line-height: 73rem;
   white-space: pre-line;
 
-  @media (max-width: 1440rem) {
+  @media (max-width: 1440px) {
     font-size: 40rem;
     line-height: normal;
   }
 
-  @media (max-width: 774rem) {
+  @media (max-width: 774px) {
     font-size: 25rem;
     line-height: 38rem;
     letter-spacing: -2%;

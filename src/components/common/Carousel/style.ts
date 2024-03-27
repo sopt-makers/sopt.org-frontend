@@ -19,7 +19,7 @@ const Wrapper = styled(HideScrollbar)<{ isSliding: boolean; lastIndex: boolean }
     width: 70rem;
     height: 164rem;
 
-    @media (max-width: 899rem) {
+    @media (max-width: 899px) {
       display: none;
     }
   }
@@ -44,7 +44,7 @@ const Wrapper = styled(HideScrollbar)<{ isSliding: boolean; lastIndex: boolean }
         transition: opacity 0.3s ease-out;
       `};
 
-    @media (max-width: 1279rem) {
+    @media (max-width: 1279px) {
       opacity: ${({ lastIndex }) => (lastIndex ? 0 : 1)};
     }
   }
@@ -64,7 +64,7 @@ const Arrow = styled.div`
   background-repeat: no-repeat;
   background-position: center;
 
-  @media (max-width: 899rem) {
+  @media (max-width: 899px) {
     display: none;
   }
 `;
@@ -105,7 +105,7 @@ const Blur = styled.div`
   top: 0;
   background: ${colors.background};
 
-  @media (max-width: 899rem) {
+  @media (max-width: 899px) {
     display: none;
   }
 `;

@@ -15,12 +15,12 @@ export const Background = styled.main`
 
   transition: all 0.2s linear;
 
-  @media (max-width: 768rem) {
+  @media (max-width: 768px) {
     height: 315rem;
     width: 237rem;
   }
 
-  @media (max-width: 444rem) {
+  @media (max-width: 444px) {
     margin-top: 24rem;
     width: 136rem;
     height: 182rem;
@@ -43,7 +43,7 @@ export const Title = styled.h1`
 
   z-index: 2;
 
-  @media (max-width: 428rem) {
+  @media (max-width: 428px) {
     font-size: 9rem;
     letter-spacing: -0.285rem;
     margin: 14rem;

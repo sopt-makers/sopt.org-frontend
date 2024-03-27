@@ -7,14 +7,14 @@ export const Wrapper = styled.section`
   display: flex;
   flex-direction: column;
 
-  @media (max-width: 766rem) and (min-width: 428rem) {
+  @media (max-width: 766px) and (min-width: 428px) {
     margin-top: 190rem;
     margin-bottom: 218rem;
     gap: 28rem;
   }
 
   /* 모바일 뷰 */
-  @media (max-width: 428rem) {
+  @media (max-width: 428px) {
     margin-top: 120rem;
     margin-bottom: 136rem;
     gap: 26rem;

@@ -14,7 +14,7 @@ export const Description = styled.div<ProjectCategoryDescriptionProps>`
   letter-spacing: -0.27rem;
 
   /* 모바일 뷰 */
-  @media (max-width: 899rem) {
+  @media (max-width: 899px) {
     padding: 16rem;
     border-radius: 12rem;
     background: ${colors.gray800};

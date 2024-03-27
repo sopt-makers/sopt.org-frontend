@@ -8,7 +8,7 @@ export const ProjectListHeader = styled.div<{ selectedCategory: ProjectCategoryT
   margin-bottom: 30rem;
 
   /* 모바일 뷰 */
-  @media (max-width: 899rem) {
+  @media (max-width: 899px) {
     flex-direction: column;
     gap: 20rem;
     margin-bottom: 28rem;

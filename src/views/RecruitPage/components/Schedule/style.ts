@@ -5,11 +5,11 @@ export const Wrapper = styled.div`
   flex-direction: column;
   gap: 28rem;
   /* 태블릿 뷰 */
-  @media (max-width: 1299rem) and (min-width: 766rem) {
+  @media (max-width: 1299px) and (min-width: 766px) {
     gap: 40rem;
   }
   /* 모바일 뷰 */
-  @media (max-width: 765.9rem) {
+  @media (max-width: 765.9px) {
     gap: 8rem;
   }
 `;
@@ -25,14 +25,14 @@ export const GridWrapper = styled.div`
   padding: 85rem 88rem;
 
   /* 태블릿 뷰 */
-  @media (max-width: 1299rem) and (min-width: 766rem) {
+  @media (max-width: 1299px) and (min-width: 766px) {
     grid-template-columns: 300rem auto;
     padding: 38rem 54rem;
     gap: 15rem;
     border-radius: 20rem;
   }
   /* 모바일 뷰 */
-  @media (max-width: 765.9rem) {
+  @media (max-width: 765.9px) {
     grid-template-columns: 1fr;
     row-gap: 0rem;
     padding: 38rem 0 6rem 0;
@@ -50,14 +50,14 @@ export const OddText = styled.div`
     content: '🗓 ';
   }
   /* 태블릿 뷰 */
-  @media (max-width: 1299rem) and (min-width: 766rem) {
+  @media (max-width: 1299px) and (min-width: 766px) {
     color: #fff;
     font-size: 18rem;
     font-weight: 700;
     line-height: 30rem; /* 166.667% */
   }
   /* 모바일 뷰 */
-  @media (max-width: 765.9rem) {
+  @media (max-width: 765.9px) {
     color: #fff;
     font-size: 16rem;
     font-weight: 700;
@@ -72,11 +72,11 @@ export const Highlight = styled.span`
   letter-spacing: -0.48rem;
   text-decoration-line: underline;
   /* 태블릿 뷰 */
-  @media (max-width: 1299rem) and (min-width: 766rem) {
+  @media (max-width: 1299px) and (min-width: 766px) {
     font-size: 18rem;
   }
   /* 모바일 뷰 */
-  @media (max-width: 765.9rem) {
+  @media (max-width: 765.9px) {
     font-size: 16rem;
     line-height: 32rem;
   }
@@ -88,13 +88,13 @@ export const EvenText = styled.div`
   font-weight: 400;
   line-height: 150%; /* 42rem */
   /* 태블릿 뷰 */
-  @media (max-width: 1299rem) and (min-width: 766rem) {
+  @media (max-width: 1299px) and (min-width: 766px) {
     font-size: 18rem;
     font-weight: 300;
     line-height: 30rem; /* 166.667% */
   }
   /* 모바일 뷰 */
-  @media (max-width: 765.9rem) {
+  @media (max-width: 765.9px) {
     font-size: 16rem;
     font-style: normal;
     font-weight: 300;

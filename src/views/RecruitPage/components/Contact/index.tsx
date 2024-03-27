@@ -64,11 +64,11 @@ const SectionWrapper = styled.div`
   flex-direction: column;
   gap: 8rem;
   /* 태블릿 뷰 */
-  @media (max-width: 1299rem) and (min-width: 766rem) {
+  @media (max-width: 1299px) and (min-width: 766px) {
     gap: 8rem;
   }
   /* 모바일 뷰 */
-  @media (max-width: 765.9rem) {
+  @media (max-width: 765.9px) {
     gap: 2rem;
   }
 `;
@@ -78,11 +78,11 @@ const ItemWrapper = styled.div`
   gap: 40rem;
 
   /* 태블릿 뷰 */
-  @media (max-width: 1299rem) and (min-width: 766rem) {
+  @media (max-width: 1299px) and (min-width: 766px) {
     gap: 24rem;
   }
   /* 모바일 뷰 */
-  @media (max-width: 765.9rem) {
+  @media (max-width: 765.9px) {
     gap: 16rem;
   }
 `;
@@ -91,12 +91,12 @@ const IconImage = styled(Image)`
   width: 98rem;
   height: 98rem;
   /* 태블릿 뷰 */
-  @media (max-width: 1299rem) and (min-width: 766rem) {
+  @media (max-width: 1299px) and (min-width: 766px) {
     width: 60rem;
     height: 60rem;
   }
   /* 모바일 뷰 */
-  @media (max-width: 765.9rem) {
+  @media (max-width: 765.9px) {
     width: 50rem;
     height: 50rem;
   }
@@ -110,13 +110,13 @@ const GridWrapper = styled.div`
   column-gap: 160rem;
   margin-top: 80rem;
   /* 태블릿 뷰 */
-  @media (max-width: 1299rem) and (min-width: 766rem) {
+  @media (max-width: 1299px) and (min-width: 766px) {
     grid-template-columns: 1fr;
     row-gap: 60rem;
     margin-top: 48rem;
   }
   /* 모바일 뷰 */
-  @media (max-width: 765.9rem) {
+  @media (max-width: 765.9px) {
     grid-template-columns: 1fr;
     row-gap: 40rem;
     margin-top: 30rem;
@@ -127,7 +127,7 @@ const IconWrapper = styled.div`
   width: 100rem;
   height: 100rem;
   /* 태블릿 뷰 */
-  @media (max-width: 1299rem) and (min-width: 766rem) {
+  @media (max-width: 1299px) and (min-width: 766px) {
     width: 60rem;
     height: 60rem;
     & svg {
@@ -136,7 +136,7 @@ const IconWrapper = styled.div`
     }
   }
   /* 모바일 뷰 */
-  @media (max-width: 765.9rem) {
+  @media (max-width: 765.9px) {
     width: 50rem;
     height: 50rem;
     & svg {
@@ -154,7 +154,7 @@ const Title = styled.div`
   letter-spacing: -0.3rem;
   margin-bottom: 18rem;
   /* 태블릿 뷰 */
-  @media (max-width: 1299rem) and (min-width: 766rem) {
+  @media (max-width: 1299px) and (min-width: 766px) {
     color: #787878;
     font-size: 18rem;
     font-style: normal;
@@ -164,7 +164,7 @@ const Title = styled.div`
     margin-bottom: 4rem;
   }
   /* 모바일 뷰 */
-  @media (max-width: 765.9rem) {
+  @media (max-width: 765.9px) {
     color: #787878;
     font-size: 14rem;
     font-style: normal;
@@ -185,7 +185,7 @@ const Sub = styled.div`
   cursor: pointer;
 
   /* 태블릿 뷰 */
-  @media (max-width: 1299rem) and (min-width: 766rem) {
+  @media (max-width: 1299px) and (min-width: 766px) {
     color: #fff;
     font-size: 24.534rem;
     font-style: normal;
@@ -195,7 +195,7 @@ const Sub = styled.div`
     text-decoration-line: underline;
   }
   /* 모바일 뷰 */
-  @media (max-width: 765.9rem) {
+  @media (max-width: 765.9px) {
     color: #fff;
     font-size: 18rem;
     font-style: normal;

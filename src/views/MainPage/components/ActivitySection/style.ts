@@ -7,11 +7,11 @@ export const Wrapper = styled.div`
 
   padding-top: 68rem;
 
-  @media (max-width: 768rem) {
+  @media (max-width: 768px) {
     padding-top: 65rem;
   }
 
-  @media (max-width: 428rem) {
+  @media (max-width: 428px) {
     padding-top: 37.36rem;
   }
 `;

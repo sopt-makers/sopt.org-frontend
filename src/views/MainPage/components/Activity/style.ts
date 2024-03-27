@@ -6,7 +6,7 @@ export const CardWrapper = styled.main`
   justify-items: center;
   gap: 28rem;
 
-  @media (max-width: 1440rem) and (min-width: 768rem) {
+  @media (max-width: 1440px) and (min-width: 768px) {
     grid-template-columns: repeat(2, 1fr);
   }
 `;

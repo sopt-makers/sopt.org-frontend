@@ -28,12 +28,12 @@ const Root = styled.div`
   margin: 0 auto;
 
   /* 태블릿 뷰 */
-  @media (max-width: 1199rem) and (min-width: 766rem) {
+  @media (max-width: 1199px) and (min-width: 766px) {
     width: 700rem;
     margin-top: 90rem;
   }
   /* 모바일 뷰 */
-  @media (max-width: 765.9rem) {
+  @media (max-width: 765.9px) {
     width: 360rem;
     margin-top: 90rem;
   }
@@ -47,13 +47,13 @@ const Title = styled.h1`
   margin-top: 190rem;
 
   /* 태블릿 뷰 */
-  @media (max-width: 1199rem) and (min-width: 766rem) {
+  @media (max-width: 1199px) and (min-width: 766px) {
     font-size: 36rem;
     line-height: 56rem;
     margin-top: 70rem;
   }
   /* 모바일 뷰 */
-  @media (max-width: 765.9rem) {
+  @media (max-width: 765.9px) {
     font-size: 24rem;
     line-height: 28rem;
     margin-top: 30rem;

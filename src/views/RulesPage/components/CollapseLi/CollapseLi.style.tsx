@@ -11,7 +11,7 @@ export const Root = styled.li`
   border-bottom: 1rem solid ${colors.gray10};
   padding-bottom: 40rem;
   width: 100%;
-  @media (max-width: 768rem) {
+  @media (max-width: 768px) {
     padding-bottom: 20rem;
   }
 `;
@@ -21,7 +21,7 @@ export const Section = styled.div`
   cursor: pointer;
   padding-top: 40rem;
   width: 100%;
-  @media (max-width: 768rem) {
+  @media (max-width: 768px) {
     padding-top: 20rem;
   }
 `;
@@ -33,7 +33,7 @@ export const TItle = styled.h3`
   font-size: 24rem;
   font-weight: 700;
   font-style: normal;
-  @media (max-width: 768rem) {
+  @media (max-width: 768px) {
     font-size: 16rem;
   }
 `;
@@ -52,7 +52,7 @@ export const Button = styled.button<ButtonStyleProps>`
   height: 13rem;
 
   /* stylelint-disable */
-  @media (max-width: 768rem) {
+  @media (max-width: 768px) {
     margin-right: 15rem;
     width: 16rem;
     height: 13rem;
@@ -79,7 +79,7 @@ export const Contents = styled.div<ButtonStyleProps>`
   font-size: 20rem;
   font-weight: 400;
   font-style: normal;
-  @media (max-width: 768rem) {
+  @media (max-width: 768px) {
     font-size: 14rem;
   }
 
@@ -88,7 +88,7 @@ export const Contents = styled.div<ButtonStyleProps>`
       ? css`
           transition: max-height 0.2s ease-in;
           max-height: 3500rem;
-          @media screen and (max-width: 1280rem) {
+          @media screen and (max-width: 1280px) {
             max-height: 5000rem;
           }
         `

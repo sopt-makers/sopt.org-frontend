@@ -9,7 +9,7 @@ export const CardWrapper = styled.div`
   padding: 18rem;
 
   /* 태블릿, 모바일 뷰 */
-  @media (max-width: 1199rem) {
+  @media (max-width: 1199px) {
     height: 202rem;
     padding: 16rem;
   }
@@ -20,7 +20,7 @@ export const DescriptionWrapper = styled.div`
   flex-direction: column;
   gap: 8rem;
   /* 모바일 뷰 */
-  @media (max-width: 765.9rem) {
+  @media (max-width: 765.9px) {
     padding: 0 10rem;
   }
 `;
@@ -33,10 +33,10 @@ const Span = styled.span`
   letter-spacing: -1%;
 
   /* 태블릿 뷰 */
-  @media (max-width: 1199rem) and (min-width: 766rem) {
+  @media (max-width: 1199px) and (min-width: 766px) {
   }
   /* 모바일 뷰 */
-  @media (max-width: 765.9rem) {
+  @media (max-width: 765.9px) {
     font-size: 16rem;
     line-height: 25rem;
   }
@@ -59,7 +59,7 @@ const Chip = styled.div`
   letter-spacing: -1%;
 
   /* 모바일 뷰 */
-  @media (max-width: 765.9rem) {
+  @media (max-width: 765.9px) {
     padding: 6rem 12rem;
     font-size: 14rem;
     line-height: 120%;
@@ -81,7 +81,7 @@ export const Title = styled.div`
   line-height: 130%;
 
   /* 모바일 뷰 */
-  @media (max-width: 765.9rem) {
+  @media (max-width: 765.9px) {
     font-size: 20rem;
   }
 `;

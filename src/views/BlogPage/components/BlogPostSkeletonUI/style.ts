@@ -23,7 +23,7 @@ export const BlogPostList = styled.div`
   margin-top: 30rem;
 
   /* 모바일 뷰 */
-  @media (max-width: 767rem) {
+  @media (max-width: 767px) {
     width: 100%;
     margin-top: 24rem;
     gap: 36rem;
@@ -39,7 +39,7 @@ export const BlogPost = styled.section`
   transition: opacity 0.2s linear;
 
   /* 모바일 뷰 */
-  @media (max-width: 767rem) {
+  @media (max-width: 767px) {
     gap: 16rem;
   }
 `;
@@ -59,7 +59,7 @@ export const Header = styled.div`
   background-color: ${colors.gray800};
 
   /* 모바일 뷰 */
-  @media (max-width: 767rem) {
+  @media (max-width: 767px) {
     height: 16rem;
     margin-bottom: 0;
   }
@@ -70,7 +70,7 @@ export const Body = styled.div`
   width: 100%;
 
   /* 모바일 뷰 */
-  @media (max-width: 767rem) {
+  @media (max-width: 767px) {
     display: flex;
     align-items: center;
     height: 53rem;
@@ -90,7 +90,7 @@ export const ProfileImage = styled.div`
   background-color: ${colors.gray800};
 
   /* 모바일 뷰 */
-  @media (max-width: 767rem) {
+  @media (max-width: 767px) {
     width: 15rem;
     height: 15rem;
   }
@@ -107,7 +107,7 @@ export const Title = styled.div`
   margin-bottom: 5rem;
   width: 100%;
 
-  @media (max-width: 767rem) {
+  @media (max-width: 767px) {
     height: 24rem;
   }
 `;
@@ -120,7 +120,7 @@ export const Description = styled.div`
   height: 52rem;
 
   /* 모바일 뷰 */
-  @media (max-width: 767rem) {
+  @media (max-width: 767px) {
     display: none;
   }
 `;
@@ -131,7 +131,7 @@ export const TagList = styled.div`
   margin-top: 10rem;
 
   /* 모바일 뷰 */
-  @media (max-width: 767rem) {
+  @media (max-width: 767px) {
     margin-top: 18rem;
   }
 `;
@@ -148,7 +148,7 @@ export const Tag = styled.div`
   background-color: ${colors.gray800};
 
   /* 모바일 뷰 */
-  @media (max-width: 767rem) {
+  @media (max-width: 767px) {
     height: 20rem;
   }
 `;
@@ -162,7 +162,7 @@ export const ThumbnailWrapper = styled.div`
   width: 239rem;
 
   /* 모바일 뷰 */
-  @media (max-width: 767rem) {
+  @media (max-width: 767px) {
     width: 105rem;
   }
 `;
@@ -176,7 +176,7 @@ export const Thumbnail = styled.div`
   height: 160rem;
 
   /* 모바일 뷰 */
-  @media (max-width: 767rem) {
+  @media (max-width: 767px) {
     width: 105rem;
     height: 70rem;
     border-radius: 5rem;

@@ -53,11 +53,11 @@ export const ContentWrapper = styled.article`
   position: absolute;
   z-index: 2;
 
-  @media (max-width: 1440rem) {
+  @media (max-width: 1440px) {
     gap: 70rem;
   }
 
-  @media (max-width: 768rem) {
+  @media (max-width: 768px) {
     gap: 80rem;
     padding-top: 60vh;
     padding-bottom: 50rem;
@@ -77,12 +77,12 @@ export const Title = styled.h1`
   -webkit-text-fill-color: transparent;
 
   /* 모바일 뷰 */
-  @media (max-width: 1440rem) {
+  @media (max-width: 1440px) {
     font-size: 64rem;
   }
 
   /* 모바일 뷰 */
-  @media (max-width: 768rem) {
+  @media (max-width: 768px) {
     font-size: 28rem;
     line-height: 42rem;
     letter-spacing: -2%;
@@ -96,14 +96,14 @@ export const DownScrollIcon = styled(IcDownScroll)`
   height: 56rem;
   cursor: pointer;
 
-  @media (max-width: 1440rem) {
+  @media (max-width: 1440px) {
     min-width: 42rem;
     width: 42rem;
     min-height: 42;
     height: 42rem;
   }
 
-  @media (max-width: 768rem) {
+  @media (max-width: 768px) {
     min-width: 28rem;
     min-height: 28rem;
     width: 28rem;

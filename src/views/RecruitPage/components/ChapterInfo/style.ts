@@ -5,11 +5,11 @@ const BaseChip = styled.div`
   font-size: 22rem;
 
   /* 태블릿 뷰 */
-  @media (max-width: 1299rem) and (min-width: 766rem) {
+  @media (max-width: 1299px) and (min-width: 766px) {
     font-size: 18rem;
   }
 
-  @media (max-width: 765.9rem) {
+  @media (max-width: 765.9px) {
     line-height: 18rem;
     font-size: 16rem;
   }
@@ -38,11 +38,11 @@ const Wrapper = styled.div`
   flex-direction: column;
   gap: 70rem;
   /* 태블릿 뷰 */
-  @media (max-width: 1299rem) and (min-width: 766rem) {
+  @media (max-width: 1299px) and (min-width: 766px) {
     gap: 40rem;
   }
   /* 모바일 뷰 */
-  @media (max-width: 765.9rem) {
+  @media (max-width: 765.9px) {
     gap: 24rem;
   }
 `;
@@ -54,13 +54,13 @@ const BaseText = styled.div`
   letter-spacing: -0.48rem;
   white-space: pre-line;
   /* 태블릿 뷰 */
-  @media (max-width: 1299rem) and (min-width: 766rem) {
+  @media (max-width: 1299px) and (min-width: 766px) {
     font-size: 16rem;
     font-style: normal;
     letter-spacing: -0.32rem;
   }
   /* 모바일 뷰 */
-  @media (max-width: 765.9rem) {
+  @media (max-width: 765.9px) {
     font-size: 16rem;
     font-style: normal;
     letter-spacing: -0.32rem;
@@ -75,14 +75,14 @@ const InfoWrapper = styled(BaseText)`
   line-height: 42rem;
 
   /* 태블릿 뷰 */
-  @media (max-width: 1299rem) and (min-width: 766rem) {
+  @media (max-width: 1299px) and (min-width: 766px) {
     width: 640rem;
     padding: 32rem 56rem;
     border-radius: 20rem;
     line-height: 180%;
   }
   /* 모바일 뷰 */
-  @media (max-width: 765.9rem) {
+  @media (max-width: 765.9px) {
     width: 323rem;
     padding: 22rem 28rem;
     border-radius: 20rem;
@@ -113,14 +113,14 @@ const FitWrapper = styled(BaseText)`
     padding-right: 5rem;
   }
   /* 태블릿 뷰 */
-  @media (max-width: 1299rem) and (min-width: 766rem) {
+  @media (max-width: 1299px) and (min-width: 766px) {
     width: 640rem;
     padding: 32rem 56rem;
     border-radius: 24rem;
     line-height: 180%;
   }
   /* 모바일 뷰 */
-  @media (max-width: 765.9rem) {
+  @media (max-width: 765.9px) {
     width: 323rem;
     padding: 22rem 28rem;
     gap: 8rem;
@@ -139,7 +139,7 @@ const SectionWrapper = styled.div`
   display: flex;
   justify-content: center;
 
-  @media (max-width: 765.9rem) {
+  @media (max-width: 765.9px) {
     flex-direction: column;
   }
 `;

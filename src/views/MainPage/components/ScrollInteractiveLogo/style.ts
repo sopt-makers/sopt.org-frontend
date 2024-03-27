@@ -26,12 +26,12 @@ export const Logo = styled.div`
   width: 415rem;
   height: 144rem;
 
-  @media (max-width: 768rem) {
+  @media (max-width: 768px) {
     width: 225rem;
     height: 84rem;
   }
 
-  @media (max-width: 376rem) {
+  @media (max-width: 376px) {
     height: 78rem;
   }
 `;
@@ -58,7 +58,7 @@ export const DescriptionText = styled.div`
   -webkit-text-fill-color: transparent;
 
   /* 모바일 뷰 */
-  @media (max-width: 899rem) {
+  @media (max-width: 899px) {
     font-family: SUIT;
     font-size: 14.656rem;
     font-style: normal;

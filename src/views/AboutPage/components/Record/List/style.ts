@@ -7,20 +7,20 @@ export const Wrapper = styled.div`
   align-items: center;
   padding: 0 20rem;
 
-  @media (max-width: 996rem) and (min-width: 766rem) {
+  @media (max-width: 996px) and (min-width: 766px) {
     gap: 24rem;
   }
 
-  @media (max-width: 766rem) and (min-width: 428rem) {
+  @media (max-width: 766px) and (min-width: 428px) {
     gap: 20rem;
   }
 
-  @media (max-width: 520rem) {
+  @media (max-width: 520px) {
     flex-direction: column;
   }
 
   /* 모바일 뷰 */
-  @media (max-width: 428rem) {
+  @media (max-width: 428px) {
     flex-direction: column;
     gap: 16rem;
   }

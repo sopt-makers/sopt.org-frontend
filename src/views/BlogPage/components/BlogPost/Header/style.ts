@@ -14,7 +14,7 @@ export const Header = styled.div`
   letter-spacing: -0.21rem;
 
   /* 모바일 뷰 */
-  @media (max-width: 767rem) {
+  @media (max-width: 767px) {
     height: 16rem;
     margin-bottom: 0;
 
@@ -35,7 +35,7 @@ export const ProfileImage = styled(Image)`
   border-radius: 18rem;
 
   /* 모바일 뷰 */
-  @media (max-width: 767rem) {
+  @media (max-width: 767px) {
     width: 15rem;
     height: 15rem;
   }

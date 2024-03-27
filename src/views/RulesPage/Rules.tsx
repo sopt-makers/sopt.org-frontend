@@ -28,7 +28,7 @@ const Content = styled.div`
   margin-bottom: 130rem;
   width: 100%;
   max-width: 1192rem;
-  @media screen and (max-width: 1280rem) {
+  @media screen and (max-width: 1280px) {
     width: 92%;
   }
 `;

@@ -16,7 +16,7 @@ export const PartButton = styled.button<{ isSelected: boolean }>`
 
   cursor: pointer;
 
-  @media (max-width: 768rem) {
+  @media (max-width: 768px) {
     width: 118.982rem;
     height: 41.313rem;
 
@@ -25,7 +25,7 @@ export const PartButton = styled.button<{ isSelected: boolean }>`
     letter-spacing: -0.694rem;
   }
 
-  @media (max-width: 428rem) {
+  @media (max-width: 428px) {
     width: 68.38rem;
     height: 23.743rem;
     border-radius: 5.698rem;
