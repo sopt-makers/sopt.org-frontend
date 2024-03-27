@@ -21,7 +21,7 @@ export const global = css`
     margin: 0;
     padding: 0;
     border: 0;
-    font-size: 62.5%;
+    font-size: 6.25%;
     vertical-align: baseline;
   }
   article,
@@ -67,7 +67,6 @@ export const global = css`
   * {
     box-sizing: border-box;
     font-family: 'SUIT', arial, sans-serif;
-    font-size: 10px;
     letter-spacing: -0.01em;
   }
 
