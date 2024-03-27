@@ -13,6 +13,10 @@ export const Header = styled.div`
   line-height: 160%;
   letter-spacing: -0.21rem;
 
+  & > * {
+    font-size: 100%;
+  }
+
   /* 모바일 뷰 */
   @media (max-width: 767px) {
     height: 16rem;
@@ -29,6 +33,9 @@ export const Profile = styled.div`
   display: flex;
   align-items: center;
   gap: 6rem;
+  & > * {
+    font-size: 100%;
+  }
 `;
 
 export const ProfileImage = styled(Image)`
