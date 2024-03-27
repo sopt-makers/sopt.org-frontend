@@ -7,13 +7,13 @@ import icPolygon from '@src/assets/icons/ic_polygon.svg';
 
 export const Wrapper = styled(motion.section)`
   display: flex;
-  gap: 12.25px;
+  gap: 12.25rem;
 
   width: 100%;
-  padding: 104px 2.86vw 0;
+  padding: 104rem 2.86vw 0;
   background-color: ${colors.white};
 
-  @media (max-width: 768px) {
+  @media (max-width: 768rem) {
     padding: 0;
   }
 `;
@@ -21,13 +21,13 @@ export const Wrapper = styled(motion.section)`
 export const FloatingMenu = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 9.27px;
+  gap: 9.27rem;
   position: sticky;
-  top: 104px;
+  top: 104rem;
 
   height: fit-content;
 
-  @media (max-width: 768px) {
+  @media (max-width: 768rem) {
     display: none;
   }
 `;
@@ -36,17 +36,17 @@ export const MenuWrapper = styled(motion.div)<{ isInView?: boolean }>`
   position: relative;
 
   background-color: #fbfcfe;
-  border-radius: 10px;
-  border: 1.2px solid rgba(196, 199, 211, 0.3);
+  border-radius: 10rem;
+  border: 1.2rem solid rgba(196, 199, 211, 0.3);
 
   color: rgba(168, 172, 186, 0.88);
   text-align: center;
   font-family: SUIT;
-  font-size: 19.46px;
+  font-size: 19.46rem;
   font-style: normal;
   font-weight: 500;
-  line-height: 53.54px; /* 275.126% */
-  letter-spacing: -0.584px;
+  line-height: 53.54rem; /* 275.126% */
+  letter-spacing: -0.584rem;
 
   ${({ isInView }) =>
     isInView &&
@@ -59,12 +59,12 @@ export const MenuWrapper = styled(motion.div)<{ isInView?: boolean }>`
         content: '';
         position: absolute;
         top: 50%;
-        right: -8px;
+        right: -8rem;
         transform: translateY(-50%);
         z-index: 99;
 
-        width: 8px;
-        height: 11px;
+        width: 8rem;
+        height: 11rem;
         background-image: url(${icPolygon});
         background-repeat: no-repeat;
       }
@@ -76,11 +76,11 @@ export const Menu = styled(Link)`
   justify-content: center;
   align-items: center;
 
-  width: 190px;
-  height: 72px;
+  width: 190rem;
+  height: 72rem;
 
-  @media (max-width: 1440px) {
-    width: 152px;
+  @media (max-width: 1440rem) {
+    width: 152rem;
   }
 `;
 
@@ -88,16 +88,16 @@ export const Layout = styled(motion.div)`
   flex: 1;
   width: 80%;
   padding: 0 4vw;
-  border-radius: 20.946px 20.946px 0 0;
+  border-radius: 20.946rem 20.946rem 0 0;
   background: #f6f8fc;
   z-index: 1;
 
-  @media (max-width: 768px) {
+  @media (max-width: 768rem) {
     width: 100%;
     padding: 0 6.25vw 0 6.25vw;
   }
 
-  @media (max-width: 428px) {
+  @media (max-width: 428rem) {
     padding: 0 6.54vw 0 6.54vw;
   }
 `;

@@ -6,14 +6,14 @@ import { RulesHead, RulesList, UnderlinedText } from './components';
 const SOPT_RULES = 'SOPT 회칙';
 
 function Rules() {
-  const isDesktopOrTablet = useIsDesktop('769px');
+  const isDesktopOrTablet = useIsDesktop('769rem');
 
   return (
     <PageLayout>
       <Root>
         <RulesHead />
         <Content>
-          <UnderlinedText fontSize={isDesktopOrTablet ? '25px' : '35px'}>
+          <UnderlinedText fontSize={isDesktopOrTablet ? '25rem' : '35rem'}>
             {SOPT_RULES}
           </UnderlinedText>
           <RulesList />
@@ -24,11 +24,11 @@ function Rules() {
 }
 
 const Content = styled.div`
-  margin-top: 250px;
-  margin-bottom: 130px;
+  margin-top: 250rem;
+  margin-bottom: 130rem;
   width: 100%;
-  max-width: 1192px;
-  @media screen and (max-width: 1280px) {
+  max-width: 1192rem;
+  @media screen and (max-width: 1280rem) {
     width: 92%;
   }
 `;

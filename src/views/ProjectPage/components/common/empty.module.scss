@@ -2,8 +2,8 @@
 
 .blank {
   width: 65%;
-  height: 140px;
-  margin: 100px 0;
+  height: 140rem;
+  margin: 100rem 0;
 
   display: flex;
   flex-direction: column;
@@ -17,12 +17,12 @@
   p {
     font-style: normal;
     font-weight: 500;
-    font-size: 28px;
-    line-height: 32px;
+    font-size: 28rem;
+    line-height: 32rem;
     color: rgba(255, 255, 255, 0.7);
 
     @include mobile {
-      font-size: 20px;
+      font-size: 20rem;
       font-weight: 500;
     }
   }

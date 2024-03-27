@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 export const ErrorCode = styled(motion.div)`
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 6rem;
 
   position: relative;
 `;

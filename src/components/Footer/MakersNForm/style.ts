@@ -9,9 +9,9 @@ const FooterForm = styled.div<{ hide: boolean }>`
 
   width: 100%;
 
-  padding: 0 0 0 38px;
+  padding: 0 0 0 38rem;
 
-  border-top: 1px solid #3c3d40;
+  border-top: 1rem solid #3c3d40;
   background-color: #1c1d1e;
 
   transition: transform 0.3s;
@@ -25,13 +25,13 @@ const FooterForm = styled.div<{ hide: boolean }>`
       : ''}
 
   /* 모바일 뷰 */
-  @media (max-width: 765px) {
-    padding: 0 0 0 10px;
+  @media (max-width: 765rem) {
+    padding: 0 0 0 10rem;
   }
 `;
 
 const FooterLink = styled(Link)`
-  padding: 17px 10px;
+  padding: 17rem 10rem;
 
   color: #c0c5c9;
   line-height: normal;
@@ -42,7 +42,7 @@ const FooterLink = styled(Link)`
   }
 `;
 const FooterButton = styled.button`
-  padding: 17px 10px;
+  padding: 17rem 10rem;
 
   color: #c0c5c9;
   font-size: 100%;

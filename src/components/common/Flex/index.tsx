@@ -28,8 +28,8 @@ function parseProp<T>(prop: SingleOrResponsive<T>): Responsive<T> {
 }
 
 const cssGapToString = (gap: React.CSSProperties['gap']): string | undefined => {
-  if (typeof gap === 'number') return `${gap}px`;
-  if (!gap) return '0px';
+  if (typeof gap === 'number') return `${gap}rem`;
+  if (!gap) return '0rem';
   return gap;
 };
 
@@ -60,12 +60,12 @@ const Div = styled.div<{
   gap: ${(props) => cssGapToString(props.gap.desktop)};
   flex-direction: ${(props) => props.flexDirection.desktop};
 
-  @media (max-width: 1199px) {
+  @media (max-width: 1199rem) {
     gap: ${(props) => cssGapToString(props.gap.tablet)};
     flex-direction: ${(props) => props.flexDirection.tablet};
   }
 
-  @media (max-width: 765.9px) {
+  @media (max-width: 765.9rem) {
     gap: ${(props) => cssGapToString(props.gap.mobile)};
     flex-direction: ${(props) => props.flexDirection.mobile};
   }

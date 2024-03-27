@@ -7,13 +7,13 @@ const BottomLogo = () => {
 };
 
 const ScaledImage = styled(Image)`
-  width: 362px;
+  width: 362rem;
   height: auto;
-  margin-top: 338px;
-  margin-bottom: 86px;
+  margin-top: 338rem;
+  margin-bottom: 86rem;
   /* 모바일 뷰 */
-  @media (max-width: 765.9px) {
-    width: 276px;
+  @media (max-width: 765.9rem) {
+    width: 276rem;
   }
 `;
 

@@ -5,23 +5,23 @@ export const ProjectListHeader = styled.div`
   display: flex;
   justify-content: end;
   align-items: center;
-  margin-bottom: 30px;
+  margin-bottom: 30rem;
 
   /* 모바일 뷰 */
-  @media (max-width: 899px) {
+  @media (max-width: 899rem) {
     flex-direction: column;
-    gap: 20px;
-    margin-bottom: 28px;
+    gap: 20rem;
+    margin-bottom: 28rem;
   }
 `;
 
 export const ProjectListCountSkeletonUI = styled.div`
-  width: 89px;
-  height: 23px;
+  width: 89rem;
+  height: 23rem;
   background-color: ${colors.gray900};
-  border-radius: 8px;
+  border-radius: 8rem;
 
-  @media (max-width: 1279px) and (min-width: 900px) {
-    width: 33px;
+  @media (max-width: 1279rem) and (min-width: 900rem) {
+    width: 33rem;
   }
 `;

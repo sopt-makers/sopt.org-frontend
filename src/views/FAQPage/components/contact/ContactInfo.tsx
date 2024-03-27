@@ -40,45 +40,45 @@ const Styled = {
     display: flex;
     flex-direction: column;
     /* 태블릿 뷰 */
-    @media (max-width: 1919px) {
+    @media (max-width: 1919rem) {
       align-items: center;
     }
   `,
   Text: styled.h1`
     font-weight: 400;
-    font-size: 30px;
-    line-height: 30px;
+    font-size: 30rem;
+    line-height: 30rem;
     color: #787878;
-    margin-bottom: 32px;
+    margin-bottom: 32rem;
     /* 태블릿 뷰 */
-    @media (max-width: 1919px) {
-      font-size: 25px;
+    @media (max-width: 1919rem) {
+      font-size: 25rem;
     }
     /* 모바일 뷰 */
-    @media (max-width: 765px) {
-      font-size: 14px;
-      line-height: 16px;
-      margin-bottom: 8px;
+    @media (max-width: 765rem) {
+      font-size: 14rem;
+      line-height: 16rem;
+      margin-bottom: 8rem;
     }
   `,
   Content: styled.p`
     width: fit-content;
     font-weight: 600;
-    font-size: 40px;
-    line-height: 50px;
+    font-size: 40rem;
+    line-height: 50rem;
 
     text-decoration-line: underline;
     text-underline-position: under;
     color: #ffffff;
     cursor: pointer;
     /* 태블릿 뷰 */
-    @media (max-width: 1919px) {
-      font-size: 35px;
+    @media (max-width: 1919rem) {
+      font-size: 35rem;
     }
     /* 모바일 뷰 */
-    @media (max-width: 765px) {
-      font-size: 18px;
-      line-height: 27px;
+    @media (max-width: 765rem) {
+      font-size: 18rem;
+      line-height: 27rem;
     }
   `,
 };

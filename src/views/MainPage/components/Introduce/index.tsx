@@ -4,7 +4,7 @@ import { useIsMobile } from '@src/hooks/useDevice';
 import * as S from './style';
 
 export default function Introduce() {
-  const isMobileSize = useIsMobile('774px');
+  const isMobileSize = useIsMobile('774rem');
   const contentRef = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({
     target: contentRef,

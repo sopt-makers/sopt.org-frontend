@@ -54,71 +54,71 @@ const Styled = {
     display: flex;
     flex-direction: column;
     /* 태블릿 뷰 */
-    @media (max-width: 1919.9px) and (min-width: 766px) {
+    @media (max-width: 1919.9rem) and (min-width: 766rem) {
       align-items: center;
     }
   `,
   Header: styled.div`
-    margin-bottom: 100px;
+    margin-bottom: 100rem;
     /* 태블릿 뷰 */
-    @media (max-width: 1919.9px) and (min-width: 766px) {
+    @media (max-width: 1919.9rem) and (min-width: 766rem) {
       display: flex;
       flex-direction: column;
       align-items: center;
     }
     /* 모바일 뷰 */
-    @media (max-width: 766px) {
-      margin-bottom: 24px;
+    @media (max-width: 766rem) {
+      margin-bottom: 24rem;
     }
   `,
   Title: styled.h1`
     font-weight: 800;
-    font-size: 45px;
-    line-height: 60px;
+    font-size: 45rem;
+    line-height: 60rem;
 
     color: #ffffff;
-    margin-bottom: 24px;
+    margin-bottom: 24rem;
     /* 모바일 뷰 */
-    @media (max-width: 766px) {
-      font-size: 20px;
-      line-height: 28px;
-      margin-bottom: 4px;
+    @media (max-width: 766rem) {
+      font-size: 20rem;
+      line-height: 28rem;
+      margin-bottom: 4rem;
     }
   `,
   Caption: styled.p`
     font-weight: 400;
-    font-size: 30px;
-    line-height: 30px;
+    font-size: 30rem;
+    line-height: 30rem;
     color: #787878;
     /* 태블릿 뷰 */
-    @media (max-width: 1919.9px) and (min-width: 766px) {
-      font-size: 25px;
+    @media (max-width: 1919.9rem) and (min-width: 766rem) {
+      font-size: 25rem;
     }
     /* 모바일 뷰 */
-    @media (max-width: 766px) {
-      font-size: 16px;
-      line-height: 20px;
+    @media (max-width: 766rem) {
+      font-size: 16rem;
+      line-height: 20rem;
     }
   `,
   FAQWrapper: styled.div`
     display: flex;
     flex-direction: column;
-    width: 1200px;
-    margin-bottom: 240px;
+    width: 1200rem;
+    margin-bottom: 240rem;
     & > div:not(:last-child) {
-      margin-bottom: 30px;
+      margin-bottom: 30rem;
     }
     /* 태블릿 뷰 */
-    @media (max-width: 1919.9px) and (min-width: 766px) {
-      padding-left: 38.5px;
-      padding-right: 41.5px;
-      width: 766px;
+    @media (max-width: 1919.9rem) and (min-width: 766rem) {
+      padding-left: 38.5rem;
+      padding-right: 41.5rem;
+      width: 766rem;
     }
     /* 모바일 뷰 */
-    @media (max-width: 766px) {
-      width: 360px;
-      padding-left: 16px;
-      padding-right: 16px;
+    @media (max-width: 766rem) {
+      width: 360rem;
+      padding-left: 16rem;
+      padding-right: 16rem;
     }
   `,
 };

@@ -14,24 +14,24 @@ export const SelectTrigger = styled.button<{
   justify-content: space-between;
   cursor: pointer;
   position: relative;
-  min-width: 110px;
+  min-width: 110rem;
   width: ${({ isWide }) => isWide && 'auto'};
-  padding: 9px 22px;
+  padding: 9rem 22rem;
   text-align: left;
   color: ${({ isSelectionExist }) => (isSelectionExist ? colors.white : colors.gray200)};
-  border-radius: 20px;
+  border-radius: 20rem;
   background-color: ${({ isSelectionExist }) =>
     isSelectionExist ? colors.gray800 : colors.gray700};
-  border: 1px solid;
+  border: 1rem solid;
   border-color: ${({ isSelectionExist }) => (isSelectionExist ? colors.gray400 : colors.gray700)};
 
   @media (max-width: ${({ breakPoint }) => breakPoint}) {
-    min-width: 76px;
-    padding: 8px 12px;
-    border-radius: 99px;
-    font-size: 13px;
+    min-width: 76rem;
+    padding: 8rem 12rem;
+    border-radius: 99rem;
+    font-size: 13rem;
     line-height: 150%;
-    letter-spacing: -0.13px;
+    letter-spacing: -0.13rem;
   }
 `;
 
@@ -41,16 +41,16 @@ export const Arrow = styled.div<{
   background-repeat: no-repeat;
   background-position: center;
   transition: 0.2s;
-  width: 10px;
-  height: 18px;
+  width: 10rem;
+  height: 18rem;
   background-image: url(${chevronDown});
   transform: ${({ isOpened }) => (isOpened ? 'rotate(180deg)' : 'none')};
 `;
 
 export const SelectItem = styled.div<{ isSelected: boolean }>`
   background-color: ${({ isSelected }) => (isSelected ? colors.gray600 : 'transparent')};
-  padding: 8px 5px;
-  border-radius: 6px;
+  padding: 8rem 5rem;
+  border-radius: 6rem;
   cursor: pointer;
   transition: 0.1s;
   color: ${colors.gray30};
@@ -58,22 +58,22 @@ export const SelectItem = styled.div<{ isSelected: boolean }>`
 
 export const SelectTriggerContent = styled.p<{ isSelectionExist: boolean; breakPoint: string }>`
   color: ${({ isSelectionExist }) => (isSelectionExist ? colors.white : colors.gray200)};
-  margin-right: 8px;
-  font-size: 16px;
+  margin-right: 8rem;
+  font-size: 16rem;
   font-weight: 500;
   white-space: nowrap;
 
   @media (max-width: ${({ breakPoint }) => breakPoint}) {
-    font-size: 13px;
+    font-size: 13rem;
   }
 `;
 
 export const SelectItemContent = styled.p<{ isWide: boolean; breakPoint: string }>`
-  margin-right: ${({ isWide }) => isWide && '42px'};
+  margin-right: ${({ isWide }) => isWide && '42rem'};
 
   @media (max-width: ${({ breakPoint }) => breakPoint}) {
-    margin-right: ${({ isWide }) => isWide && '22px'};
-    font-size: 13px;
+    margin-right: ${({ isWide }) => isWide && '22rem'};
+    font-size: 13rem;
   }
 `;
 
@@ -84,15 +84,15 @@ export const SelectItemWrapper = styled.div<{ isWide: boolean; breakPoint: strin
   position: absolute;
   background-color: ${colors.gray700};
   z-index: 200;
-  min-width: 110px;
+  min-width: 110rem;
   width: ${({ isWide }) => isWide && 'auto'};
-  max-height: 262px;
+  max-height: 262rem;
   overflow-y: scroll;
-  border-radius: 13px;
-  padding: 7px;
-  padding-right: ${({ isWide }) => isWide && '5px'};
-  margin-top: 8px;
-  /* gap: 8px; */
+  border-radius: 13rem;
+  padding: 7rem;
+  padding-right: ${({ isWide }) => isWide && '5rem'};
+  margin-top: 8rem;
+  /* gap: 8rem; */
 
   &:hover {
     ${SelectItem} {
@@ -104,6 +104,6 @@ export const SelectItemWrapper = styled.div<{ isWide: boolean; breakPoint: strin
   }
 
   @media (max-width: ${({ breakPoint }) => breakPoint}) {
-    min-width: 76px;
+    min-width: 76rem;
   }
 `;

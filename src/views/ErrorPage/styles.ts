@@ -10,7 +10,7 @@ export const Root = styled.main`
 
   width: 100%;
   height: 100dvh;
-  min-height: 400px;
+  min-height: 400rem;
   padding-bottom: 20dvh;
 
   overflow: scroll;
@@ -19,20 +19,20 @@ export const TopSection = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 34px;
+  gap: 34rem;
 
   width: 100%;
 `;
 export const ErrorText = styled.p`
   color: #fcfcfc;
 
-  font-size: 28px;
+  font-size: 28rem;
   font-weight: 600;
   line-height: 150%;
-  letter-spacing: -0.96px;
+  letter-spacing: -0.96rem;
 
-  @media (max-width: 428px) {
-    font-size: 24px;
+  @media (max-width: 428rem) {
+    font-size: 24rem;
   }
 `;
 export const ContactButton = styled.button`
@@ -40,15 +40,15 @@ export const ContactButton = styled.button`
   bottom: 17dvh;
 
   color: #fff;
-  font-size: 24px;
+  font-size: 24rem;
   font-weight: 600;
-  line-height: 150%; /* 36px */
-  letter-spacing: -0.48px;
+  line-height: 150%; /* 36rem */
+  letter-spacing: -0.48rem;
   text-decoration-line: underline;
 
   cursor: pointer;
 
-  @media (max-width: 428px) {
-    font-size: 18px;
+  @media (max-width: 428rem) {
+    font-size: 18rem;
   }
 `;

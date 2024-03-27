@@ -16,10 +16,10 @@ const Wrapper = styled(HideScrollbar)<{ isSliding: boolean; lastIndex: boolean }
     top: 0;
     z-index: 5;
 
-    width: 70px;
-    height: 164px;
+    width: 70rem;
+    height: 164rem;
 
-    @media (max-width: 899px) {
+    @media (max-width: 899rem) {
       display: none;
     }
   }
@@ -33,7 +33,7 @@ const Wrapper = styled(HideScrollbar)<{ isSliding: boolean; lastIndex: boolean }
   }
 
   ::after {
-    right: -1px;
+    right: -1rem;
     background: linear-gradient(270deg, ${colors.gray950} 0%, transparent 100%);
 
     opacity: 0;
@@ -44,7 +44,7 @@ const Wrapper = styled(HideScrollbar)<{ isSliding: boolean; lastIndex: boolean }
         transition: opacity 0.3s ease-out;
       `};
 
-    @media (max-width: 1279px) {
+    @media (max-width: 1279rem) {
       opacity: ${({ lastIndex }) => (lastIndex ? 0 : 1)};
     }
   }
@@ -52,30 +52,30 @@ const Wrapper = styled(HideScrollbar)<{ isSliding: boolean; lastIndex: boolean }
 
 const Arrow = styled.div`
   position: absolute;
-  width: 40px;
-  height: 40px;
-  border-radius: 20px;
+  width: 40rem;
+  height: 40rem;
+  border-radius: 20rem;
   background-color: ${colors.gray600};
   color: white;
   z-index: 2;
-  top: calc(50% - 16px);
+  top: calc(50% - 16rem);
   transform: translateY(-50%);
   cursor: pointer;
   background-repeat: no-repeat;
   background-position: center;
 
-  @media (max-width: 899px) {
+  @media (max-width: 899rem) {
     display: none;
   }
 `;
 
 const LeftArrow = styled(Arrow)`
-  left: -50px;
+  left: -50rem;
   background-image: url(${arrowLeft});
 `;
 
 const RightArrow = styled(Arrow)`
-  right: -50px;
+  right: -50rem;
   background-image: url(${arrowRight});
 `;
 
@@ -85,12 +85,12 @@ const CarouselWrapper = styled.div<{
   itemCount: number;
   gapWidth: number;
 }>`
-  width: ${({ itemWidth, itemCount }) => itemWidth * itemCount}px;
+  width: ${({ itemWidth, itemCount }) => itemWidth * itemCount}rem;
   display: grid;
-  grid-template-columns: ${({ itemWidth, itemCount }) => `repeat(${itemCount}, ${itemWidth}px)`};
+  grid-template-columns: ${({ itemWidth, itemCount }) => `repeat(${itemCount}, ${itemWidth}rem)`};
   transition: transform 0.5s ease-in-out;
-  transform: ${({ translateX }) => `translateX(${translateX}px)`};
-  gap: ${({ gapWidth }) => `${gapWidth}px`};
+  transform: ${({ translateX }) => `translateX(${translateX}rem)`};
+  gap: ${({ gapWidth }) => `${gapWidth}rem`};
 `;
 
 const CarouselViewport = styled.div`
@@ -105,7 +105,7 @@ const Blur = styled.div`
   top: 0;
   background: ${colors.background};
 
-  @media (max-width: 899px) {
+  @media (max-width: 899rem) {
     display: none;
   }
 `;
@@ -120,17 +120,17 @@ const RightBlur = styled(Blur)`
 `;
 
 const DotWrapper = styled.div`
-  margin-top: 24px;
+  margin-top: 24rem;
   display: flex;
   justify-content: center;
-  gap: 12px;
+  gap: 12rem;
   width: 100%;
 `;
 
 const Dot = styled.div<{ selected: boolean }>`
   position: relative;
-  width: 8px;
-  height: 8px;
+  width: 8rem;
+  height: 8rem;
   background-color: ${({ selected }) => (selected ? colors.white : colors.gray800)};
   border-radius: 50%;
   cursor: pointer;
@@ -138,10 +138,10 @@ const Dot = styled.div<{ selected: boolean }>`
   ::before {
     content: '';
     position: absolute;
-    top: -4px;
-    left: -4px;
-    right: -4px;
-    bottom: -4px;
+    top: -4rem;
+    left: -4rem;
+    right: -4rem;
+    bottom: -4rem;
     border-radius: 50%;
   }
 `;

@@ -27,20 +27,20 @@ export const TextContainer = styled(motion.span)`
   overflow: hidden;
   display: block;
   text-align: center;
-  font-size: 50px;
+  font-size: 50rem;
   font-style: normal;
   font-weight: 700;
-  line-height: 73px;
+  line-height: 73rem;
   white-space: pre-line;
 
-  @media (max-width: 1440px) {
-    font-size: 40px;
+  @media (max-width: 1440rem) {
+    font-size: 40rem;
     line-height: normal;
   }
 
-  @media (max-width: 774px) {
-    font-size: 25px;
-    line-height: 38px;
+  @media (max-width: 774rem) {
+    font-size: 25rem;
+    line-height: 38rem;
     letter-spacing: -2%;
     word-break: keep-all;
   }

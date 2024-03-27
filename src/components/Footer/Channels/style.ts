@@ -8,13 +8,13 @@ interface WrapProps {
 export const ChannelButtonsWrap = styled.div<WrapProps>`
   display: grid;
   grid-template-columns: ${(props: WrapProps) =>
-    props.isFooter ? 'repeat(5, minmax(30px, auto))' : 'repeat(3, minmax(30px, auto))'};
-  column-gap: ${(props: WrapProps) => (props.isFooter ? '10px' : '16px')};
-  row-gap: 16px;
+    props.isFooter ? 'repeat(5, minmax(30rem, auto))' : 'repeat(3, minmax(30rem, auto))'};
+  column-gap: ${(props: WrapProps) => (props.isFooter ? '10rem' : '16rem')};
+  row-gap: 16rem;
 
-  width: ${(props: WrapProps) => (props.isFooter ? '190px' : '152px')};
-  height: ${(props: WrapProps) => (props.isFooter ? '30px' : '96px')};
-  margin-top: 15px;
+  width: ${(props: WrapProps) => (props.isFooter ? '190rem' : '152rem')};
+  height: ${(props: WrapProps) => (props.isFooter ? '30rem' : '96rem')};
+  margin-top: 15rem;
 `;
 
 export const ClickableChannelButton = styled(Image)`

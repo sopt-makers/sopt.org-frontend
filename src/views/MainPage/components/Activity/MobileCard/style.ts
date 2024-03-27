@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 export const Container = styled.section`
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 12rem;
   overflow: hidden;
 `;
 
@@ -15,12 +15,12 @@ export const PartButtonList = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
-  gap: 5px;
+  gap: 5rem;
 `;
 
 export const DotButton = styled.div<{ isSelected: boolean }>`
-  width: 7px;
-  height: 7px;
+  width: 7rem;
+  height: 7rem;
   background-color: ${({ isSelected }) => (isSelected ? '#2D4C79' : '#2d4c791a')};
   border-radius: 50%;
 
@@ -28,15 +28,15 @@ export const DotButton = styled.div<{ isSelected: boolean }>`
     cursor: pointer;
   }
 
-  @media (max-width: 428px) {
-    width: 4px;
-    height: 4px;
+  @media (max-width: 428rem) {
+    width: 4rem;
+    height: 4rem;
   }
 `;
 
 export const Carousel = styled.div`
   display: flex;
-  column-gap: 20px;
+  column-gap: 20rem;
 `;
 
 export const Slide = styled.div`
@@ -62,14 +62,14 @@ export const Arrow = styled.div`
     cursor: pointer;
   }
 
-  @media (max-width: 768px) {
-    width: 26px;
+  @media (max-width: 768rem) {
+    width: 26rem;
   }
 
-  @media (max-width: 428px) {
-    width: 15.293px;
+  @media (max-width: 428rem) {
+    width: 15.293rem;
     & > img {
-      height: 24.138px;
+      height: 24.138rem;
     }
   }
 `;
@@ -85,5 +85,5 @@ export const RightArrow = styled(Arrow)`
 export const CarouselWrapper = styled.div`
   position: relative;
   overflow: hidden;
-  border-radius: 19px;
+  border-radius: 19rem;
 `;

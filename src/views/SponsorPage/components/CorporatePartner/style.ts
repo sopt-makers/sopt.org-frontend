@@ -11,35 +11,35 @@ export const Container = styled.section`
   flex-direction: column;
   justify-content: center;
   position: relative;
-  padding: 180px 0;
-  width: 1200px;
+  padding: 180rem 0;
+  width: 1200rem;
   align-items: center;
 
-  @media (max-width: 1199px) and (min-width: 769px) {
-    padding: 150px 0;
-    max-width: 766px;
+  @media (max-width: 1199rem) and (min-width: 769rem) {
+    padding: 150rem 0;
+    max-width: 766rem;
   }
-  @media (max-width: 768px) {
-    padding: 87px 0;
-    max-width: 360px;
+  @media (max-width: 768rem) {
+    padding: 87rem 0;
+    max-width: 360rem;
   }
 `;
 
 export const Title = styled.h3`
   font-weight: 800;
   text-align: center;
-  margin-bottom: 60px;
-  font-size: 45px;
-  line-height: 60px;
+  margin-bottom: 60rem;
+  font-size: 45rem;
+  line-height: 60rem;
 
-  @media (min-width: 769px) and (max-width: 1199px) {
-    font-size: 36px;
-    line-height: 56px;
+  @media (min-width: 769rem) and (max-width: 1199rem) {
+    font-size: 36rem;
+    line-height: 56rem;
   }
 
-  @media (max-width: 768px) {
-    font-size: 20px;
-    line-height: 28px;
+  @media (max-width: 768rem) {
+    font-size: 20rem;
+    line-height: 28rem;
   }
 `;
 
@@ -52,14 +52,14 @@ export const ContentWrapper = styled.div`
 
 export const ArrowWrapper = styled.div`
   display: none;
-  @media (min-width: 1199px) {
+  @media (min-width: 1199rem) {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 64px;
-    height: 64px;
+    width: 64rem;
+    height: 64rem;
     border-radius: 50%;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1rem solid rgba(255, 255, 255, 0.1);
     cursor: pointer;
   }
 `;
@@ -71,52 +71,52 @@ export const Content = styled.div`
   grid-auto-flow: column;
 
   overflow-x: hidden;
-  max-width: 900px;
-  height: 386px;
-  column-gap: 30px;
-  row-gap: 64px;
+  max-width: 900rem;
+  height: 386rem;
+  column-gap: 30rem;
+  row-gap: 64rem;
 
-  @media (min-width: 769px) and (max-width: 1199px) {
+  @media (min-width: 769rem) and (max-width: 1199rem) {
     overflow-x: scroll;
-    height: 386px;
-    column-gap: 30px;
-    row-gap: 64px;
+    height: 386rem;
+    column-gap: 30rem;
+    row-gap: 64rem;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 768rem) {
     overflow-x: scroll;
-    height: 185px;
-    column-gap: 50px;
-    row-gap: 20px;
+    height: 185rem;
+    column-gap: 50rem;
+    row-gap: 20rem;
   }
 `;
 
 export const Item = styled.article`
-  width: 278px;
-  height: 161px;
-  @media (min-width: 769px) and (max-width: 1199px) {
-    width: 277px;
-    height: 161px;
+  width: 278rem;
+  height: 161rem;
+  @media (min-width: 769rem) and (max-width: 1199rem) {
+    width: 277rem;
+    height: 161rem;
   }
-  @media (max-width: 768px) {
-    width: 138px;
-    height: 60px;
+  @media (max-width: 768rem) {
+    width: 138rem;
+    height: 60rem;
   }
 `;
 
 export const CorporateLogoImageWrapper = styled.div`
   position: relative;
-  width: 278px;
-  height: 121px;
+  width: 278rem;
+  height: 121rem;
 
-  @media (min-width: 769px) and (max-width: 1199px) {
-    width: 278px;
-    height: 121px;
+  @media (min-width: 769rem) and (max-width: 1199rem) {
+    width: 278rem;
+    height: 121rem;
   }
 
-  @media (max-width: 768px) {
-    width: 138px;
-    height: 60px;
+  @media (max-width: 768rem) {
+    width: 138rem;
+    height: 60rem;
   }
 `;
 
@@ -124,28 +124,28 @@ export const Name = styled.p`
   color: rgba(253, 253, 253, 0.8);
   text-align: center;
   font-weight: 400;
-  @media (min-width: 769px) {
-    font-size: 25px;
-    line-height: 40px;
+  @media (min-width: 769rem) {
+    font-size: 25rem;
+    line-height: 40rem;
   }
 
-  @media (max-width: 768px) {
-    font-size: 12px;
-    line-height: 19px;
+  @media (max-width: 768rem) {
+    font-size: 12rem;
+    line-height: 19rem;
   }
 `;
 
 export const RequestSponsorButton = styled.a`
-  margin-top: 56px;
+  margin-top: 56rem;
   display: inline-flex;
-  height: 56px;
-  padding: 16px 26px;
+  height: 56rem;
+  padding: 16rem 26rem;
   justify-content: center;
   align-items: center;
-  gap: 4px;
+  gap: 4rem;
   flex-shrink: 0;
   width: fit-content;
-  border-radius: 12px;
+  border-radius: 12rem;
   background: ${colors.white};
   text-align: center;
 `;

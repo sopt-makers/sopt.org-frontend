@@ -7,26 +7,26 @@ export const BlogPostListWrapper = styled.div`
   align-items: center;
   width: 100%;
 
-  padding-left: 20px;
-  padding-right: 20px;
-  margin-bottom: 108px;
+  padding-left: 20rem;
+  padding-right: 20rem;
+  margin-bottom: 108rem;
 `;
 
 export const BlogPostList = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 80px;
-  max-width: 900px;
+  gap: 80rem;
+  max-width: 900rem;
   width: 100%;
 
-  margin-top: 30px;
+  margin-top: 30rem;
 
   /* 모바일 뷰 */
-  @media (max-width: 767px) {
+  @media (max-width: 767rem) {
     width: 100%;
-    margin-top: 24px;
-    gap: 36px;
+    margin-top: 24rem;
+    gap: 36rem;
   }
 `;
 
@@ -34,13 +34,13 @@ export const BlogPost = styled.section`
   display: flex;
   justify-content: space-between;
   width: 100%;
-  gap: 36px;
+  gap: 36rem;
 
   transition: opacity 0.2s linear;
 
   /* 모바일 뷰 */
-  @media (max-width: 767px) {
-    gap: 16px;
+  @media (max-width: 767rem) {
+    gap: 16rem;
   }
 `;
 
@@ -52,87 +52,87 @@ export const HeaderWrapper = styled.section`
 
 export const Header = styled.div`
   display: flex;
-  height: 23px;
-  width: 30px;
-  border-radius: 6px;
-  margin-bottom: 4px;
+  height: 23rem;
+  width: 30rem;
+  border-radius: 6rem;
+  margin-bottom: 4rem;
   background-color: ${colors.gray800};
 
   /* 모바일 뷰 */
-  @media (max-width: 767px) {
-    height: 16px;
+  @media (max-width: 767rem) {
+    height: 16rem;
     margin-bottom: 0;
   }
 `;
 
 export const Body = styled.div`
-  height: 94px;
+  height: 94rem;
   width: 100%;
 
   /* 모바일 뷰 */
-  @media (max-width: 767px) {
+  @media (max-width: 767rem) {
     display: flex;
     align-items: center;
-    height: 53px;
+    height: 53rem;
   }
 `;
 
 export const Profile = styled.div`
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 6rem;
 `;
 
 export const ProfileImage = styled.div`
-  border-radius: 18px;
-  width: 18px;
-  height: 18px;
+  border-radius: 18rem;
+  width: 18rem;
+  height: 18rem;
   background-color: ${colors.gray800};
 
   /* 모바일 뷰 */
-  @media (max-width: 767px) {
-    width: 15px;
-    height: 15px;
+  @media (max-width: 767rem) {
+    width: 15rem;
+    height: 15rem;
   }
 `;
 
 export const Divider = styled.div`
-  padding: 0 2px 0 2px;
+  padding: 0 2rem 0 2rem;
 `;
 
 export const Title = styled.div`
-  height: 36px;
+  height: 36rem;
   background-color: ${colors.gray800};
-  border-radius: 6px;
-  margin-bottom: 5px;
+  border-radius: 6rem;
+  margin-bottom: 5rem;
   width: 100%;
 
-  @media (max-width: 767px) {
-    height: 24px;
+  @media (max-width: 767rem) {
+    height: 24rem;
   }
 `;
 
 export const Description = styled.div`
   display: -webkit-box;
-  border-radius: 6px;
+  border-radius: 6rem;
 
   background-color: ${colors.gray800};
-  height: 52px;
+  height: 52rem;
 
   /* 모바일 뷰 */
-  @media (max-width: 767px) {
+  @media (max-width: 767rem) {
     display: none;
   }
 `;
 
 export const TagList = styled.div`
   display: flex;
-  gap: 8px;
-  margin-top: 10px;
+  gap: 8rem;
+  margin-top: 10rem;
 
   /* 모바일 뷰 */
-  @media (max-width: 767px) {
-    margin-top: 18px;
+  @media (max-width: 767rem) {
+    margin-top: 18rem;
   }
 `;
 
@@ -141,15 +141,15 @@ export const Tag = styled.div`
   justify-content: center;
   align-items: center;
 
-  height: 28px;
-  width: 24px;
+  height: 28rem;
+  width: 24rem;
 
-  border-radius: 6px;
+  border-radius: 6rem;
   background-color: ${colors.gray800};
 
   /* 모바일 뷰 */
-  @media (max-width: 767px) {
-    height: 20px;
+  @media (max-width: 767rem) {
+    height: 20rem;
   }
 `;
 
@@ -159,26 +159,26 @@ export const ThumbnailWrapper = styled.div`
   align-items: center;
 
   position: relative;
-  width: 239px;
+  width: 239rem;
 
   /* 모바일 뷰 */
-  @media (max-width: 767px) {
-    width: 105px;
+  @media (max-width: 767rem) {
+    width: 105rem;
   }
 `;
 
 export const Thumbnail = styled.div`
-  border: 1px solid ${colors.gray900};
-  border-radius: 8px;
+  border: 1rem solid ${colors.gray900};
+  border-radius: 8rem;
   object-fit: cover;
   background-color: ${colors.gray800};
-  width: 239px;
-  height: 160px;
+  width: 239rem;
+  height: 160rem;
 
   /* 모바일 뷰 */
-  @media (max-width: 767px) {
-    width: 105px;
-    height: 70px;
-    border-radius: 5px;
+  @media (max-width: 767rem) {
+    width: 105rem;
+    height: 70rem;
+    border-radius: 5rem;
   }
 `;

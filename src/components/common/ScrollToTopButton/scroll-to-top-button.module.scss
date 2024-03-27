@@ -4,35 +4,35 @@
   position: fixed;
   z-index: 9999;
   cursor: pointer;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+  box-shadow: 0rem 4rem 8rem rgba(0, 0, 0, 0.25);
   background: #242424;
 
   @include mobile {
-    width: 56px;
-    height: 56px;
-    right: 20px;
-    bottom: 105px;
+    width: 56rem;
+    height: 56rem;
+    right: 20rem;
+    bottom: 105rem;
     border-radius: 50%;
   }
 
   @include tablet {
-    width: 70px;
-    height: 70px;
+    width: 70rem;
+    height: 70rem;
     border-radius: 50%;
-    right: 40px;
-    bottom: 120px;
+    right: 40rem;
+    bottom: 120rem;
   }
 
   @include desktop {
-    width: 123px;
-    height: 80px;
-    border-radius: 52px;
-    right: 100px;
+    width: 123rem;
+    height: 80rem;
+    border-radius: 52rem;
+    right: 100rem;
     top: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 16px 32px;
+    padding: 16rem 32rem;
   }
 
   animation: fadein 0.4s;
@@ -40,8 +40,8 @@
 
 .text {
   font-weight: 600;
-  font-size: 24px;
-  line-height: 48px;
+  font-size: 24rem;
+  line-height: 48rem;
   color: #ffffff;
   @include mobile-tablet {
     display: none;

@@ -3,42 +3,42 @@ import styled from '@emotion/styled';
 export const CardWrapper = styled.div`
   width: 100%;
   position: relative;
-  border-radius: 10px;
+  border-radius: 10rem;
   overflow: hidden;
-  height: 240px;
-  padding: 18px;
+  height: 240rem;
+  padding: 18rem;
 
   /* 태블릿, 모바일 뷰 */
-  @media (max-width: 1199px) {
-    height: 202px;
-    padding: 16px;
+  @media (max-width: 1199rem) {
+    height: 202rem;
+    padding: 16rem;
   }
 `;
 
 export const DescriptionWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 8rem;
   /* 모바일 뷰 */
-  @media (max-width: 765.9px) {
-    padding: 0 10px;
+  @media (max-width: 765.9rem) {
+    padding: 0 10rem;
   }
 `;
 
 export const SpanWrapper = styled.div``;
 
 const Span = styled.span`
-  font-size: 18px;
-  line-height: 26px;
+  font-size: 18rem;
+  line-height: 26rem;
   letter-spacing: -1%;
 
   /* 태블릿 뷰 */
-  @media (max-width: 1199px) and (min-width: 766px) {
+  @media (max-width: 1199rem) and (min-width: 766rem) {
   }
   /* 모바일 뷰 */
-  @media (max-width: 765.9px) {
-    font-size: 16px;
-    line-height: 25px;
+  @media (max-width: 765.9rem) {
+    font-size: 16rem;
+    line-height: 25rem;
   }
 `;
 
@@ -53,15 +53,15 @@ export const SpanNormal = styled(Span)`
 
 const Chip = styled.div`
   background-color: #313131;
-  padding: 9px 12px;
-  border-radius: 10px;
-  font-size: 18px;
+  padding: 9rem 12rem;
+  border-radius: 10rem;
+  font-size: 18rem;
   letter-spacing: -1%;
 
   /* 모바일 뷰 */
-  @media (max-width: 765.9px) {
-    padding: 6px 12px;
-    font-size: 14px;
+  @media (max-width: 765.9rem) {
+    padding: 6rem 12rem;
+    font-size: 14rem;
     line-height: 120%;
   }
 `;
@@ -76,12 +76,12 @@ export const ChipNormal = styled(Chip)`
 
 export const Title = styled.div`
   color: white;
-  font-size: 26px;
+  font-size: 26rem;
   letter-spacing: -1%;
   line-height: 130%;
 
   /* 모바일 뷰 */
-  @media (max-width: 765.9px) {
-    font-size: 20px;
+  @media (max-width: 765.9rem) {
+    font-size: 20rem;
   }
 `;

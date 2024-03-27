@@ -23,39 +23,39 @@ export default StudyPage;
 const Root = styled.div`
   display: flex;
   flex-direction: column;
-  width: 1200px;
+  width: 1200rem;
   min-height: 100vh;
   margin: 0 auto;
 
   /* 태블릿 뷰 */
-  @media (max-width: 1199px) and (min-width: 766px) {
-    width: 700px;
-    margin-top: 90px;
+  @media (max-width: 1199rem) and (min-width: 766rem) {
+    width: 700rem;
+    margin-top: 90rem;
   }
   /* 모바일 뷰 */
-  @media (max-width: 765.9px) {
-    width: 360px;
-    margin-top: 90px;
+  @media (max-width: 765.9rem) {
+    width: 360rem;
+    margin-top: 90rem;
   }
 `;
 
 const Title = styled.h1`
   text-align: center;
-  font-size: 45px;
-  line-height: 60px;
+  font-size: 45rem;
+  line-height: 60rem;
   letter-spacing: -1%;
-  margin-top: 190px;
+  margin-top: 190rem;
 
   /* 태블릿 뷰 */
-  @media (max-width: 1199px) and (min-width: 766px) {
-    font-size: 36px;
-    line-height: 56px;
-    margin-top: 70px;
+  @media (max-width: 1199rem) and (min-width: 766rem) {
+    font-size: 36rem;
+    line-height: 56rem;
+    margin-top: 70rem;
   }
   /* 모바일 뷰 */
-  @media (max-width: 765.9px) {
-    font-size: 24px;
-    line-height: 28px;
-    margin-top: 30px;
+  @media (max-width: 765.9rem) {
+    font-size: 24rem;
+    line-height: 28rem;
+    margin-top: 30rem;
   }
 `;

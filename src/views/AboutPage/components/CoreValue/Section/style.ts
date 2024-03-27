@@ -3,19 +3,19 @@ import styled from '@emotion/styled';
 export const CoreValueSection = styled.section`
   display: flex;
   flex-direction: column;
-  gap: 48px;
+  gap: 48rem;
 
-  margin-top: 83px;
+  margin-top: 83rem;
 
   /* 태블릿 뷰 */
-  @media (max-width: 768px) {
-    gap: 44px;
-    margin-top: 72.19px;
+  @media (max-width: 768rem) {
+    gap: 44rem;
+    margin-top: 72.19rem;
   }
 
   /* 모바일 뷰 */
-  @media (max-width: 428px) {
-    gap: 27px;
-    margin-top: 69.48px;
+  @media (max-width: 428rem) {
+    gap: 27rem;
+    margin-top: 69.48rem;
   }
 `;

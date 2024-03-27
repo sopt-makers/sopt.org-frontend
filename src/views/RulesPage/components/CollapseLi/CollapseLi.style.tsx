@@ -8,38 +8,38 @@ interface ButtonStyleProps {
 }
 
 export const Root = styled.li`
-  border-bottom: 1px solid ${colors.gray10};
-  padding-bottom: 40px;
+  border-bottom: 1rem solid ${colors.gray10};
+  padding-bottom: 40rem;
   width: 100%;
-  @media (max-width: 768px) {
-    padding-bottom: 20px;
+  @media (max-width: 768rem) {
+    padding-bottom: 20rem;
   }
 `;
 export const Section = styled.div`
   display: flex;
   justify-content: space-between;
   cursor: pointer;
-  padding-top: 40px;
+  padding-top: 40rem;
   width: 100%;
-  @media (max-width: 768px) {
-    padding-top: 20px;
+  @media (max-width: 768rem) {
+    padding-top: 20rem;
   }
 `;
 
 export const TItle = styled.h3`
   text-align: center;
-  line-height: 30px;
+  line-height: 30rem;
   color: ${colors.gray10};
-  font-size: 24px;
+  font-size: 24rem;
   font-weight: 700;
   font-style: normal;
-  @media (max-width: 768px) {
-    font-size: 16px;
+  @media (max-width: 768rem) {
+    font-size: 16rem;
   }
 `;
 
 export const Button = styled.button<ButtonStyleProps>`
-  margin-right: 40px;
+  margin-right: 40rem;
   outline: inherit;
   border: none;
   background: none;
@@ -48,14 +48,14 @@ export const Button = styled.button<ButtonStyleProps>`
   background-size: contain;
   cursor: pointer;
   padding: 0;
-  width: 24px;
-  height: 13px;
+  width: 24rem;
+  height: 13rem;
 
   /* stylelint-disable */
-  @media (max-width: 768px) {
-    margin-right: 15px;
-    width: 16px;
-    height: 13px;
+  @media (max-width: 768rem) {
+    margin-right: 15rem;
+    width: 16rem;
+    height: 13rem;
   }
   ${ArrowDownAnimation}
   ${ArrowUpAnimation}
@@ -76,20 +76,20 @@ export const Contents = styled.div<ButtonStyleProps>`
   letter-spacing: -0.03em;
   white-space: pre-line;
   color: ${colors.gray10};
-  font-size: 20px;
+  font-size: 20rem;
   font-weight: 400;
   font-style: normal;
-  @media (max-width: 768px) {
-    font-size: 14px;
+  @media (max-width: 768rem) {
+    font-size: 14rem;
   }
 
   ${({ isOpened }) =>
     isOpened
       ? css`
           transition: max-height 0.2s ease-in;
-          max-height: 3500px;
-          @media screen and (max-width: 1280px) {
-            max-height: 5000px;
+          max-height: 3500rem;
+          @media screen and (max-width: 1280rem) {
+            max-height: 5000rem;
           }
         `
       : css`

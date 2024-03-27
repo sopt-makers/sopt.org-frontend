@@ -1,130 +1,130 @@
 import styled from '@emotion/styled';
 
 const BaseChip = styled.div`
-  line-height: 42px;
-  font-size: 22px;
+  line-height: 42rem;
+  font-size: 22rem;
 
   /* 태블릿 뷰 */
-  @media (max-width: 1299px) and (min-width: 766px) {
-    font-size: 18px;
+  @media (max-width: 1299rem) and (min-width: 766rem) {
+    font-size: 18rem;
   }
 
-  @media (max-width: 765.9px) {
-    line-height: 18px;
-    font-size: 16px;
+  @media (max-width: 765.9rem) {
+    line-height: 18rem;
+    font-size: 16rem;
   }
 `;
 
 const BlueChip = styled(BaseChip)`
   color: #fff;
-  padding-left: 20px;
+  padding-left: 20rem;
   &:before {
     content: '✏️';
-    padding-right: 10px;
+    padding-right: 10rem;
   }
 `;
 
 const GreenChip = styled(BaseChip)`
-  color: #BDEC00;
-  padding-left: 20px;
+  color: #bdec00;
+  padding-left: 20rem;
   &:before {
     content: '👍';
-    padding-right: 10px;
+    padding-right: 10rem;
   }
 `;
 
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 70px;
+  gap: 70rem;
   /* 태블릿 뷰 */
-  @media (max-width: 1299px) and (min-width: 766px) {
-    gap: 40px;
+  @media (max-width: 1299rem) and (min-width: 766rem) {
+    gap: 40rem;
   }
   /* 모바일 뷰 */
-  @media (max-width: 765.9px) {
-    gap: 24px;
+  @media (max-width: 765.9rem) {
+    gap: 24rem;
   }
 `;
 
 const BaseText = styled.div`
   color: #fff;
-  font-size: 24px;
+  font-size: 24rem;
   font-style: normal;
-  letter-spacing: -0.48px;
+  letter-spacing: -0.48rem;
   white-space: pre-line;
   /* 태블릿 뷰 */
-  @media (max-width: 1299px) and (min-width: 766px) {
-    font-size: 16px;
+  @media (max-width: 1299rem) and (min-width: 766rem) {
+    font-size: 16rem;
     font-style: normal;
-    letter-spacing: -0.32px;
+    letter-spacing: -0.32rem;
   }
   /* 모바일 뷰 */
-  @media (max-width: 765.9px) {
-    font-size: 16px;
+  @media (max-width: 765.9rem) {
+    font-size: 16rem;
     font-style: normal;
-    letter-spacing: -0.32px;
+    letter-spacing: -0.32rem;
   }
 `;
 
 const InfoWrapper = styled(BaseText)`
-  border-radius: 30px;
+  border-radius: 30rem;
   background: #222220;
-  padding: 45px 80px;
+  padding: 45rem 80rem;
   font-weight: 600;
-  line-height: 42px;
+  line-height: 42rem;
 
   /* 태블릿 뷰 */
-  @media (max-width: 1299px) and (min-width: 766px) {
-    width: 640px;
-    padding: 32px 56px;
-    border-radius: 20px;
+  @media (max-width: 1299rem) and (min-width: 766rem) {
+    width: 640rem;
+    padding: 32rem 56rem;
+    border-radius: 20rem;
     line-height: 180%;
   }
   /* 모바일 뷰 */
-  @media (max-width: 765.9px) {
-    width: 323px;
-    padding: 22px 28px;
-    border-radius: 20px;
+  @media (max-width: 765.9rem) {
+    width: 323rem;
+    padding: 22rem 28rem;
+    border-radius: 20rem;
     line-height: 170%;
   }
 `;
 
 const FitWrapper = styled(BaseText)`
-  border-radius: 30px;
-  background: #21270F;
-  padding: 60px 80px;
+  border-radius: 30rem;
+  background: #21270f;
+  padding: 60rem 80rem;
   display: flex;
   flex-direction: column;
-  line-height: 40px;
-  gap: 12px;
+  line-height: 40rem;
+  gap: 12rem;
   width: 100%;
 
   font-weight: 400;
-  line-height: 50px;
+  line-height: 50rem;
 
   & div {
-    padding-left: 14px;
-    text-indent: -14px;
+    padding-left: 14rem;
+    text-indent: -14rem;
   }
 
   & div::before {
     content: '-';
-    padding-right: 5px;
+    padding-right: 5rem;
   }
   /* 태블릿 뷰 */
-  @media (max-width: 1299px) and (min-width: 766px) {
-    width: 640px;
-    padding: 32px 56px;
-    border-radius: 24px;
+  @media (max-width: 1299rem) and (min-width: 766rem) {
+    width: 640rem;
+    padding: 32rem 56rem;
+    border-radius: 24rem;
     line-height: 180%;
   }
   /* 모바일 뷰 */
-  @media (max-width: 765.9px) {
-    width: 323px;
-    padding: 22px 28px;
-    gap: 8px;
-    border-radius: 20px;
+  @media (max-width: 765.9rem) {
+    width: 323rem;
+    padding: 22rem 28rem;
+    gap: 8rem;
+    border-radius: 20rem;
     line-height: 170%;
   }
 `;
@@ -139,9 +139,19 @@ const SectionWrapper = styled.div`
   display: flex;
   justify-content: center;
 
-  @media (max-width: 765.9px) {
+  @media (max-width: 765.9rem) {
     flex-direction: column;
   }
 `;
 
-export { BaseChip, BaseText, BlueChip, GreenChip, FitWrapper, InfoWrapper, Wrapper, Container, SectionWrapper };
+export {
+  BaseChip,
+  BaseText,
+  BlueChip,
+  GreenChip,
+  FitWrapper,
+  InfoWrapper,
+  Wrapper,
+  Container,
+  SectionWrapper,
+};

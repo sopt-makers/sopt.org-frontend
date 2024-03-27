@@ -5,56 +5,56 @@ import { textpluralLinesEllipsis } from '@src/lib/styles/textEllipsis';
 const Card = styled.article`
   display: flex;
   background: #000000;
-  border-radius: 10px;
-  width: 380px;
-  max-width: 380px;
-  height: 227px;
-  padding: 26px 49px 29px 26px;
-  margin-bottom: 18px;
+  border-radius: 10rem;
+  width: 380rem;
+  max-width: 380rem;
+  height: 227rem;
+  padding: 26rem 49rem 29rem 26rem;
+  margin-bottom: 18rem;
   &:hover {
     background: #212121;
   }
   /* 태블릿 뷰 */
-  @media (max-width: 1199px) and (min-width: 766px) {
-    margin-bottom: 4px;
-    max-width: 314px;
-    height: 227px;
-    padding: 26px 19px 29px 21px;
+  @media (max-width: 1199rem) and (min-width: 766rem) {
+    margin-bottom: 4rem;
+    max-width: 314rem;
+    height: 227rem;
+    padding: 26rem 19rem 29rem 21rem;
   }
   /* 모바일 뷰 */
-  @media (max-width: 765.9px) {
-    max-width: 314px;
-    height: 193px;
-    padding: 21px 27px 23px 21px;
+  @media (max-width: 765.9rem) {
+    max-width: 314rem;
+    height: 193rem;
+    padding: 21rem 27rem 23rem 21rem;
   }
 `;
 
 const Logo = styled(Image)`
-  width: 80px;
-  height: 80px;
-  border-radius: 10px;
+  width: 80rem;
+  height: 80rem;
+  border-radius: 10rem;
   /* 태블릿 뷰 */
-  @media (max-width: 1199px) and (min-width: 766px) {
-    width: 65px;
-    height: 65px;
+  @media (max-width: 1199rem) and (min-width: 766rem) {
+    width: 65rem;
+    height: 65rem;
   }
   /* 모바일 뷰 */
-  @media (max-width: 765.9px) {
-    width: 55px;
-    height: 55px;
+  @media (max-width: 765.9rem) {
+    width: 55rem;
+    height: 55rem;
   }
 `;
 
 const Contents = styled.div`
   flex: 1;
-  margin-left: 26px;
+  margin-left: 26rem;
   /* 태블릿 뷰 */
-  @media (max-width: 1199px) and (min-width: 766px) {
-    margin-left: 17px;
+  @media (max-width: 1199rem) and (min-width: 766rem) {
+    margin-left: 17rem;
   }
   /* 모바일 뷰 */
-  @media (max-width: 765.9px) {
-    margin-left: 20px;
+  @media (max-width: 765.9rem) {
+    margin-left: 20rem;
   }
 `;
 
@@ -62,60 +62,60 @@ const Chip = styled.div`
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  padding: 12px;
+  padding: 12rem;
 
-  height: 36px;
+  height: 36rem;
 
   background: #333333;
   color: white;
-  border-radius: 10px;
+  border-radius: 10rem;
 `;
 
 const Title = styled.p`
   ${textpluralLinesEllipsis(2)}
-  margin-top: 12px;
+  margin-top: 12rem;
 
-  max-width: 199px;
-  height: 60px;
+  max-width: 199rem;
+  height: 60rem;
 
   font-weight: 700;
-  font-size: 23px;
-  line-height: 30px;
+  font-size: 23rem;
+  line-height: 30rem;
   /* 태블릿 뷰 */
-  @media (max-width: 1199px) and (min-width: 766px) {
-    max-width: 185px;
+  @media (max-width: 1199rem) and (min-width: 766rem) {
+    max-width: 185rem;
   }
   /* 모바일 뷰 */
-  @media (max-width: 765.9px) {
-    max-width: 187px;
-    height: 50px;
-    font-size: 18px;
-    line-height: 25px;
+  @media (max-width: 765.9rem) {
+    max-width: 187rem;
+    height: 50rem;
+    font-size: 18rem;
+    line-height: 25rem;
   }
 `;
 
 const Corporation = styled.p`
-  margin-top: 12px;
+  margin-top: 12rem;
   font-weight: 500;
-  font-size: 18px;
-  line-height: 22px;
+  font-size: 18rem;
+  line-height: 22rem;
   color: rgba(255, 255, 255, 0.5);
   /* 모바일 뷰 */
-  @media (max-width: 765.9px) {
-    margin-top: 8px;
-    font-size: 16px;
-    line-height: 20px;
+  @media (max-width: 765.9rem) {
+    margin-top: 8rem;
+    font-size: 16rem;
+    line-height: 20rem;
   }
 `;
 
 const RestInfo = styled.p`
-  margin-top: 8px;
-  font-size: 18px;
-  line-height: 22px;
+  margin-top: 8rem;
+  font-size: 18rem;
+  line-height: 22rem;
   color: rgba(255, 255, 255, 0.3);
   /* 모바일 뷰 */
-  @media (max-width: 765.9px) {
-    margin-top: 5px;
+  @media (max-width: 765.9rem) {
+    margin-top: 5rem;
   }
 `;
 

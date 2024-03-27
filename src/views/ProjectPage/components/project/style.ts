@@ -5,12 +5,12 @@ export const ProjectListHeader = styled.div<{ selectedCategory: ProjectCategoryT
   display: flex;
   justify-content: ${({ selectedCategory }) =>
     selectedCategory === ProjectCategoryType.ALL ? 'end' : 'space-between'};
-  margin-bottom: 30px;
+  margin-bottom: 30rem;
 
   /* 모바일 뷰 */
-  @media (max-width: 899px) {
+  @media (max-width: 899rem) {
     flex-direction: column;
-    gap: 20px;
-    margin-bottom: 28px;
+    gap: 20rem;
+    margin-bottom: 28rem;
   }
 `;

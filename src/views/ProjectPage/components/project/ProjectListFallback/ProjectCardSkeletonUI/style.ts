@@ -4,17 +4,17 @@ import { colors } from '@sopt-makers/colors';
 export const CardList = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 50px 28px;
-  width: 1112px;
+  gap: 50rem 28rem;
+  width: 1112rem;
 
-  @media (max-width: 1279px) and (min-width: 900px) {
+  @media (max-width: 1279rem) and (min-width: 900rem) {
     grid-template-columns: 1fr 1fr;
-    width: 732px;
+    width: 732rem;
   }
 
-  @media (max-width: 899px) {
+  @media (max-width: 899rem) {
     grid-template-columns: 1fr;
-    gap: 16px;
+    gap: 16rem;
     width: 100%;
   }
 `;
@@ -22,20 +22,20 @@ export const CardList = styled.div`
 export const ProjectCard = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 10rem;
 
-  width: 352px;
-  height: 308px;
-  padding: 14px;
-  border: 1px solid ${colors.gray700};
-  border-radius: 20px;
+  width: 352rem;
+  height: 308rem;
+  padding: 14rem;
+  border: 1rem solid ${colors.gray700};
+  border-radius: 20rem;
 
-  @media (max-width: 899px) {
+  @media (max-width: 899rem) {
     width: 100%;
-    height: 88px;
-    padding: 0 0 10px 0;
+    height: 88rem;
+    padding: 0 0 10rem 0;
     border: none;
-    border-bottom: 1px solid ${colors.gray900};
+    border-bottom: 1rem solid ${colors.gray900};
     border-radius: 0;
   }
 `;
@@ -43,67 +43,67 @@ export const ProjectCard = styled.div`
 export const ProjectContent = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 4rem;
 
-  @media (max-width: 899px) {
-    gap: 12px;
+  @media (max-width: 899rem) {
+    gap: 12rem;
   }
 `;
 
 export const ProjectThumbnail = styled.div`
-  width: 324px;
-  height: 192px;
+  width: 324rem;
+  height: 192rem;
   background-color: ${colors.gray900};
-  border-radius: 8px;
+  border-radius: 8rem;
 
-  @media (max-width: 899px) {
+  @media (max-width: 899rem) {
     display: none;
   }
 `;
 
 export const ProjectLogo = styled.div`
-  width: 40px;
-  height: 40px;
+  width: 40rem;
+  height: 40rem;
   background-color: ${colors.gray900};
-  border-radius: 8px;
+  border-radius: 8rem;
 
-  @media (min-width: 900px) {
+  @media (min-width: 900rem) {
     display: none;
   }
 `;
 
 export const ProjectHeader = styled.div`
   display: flex;
-  gap: 12px;
+  gap: 12rem;
 `;
 
 export const ProjectText = styled.div`
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 6rem;
 `;
 
 export const ProjectTitle = styled.div`
-  width: 100px;
-  height: 28px;
+  width: 100rem;
+  height: 28rem;
   background-color: ${colors.gray900};
-  border-radius: 8px;
+  border-radius: 8rem;
 `;
 
 export const ProjectType = styled.div`
-  width: 39px;
-  height: 28px;
+  width: 39rem;
+  height: 28rem;
   background-color: ${colors.gray900};
-  border-radius: 8px;
+  border-radius: 8rem;
 `;
 
 export const ProjectSummary = styled.div`
-  width: 270px;
-  height: 22px;
+  width: 270rem;
+  height: 22rem;
   background-color: ${colors.gray900};
-  border-radius: 8px;
+  border-radius: 8rem;
 
-  @media (max-width: 899px) {
+  @media (max-width: 899rem) {
     width: 40%;
   }
 `;

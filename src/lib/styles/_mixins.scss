@@ -1,31 +1,31 @@
 @import './variables';
 
 @mixin mobile {
-  @media (max-width: #{$breakpoint-tablet-small - 1px}) {
+  @media (max-width: #{$breakpoint-tablet-small - 1rem}) {
     @content;
   }
 }
 
 @mixin tablet {
-  @media (min-width: #{$breakpoint-tablet-small}) and (max-width: #{$breakpoint-desktop - 1px}) {
+  @media (min-width: #{$breakpoint-tablet-small}) and (max-width: #{$breakpoint-desktop - 1rem}) {
     @content;
   }
 }
 
 @mixin tablet-small {
-  @media (min-width: #{$breakpoint-tablet-small}) and (max-width: #{$breakpoint-tablet-medium - 1px}) {
+  @media (min-width: #{$breakpoint-tablet-small}) and (max-width: #{$breakpoint-tablet-medium - 1rem}) {
     @content;
   }
 }
 
 @mixin tablet-medium {
-  @media (min-width: #{$breakpoint-tablet-medium}) and (max-width: #{$breakpoint-desktop - 1px}) {
+  @media (min-width: #{$breakpoint-tablet-medium}) and (max-width: #{$breakpoint-desktop - 1rem}) {
     @content;
   }
 }
 
 @mixin mobile-tablet {
-  @media (min-width: #{$breakpoint-mobile}) and (max-width: #{$breakpoint-desktop - 1px}) {
+  @media (min-width: #{$breakpoint-mobile}) and (max-width: #{$breakpoint-desktop - 1rem}) {
     @content;
   }
 }
