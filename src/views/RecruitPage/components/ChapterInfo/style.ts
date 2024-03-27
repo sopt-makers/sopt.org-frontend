@@ -103,6 +103,10 @@ const FitWrapper = styled(BaseText)`
   font-weight: 400;
   line-height: 50rem;
 
+  & * {
+    font-size: 100%;
+  }
+
   & div {
     padding-left: 14rem;
     text-indent: -14rem;

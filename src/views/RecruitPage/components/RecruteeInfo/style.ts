@@ -51,6 +51,10 @@ export const CardItem = styled.li`
     font-style: normal;
   }
 
+  & * {
+    font-size: 100%;
+  }
+
   /* 태블릿 뷰 */
   @media (max-width: 1299px) and (min-width: 766px) {
     padding: 42rem 0 54rem 0;
