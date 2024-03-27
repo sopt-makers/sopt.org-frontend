@@ -22,12 +22,12 @@ export default function CommentCard({
   commenter,
 }: CommentCardProps) {
   const desktop = useMediaQuery({
-    query: '(max-width: 1480rem)',
+    query: '(max-width: 1480px)',
   });
-  const veryShortHeight = useMediaQuery({ query: '(max-height: 700rem)' });
-  const shortHeight = useMediaQuery({ query: '(max-height: 860rem)' });
-  const mediumHeight = useMediaQuery({ query: '(max-height: 1000rem)' });
-  const longHeight = useMediaQuery({ query: '(min-height: 1100rem' });
+  const veryShortHeight = useMediaQuery({ query: '(max-height: 700px)' });
+  const shortHeight = useMediaQuery({ query: '(max-height: 860px)' });
+  const mediumHeight = useMediaQuery({ query: '(max-height: 1000px)' });
+  const longHeight = useMediaQuery({ query: '(min-height: 1100px' });
 
   const margin = desktop
     ? longHeight

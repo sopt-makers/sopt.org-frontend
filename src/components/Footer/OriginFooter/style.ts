@@ -57,6 +57,7 @@ export const TitleButton = styled.button`
 
   span {
     margin-right: 5rem;
+    font-size: 100%;
   }
 `;
 

@@ -49,6 +49,7 @@ export const MouseTrackerWrapper = styled.div<{ x: number; y: number }>`
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 100%;
 
   /* 모바일 뷰 */
   @media (max-width: 1440px) {
@@ -94,5 +95,9 @@ export const MouseTrackerWrapper = styled.div<{ x: number; y: number }>`
 
   &:hover > * {
     transform: scale(0.96);
+  }
+
+  & > div {
+    font-size: 100%;
   }
 `;

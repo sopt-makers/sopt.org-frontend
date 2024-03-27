@@ -11,7 +11,7 @@ type CommentCardsProps = {
 };
 
 export default function CommentCards({ activeIdx, changeActiveIdx }: CommentCardsProps) {
-  const isMobile = useIsMobile('768rem');
+  const isMobile = useIsMobile('768px');
   if (isMobile)
     return <CommentCardsMobile activeIdx={activeIdx} changeActiveIdx={changeActiveIdx} />;
   return <CommentCardsDesktop activeIdx={activeIdx} changeActiveIdx={changeActiveIdx} />;

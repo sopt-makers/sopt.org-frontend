@@ -5,8 +5,8 @@ import MobileHeader from './Mobile/MobileHeader';
 import * as S from './style';
 
 export function Header() {
-  const isDesktop = useIsDesktop('940rem');
-  const isTablet = useIsTablet('768rem', '939rem');
+  const isDesktop = useIsDesktop('940px');
+  const isTablet = useIsTablet('768px', '939px');
   const isMobile = useIsMobile();
 
   const [isTransparent, setIsTransparent] = useState<boolean>(false);

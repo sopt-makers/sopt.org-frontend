@@ -27,6 +27,10 @@ export const Wrapper = styled.div<{ color: string }>`
     line-height: 20.85rem; /* 164.575% */
     letter-spacing: -0.507rem;
   }
+
+  & > div {
+    font-size: 100%;
+  }
 `;
 
 export const Footer = styled.div`
@@ -35,4 +39,9 @@ export const Footer = styled.div`
   align-items: flex-end;
   gap: 8rem;
   font-weight: 600;
+  font-size: 100%;
+
+  & > div {
+    font-size: 100%;
+  }
 `;

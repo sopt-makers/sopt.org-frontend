@@ -6,7 +6,7 @@ import { RulesHead, RulesList, UnderlinedText } from './components';
 const SOPT_RULES = 'SOPT 회칙';
 
 function Rules() {
-  const isDesktopOrTablet = useIsDesktop('769rem');
+  const isDesktopOrTablet = useIsDesktop('769px');
 
   return (
     <PageLayout>

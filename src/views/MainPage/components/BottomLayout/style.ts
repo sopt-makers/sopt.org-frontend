@@ -79,6 +79,8 @@ export const Menu = styled(Link)`
   width: 190rem;
   height: 72rem;
 
+  font-size: 100%;
+
   @media (max-width: 1440px) {
     width: 152rem;
   }

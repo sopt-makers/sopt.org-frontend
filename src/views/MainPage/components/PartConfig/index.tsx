@@ -23,8 +23,8 @@ function PartConfig(_props: unknown, ref: Ref<HTMLDivElement>) {
     handleCarouselSwipe,
     handleTouchStart,
     handleTouchEnd,
-  } = useInfiniteCarousel<TabType>(carouselList, '(-100% - 20rem)', partRef);
-  const isMobileSize = useIsMobile('768rem');
+  } = useInfiniteCarousel<TabType>(carouselList, '(-100% - 20px)', partRef);
+  const isMobileSize = useIsMobile('768px');
   const tab = isMobileSize ? 'Part' : '';
 
   return (

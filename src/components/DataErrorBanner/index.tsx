@@ -3,7 +3,7 @@ import CautionIcon from './CautionIcon';
 import St from './style';
 
 const DataErrorBanner = () => {
-  const isDesktop = useIsDesktop('1200rem');
+  const isDesktop = useIsDesktop('1200px');
 
   return (
     <St.Container>

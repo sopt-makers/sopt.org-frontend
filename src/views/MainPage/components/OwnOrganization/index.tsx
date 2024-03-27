@@ -71,7 +71,7 @@ type OwnOrganizationCardProps = {
 };
 
 function OwnOrganization(_props: unknown, ref: Ref<HTMLDivElement>) {
-  const isMobileSize = useIsMobile('768rem');
+  const isMobileSize = useIsMobile('768px');
   const tab = isMobileSize ? 'Team' : '';
 
   return (

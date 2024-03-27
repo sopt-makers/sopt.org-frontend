@@ -8,9 +8,9 @@ import * as S from './style';
 function Comment(_props: unknown, ref: Ref<HTMLDivElement>) {
   const [activeIdx, setActiveIdx] = useState(0);
   const controls = useAnimationControls();
-  const isWideScreen = useIsDesktop('1601rem');
+  const isWideScreen = useIsDesktop('1601px');
   const wrapperRef = useRef(null);
-  const isMobileSize = useIsMobile('768rem');
+  const isMobileSize = useIsMobile('768px');
   const tab = isMobileSize ? 'Review' : '';
 
   const changeActiveIdx = (idx: number) => {
