@@ -38,16 +38,16 @@ export const Title = styled.div`
   letter-spacing: -1%;
   color: white;
 
-  @media (max-width: 996rem) and (min-width: 766rem) {
+  @media (max-width: 996px) and (min-width: 766px) {
     font-size: 16rem;
   }
 
   /* 태블릿 뷰 */
-  @media (max-width: 766rem) and (min-width: 428rem) {
+  @media (max-width: 766px) and (min-width: 428px) {
     font-size: 10rem;
   }
   /* 모바일 뷰 */
-  @media (max-width: 428rem) {
+  @media (max-width: 428px) {
     font-size: 10rem;
   }
 `;
@@ -59,17 +59,17 @@ export const Count = styled.div`
   color: white;
   line-height: 60rem;
 
-  @media (max-width: 996rem) and (min-width: 766rem) {
+  @media (max-width: 996px) and (min-width: 766px) {
     font-size: 38rem;
     line-height: 48rem;
   }
   /* 태블릿 뷰 */
-  @media (max-width: 766rem) and (min-width: 428rem) {
+  @media (max-width: 766px) and (min-width: 428px) {
     font-size: 24rem;
     line-height: 32rem;
   }
   /* 모바일 뷰 */
-  @media (max-width: 428rem) {
+  @media (max-width: 428px) {
     font-size: 14rem;
     line-height: 32rem;
   }

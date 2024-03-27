@@ -98,7 +98,7 @@ export const MenuTitle = styled(Link)<MenuTitleProps>`
     &::after {
       content: '';
       position: absolute;
-      top: 3.5rem; /* this is bad practice */
+      top: calc(16px * 3.5); /* this is bad practice */
       left: 0;
       width: 100%;
       border-bottom: ${({ menuColor }) =>

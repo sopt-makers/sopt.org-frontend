@@ -24,4 +24,8 @@ export const Wrapper = styled.div`
     flex-direction: column;
     gap: 16rem;
   }
+
+  & * {
+    font-size: 100%;
+  }
 `;
