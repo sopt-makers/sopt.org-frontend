@@ -148,4 +148,5 @@ export const RequestSponsorButton = styled.a`
   border-radius: 12rem;
   background: ${colors.white};
   text-align: center;
+  font-size: 16rem;
 `;
