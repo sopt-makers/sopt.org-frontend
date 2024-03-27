@@ -8,6 +8,9 @@ const SectionTitle = styled.div`
   line-height: 150%; /* 42rem */
   letter-spacing: -0.56rem;
   margin-bottom: 40rem;
+  & > * {
+    font-size: 100%;
+  }
 
   @media (max-width: 899px) {
     font-size: 18rem;
@@ -95,6 +98,10 @@ const PlaygroundLinkWrapper = styled.div`
   margin-bottom: 28rem;
   display: flex;
   gap: 4rem;
+
+  & > * {
+    font-size: 100%;
+  }
 `;
 
 const PlaygroundLink = styled.a`

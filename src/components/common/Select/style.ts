@@ -71,6 +71,8 @@ export const SelectTriggerContent = styled.p<{ isSelectionExist: boolean; breakP
 export const SelectItemContent = styled.p<{ isWide: boolean; breakPoint: string }>`
   margin-right: ${({ isWide }) => isWide && '42px'};
 
+  font-size: 16rem;
+
   @media (max-width: ${({ breakPoint }) => breakPoint}) {
     margin-right: ${({ isWide }) => isWide && '22px'};
     font-size: 13px;
@@ -93,6 +95,7 @@ export const SelectItemWrapper = styled.div<{ isWide: boolean; breakPoint: strin
   padding-right: ${({ isWide }) => isWide && '5px'};
   margin-top: 8px;
   /* gap: 8px; */
+  font-size: 100%;
 
   &:hover {
     ${SelectItem} {

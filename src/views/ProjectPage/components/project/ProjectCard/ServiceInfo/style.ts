@@ -15,4 +15,8 @@ export const Info = styled.div`
   font-weight: 600;
   line-height: 16rem; /* 133.333% */
   letter-spacing: -0.24rem;
+
+  & > * {
+    font-size: 100%;
+  }
 `;

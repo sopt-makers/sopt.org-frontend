@@ -28,4 +28,8 @@ export const Count = styled.div`
     line-height: 165%; /* 23.1rem */
     letter-spacing: -0.21rem;
   }
+
+  & > * {
+    font-size: 100%;
+  }
 `;
