@@ -6,17 +6,17 @@ export const BlogPostList = styled.div`
   align-items: center;
   width: 100%;
 
-  padding-left: 20px;
-  padding-right: 20px;
-  margin-bottom: 108px;
+  padding-left: 20rem;
+  padding-right: 20rem;
+  margin-bottom: 108rem;
 
-  margin-top: 30px;
-  gap: 80px;
+  margin-top: 30rem;
+  gap: 80rem;
 
   /* 모바일 뷰 */
   @media (max-width: 767px) {
-    margin-top: 24px;
-    gap: 36px;
+    margin-top: 24rem;
+    gap: 36rem;
   }
 `;
 
@@ -24,5 +24,5 @@ export const SpinnerWrapper = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 50px 0;
+  margin: 50rem 0;
 `;

@@ -25,17 +25,21 @@ const ChapterInfo = () => {
         selectedTab={selectedTab}
         amplitudeTrackingName={'click_recruit_description_part'}
       />
-      <Flex dir="column" gap="15px">
+      <Flex dir="column" gap="15rem">
         <S.BlueChip>{parsePartToKorean(selectedTab)} 파트는 이런 걸 배워요</S.BlueChip>
-        <S.Container><S.InfoWrapper>{infoMap[selectedTab].info}</S.InfoWrapper></S.Container>
+        <S.Container>
+          <S.InfoWrapper>{infoMap[selectedTab].info}</S.InfoWrapper>
+        </S.Container>
       </Flex>
-      <Flex dir="column" gap="15px">
+      <Flex dir="column" gap="15rem">
         <S.GreenChip>이런 분이면 좋아요!</S.GreenChip>
-        <S.Container><S.FitWrapper>
-          {infoMap[selectedTab].fit.map((fit, idx) => (
-            <div key={idx}>{fit}</div>
-          ))}
-        </S.FitWrapper></S.Container>
+        <S.Container>
+          <S.FitWrapper>
+            {infoMap[selectedTab].fit.map((fit, idx) => (
+              <div key={idx}>{fit}</div>
+            ))}
+          </S.FitWrapper>
+        </S.Container>
       </Flex>
     </S.Wrapper>
   );

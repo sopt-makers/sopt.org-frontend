@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 export const CardWrapper = styled(motion.div)`
   transition: 0.2s;
   display: inline-grid;
-  transform: perspective(800px) rotateY(0deg);
+  transform: perspective(800rem) rotateY(0deg);
   transform-style: preserve-3d;
 `;
 

@@ -18,7 +18,7 @@ export default function MobileCard() {
     handleCarouselSwipe,
     handleTouchStart,
     handleTouchEnd,
-  } = useInfiniteCarousel<ActivityTypeList>(activityCarouselList, '(-100% - 20px)');
+  } = useInfiniteCarousel<ActivityTypeList>(activityCarouselList, '(-100% - 20rem)');
 
   return (
     <S.Container>

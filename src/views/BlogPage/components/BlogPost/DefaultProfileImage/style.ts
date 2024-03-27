@@ -6,8 +6,8 @@ export const DefaultProfileImage = styled.div`
   justify-content: center;
   align-items: center;
 
-  width: 18px;
-  height: 18px;
-  border-radius: 18px;
+  width: 18rem;
+  height: 18rem;
+  border-radius: 18rem;
   background-color: ${colors.gray700};
 `;

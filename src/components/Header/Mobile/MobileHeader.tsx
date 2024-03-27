@@ -5,10 +5,10 @@ import { useRouter } from 'next/router';
 import { useState } from 'react';
 import menuBar from '@src/assets/icons/menuBar.svg';
 import xButton from '@src/assets/icons/xButton.png';
+import { imgLogoSopt } from '@src/assets/mainLogo';
 import { Condition } from '@src/components/common/Condition';
 import { MenuState } from '../types';
 import HeaderMenu from './HeaderMenu';
-import { imgLogoSopt } from '@src/assets/mainLogo';
 
 function MobileHeader() {
   const router = useRouter();
@@ -40,14 +40,14 @@ export const StyledHeader = styled.div<{ isMenuShown: boolean }>`
   width: 100%;
   z-index: 10;
   background-color: ${({ isMenuShown }) => (isMenuShown ? colors.gray950 : 'initial')};
-  padding: 0 20px;
+  padding: 0 20rem;
   height: 100%;
   transition: background-color 0.6s;
 `;
 
 export const Logo = styled.button`
-  width: 63px;
-  height: 21px;
+  width: 63rem;
+  height: 21rem;
   background: url(${imgLogoSopt.src}) center no-repeat;
   background-size: 100% 100%;
   cursor: pointer;
@@ -55,8 +55,8 @@ export const Logo = styled.button`
 
 export const ToggleButton = styled.button`
   position: relative;
-  width: 22px;
-  height: 22px;
+  width: 22rem;
+  height: 22rem;
   cursor: pointer;
 `;
 

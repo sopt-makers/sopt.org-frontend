@@ -13,7 +13,7 @@ function Rules() {
       <Root>
         <RulesHead />
         <Content>
-          <UnderlinedText fontSize={isDesktopOrTablet ? '25px' : '35px'}>
+          <UnderlinedText fontSize={isDesktopOrTablet ? '25rem' : '35rem'}>
             {SOPT_RULES}
           </UnderlinedText>
           <RulesList />
@@ -24,10 +24,10 @@ function Rules() {
 }
 
 const Content = styled.div`
-  margin-top: 250px;
-  margin-bottom: 130px;
+  margin-top: 250rem;
+  margin-bottom: 130rem;
   width: 100%;
-  max-width: 1192px;
+  max-width: 1192rem;
   @media screen and (max-width: 1280px) {
     width: 92%;
   }

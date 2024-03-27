@@ -5,64 +5,64 @@ const Container = styled.article`
   align-items: center;
 
   width: 100%;
-  height: 96px;
+  height: 96rem;
 
   background: #000000;
-  border-radius: 10px;
+  border-radius: 10rem;
 
   /* 태블릿 뷰 */
   @media (max-width: 1199.9px) and (min-width: 766px) {
-    height: 60px;
+    height: 60rem;
   }
   /* 모바일 뷰 */
   @media (max-width: 765.9px) {
     align-items: start;
 
-    height: 72px;
+    height: 72rem;
 
-    padding-top: 14px;
+    padding-top: 14rem;
   }
 `;
 
 const Caution = styled.div`
-  margin: 0 28px 0 48px;
+  margin: 0 28rem 0 48rem;
 
   /* 태블릿 뷰 */
   @media (max-width: 1199.9px) and (min-width: 766px) {
-    margin: 0 12px 0 32px;
+    margin: 0 12rem 0 32rem;
   }
   /* 모바일 뷰 */
   @media (max-width: 765.9px) {
-    margin: 0 16px 0 20px;
+    margin: 0 16rem 0 20rem;
   }
 `;
 
 const Texts = styled.div`
   display: flex;
 
-  font-size: 28px;
+  font-size: 28rem;
   color: #ffffff;
 
   /* 태블릿 뷰 */
   @media (max-width: 1199.9px) and (min-width: 766px) {
-    font-size: 18px;
+    font-size: 18rem;
   }
   /* 모바일 뷰 */
   @media (max-width: 765.9px) {
     flex-direction: column;
-    font-size: 15px;
-    line-height: 22.5px;
+    font-size: 15rem;
+    line-height: 22.5rem;
   }
 `;
 
 const Strong = styled.strong`
-  margin-right: 10px;
+  margin-right: 10rem;
 
   font-weight: 700;
 
   /* 태블릿 뷰 */
   @media (max-width: 1199.9px) and (min-width: 766px) {
-    margin-right: 7px;
+    margin-right: 7rem;
   }
 `;
 

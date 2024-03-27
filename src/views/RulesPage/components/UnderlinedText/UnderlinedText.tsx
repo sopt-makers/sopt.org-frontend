@@ -5,7 +5,7 @@ export interface TitleProps {
   fontSize?: string;
 }
 
-function UnderlinedText({ children, fontSize = '35px', ...props }: PropsWithChildren<TitleProps>) {
+function UnderlinedText({ children, fontSize = '35rem', ...props }: PropsWithChildren<TitleProps>) {
   return (
     <S.Root {...props} fontSize={fontSize}>
       {children}
