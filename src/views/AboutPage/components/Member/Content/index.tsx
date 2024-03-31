@@ -1,5 +1,4 @@
 import { useMemo } from 'react';
-import DataErrorBanner from '@src/components/DataErrorBanner';
 import Flex from '@src/components/common/Flex';
 import { emptyMembers } from '@src/views/AboutPage/constant/emptyMembers';
 import useFetchMember from '@src/views/AboutPage/hooks/useFetchMemeber';
@@ -10,7 +9,9 @@ import * as St from './style';
 const MemberContent = () => {
   const state = useFetchMember();
 
-  const errorContent = state._TAG === 'ERROR' && <DataErrorBanner />;
+  //불필요해진 DataErrorBanner 컴포넌트 삭제
+  //useQuery로 마이그레이션 하면 state에 따른 조건부 렌더링 코드가 모두 바뀔 것으로 예상되어 관련 코드는 일단 주석처리했습니다
+  //const errorContent = state._TAG === 'ERROR' && <DataErrorBanner />;
 
   const cardContent = useMemo(() => {
     if (state._TAG === 'OK' || state._TAG === 'ERROR')
@@ -53,7 +54,7 @@ const MemberContent = () => {
       gap={{ mobile: 18, tablet: 24, desktop: 48 }}
       style={{ alignItems: 'center' }}
     >
-      {errorContent}
+      {/* {errorContent} */}
       <St.CardContainer>{cardContent}</St.CardContainer>
     </Flex>
   );
