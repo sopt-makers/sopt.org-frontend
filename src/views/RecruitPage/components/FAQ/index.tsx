@@ -1,9 +1,9 @@
 import styled from '@emotion/styled';
 import { useState } from 'react';
 import { ExtraPart, PartExtraType } from '@src/lib/types/universal';
-import QuestionBox from '@src/views/FAQPage/components/faq/QuestionBox';
 import TabBar from '../common/Tabs';
 import { SectionTitle, SectionTitleTranslate, SectionTitleWrapper } from '../common/styles';
+import QuestionBox from './QuestionBox';
 import { faqMap } from './constant';
 
 const FaqInfo = () => {
