@@ -22,6 +22,7 @@
     "axios": "^0.27.2",
     "classcat": "^5.0.4",
     "dayjs": "^1.11.3",
+    "depcheck": "^1.4.7",
     "framer-motion": "10.16.5",
     "nanoid": "4.0.2",
     "next": "13.3.0",
