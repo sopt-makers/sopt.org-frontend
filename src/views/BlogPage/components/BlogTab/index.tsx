@@ -13,18 +13,19 @@ import * as S from './style';
 import { BlogTabMap, BlogTabType } from './types';
 import { selectedType } from './types';
 
-interface BlogTanProps {
+interface BlogTabProps {
   selected: selectedType;
   setSelectedTab: (newValue: BlogTabType) => void;
   setMajorCategory: (newValue: number) => void;
   setSubCategory: (newValue: PartCategoryType) => void;
 }
+
 export default function BlogTab({
   selected,
   setSelectedTab,
   setMajorCategory,
   setSubCategory,
-}: BlogTanProps) {
+}: BlogTabProps) {
   const { selectedTab, selectedMajorCategory, selectedSubCategory } = selected;
 
   const blogTabList: BlogTabMap = {
