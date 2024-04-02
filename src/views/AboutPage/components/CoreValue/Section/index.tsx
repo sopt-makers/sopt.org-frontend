@@ -1,5 +1,5 @@
 import { CoreValueType } from '@src/lib/types/about';
-import SectionTop from '@src/views/AboutPage/components/common/SectionTop';
+import SectionTop from '@src/views/AboutPage/components/@common/SectionTop';
 import CoreValueList from '../List';
 import * as S from './style';
 

@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import { useState } from 'react';
 import { ExtraPart, PartExtraType } from '@src/lib/types/universal';
 import TabBar from '../common/Tabs';
-import { SectionTitle, SectionTitleTranslate, SectionTitleWrapper } from '../common/styles';
+import { SectionTitle, SectionTitleTranslate, SectionTitleWrapper } from '../common/style';
 import QuestionBox from './QuestionBox';
 import { faqMap } from './constant';
 

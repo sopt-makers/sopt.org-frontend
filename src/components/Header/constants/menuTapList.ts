@@ -1,4 +1,4 @@
-import { MenuTapList, MenuTapType } from './types';
+import { MenuTapList, MenuTapType } from '../types';
 
 export const menuTapList: MenuTapList = [
   {

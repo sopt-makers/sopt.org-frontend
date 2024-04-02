@@ -8,8 +8,8 @@ import {
   Ic500Cone,
   Ic500ConeDark,
   Ic500Front,
-} from '../assets';
-import * as S from './ErrorCode.style';
+} from '../../assets';
+import * as S from './style';
 
 interface ErrorCodeProps {
   code: 404 | 500;

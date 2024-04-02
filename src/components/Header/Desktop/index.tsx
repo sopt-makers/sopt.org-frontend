@@ -2,11 +2,11 @@ import styled from '@emotion/styled';
 import { colors } from '@sopt-makers/colors';
 import Link from 'next/link';
 import { css } from '@emotion/react';
+import { imgLogoSopt } from '@src/assets/mainLogo';
 import useHeader from '@src/hooks/useHeader';
 import { GrowDown } from '@src/lib/styles/animation';
-import { menuTapList } from '../menuTapList';
+import { menuTapList } from '../constants/menuTapList';
 import { MenuTapType } from '../types';
-import { imgLogoSopt } from '@src/assets/mainLogo';
 
 function DesktopHeader() {
   const { handleClickLogo, handleIsSelected } = useHeader();

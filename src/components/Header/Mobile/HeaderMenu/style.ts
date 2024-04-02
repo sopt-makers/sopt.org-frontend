@@ -3,7 +3,7 @@ import { colors } from '@sopt-makers/colors';
 import Link from 'next/link';
 import { css } from '@emotion/react';
 import { FadeIn, FadeInDown, FadeOut, FadeOutUp } from '@src/lib/styles/animation';
-import { MenuTapType } from '../types';
+import { MenuTapType } from '../../types';
 
 type MenuType = 'idle' | 'open' | 'close';
 

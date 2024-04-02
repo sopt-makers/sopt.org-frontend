@@ -1,5 +1,5 @@
 import { AboutInfoType } from '@src/lib/types/about';
-import SectionTop from '../../common/SectionTop';
+import SectionTop from '../../@common/SectionTop';
 import RecordList from '../List';
 import * as St from './style';
 

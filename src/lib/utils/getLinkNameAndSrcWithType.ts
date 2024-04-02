@@ -4,7 +4,7 @@ import googleplay from '@src/assets/icons/googleplay_icon.svg';
 import media from '@src/assets/icons/ic_media.svg';
 import website from '@src/assets/icons/ic_website.svg';
 import instagram from '@src/assets/icons/instagram.svg';
-import { LinkDetailType } from '../types';
+import { LinkDetailType } from '../../views/ProjectDetailPage/types';
 
 const LinkMap: Record<LinkDetailType, { name: string; src: string }> = {
   website: { name: '웹사이트', src: website },

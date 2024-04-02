@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useIsDesktop, useIsMobile, useIsTablet } from '@src/hooks/useDevice';
-import DesktopHeader from './Desktop/DesktopHeader';
-import MobileHeader from './Mobile/MobileHeader';
+import DesktopHeader from './Desktop';
+import MobileHeader from './Mobile';
 import * as S from './style';
 
 export function Header() {

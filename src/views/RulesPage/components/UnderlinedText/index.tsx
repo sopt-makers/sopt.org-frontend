@@ -1,5 +1,5 @@
 import { PropsWithChildren } from 'react';
-import * as S from './UnderlinedText.style';
+import * as S from './style';
 
 export interface TitleProps {
   fontSize?: string;

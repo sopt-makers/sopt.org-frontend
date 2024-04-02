@@ -1,9 +1,9 @@
 import Link from 'next/link';
 import { useEffect } from 'react';
 import useHeader from '@src/hooks/useHeader';
-import { menuTapList } from '../menuTapList';
-import { MenuState } from '../types';
-import * as S from './HeaderMenu.style';
+import { menuTapList } from '../../constants/menuTapList';
+import { MenuState } from '../../types';
+import * as S from './style';
 
 function useNoScroll(isMenuShown: MenuState) {
   useEffect(() => {
