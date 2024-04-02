@@ -1,4 +1,4 @@
-export function OvalSpinner() {
+export default function OvalSpinner() {
   return (
     <svg width={38} height={38} stroke="#fff" viewBox="0 0 38 38">
       <g transform="translate(1 1)" strokeWidth={2} fill="none" fillRule="evenodd">

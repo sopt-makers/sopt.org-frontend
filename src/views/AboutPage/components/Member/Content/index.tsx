@@ -1,8 +1,8 @@
 import { useMemo } from 'react';
 import Flex from '@src/components/common/Flex';
+import OvalSpinner from '@src/components/common/OvalSpinner';
 import { emptyMembers } from '@src/views/AboutPage/constant/emptyMembers';
 import useFetchMember from '@src/views/AboutPage/hooks/useFetchMemeber';
-import { OvalSpinner } from '@src/views/ProjectPage/components';
 import MemberCard from '../Card';
 import * as St from './style';
 
