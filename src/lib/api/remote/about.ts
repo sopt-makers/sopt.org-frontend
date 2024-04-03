@@ -1,12 +1,7 @@
 import { BASE_URL, DEFAULT_TIMEOUT } from '@src/lib/constants/client';
-import {
-  GetAboutInfoResponse,
-  GetMembersInfoResponse,
-  GetStudyInfoResponse,
-} from '@src/lib/types/about';
-import { CoreValueResponseDto, StudyResponseDto } from '@src/lib/types/dto';
+import { GetAboutInfoResponse, GetMembersInfoResponse } from '@src/lib/types/about';
+import { CoreValueResponseDto } from '@src/lib/types/dto';
 import { Part } from '@src/lib/types/universal';
-import { parseStringToPart } from '@src/lib/utils/parseStringToPart';
 import axios from 'axios';
 import { mockAboutAPI } from '../mock/about';
 
@@ -55,26 +50,7 @@ const getMemberInfo = async (): Promise<GetMembersInfoResponse> => {
   return mockAboutAPI.getMemberInfo(); // todo : implement server connection
 };
 
-const getStudyInfo = async (): Promise<GetStudyInfoResponse> => {
-  const { data } = await client.get<StudyResponseDto[]>('/study');
-
-  return {
-    studies: data.map((study: StudyResponseDto) => ({
-      id: study.id,
-      generation: study.generation,
-      joinableParts: study.parts.map((part) => parseStringToPart(part)),
-      title: study.title,
-      src: study.imageUrl,
-      startDate: new Date(study.startDate),
-      endDate: new Date(study.endDate),
-      membersCount: study.memberCount,
-    })),
-    hasNextPage: true,
-  };
-};
-
 export const remoteAboutAPI = {
   getAboutInfo,
   getMemberInfo,
-  getStudyInfo,
 };

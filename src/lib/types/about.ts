@@ -49,17 +49,6 @@ export interface AboutInfoType {
   };
 }
 
-export interface StudyInfoType {
-  id: number;
-  generation: number;
-  joinableParts: Part[];
-  title: string;
-  src: string;
-  startDate: Date;
-  endDate: Date;
-  membersCount: number;
-}
-
 export interface GetMembersInfoResponse {
   members: MemberType[];
 }
@@ -68,15 +57,9 @@ export interface GetAboutInfoResponse {
   aboutInfo: AboutInfoType;
 }
 
-export interface GetStudyInfoResponse {
-  studies: StudyInfoType[];
-  hasNextPage: boolean;
-}
-
 export interface AboutAPI {
   getAboutInfo(): Promise<GetAboutInfoResponse>;
   getMemberInfo(): Promise<GetMembersInfoResponse>;
-  getStudyInfo(generation?: number): Promise<GetStudyInfoResponse>;
 }
 
 export type RecordTitle = '활동 멤버' | '프로젝트' | '스터디';

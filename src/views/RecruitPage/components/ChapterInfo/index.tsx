@@ -3,7 +3,7 @@ import Flex from '@src/components/common/Flex';
 import { Part } from '@src/lib/types/universal';
 import { parsePartToKorean } from '@src/lib/utils/parsePartToKorean';
 import TabBar from '../common/Tabs';
-import { SectionTitle, SectionTitleTranslate, SectionTitleWrapper } from '../common/styles';
+import { SectionTitle, SectionTitleTranslate, SectionTitleWrapper } from '../common/style';
 import { infoMap } from './constants';
 import * as S from './style';
 
@@ -27,15 +27,19 @@ const ChapterInfo = () => {
       />
       <Flex dir="column" gap="15px">
         <S.BlueChip>{parsePartToKorean(selectedTab)} 파트는 이런 걸 배워요</S.BlueChip>
-        <S.Container><S.InfoWrapper>{infoMap[selectedTab].info}</S.InfoWrapper></S.Container>
+        <S.Container>
+          <S.InfoWrapper>{infoMap[selectedTab].info}</S.InfoWrapper>
+        </S.Container>
       </Flex>
       <Flex dir="column" gap="15px">
         <S.GreenChip>이런 분이면 좋아요!</S.GreenChip>
-        <S.Container><S.FitWrapper>
-          {infoMap[selectedTab].fit.map((fit, idx) => (
-            <div key={idx}>{fit}</div>
-          ))}
-        </S.FitWrapper></S.Container>
+        <S.Container>
+          <S.FitWrapper>
+            {infoMap[selectedTab].fit.map((fit, idx) => (
+              <div key={idx}>{fit}</div>
+            ))}
+          </S.FitWrapper>
+        </S.Container>
       </Flex>
     </S.Wrapper>
   );

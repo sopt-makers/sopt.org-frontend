@@ -1,4 +1,4 @@
-import { SectionTitle, SectionTitleTranslate, SectionTitleWrapper } from '../common/styles';
+import { SectionTitle, SectionTitleTranslate, SectionTitleWrapper } from '../common/style';
 import * as S from './style';
 
 const Schedule = () => {

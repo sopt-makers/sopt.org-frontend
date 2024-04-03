@@ -1,8 +1,7 @@
 import { useEffect, useState } from 'react';
 import { ReactComponent as UpArrow } from '@src/assets/icons/ic_up_arrow.svg';
 import { debounce } from '@src/lib/utils/debounce';
-import cc from 'classcat';
-import styles from './scroll-to-top-button.module.scss';
+import * as S from './style';
 
 const SCROLL_MINIMUM_VALUE = 120;
 
@@ -27,10 +26,10 @@ export default function ScrollToTopButton() {
   return (
     <>
       {isScrolled && (
-        <button className={cc([styles.wrapper])} onClick={handleUpBtnClick}>
-          <span className={styles.text}>UP</span>
+        <S.Wrapper onClick={handleUpBtnClick}>
+          <S.Text>UP</S.Text>
           <UpArrow />
-        </button>
+        </S.Wrapper>
       )}
     </>
   );
