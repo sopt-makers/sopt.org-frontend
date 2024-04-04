@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { useState } from 'react';
 import { Part, TabType } from '@src/lib/types/universal';
 import { parsePartToKorean } from '@src/lib/utils/parsePartToKorean';
-import TabBar from '../../common/TabBar';
+import TabBar from '../../@common/TabBar';
 import * as S from './style';
 
 type CurriculumContentProps = {

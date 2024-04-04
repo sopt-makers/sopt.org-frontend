@@ -1,5 +1,5 @@
 import { Part } from '@src/lib/types/universal';
-import SectionTop from '@src/views/AboutPage/components/common/SectionTop';
+import SectionTop from '@src/views/AboutPage/components/@common/SectionTop';
 import CurriculumContent from '../Content';
 import * as S from './style';
 

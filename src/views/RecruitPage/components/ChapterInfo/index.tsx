@@ -3,7 +3,7 @@ import Flex from '@src/components/common/Flex';
 import { Part } from '@src/lib/types/universal';
 import { parsePartToKorean } from '@src/lib/utils/parsePartToKorean';
 import TabBar from '../common/Tabs';
-import { SectionTitle, SectionTitleTranslate, SectionTitleWrapper } from '../common/styles';
+import { SectionTitle, SectionTitleTranslate, SectionTitleWrapper } from '../common/style';
 import { infoMap } from './constants';
 import * as S from './style';
 

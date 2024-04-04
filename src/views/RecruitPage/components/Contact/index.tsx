@@ -5,7 +5,7 @@ import {
   SectionTitle,
   SectionTitleTranslate,
   SectionTitleWrapper,
-} from '../common/styles';
+} from '../common/style';
 import { contactInDisplayOrder, contactMap } from './constant';
 
 const Contact = () => {

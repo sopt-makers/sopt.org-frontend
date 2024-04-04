@@ -1,5 +1,5 @@
 import Flex from '@src/components/common/Flex';
-import SectionTop from '../../common/SectionTop';
+import SectionTop from '../../@common/SectionTop';
 import MemberContent from '../Content';
 import * as St from './style';
 

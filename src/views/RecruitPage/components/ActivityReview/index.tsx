@@ -5,7 +5,7 @@ import { ReactComponent as ArrowRight } from '@src/assets/icons/arrow_right_28x2
 import arrowRightWhite from '@src/assets/icons/arrow_right_white.svg';
 import { useHorizontalScroll } from '@src/hooks/useHorizontalScroll';
 import { parsePartToKorean } from '@src/lib/utils/parsePartToKorean';
-import { SectionTitle, SectionTitleTranslate, SectionTitleWrapper } from '../common/styles';
+import { SectionTitle, SectionTitleTranslate, SectionTitleWrapper } from '../common/style';
 import useFetch from './hooks/useFetch';
 import {
   Arrow,
@@ -19,7 +19,7 @@ import {
   DescName,
   DescWrapper,
   MoreLinkWrapper,
-} from './styles';
+} from './style';
 
 export default function ActivityReview() {
   const reviews = useFetch();

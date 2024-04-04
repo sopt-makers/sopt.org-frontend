@@ -8,9 +8,9 @@ import SEO from '@src/components/common/SEO';
 import { api } from '@src/lib/api';
 import { GetProjectDetailResponse, ProjectLinkType } from '@src/lib/types/project';
 import { dateFormat } from '@src/lib/utils/dateFormat';
-import * as S from '@src/views/ProjectDetailPage/ProjectDetail.style';
+import { getLinkNameAndSrcWithType } from '@src/lib/utils/getLinkNameAndSrcWithType';
+import * as S from '@src/views/ProjectDetailPage/style';
 import { TeamMembersType } from '@src/views/ProjectDetailPage/types';
-import { getLinkNameAndSrcWithType } from '@src/views/ProjectDetailPage/utils/getLinkNameAndSrcWithType';
 
 const projectOverviewTitle = [
   '프로젝트 기간',

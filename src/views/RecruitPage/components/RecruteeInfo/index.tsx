@@ -1,10 +1,10 @@
-import * as S from './style';
 import {
   SectionSubTitle,
   SectionTitle,
   SectionTitleTranslate,
   SectionTitleWrapper,
-} from '../common/styles';
+} from '../common/style';
+import * as S from './style';
 
 const RecruiteeInfo = () => {
   return (
@@ -18,23 +18,28 @@ const RecruiteeInfo = () => {
         <S.CardItem>
           <i>📱</i>
           <p>
-            <b>IT 창업 및 웹/앱</b><br/>서비스에 관심이 많고
+            <b>IT 창업 및 웹/앱</b>
+            <br />
+            서비스에 관심이 많고
           </p>
         </S.CardItem>
         <S.CardItem>
           <i>🚖</i>
           <p>
-            <b>수도권 내</b>에서<br/>활동이 가능한
+            <b>수도권 내</b>에서
+            <br />
+            활동이 가능한
           </p>
         </S.CardItem>
         <S.CardItem>
           <i>🔥</i>
           <p>
-            <b>열정적인</b><br/>대학생
+            <b>열정적인</b>
+            <br />
+            대학생
           </p>
         </S.CardItem>
       </S.CardList>
-      
     </S.Wrapper>
   );
 };
