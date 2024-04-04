@@ -39,7 +39,7 @@ export default function BlogPostList({
         <>
           <S.BlogPostList>
             {response?.map((blogPost) => (
-              <BlogPost key={blogPost.id} blogPost={blogPost} selectedTab={selectedTab} />
+              <BlogPost key={blogPost.title} blogPost={blogPost} selectedTab={selectedTab} />
             ))}
           </S.BlogPostList>
           {(hasNextPage || isFetching) && (
