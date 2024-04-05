@@ -20,11 +20,12 @@ export default function BlogPostList({
 }: BlogPostListProps) {
   const { selectedTab, selectedMajorCategory, selectedSubCategory } = selected;
 
-  const { response, hasNextPage, fetchNextPage, isFetching } = useGetResponse(
+  const { response, hasNextPage, fetchNextPage } = useGetResponse(
     selectedTab,
     selectedMajorCategory,
     selectedSubCategory,
   );
+
   const { ref } = useInfiniteScroll(fetchNextPage);
 
   return (
@@ -42,7 +43,7 @@ export default function BlogPostList({
               <BlogPost key={blogPost.title} blogPost={blogPost} selectedTab={selectedTab} />
             ))}
           </S.BlogPostList>
-          {(hasNextPage || isFetching) && (
+          {hasNextPage && (
             <S.SpinnerWrapper ref={hasNextPage ? ref : undefined}>
               <OvalSpinner />
             </S.SpinnerWrapper>
