@@ -45,7 +45,7 @@ export const Content = styled.main`
 export const ContentWrapper = styled.article`
   display: flex;
   flex-direction: column;
-  gap: 55px;
+  gap: 55rem;
   align-items: center;
   width: 100vw;
   height: 100vh;
@@ -54,23 +54,23 @@ export const ContentWrapper = styled.article`
   z-index: 2;
 
   @media (max-width: 1440px) {
-    gap: 70px;
+    gap: 70rem;
   }
 
   @media (max-width: 768px) {
-    gap: 80px;
+    gap: 80rem;
     padding-top: 60vh;
-    padding-bottom: 50px;
+    padding-bottom: 50rem;
   }
 `;
 
 export const Title = styled.h1`
   text-align: center;
-  font-size: 72px;
+  font-size: 72rem;
   font-style: normal;
   font-weight: 700;
-  line-height: 130%; /* 93.6px */
-  letter-spacing: -0.72px;
+  line-height: 130%; /* 93.6rem */
+  letter-spacing: -0.72rem;
   background: linear-gradient(93deg, ${colors.white} 29.05%, #b7c8d8 89.19%);
   background-clip: text;
   -webkit-background-clip: text;
@@ -78,35 +78,35 @@ export const Title = styled.h1`
 
   /* 모바일 뷰 */
   @media (max-width: 1440px) {
-    font-size: 64px;
+    font-size: 64rem;
   }
 
   /* 모바일 뷰 */
   @media (max-width: 768px) {
-    font-size: 28px;
-    line-height: 42px;
+    font-size: 28rem;
+    line-height: 42rem;
     letter-spacing: -2%;
   }
 `;
 
 export const DownScrollIcon = styled(IcDownScroll)`
-  min-width: 56px;
-  width: 56px;
-  min-height: 56px;
-  height: 56px;
+  min-width: 56rem;
+  width: 56rem;
+  min-height: 56rem;
+  height: 56rem;
   cursor: pointer;
 
   @media (max-width: 1440px) {
-    min-width: 42px;
-    width: 42px;
+    min-width: 42rem;
+    width: 42rem;
     min-height: 42;
-    height: 42px;
+    height: 42rem;
   }
 
   @media (max-width: 768px) {
-    min-width: 28px;
-    min-height: 28px;
-    width: 28px;
-    height: 28px;
+    min-width: 28rem;
+    min-height: 28rem;
+    width: 28rem;
+    height: 28rem;
   }
 `;

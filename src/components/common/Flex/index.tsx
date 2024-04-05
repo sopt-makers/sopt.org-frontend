@@ -28,8 +28,8 @@ function parseProp<T>(prop: SingleOrResponsive<T>): Responsive<T> {
 }
 
 const cssGapToString = (gap: React.CSSProperties['gap']): string | undefined => {
-  if (typeof gap === 'number') return `${gap}px`;
-  if (!gap) return '0px';
+  if (typeof gap === 'number') return `${gap}rem`;
+  if (!gap) return '0rem';
   return gap;
 };
 

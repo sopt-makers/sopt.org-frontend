@@ -34,19 +34,19 @@ const Styled = {
     display: flex;
     flex-direction: column;
     background: ${({ isOpened }) => (isOpened ? '#222220' : '#181818')};
-    border-radius: 30px;
-    padding: 40px 50px;
+    border-radius: 30rem;
+    padding: 40rem 50rem;
     cursor: pointer;
     /* 태블릿 뷰 */
     @media (max-width: 1919.9px) and (min-width: 766px) {
-      font-size: 25px;
-      padding: 32px 40px;
-      border-radius: 20px;
+      font-size: 25rem;
+      padding: 32rem 40rem;
+      border-radius: 20rem;
     }
     /* 모바일 뷰 */
     @media (max-width: 765.9px) {
-      padding: 18px 30px;
-      border-radius: 20px;
+      padding: 18rem 30rem;
+      border-radius: 20rem;
     }
   `,
   QuestionWrapper: styled.div<{ isOpened: boolean }>`
@@ -55,12 +55,12 @@ const Styled = {
     justify-content: space-between;
     /* 태블릿 뷰 */
     @media (max-width: 1919.9px) and (min-width: 766px) {
-      margin-bottom: ${({ isOpened }) => (isOpened ? '16px' : '0')};
+      margin-bottom: ${({ isOpened }) => (isOpened ? '16rem' : '0')};
     }
   `,
   Title: styled.h1`
     font-weight: 600;
-    font-size: 24px;
+    font-size: 24rem;
     line-height: 100%;
     color: #ffffff;
     &::before {
@@ -70,16 +70,16 @@ const Styled = {
 
     /* 모바일 뷰 */
     @media (max-width: 765.9px) {
-      font-size: 16px;
-      line-height: 24px;
+      font-size: 16rem;
+      line-height: 24rem;
     }
   `,
   IconWrapper: styled.div<{ isOpened: boolean }>`
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 40px;
-    height: 40px;
+    width: 40rem;
+    height: 40rem;
     /* 태블릿 뷰 */
     @media (max-width: 1919.9px) and (min-width: 766px) {
       transform: ${({ isOpened }) => (isOpened ? 'rotate(180deg)' : 'rotate(0deg)')} scale(0.9);
@@ -93,11 +93,11 @@ const Styled = {
   `,
   Content: styled.div`
     font-weight: 400;
-    font-size: 25px;
-    line-height: 40px;
+    font-size: 25rem;
+    line-height: 40rem;
     word-break: keep-all;
     color: rgba(253, 253, 253, 0.8);
-    margin-top: 12px;
+    margin-top: 12rem;
 
     &::before {
       content: 'A. ';
@@ -105,12 +105,12 @@ const Styled = {
     }
     /* 태블릿 뷰 */
     @media (max-width: 1919.9px) and (min-width: 766px) {
-      font-size: 22px;
+      font-size: 22rem;
     }
     /* 모바일 뷰 */
     @media (max-width: 765.9px) {
-      font-size: 14px;
-      line-height: 22px;
+      font-size: 14rem;
+      line-height: 22rem;
     }
   `,
 };

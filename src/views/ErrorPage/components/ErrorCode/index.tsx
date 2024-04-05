@@ -22,8 +22,8 @@ export default function ErrorCode({ code }: ErrorCodeProps) {
   };
 
   const codeVariant = {
-    initial: { gap: '6px' },
-    whileHover: { gap: '159px' },
+    initial: { gap: '6rem' },
+    whileHover: { gap: '159rem' },
   };
 
   const iconVariant = {

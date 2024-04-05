@@ -27,20 +27,20 @@ export const TextContainer = styled(motion.span)`
   overflow: hidden;
   display: block;
   text-align: center;
-  font-size: 50px;
+  font-size: 50rem;
   font-style: normal;
   font-weight: 700;
-  line-height: 73px;
+  line-height: 73rem;
   white-space: pre-line;
 
   @media (max-width: 1440px) {
-    font-size: 40px;
+    font-size: 40rem;
     line-height: normal;
   }
 
   @media (max-width: 774px) {
-    font-size: 25px;
-    line-height: 38px;
+    font-size: 25rem;
+    line-height: 38rem;
     letter-spacing: -2%;
     word-break: keep-all;
   }
@@ -50,6 +50,7 @@ export const MotionTitle = styled(motion.span)`
   position: absolute;
   left: 0;
   opacity: 0;
+  font-size: 100%;
 
   ::before {
     content: attr(data-text);
@@ -62,6 +63,7 @@ export const MotionTitle = styled(motion.span)`
 `;
 
 export const BackgroundTitle = styled.span`
+  font-size: 100%;
   background: linear-gradient(93deg, #c9d8dd -34.77%, #fff -14.77%, #636770 6.12%);
   background-clip: text;
   -webkit-background-clip: text;

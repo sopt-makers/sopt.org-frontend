@@ -21,7 +21,7 @@ export const global = css`
     margin: 0;
     padding: 0;
     border: 0;
-    font-size: 100%;
+    font-size: 6.25%;
     vertical-align: baseline;
   }
   article,
