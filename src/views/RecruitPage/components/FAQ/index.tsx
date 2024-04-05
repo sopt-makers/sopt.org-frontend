@@ -1,9 +1,9 @@
 import styled from '@emotion/styled';
 import { useState } from 'react';
 import { ExtraPart, PartExtraType } from '@src/lib/types/universal';
-import QuestionBox from '@src/views/FAQPage/components/faq/QuestionBox';
 import TabBar from '../common/Tabs';
-import { SectionTitle, SectionTitleTranslate, SectionTitleWrapper } from '../common/styles';
+import { SectionTitle, SectionTitleTranslate, SectionTitleWrapper } from '../common/style';
+import QuestionBox from './QuestionBox';
 import { faqMap } from './constant';
 
 const FaqInfo = () => {
@@ -44,34 +44,34 @@ const FaqInfo = () => {
 const FaqWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 16rem;
 `;
 
 const W = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 70px;
+  gap: 70rem;
   /* 태블릿 뷰 */
   @media (max-width: 1299px) and (min-width: 766px) {
-    gap: 40px;
+    gap: 40rem;
   }
   /* 모바일 뷰 */
   @media (max-width: 765.9px) {
-    gap: 24px;
+    gap: 24rem;
   }
 `;
 
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 20rem;
   /* 태블릿 뷰 */
   @media (max-width: 1299px) and (min-width: 766px) {
-    gap: 20px;
+    gap: 20rem;
   }
   /* 모바일 뷰 */
   @media (max-width: 765.9px) {
-    gap: 2px;
+    gap: 2rem;
   }
 `;
 

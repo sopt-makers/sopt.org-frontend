@@ -147,7 +147,7 @@ export const FadeInDown = (stride = 500) => `
   @keyframes fadeindown{
     0%{
       opacity:0;
-      transform:translateY(-${stride}px);
+      transform:translateY(-${stride}rem);
     }100%{
       opacity:1;
       transform:translateY(0);
@@ -161,7 +161,7 @@ export const FadeOutUp = `
       opacity:1;
     }to{
       opacity:0;
-      transform:translateY(-1000px);
+      transform:translateY(-1000rem);
       z-index:-1;
     }
   }

@@ -27,7 +27,7 @@ function MobileViewContent() {
     handleCarouselSwipe,
     handleTouchStart,
     handleTouchEnd,
-  } = useInfiniteCarousel<OwnOrganizationCardProps>(OWN_ORGANIZATION_LIST, '(-100% - 20px)');
+  } = useInfiniteCarousel<OwnOrganizationCardProps>(OWN_ORGANIZATION_LIST, '(-100% - 20rem)');
 
   return (
     <S.CarouselWrapper>

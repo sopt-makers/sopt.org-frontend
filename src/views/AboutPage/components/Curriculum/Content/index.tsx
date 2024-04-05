@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { useState } from 'react';
 import { Part, TabType } from '@src/lib/types/universal';
 import { parsePartToKorean } from '@src/lib/utils/parsePartToKorean';
-import TabBar from '../../common/TabBar';
+import TabBar from '../../@common/TabBar';
 import * as S from './style';
 
 type CurriculumContentProps = {
@@ -27,8 +27,8 @@ const CurriculumContent = ({ curriculums }: CurriculumContentProps) => {
           alt={`${parsePartToKorean(currentPart)}파트 커리큘럼 이미지`}
           fill
           quality={70}
-          sizes="(max-width: 428px) 361px, (max-width: 768px) 662px, 1200px"
-          style={{ objectFit: 'contain', borderRadius: '10px' }}
+          sizes="(max-width: 428rem) 361rem, (max-width: 768rem) 662rem, 1200rem"
+          style={{ objectFit: 'contain', borderRadius: '10rem' }}
         />
       </S.ImageWrapper>
     </S.CurriculumContent>
