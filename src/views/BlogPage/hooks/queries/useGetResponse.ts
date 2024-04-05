@@ -8,7 +8,7 @@ const getTabResponse = (
   selectedTab: BlogTabType,
   generation: number,
   part: PartCategoryType,
-  count: number,
+  count: number | unknown,
 ): Promise<BlogResponse> => {
   return selectedTab === 'review'
     ? getReviewResponse(generation, part, count)
@@ -22,12 +22,12 @@ export const useGetResponse = (
 ) => {
   const queryKey = [selectedTab, generation, part];
 
-  const { data, fetchNextPage, hasNextPage, isFetching } = useInfiniteQuery({
+  const { data, fetchNextPage, hasNextPage, isFetching } = useInfiniteQuery<BlogResponse>({
     queryKey,
-    queryFn: ({ pageParam = 1 }: { pageParam: number }) =>
+    queryFn: ({ pageParam }: { pageParam: number | unknown }) =>
       getTabResponse(selectedTab, generation, part, pageParam),
     getNextPageParam: (lastPage) => (lastPage.hasNextPage ? lastPage.currentPage + 1 : undefined),
-    suspense: true,
+    initialPageParam: 1,
   });
 
   return {
