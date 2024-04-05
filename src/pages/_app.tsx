@@ -38,6 +38,8 @@ export const queryClient = new QueryClient({
       refetchOnWindowFocus: false,
       refetchOnMount: false,
       refetchOnReconnect: false,
+      staleTime: 1800000, // 30 mins
+      gcTime: 3600000, // 60 mins
     },
   },
 });
