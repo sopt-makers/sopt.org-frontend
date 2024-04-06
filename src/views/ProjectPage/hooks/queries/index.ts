@@ -1,18 +1,16 @@
-import { useQuery } from '@tanstack/react-query';
+import { useInfiniteQuery } from '@tanstack/react-query';
 import { api } from '@src/lib/api';
-import { ProjectCategoryType, ProjectPlatformType, ProjectType } from '@src/lib/types/project';
-import { sortBy } from '@src/lib/utils/array';
+import { ProjectCategoryType, ProjectPlatformType } from '@src/lib/types/project';
 
-export const useGetProjectList = (
-  category: ProjectCategoryType,
-  platform: ProjectPlatformType,
-  sortType?: string,
-) => {
+export const useGetProjectList = (category: ProjectCategoryType, platform: ProjectPlatformType) => {
   const queryKey = ['getProjectList', category, platform];
 
-  return useQuery({
+  const { data, hasNextPage, fetchNextPage } = useInfiniteQuery({
     queryKey,
-    queryFn: () => api.projectAPI.getProjectList(category, platform),
-    select: (data) => (sortType ? sortBy<ProjectType>(data, 'updatedAt') : data),
+    queryFn: ({ pageParam = 1 }: { pageParam: number }) =>
+      api.projectAPI.getProjectList(category, platform, pageParam),
+    getNextPageParam: (lastPage) => (lastPage.hasNextPage ? lastPage.currentPage + 1 : undefined),
   });
+
+  return { data: data?.pages.flatMap((page) => page.data), hasNextPage, fetchNextPage };
 };

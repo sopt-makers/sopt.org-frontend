@@ -14,3 +14,10 @@ export const ProjectListHeader = styled.div<{ selectedCategory: ProjectCategoryT
     margin-bottom: 28rem;
   }
 `;
+
+export const SpinnerWrapper = styled.section`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 50rem 0;
+`;

@@ -23,10 +23,11 @@ const getProjectDetail = async (projectId: number): Promise<GetProjectDetailResp
 const getProjectList = async (
   category: ProjectCategoryType,
   platform: ProjectPlatformType,
+  pageNo: number,
 ): Promise<ProjectType[]> => {
   const categoryParameter = category === ProjectCategoryType.ALL ? {} : { filter: category };
   const platformParameter = platform === ProjectPlatformType.ALL ? {} : { platform };
-  const parameter = qs.stringify({ ...categoryParameter, ...platformParameter });
+  const parameter = qs.stringify({ ...categoryParameter, ...platformParameter, pageNo });
   const { data } = await client.get(`/projects?${parameter}`);
   return data;
 };

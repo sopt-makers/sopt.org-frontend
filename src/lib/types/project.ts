@@ -69,5 +69,6 @@ export interface ProjectAPI {
   getProjectList(
     category: ProjectCategoryType,
     platform: ProjectPlatformType,
+    pageNo: number,
   ): Promise<ProjectType[]>;
 }
