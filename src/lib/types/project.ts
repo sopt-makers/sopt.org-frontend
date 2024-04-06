@@ -64,11 +64,21 @@ export interface GetProjectDetailResponse {
   project: ProjectType;
 }
 
+export type ProjectResponse = {
+  currentPage: number;
+  data: ProjectType[];
+  hasNextPage: boolean;
+  hasPrevPage: boolean;
+  limit: number;
+  totalCount: number;
+  totalPage: number;
+};
+
 export interface ProjectAPI {
   getProjectDetail(projectId: number): Promise<GetProjectDetailResponse>;
   getProjectList(
     category: ProjectCategoryType,
     platform: ProjectPlatformType,
     pageNo: number,
-  ): Promise<ProjectType[]>;
+  ): Promise<ProjectResponse>;
 }

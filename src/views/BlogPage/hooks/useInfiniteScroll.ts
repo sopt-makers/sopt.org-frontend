@@ -5,11 +5,10 @@ import {
 } from '@tanstack/react-query';
 import { useEffect, useState } from 'react';
 import useIntersectionObserver from '@src/hooks/useIntersectionObserver';
-import { BlogResponse } from '@src/lib/types/blog';
 
 export default function useInfiniteScroll(fetchNextPage: {
   (options?: FetchNextPageOptions): Promise<
-    InfiniteQueryObserverResult<InfiniteData<BlogResponse, unknown>, Error>
+    InfiniteQueryObserverResult<InfiniteData<unknown, unknown>, Error>
   >;
   (): void;
 }) {
