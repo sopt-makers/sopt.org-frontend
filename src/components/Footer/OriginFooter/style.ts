@@ -3,7 +3,7 @@ import { colors } from '@sopt-makers/colors';
 
 export const Root = styled.footer`
   width: 100%;
-  min-height: 162rem;
+  min-height: 162px;
   background-color: #202020;
 
   /* 태블릿 + 데스크탑 뷰 */
@@ -13,7 +13,7 @@ export const Root = styled.footer`
 
   /* 모바일 뷰 */
   @media (max-width: 765.9px) {
-    height: 264rem;
+    height: 264px;
   }
 `;
 
@@ -23,73 +23,73 @@ export const ContentWrap = styled.div`
 
   /* 데스크탑 뷰 */
   @media (min-width: 1200px) {
-    max-width: 1100rem;
-    margin: 0rem auto;
-    padding-top: 35rem;
+    max-width: 1100px;
+    margin: 0px auto;
+    padding-top: 35px;
   }
 
   /* 태블릿 뷰 */
   @media (max-width: 1199px) and (min-width: 766px) {
-    margin: 0rem 40rem;
-    padding-top: 35rem;
+    margin: 0px 40px;
+    padding-top: 35px;
   }
 
   /* 모바일 뷰 */
   @media (max-width: 765.9px) {
     display: block;
 
-    padding-top: 30rem;
-    /* padding-left: 9rem; */
+    padding-top: 30px;
+    /* padding-left: 9px; */
     padding-left: 8%;
-    width: 327rem;
+    width: 327px;
   }
 `;
 
 export const TitleButton = styled.button`
   cursor: pointer;
-  line-height: 20rem;
+  line-height: 20px;
   display: flex;
   align-items: center;
 
   color: ${colors.gray10};
-  font-size: 14rem;
+  font-size: 14px;
   font-weight: 700;
 
   span {
-    margin-right: 5rem;
+    margin-right: 5px;
     font-size: 100%;
   }
 `;
 
 export const CopyrightText = styled.p`
   width: 100%;
-  margin-top: 25rem;
+  margin-top: 25px;
   line-height: 180%;
-  font-size: 14rem;
+  font-size: 14px;
   font-weight: 400;
 
   /* 모바일 뷰 */
   @media (max-width: 765.9px) {
-    font-size: 12rem;
+    font-size: 12px;
   }
 `;
 
 export const ChannelsWrap = styled.div`
-  width: 190rem;
+  width: 190px;
   /* 모바일 뷰 */
   @media (max-width: 765.9px) {
-    margin-top: 40rem;
+    margin-top: 40px;
   }
 `;
 
 export const ChannelTitleText = styled.p`
-  margin-bottom: 25rem;
-  line-height: 20rem;
-  font-size: 16rem;
+  margin-bottom: 25px;
+  line-height: 20px;
+  font-size: 16px;
   font-weight: 500;
 
   /* 모바일 뷰 */
   @media (max-width: 765.9px) {
-    margin-bottom: 20rem;
+    margin-bottom: 20px;
   }
 `;

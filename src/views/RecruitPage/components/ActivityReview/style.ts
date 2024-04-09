@@ -5,12 +5,12 @@ export const ContainerWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 108rem;
+  gap: 108px;
   @media (max-width: 765.9px) {
-    gap: 40rem;
+    gap: 40px;
   }
   @media (max-width: 1299px) and (min-width: 766px) {
-    gap: 30rem;
+    gap: 30px;
   }
 `;
 
@@ -22,10 +22,10 @@ export const TitleWrapper = styled.div`
   flex-direction: row;
   justify-content: space-between;
   @media (max-width: 765.9px) {
-    gap: 8rem;
+    gap: 8px;
   }
   @media (max-width: 1299px) and (min-width: 766px) {
-    gap: 24rem;
+    gap: 24px;
   }
 `;
 
@@ -36,31 +36,31 @@ export const ContentWrapper = styled.div`
   width: 100%;
   @media (max-width: 765.9px) {
     width: 100vw;
-    padding: 0 16rem;
+    padding: 0 16px;
   }
   @media (max-width: 1299px) and (min-width: 766px) {
     width: 100vw;
-    padding: 0 24rem;
+    padding: 0 24px;
   }
 `;
 export const MoreLinkWrapper = styled.p`
   color: #fff;
-  font-size: 25rem;
+  font-size: 25px;
   font-weight: 500;
-  line-height: 40rem; /* 160% */
-  letter-spacing: -0.25rem;
+  line-height: 40px; /* 160% */
+  letter-spacing: -0.25px;
   opacity: 0.6;
-  border-bottom: 1rem solid #959595;
+  border-bottom: 1px solid #959595;
 
   @media (max-width: 1299px) and (min-width: 766px) {
-    font-size: 20rem;
+    font-size: 20px;
     font-weight: 400;
-    line-height: 100%; /* 20rem */
-    letter-spacing: -0.2rem;
+    line-height: 100%; /* 20px */
+    letter-spacing: -0.2px;
   }
 
   @media (max-width: 765.9px) {
-    font-size: 16rem;
+    font-size: 16px;
   }
 `;
 
@@ -71,51 +71,51 @@ export const ArrowWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 64rem;
-  height: 64rem;
+  width: 64px;
+  height: 64px;
   border-radius: 50%;
-  border: 1rem solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   cursor: pointer;
 `;
 
 export const Content = styled.div`
   display: flex;
 
-  margin: 0 32rem;
+  margin: 0 32px;
   overflow-x: hidden;
-  gap: 24rem;
-  max-width: 1008rem;
+  gap: 24px;
+  max-width: 1008px;
 
   @media (max-width: 1299px) and (min-width: 766px) {
     overflow-x: scroll;
-    gap: 24rem;
+    gap: 24px;
   }
 
   @media (max-width: 765.9px) {
     overflow-x: scroll;
-    gap: 16rem;
+    gap: 16px;
   }
 `;
 
 export const CardWrapper = styled.div`
   cursor: pointer;
   background-color: #181818;
-  border-radius: 10rem;
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-width: 320rem;
-  height: 300rem;
-  padding: 38rem 34rem;
+  min-width: 320px;
+  height: 300px;
+  padding: 38px 34px;
   @media (max-width: 765.9px) {
-    min-width: 232rem;
-    height: 218rem;
-    padding: 40rem 26rem;
+    min-width: 232px;
+    height: 218px;
+    padding: 40px 26px;
   }
   @media (max-width: 1299px) and (min-width: 766px) {
-    min-width: 310rem;
-    height: 250rem;
-    padding: 40rem 28rem;
+    min-width: 310px;
+    height: 250px;
+    padding: 40px 28px;
   }
 `;
 
@@ -128,16 +128,16 @@ export const CardTitle = styled.div`
   word-break: break-all;
   color: #c8c8c8;
   font-weight: 500;
-  font-size: 25rem;
-  line-height: 40rem;
+  font-size: 25px;
+  line-height: 40px;
   @media (max-width: 765.9px) {
-    font-size: 16rem;
-    line-height: 25rem;
-    letter-spacing: -0.32rem;
+    font-size: 16px;
+    line-height: 25px;
+    letter-spacing: -0.32px;
   }
   @media (max-width: 1299px) and (min-width: 766px) {
-    font-size: 18rem;
-    line-height: 29rem;
+    font-size: 18px;
+    line-height: 29px;
   }
 `;
 
@@ -150,16 +150,16 @@ export const DescWrapper = styled.div`
 export const Desc = styled.div`
   color: #848484;
   font-weight: 500;
-  font-size: 22rem;
-  line-height: 32rem;
+  font-size: 22px;
+  line-height: 32px;
   white-space: pre-wrap;
   @media (max-width: 765.9px) {
-    font-size: 14rem;
-    line-height: 22rem;
+    font-size: 14px;
+    line-height: 22px;
   }
   @media (max-width: 1299px) and (min-width: 766px) {
-    font-size: 16rem;
-    line-height: 23rem;
+    font-size: 16px;
+    line-height: 23px;
     white-space: pre-wrap;
   }
 `;
@@ -173,14 +173,14 @@ export const DescName = styled.div`
 `;
 
 export const Arrow = styled(Image)`
-  width: 30rem;
-  height: 30rem;
+  width: 30px;
+  height: 30px;
   @media (max-width: 765.9px) {
-    width: 17rem;
-    height: 15rem;
+    width: 17px;
+    height: 15px;
   }
   @media (max-width: 1299px) and (min-width: 766px) {
-    width: 30rem;
-    height: 30rem;
+    width: 30px;
+    height: 30px;
   }
 `;

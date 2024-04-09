@@ -37,7 +37,7 @@ function CoporatePartner() {
                       src={imgSrc}
                       alt="corporate logo"
                       fill
-                      sizes="(max-width: 766rem) 138rem 278rem"
+                      sizes="(max-width: 766px) 138px 278px"
                     />
                   </S.CorporateLogoImageWrapper>
                   <S.Name>{name}</S.Name>

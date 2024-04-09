@@ -7,10 +7,10 @@ import icPolygon from '@src/assets/icons/ic_polygon.svg';
 
 export const Wrapper = styled(motion.section)`
   display: flex;
-  gap: 12.25rem;
+  gap: 12.25px;
 
   width: 100%;
-  padding: 104rem 2.86vw 0;
+  padding: 104px 2.86vw 0;
   background-color: ${colors.white};
 
   @media (max-width: 768px) {
@@ -21,9 +21,9 @@ export const Wrapper = styled(motion.section)`
 export const FloatingMenu = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 9.27rem;
+  gap: 9.27px;
   position: sticky;
-  top: 104rem;
+  top: 104px;
 
   height: fit-content;
 
@@ -36,17 +36,17 @@ export const MenuWrapper = styled(motion.div)<{ isInView?: boolean }>`
   position: relative;
 
   background-color: #fbfcfe;
-  border-radius: 10rem;
-  border: 1.2rem solid rgba(196, 199, 211, 0.3);
+  border-radius: 10px;
+  border: 1.2px solid rgba(196, 199, 211, 0.3);
 
   color: rgba(168, 172, 186, 0.88);
   text-align: center;
   font-family: SUIT;
-  font-size: 19.46rem;
+  font-size: 19.46px;
   font-style: normal;
   font-weight: 500;
-  line-height: 53.54rem; /* 275.126% */
-  letter-spacing: -0.584rem;
+  line-height: 53.54px; /* 275.126% */
+  letter-spacing: -0.584px;
 
   ${({ isInView }) =>
     isInView &&
@@ -59,12 +59,12 @@ export const MenuWrapper = styled(motion.div)<{ isInView?: boolean }>`
         content: '';
         position: absolute;
         top: 50%;
-        right: -8rem;
+        right: -8px;
         transform: translateY(-50%);
         z-index: 99;
 
-        width: 8rem;
-        height: 11rem;
+        width: 8px;
+        height: 11px;
         background-image: url(${icPolygon});
         background-repeat: no-repeat;
       }
@@ -76,13 +76,13 @@ export const Menu = styled(Link)`
   justify-content: center;
   align-items: center;
 
-  width: 190rem;
-  height: 72rem;
+  width: 190px;
+  height: 72px;
 
   font-size: 100%;
 
   @media (max-width: 1440px) {
-    width: 152rem;
+    width: 152px;
   }
 `;
 
@@ -90,7 +90,7 @@ export const Layout = styled(motion.div)`
   flex: 1;
   width: 80%;
   padding: 0 4vw;
-  border-radius: 20.946rem 20.946rem 0 0;
+  border-radius: 20.946px 20.946px 0 0;
   background: #f6f8fc;
   z-index: 1;
 

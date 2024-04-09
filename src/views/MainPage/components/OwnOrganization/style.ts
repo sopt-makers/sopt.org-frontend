@@ -1,25 +1,25 @@
 import styled from '@emotion/styled';
 
 export const Wrapper = styled.div`
-  padding-top: 104rem;
+  padding-top: 104px;
 
   @media (max-width: 768px) {
-    padding-top: 125rem;
+    padding-top: 125px;
   }
 
   @media (max-width: 376px) {
-    padding-top: 74rem;
+    padding-top: 74px;
   }
 `;
 
 export const ContentWrapper = styled.div`
   display: grid;
-  gap: 28rem;
+  gap: 28px;
   grid-template-columns: repeat(2, 1fr);
 
   @media (max-width: 1440px) {
-    grid-template-columns: repeat(auto-fit, minmax(385rem, 1fr));
-    gap: 24rem;
+    grid-template-columns: repeat(auto-fit, minmax(385px, 1fr));
+    gap: 24px;
   }
 
   @media (max-width: 768px) {
@@ -28,11 +28,11 @@ export const ContentWrapper = styled.div`
   }
 
   @media (max-width: 512px) {
-    gap: 16rem;
+    gap: 16px;
   }
 
   @media (max-width: 428px) {
-    gap: 14rem;
+    gap: 14px;
   }
 `;
 
@@ -40,12 +40,12 @@ export const CarouselWrapper = styled.div`
   width: 100%;
   position: relative;
   overflow: hidden;
-  border-radius: 19rem;
+  border-radius: 19px;
 `;
 
 export const Carousel = styled.div`
   display: flex;
-  column-gap: 20rem;
+  column-gap: 20px;
 `;
 
 export const Slide = styled.div`
@@ -54,16 +54,16 @@ export const Slide = styled.div`
   justify-content: center;
   flex-shrink: 0;
   width: 100%;
-  height: 428rem;
+  height: 428px;
   padding: 0 6.5vw;
-  border-radius: 19rem;
+  border-radius: 19px;
 
   @media (max-width: 768px) {
-    height: 434rem;
+    height: 434px;
   }
 
   @media (max-width: 376px) {
-    height: 249rem;
+    height: 249px;
   }
 `;
 
@@ -82,13 +82,13 @@ export const Arrow = styled.div`
   }
 
   @media (max-width: 768px) {
-    width: 26rem;
+    width: 26px;
   }
 
   @media (max-width: 428px) {
-    width: 15.293rem;
+    width: 15.293px;
     & > img {
-      height: 24.138rem;
+      height: 24.138px;
     }
   }
 `;

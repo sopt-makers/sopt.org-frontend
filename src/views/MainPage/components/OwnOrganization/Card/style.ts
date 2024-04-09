@@ -6,100 +6,100 @@ export const CardWrapper = styled.div<{ background: string }>`
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  border-radius: 19rem;
-  padding: 39rem 0;
-  max-width: 712rem;
+  border-radius: 19px;
+  padding: 39px 0;
+  max-width: 712px;
   width: 100%;
-  height: 380rem;
+  height: 380px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
 
   @media (max-width: 1440px) {
-    max-width: 511rem;
+    max-width: 511px;
   }
 
   @media (max-width: 768px) {
-    max-width: 511rem;
-    height: 434rem;
+    max-width: 511px;
+    height: 434px;
   }
 
   @media (max-width: 376px) {
-    max-width: 294rem;
-    height: 249rem;
+    max-width: 294px;
+    height: 249px;
   }
 `;
 
 export const FooterKorName = styled.div`
-  width: 144rem;
+  width: 144px;
   text-align: center;
-  padding: 16rem 0;
+  padding: 16px 0;
   color: ${colors.white};
-  border: 1rem solid rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.5);
   background: rgba(117, 97, 79, 0.33);
   backdrop-filter: blur(2.949289321899414px);
-  border-radius: 14rem;
+  border-radius: 14px;
 
-  font-size: 22rem;
+  font-size: 22px;
   font-weight: 600;
-  line-height: 28rem;
-  letter-spacing: -0.904rem;
+  line-height: 28px;
+  letter-spacing: -0.904px;
 
   @media (max-width: 1440px) {
-    width: 128rem;
-    padding: 12rem 0;
-    font-size: 21rem;
-    line-height: 24.425rem;
+    width: 128px;
+    padding: 12px 0;
+    font-size: 21px;
+    line-height: 24.425px;
   }
 
   @media (max-width: 512px) {
-    border-radius: 12rem;
-    width: 96rem;
-    padding: 10rem 0;
-    font-size: 18rem;
-    line-height: 24.425rem;
-    font-size: 18rem;
-    line-height: 20rem;
-    letter-spacing: -0.904rem;
+    border-radius: 12px;
+    width: 96px;
+    padding: 10px 0;
+    font-size: 18px;
+    line-height: 24.425px;
+    font-size: 18px;
+    line-height: 20px;
+    letter-spacing: -0.904px;
   }
 
   @media (max-width: 428px) {
-    border-radius: 6rem;
-    width: 74rem;
-    padding: 7rem 0;
-    font-size: 12rem;
-    line-height: 13rem;
+    border-radius: 6px;
+    width: 74px;
+    padding: 7px 0;
+    font-size: 12px;
+    line-height: 13px;
 
-    font-size: 11rem;
+    font-size: 11px;
     font-style: normal;
     font-weight: 700;
-    line-height: 19rem;
-    letter-spacing: -0.44rem;
+    line-height: 19px;
+    letter-spacing: -0.44px;
   }
 `;
 
 export const FooterEngName = styled.div`
   color: rgba(255, 255, 255, 0.7);
   font-family: SUIT;
-  font-size: 20rem;
+  font-size: 20px;
   font-style: normal;
   font-weight: 400;
-  line-height: 28.288rem; /* 138.027% */
-  letter-spacing: -1.025rem;
-  padding-bottom: 4rem;
+  line-height: 28.288px; /* 138.027% */
+  letter-spacing: -1.025px;
+  padding-bottom: 4px;
 
   @media (max-width: 1440px) {
-    font-size: 19rem;
-    line-height: 13.9rem;
+    font-size: 19px;
+    line-height: 13.9px;
   }
 
   @media (max-width: 512px) {
-    font-size: 17rem;
+    font-size: 17px;
   }
 
   @media (max-width: 428px) {
-    font-size: 11rem;
-    line-height: 14.9rem;
+    font-size: 11px;
+    line-height: 14.9px;
   }
 `;
 
@@ -107,51 +107,51 @@ export const FooterWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  padding-left: 30rem;
-  padding-right: 42rem;
+  padding-left: 30px;
+  padding-right: 42px;
 
   @media (max-width: 1440px) {
-    padding-left: 25rem;
-    padding-right: 27rem;
+    padding-left: 25px;
+    padding-right: 27px;
   }
 
   @media (max-width: 428px) {
-    padding-left: 14rem;
-    padding-right: 15rem;
+    padding-left: 14px;
+    padding-right: 15px;
   }
 `;
 
 export const ContentWrapper = styled.div`
-  padding: 0 41rem;
+  padding: 0 41px;
   flex: 1;
   word-break: keep-all;
 
   @media (max-width: 428px) {
-    padding: 0 20rem;
+    padding: 0 20px;
   }
 `;
 
 export const TextWrapper = styled.span<{ weight: 'normal' | 'bold' }>`
-  font-size: 20rem;
+  font-size: 20px;
   color: ${colors.white};
   font-weight: ${({ weight }) => weight};
-  line-height: 35rem; /* 175% */
-  letter-spacing: -0.8rem;
+  line-height: 35px; /* 175% */
+  letter-spacing: -0.8px;
 
   @media (max-width: 1440px) {
-    font-size: 18rem;
-    line-height: 31rem; /* 172.222% */
-    letter-spacing: -0.72rem;
+    font-size: 18px;
+    line-height: 31px; /* 172.222% */
+    letter-spacing: -0.72px;
   }
 
   @media (max-width: 512px) {
-    font-size: 16rem;
-    line-height: 26rem;
+    font-size: 16px;
+    line-height: 26px;
   }
 
   @media (max-width: 428px) {
-    font-size: 11rem;
-    line-height: 18.103rem; /* 164.575% */
-    letter-spacing: -0.44rem;
+    font-size: 11px;
+    line-height: 18.103px; /* 164.575% */
+    letter-spacing: -0.44px;
   }
 `;

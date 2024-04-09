@@ -2,14 +2,14 @@ import styled from '@emotion/styled';
 
 export const IntroSection = styled.section`
   position: relative;
-  height: calc(300vh + 240rem);
+  height: calc(300vh + 240px);
 `;
 
 export const Shadow = styled.div`
   position: sticky;
   z-index: 90;
   width: 100%;
-  height: 120rem;
+  height: 120px;
 `;
 
 export const Header = styled(Shadow)`

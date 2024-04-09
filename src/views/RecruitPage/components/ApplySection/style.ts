@@ -4,7 +4,7 @@ import { StaticImageData } from 'next/image';
 export const Values = styled.div`
   display: flex;
   justify-content: center;
-  gap: 90rem;
+  gap: 90px;
 
   & > svg {
     transform: scale(2);
@@ -12,14 +12,14 @@ export const Values = styled.div`
 
   /* 태블릿 뷰 */
   @media (max-width: 1299px) and (min-width: 766px) {
-    gap: 21rem;
+    gap: 21px;
     & > svg {
       transform: scale(1);
     }
   }
   /* 모바일 뷰 */
   @media (max-width: 765.9px) {
-    gap: 18rem;
+    gap: 18px;
     & > svg {
       transform: scale(1);
     }
@@ -27,29 +27,29 @@ export const Values = styled.div`
 `;
 
 export const ApplyButton = styled.a`
-  width: 220rem;
-  padding: 24rem 0;
-  border-radius: 50rem;
+  width: 220px;
+  padding: 24px 0;
+  border-radius: 50px;
   color: #212121;
   text-align: center;
-  font-size: 22rem;
+  font-size: 22px;
   font-style: normal;
   font-weight: 700;
-  line-height: 100%; /* 22rem */
-  letter-spacing: -0.44rem;
+  line-height: 100%; /* 22px */
+  letter-spacing: -0.44px;
   background-color: #bdec00;
   z-index: 2;
   /* 태블릿 뷰 */
   @media (max-width: 1299px) and (min-width: 766px) {
-    font-size: 18rem;
-    width: 180rem;
-    padding: 20rem 0;
+    font-size: 18px;
+    width: 180px;
+    padding: 20px 0;
   }
   /* 모바일 뷰 */
   @media (max-width: 765.9px) {
-    font-size: 16rem;
-    width: 160rem;
-    padding: 16rem 0;
+    font-size: 16px;
+    width: 160px;
+    padding: 16px 0;
   }
 `;
 
@@ -57,38 +57,38 @@ export const Title = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin: 62rem 0 36rem 0;
+  margin: 62px 0 36px 0;
 
   text-align: center;
   color: #fcfcfc;
   text-align: center;
-  font-size: 43rem;
+  font-size: 43px;
   font-weight: 700;
-  line-height: 140%; /* 60.2rem */
-  letter-spacing: -0.86rem;
+  line-height: 140%; /* 60.2px */
+  letter-spacing: -0.86px;
   z-index: 2;
   word-break: keep-all;
   /* 태블릿 뷰 */
   @media (max-width: 1299px) and (min-width: 766px) {
-    margin-top: 32rem;
-    font-size: 28rem;
+    margin-top: 32px;
+    font-size: 28px;
   }
   /* 모바일 뷰 */
   @media (max-width: 765.9px) {
-    margin-top: 26rem;
-    font-size: 28rem;
+    margin-top: 26px;
+    font-size: 28px;
   }
 `;
 
 export const Wrapper = styled.div<{ imgRecruitBg: StaticImageData }>`
   width: 100vw;
-  height: 580rem;
+  height: 580px;
   position: relative;
   justify-content: center;
   align-items: center;
   display: flex;
   flex-direction: column;
-  margin-top: 80rem;
+  margin-top: 80px;
 
   background-image: url(${({ imgRecruitBg }) => imgRecruitBg.src});
   background-repeat: no-repeat;
@@ -97,11 +97,11 @@ export const Wrapper = styled.div<{ imgRecruitBg: StaticImageData }>`
 
   /* 태블릿 뷰 */
   @media (max-width: 1299px) and (min-width: 766px) {
-    height: 400rem;
+    height: 400px;
   }
   /* 모바일 뷰 */
   @media (max-width: 765.9px) {
-    margin-top: 48rem;
-    font-size: 28rem;
+    margin-top: 48px;
+    font-size: 28px;
   }
 `;

@@ -1,134 +1,134 @@
 import styled from '@emotion/styled';
 
 const BaseChip = styled.div`
-  line-height: 42rem;
-  font-size: 22rem;
+  line-height: 42px;
+  font-size: 22px;
 
   /* 태블릿 뷰 */
   @media (max-width: 1299px) and (min-width: 766px) {
-    font-size: 18rem;
+    font-size: 18px;
   }
 
   @media (max-width: 765.9px) {
-    line-height: 18rem;
-    font-size: 16rem;
+    line-height: 18px;
+    font-size: 16px;
   }
 `;
 
 const BlueChip = styled(BaseChip)`
   color: #fff;
-  padding-left: 20rem;
+  padding-left: 20px;
   &:before {
     content: '✏️';
-    padding-right: 10rem;
+    padding-right: 10px;
   }
 `;
 
 const GreenChip = styled(BaseChip)`
   color: #bdec00;
-  padding-left: 20rem;
+  padding-left: 20px;
   &:before {
     content: '👍';
-    padding-right: 10rem;
+    padding-right: 10px;
   }
 `;
 
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 70rem;
+  gap: 70px;
   /* 태블릿 뷰 */
   @media (max-width: 1299px) and (min-width: 766px) {
-    gap: 40rem;
+    gap: 40px;
   }
   /* 모바일 뷰 */
   @media (max-width: 765.9px) {
-    gap: 24rem;
+    gap: 24px;
   }
 `;
 
 const BaseText = styled.div`
   color: #fff;
-  font-size: 24rem;
+  font-size: 24px;
   font-style: normal;
-  letter-spacing: -0.48rem;
+  letter-spacing: -0.48px;
   white-space: pre-line;
   /* 태블릿 뷰 */
   @media (max-width: 1299px) and (min-width: 766px) {
-    font-size: 16rem;
+    font-size: 16px;
     font-style: normal;
-    letter-spacing: -0.32rem;
+    letter-spacing: -0.32px;
   }
   /* 모바일 뷰 */
   @media (max-width: 765.9px) {
-    font-size: 16rem;
+    font-size: 16px;
     font-style: normal;
-    letter-spacing: -0.32rem;
+    letter-spacing: -0.32px;
   }
 `;
 
 const InfoWrapper = styled(BaseText)`
-  border-radius: 30rem;
+  border-radius: 30px;
   background: #222220;
-  padding: 45rem 80rem;
+  padding: 45px 80px;
   font-weight: 600;
-  line-height: 42rem;
+  line-height: 42px;
 
   /* 태블릿 뷰 */
   @media (max-width: 1299px) and (min-width: 766px) {
-    width: 640rem;
-    padding: 32rem 56rem;
-    border-radius: 20rem;
+    width: 640px;
+    padding: 32px 56px;
+    border-radius: 20px;
     line-height: 180%;
   }
   /* 모바일 뷰 */
   @media (max-width: 765.9px) {
-    width: 323rem;
-    padding: 22rem 28rem;
-    border-radius: 20rem;
+    width: 323px;
+    padding: 22px 28px;
+    border-radius: 20px;
     line-height: 170%;
   }
 `;
 
 const FitWrapper = styled(BaseText)`
-  border-radius: 30rem;
+  border-radius: 30px;
   background: #21270f;
-  padding: 60rem 80rem;
+  padding: 60px 80px;
   display: flex;
   flex-direction: column;
-  line-height: 40rem;
-  gap: 12rem;
+  line-height: 40px;
+  gap: 12px;
   width: 100%;
 
   font-weight: 400;
-  line-height: 50rem;
+  line-height: 50px;
 
   & * {
     font-size: 100%;
   }
 
   & div {
-    padding-left: 14rem;
-    text-indent: -14rem;
+    padding-left: 14px;
+    text-indent: -14px;
   }
 
   & div::before {
     content: '-';
-    padding-right: 5rem;
+    padding-right: 5px;
   }
   /* 태블릿 뷰 */
   @media (max-width: 1299px) and (min-width: 766px) {
-    width: 640rem;
-    padding: 32rem 56rem;
-    border-radius: 24rem;
+    width: 640px;
+    padding: 32px 56px;
+    border-radius: 24px;
     line-height: 180%;
   }
   /* 모바일 뷰 */
   @media (max-width: 765.9px) {
-    width: 323rem;
-    padding: 22rem 28rem;
-    gap: 8rem;
-    border-radius: 20rem;
+    width: 323px;
+    padding: 22px 28px;
+    gap: 8px;
+    border-radius: 20px;
     line-height: 170%;
   }
 `;

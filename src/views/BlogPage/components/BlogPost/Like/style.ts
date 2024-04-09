@@ -5,22 +5,22 @@ export const Like = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 3rem;
+  gap: 3px;
 
   position: absolute;
-  top: 10rem;
-  right: 10rem;
+  top: 10px;
+  right: 10px;
 
-  height: 28rem;
-  padding: 2rem 8rem;
-  border-radius: 6rem;
+  height: 28px;
+  padding: 2px 8px;
+  border-radius: 6px;
   background: ${colors.grayAlpha100};
 
   color: ${colors.gray100};
-  font-size: 14rem;
+  font-size: 14px;
   font-weight: 400;
-  line-height: 160%; /* 22.4rem */
-  letter-spacing: -0.21rem;
+  line-height: 160%; /* 22.4px */
+  letter-spacing: -0.21px;
 
   transition: opacity 0.1s ease-out;
 

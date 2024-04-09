@@ -62,43 +62,43 @@ const Wrapper = styled.div`
 const SectionWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 8rem;
+  gap: 8px;
   /* 태블릿 뷰 */
   @media (max-width: 1299px) and (min-width: 766px) {
-    gap: 8rem;
+    gap: 8px;
   }
   /* 모바일 뷰 */
   @media (max-width: 765.9px) {
-    gap: 2rem;
+    gap: 2px;
   }
 `;
 
 const ItemWrapper = styled.div`
   display: flex;
-  gap: 40rem;
+  gap: 40px;
 
   /* 태블릿 뷰 */
   @media (max-width: 1299px) and (min-width: 766px) {
-    gap: 24rem;
+    gap: 24px;
   }
   /* 모바일 뷰 */
   @media (max-width: 765.9px) {
-    gap: 16rem;
+    gap: 16px;
   }
 `;
 
 const IconImage = styled(Image)`
-  width: 98rem;
-  height: 98rem;
+  width: 98px;
+  height: 98px;
   /* 태블릿 뷰 */
   @media (max-width: 1299px) and (min-width: 766px) {
-    width: 60rem;
-    height: 60rem;
+    width: 60px;
+    height: 60px;
   }
   /* 모바일 뷰 */
   @media (max-width: 765.9px) {
-    width: 50rem;
-    height: 50rem;
+    width: 50px;
+    height: 50px;
   }
 `;
 
@@ -106,30 +106,30 @@ const GridWrapper = styled.div`
   display: grid;
   grid-template-columns: auto auto;
   justify-content: space-between;
-  row-gap: 80rem;
-  column-gap: 160rem;
-  margin-top: 80rem;
+  row-gap: 80px;
+  column-gap: 160px;
+  margin-top: 80px;
   /* 태블릿 뷰 */
   @media (max-width: 1299px) and (min-width: 766px) {
     grid-template-columns: 1fr;
-    row-gap: 60rem;
-    margin-top: 48rem;
+    row-gap: 60px;
+    margin-top: 48px;
   }
   /* 모바일 뷰 */
   @media (max-width: 765.9px) {
     grid-template-columns: 1fr;
-    row-gap: 40rem;
-    margin-top: 30rem;
+    row-gap: 40px;
+    margin-top: 30px;
   }
 `;
 
 const IconWrapper = styled.div`
-  width: 100rem;
-  height: 100rem;
+  width: 100px;
+  height: 100px;
   /* 태블릿 뷰 */
   @media (max-width: 1299px) and (min-width: 766px) {
-    width: 60rem;
-    height: 60rem;
+    width: 60px;
+    height: 60px;
     & svg {
       transform-origin: top left;
       transform: scale(0.6);
@@ -137,8 +137,8 @@ const IconWrapper = styled.div`
   }
   /* 모바일 뷰 */
   @media (max-width: 765.9px) {
-    width: 50rem;
-    height: 50rem;
+    width: 50px;
+    height: 50px;
     & svg {
       transform-origin: top left;
       transform: scale(0.5);
@@ -148,60 +148,60 @@ const IconWrapper = styled.div`
 
 const Title = styled.div`
   color: #787878;
-  font-size: 30rem;
+  font-size: 30px;
   font-weight: 400;
-  line-height: 30rem; /* 100% */
-  letter-spacing: -0.3rem;
-  margin-bottom: 18rem;
+  line-height: 30px; /* 100% */
+  letter-spacing: -0.3px;
+  margin-bottom: 18px;
   /* 태블릿 뷰 */
   @media (max-width: 1299px) and (min-width: 766px) {
     color: #787878;
-    font-size: 18rem;
+    font-size: 18px;
     font-style: normal;
     font-weight: 400;
-    line-height: 150%; /* 27rem */
-    letter-spacing: -0.18rem;
-    margin-bottom: 4rem;
+    line-height: 150%; /* 27px */
+    letter-spacing: -0.18px;
+    margin-bottom: 4px;
   }
   /* 모바일 뷰 */
   @media (max-width: 765.9px) {
     color: #787878;
-    font-size: 14rem;
+    font-size: 14px;
     font-style: normal;
     font-weight: 400;
-    line-height: 150%; /* 21rem */
-    letter-spacing: -0.14rem;
-    margin-bottom: 4rem;
+    line-height: 150%; /* 21px */
+    letter-spacing: -0.14px;
+    margin-bottom: 4px;
   }
 `;
 
 const Sub = styled.div`
   color: #fff;
-  font-size: 40rem;
+  font-size: 40px;
   font-weight: 600;
-  line-height: 50rem; /* 125% */
-  letter-spacing: -0.4rem;
+  line-height: 50px; /* 125% */
+  letter-spacing: -0.4px;
   text-decoration-line: underline;
   cursor: pointer;
 
   /* 태블릿 뷰 */
   @media (max-width: 1299px) and (min-width: 766px) {
     color: #fff;
-    font-size: 24.534rem;
+    font-size: 24.534px;
     font-style: normal;
     font-weight: 600;
-    line-height: 30.667rem; /* 125% */
-    letter-spacing: -0.245rem;
+    line-height: 30.667px; /* 125% */
+    letter-spacing: -0.245px;
     text-decoration-line: underline;
   }
   /* 모바일 뷰 */
   @media (max-width: 765.9px) {
     color: #fff;
-    font-size: 18rem;
+    font-size: 18px;
     font-style: normal;
     font-weight: 600;
-    line-height: 28rem; /* 155.556% */
-    letter-spacing: -0.18rem;
+    line-height: 28px; /* 155.556% */
+    letter-spacing: -0.18px;
     text-decoration-line: underline;
   }
 `;

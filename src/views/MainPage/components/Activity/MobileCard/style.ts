@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 export const Container = styled.section`
   display: flex;
   flex-direction: column;
-  gap: 12rem;
+  gap: 12px;
   overflow: hidden;
 `;
 
@@ -15,12 +15,12 @@ export const PartButtonList = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
-  gap: 5rem;
+  gap: 5px;
 `;
 
 export const DotButton = styled.div<{ isSelected: boolean }>`
-  width: 7rem;
-  height: 7rem;
+  width: 7px;
+  height: 7px;
   background-color: ${({ isSelected }) => (isSelected ? '#2D4C79' : '#2d4c791a')};
   border-radius: 50%;
 
@@ -29,14 +29,14 @@ export const DotButton = styled.div<{ isSelected: boolean }>`
   }
 
   @media (max-width: 428px) {
-    width: 4rem;
-    height: 4rem;
+    width: 4px;
+    height: 4px;
   }
 `;
 
 export const Carousel = styled.div`
   display: flex;
-  column-gap: 20rem;
+  column-gap: 20px;
 `;
 
 export const Slide = styled.div`
@@ -63,13 +63,13 @@ export const Arrow = styled.div`
   }
 
   @media (max-width: 768px) {
-    width: 26rem;
+    width: 26px;
   }
 
   @media (max-width: 428px) {
-    width: 15.293rem;
+    width: 15.293px;
     & > img {
-      height: 24.138rem;
+      height: 24.138px;
     }
   }
 `;
@@ -85,5 +85,5 @@ export const RightArrow = styled(Arrow)`
 export const CarouselWrapper = styled.div`
   position: relative;
   overflow: hidden;
-  border-radius: 19rem;
+  border-radius: 19px;
 `;

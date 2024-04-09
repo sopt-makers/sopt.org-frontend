@@ -40,14 +40,14 @@ export const StyledHeader = styled.div<{ isMenuShown: boolean }>`
   width: 100%;
   z-index: 10;
   background-color: ${({ isMenuShown }) => (isMenuShown ? colors.gray950 : 'initial')};
-  padding: 0 20rem;
+  padding: 0 20px;
   height: 100%;
   transition: background-color 0.6s;
 `;
 
 export const Logo = styled.button`
-  width: 63rem;
-  height: 21rem;
+  width: 63px;
+  height: 21px;
   background: url(${imgLogoSopt.src}) center no-repeat;
   background-size: 100% 100%;
   cursor: pointer;
@@ -55,8 +55,8 @@ export const Logo = styled.button`
 
 export const ToggleButton = styled.button`
   position: relative;
-  width: 22rem;
-  height: 22rem;
+  width: 22px;
+  height: 22px;
   cursor: pointer;
 `;
 

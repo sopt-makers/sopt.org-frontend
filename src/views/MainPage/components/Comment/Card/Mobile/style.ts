@@ -5,27 +5,27 @@ export const Wrapper = styled.div<{ color: string }>`
   background-color: ${({ color }) => color};
   display: flex;
   flex-direction: column;
-  height: 480rem;
-  border-radius: 21rem;
-  padding: 42rem 40rem;
+  height: 480px;
+  border-radius: 21px;
+  padding: 42px 40px;
 
   font-family: SUIT;
-  font-size: 19rem;
+  font-size: 19px;
   font-style: normal;
   font-weight: 400;
-  line-height: 33.3rem; /* 177.5% */
-  letter-spacing: -0.8rem;
+  line-height: 33.3px; /* 177.5% */
+  letter-spacing: -0.8px;
   color: ${colors.white};
 
   @media (max-width: 520px) {
-    height: 280rem;
-    border-radius: 12rem;
-    padding: 24rem 20rem;
-    font-size: 12.669rem;
+    height: 280px;
+    border-radius: 12px;
+    padding: 24px 20px;
+    font-size: 12.669px;
     font-style: normal;
     font-weight: 400;
-    line-height: 20.85rem; /* 164.575% */
-    letter-spacing: -0.507rem;
+    line-height: 20.85px; /* 164.575% */
+    letter-spacing: -0.507px;
   }
 
   & > div {
@@ -37,7 +37,7 @@ export const Footer = styled.div`
   flex: 1;
   display: flex;
   align-items: flex-end;
-  gap: 8rem;
+  gap: 8px;
   font-weight: 600;
   font-size: 100%;
 
