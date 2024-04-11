@@ -6,7 +6,7 @@ import arrowRightWhite from '@src/assets/icons/arrow_right_white.svg';
 import { useHorizontalScroll } from '@src/hooks/useHorizontalScroll';
 import { parsePartToKorean } from '@src/lib/utils/parsePartToKorean';
 import { SectionTitle, SectionTitleTranslate, SectionTitleWrapper } from '../common/style';
-import useFetch from './hooks/useFetch';
+import { useGetSampleReviews } from './hooks/queries/useGetSampleReviews';
 import {
   Arrow,
   ArrowWrapper,
@@ -22,7 +22,8 @@ import {
 } from './style';
 
 export default function ActivityReview() {
-  const reviews = useFetch();
+  const { data, isLoading } = useGetSampleReviews();
+
   const {
     scrollableRef,
     onClickLeftButton,
@@ -31,7 +32,7 @@ export default function ActivityReview() {
     isRightScrollable,
   } = useHorizontalScroll(1032, 1);
 
-  if (reviews._TAG !== 'OK') return null;
+  if (isLoading) return null;
 
   return (
     <ContainerWrapper>
@@ -44,7 +45,7 @@ export default function ActivityReview() {
           <ArrowLeft stroke={isLeftScrollable ? 'white' : 'grey'} />
         </ArrowWrapper>
         <Content ref={scrollableRef}>
-          {reviews.data.map((review) => (
+          {data?.map((review) => (
             <Link
               key={review.id}
               href={review.url}
