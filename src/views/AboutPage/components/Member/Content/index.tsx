@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 import Flex from '@src/components/common/Flex';
 import OvalSpinner from '@src/components/common/OvalSpinner';
 import { emptyMembers } from '@src/views/AboutPage/constant/emptyMembers';
-import { useGetMember } from '@src/views/AboutPage/hooks/queries/useGetMemeber';
+import useGetMember from '@src/views/AboutPage/hooks/queries/useGetMemeber';
 import MemberCard from '../Card';
 import * as St from './style';
 

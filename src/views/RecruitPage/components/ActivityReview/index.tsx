@@ -6,7 +6,7 @@ import arrowRightWhite from '@src/assets/icons/arrow_right_white.svg';
 import { useHorizontalScroll } from '@src/hooks/useHorizontalScroll';
 import { parsePartToKorean } from '@src/lib/utils/parsePartToKorean';
 import { SectionTitle, SectionTitleTranslate, SectionTitleWrapper } from '../common/style';
-import { useGetSampleReviews } from './hooks/queries/useGetSampleReviews';
+import useGetSampleReviews from './hooks/queries/useGetSampleReviews';
 import {
   Arrow,
   ArrowWrapper,

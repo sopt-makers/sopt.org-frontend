@@ -7,13 +7,11 @@ const getMember = async () => {
   return response;
 };
 
-export default getMember;
-
-export const useGetMember = () => {
+export default function useGetMember() {
   const { data, isLoading } = useQuery({
     queryKey: ['member'],
     queryFn: getMember,
   });
 
   return { data, isLoading };
-};
+}

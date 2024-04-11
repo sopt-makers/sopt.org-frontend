@@ -7,11 +7,11 @@ const getSampleReviews = async () => {
   return data.reviews;
 };
 
-export const useGetSampleReviews = () => {
+export default function useGetSampleReviews() {
   const { data, isLoading } = useQuery({
     queryKey: ['sample-reviews'],
     queryFn: getSampleReviews,
   });
 
   return { data, isLoading };
-};
+}
