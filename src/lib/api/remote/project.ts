@@ -6,7 +6,7 @@ import {
   ProjectAPI,
   ProjectCategoryType,
   ProjectPlatformType,
-  ProjectType,
+  ProjectResponse,
 } from '../../types/project';
 
 const client = axios.create({ baseURL: BASE_URL });
@@ -24,7 +24,7 @@ const getProjectList = async (
   category: ProjectCategoryType,
   platform: ProjectPlatformType,
   pageNo: number,
-): Promise<ProjectType[]> => {
+): Promise<ProjectResponse> => {
   const categoryParameter = category === ProjectCategoryType.ALL ? {} : { filter: category };
   const platformParameter = platform === ProjectPlatformType.ALL ? {} : { platform };
   const parameter = qs.stringify({ ...categoryParameter, ...platformParameter, pageNo });
