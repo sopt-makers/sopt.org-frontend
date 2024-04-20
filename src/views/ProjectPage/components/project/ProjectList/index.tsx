@@ -4,7 +4,7 @@ import useInfiniteScroll from '@src/views/BlogPage/hooks/useInfiniteScroll';
 import ProjectCardList from '@src/views/ProjectPage/components/project/ProjectCardList';
 import ProjectCategoryDescription from '@src/views/ProjectPage/components/project/ProjectCategoryDescription';
 import ProjectListCount from '@src/views/ProjectPage/components/project/ProjectListCount';
-import { useGetProjectList } from '@src/views/ProjectPage/hooks/queries';
+import { useGetProjectList } from '@src/views/ProjectPage/hooks/useGetProjectList';
 import * as S from './style';
 
 interface ProjectListProp {
