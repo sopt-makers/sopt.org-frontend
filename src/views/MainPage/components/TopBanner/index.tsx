@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { ReactComponent as IcTimer } from '@src/assets/icons/ic_timer.svg';
 import Timer from '@src/components/common/Timer';
 import { useIsMobile } from '@src/hooks/useDevice';
-import useGetVisitor from '../../hooks/queries/useGetVisitor';
+import useGetVisitor from '../../hooks/useGetVisitor';
 import * as S from './style';
 
 export default function TopBanner() {
