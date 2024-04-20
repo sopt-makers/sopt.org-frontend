@@ -14,6 +14,7 @@
     "plugin:@typescript-eslint/recommended",
     "plugin:jsx-a11y/recommended",
     "plugin:import/typescript",
+    "plugin:@tanstack/eslint-plugin-query/recommended",
     "prettier",
     "next"
   ],

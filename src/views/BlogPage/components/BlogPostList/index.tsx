@@ -1,7 +1,7 @@
 import OvalSpinner from '@src/components/common/OvalSpinner';
 import type { PartCategoryType } from '@src/lib/types/blog';
 import BlogPost from '@src/views/BlogPage/components/BlogPost';
-import { useGetResponse } from '../../hooks/queries/useGetResponse';
+import { useGetResponse } from '../../hooks/useGetResponse';
 import useInfiniteScroll from '../../hooks/useInfiniteScroll';
 import { selectedType } from '../BlogTab/types';
 import EmptyBlogPostList from '../EmptyBlogPostList';
@@ -20,11 +20,12 @@ export default function BlogPostList({
 }: BlogPostListProps) {
   const { selectedTab, selectedMajorCategory, selectedSubCategory } = selected;
 
-  const { response, hasNextPage, fetchNextPage, isFetching } = useGetResponse(
+  const { response, hasNextPage, fetchNextPage } = useGetResponse(
     selectedTab,
     selectedMajorCategory,
     selectedSubCategory,
   );
+
   const { ref } = useInfiniteScroll(fetchNextPage);
 
   return (
@@ -39,10 +40,10 @@ export default function BlogPostList({
         <>
           <S.BlogPostList>
             {response?.map((blogPost) => (
-              <BlogPost key={blogPost.id} blogPost={blogPost} selectedTab={selectedTab} />
+              <BlogPost key={blogPost.title} blogPost={blogPost} selectedTab={selectedTab} />
             ))}
           </S.BlogPostList>
-          {(hasNextPage || isFetching) && (
+          {hasNextPage && (
             <S.SpinnerWrapper ref={hasNextPage ? ref : undefined}>
               <OvalSpinner />
             </S.SpinnerWrapper>

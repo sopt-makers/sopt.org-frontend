@@ -14,7 +14,7 @@ const client = axios.create({
 export const getResponse = async (
   majorTab: number,
   subTab: PartCategoryType,
-  pageNo = 1,
+  pageNo: number | unknown = 1,
 ): Promise<BlogResponse> => {
   const generationParameter = majorTab === 0 ? {} : { generation: majorTab };
   const partParameter = subTab === PartCategoryType.ALL ? {} : { part: subTab };
