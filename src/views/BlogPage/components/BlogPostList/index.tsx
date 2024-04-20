@@ -1,7 +1,7 @@
 import OvalSpinner from '@src/components/common/OvalSpinner';
 import type { PartCategoryType } from '@src/lib/types/blog';
 import BlogPost from '@src/views/BlogPage/components/BlogPost';
-import { useGetResponse } from '../../hooks/queries/useGetResponse';
+import { useGetResponse } from '../../hooks/useGetResponse';
 import useInfiniteScroll from '../../hooks/useInfiniteScroll';
 import { selectedType } from '../BlogTab/types';
 import EmptyBlogPostList from '../EmptyBlogPostList';

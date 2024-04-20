@@ -2,7 +2,7 @@ import { useInfiniteQuery } from '@tanstack/react-query';
 import { getResponse as getReviewResponse } from '@src/lib/api/remote/review';
 import { getResponse as getArticleResponse } from '@src/lib/api/remote/sopticle';
 import { BlogResponse, PartCategoryType } from '@src/lib/types/blog';
-import { BlogTabType } from '../../components/BlogTab/types';
+import { BlogTabType } from '../components/BlogTab/types';
 
 const getTabResponse = (
   selectedTab: BlogTabType,
