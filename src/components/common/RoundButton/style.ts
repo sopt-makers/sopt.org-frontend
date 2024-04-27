@@ -10,7 +10,7 @@ export const Root = styled.button`
   background: ${colors.gray10};
 
   color: ${colors.gray950};
-  font-size: 22px;
+  font-size: 22rem;
   font-weight: 600;
   line-height: 150%; /* 36px */
   letter-spacing: -0.48px;
@@ -18,6 +18,6 @@ export const Root = styled.button`
 
   @media (max-width: 26.75rem) {
     padding: 8px 22px;
-    font-size: 18px;
+    font-size: 18rem;
   }
 `;

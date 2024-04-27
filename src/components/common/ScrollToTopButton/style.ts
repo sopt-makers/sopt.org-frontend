@@ -45,7 +45,7 @@ export const Wrapper = styled.button`
 
 export const Text = styled.span`
   font-weight: 600;
-  font-size: 24px;
+  font-size: 24rem;
   line-height: 48px;
   color: #ffffff;
   // 모바일 태블릿

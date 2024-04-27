@@ -18,7 +18,7 @@ export const Tab = styled.div<{ selected: boolean }>`
   border-radius: 10px;
   color: ${({ selected }) => (selected ? '#FFFFFF' : '#cccccc')};
   background-color: ${({ selected }) => (selected ? '#222220' : 'inherit')};
-  font-size: 23px;
+  font-size: 23rem;
 
   min-width: 121px;
   &:hover {
@@ -27,12 +27,12 @@ export const Tab = styled.div<{ selected: boolean }>`
 
   @media (max-width: 81.1875rem) and (min-width: 47.875rem) {
     padding: 12px 0;
-    font-size: 14px;
+    font-size: 14rem;
   }
 
   @media (max-width: 47.86875rem) {
     min-width: 101px;
     padding: 12px 0;
-    font-size: 16px;
+    font-size: 16rem;
   }
 `;

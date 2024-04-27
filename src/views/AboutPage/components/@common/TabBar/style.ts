@@ -35,7 +35,7 @@ export const Tab = styled.li<{ selected: boolean }>`
   color: rgba(255, 255, 255, 0.5);
   text-align: center;
   font-family: SUIT;
-  font-size: 20px;
+  font-size: 20rem;
   font-style: normal;
   font-weight: 400;
   line-height: 100%; /* 20px */
@@ -55,7 +55,7 @@ export const Tab = styled.li<{ selected: boolean }>`
     width: 130.254px;
     padding: 14.635px 11.708px;
     border-radius: 7.318px;
-    font-size: 14.635px;
+    font-size: 14.635rem;
     letter-spacing: -0.293px;
   }
 
@@ -64,7 +64,7 @@ export const Tab = styled.li<{ selected: boolean }>`
     width: 92.127px;
     padding: 10.351px 8.281px;
     border-radius: 5.176px;
-    font-size: 10.351px;
+    font-size: 10.351rem;
     letter-spacing: -0.207px;
   }
 `;

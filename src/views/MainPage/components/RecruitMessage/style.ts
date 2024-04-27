@@ -30,7 +30,7 @@ export const Title = styled.h1`
   color: ${colors.white};
   text-align: center;
   font-family: SUIT;
-  font-size: 40px;
+  font-size: 40rem;
   font-style: normal;
   font-weight: 700;
   line-height: 140%; /* 56px */
@@ -38,11 +38,11 @@ export const Title = styled.h1`
   margin-bottom: 11px;
 
   @media (max-width: 48rem) {
-    font-size: 34px;
+    font-size: 34rem;
   }
 
   @media (max-width: 23.5rem) {
-    font-size: 20px;
+    font-size: 20rem;
   }
 `;
 
@@ -50,7 +50,7 @@ export const Description = styled.p`
   color: rgba(255, 255, 255, 0.7);
   text-align: center;
   font-family: SUIT;
-  font-size: 24px;
+  font-size: 24rem;
   font-style: normal;
   font-weight: 400;
   line-height: 140%; /* 33.6px */
@@ -58,13 +58,13 @@ export const Description = styled.p`
   margin-bottom: 75px;
 
   @media (max-width: 48rem) {
-    font-size: 21px;
+    font-size: 21rem;
     line-height: 142%; /* 17.04px */
     margin-bottom: 59px;
   }
 
   @media (max-width: 23.5rem) {
-    font-size: 12px;
+    font-size: 12rem;
     margin-bottom: 34px;
   }
 `;
@@ -82,7 +82,7 @@ export const GoToRecruit = styled.a`
 
   color: #e8f1ff;
   font-family: SUIT;
-  font-size: 30px;
+  font-size: 30rem;
   font-style: normal;
   font-weight: 500;
   line-height: 30px; /* 100% */
@@ -95,7 +95,7 @@ export const GoToRecruit = styled.a`
     border-radius: 19.221px;
     box-shadow: 0 0 0 1.705px #5b88f8 inset;
 
-    font-size: 23px;
+    font-size: 23rem;
     line-height: 23.065px; /* 100.282% */
     letter-spacing: -0.46px;
   }
@@ -106,7 +106,7 @@ export const GoToRecruit = styled.a`
     border-radius: 11.046px;
     box-shadow: 0 0 0 0.98px #5b88f8 inset;
 
-    font-size: 13.218px;
+    font-size: 13.218rem;
     line-height: 13.256px; /* 100.282% */
     letter-spacing: -0.264px;
   }

@@ -39,13 +39,13 @@ export const CardItem = styled.li`
   border-radius: 30px;
   background-color: #181818;
 
-  font-size: 27px;
+  font-size: 27rem;
   font-weight: 400;
   line-height: 161%;
   letter-spacing: -0.81px;
 
   & > i {
-    font-size: 58px;
+    font-size: 58rem;
     font-weight: 400;
     line-height: 164%;
     font-style: normal;
@@ -58,13 +58,13 @@ export const CardItem = styled.li`
   /* 태블릿 뷰 */
   @media (max-width: 81.1875rem) and (min-width: 47.875rem) {
     padding: 42px 0 54px 0;
-    font-size: 22px;
+    font-size: 22rem;
   }
   /* 모바일 뷰 */
   @media (max-width: 47.86875rem) {
     padding: 42px 0 66px 0;
     width: 323px;
     border-radius: 20px;
-    font-size: 18px;
+    font-size: 18rem;
   }
 `;

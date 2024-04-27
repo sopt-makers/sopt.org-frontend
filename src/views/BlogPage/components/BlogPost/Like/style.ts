@@ -17,7 +17,7 @@ export const Like = styled.div`
   background: ${colors.grayAlpha100};
 
   color: ${colors.gray100};
-  font-size: 14px;
+  font-size: 14rem;
   font-weight: 400;
   line-height: 160%; /* 22.4px */
   letter-spacing: -0.21px;

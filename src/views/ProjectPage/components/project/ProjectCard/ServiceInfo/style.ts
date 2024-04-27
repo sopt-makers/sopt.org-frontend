@@ -10,7 +10,7 @@ export const Info = styled.div`
 
   /* Label/3_SB */
   font-family: SUIT;
-  font-size: 12px;
+  font-size: 12rem;
   font-style: normal;
   font-weight: 600;
   line-height: 16px; /* 133.333% */

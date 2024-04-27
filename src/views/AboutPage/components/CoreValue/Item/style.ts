@@ -76,11 +76,11 @@ export const ValueTop = styled.div`
 
   /* 태블릿 뷰 */
   @media (max-width: 48rem) {
-    font-size: 24px;
+    font-size: 24rem;
   }
   /* 모바일 뷰 */
   @media (max-width: 26.75rem) {
-    font-size: 24px;
+    font-size: 24rem;
     line-height: 33px;
   }
 `;
@@ -98,7 +98,7 @@ export const ValueNumber = styled.div`
 
   color: ${colors.white};
   font-family: SUIT;
-  font-size: 17px;
+  font-size: 17rem;
   font-style: normal;
   font-weight: 500;
   line-height: 17px; /* 100% */
@@ -109,7 +109,7 @@ export const ValueNumber = styled.div`
     width: 17.791px;
     height: 17.791px;
 
-    font-size: 12.024px;
+    font-size: 12.024rem;
     line-height: 12.024px; /* 100% */
     letter-spacing: -0.12px;
   }
@@ -118,7 +118,7 @@ export const ValueNumber = styled.div`
 export const ValueTitle = styled.h2`
   color: ${colors.white};
   font-family: SUIT;
-  font-size: 27px;
+  font-size: 27rem;
   font-style: normal;
   font-weight: 700;
   line-height: 60px; /* 222.222% */
@@ -127,7 +127,7 @@ export const ValueTitle = styled.h2`
 
   /* 모바일 뷰 */
   @media (max-width: 26.75rem) {
-    font-size: 19.097px;
+    font-size: 19.097rem;
     line-height: 42.437px; /* 222.222% */
     letter-spacing: -0.191px;
   }
@@ -149,7 +149,7 @@ export const ValueDescription = styled.div<{ isHovered: boolean }>`
   color: #fff;
   text-align: center;
   font-family: SUIT;
-  font-size: 23px;
+  font-size: 23rem;
 
   font-style: normal;
   font-weight: 500;
@@ -162,7 +162,7 @@ export const ValueDescription = styled.div<{ isHovered: boolean }>`
   /* 모바일 뷰 */
   @media (max-width: 26.75rem) {
     width: 159px;
-    font-size: 16px;
+    font-size: 16rem;
     line-height: 30px;
   }
 `;

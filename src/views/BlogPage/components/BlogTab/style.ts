@@ -38,7 +38,7 @@ export const TabContainer = styled.section`
 `;
 
 export const TabTitle = styled.article<{ isSelected: boolean }>`
-  font-size: 24px;
+  font-size: 24rem;
   height: 100%;
   line-height: 36px;
   font-weight: 700;
@@ -57,7 +57,7 @@ export const TabTitle = styled.article<{ isSelected: boolean }>`
   @media (max-width: 47.9375rem) {
     border-bottom: ${({ isSelected }) => isSelected && `1px solid ${colors.gray200}`};
     margin-right: 12px;
-    font-size: 18px;
+    font-size: 18rem;
     padding-bottom: 6px;
   }
 
@@ -71,7 +71,7 @@ export const TabDescription = styled.h1`
   margin-bottom: 48px;
   word-break: keep-all;
 
-  font-size: 20px;
+  font-size: 20rem;
   font-weight: 600;
   line-height: 30px;
   letter-spacing: -0.4px;
@@ -91,7 +91,7 @@ export const TabDescription = styled.h1`
     border-radius: 12px;
     background: ${colors.gray800};
 
-    font-size: 14px;
+    font-size: 14rem;
     font-weight: 500;
     line-height: 23.1px;
     letter-spacing: -0.21px;

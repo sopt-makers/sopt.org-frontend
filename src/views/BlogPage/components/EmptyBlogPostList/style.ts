@@ -9,7 +9,7 @@ export const EmptyBlogPostListWrapper = styled.section`
 
 export const EmptyBlogPostList = styled.section`
   color: ${colors.white};
-  font-size: 32px;
+  font-size: 32rem;
   font-weight: 700;
   line-height: 48px; /* 150% */
   letter-spacing: -0.64px;
@@ -19,7 +19,7 @@ export const EmptyBlogPostList = styled.section`
 
   /* 모바일 뷰 */
   @media (max-width: 47.9375rem) {
-    font-size: 18px;
+    font-size: 18rem;
     line-height: 28px; /* 155.556% */
     letter-spacing: -0.36px;
     margin-top: 90px;
@@ -38,7 +38,7 @@ export const Total = styled.button`
   border-radius: 8px;
   color: ${colors.gray950};
   font-family: SUIT;
-  font-size: 16px;
+  font-size: 16rem;
   font-weight: 600;
   line-height: 22px; /* 137.5% */
   letter-spacing: -0.32px;
@@ -51,7 +51,7 @@ export const Total = styled.button`
   @media (max-width: 47.9375rem) {
     height: 36px;
     padding: 8px 14px;
-    font-size: 14px;
+    font-size: 14rem;
     line-height: 18px; /* 128.571% */
     letter-spacing: -0.28px;
   }

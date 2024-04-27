@@ -10,7 +10,7 @@ export const Wrapper = styled.div<{ color: string }>`
   padding: 42px 40px;
 
   font-family: SUIT;
-  font-size: 19px;
+  font-size: 19rem;
   font-style: normal;
   font-weight: 400;
   line-height: 33.3px; /* 177.5% */
@@ -21,7 +21,7 @@ export const Wrapper = styled.div<{ color: string }>`
     height: 280px;
     border-radius: 12px;
     padding: 24px 20px;
-    font-size: 12.669px;
+    font-size: 12.669rem;
     font-style: normal;
     font-weight: 400;
     line-height: 20.85px; /* 164.575% */

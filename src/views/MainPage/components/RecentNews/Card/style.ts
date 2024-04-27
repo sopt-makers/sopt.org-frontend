@@ -31,7 +31,7 @@ export const Background = styled.main`
 export const Title = styled.h1`
   color: ${colors.white};
   font-family: SUIT;
-  font-size: 20px;
+  font-size: 20rem;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
@@ -44,7 +44,7 @@ export const Title = styled.h1`
   z-index: 2;
 
   @media (max-width: 26.75rem) {
-    font-size: 9px;
+    font-size: 9rem;
     letter-spacing: -0.285px;
     margin: 14px;
   }

@@ -56,7 +56,7 @@ export const CardKorNav = styled.nav`
 
   color: ${colors.white};
   font-family: SUIT;
-  font-size: 21px;
+  font-size: 21rem;
   font-style: normal;
   font-weight: 600;
   line-height: 28.288px; /* 134.707% */
@@ -70,7 +70,7 @@ export const CardKorNav = styled.nav`
   z-index: 3;
 
   @media (max-width: 26.75rem) and (min-width: 23.5rem) {
-    font-size: 13px;
+    font-size: 13rem;
     line-height: 16.258px; /* 135.48% */
     letter-spacing: -0.48px;
 
@@ -81,7 +81,7 @@ export const CardKorNav = styled.nav`
   }
 
   @media (max-width: 23.4375rem) {
-    font-size: 10px;
+    font-size: 10rem;
     line-height: 14.188px; /* 135.48% */
     letter-spacing: -0.419px;
 
@@ -121,14 +121,14 @@ export const Blur = styled(motion.div)`
 export const Content = styled.span<{ color: string }>`
   color: ${({ color }) => (color === 'yellow' ? '#ffe454' : '#fff')};
   font-family: SUIT;
-  font-size: 18px;
+  font-size: 18rem;
   font-style: normal;
   font-weight: 400;
   line-height: 30.476px;
   letter-spacing: -0.708px;
 
   @media (max-width: 26.75rem) {
-    font-size: 11px;
+    font-size: 11rem;
     line-height: 19px;
   }
 `;

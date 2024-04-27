@@ -35,7 +35,7 @@ const FooterLink = styled(Link)`
 
   color: #c0c5c9;
   line-height: normal;
-  font-size: 16px;
+  font-size: 16rem;
 
   &:hover {
     cursor: pointer;
@@ -46,7 +46,7 @@ const FooterButton = styled.button`
   padding: 17px 10px;
 
   color: #c0c5c9;
-  font-size: 16px;
+  font-size: 16rem;
 
   &:hover {
     cursor: pointer;

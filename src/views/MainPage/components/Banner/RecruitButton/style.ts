@@ -14,21 +14,21 @@ export const RecruitButtonWrapper = styled(Link)`
   color: ${colors.gray800};
   text-align: center;
   font-family: SUIT;
-  font-size: 28px;
+  font-size: 28rem;
   font-style: normal;
   font-weight: 700;
   line-height: 130%; /* 36.4px */
 
   /* 모바일 뷰 */
   @media (max-width: 90rem) {
-    font-size: 24px;
+    font-size: 24rem;
     margin-top: 51px;
   }
 
   /* 모바일 뷰 */
   @media (max-width: 48rem) {
     margin-top: 28px;
-    font-size: 18px;
+    font-size: 18rem;
     line-height: 28px; /* 155.556% */
     letter-spacing: -0.36px;
   }

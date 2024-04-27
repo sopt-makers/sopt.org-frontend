@@ -74,7 +74,7 @@ export const Title = styled.h1`
 
   /* 모바일 뷰 */
   @media (max-width: 26.75rem) {
-    font-size: 12px;
+    font-size: 12rem;
   }
 `;
 
@@ -95,7 +95,7 @@ export const Description = styled.div`
 
   /* 모바일 뷰 */
   @media (max-width: 26.75rem) {
-    font-size: 11px;
+    font-size: 11rem;
   }
 `;
 export const Timer = styled.div`

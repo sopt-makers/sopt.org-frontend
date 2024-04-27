@@ -18,7 +18,7 @@ export const Root = styled.h1<TitleProps>`
     padding-bottom: 5px;
 
     line-height: 31px;
-    font-size: 25px;
+    font-size: 25rem;
     font-weight: 900;
   }
 `;

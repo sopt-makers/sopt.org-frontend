@@ -39,7 +39,7 @@ const Styled = {
     cursor: pointer;
     /* 태블릿 뷰 */
     @media (max-width: 119.99375rem) and (min-width: 47.875rem) {
-      font-size: 25px;
+      font-size: 25rem;
       padding: 32px 40px;
       border-radius: 20px;
     }
@@ -60,7 +60,7 @@ const Styled = {
   `,
   Title: styled.h1`
     font-weight: 600;
-    font-size: 24px;
+    font-size: 24rem;
     line-height: 100%;
     color: #ffffff;
     &::before {
@@ -70,7 +70,7 @@ const Styled = {
 
     /* 모바일 뷰 */
     @media (max-width: 47.86875rem) {
-      font-size: 16px;
+      font-size: 16rem;
       line-height: 24px;
     }
   `,
@@ -93,7 +93,7 @@ const Styled = {
   `,
   Content: styled.div`
     font-weight: 400;
-    font-size: 25px;
+    font-size: 25rem;
     line-height: 40px;
     word-break: keep-all;
     color: rgba(253, 253, 253, 0.8);
@@ -105,11 +105,11 @@ const Styled = {
     }
     /* 태블릿 뷰 */
     @media (max-width: 119.99375rem) and (min-width: 47.875rem) {
-      font-size: 22px;
+      font-size: 22rem;
     }
     /* 모바일 뷰 */
     @media (max-width: 47.86875rem) {
-      font-size: 14px;
+      font-size: 14rem;
       line-height: 22px;
     }
   `,

@@ -42,7 +42,7 @@ export const MenuWrapper = styled(motion.div)<{ isInView?: boolean }>`
   color: rgba(168, 172, 186, 0.88);
   text-align: center;
   font-family: SUIT;
-  font-size: 19.46px;
+  font-size: 19.46rem;
   font-style: normal;
   font-weight: 500;
   line-height: 53.54px; /* 275.126% */

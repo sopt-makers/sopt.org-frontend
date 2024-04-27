@@ -30,11 +30,11 @@ export const TItle = styled.h3`
   text-align: center;
   line-height: 30px;
   color: ${colors.gray10};
-  font-size: 24px;
+  font-size: 24rem;
   font-weight: 700;
   font-style: normal;
   @media (max-width: 48rem) {
-    font-size: 16px;
+    font-size: 16rem;
   }
 `;
 
@@ -76,11 +76,11 @@ export const Contents = styled.div<ButtonStyleProps>`
   letter-spacing: -0.03em;
   white-space: pre-line;
   color: ${colors.gray10};
-  font-size: 20px;
+  font-size: 20rem;
   font-weight: 400;
   font-style: normal;
   @media (max-width: 48rem) {
-    font-size: 14px;
+    font-size: 14rem;
   }
 
   ${({ isOpened }) =>

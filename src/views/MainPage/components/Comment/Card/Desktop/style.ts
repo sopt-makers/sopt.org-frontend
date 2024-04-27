@@ -10,7 +10,7 @@ export const Wrapper = styled(motion.div)`
   padding: 32px 46px;
 
   font-family: SUIT;
-  font-size: 20px;
+  font-size: 20rem;
   font-style: normal;
   font-weight: 400;
   line-height: 35.5px; /* 177.5% */
@@ -25,7 +25,7 @@ export const Wrapper = styled(motion.div)`
     width: 520px;
     height: 324px;
     padding: 32px 36px;
-    font-size: 18px;
+    font-size: 18rem;
     line-height: 30px;
   }
 

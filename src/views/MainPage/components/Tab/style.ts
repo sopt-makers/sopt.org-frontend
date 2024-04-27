@@ -22,13 +22,13 @@ export const Tab = styled.h2`
   font-style: normal;
   font-weight: 600;
   margin-bottom: 10px;
-  font-size: 20px;
+  font-size: 20rem;
   line-height: 46.311px; /* 257.282% */
   letter-spacing: -2%;
   z-index: 1;
 
   @media (max-width: 23.5rem) {
-    font-size: 11px;
+    font-size: 11rem;
     line-height: 26.615px; /* 241.956% */
     letter-spacing: -0.22px;
     margin-bottom: 0px;
@@ -38,7 +38,7 @@ export const Tab = styled.h2`
 export const Title = styled.h1`
   color: #30324d;
   font-family: SUIT;
-  font-size: 45px;
+  font-size: 45rem;
   font-style: normal;
   font-weight: 600;
   line-height: 50.64px; /* 112.534% */
@@ -48,12 +48,12 @@ export const Title = styled.h1`
   word-break: keep-all;
 
   @media (max-width: 48rem) {
-    font-size: 36px;
+    font-size: 36rem;
     letter-spacing: -1.08px;
   }
 
   @media (max-width: 23.5rem) {
-    font-size: 21px;
+    font-size: 21rem;
     line-height: 29.103px; /* 138.588% */
     letter-spacing: -0.63px;
     margin-bottom: 3.5px;
@@ -63,7 +63,7 @@ export const Title = styled.h1`
 export const Description = styled.p`
   color: #727272;
   font-family: SUIT;
-  font-size: 17px;
+  font-size: 17rem;
   font-style: normal;
   font-weight: 400;
   line-height: 28px; /* 164.706% */
@@ -72,13 +72,13 @@ export const Description = styled.p`
   white-space: pre-line;
 
   @media (max-width: 48rem) {
-    font-size: 16px;
+    font-size: 16rem;
     line-height: 26px; /* 162.5% */
     letter-spacing: -0.64px;
   }
 
   @media (max-width: 23.5rem) {
-    font-size: 10px;
+    font-size: 10rem;
     line-height: 14.942px; /* 149.424% */
     letter-spacing: -0.4px;
   }

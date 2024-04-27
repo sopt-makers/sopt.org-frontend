@@ -3,7 +3,7 @@ import { colors } from '@sopt-makers/colors';
 
 const SectionTitle = styled.div`
   color: ${colors.gray10};
-  font-size: 28px;
+  font-size: 28rem;
   font-weight: 700;
   line-height: 150%; /* 42px */
   letter-spacing: -0.56px;
@@ -13,7 +13,7 @@ const SectionTitle = styled.div`
   }
 
   @media (max-width: 56.1875rem) {
-    font-size: 18px;
+    font-size: 18rem;
     font-weight: 700;
     letter-spacing: -0.36px;
     margin-bottom: 20px;
@@ -89,7 +89,7 @@ const PlaygroundLinkWrapper = styled.div`
   color: ${colors.gray400};
   /* Body/2_Medium_16 */
   font-family: SUIT;
-  font-size: 16px;
+  font-size: 16rem;
   font-style: normal;
   font-weight: 500;
   line-height: 165%; /* 26.4px */

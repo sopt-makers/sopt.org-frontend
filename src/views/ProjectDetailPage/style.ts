@@ -41,19 +41,19 @@ export const ProjectHeader = styled.div`
     & > h1 {
       margin-bottom: 8px;
       color: #ffffff;
-      font-size: 32px;
+      font-size: 32rem;
       font-weight: 700;
       @media (max-width: 80rem) {
-        font-size: 22px;
+        font-size: 22rem;
       }
     }
     & > p {
       line-height: 24px;
       color: #8e8e8e;
-      font-size: 22px;
+      font-size: 22rem;
       font-weight: 500;
       @media (max-width: 80rem) {
-        font-size: 15px;
+        font-size: 15rem;
       }
     }
   }
@@ -183,10 +183,10 @@ export const TeamMemberToggleImage = styled.div<{ isTeamMemberOpened: boolean }>
 
 export const Title = styled.h1`
   color: #fcfcfc;
-  font-size: 22px;
+  font-size: 22rem;
   font-weight: 700;
   @media (max-width: 80rem) {
-    font-size: 17px;
+    font-size: 17rem;
   }
 `;
 
@@ -211,11 +211,11 @@ export const ProjectInfo = styled.div<{ isLinkExist: boolean }>`
       margin-bottom: 48px;
       line-height: 18px;
       color: #cccccc;
-      font-size: 17px;
+      font-size: 17rem;
       font-weight: 500;
       /* 태블릿 뷰 */
       @media (max-width: 80rem) {
-        font-size: 14px;
+        font-size: 14rem;
       }
       &:last-child {
         margin-bottom: ${({ isLinkExist }) => (isLinkExist ? '48px' : '0')};
@@ -227,11 +227,11 @@ export const ProjectInfo = styled.div<{ isLinkExist: boolean }>`
     margin-bottom: 48px;
     line-height: 18px;
     color: #ffffff;
-    font-size: 18px;
+    font-size: 18rem;
     font-weight: 600;
     /* 태블릿 뷰 */
     @media (max-width: 80rem) {
-      font-size: 15px;
+      font-size: 15rem;
     }
     &:last-child {
       margin-bottom: ${({ isLinkExist }) => (isLinkExist ? '48px' : '0')};
@@ -279,7 +279,7 @@ export const ProjectLink = styled.div`
     text-align: center;
     line-height: 19px;
     color: #a9a9a9;
-    font-size: 12px;
+    font-size: 12rem;
     font-weight: 500;
   }
 `;
@@ -317,11 +317,11 @@ export const Members = styled.div`
   }
   & > h1 {
     color: #ffffff;
-    font-size: 18px;
+    font-size: 18rem;
     font-weight: 700;
     letter-spacing: -0.01px;
     @media (max-width: 80rem) {
-      font-size: 16px;
+      font-size: 16rem;
     }
   }
 `;
@@ -339,20 +339,20 @@ export const MemberDetail = styled.div`
     margin-bottom: 4px;
     line-height: 24px;
     color: #ffffff;
-    font-size: 16px;
+    font-size: 16rem;
     font-weight: 600;
     /* 태블릿 뷰 */
     @media (max-width: 80rem) {
-      font-size: 15px;
+      font-size: 15rem;
     }
   }
   & > p {
     line-height: 22px;
     color: #cccccc;
-    font-size: 16px;
+    font-size: 16rem;
     font-weight: 500;
     @media (max-width: 80rem) {
-      font-size: 14px;
+      font-size: 14rem;
     }
   }
 `;
@@ -378,11 +378,11 @@ export const ProjectDescription = styled(CommonWrapper)`
     margin-top: 56px;
     line-height: 180%;
     color: rgba(255, 255, 255, 0.8);
-    font-size: 18px;
+    font-size: 18rem;
     font-weight: 500;
     @media (max-width: 80rem) {
       margin-top: 32px;
-      font-size: 15px;
+      font-size: 15rem;
     }
   }
 `;

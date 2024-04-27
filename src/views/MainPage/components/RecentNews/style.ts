@@ -23,7 +23,7 @@ export const RecentNews = styled.section`
 export const Title = styled.h1`
   color: ${colors.white};
   font-family: SUIT;
-  font-size: 45px;
+  font-size: 45rem;
   font-style: normal;
   font-weight: 600;
   line-height: 50.64px; /* 112.534% */
@@ -31,14 +31,14 @@ export const Title = styled.h1`
   text-align: center;
 
   @media (max-width: 48rem) {
-    font-size: 30px;
+    font-size: 30rem;
     font-weight: 600;
     line-height: 50.64px; /* 140.668% */
     letter-spacing: -1.08px;
   }
 
   @media (max-width: 23.5rem) {
-    font-size: 21px;
+    font-size: 21rem;
     line-height: 29.103px; /* 138.588% */
     letter-spacing: -0.63px;
   }
@@ -138,7 +138,7 @@ export const IcInstagram = styled(IconInstagram)`
 export const Description = styled(Link)`
   color: #ededed;
   font-family: SUIT;
-  font-size: 16px;
+  font-size: 16rem;
   font-style: normal;
   font-weight: 500;
   line-height: 26.859px; /* 167.895% */
@@ -149,7 +149,7 @@ export const Description = styled(Link)`
   cursor: pointer;
 
   @media (max-width: 27.75rem) {
-    font-size: 9.194px;
+    font-size: 9.194rem;
     line-height: 15.436px; /* 167.895% */
     letter-spacing: -0.368px;
     margin-left: 4px;

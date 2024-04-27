@@ -91,7 +91,7 @@ export const PartBadge = styled.div`
 
   color: ${colors.white};
   font-family: SUIT;
-  font-size: 19px;
+  font-size: 19rem;
   font-style: normal;
   font-weight: 400;
   line-height: 100%; /* 19px */
@@ -99,7 +99,7 @@ export const PartBadge = styled.div`
 
   @media (max-width: 75rem) {
     border-radius: 8.836px;
-    font-size: 15px;
+    font-size: 15rem;
     letter-spacing: -0.3px;
     padding: 4.899px 12.247px;
   }
@@ -107,7 +107,7 @@ export const PartBadge = styled.div`
   @media (max-width: 26.75rem) {
     border-radius: 5.078px;
     padding: 2.815px 7.038px;
-    font-size: 9px;
+    font-size: 9rem;
     letter-spacing: -0.18px;
   }
 `;
@@ -154,7 +154,7 @@ export const PartDescription = styled.div`
   /* word-break: keep-all; */
 
   @media (max-width: 75rem) {
-    font-size: 18px;
+    font-size: 18rem;
     letter-spacing: -0.34px;
   }
 
@@ -200,7 +200,7 @@ export const Keyword = styled(motion.div)`
 
   @media (max-width: 26.75rem) {
     padding: max(6px, 1.76vw) max(8px, 2.44vw);
-    font-size: 9px;
+    font-size: 9rem;
     letter-spacing: -0.18px;
   }
 `;

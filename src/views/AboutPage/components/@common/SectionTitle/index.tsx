@@ -6,19 +6,19 @@ const SectionTitle = ({ children }: { children: ReactNode }) => {
 };
 
 const H1 = styled.h1`
-  font-size: 45px;
+  font-size: 45rem;
   line-height: 60px;
   letter-spacing: -1%;
   font-weight: 700;
   /* 태블릿 뷰 */
   @media (max-width: 74.9375rem) and (min-width: 47.875rem) {
-    font-size: 28px;
+    font-size: 28rem;
     line-height: 100%;
     text-align: center;
   }
   /* 모바일 뷰 */
   @media (max-width: 47.86875rem) {
-    font-size: 18px;
+    font-size: 18rem;
     line-height: 150%;
     text-align: center;
   }

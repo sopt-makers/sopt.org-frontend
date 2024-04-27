@@ -43,7 +43,7 @@ export const GridWrapper = styled.div`
 
 export const OddText = styled.div`
   color: #fff;
-  font-size: 24px;
+  font-size: 24rem;
   font-weight: 700;
   line-height: 150%; /* 42px */
   &::before {
@@ -52,14 +52,14 @@ export const OddText = styled.div`
   /* 태블릿 뷰 */
   @media (max-width: 81.1875rem) and (min-width: 47.875rem) {
     color: #fff;
-    font-size: 18px;
+    font-size: 18rem;
     font-weight: 700;
     line-height: 30px; /* 166.667% */
   }
   /* 모바일 뷰 */
   @media (max-width: 47.86875rem) {
     color: #fff;
-    font-size: 16px;
+    font-size: 16rem;
     font-weight: 700;
     line-height: 32px;
   }
@@ -67,35 +67,35 @@ export const OddText = styled.div`
 
 export const Highlight = styled.span`
   color: #bdec00;
-  font-size: 24px;
+  font-size: 24rem;
   font-weight: 400;
   letter-spacing: -0.48px;
   text-decoration-line: underline;
   /* 태블릿 뷰 */
   @media (max-width: 81.1875rem) and (min-width: 47.875rem) {
-    font-size: 18px;
+    font-size: 18rem;
   }
   /* 모바일 뷰 */
   @media (max-width: 47.86875rem) {
-    font-size: 16px;
+    font-size: 16rem;
     line-height: 32px;
   }
 `;
 
 export const EvenText = styled.div`
   color: #fff;
-  font-size: 24px;
+  font-size: 24rem;
   font-weight: 400;
   line-height: 150%; /* 42px */
   /* 태블릿 뷰 */
   @media (max-width: 81.1875rem) and (min-width: 47.875rem) {
-    font-size: 18px;
+    font-size: 18rem;
     font-weight: 300;
     line-height: 30px; /* 166.667% */
   }
   /* 모바일 뷰 */
   @media (max-width: 47.86875rem) {
-    font-size: 16px;
+    font-size: 16rem;
     font-style: normal;
     font-weight: 300;
     line-height: 32px;

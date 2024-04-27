@@ -45,7 +45,7 @@ export const ContentWrapper = styled.div`
 `;
 export const MoreLinkWrapper = styled.p`
   color: #fff;
-  font-size: 25px;
+  font-size: 25rem;
   font-weight: 500;
   line-height: 40px; /* 160% */
   letter-spacing: -0.25px;
@@ -53,14 +53,14 @@ export const MoreLinkWrapper = styled.p`
   border-bottom: 1px solid #959595;
 
   @media (max-width: 81.1875rem) and (min-width: 47.875rem) {
-    font-size: 20px;
+    font-size: 20rem;
     font-weight: 400;
     line-height: 100%; /* 20px */
     letter-spacing: -0.2px;
   }
 
   @media (max-width: 47.86875rem) {
-    font-size: 16px;
+    font-size: 16rem;
   }
 `;
 
@@ -128,15 +128,15 @@ export const CardTitle = styled.div`
   word-break: break-all;
   color: #c8c8c8;
   font-weight: 500;
-  font-size: 25px;
+  font-size: 25rem;
   line-height: 40px;
   @media (max-width: 47.86875rem) {
-    font-size: 16px;
+    font-size: 16rem;
     line-height: 25px;
     letter-spacing: -0.32px;
   }
   @media (max-width: 81.1875rem) and (min-width: 47.875rem) {
-    font-size: 18px;
+    font-size: 18rem;
     line-height: 29px;
   }
 `;
@@ -150,15 +150,15 @@ export const DescWrapper = styled.div`
 export const Desc = styled.div`
   color: #848484;
   font-weight: 500;
-  font-size: 22px;
+  font-size: 22rem;
   line-height: 32px;
   white-space: pre-wrap;
   @media (max-width: 47.86875rem) {
-    font-size: 14px;
+    font-size: 14rem;
     line-height: 22px;
   }
   @media (max-width: 81.1875rem) and (min-width: 47.875rem) {
-    font-size: 16px;
+    font-size: 16rem;
     line-height: 23px;
     white-space: pre-wrap;
   }

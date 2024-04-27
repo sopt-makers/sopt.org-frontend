@@ -94,18 +94,18 @@ const TitleText = styled.div`
   color: #fcfcfc;
   text-align: center;
   font-family: SUIT;
-  font-size: 40px;
+  font-size: 40rem;
   font-style: normal;
   font-weight: 700;
   line-height: 140%;
 
   /* 태블릿 뷰 */
   @media (max-width: 81.1875rem) and (min-width: 47.875rem) {
-    font-size: 30px;
+    font-size: 30rem;
   }
   /* 모바일 뷰 */
   @media (max-width: 47.86875rem) {
-    font-size: 20px;
+    font-size: 20rem;
     font-weight: 800;
   }
 `;
@@ -140,7 +140,7 @@ const Input = styled.input`
   background-color: transparent;
   color: white;
   font-family: SUIT;
-  font-size: 28px;
+  font-size: 28rem;
   font-style: normal;
   font-weight: 400;
   line-height: 150%; /* 42px */
@@ -153,11 +153,11 @@ const Input = styled.input`
 
   /* 태블릿 뷰 */
   @media (max-width: 81.1875rem) and (min-width: 47.875rem) {
-    font-size: 20px;
+    font-size: 20rem;
   }
   /* 모바일 뷰 */
   @media (max-width: 47.86875rem) {
-    font-size: 12px;
+    font-size: 12rem;
     padding-left: 12px;
   }
 `;
@@ -171,7 +171,7 @@ const SubmitButton = styled.input`
   cursor: pointer;
   text-align: center;
   font-family: SUIT;
-  font-size: 22px;
+  font-size: 22rem;
   font-style: normal;
   font-weight: 600;
   line-height: 100%; /* 22px */
@@ -180,12 +180,12 @@ const SubmitButton = styled.input`
   /* 태블릿 뷰 */
   @media (max-width: 81.1875rem) and (min-width: 47.875rem) {
     width: 172px;
-    font-size: 20px;
+    font-size: 20rem;
   }
   /* 모바일 뷰 */
   @media (max-width: 47.86875rem) {
     width: 99px;
-    font-size: 12px;
+    font-size: 12rem;
   }
 `;
 
@@ -195,16 +195,16 @@ const ConfirmText = styled.div<{ visible: boolean }>`
   font-weight: 400;
   line-height: 100%; /* 22px */
   letter-spacing: -0.22px;
-  font-size: 22px;
+  font-size: 22rem;
   color: rgba(255, 255, 255, 0.5);
 
   /* 태블릿 뷰 */
   @media (max-width: 81.1875rem) and (min-width: 47.875rem) {
-    font-size: 20px;
+    font-size: 20rem;
   }
   /* 모바일 뷰 */
   @media (max-width: 47.86875rem) {
-    font-size: 12px;
+    font-size: 12rem;
   }
 `;
 

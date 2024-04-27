@@ -66,7 +66,7 @@ export const ContentWrapper = styled.article`
 
 export const Title = styled.h1`
   text-align: center;
-  font-size: 72px;
+  font-size: 72rem;
   font-style: normal;
   font-weight: 700;
   line-height: 130%; /* 93.6px */
@@ -78,12 +78,12 @@ export const Title = styled.h1`
 
   /* 모바일 뷰 */
   @media (max-width: 90rem) {
-    font-size: 64px;
+    font-size: 64rem;
   }
 
   /* 모바일 뷰 */
   @media (max-width: 48rem) {
-    font-size: 28px;
+    font-size: 28rem;
     line-height: 42px;
     letter-spacing: -2%;
   }

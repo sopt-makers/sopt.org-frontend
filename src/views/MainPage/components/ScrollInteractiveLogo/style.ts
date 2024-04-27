@@ -48,7 +48,7 @@ export const WhiteBackground = styled.div`
 
 export const DescriptionText = styled.div`
   font-family: SUIT;
-  font-size: 32px;
+  font-size: 32rem;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
@@ -60,7 +60,7 @@ export const DescriptionText = styled.div`
   /* 모바일 뷰 */
   @media (max-width: 56.1875rem) {
     font-family: SUIT;
-    font-size: 14.656px;
+    font-size: 14.656rem;
     font-style: normal;
     font-weight: 700;
     line-height: normal;

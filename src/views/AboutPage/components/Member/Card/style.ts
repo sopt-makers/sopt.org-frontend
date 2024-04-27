@@ -72,7 +72,7 @@ export const Position = styled.span`
   color: ${colors.white};
 
   text-align: center;
-  font-size: 17px;
+  font-size: 17rem;
   font-weight: 600;
   line-height: 26px; /* 152.941% */
   letter-spacing: -0.34px;
@@ -80,14 +80,14 @@ export const Position = styled.span`
   /* 태블릿 뷰 */
   @media (max-width: 48rem) and (min-width: 26.75rem) {
     padding: 4px;
-    font-size: 12.413px;
+    font-size: 12.413rem;
     line-height: 18.984px; /* 152.941% */
     letter-spacing: -0.248px;
   }
   /* 모바일 뷰 */
   @media (max-width: 26.74375rem) {
     padding: 3px;
-    font-size: 7.535px;
+    font-size: 7.535rem;
     line-height: 11.524px; /* 152.941% */
     letter-spacing: -0.151px;
   }
@@ -95,7 +95,7 @@ export const Position = styled.span`
 
 export const Name = styled.strong`
   text-align: center;
-  font-size: 28px;
+  font-size: 28rem;
 
   color: ${colors.white};
   font-weight: 600;
@@ -104,11 +104,11 @@ export const Name = styled.strong`
 
   /* 태블릿 뷰 */
   @media (max-width: 48rem) and (min-width: 26.75rem) {
-    font-size: 18px;
+    font-size: 18rem;
   }
   /* 모바일 뷰 */
   @media (max-width: 26.74375rem) {
-    font-size: 16px;
+    font-size: 16rem;
   }
 `;
 
@@ -116,7 +116,7 @@ export const Desc = styled.span`
   text-align: center;
 
   margin: 16px 0 30px 0;
-  font-size: 15px;
+  font-size: 15rem;
   font-style: normal;
   line-height: 26px; /* 173.333% */
   letter-spacing: -0.3px;
@@ -127,7 +127,7 @@ export const Desc = styled.span`
   /* 태블릿 뷰 */
   @media (max-width: 48rem) and (min-width: 26.75rem) {
     margin: 12px 0 28px 0;
-    font-size: 10.952px;
+    font-size: 10.952rem;
     font-style: normal;
     font-weight: 400;
     line-height: 18.984px; /* 173.333% */
@@ -138,7 +138,7 @@ export const Desc = styled.span`
   /* 모바일 뷰 */
   @media (max-width: 26.74375rem) {
     margin: 8px 0 18px 0;
-    font-size: 6.648px;
+    font-size: 6.648rem;
     font-style: normal;
     font-weight: 400;
     line-height: 11.524px; /* 173.333% */
@@ -175,7 +175,7 @@ export const CurrentProject = styled.span`
   height: 24px;
   padding-left: 28px;
   color: #bcbcbc;
-  font-size: 15px;
+  font-size: 15rem;
   font-style: normal;
   font-weight: 400;
   line-height: 26px; /* 173.333% */
@@ -185,7 +185,7 @@ export const CurrentProject = styled.span`
   @media (max-width: 48rem) and (min-width: 26.75rem) {
     height: 18px;
     padding-left: 20px;
-    font-size: 10.952px;
+    font-size: 10.952rem;
     font-style: normal;
     font-weight: 400;
     line-height: 18.984px; /* 173.333% */
@@ -195,7 +195,7 @@ export const CurrentProject = styled.span`
   @media (max-width: 26.74375rem) {
     height: 12px;
     padding-left: 13px;
-    font-size: 6.648px;
+    font-size: 6.648rem;
     font-weight: 400;
     line-height: 11.524px; /* 173.333% */
     letter-spacing: -0.133px;

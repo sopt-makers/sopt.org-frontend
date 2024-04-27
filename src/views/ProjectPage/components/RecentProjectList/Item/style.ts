@@ -61,14 +61,14 @@ const DetailFooterWrapper = styled.div`
 
 const TextName = styled.div`
   color: ${colors.gray30};
-  font-size: 24px;
+  font-size: 24rem;
   font-weight: 700;
   line-height: 150%;
   letter-spacing: -0.48px;
 
   /* 모바일 뷰 */
   @media (max-width: 56.1875rem) {
-    font-size: 16px;
+    font-size: 16rem;
     letter-spacing: -0.24px;
   }
 `;
@@ -80,7 +80,7 @@ const TextSummary = styled.div`
 
   color: ${colors.gray100};
   max-width: 408px;
-  font-size: 14px;
+  font-size: 14rem;
   font-style: normal;
   font-weight: 500;
   line-height: 150%; /* 21px */
@@ -88,7 +88,7 @@ const TextSummary = styled.div`
 
   /* 모바일 뷰 */
   @media (max-width: 56.1875rem) {
-    font-size: 13px;
+    font-size: 13rem;
     font-weight: 400;
     letter-spacing: -0.195px;
     max-width: 234px;
@@ -100,7 +100,7 @@ const Chip = styled.div`
   border-radius: 6px;
   background-color: ${colors.gray700};
   color: ${colors.gray100};
-  font-size: 12px;
+  font-size: 12rem;
   font-weight: 500;
   line-height: 135%;
   letter-spacing: -0.18px;
@@ -109,7 +109,7 @@ const Chip = styled.div`
   @media (max-width: 56.1875rem) {
     height: 26px;
     padding: 5px 8px;
-    font-size: 11px;
+    font-size: 11rem;
     font-weight: 600;
     letter-spacing: -0.165px;
   }
@@ -129,7 +129,7 @@ const TryLink = styled.a`
   cursor: pointer;
   position: relative;
   color: ${colors.gray30};
-  font-size: 16px;
+  font-size: 16rem;
   font-weight: 500;
   line-height: 165%;
   letter-spacing: -0.24px;
@@ -162,7 +162,7 @@ const TryLink = styled.a`
 
   /* 모바일 뷰 */
   @media (max-width: 56.1875rem) {
-    font-size: 14px;
+    font-size: 14rem;
     letter-spacing: -0.21px;
     border-radius: 13px;
     &::after {

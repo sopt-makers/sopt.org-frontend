@@ -76,7 +76,7 @@ export const SectionTitle = styled.div`
   position: relative;
   color: ${colors.black};
   font-family: SUIT;
-  font-size: 55px;
+  font-size: 55rem;
   font-style: normal;
   font-weight: 500;
   line-height: 61.6px; /* 112% */
@@ -87,19 +87,19 @@ export const SectionTitle = styled.div`
   }
   @media (max-width: 48rem) {
     font-family: SUIT;
-    font-size: 41px;
+    font-size: 41rem;
     line-height: 45.956px; /* 112.087% */
     letter-spacing: -1.23px;
   }
   @media (max-width: 32.5rem) {
-    font-size: 21px;
+    font-size: 21rem;
     font-style: normal;
     font-weight: 500;
     line-height: 24.28px; /* 115.617% */
     letter-spacing: -0.63px;
   }
   @media (max-height: 53.75rem) and (max-width: 100rem) {
-    font-size: 32px;
+    font-size: 32rem;
     line-height: 32px;
   }
 `;
@@ -110,13 +110,13 @@ export const SectionSubTitle = styled.p`
   font-style: normal;
   font-weight: 600;
   margin-bottom: 10px;
-  font-size: 20px;
+  font-size: 20rem;
   line-height: 46.311px; /* 257.282% */
   letter-spacing: -2%;
   z-index: 1;
 
   @media (max-width: 23.5rem) {
-    font-size: 11px;
+    font-size: 11rem;
     line-height: 26.615px; /* 241.956% */
     letter-spacing: -0.22px;
   }
@@ -126,7 +126,7 @@ export const Summary = styled(motion.div)<{ color: string }>`
   color: ${({ color }) => color};
 
   font-family: SUIT;
-  font-size: 77px;
+  font-size: 77rem;
   font-style: normal;
   font-weight: 600;
   line-height: 110%;
@@ -136,7 +136,7 @@ export const Summary = styled(motion.div)<{ color: string }>`
   padding-left: 76px;
   position: relative;
   @media (max-width: 102.5rem) {
-    font-size: 68px;
+    font-size: 68rem;
     height: 185px;
   }
   @media (max-width: 100rem) {
@@ -149,20 +149,20 @@ export const Summary = styled(motion.div)<{ color: string }>`
   }
 
   @media (max-width: 61rem) {
-    font-size: 60px;
+    font-size: 60rem;
     padding-top: 28px;
     padding-left: 60px;
   }
 
   @media (max-width: 48rem) {
-    font-size: 57px;
+    font-size: 57rem;
     font-weight: 600;
     line-height: 60px;
     letter-spacing: -1.71px;
     padding-left: 48px;
   }
   @media (max-width: 32.5rem) {
-    font-size: 30px;
+    font-size: 30rem;
     font-style: normal;
     font-weight: 600;
     line-height: 32px;
@@ -171,7 +171,7 @@ export const Summary = styled(motion.div)<{ color: string }>`
     padding-left: 32px;
   }
   @media (max-height: 53.75rem) and (max-width: 100rem) {
-    font-size: 46px;
+    font-size: 46rem;
     line-height: 48px;
     padding-left: 48px;
     padding-top: 24px;

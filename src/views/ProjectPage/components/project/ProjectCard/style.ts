@@ -71,7 +71,7 @@ export const ProjectTitle = styled.div`
 
   /* Heading/6_B */
   font-family: SUIT;
-  font-size: 18px;
+  font-size: 18rem;
   font-style: normal;
   font-weight: 700;
   line-height: 28px; /* 155.556% */
@@ -83,7 +83,7 @@ export const ProjectType = styled.div`
 
   /* Label/3_SB */
   font-family: SUIT;
-  font-size: 12px;
+  font-size: 12rem;
   font-style: normal;
   font-weight: 600;
   line-height: 16px; /* 133.333% */
@@ -110,7 +110,7 @@ export const ProjectSummary = styled.div`
 
   /* Body/3_R */
   font-family: SUIT;
-  font-size: 14px;
+  font-size: 14rem;
   font-style: normal;
   font-weight: 400;
   line-height: 22px; /* 157.143% */
@@ -122,7 +122,7 @@ export const ProjectSummary = styled.div`
 
     /* Body/4_R */
     font-family: SUIT;
-    font-size: 13px;
+    font-size: 13rem;
     font-style: normal;
     font-weight: 400;
     line-height: 20px; /* 153.846% */

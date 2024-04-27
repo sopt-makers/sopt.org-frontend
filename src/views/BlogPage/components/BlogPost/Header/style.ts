@@ -8,7 +8,7 @@ export const Header = styled.div`
   margin-bottom: 4px;
 
   color: ${colors.gray200};
-  font-size: 14px;
+  font-size: 14rem;
   font-weight: 400;
   line-height: 160%;
   letter-spacing: -0.21px;
@@ -22,7 +22,7 @@ export const Header = styled.div`
     height: 16px;
     margin-bottom: 0;
 
-    font-size: 12px;
+    font-size: 12rem;
     font-weight: 500;
     line-height: 135%; /* 16.2px */
     letter-spacing: -0.18px;

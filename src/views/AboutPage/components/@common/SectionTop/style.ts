@@ -38,7 +38,7 @@ export const EngTitle = styled.h1`
 
   text-align: center;
   font-family: SUIT;
-  font-size: 17px;
+  font-size: 17rem;
   font-style: normal;
   font-weight: 500;
   line-height: 140%; /* 23.8px */
@@ -46,13 +46,13 @@ export const EngTitle = styled.h1`
 
   /* 태블릿 뷰 */
   @media (max-width: 48rem) {
-    font-size: 14px;
+    font-size: 14rem;
     letter-spacing: -0.28px;
   }
 
   /* 모바일 뷰 */
   @media (max-width: 26.75rem) {
-    font-size: 9px;
+    font-size: 9rem;
     letter-spacing: -0.18px;
   }
 `;
@@ -62,7 +62,7 @@ export const KorTitle = styled.h1`
 
   text-align: center;
   font-family: SUIT;
-  font-size: 29px;
+  font-size: 29rem;
   font-style: normal;
   font-weight: 700;
   line-height: 140%; /* 40.6px */
@@ -70,13 +70,13 @@ export const KorTitle = styled.h1`
 
   /* 태블릿 뷰 */
   @media (max-width: 48rem) {
-    font-size: 22px;
+    font-size: 22rem;
     letter-spacing: -0.44px;
   }
 
   /* 모바일 뷰 */
   @media (max-width: 26.75rem) {
-    font-size: 15px;
+    font-size: 15rem;
     letter-spacing: -0.3px;
   }
 `;
@@ -86,7 +86,7 @@ export const Description = styled.p`
 
   text-align: center;
   font-family: SUIT;
-  font-size: 19px;
+  font-size: 19rem;
   font-style: normal;
   font-weight: 500;
   line-height: 151%; /* 26.6px */
@@ -97,13 +97,13 @@ export const Description = styled.p`
 
   /* 태블릿 뷰 */
   @media (max-width: 48rem) {
-    font-size: 16px;
+    font-size: 16rem;
     letter-spacing: -0.32px;
   }
 
   /* 모바일 뷰 */
   @media (max-width: 26.75rem) {
-    font-size: 11px;
+    font-size: 11rem;
     letter-spacing: -0.22px;
   }
 `;

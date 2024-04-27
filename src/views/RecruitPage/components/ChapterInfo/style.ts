@@ -2,16 +2,16 @@ import styled from '@emotion/styled';
 
 const BaseChip = styled.div`
   line-height: 42px;
-  font-size: 22px;
+  font-size: 22rem;
 
   /* 태블릿 뷰 */
   @media (max-width: 81.1875rem) and (min-width: 47.875rem) {
-    font-size: 18px;
+    font-size: 18rem;
   }
 
   @media (max-width: 47.86875rem) {
     line-height: 18px;
-    font-size: 16px;
+    font-size: 16rem;
   }
 `;
 
@@ -49,19 +49,19 @@ const Wrapper = styled.div`
 
 const BaseText = styled.div`
   color: #fff;
-  font-size: 24px;
+  font-size: 24rem;
   font-style: normal;
   letter-spacing: -0.48px;
   white-space: pre-line;
   /* 태블릿 뷰 */
   @media (max-width: 81.1875rem) and (min-width: 47.875rem) {
-    font-size: 16px;
+    font-size: 16rem;
     font-style: normal;
     letter-spacing: -0.32px;
   }
   /* 모바일 뷰 */
   @media (max-width: 47.86875rem) {
-    font-size: 16px;
+    font-size: 16rem;
     font-style: normal;
     letter-spacing: -0.32px;
   }

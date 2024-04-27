@@ -44,14 +44,14 @@ export const Title = styled.div`
   max-height: 72px;
 
   color: ${colors.white};
-  font-size: 24px;
+  font-size: 24rem;
   font-weight: 600;
   line-height: 150%;
   letter-spacing: -0.48px;
 
   /* 모바일 뷰 */
   @media (max-width: 47.9375rem) {
-    font-size: 16px;
+    font-size: 16rem;
     letter-spacing: -0.24px;
   }
 `;
@@ -65,7 +65,7 @@ export const Description = styled.div<{ descriptionLine: number }>`
   word-break: break-all;
 
   color: ${colors.gray200};
-  font-size: 16px;
+  font-size: 16rem;
   font-weight: 400;
   line-height: 160%;
   letter-spacing: -0.24px;
@@ -98,7 +98,7 @@ export const Tag = styled.div`
   background: ${colors.gray700};
 
   color: ${colors.gray50};
-  font-size: 12px;
+  font-size: 12rem;
   font-weight: 500;
   line-height: 135%; /* 16.2px */
   letter-spacing: -0.18px;
@@ -107,7 +107,7 @@ export const Tag = styled.div`
   @media (max-width: 47.9375rem) {
     height: 20px;
 
-    font-size: 11px;
+    font-size: 11rem;
     font-weight: 600;
     letter-spacing: -0.165px;
   }

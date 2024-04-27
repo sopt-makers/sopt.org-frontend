@@ -40,7 +40,7 @@ export const FooterKorName = styled.div`
   backdrop-filter: blur(2.949289321899414px);
   border-radius: 14px;
 
-  font-size: 22px;
+  font-size: 22rem;
   font-weight: 600;
   line-height: 28px;
   letter-spacing: -0.904px;
@@ -48,7 +48,7 @@ export const FooterKorName = styled.div`
   @media (max-width: 90rem) {
     width: 128px;
     padding: 12px 0;
-    font-size: 21px;
+    font-size: 21rem;
     line-height: 24.425px;
   }
 
@@ -56,9 +56,9 @@ export const FooterKorName = styled.div`
     border-radius: 12px;
     width: 96px;
     padding: 10px 0;
-    font-size: 18px;
+    font-size: 18rem;
     line-height: 24.425px;
-    font-size: 18px;
+    font-size: 18rem;
     line-height: 20px;
     letter-spacing: -0.904px;
   }
@@ -67,10 +67,10 @@ export const FooterKorName = styled.div`
     border-radius: 6px;
     width: 74px;
     padding: 7px 0;
-    font-size: 12px;
+    font-size: 12rem;
     line-height: 13px;
 
-    font-size: 11px;
+    font-size: 11rem;
     font-style: normal;
     font-weight: 700;
     line-height: 19px;
@@ -81,7 +81,7 @@ export const FooterKorName = styled.div`
 export const FooterEngName = styled.div`
   color: rgba(255, 255, 255, 0.7);
   font-family: SUIT;
-  font-size: 20px;
+  font-size: 20rem;
   font-style: normal;
   font-weight: 400;
   line-height: 28.288px; /* 138.027% */
@@ -89,16 +89,16 @@ export const FooterEngName = styled.div`
   padding-bottom: 4px;
 
   @media (max-width: 90rem) {
-    font-size: 19px;
+    font-size: 19rem;
     line-height: 13.9px;
   }
 
   @media (max-width: 32rem) {
-    font-size: 17px;
+    font-size: 17rem;
   }
 
   @media (max-width: 26.75rem) {
-    font-size: 11px;
+    font-size: 11rem;
     line-height: 14.9px;
   }
 `;
@@ -132,25 +132,25 @@ export const ContentWrapper = styled.div`
 `;
 
 export const TextWrapper = styled.span<{ weight: 'normal' | 'bold' }>`
-  font-size: 20px;
+  font-size: 20rem;
   color: ${colors.white};
   font-weight: ${({ weight }) => weight};
   line-height: 35px; /* 175% */
   letter-spacing: -0.8px;
 
   @media (max-width: 90rem) {
-    font-size: 18px;
+    font-size: 18rem;
     line-height: 31px; /* 172.222% */
     letter-spacing: -0.72px;
   }
 
   @media (max-width: 32rem) {
-    font-size: 16px;
+    font-size: 16rem;
     line-height: 26px;
   }
 
   @media (max-width: 26.75rem) {
-    font-size: 11px;
+    font-size: 11rem;
     line-height: 18.103px; /* 164.575% */
     letter-spacing: -0.44px;
   }

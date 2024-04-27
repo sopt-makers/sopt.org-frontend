@@ -122,7 +122,7 @@ export const Content = styled(motion.div)`
     grid-template-rows: auto auto 103px;
     grid-template-columns: none;
     grid-gap: 16px;
-    font-size: 28px;
+    font-size: 28rem;
   }
 `;
 
@@ -144,14 +144,14 @@ export const ContentTitle = styled(motion.h2)`
 
   @media (max-width: 90rem) and (min-width: 48.0625rem) {
     margin-top: 28px;
-    font-size: 40px;
+    font-size: 40rem;
   }
 
   @media (max-width: 48rem) {
     width: fit-content;
     margin-top: 48px;
     margin-left: 58px;
-    font-size: 28px;
+    font-size: 28rem;
   }
 `;
 
@@ -168,7 +168,7 @@ export const ContentDetail = styled(motion.h3)`
   white-space: pre-wrap;
 
   @media (max-width: 90rem) and (min-width: 48.0625rem) {
-    font-size: 20px;
+    font-size: 20rem;
     word-break: keep-all;
   }
 
@@ -179,7 +179,7 @@ export const ContentDetail = styled(motion.h3)`
   @media (max-width: 48rem) {
     max-width: 259px;
     margin-left: 58px;
-    font-size: 16px;
+    font-size: 16rem;
     letter-spacing: -0.32px;
     white-space: normal;
     word-break: keep-all;

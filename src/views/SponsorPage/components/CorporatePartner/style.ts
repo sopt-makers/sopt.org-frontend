@@ -29,16 +29,16 @@ export const Title = styled.h3`
   font-weight: 800;
   text-align: center;
   margin-bottom: 60px;
-  font-size: 45px;
+  font-size: 45rem;
   line-height: 60px;
 
   @media (min-width: 48.0625rem) and (max-width: 74.9375rem) {
-    font-size: 36px;
+    font-size: 36rem;
     line-height: 56px;
   }
 
   @media (max-width: 48rem) {
-    font-size: 20px;
+    font-size: 20rem;
     line-height: 28px;
   }
 `;
@@ -125,12 +125,12 @@ export const Name = styled.p`
   text-align: center;
   font-weight: 400;
   @media (min-width: 48.0625rem) {
-    font-size: 25px;
+    font-size: 25rem;
     line-height: 40px;
   }
 
   @media (max-width: 48rem) {
-    font-size: 12px;
+    font-size: 12rem;
     line-height: 19px;
   }
 `;
@@ -148,5 +148,5 @@ export const RequestSponsorButton = styled.a`
   border-radius: 12px;
   background: ${colors.white};
   text-align: center;
-  font-size: 16px;
+  font-size: 16rem;
 `;

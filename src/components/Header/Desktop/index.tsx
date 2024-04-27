@@ -84,7 +84,7 @@ export const MenuTitlesWrapper = styled.div`
 `;
 
 export const MenuTitle = styled(Link)<MenuTitleProps>`
-  font-size: 18px;
+  font-size: 18rem;
   line-height: 36px;
   font-weight: ${({ isSelected }) => (isSelected ? '700' : '500')};
 
