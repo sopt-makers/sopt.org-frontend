@@ -12,14 +12,14 @@ export const Count = styled.div`
   line-height: 165%; /* 29.7px */
   letter-spacing: -0.27px;
 
-  @media (max-width: 1279px) and (min-width: 900px) {
+  @media (max-width: 79.9375rem) and (min-width: 56.25rem) {
     & > span {
       display: none;
     }
   }
 
   /* 모바일 뷰 */
-  @media (max-width: 899px) {
+  @media (max-width: 56.1875rem) {
     /* Body/3_Medium_14 */
     font-family: SUIT;
     font-size: 14px;

@@ -6,7 +6,7 @@ import { RulesHead, RulesList, UnderlinedText } from './components';
 const SOPT_RULES = 'SOPT 회칙';
 
 function Rules() {
-  const isDesktopOrTablet = useIsDesktop('769px');
+  const isDesktopOrTablet = useIsDesktop('48.0625rem');
 
   return (
     <PageLayout>
@@ -28,7 +28,7 @@ const Content = styled.div`
   margin-bottom: 130px;
   width: 100%;
   max-width: 1192px;
-  @media screen and (max-width: 1280px) {
+  @media screen and (max-width: 80rem) {
     width: 92%;
   }
 `;

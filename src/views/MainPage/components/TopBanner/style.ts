@@ -42,11 +42,11 @@ export const Container = styled(Link)<{ isYellow: boolean }>`
   }
 
   /* 태블릿 뷰 */
-  @media (max-width: 768px) and (min-width: 429px) {
+  @media (max-width: 48rem) and (min-width: 26.8125rem) {
     margin-top: 48px;
   }
   /* 모바일 뷰 */
-  @media (max-width: 428px) {
+  @media (max-width: 26.75rem) {
     margin-top: 48px;
     padding: 8px 20px;
   }
@@ -60,7 +60,7 @@ export const Wrapper = styled.section`
   width: 100%;
 
   /* 모바일 뷰 */
-  @media (max-width: 570px) {
+  @media (max-width: 35.625rem) {
     flex-direction: column;
     justify-content: start;
     align-items: baseline;
@@ -73,7 +73,7 @@ export const Title = styled.h1`
   line-height: 130%;
 
   /* 모바일 뷰 */
-  @media (max-width: 428px) {
+  @media (max-width: 26.75rem) {
     font-size: 12px;
   }
 `;
@@ -88,13 +88,13 @@ export const Description = styled.div`
   font-weight: 500;
 
   /* 모바일 뷰 */
-  @media (max-width: 570px) {
+  @media (max-width: 35.625rem) {
     justify-content: space-between;
     width: 100%;
   }
 
   /* 모바일 뷰 */
-  @media (max-width: 428px) {
+  @media (max-width: 26.75rem) {
     font-size: 11px;
   }
 `;
@@ -107,7 +107,7 @@ export const Timer = styled.div`
   justify-content: flex-start;
 
   /* 태블릿 뷰 */
-  @media (max-width: 768px) and (min-width: 429px) {
+  @media (max-width: 48rem) and (min-width: 26.8125rem) {
     & > svg {
       width: 24px;
       height: 24px;
@@ -115,7 +115,7 @@ export const Timer = styled.div`
   }
 
   /* 모바일 뷰 */
-  @media (max-width: 428px) {
+  @media (max-width: 26.75rem) {
     gap: 4px;
   }
 `;

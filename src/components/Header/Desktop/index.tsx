@@ -72,7 +72,7 @@ export const Logo = styled.button`
   background-size: 100% 100%;
   cursor: pointer;
 
-  @media (max-width: 940px) {
+  @media (max-width: 58.75rem) {
     width: 63px;
     height: 21px;
   }

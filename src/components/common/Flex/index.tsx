@@ -60,12 +60,12 @@ const Div = styled.div<{
   gap: ${(props) => cssGapToString(props.gap.desktop)};
   flex-direction: ${(props) => props.flexDirection.desktop};
 
-  @media (max-width: 1199px) {
+  @media (max-width: 74.9375rem) {
     gap: ${(props) => cssGapToString(props.gap.tablet)};
     flex-direction: ${(props) => props.flexDirection.tablet};
   }
 
-  @media (max-width: 765.9px) {
+  @media (max-width: 47.86875rem) {
     gap: ${(props) => cssGapToString(props.gap.mobile)};
     flex-direction: ${(props) => props.flexDirection.mobile};
   }

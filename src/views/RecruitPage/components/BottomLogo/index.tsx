@@ -12,7 +12,7 @@ const ScaledImage = styled(Image)`
   margin-top: 338px;
   margin-bottom: 86px;
   /* 모바일 뷰 */
-  @media (max-width: 765.9px) {
+  @media (max-width: 47.86875rem) {
     width: 276px;
   }
 `;

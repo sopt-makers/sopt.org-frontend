@@ -7,12 +7,12 @@ export const Root = styled.footer`
   background-color: #202020;
 
   /* 태블릿 + 데스크탑 뷰 */
-  @media (min-width: 766px) {
+  @media (min-width: 47.875rem) {
     scroll-snap-align: center;
   }
 
   /* 모바일 뷰 */
-  @media (max-width: 765.9px) {
+  @media (max-width: 47.86875rem) {
     height: 264px;
   }
 `;
@@ -22,20 +22,20 @@ export const ContentWrap = styled.div`
   justify-content: space-between;
 
   /* 데스크탑 뷰 */
-  @media (min-width: 1200px) {
+  @media (min-width: 75rem) {
     max-width: 1100px;
     margin: 0px auto;
     padding-top: 35px;
   }
 
   /* 태블릿 뷰 */
-  @media (max-width: 1199px) and (min-width: 766px) {
+  @media (max-width: 74.9375rem) and (min-width: 47.875rem) {
     margin: 0px 40px;
     padding-top: 35px;
   }
 
   /* 모바일 뷰 */
-  @media (max-width: 765.9px) {
+  @media (max-width: 47.86875rem) {
     display: block;
 
     padding-top: 30px;
@@ -69,7 +69,7 @@ export const CopyrightText = styled.p`
   font-weight: 400;
 
   /* 모바일 뷰 */
-  @media (max-width: 765.9px) {
+  @media (max-width: 47.86875rem) {
     font-size: 12px;
   }
 `;
@@ -77,7 +77,7 @@ export const CopyrightText = styled.p`
 export const ChannelsWrap = styled.div`
   width: 190px;
   /* 모바일 뷰 */
-  @media (max-width: 765.9px) {
+  @media (max-width: 47.86875rem) {
     margin-top: 40px;
   }
 `;
@@ -89,7 +89,7 @@ export const ChannelTitleText = styled.p`
   font-weight: 500;
 
   /* 모바일 뷰 */
-  @media (max-width: 765.9px) {
+  @media (max-width: 47.86875rem) {
     margin-bottom: 20px;
   }
 `;

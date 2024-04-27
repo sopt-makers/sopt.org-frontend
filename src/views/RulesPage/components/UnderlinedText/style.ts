@@ -13,7 +13,7 @@ export const Root = styled.h1<TitleProps>`
   font-size: ${({ fontSize }) => fontSize};
   font-weight: 800;
 
-  @media (max-width: 1279px) {
+  @media (max-width: 79.9375rem) {
     border-bottom: 6px solid #fcfcfc;
     padding-bottom: 5px;
 

@@ -20,13 +20,13 @@ export const RecruitButtonWrapper = styled(Link)`
   line-height: 130%; /* 36.4px */
 
   /* 모바일 뷰 */
-  @media (max-width: 1440px) {
+  @media (max-width: 90rem) {
     font-size: 24px;
     margin-top: 51px;
   }
 
   /* 모바일 뷰 */
-  @media (max-width: 768px) {
+  @media (max-width: 48rem) {
     margin-top: 28px;
     font-size: 18px;
     line-height: 28px; /* 155.556% */
@@ -52,13 +52,13 @@ export const MouseTrackerWrapper = styled.div<{ x: number; y: number }>`
   font-size: 100%;
 
   /* 모바일 뷰 */
-  @media (max-width: 1440px) {
+  @media (max-width: 90rem) {
     width: 256px;
     height: 59px;
   }
 
   /* 모바일 뷰 */
-  @media (max-width: 768px) {
+  @media (max-width: 48rem) {
     width: 188px;
     height: 44px;
   }

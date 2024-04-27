@@ -24,7 +24,7 @@ function PartConfig(_props: unknown, ref: Ref<HTMLDivElement>) {
     handleTouchStart,
     handleTouchEnd,
   } = useInfiniteCarousel<TabType>(carouselList, '(-100% - 20px)', partRef);
-  const isMobileSize = useIsMobile('768px');
+  const isMobileSize = useIsMobile('48rem');
   const tab = isMobileSize ? 'Part' : '';
 
   return (

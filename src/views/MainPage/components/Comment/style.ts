@@ -9,12 +9,12 @@ export const Wrapper = styled.div`
   position: relative;
   padding-top: 256px;
 
-  @media (max-width: 768px) {
+  @media (max-width: 48rem) {
     padding-top: 149px;
     padding-bottom: 200px;
   }
 
-  @media (max-width: 376px) {
+  @media (max-width: 23.5rem) {
     padding-top: 111px;
   }
 `;
@@ -27,7 +27,7 @@ export const TitleShadow = styled(motion.div)`
   left: 0;
   background: linear-gradient(#f6f8fc 72%, transparent);
 
-  @media (max-width: 768px) {
+  @media (max-width: 48rem) {
     height: 100%;
   }
 `;
@@ -40,11 +40,11 @@ export const TitleWrapper = styled.div`
   z-index: 2;
   margin-bottom: 200px;
 
-  @media (max-width: 1600px) {
+  @media (max-width: 100rem) {
     top: 120px;
     transition: 0.4s;
   }
-  @media (max-width: 768px) {
+  @media (max-width: 48rem) {
     position: static;
     padding-top: 0;
     margin-bottom: 0;
@@ -56,17 +56,17 @@ export const CardWrapper = styled.div`
   flex-direction: column;
   align-items: flex-end;
   padding-bottom: 200px;
-  @media (max-width: 1600px) {
+  @media (max-width: 100rem) {
     padding-bottom: 240px;
   }
-  @media (max-width: 768px) {
+  @media (max-width: 48rem) {
     padding-top: 64px;
     padding-bottom: 0;
     flex-direction: row;
     align-items: center;
     gap: 22px;
   }
-  @media (max-width: 520px) {
+  @media (max-width: 32.5rem) {
     padding-top: 32px;
     gap: 12px;
   }
@@ -82,23 +82,23 @@ export const SectionTitle = styled.div`
   line-height: 61.6px; /* 112% */
   letter-spacing: -1.65px;
   z-index: 2;
-  @media (max-width: 768px) and (min-width: 1600px) {
+  @media (max-width: 48rem) and (min-width: 100rem) {
     padding-bottom: 200px;
   }
-  @media (max-width: 768px) {
+  @media (max-width: 48rem) {
     font-family: SUIT;
     font-size: 41px;
     line-height: 45.956px; /* 112.087% */
     letter-spacing: -1.23px;
   }
-  @media (max-width: 520px) {
+  @media (max-width: 32.5rem) {
     font-size: 21px;
     font-style: normal;
     font-weight: 500;
     line-height: 24.28px; /* 115.617% */
     letter-spacing: -0.63px;
   }
-  @media (max-height: 860px) and (max-width: 1600px) {
+  @media (max-height: 53.75rem) and (max-width: 100rem) {
     font-size: 32px;
     line-height: 32px;
   }
@@ -115,7 +115,7 @@ export const SectionSubTitle = styled.p`
   letter-spacing: -2%;
   z-index: 1;
 
-  @media (max-width: 376px) {
+  @media (max-width: 23.5rem) {
     font-size: 11px;
     line-height: 26.615px; /* 241.956% */
     letter-spacing: -0.22px;
@@ -135,33 +135,33 @@ export const Summary = styled(motion.div)<{ color: string }>`
   padding-top: 36px;
   padding-left: 76px;
   position: relative;
-  @media (max-width: 1640px) {
+  @media (max-width: 102.5rem) {
     font-size: 68px;
     height: 185px;
   }
-  @media (max-width: 1600px) {
+  @media (max-width: 100rem) {
     white-space: unset;
     height: auto;
   }
 
-  @media (max-width: 1100px) {
+  @media (max-width: 68.75rem) {
     white-space: pre-line;
   }
 
-  @media (max-width: 976px) {
+  @media (max-width: 61rem) {
     font-size: 60px;
     padding-top: 28px;
     padding-left: 60px;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 48rem) {
     font-size: 57px;
     font-weight: 600;
     line-height: 60px;
     letter-spacing: -1.71px;
     padding-left: 48px;
   }
-  @media (max-width: 520px) {
+  @media (max-width: 32.5rem) {
     font-size: 30px;
     font-style: normal;
     font-weight: 600;
@@ -170,7 +170,7 @@ export const Summary = styled(motion.div)<{ color: string }>`
     padding-top: 12px;
     padding-left: 32px;
   }
-  @media (max-height: 860px) and (max-width: 1600px) {
+  @media (max-height: 53.75rem) and (max-width: 100rem) {
     font-size: 46px;
     line-height: 48px;
     padding-left: 48px;
@@ -188,22 +188,22 @@ export const Summary = styled(motion.div)<{ color: string }>`
     background-color: ${({ color }) => color};
     width: 58px;
     height: 58px;
-    @media (max-width: 976px) {
+    @media (max-width: 61rem) {
       width: 48px;
       height: 48px;
       top: 42px;
     }
-    @media (max-width: 768px) {
+    @media (max-width: 48rem) {
       width: 40px;
       height: 40px;
       top: 48px;
     }
-    @media (max-width: 520px) {
+    @media (max-width: 32.5rem) {
       width: 22px;
       height: 22px;
       top: 18px;
     }
-    @media (max-height: 860px) and (max-width: 1600px) {
+    @media (max-height: 53.75rem) and (max-width: 100rem) {
       width: 38px;
       height: 38px;
       top: 30px;
@@ -221,7 +221,7 @@ const Arrow = styled.div`
   mask-size: contain;
   mask-position: center;
 
-  @media (max-width: 520px) {
+  @media (max-width: 32.5rem) {
     width: 15px;
     height: 24px;
   }

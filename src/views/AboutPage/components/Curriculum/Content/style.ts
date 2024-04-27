@@ -6,12 +6,12 @@ export const CurriculumContent = styled.div`
   gap: min(33px, 1.71875vw);
 
   /* 태블릿 뷰 */
-  @media (max-width: 768px) {
+  @media (max-width: 48rem) {
     gap: 19px;
   }
 
   /* 모바일 뷰 */
-  @media (max-width: 428px) {
+  @media (max-width: 26.75rem) {
     gap: 13.44px;
   }
 `;
@@ -23,7 +23,7 @@ export const ImageWrapper = styled.div`
   border-radius: 10px;
 
   /* 태블릿 뷰 */
-  @media (max-width: 768px) {
+  @media (max-width: 48rem) {
     max-width: 662.42px;
     width: 86vw;
     min-width: 429.34px;
@@ -31,7 +31,7 @@ export const ImageWrapper = styled.div`
   }
 
   /* 모바일 뷰 */
-  @media (max-width: 428px) {
+  @media (max-width: 26.75rem) {
     max-width: 361.06px;
     width: 84vw;
     min-width: 312.48px;

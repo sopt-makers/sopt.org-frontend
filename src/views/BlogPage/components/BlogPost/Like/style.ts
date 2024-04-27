@@ -30,7 +30,7 @@ export const Like = styled.div`
   }
 
   /* 모바일 뷰 */
-  @media (max-width: 767px) {
+  @media (max-width: 47.9375rem) {
     display: none;
   }
 `;

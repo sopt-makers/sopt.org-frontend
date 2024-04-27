@@ -11,14 +11,14 @@ export const Values = styled.div`
   }
 
   /* 태블릿 뷰 */
-  @media (max-width: 1299px) and (min-width: 766px) {
+  @media (max-width: 81.1875rem) and (min-width: 47.875rem) {
     gap: 21px;
     & > svg {
       transform: scale(1);
     }
   }
   /* 모바일 뷰 */
-  @media (max-width: 765.9px) {
+  @media (max-width: 47.86875rem) {
     gap: 18px;
     & > svg {
       transform: scale(1);
@@ -40,13 +40,13 @@ export const ApplyButton = styled.a`
   background-color: #bdec00;
   z-index: 2;
   /* 태블릿 뷰 */
-  @media (max-width: 1299px) and (min-width: 766px) {
+  @media (max-width: 81.1875rem) and (min-width: 47.875rem) {
     font-size: 18px;
     width: 180px;
     padding: 20px 0;
   }
   /* 모바일 뷰 */
-  @media (max-width: 765.9px) {
+  @media (max-width: 47.86875rem) {
     font-size: 16px;
     width: 160px;
     padding: 16px 0;
@@ -69,12 +69,12 @@ export const Title = styled.div`
   z-index: 2;
   word-break: keep-all;
   /* 태블릿 뷰 */
-  @media (max-width: 1299px) and (min-width: 766px) {
+  @media (max-width: 81.1875rem) and (min-width: 47.875rem) {
     margin-top: 32px;
     font-size: 28px;
   }
   /* 모바일 뷰 */
-  @media (max-width: 765.9px) {
+  @media (max-width: 47.86875rem) {
     margin-top: 26px;
     font-size: 28px;
   }
@@ -96,11 +96,11 @@ export const Wrapper = styled.div<{ imgRecruitBg: StaticImageData }>`
   background-position: top center;
 
   /* 태블릿 뷰 */
-  @media (max-width: 1299px) and (min-width: 766px) {
+  @media (max-width: 81.1875rem) and (min-width: 47.875rem) {
     height: 400px;
   }
   /* 모바일 뷰 */
-  @media (max-width: 765.9px) {
+  @media (max-width: 47.86875rem) {
     margin-top: 48px;
     font-size: 28px;
   }

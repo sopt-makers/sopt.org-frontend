@@ -27,9 +27,9 @@ export default function OwnOrganizationCard({
   frontSideBg,
   backSideBg,
 }: OwnOrganizationCardProps) {
-  const isPC = useIsMobile('1440px');
-  const isTablet = useIsMobile('768px');
-  const isMobile = useIsMobile('376px');
+  const isPC = useIsMobile('90rem');
+  const isTablet = useIsMobile('48rem');
+  const isMobile = useIsMobile('23.5rem');
 
   const backgroundSrc = isMobile
     ? frontSideBg.mo

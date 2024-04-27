@@ -15,11 +15,11 @@ export const Container = styled.section`
   width: 1200px;
   align-items: center;
 
-  @media (max-width: 1199px) and (min-width: 769px) {
+  @media (max-width: 74.9375rem) and (min-width: 48.0625rem) {
     padding: 150px 0;
     max-width: 766px;
   }
-  @media (max-width: 768px) {
+  @media (max-width: 48rem) {
     padding: 87px 0;
     max-width: 360px;
   }
@@ -32,12 +32,12 @@ export const Title = styled.h3`
   font-size: 45px;
   line-height: 60px;
 
-  @media (min-width: 769px) and (max-width: 1199px) {
+  @media (min-width: 48.0625rem) and (max-width: 74.9375rem) {
     font-size: 36px;
     line-height: 56px;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 48rem) {
     font-size: 20px;
     line-height: 28px;
   }
@@ -52,7 +52,7 @@ export const ContentWrapper = styled.div`
 
 export const ArrowWrapper = styled.div`
   display: none;
-  @media (min-width: 1199px) {
+  @media (min-width: 74.9375rem) {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -76,14 +76,14 @@ export const Content = styled.div`
   column-gap: 30px;
   row-gap: 64px;
 
-  @media (min-width: 769px) and (max-width: 1199px) {
+  @media (min-width: 48.0625rem) and (max-width: 74.9375rem) {
     overflow-x: scroll;
     height: 386px;
     column-gap: 30px;
     row-gap: 64px;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 48rem) {
     overflow-x: scroll;
     height: 185px;
     column-gap: 50px;
@@ -94,11 +94,11 @@ export const Content = styled.div`
 export const Item = styled.article`
   width: 278px;
   height: 161px;
-  @media (min-width: 769px) and (max-width: 1199px) {
+  @media (min-width: 48.0625rem) and (max-width: 74.9375rem) {
     width: 277px;
     height: 161px;
   }
-  @media (max-width: 768px) {
+  @media (max-width: 48rem) {
     width: 138px;
     height: 60px;
   }
@@ -109,12 +109,12 @@ export const CorporateLogoImageWrapper = styled.div`
   width: 278px;
   height: 121px;
 
-  @media (min-width: 769px) and (max-width: 1199px) {
+  @media (min-width: 48.0625rem) and (max-width: 74.9375rem) {
     width: 278px;
     height: 121px;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 48rem) {
     width: 138px;
     height: 60px;
   }
@@ -124,12 +124,12 @@ export const Name = styled.p`
   color: rgba(253, 253, 253, 0.8);
   text-align: center;
   font-weight: 400;
-  @media (min-width: 769px) {
+  @media (min-width: 48.0625rem) {
     font-size: 25px;
     line-height: 40px;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 48rem) {
     font-size: 12px;
     line-height: 19px;
   }

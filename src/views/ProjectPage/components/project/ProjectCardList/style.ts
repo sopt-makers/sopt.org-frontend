@@ -6,12 +6,12 @@ export const CardList = styled.div`
   gap: 50px 28px;
   width: 1112px;
 
-  @media (max-width: 1279px) and (min-width: 900px) {
+  @media (max-width: 79.9375rem) and (min-width: 56.25rem) {
     grid-template-columns: 1fr 1fr;
     width: 732px;
   }
 
-  @media (max-width: 899px) {
+  @media (max-width: 56.1875rem) {
     grid-template-columns: 1fr;
     gap: 16px;
     width: 100%;

@@ -38,13 +38,13 @@ const Styled = {
     padding: 40px 50px;
     cursor: pointer;
     /* 태블릿 뷰 */
-    @media (max-width: 1919.9px) and (min-width: 766px) {
+    @media (max-width: 119.99375rem) and (min-width: 47.875rem) {
       font-size: 25px;
       padding: 32px 40px;
       border-radius: 20px;
     }
     /* 모바일 뷰 */
-    @media (max-width: 765.9px) {
+    @media (max-width: 47.86875rem) {
       padding: 18px 30px;
       border-radius: 20px;
     }
@@ -54,7 +54,7 @@ const Styled = {
     align-items: center;
     justify-content: space-between;
     /* 태블릿 뷰 */
-    @media (max-width: 1919.9px) and (min-width: 766px) {
+    @media (max-width: 119.99375rem) and (min-width: 47.875rem) {
       margin-bottom: ${({ isOpened }) => (isOpened ? '16px' : '0')};
     }
   `,
@@ -69,7 +69,7 @@ const Styled = {
     }
 
     /* 모바일 뷰 */
-    @media (max-width: 765.9px) {
+    @media (max-width: 47.86875rem) {
       font-size: 16px;
       line-height: 24px;
     }
@@ -81,12 +81,12 @@ const Styled = {
     width: 40px;
     height: 40px;
     /* 태블릿 뷰 */
-    @media (max-width: 1919.9px) and (min-width: 766px) {
+    @media (max-width: 119.99375rem) and (min-width: 47.875rem) {
       transform: ${({ isOpened }) => (isOpened ? 'rotate(180deg)' : 'rotate(0deg)')} scale(0.9);
       transform-origin: center;
     }
     /* 모바일 뷰 */
-    @media (max-width: 765.9px) {
+    @media (max-width: 47.86875rem) {
       transform: ${({ isOpened }) => (isOpened ? 'rotate(180deg)' : 'rotate(0deg)')} scale(0.7);
       transform-origin: center;
     }
@@ -104,11 +104,11 @@ const Styled = {
       color: #bdec00;
     }
     /* 태블릿 뷰 */
-    @media (max-width: 1919.9px) and (min-width: 766px) {
+    @media (max-width: 119.99375rem) and (min-width: 47.875rem) {
       font-size: 22px;
     }
     /* 모바일 뷰 */
-    @media (max-width: 765.9px) {
+    @media (max-width: 47.86875rem) {
       font-size: 14px;
       line-height: 22px;
     }

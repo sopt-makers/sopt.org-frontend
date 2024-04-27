@@ -9,11 +9,11 @@ export const Wrapper = styled.section`
   justify-content: center;
 
   /* 태블릿 뷰 */
-  @media (max-width: 939px) and (min-width: 768px) {
+  @media (max-width: 58.6875rem) and (min-width: 48rem) {
     margin-top: 188px;
   }
   /* 모바일 뷰 */
-  @media (max-width: 767px) {
+  @media (max-width: 47.9375rem) {
     margin-top: 76px;
   }
 `;
@@ -25,7 +25,7 @@ export const Container = styled.main`
   flex-direction: column;
 
   /* 태블릿, 모바일 뷰 */
-  @media (max-width: 939px) {
+  @media (max-width: 58.6875rem) {
     margin-left: 20px;
     margin-right: 20px;
     width: 100%;
@@ -54,7 +54,7 @@ export const TabTitle = styled.article<{ isSelected: boolean }>`
   margin-right: 20px;
 
   /* 모바일 뷰 */
-  @media (max-width: 767px) {
+  @media (max-width: 47.9375rem) {
     border-bottom: ${({ isSelected }) => isSelected && `1px solid ${colors.gray200}`};
     margin-right: 12px;
     font-size: 18px;
@@ -79,7 +79,7 @@ export const TabDescription = styled.h1`
   width: 100%;
 
   /* 모바일 뷰 */
-  @media (max-width: 767px) {
+  @media (max-width: 47.9375rem) {
     margin-top: 14px;
     margin-bottom: 16px;
     display: flex;

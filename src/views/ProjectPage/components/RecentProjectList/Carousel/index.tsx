@@ -4,8 +4,8 @@ import { staticReleaseProjectList } from '@src/lib/constants/project';
 import RecentProjectListItem from '@src/views/ProjectPage/components/RecentProjectList/Item';
 
 export default function RecentProjectListCarousel() {
-  const isDesktopSize = useIsDesktop('1280px');
-  const isMobileSize = useIsMobile('899px');
+  const isDesktopSize = useIsDesktop('80rem');
+  const isMobileSize = useIsMobile('56.1875rem');
   const deviceType = useDeviceType();
 
   const isDesktop = deviceType === 'desktop';

@@ -12,7 +12,7 @@ const SectionTitle = styled.div`
     font-size: 100%;
   }
 
-  @media (max-width: 899px) {
+  @media (max-width: 56.1875rem) {
     font-size: 18px;
     font-weight: 700;
     letter-spacing: -0.36px;
@@ -35,12 +35,12 @@ const Root = styled.div`
   touch-action: pan-y;
 
   /* 모바일 뷰 */
-  @media (max-width: 899px) {
+  @media (max-width: 56.1875rem) {
     align-items: flex-start;
     padding: 0 50px;
   }
 
-  @media (max-width: 375px) {
+  @media (max-width: 23.4375rem) {
     padding: 0 20px;
   }
 `;
@@ -53,12 +53,12 @@ const ContentWrapper = styled.div`
   padding: 188px 0;
 
   /* 태블릿 뷰 */
-  @media (max-width: 1279px) and (min-width: 900px) {
+  @media (max-width: 79.9375rem) and (min-width: 56.25rem) {
     width: 732px;
   }
 
   /* 모바일 뷰 */
-  @media (max-width: 899px) {
+  @media (max-width: 56.1875rem) {
     width: 100%;
     padding: 76px 0;
   }
@@ -66,7 +66,7 @@ const ContentWrapper = styled.div`
 
 const Spacing = styled.div`
   height: 108px;
-  @media (max-width: 899px) {
+  @media (max-width: 56.1875rem) {
     height: 48px;
   }
 `;
@@ -77,13 +77,13 @@ const FilterWrapper = styled.div`
   margin-bottom: 16px;
 
   /* 모바일 뷰 */
-  @media (max-width: 899px) {
+  @media (max-width: 56.1875rem) {
     gap: 7px;
   }
 `;
 
 const PlaygroundLinkWrapper = styled.div`
-  @media (max-width: 899px) {
+  @media (max-width: 56.1875rem) {
     display: none;
   }
   color: ${colors.gray400};

@@ -9,7 +9,7 @@ export const TabBar = styled.ul`
   width: 100%;
 
   /* 태블릿 뷰 */
-  @media (max-width: 768px) {
+  @media (max-width: 48rem) {
     display: grid;
     grid-template-columns: repeat(3, auto);
     grid-template-rows: repeat(2, 1fr);
@@ -17,7 +17,7 @@ export const TabBar = styled.ul`
   }
 
   /* 모바일 뷰 */
-  @media (max-width: 428px) {
+  @media (max-width: 26.75rem) {
     gap: 13px 13.46px;
   }
 `;
@@ -51,7 +51,7 @@ export const Tab = styled.li<{ selected: boolean }>`
     `};
 
   /* 태블릿 뷰 */
-  @media (max-width: 768px) {
+  @media (max-width: 48rem) {
     width: 130.254px;
     padding: 14.635px 11.708px;
     border-radius: 7.318px;
@@ -60,7 +60,7 @@ export const Tab = styled.li<{ selected: boolean }>`
   }
 
   /* 모바일 뷰 */
-  @media (max-width: 428px) {
+  @media (max-width: 26.75rem) {
     width: 92.127px;
     padding: 10.351px 8.281px;
     border-radius: 5.176px;

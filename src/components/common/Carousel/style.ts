@@ -19,7 +19,7 @@ const Wrapper = styled(HideScrollbar)<{ isSliding: boolean; lastIndex: boolean }
     width: 70px;
     height: 164px;
 
-    @media (max-width: 899px) {
+    @media (max-width: 56.1875rem) {
       display: none;
     }
   }
@@ -44,7 +44,7 @@ const Wrapper = styled(HideScrollbar)<{ isSliding: boolean; lastIndex: boolean }
         transition: opacity 0.3s ease-out;
       `};
 
-    @media (max-width: 1279px) {
+    @media (max-width: 79.9375rem) {
       opacity: ${({ lastIndex }) => (lastIndex ? 0 : 1)};
     }
   }
@@ -64,7 +64,7 @@ const Arrow = styled.div`
   background-repeat: no-repeat;
   background-position: center;
 
-  @media (max-width: 899px) {
+  @media (max-width: 56.1875rem) {
     display: none;
   }
 `;
@@ -105,7 +105,7 @@ const Blur = styled.div`
   top: 0;
   background: ${colors.background};
 
-  @media (max-width: 899px) {
+  @media (max-width: 56.1875rem) {
     display: none;
   }
 `;

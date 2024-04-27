@@ -12,11 +12,11 @@ export const Container = styled.div`
   align-items: center;
   width: 1200px;
   padding-top: 150px;
-  @media (max-width: 1280px) {
+  @media (max-width: 80rem) {
     width: 686px;
     padding-top: 80px;
   }
-  @media (max-width: 766px) {
+  @media (max-width: 47.875rem) {
     width: 320px;
     padding-top: 80px;
   }
@@ -33,7 +33,7 @@ export const ProjectHeader = styled.div`
   padding: 40px;
 
   /* 태블릿 뷰 */
-  @media (max-width: 1280px) {
+  @media (max-width: 80rem) {
     padding: 20px;
   }
 
@@ -43,7 +43,7 @@ export const ProjectHeader = styled.div`
       color: #ffffff;
       font-size: 32px;
       font-weight: 700;
-      @media (max-width: 1280px) {
+      @media (max-width: 80rem) {
         font-size: 22px;
       }
     }
@@ -52,7 +52,7 @@ export const ProjectHeader = styled.div`
       color: #8e8e8e;
       font-size: 22px;
       font-weight: 500;
-      @media (max-width: 1280px) {
+      @media (max-width: 80rem) {
         font-size: 15px;
       }
     }
@@ -73,12 +73,12 @@ export const ProjectImageWrapper = styled.div`
     overflow: hidden;
   }
   /* 태블릿 뷰 */
-  @media (max-width: 1280px) {
+  @media (max-width: 80rem) {
     width: 686px;
     height: 387px;
   }
   /* 모바일 뷰 */
-  @media (max-width: 766px) {
+  @media (max-width: 47.875rem) {
     width: 320px;
     height: 180px;
   }
@@ -89,11 +89,11 @@ export const ProjectWrapper = styled.div`
   display: flex;
   margin-bottom: 240px;
   /* 태블릿 뷰 */
-  @media (max-width: 1280px) {
+  @media (max-width: 80rem) {
     margin-bottom: 160px;
   }
   /* 모바일 뷰 */
-  @media (max-width: 766px) {
+  @media (max-width: 47.875rem) {
     flex-direction: column;
   }
 `;
@@ -103,11 +103,11 @@ export const ToggleSection = styled.section`
   flex-direction: column;
   margin-right: 30px;
   /* 태블릿 뷰 */
-  @media (max-width: 1280px) {
+  @media (max-width: 80rem) {
     margin-right: 20px;
   }
   /* 모바일 뷰 */
-  @media (max-width: 766px) {
+  @media (max-width: 47.875rem) {
     margin: 0;
   }
 `;
@@ -124,14 +124,14 @@ export const LogoImageWrapper = styled.div`
     border-radius: 10px;
   }
   /* 태블릿 뷰 */
-  @media (max-width: 1280px) {
+  @media (max-width: 80rem) {
     width: 56px;
     height: 56px;
     top: 20px;
     right: 20px;
   }
   /* 모바일 뷰 */
-  @media (max-width: 766px) {
+  @media (max-width: 47.875rem) {
     position: static;
     margin-bottom: 24px;
   }
@@ -145,7 +145,7 @@ const CommonWrapper = styled.div`
   border-radius: 8px;
   background: #242424;
   /* 태블릿 뷰 */
-  @media (max-width: 1280px) {
+  @media (max-width: 80rem) {
     width: 320px;
   }
 `;
@@ -154,7 +154,7 @@ export const ProjectOverview = styled(CommonWrapper)<{ isOverviewOpened: boolean
   margin-bottom: 16px;
   padding: 40px;
   /* 태블릿 뷰 */
-  @media (max-width: 1280px) {
+  @media (max-width: 80rem) {
     padding: ${({ isOverviewOpened }) => (isOverviewOpened ? '28px' : '25px 28px 32px 28px')};
   }
 `;
@@ -185,7 +185,7 @@ export const Title = styled.h1`
   color: #fcfcfc;
   font-size: 22px;
   font-weight: 700;
-  @media (max-width: 1280px) {
+  @media (max-width: 80rem) {
     font-size: 17px;
   }
 `;
@@ -214,7 +214,7 @@ export const ProjectInfo = styled.div<{ isLinkExist: boolean }>`
       font-size: 17px;
       font-weight: 500;
       /* 태블릿 뷰 */
-      @media (max-width: 1280px) {
+      @media (max-width: 80rem) {
         font-size: 14px;
       }
       &:last-child {
@@ -230,7 +230,7 @@ export const ProjectInfo = styled.div<{ isLinkExist: boolean }>`
     font-size: 18px;
     font-weight: 600;
     /* 태블릿 뷰 */
-    @media (max-width: 1280px) {
+    @media (max-width: 80rem) {
       font-size: 15px;
     }
     &:last-child {
@@ -244,7 +244,7 @@ export const ProjectLinkWrapper = styled.div`
   grid-template-columns: repeat(3, 1fr);
   row-gap: 20px;
   /* 태블릿 뷰 */
-  @media (max-width: 1280px) {
+  @media (max-width: 80rem) {
     row-gap: 17px;
   }
 `;
@@ -261,7 +261,7 @@ export const ProjectLink = styled.div`
   width: 88px;
   height: 100px;
   /* 태블릿 뷰 */
-  @media (max-width: 1280px) {
+  @media (max-width: 80rem) {
     width: 80px;
     height: 94px;
   }
@@ -269,7 +269,7 @@ export const ProjectLink = styled.div`
   &:not(:last-child) {
     margin-right: 16px;
     /* 태블릿 뷰 */
-    @media (max-width: 1280px) {
+    @media (max-width: 80rem) {
       margin-right: 12px;
     }
   }
@@ -297,7 +297,7 @@ export const ProjectTeam = styled(CommonWrapper)`
   margin-bottom: 16px;
   padding: 40px;
   /* 태블릿 뷰 */
-  @media (max-width: 1280px) {
+  @media (max-width: 80rem) {
     padding: 28px;
   }
 `;
@@ -320,7 +320,7 @@ export const Members = styled.div`
     font-size: 18px;
     font-weight: 700;
     letter-spacing: -0.01px;
-    @media (max-width: 1280px) {
+    @media (max-width: 80rem) {
       font-size: 16px;
     }
   }
@@ -342,7 +342,7 @@ export const MemberDetail = styled.div`
     font-size: 16px;
     font-weight: 600;
     /* 태블릿 뷰 */
-    @media (max-width: 1280px) {
+    @media (max-width: 80rem) {
       font-size: 15px;
     }
   }
@@ -351,7 +351,7 @@ export const MemberDetail = styled.div`
     color: #cccccc;
     font-size: 16px;
     font-weight: 500;
-    @media (max-width: 1280px) {
+    @media (max-width: 80rem) {
       font-size: 14px;
     }
   }
@@ -365,12 +365,12 @@ export const ProjectDescription = styled(CommonWrapper)`
   padding: 40px;
   white-space: pre-wrap;
   /* 태블릿 뷰 */
-  @media (max-width: 1280px) {
+  @media (max-width: 80rem) {
     width: 346px;
     padding: 28px;
   }
   /* 모바일 뷰 */
-  @media (max-width: 766px) {
+  @media (max-width: 47.875rem) {
     width: 320px;
   }
 
@@ -380,7 +380,7 @@ export const ProjectDescription = styled(CommonWrapper)`
     color: rgba(255, 255, 255, 0.8);
     font-size: 18px;
     font-weight: 500;
-    @media (max-width: 1280px) {
+    @media (max-width: 80rem) {
       margin-top: 32px;
       font-size: 15px;
     }

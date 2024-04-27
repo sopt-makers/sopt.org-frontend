@@ -79,12 +79,12 @@ const Wrapper = styled.div`
   padding-top: 90px;
 
   /* 태블릿 뷰 */
-  @media (max-width: 1299px) and (min-width: 766px) {
+  @media (max-width: 81.1875rem) and (min-width: 47.875rem) {
     padding-top: 100px;
     height: 440px;
   }
   /* 모바일 뷰 */
-  @media (max-width: 765.9px) {
+  @media (max-width: 47.86875rem) {
     padding-top: 0;
     height: 440px;
   }
@@ -100,11 +100,11 @@ const TitleText = styled.div`
   line-height: 140%;
 
   /* 태블릿 뷰 */
-  @media (max-width: 1299px) and (min-width: 766px) {
+  @media (max-width: 81.1875rem) and (min-width: 47.875rem) {
     font-size: 30px;
   }
   /* 모바일 뷰 */
-  @media (max-width: 765.9px) {
+  @media (max-width: 47.86875rem) {
     font-size: 20px;
     font-weight: 800;
   }
@@ -121,13 +121,13 @@ const FormWrapper = styled.form`
   padding: 15px 20px;
 
   /* 태블릿 뷰 */
-  @media (max-width: 1299px) and (min-width: 766px) {
+  @media (max-width: 81.1875rem) and (min-width: 47.875rem) {
     height: 85px;
     padding: 13px 15px;
     max-width: 639px;
   }
   /* 모바일 뷰 */
-  @media (max-width: 765.9px) {
+  @media (max-width: 47.86875rem) {
     height: 50px;
     padding: 8px 13px;
     max-width: 330px;
@@ -152,11 +152,11 @@ const Input = styled.input`
   }
 
   /* 태블릿 뷰 */
-  @media (max-width: 1299px) and (min-width: 766px) {
+  @media (max-width: 81.1875rem) and (min-width: 47.875rem) {
     font-size: 20px;
   }
   /* 모바일 뷰 */
-  @media (max-width: 765.9px) {
+  @media (max-width: 47.86875rem) {
     font-size: 12px;
     padding-left: 12px;
   }
@@ -178,12 +178,12 @@ const SubmitButton = styled.input`
   letter-spacing: -0.22px;
 
   /* 태블릿 뷰 */
-  @media (max-width: 1299px) and (min-width: 766px) {
+  @media (max-width: 81.1875rem) and (min-width: 47.875rem) {
     width: 172px;
     font-size: 20px;
   }
   /* 모바일 뷰 */
-  @media (max-width: 765.9px) {
+  @media (max-width: 47.86875rem) {
     width: 99px;
     font-size: 12px;
   }
@@ -199,11 +199,11 @@ const ConfirmText = styled.div<{ visible: boolean }>`
   color: rgba(255, 255, 255, 0.5);
 
   /* 태블릿 뷰 */
-  @media (max-width: 1299px) and (min-width: 766px) {
+  @media (max-width: 81.1875rem) and (min-width: 47.875rem) {
     font-size: 20px;
   }
   /* 모바일 뷰 */
-  @media (max-width: 765.9px) {
+  @media (max-width: 47.86875rem) {
     font-size: 12px;
   }
 `;

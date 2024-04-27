@@ -15,13 +15,13 @@ export const Wrapper = styled(motion.div)`
   font-weight: 400;
   line-height: 35.5px; /* 177.5% */
   letter-spacing: -0.8px;
-  @media (max-width: 1600px) {
+  @media (max-width: 100rem) {
     width: 660px;
     height: 324px;
     padding: 32px 36px;
   }
 
-  @media (max-width: 976px) {
+  @media (max-width: 61rem) {
     width: 520px;
     height: 324px;
     padding: 32px 36px;
@@ -29,7 +29,7 @@ export const Wrapper = styled(motion.div)`
     line-height: 30px;
   }
 
-  @media (max-height: 860px) and (max-width: 1480px) {
+  @media (max-height: 53.75rem) and (max-width: 92.5rem) {
     height: 280px;
     padding: 20px 28px;
   }

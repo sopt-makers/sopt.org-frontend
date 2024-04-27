@@ -9,7 +9,7 @@ export const Wrapper = styled.button`
   background: #242424;
 
   // 모바일
-  @media (max-width: 765px) {
+  @media (max-width: 47.8125rem) {
     width: 56px;
     height: 56px;
     right: 20px;
@@ -18,7 +18,7 @@ export const Wrapper = styled.button`
   }
 
   // 태블릿
-  @media (min-width: 766px) and (max-width: 1919px) {
+  @media (min-width: 47.875rem) and (max-width: 119.9375rem) {
     width: 70px;
     height: 70px;
     border-radius: 50%;
@@ -27,7 +27,7 @@ export const Wrapper = styled.button`
   }
 
   // 데스크탑
-  @media (min-width: 1920px) {
+  @media (min-width: 120rem) {
     width: 123px;
     height: 80px;
     border-radius: 52px;
@@ -49,7 +49,7 @@ export const Text = styled.span`
   line-height: 48px;
   color: #ffffff;
   // 모바일 태블릿
-  @media (min-width: 360px) and (max-width: 1919px) {
+  @media (min-width: 22.5rem) and (max-width: 119.9375rem) {
     display: none;
   }
 `;

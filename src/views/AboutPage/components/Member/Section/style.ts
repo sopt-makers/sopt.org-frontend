@@ -2,11 +2,11 @@ import styled from '@emotion/styled';
 
 export const MarginTop = styled.div`
   height: 275px;
-  @media (max-width: 1440px) and (min-width: 766px) {
+  @media (max-width: 90rem) and (min-width: 47.875rem) {
     height: 190px;
   }
   /* 모바일 뷰 */
-  @media (max-width: 765.9px) {
+  @media (max-width: 47.86875rem) {
     height: 120px;
   }
 `;

@@ -16,7 +16,7 @@ export const Root = styled.button`
   letter-spacing: -0.48px;
   cursor: pointer;
 
-  @media (max-width: 428px) {
+  @media (max-width: 26.75rem) {
     padding: 8px 22px;
     font-size: 18px;
   }

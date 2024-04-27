@@ -20,7 +20,7 @@ export const ProjectCard = styled(Link)`
 
   cursor: pointer;
 
-  @media (max-width: 899px) {
+  @media (max-width: 56.1875rem) {
     grid-template-areas:
       'thumbnail header'
       'summary summary'
@@ -43,7 +43,7 @@ export const ProjectThumbnail = styled(Image)`
   border-radius: 8px;
   object-fit: cover;
 
-  @media (max-width: 899px) {
+  @media (max-width: 56.1875rem) {
     width: 40px;
     height: 40px;
   }
@@ -116,7 +116,7 @@ export const ProjectSummary = styled.div`
   line-height: 22px; /* 157.143% */
   letter-spacing: -0.21px;
 
-  @media (max-width: 899px) {
+  @media (max-width: 56.1875rem) {
     height: auto;
     color: ${colors.gray30};
 

@@ -13,7 +13,7 @@ export const Wrapper = styled(motion.section)`
   padding: 104px 2.86vw 0;
   background-color: ${colors.white};
 
-  @media (max-width: 768px) {
+  @media (max-width: 48rem) {
     padding: 0;
   }
 `;
@@ -27,7 +27,7 @@ export const FloatingMenu = styled.div`
 
   height: fit-content;
 
-  @media (max-width: 768px) {
+  @media (max-width: 48rem) {
     display: none;
   }
 `;
@@ -81,7 +81,7 @@ export const Menu = styled(Link)`
 
   font-size: 100%;
 
-  @media (max-width: 1440px) {
+  @media (max-width: 90rem) {
     width: 152px;
   }
 `;
@@ -94,12 +94,12 @@ export const Layout = styled(motion.div)`
   background: #f6f8fc;
   z-index: 1;
 
-  @media (max-width: 768px) {
+  @media (max-width: 48rem) {
     width: 100%;
     padding: 0 6.25vw 0 6.25vw;
   }
 
-  @media (max-width: 428px) {
+  @media (max-width: 26.75rem) {
     padding: 0 6.54vw 0 6.54vw;
   }
 `;

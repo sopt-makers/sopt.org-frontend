@@ -16,7 +16,7 @@ const GridWrapper = styled.div`
   padding: 24px;
 
   /* 모바일 뷰 */
-  @media (max-width: 899px) {
+  @media (max-width: 56.1875rem) {
     width: 320px;
     height: 139px;
     grid-template-areas:
@@ -44,7 +44,7 @@ const ThumbnailImage = styled(Image)`
   border-radius: 10px;
 
   /* 모바일 뷰 */
-  @media (max-width: 899px) {
+  @media (max-width: 56.1875rem) {
     width: 48px;
     height: 48px;
   }
@@ -67,7 +67,7 @@ const TextName = styled.div`
   letter-spacing: -0.48px;
 
   /* 모바일 뷰 */
-  @media (max-width: 899px) {
+  @media (max-width: 56.1875rem) {
     font-size: 16px;
     letter-spacing: -0.24px;
   }
@@ -87,7 +87,7 @@ const TextSummary = styled.div`
   letter-spacing: -0.21px;
 
   /* 모바일 뷰 */
-  @media (max-width: 899px) {
+  @media (max-width: 56.1875rem) {
     font-size: 13px;
     font-weight: 400;
     letter-spacing: -0.195px;
@@ -106,7 +106,7 @@ const Chip = styled.div`
   letter-spacing: -0.18px;
 
   /* 모바일 뷰 */
-  @media (max-width: 899px) {
+  @media (max-width: 56.1875rem) {
     height: 26px;
     padding: 5px 8px;
     font-size: 11px;
@@ -161,7 +161,7 @@ const TryLink = styled.a`
   }
 
   /* 모바일 뷰 */
-  @media (max-width: 899px) {
+  @media (max-width: 56.1875rem) {
     font-size: 14px;
     letter-spacing: -0.21px;
     border-radius: 13px;

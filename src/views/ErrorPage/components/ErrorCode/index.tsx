@@ -15,7 +15,7 @@ interface ErrorCodeProps {
   code: 404 | 500;
 }
 export default function ErrorCode({ code }: ErrorCodeProps) {
-  const isMobile = useIsMobile('428px');
+  const isMobile = useIsMobile('26.75rem');
   const SIZE = {
     height: 92,
     icon: 140,

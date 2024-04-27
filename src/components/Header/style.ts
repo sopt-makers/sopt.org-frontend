@@ -23,13 +23,13 @@ export const Wrapper = styled.header<{ isTransparent: boolean }>`
   padding: 0 20px;
 
   /* 태블릿 + 데스크탑 뷰 */
-  @media (max-width: 940px) and (min-width: 768px) {
+  @media (max-width: 58.75rem) and (min-width: 48rem) {
     height: 48px;
     padding: 0;
   }
 
   /* 모바일 뷰 */
-  @media (max-width: 767px) {
+  @media (max-width: 47.9375rem) {
     height: 48px;
     min-height: 48px;
     padding: 0;

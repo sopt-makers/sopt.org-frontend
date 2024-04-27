@@ -18,7 +18,7 @@ export const EmptyBlogPostList = styled.section`
   text-align: center;
 
   /* 모바일 뷰 */
-  @media (max-width: 767px) {
+  @media (max-width: 47.9375rem) {
     font-size: 18px;
     line-height: 28px; /* 155.556% */
     letter-spacing: -0.36px;
@@ -48,7 +48,7 @@ export const Total = styled.button`
   cursor: pointer;
 
   /* 모바일 뷰 */
-  @media (max-width: 767px) {
+  @media (max-width: 47.9375rem) {
     height: 36px;
     padding: 8px 14px;
     font-size: 14px;

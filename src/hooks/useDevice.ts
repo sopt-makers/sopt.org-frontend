@@ -12,7 +12,7 @@ export function useIsDesktop(minWidth = '1920px') {
   return isDesktop;
 }
 
-export function useIsTablet(minWidth = '766px', maxWidth = '1919.9px') {
+export function useIsTablet(minWidth = '47.875rem', maxWidth = '1919.9px') {
   const [isTablet, setIsTablet] = useState(false);
   const tablet = useMediaQuery({
     query: `(min-width: ${minWidth}) and (max-width: ${maxWidth})`,
@@ -23,7 +23,7 @@ export function useIsTablet(minWidth = '766px', maxWidth = '1919.9px') {
   return isTablet;
 }
 
-export function useIsMobile(maxWidth = '765.9px') {
+export function useIsMobile(maxWidth = '47.86875rem') {
   const [isMobile, setIsMobile] = useState(false);
   const mobile = useMediaQuery({
     query: `(max-width:${maxWidth})`,

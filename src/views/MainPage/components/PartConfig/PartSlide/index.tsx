@@ -9,8 +9,8 @@ interface PartSlideProps {
 
 export default function PartSlide({ part }: PartSlideProps) {
   const { value, label, description } = partList[part];
-  const isTablet = useIsTablet('429px', '1200px');
-  const isMobile = useIsMobile('428px');
+  const isTablet = useIsTablet('429px', '75rem');
+  const isMobile = useIsMobile('26.75rem');
   const contentDraw = {
     initial: (custom: number) => ({ opacity: 0, y: 10 * (custom % 2) + 10 }),
     visible: {

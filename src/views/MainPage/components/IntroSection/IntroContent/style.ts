@@ -32,7 +32,7 @@ export const Intro = styled.div`
   position: relative;
   padding: 0 60px 0 104px;
 
-  @media (max-width: 768px) {
+  @media (max-width: 48rem) {
     padding: 0 30px;
   }
 `;
@@ -48,7 +48,7 @@ export const AnimatedLine = styled(motion.svg)`
   stroke-width: 4px;
   stroke-linecap: round;
 
-  @media (max-width: 768px) {
+  @media (max-width: 48rem) {
     top: 285px;
     left: 42px;
   }
@@ -81,12 +81,12 @@ export const Circle = styled(motion.div)`
     height: 130px;
   }
 
-  @media (max-width: 1440px) and (min-width: 769px) {
+  @media (max-width: 90rem) and (min-width: 48.0625rem) {
     grid-template-rows: auto 1fr;
     grid-gap: 24px 0px;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 48rem) {
     top: 80.19px;
     left: -315.83px;
 
@@ -109,12 +109,12 @@ export const Content = styled(motion.div)`
   position: relative;
   z-index: 20;
 
-  @media (max-width: 1440px) and (min-width: 769px) {
+  @media (max-width: 90rem) and (min-width: 48.0625rem) {
     grid-template-columns: minmax(400px, 1fr) minmax(auto, 1fr);
     grid-gap: 24px 36px;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 48rem) {
     grid-template-areas:
       'image'
       'title'
@@ -142,12 +142,12 @@ export const ContentTitle = styled(motion.h2)`
   line-height: normal;
   white-space: pre-wrap;
 
-  @media (max-width: 1440px) and (min-width: 769px) {
+  @media (max-width: 90rem) and (min-width: 48.0625rem) {
     margin-top: 28px;
     font-size: 40px;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 48rem) {
     width: fit-content;
     margin-top: 48px;
     margin-left: 58px;
@@ -167,16 +167,16 @@ export const ContentDetail = styled(motion.h3)`
   letter-spacing: -0.48px;
   white-space: pre-wrap;
 
-  @media (max-width: 1440px) and (min-width: 769px) {
+  @media (max-width: 90rem) and (min-width: 48.0625rem) {
     font-size: 20px;
     word-break: keep-all;
   }
 
-  @media (max-width: 1091px) and (min-width: 769px) {
+  @media (max-width: 68.1875rem) and (min-width: 48.0625rem) {
     white-space: normal;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 48rem) {
     max-width: 259px;
     margin-left: 58px;
     font-size: 16px;
@@ -193,14 +193,14 @@ export const ContentImage = styled(Image)`
   border-radius: max(36px, 2.6vw);
   object-fit: cover;
 
-  @media (max-width: 1440px) and (min-width: 769px) {
+  @media (max-width: 90rem) and (min-width: 48.0625rem) {
     width: 100%;
     max-width: 540px;
     min-height: 270px;
     border-radius: 36px;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 48rem) {
     max-width: 323px;
     min-width: 264px;
     height: 215px;
@@ -223,7 +223,7 @@ export const BackLight = styled.div<{ isContentVisible: boolean }>`
   opacity: ${({ isContentVisible }) => (isContentVisible ? '1' : '0')};
   transition: opacity 0.3s ease-in-out;
 
-  @media (max-width: 768px) {
+  @media (max-width: 48rem) {
     opacity: 0;
   }
 `;

@@ -14,13 +14,13 @@ export const SectionTitle = styled.h3`
   text-align: center;
 
   /* 태블릿 뷰 */
-  @media (max-width: 1299px) and (min-width: 766px) {
+  @media (max-width: 81.1875rem) and (min-width: 47.875rem) {
     font-size: 28px;
     line-height: 40px;
     letter-spacing: -0.28px;
   }
   /* 모바일 뷰 */
-  @media (max-width: 765.9px) {
+  @media (max-width: 47.86875rem) {
     font-size: 18px;
     font-weight: 800;
     line-height: 28px;
@@ -47,13 +47,13 @@ export const SectionSubTitle = styled.h3`
   text-align: center;
 
   /* 태블릿 뷰 */
-  @media (max-width: 1299px) and (min-width: 766px) {
+  @media (max-width: 81.1875rem) and (min-width: 47.875rem) {
     font-size: 20px;
     line-height: 100%; /* 20px */
     letter-spacing: -0.2px;
   }
   /* 모바일 뷰 */
-  @media (max-width: 765.9px) {
+  @media (max-width: 47.86875rem) {
     color: #fff;
     font-family: SUIT;
     font-size: 14px;
@@ -72,13 +72,13 @@ export const SectionDesc = styled.div`
   text-align: center;
 
   /* 태블릿 뷰 */
-  @media (max-width: 1299px) and (min-width: 766px) {
+  @media (max-width: 81.1875rem) and (min-width: 47.875rem) {
     font-size: 18px;
     line-height: 100%; /* 18px */
     letter-spacing: -0.18px;
   }
   /* 모바일 뷰 */
-  @media (max-width: 765.9px) {
+  @media (max-width: 47.86875rem) {
     text-align: center;
     font-size: 16px;
     line-height: 150%; /* 24px */

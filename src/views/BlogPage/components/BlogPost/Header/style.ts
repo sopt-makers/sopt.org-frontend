@@ -18,7 +18,7 @@ export const Header = styled.div`
   }
 
   /* 모바일 뷰 */
-  @media (max-width: 767px) {
+  @media (max-width: 47.9375rem) {
     height: 16px;
     margin-bottom: 0;
 
@@ -42,7 +42,7 @@ export const ProfileImage = styled(Image)`
   border-radius: 18px;
 
   /* 모바일 뷰 */
-  @media (max-width: 767px) {
+  @media (max-width: 47.9375rem) {
     width: 15px;
     height: 15px;
   }

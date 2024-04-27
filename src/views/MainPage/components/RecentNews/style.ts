@@ -7,15 +7,15 @@ import { ReactComponent as IconInstagram } from '@src/assets/icons/ic_instagram.
 export const RecentNews = styled.section`
   padding: 589px 0 65px;
 
-  @media (max-width: 1440px) {
+  @media (max-width: 90rem) {
     padding-top: 384px;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 48rem) {
     padding: 253px 0 42px;
   }
 
-  @media (max-width: 444px) {
+  @media (max-width: 27.75rem) {
     padding: 157px 0 24px;
   }
 `;
@@ -30,14 +30,14 @@ export const Title = styled.h1`
   letter-spacing: -1.8px;
   text-align: center;
 
-  @media (max-width: 768px) {
+  @media (max-width: 48rem) {
     font-size: 30px;
     font-weight: 600;
     line-height: 50.64px; /* 140.668% */
     letter-spacing: -1.08px;
   }
 
-  @media (max-width: 376px) {
+  @media (max-width: 23.5rem) {
     font-size: 21px;
     line-height: 29.103px; /* 138.588% */
     letter-spacing: -0.63px;
@@ -50,7 +50,7 @@ export const View = styled.div`
   overflow: hidden;
   margin-bottom: 60px;
 
-  @media (max-width: 444px) {
+  @media (max-width: 27.75rem) {
     margin-bottom: 40px;
   }
 `;
@@ -61,12 +61,12 @@ export const SliderList = styled.ul`
   width: calc(313px * 10);
   animation: desktopAutoPlay 20s linear infinite;
 
-  @media (max-width: 768px) and (min-width: 429px) {
+  @media (max-width: 48rem) and (min-width: 26.8125rem) {
     width: calc(264px * 10);
     animation: tabletAutoPlay 20s linear infinite;
   }
 
-  @media (max-width: 444px) {
+  @media (max-width: 27.75rem) {
     animation: mobileAutoPlay 20s linear infinite;
     width: calc(148px * 10);
   }
@@ -107,7 +107,7 @@ export const StyledSlider = styled(Slider)`
   .slick-track {
     margin-bottom: 60px;
 
-    @media (max-width: 444px) {
+    @media (max-width: 27.75rem) {
       margin-bottom: 40px;
     }
   }
@@ -129,7 +129,7 @@ export const IcInstagram = styled(IconInstagram)`
   width: 21px;
   height: 21px;
 
-  @media (max-width: 444px) {
+  @media (max-width: 27.75rem) {
     width: 12px;
     height: 12px;
   }
@@ -148,7 +148,7 @@ export const Description = styled(Link)`
 
   cursor: pointer;
 
-  @media (max-width: 444px) {
+  @media (max-width: 27.75rem) {
     font-size: 9.194px;
     line-height: 15.436px; /* 167.895% */
     letter-spacing: -0.368px;
@@ -164,11 +164,11 @@ export const Gradient = styled.div`
   z-index: 50;
   margin-top: 51px;
 
-  @media (max-width: 768px) and (min-width: 429px) {
+  @media (max-width: 48rem) and (min-width: 26.8125rem) {
     height: 315px;
   }
 
-  @media (max-width: 444px) {
+  @media (max-width: 27.75rem) {
     margin-top: 24px;
     height: 182px;
   }

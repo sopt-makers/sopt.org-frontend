@@ -5,11 +5,11 @@ export const Wrapper = styled.div`
   flex-direction: column;
   gap: 28px;
   /* 태블릿 뷰 */
-  @media (max-width: 1299px) and (min-width: 766px) {
+  @media (max-width: 81.1875rem) and (min-width: 47.875rem) {
     gap: 40px;
   }
   /* 모바일 뷰 */
-  @media (max-width: 765.9px) {
+  @media (max-width: 47.86875rem) {
     gap: 8px;
   }
 `;
@@ -25,14 +25,14 @@ export const GridWrapper = styled.div`
   padding: 85px 88px;
 
   /* 태블릿 뷰 */
-  @media (max-width: 1299px) and (min-width: 766px) {
+  @media (max-width: 81.1875rem) and (min-width: 47.875rem) {
     grid-template-columns: 300px auto;
     padding: 38px 54px;
     gap: 15px;
     border-radius: 20px;
   }
   /* 모바일 뷰 */
-  @media (max-width: 765.9px) {
+  @media (max-width: 47.86875rem) {
     grid-template-columns: 1fr;
     row-gap: 0px;
     padding: 38px 0 6px 0;
@@ -50,14 +50,14 @@ export const OddText = styled.div`
     content: '🗓 ';
   }
   /* 태블릿 뷰 */
-  @media (max-width: 1299px) and (min-width: 766px) {
+  @media (max-width: 81.1875rem) and (min-width: 47.875rem) {
     color: #fff;
     font-size: 18px;
     font-weight: 700;
     line-height: 30px; /* 166.667% */
   }
   /* 모바일 뷰 */
-  @media (max-width: 765.9px) {
+  @media (max-width: 47.86875rem) {
     color: #fff;
     font-size: 16px;
     font-weight: 700;
@@ -72,11 +72,11 @@ export const Highlight = styled.span`
   letter-spacing: -0.48px;
   text-decoration-line: underline;
   /* 태블릿 뷰 */
-  @media (max-width: 1299px) and (min-width: 766px) {
+  @media (max-width: 81.1875rem) and (min-width: 47.875rem) {
     font-size: 18px;
   }
   /* 모바일 뷰 */
-  @media (max-width: 765.9px) {
+  @media (max-width: 47.86875rem) {
     font-size: 16px;
     line-height: 32px;
   }
@@ -88,13 +88,13 @@ export const EvenText = styled.div`
   font-weight: 400;
   line-height: 150%; /* 42px */
   /* 태블릿 뷰 */
-  @media (max-width: 1299px) and (min-width: 766px) {
+  @media (max-width: 81.1875rem) and (min-width: 47.875rem) {
     font-size: 18px;
     font-weight: 300;
     line-height: 30px; /* 166.667% */
   }
   /* 모바일 뷰 */
-  @media (max-width: 765.9px) {
+  @media (max-width: 47.86875rem) {
     font-size: 16px;
     font-style: normal;
     font-weight: 300;

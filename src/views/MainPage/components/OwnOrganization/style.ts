@@ -3,11 +3,11 @@ import styled from '@emotion/styled';
 export const Wrapper = styled.div`
   padding-top: 104px;
 
-  @media (max-width: 768px) {
+  @media (max-width: 48rem) {
     padding-top: 125px;
   }
 
-  @media (max-width: 376px) {
+  @media (max-width: 23.5rem) {
     padding-top: 74px;
   }
 `;
@@ -17,21 +17,21 @@ export const ContentWrapper = styled.div`
   gap: 28px;
   grid-template-columns: repeat(2, 1fr);
 
-  @media (max-width: 1440px) {
+  @media (max-width: 90rem) {
     grid-template-columns: repeat(auto-fit, minmax(385px, 1fr));
     gap: 24px;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 48rem) {
     display: flex;
     overflow-x: scroll;
   }
 
-  @media (max-width: 512px) {
+  @media (max-width: 32rem) {
     gap: 16px;
   }
 
-  @media (max-width: 428px) {
+  @media (max-width: 26.75rem) {
     gap: 14px;
   }
 `;
@@ -58,11 +58,11 @@ export const Slide = styled.div`
   padding: 0 6.5vw;
   border-radius: 19px;
 
-  @media (max-width: 768px) {
+  @media (max-width: 48rem) {
     height: 434px;
   }
 
-  @media (max-width: 376px) {
+  @media (max-width: 23.5rem) {
     height: 249px;
   }
 `;
@@ -81,11 +81,11 @@ export const Arrow = styled.div`
     cursor: pointer;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 48rem) {
     width: 26px;
   }
 
-  @media (max-width: 428px) {
+  @media (max-width: 26.75rem) {
     width: 15.293px;
     & > img {
       height: 24.138px;

@@ -7,12 +7,12 @@ export const CardList = styled.div`
   gap: 50px 28px;
   width: 1112px;
 
-  @media (max-width: 1279px) and (min-width: 900px) {
+  @media (max-width: 79.9375rem) and (min-width: 56.25rem) {
     grid-template-columns: 1fr 1fr;
     width: 732px;
   }
 
-  @media (max-width: 899px) {
+  @media (max-width: 56.1875rem) {
     grid-template-columns: 1fr;
     gap: 16px;
     width: 100%;
@@ -30,7 +30,7 @@ export const ProjectCard = styled.div`
   border: 1px solid ${colors.gray700};
   border-radius: 20px;
 
-  @media (max-width: 899px) {
+  @media (max-width: 56.1875rem) {
     width: 100%;
     height: 88px;
     padding: 0 0 10px 0;
@@ -45,7 +45,7 @@ export const ProjectContent = styled.div`
   flex-direction: column;
   gap: 4px;
 
-  @media (max-width: 899px) {
+  @media (max-width: 56.1875rem) {
     gap: 12px;
   }
 `;
@@ -56,7 +56,7 @@ export const ProjectThumbnail = styled.div`
   background-color: ${colors.gray900};
   border-radius: 8px;
 
-  @media (max-width: 899px) {
+  @media (max-width: 56.1875rem) {
     display: none;
   }
 `;
@@ -67,7 +67,7 @@ export const ProjectLogo = styled.div`
   background-color: ${colors.gray900};
   border-radius: 8px;
 
-  @media (min-width: 900px) {
+  @media (min-width: 56.25rem) {
     display: none;
   }
 `;
@@ -103,7 +103,7 @@ export const ProjectSummary = styled.div`
   background-color: ${colors.gray900};
   border-radius: 8px;
 
-  @media (max-width: 899px) {
+  @media (max-width: 56.1875rem) {
     width: 40%;
   }
 `;

@@ -7,13 +7,13 @@ export const Banner = styled.div<{ src: string }>`
   background: center / cover no-repeat url(${({ src }) => src});
 
   /* 태블릿 뷰 */
-  @media (max-width: 768px) {
+  @media (max-width: 48rem) {
     max-height: 376px;
     height: calc(150px + 29vw);
   }
 
   /* 모바일 뷰 */
-  @media (max-width: 428px) {
+  @media (max-width: 26.75rem) {
     height: 230px;
   }
 `;

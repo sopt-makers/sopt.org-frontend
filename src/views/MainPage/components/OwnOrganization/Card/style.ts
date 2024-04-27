@@ -15,16 +15,16 @@ export const CardWrapper = styled.div<{ background: string }>`
   flex-direction: column;
   justify-content: flex-end;
 
-  @media (max-width: 1440px) {
+  @media (max-width: 90rem) {
     max-width: 511px;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 48rem) {
     max-width: 511px;
     height: 434px;
   }
 
-  @media (max-width: 376px) {
+  @media (max-width: 23.5rem) {
     max-width: 294px;
     height: 249px;
   }
@@ -45,14 +45,14 @@ export const FooterKorName = styled.div`
   line-height: 28px;
   letter-spacing: -0.904px;
 
-  @media (max-width: 1440px) {
+  @media (max-width: 90rem) {
     width: 128px;
     padding: 12px 0;
     font-size: 21px;
     line-height: 24.425px;
   }
 
-  @media (max-width: 512px) {
+  @media (max-width: 32rem) {
     border-radius: 12px;
     width: 96px;
     padding: 10px 0;
@@ -63,7 +63,7 @@ export const FooterKorName = styled.div`
     letter-spacing: -0.904px;
   }
 
-  @media (max-width: 428px) {
+  @media (max-width: 26.75rem) {
     border-radius: 6px;
     width: 74px;
     padding: 7px 0;
@@ -88,16 +88,16 @@ export const FooterEngName = styled.div`
   letter-spacing: -1.025px;
   padding-bottom: 4px;
 
-  @media (max-width: 1440px) {
+  @media (max-width: 90rem) {
     font-size: 19px;
     line-height: 13.9px;
   }
 
-  @media (max-width: 512px) {
+  @media (max-width: 32rem) {
     font-size: 17px;
   }
 
-  @media (max-width: 428px) {
+  @media (max-width: 26.75rem) {
     font-size: 11px;
     line-height: 14.9px;
   }
@@ -110,12 +110,12 @@ export const FooterWrapper = styled.div`
   padding-left: 30px;
   padding-right: 42px;
 
-  @media (max-width: 1440px) {
+  @media (max-width: 90rem) {
     padding-left: 25px;
     padding-right: 27px;
   }
 
-  @media (max-width: 428px) {
+  @media (max-width: 26.75rem) {
     padding-left: 14px;
     padding-right: 15px;
   }
@@ -126,7 +126,7 @@ export const ContentWrapper = styled.div`
   flex: 1;
   word-break: keep-all;
 
-  @media (max-width: 428px) {
+  @media (max-width: 26.75rem) {
     padding: 0 20px;
   }
 `;
@@ -138,18 +138,18 @@ export const TextWrapper = styled.span<{ weight: 'normal' | 'bold' }>`
   line-height: 35px; /* 175% */
   letter-spacing: -0.8px;
 
-  @media (max-width: 1440px) {
+  @media (max-width: 90rem) {
     font-size: 18px;
     line-height: 31px; /* 172.222% */
     letter-spacing: -0.72px;
   }
 
-  @media (max-width: 512px) {
+  @media (max-width: 32rem) {
     font-size: 16px;
     line-height: 26px;
   }
 
-  @media (max-width: 428px) {
+  @media (max-width: 26.75rem) {
     font-size: 11px;
     line-height: 18.103px; /* 164.575% */
     letter-spacing: -0.44px;

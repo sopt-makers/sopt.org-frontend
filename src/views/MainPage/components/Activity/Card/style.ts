@@ -12,18 +12,18 @@ export const Background = styled(motion.main)`
   position: relative;
   z-index: 2;
 
-  @media (max-width: 768px) {
+  @media (max-width: 48rem) {
     width: calc(100% - 5.46vw - 54px);
   }
 
-  @media (max-width: 428px) and (min-width: 376px) {
+  @media (max-width: 26.75rem) and (min-width: 23.5rem) {
     border-radius: 21px;
     max-width: 296px;
     width: calc(100% - 5.46vw - 31px);
     height: 188px;
   }
 
-  @media (max-width: 375px) {
+  @media (max-width: 23.4375rem) {
     border-radius: 21px;
     max-width: 258px;
     height: 164px;
@@ -69,7 +69,7 @@ export const CardKorNav = styled.nav`
   margin-top: 26px;
   z-index: 3;
 
-  @media (max-width: 428px) and (min-width: 376px) {
+  @media (max-width: 26.75rem) and (min-width: 23.5rem) {
     font-size: 13px;
     line-height: 16.258px; /* 135.48% */
     letter-spacing: -0.48px;
@@ -80,7 +80,7 @@ export const CardKorNav = styled.nav`
     border-radius: 8px;
   }
 
-  @media (max-width: 375px) {
+  @media (max-width: 23.4375rem) {
     font-size: 10px;
     line-height: 14.188px; /* 135.48% */
     letter-spacing: -0.419px;
@@ -109,11 +109,11 @@ export const Blur = styled(motion.div)`
 
   padding: 26px;
 
-  @media (max-width: 428px) and (min-width: 376px) {
+  @media (max-width: 26.75rem) and (min-width: 23.5rem) {
     padding: 14px;
   }
 
-  @media (max-width: 375px) {
+  @media (max-width: 23.4375rem) {
     padding: 12px;
   }
 `;
@@ -127,7 +127,7 @@ export const Content = styled.span<{ color: string }>`
   line-height: 30.476px;
   letter-spacing: -0.708px;
 
-  @media (max-width: 428px) {
+  @media (max-width: 26.75rem) {
     font-size: 11px;
     line-height: 19px;
   }

@@ -15,11 +15,11 @@ export const CardList = styled.ul`
   margin-top: 24px;
 
   /* 태블릿 뷰 */
-  @media (max-width: 1299px) and (min-width: 766px) {
+  @media (max-width: 81.1875rem) and (min-width: 47.875rem) {
     flex-direction: column;
   }
   /* 모바일 뷰 */
-  @media (max-width: 765.9px) {
+  @media (max-width: 47.86875rem) {
     flex-direction: column;
     gap: 20px;
   }
@@ -56,12 +56,12 @@ export const CardItem = styled.li`
   }
 
   /* 태블릿 뷰 */
-  @media (max-width: 1299px) and (min-width: 766px) {
+  @media (max-width: 81.1875rem) and (min-width: 47.875rem) {
     padding: 42px 0 54px 0;
     font-size: 22px;
   }
   /* 모바일 뷰 */
-  @media (max-width: 765.9px) {
+  @media (max-width: 47.86875rem) {
     padding: 42px 0 66px 0;
     width: 323px;
     border-radius: 20px;

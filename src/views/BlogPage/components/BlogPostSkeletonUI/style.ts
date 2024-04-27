@@ -23,7 +23,7 @@ export const BlogPostList = styled.div`
   margin-top: 30px;
 
   /* 모바일 뷰 */
-  @media (max-width: 767px) {
+  @media (max-width: 47.9375rem) {
     width: 100%;
     margin-top: 24px;
     gap: 36px;
@@ -39,7 +39,7 @@ export const BlogPost = styled.section`
   transition: opacity 0.2s linear;
 
   /* 모바일 뷰 */
-  @media (max-width: 767px) {
+  @media (max-width: 47.9375rem) {
     gap: 16px;
   }
 `;
@@ -59,7 +59,7 @@ export const Header = styled.div`
   background-color: ${colors.gray800};
 
   /* 모바일 뷰 */
-  @media (max-width: 767px) {
+  @media (max-width: 47.9375rem) {
     height: 16px;
     margin-bottom: 0;
   }
@@ -70,7 +70,7 @@ export const Body = styled.div`
   width: 100%;
 
   /* 모바일 뷰 */
-  @media (max-width: 767px) {
+  @media (max-width: 47.9375rem) {
     display: flex;
     align-items: center;
     height: 53px;
@@ -90,7 +90,7 @@ export const ProfileImage = styled.div`
   background-color: ${colors.gray800};
 
   /* 모바일 뷰 */
-  @media (max-width: 767px) {
+  @media (max-width: 47.9375rem) {
     width: 15px;
     height: 15px;
   }
@@ -107,7 +107,7 @@ export const Title = styled.div`
   margin-bottom: 5px;
   width: 100%;
 
-  @media (max-width: 767px) {
+  @media (max-width: 47.9375rem) {
     height: 24px;
   }
 `;
@@ -120,7 +120,7 @@ export const Description = styled.div`
   height: 52px;
 
   /* 모바일 뷰 */
-  @media (max-width: 767px) {
+  @media (max-width: 47.9375rem) {
     display: none;
   }
 `;
@@ -131,7 +131,7 @@ export const TagList = styled.div`
   margin-top: 10px;
 
   /* 모바일 뷰 */
-  @media (max-width: 767px) {
+  @media (max-width: 47.9375rem) {
     margin-top: 18px;
   }
 `;
@@ -148,7 +148,7 @@ export const Tag = styled.div`
   background-color: ${colors.gray800};
 
   /* 모바일 뷰 */
-  @media (max-width: 767px) {
+  @media (max-width: 47.9375rem) {
     height: 20px;
   }
 `;
@@ -162,7 +162,7 @@ export const ThumbnailWrapper = styled.div`
   width: 239px;
 
   /* 모바일 뷰 */
-  @media (max-width: 767px) {
+  @media (max-width: 47.9375rem) {
     width: 105px;
   }
 `;
@@ -176,7 +176,7 @@ export const Thumbnail = styled.div`
   height: 160px;
 
   /* 모바일 뷰 */
-  @media (max-width: 767px) {
+  @media (max-width: 47.9375rem) {
     width: 105px;
     height: 70px;
     border-radius: 5px;

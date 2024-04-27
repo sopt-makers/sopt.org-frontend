@@ -28,7 +28,7 @@ export const DotButton = styled.div<{ isSelected: boolean }>`
     cursor: pointer;
   }
 
-  @media (max-width: 428px) {
+  @media (max-width: 26.75rem) {
     width: 4px;
     height: 4px;
   }
@@ -62,11 +62,11 @@ export const Arrow = styled.div`
     cursor: pointer;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 48rem) {
     width: 26px;
   }
 
-  @media (max-width: 428px) {
+  @media (max-width: 26.75rem) {
     width: 15.293px;
     & > img {
       height: 24.138px;
