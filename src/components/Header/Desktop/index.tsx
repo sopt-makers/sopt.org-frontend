@@ -41,8 +41,8 @@ interface MenuTitleProps {
 }
 
 export const Wrapper = styled.div`
-  max-width: 1200rem;
-  padding: auto 20rem;
+  max-width: 1200px;
+  padding: auto 20px;
   height: 100%;
   width: 100%;
   display: flex;
@@ -51,10 +51,10 @@ export const Wrapper = styled.div`
 
 export const SubMenuWrapper = styled.div`
   width: 100%;
-  height: 80rem;
+  height: 80px;
   background-color: rgba(255, 255, 255, 0.1);
   position: absolute;
-  top: 80rem;
+  top: 80px;
   ${GrowDown}
   animation: growdown 0.4s forwards;
 `;
@@ -65,16 +65,16 @@ export const CenterAligner = styled.div`
 `;
 
 export const Logo = styled.button`
-  width: 87rem;
-  height: 30rem;
+  width: 87px;
+  height: 30px;
 
   background: url(${imgLogoSopt.src}) center no-repeat;
   background-size: 100% 100%;
   cursor: pointer;
 
-  @media (max-width: 940px) {
-    width: 63rem;
-    height: 21rem;
+  @media (max-width: 58.75rem) {
+    width: 63px;
+    height: 21px;
   }
 `;
 
@@ -85,14 +85,14 @@ export const MenuTitlesWrapper = styled.div`
 
 export const MenuTitle = styled(Link)<MenuTitleProps>`
   font-size: 18rem;
-  line-height: 36rem;
+  line-height: 36px;
   font-weight: ${({ isSelected }) => (isSelected ? '700' : '500')};
 
   color: ${colors.white};
   cursor: pointer;
   position: relative;
 
-  padding: 0 20rem 0 20rem;
+  padding: 0 20px 0 20px;
 
   &:hover {
     &::after {
@@ -102,16 +102,16 @@ export const MenuTitle = styled(Link)<MenuTitleProps>`
       left: 0;
       width: 100%;
       border-bottom: ${({ menuColor }) =>
-        menuColor !== 'SPECIAL' ? `2rem solid ${colors.white}` : 'none'};
+        menuColor !== 'SPECIAL' ? `2px solid ${colors.white}` : 'none'};
     }
   }
 
   ${({ menuColor }) =>
     menuColor === 'SPECIAL' &&
     css`
-      margin-left: 20rem;
-      border-radius: 5.869rem;
-      border: 1.027rem solid #4786ff;
+      margin-left: 20px;
+      border-radius: 5.869px;
+      border: 1.027px solid #4786ff;
       background: rgba(71, 134, 255, 0.28);
       color: #267dff;
     `}

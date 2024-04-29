@@ -7,87 +7,87 @@ export const Wrapper = styled(HideScrollbar)`
   position: relative;
 `;
 export const CarouselWrapper = styled.div`
-  width: 1088rem;
+  width: 1088px;
   display: grid;
   grid-template-columns: repeat(2, 544px);
-  gap: 24rem;
-  @media (max-width: 899px) {
-    width: 654rem;
+  gap: 24px;
+  @media (max-width: 56.1875rem) {
+    width: 654px;
     grid-template-columns: repeat(2, 320px);
-    gap: 14rem;
+    gap: 14px;
   }
 `;
 export const CarouselViewport = styled.div`
   width: 100%;
 `;
 export const DotWrapper = styled.div`
-  margin-top: 24rem;
+  margin-top: 24px;
   display: flex;
   justify-content: center;
-  gap: 12rem;
+  gap: 12px;
 `;
 export const Dot = styled.div`
   position: relative;
-  width: 8rem;
-  height: 8rem;
+  width: 8px;
+  height: 8px;
   background-color: ${colors.gray900};
   border-radius: 50%;
   cursor: pointer;
   ::before {
     content: '';
     position: absolute;
-    top: -4rem;
-    left: -4rem;
-    right: -4rem;
-    bottom: -4rem;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
     border-radius: 50%;
   }
 `;
 export const GridWrapper = styled.div`
-  width: 544rem;
-  height: 164rem;
+  width: 544px;
+  height: 164px;
   display: grid;
   grid-template-areas: 'img detail' 'img footer';
-  grid-template-columns: 116rem auto;
-  column-gap: 16rem;
+  grid-template-columns: 116px auto;
+  column-gap: 16px;
   background-color: ${colors.gray900};
-  border-radius: 12rem;
-  padding: 24rem;
-  margin-right: 20rem;
+  border-radius: 12px;
+  padding: 24px;
+  margin-right: 20px;
   /* 모바일 뷰 */
-  @media (max-width: 899px) {
-    width: 320rem;
-    height: 122rem;
+  @media (max-width: 56.1875rem) {
+    width: 320px;
+    height: 122px;
     grid-template-areas:
       'img detail'
       'footer footer';
-    grid-template-columns: 48rem auto;
-    gap: 16rem 10rem;
-    padding: 16rem;
+    grid-template-columns: 48px auto;
+    gap: 16px 10px;
+    padding: 16px;
   }
 `;
 export const MarginWrapper = styled.div`
-  padding-right: 20rem;
+  padding-right: 20px;
 `;
 export const Title = styled.div`
-  border-radius: 6rem;
-  width: 100rem;
-  height: 36rem;
-  margin-bottom: 6rem;
+  border-radius: 6px;
+  width: 100px;
+  height: 36px;
+  margin-bottom: 6px;
   background-color: ${colors.gray700};
   /* 모바일 뷰 */
-  @media (max-width: 899px) {
-    height: 24rem;
+  @media (max-width: 56.1875rem) {
+    height: 24px;
   }
 `;
 export const Description = styled.div`
-  border-radius: 6rem;
-  width: 150rem;
-  height: 21rem;
+  border-radius: 6px;
+  width: 150px;
+  height: 21px;
   background-color: ${colors.gray700};
   /* 모바일 뷰 */
-  @media (max-width: 899px) {
-    height: 19.5rem;
+  @media (max-width: 56.1875rem) {
+    height: 19.5px;
   }
 `;
 export const DetailWrapper = styled.div`
@@ -98,12 +98,12 @@ export const DetailWrapper = styled.div`
 `;
 export const ThumbnailImage = styled.div`
   grid-area: img;
-  border-radius: 10rem;
+  border-radius: 10px;
   background-color: ${colors.gray700};
   /* 모바일 뷰 */
-  @media (max-width: 899px) {
-    width: 48rem;
-    height: 48rem;
+  @media (max-width: 56.1875rem) {
+    width: 48px;
+    height: 48px;
   }
 `;
 export const DetailFooterWrapper = styled.div`
@@ -114,14 +114,14 @@ export const DetailFooterWrapper = styled.div`
   align-items: flex-end;
 `;
 export const Chip = styled.div`
-  width: 40rem;
-  height: 28rem;
-  padding: 5rem 8rem;
-  border-radius: 6rem;
+  width: 40px;
+  height: 28px;
+  padding: 5px 8px;
+  border-radius: 6px;
   background-color: ${colors.gray700};
   /* 모바일 뷰 */
-  @media (max-width: 899px) {
-    height: 26rem;
-    padding: 5rem 8rem;
+  @media (max-width: 56.1875rem) {
+    height: 26px;
+    padding: 5px 8px;
   }
 `;

@@ -7,7 +7,7 @@ import MobileCard from './MobileCard';
 import * as S from './style';
 
 function CardHover(_props: unknown, ref: Ref<HTMLDivElement>) {
-  const isMobileSize = useIsMobile('768px');
+  const isMobileSize = useIsMobile('48rem');
   const tab = isMobileSize ? 'Activity' : '';
 
   return (

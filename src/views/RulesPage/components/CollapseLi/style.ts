@@ -8,38 +8,38 @@ interface ButtonStyleProps {
 }
 
 export const Root = styled.li`
-  border-bottom: 1rem solid ${colors.gray10};
-  padding-bottom: 40rem;
+  border-bottom: 1px solid ${colors.gray10};
+  padding-bottom: 40px;
   width: 100%;
-  @media (max-width: 768px) {
-    padding-bottom: 20rem;
+  @media (max-width: 48rem) {
+    padding-bottom: 20px;
   }
 `;
 export const Section = styled.div`
   display: flex;
   justify-content: space-between;
   cursor: pointer;
-  padding-top: 40rem;
+  padding-top: 40px;
   width: 100%;
-  @media (max-width: 768px) {
-    padding-top: 20rem;
+  @media (max-width: 48rem) {
+    padding-top: 20px;
   }
 `;
 
 export const TItle = styled.h3`
   text-align: center;
-  line-height: 30rem;
+  line-height: 30px;
   color: ${colors.gray10};
   font-size: 24rem;
   font-weight: 700;
   font-style: normal;
-  @media (max-width: 768px) {
+  @media (max-width: 48rem) {
     font-size: 16rem;
   }
 `;
 
 export const Button = styled.button<ButtonStyleProps>`
-  margin-right: 40rem;
+  margin-right: 40px;
   outline: inherit;
   border: none;
   background: none;
@@ -48,14 +48,14 @@ export const Button = styled.button<ButtonStyleProps>`
   background-size: contain;
   cursor: pointer;
   padding: 0;
-  width: 24rem;
-  height: 13rem;
+  width: 24px;
+  height: 13px;
 
   /* stylelint-disable */
-  @media (max-width: 768px) {
-    margin-right: 15rem;
-    width: 16rem;
-    height: 13rem;
+  @media (max-width: 48rem) {
+    margin-right: 15px;
+    width: 16px;
+    height: 13px;
   }
   ${ArrowDownAnimation}
   ${ArrowUpAnimation}
@@ -79,7 +79,7 @@ export const Contents = styled.div<ButtonStyleProps>`
   font-size: 20rem;
   font-weight: 400;
   font-style: normal;
-  @media (max-width: 768px) {
+  @media (max-width: 48rem) {
     font-size: 14rem;
   }
 
@@ -87,9 +87,9 @@ export const Contents = styled.div<ButtonStyleProps>`
     isOpened
       ? css`
           transition: max-height 0.2s ease-in;
-          max-height: 3500rem;
-          @media screen and (max-width: 1280px) {
-            max-height: 5000rem;
+          max-height: 3500px;
+          @media screen and (max-width: 80rem) {
+            max-height: 5000px;
           }
         `
       : css`

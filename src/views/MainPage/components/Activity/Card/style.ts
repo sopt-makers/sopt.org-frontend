@@ -4,36 +4,36 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 
 export const Background = styled(motion.main)`
-  max-width: 465rem;
+  max-width: 465px;
   width: 100%;
-  height: 295rem;
-  border-radius: 19rem;
+  height: 295px;
+  border-radius: 19px;
 
   position: relative;
   z-index: 2;
 
-  @media (max-width: 768px) {
+  @media (max-width: 48rem) {
     width: calc(100% - 5.46vw - 54px);
   }
 
-  @media (max-width: 428px) and (min-width: 376px) {
-    border-radius: 21rem;
-    max-width: 296rem;
+  @media (max-width: 26.75rem) and (min-width: 23.5rem) {
+    border-radius: 21px;
+    max-width: 296px;
     width: calc(100% - 5.46vw - 31px);
-    height: 188rem;
+    height: 188px;
   }
 
-  @media (max-width: 375px) {
-    border-radius: 21rem;
-    max-width: 258rem;
-    height: 164rem;
+  @media (max-width: 23.4375rem) {
+    border-radius: 21px;
+    max-width: 258px;
+    height: 164px;
   }
 `;
 
 export const Gradient = styled.div`
   width: 100%;
   height: 100%;
-  border-radius: 19rem;
+  border-radius: 19px;
   background: linear-gradient(0deg, rgba(70, 108, 166, 0) 51.31%, #2e4e80 100%);
   position: relative;
   z-index: 1;
@@ -41,16 +41,16 @@ export const Gradient = styled.div`
 
 export const CardImage = styled(Image)`
   object-fit: cover;
-  border-radius: 19rem;
+  border-radius: 19px;
 `;
 
 export const CardKorNav = styled.nav`
   display: inline-flex;
-  padding: 10rem 30rem;
+  padding: 10px 30px;
   justify-content: center;
   align-items: center;
-  border-radius: 13.763rem;
-  border: 1.278rem solid rgba(255, 255, 255, 0.5);
+  border-radius: 13.763px;
+  border: 1.278px solid rgba(255, 255, 255, 0.5);
   background: rgba(255, 255, 255, 0.33);
   backdrop-filter: blur(2.949289321899414px);
 
@@ -59,36 +59,36 @@ export const CardKorNav = styled.nav`
   font-size: 21rem;
   font-style: normal;
   font-weight: 600;
-  line-height: 28.288rem; /* 134.707% */
-  letter-spacing: -0.84rem;
+  line-height: 28.288px; /* 134.707% */
+  letter-spacing: -0.84px;
 
   position: absolute;
   top: 0;
   left: 0;
-  margin-left: 26rem;
-  margin-top: 26rem;
+  margin-left: 26px;
+  margin-top: 26px;
   z-index: 3;
 
-  @media (max-width: 428px) and (min-width: 376px) {
+  @media (max-width: 26.75rem) and (min-width: 23.5rem) {
     font-size: 13rem;
-    line-height: 16.258rem; /* 135.48% */
-    letter-spacing: -0.48rem;
+    line-height: 16.258px; /* 135.48% */
+    letter-spacing: -0.48px;
 
-    padding: 6rem 18rem;
-    margin-left: 14rem;
-    margin-top: 14rem;
-    border-radius: 8rem;
+    padding: 6px 18px;
+    margin-left: 14px;
+    margin-top: 14px;
+    border-radius: 8px;
   }
 
-  @media (max-width: 375px) {
+  @media (max-width: 23.4375rem) {
     font-size: 10rem;
-    line-height: 14.188rem; /* 135.48% */
-    letter-spacing: -0.419rem;
+    line-height: 14.188px; /* 135.48% */
+    letter-spacing: -0.419px;
 
-    padding: 5rem 15rem;
-    margin-left: 12rem;
-    margin-top: 12rem;
-    border-radius: 6rem;
+    padding: 5px 15px;
+    margin-left: 12px;
+    margin-top: 12px;
+    border-radius: 6px;
   }
 `;
 
@@ -102,19 +102,19 @@ export const Blur = styled(motion.div)`
   width: 100%;
   height: 100%;
 
-  border-radius: 19rem;
+  border-radius: 19px;
   background: rgba(38, 51, 70, 0.74);
   backdrop-filter: blur(6.881675720214844px);
   z-index: 2;
 
-  padding: 26rem;
+  padding: 26px;
 
-  @media (max-width: 428px) and (min-width: 376px) {
-    padding: 14rem;
+  @media (max-width: 26.75rem) and (min-width: 23.5rem) {
+    padding: 14px;
   }
 
-  @media (max-width: 375px) {
-    padding: 12rem;
+  @media (max-width: 23.4375rem) {
+    padding: 12px;
   }
 `;
 
@@ -124,11 +124,11 @@ export const Content = styled.span<{ color: string }>`
   font-size: 18rem;
   font-style: normal;
   font-weight: 400;
-  line-height: 30.476rem;
-  letter-spacing: -0.708rem;
+  line-height: 30.476px;
+  letter-spacing: -0.708px;
 
-  @media (max-width: 428px) {
+  @media (max-width: 26.75rem) {
     font-size: 11rem;
-    line-height: 19rem;
+    line-height: 19px;
   }
 `;

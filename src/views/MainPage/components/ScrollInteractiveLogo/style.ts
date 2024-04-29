@@ -23,16 +23,16 @@ export const Logo = styled.div`
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
-  width: 415rem;
-  height: 144rem;
+  width: 415px;
+  height: 144px;
 
-  @media (max-width: 768px) {
-    width: 225rem;
-    height: 84rem;
+  @media (max-width: 48rem) {
+    width: 225px;
+    height: 84px;
   }
 
-  @media (max-width: 376px) {
-    height: 78rem;
+  @media (max-width: 23.5rem) {
+    height: 78px;
   }
 `;
 
@@ -58,7 +58,7 @@ export const DescriptionText = styled.div`
   -webkit-text-fill-color: transparent;
 
   /* 모바일 뷰 */
-  @media (max-width: 899px) {
+  @media (max-width: 56.1875rem) {
     font-family: SUIT;
     font-size: 14.656rem;
     font-style: normal;

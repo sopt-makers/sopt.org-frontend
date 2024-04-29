@@ -29,7 +29,7 @@ export const SelectTrigger = styled.button<{
     min-width: 76px;
     padding: 8px 12px;
     border-radius: 99px;
-    font-size: 13px;
+    font-size: 13rem;
     line-height: 150%;
     letter-spacing: -0.13px;
   }
@@ -59,12 +59,12 @@ export const SelectItem = styled.div<{ isSelected: boolean }>`
 export const SelectTriggerContent = styled.p<{ isSelectionExist: boolean; breakPoint: string }>`
   color: ${({ isSelectionExist }) => (isSelectionExist ? colors.white : colors.gray200)};
   margin-right: 8px;
-  font-size: 16px;
+  font-size: 16rem;
   font-weight: 500;
   white-space: nowrap;
 
   @media (max-width: ${({ breakPoint }) => breakPoint}) {
-    font-size: 13px;
+    font-size: 13rem;
   }
 `;
 
@@ -75,7 +75,7 @@ export const SelectItemContent = styled.p<{ isWide: boolean; breakPoint: string 
 
   @media (max-width: ${({ breakPoint }) => breakPoint}) {
     margin-right: ${({ isWide }) => isWide && '22px'};
-    font-size: 13px;
+    font-size: 13rem;
   }
 `;
 

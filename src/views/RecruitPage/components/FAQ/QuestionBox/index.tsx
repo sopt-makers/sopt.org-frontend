@@ -34,19 +34,19 @@ const Styled = {
     display: flex;
     flex-direction: column;
     background: ${({ isOpened }) => (isOpened ? '#222220' : '#181818')};
-    border-radius: 30rem;
-    padding: 40rem 50rem;
+    border-radius: 30px;
+    padding: 40px 50px;
     cursor: pointer;
     /* 태블릿 뷰 */
-    @media (max-width: 1919.9px) and (min-width: 766px) {
+    @media (max-width: 119.99375rem) and (min-width: 47.875rem) {
       font-size: 25rem;
-      padding: 32rem 40rem;
-      border-radius: 20rem;
+      padding: 32px 40px;
+      border-radius: 20px;
     }
     /* 모바일 뷰 */
-    @media (max-width: 765.9px) {
-      padding: 18rem 30rem;
-      border-radius: 20rem;
+    @media (max-width: 47.86875rem) {
+      padding: 18px 30px;
+      border-radius: 20px;
     }
   `,
   QuestionWrapper: styled.div<{ isOpened: boolean }>`
@@ -54,8 +54,8 @@ const Styled = {
     align-items: center;
     justify-content: space-between;
     /* 태블릿 뷰 */
-    @media (max-width: 1919.9px) and (min-width: 766px) {
-      margin-bottom: ${({ isOpened }) => (isOpened ? '16rem' : '0')};
+    @media (max-width: 119.99375rem) and (min-width: 47.875rem) {
+      margin-bottom: ${({ isOpened }) => (isOpened ? '16px' : '0')};
     }
   `,
   Title: styled.h1`
@@ -69,24 +69,24 @@ const Styled = {
     }
 
     /* 모바일 뷰 */
-    @media (max-width: 765.9px) {
+    @media (max-width: 47.86875rem) {
       font-size: 16rem;
-      line-height: 24rem;
+      line-height: 24px;
     }
   `,
   IconWrapper: styled.div<{ isOpened: boolean }>`
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 40rem;
-    height: 40rem;
+    width: 40px;
+    height: 40px;
     /* 태블릿 뷰 */
-    @media (max-width: 1919.9px) and (min-width: 766px) {
+    @media (max-width: 119.99375rem) and (min-width: 47.875rem) {
       transform: ${({ isOpened }) => (isOpened ? 'rotate(180deg)' : 'rotate(0deg)')} scale(0.9);
       transform-origin: center;
     }
     /* 모바일 뷰 */
-    @media (max-width: 765.9px) {
+    @media (max-width: 47.86875rem) {
       transform: ${({ isOpened }) => (isOpened ? 'rotate(180deg)' : 'rotate(0deg)')} scale(0.7);
       transform-origin: center;
     }
@@ -94,23 +94,23 @@ const Styled = {
   Content: styled.div`
     font-weight: 400;
     font-size: 25rem;
-    line-height: 40rem;
+    line-height: 40px;
     word-break: keep-all;
     color: rgba(253, 253, 253, 0.8);
-    margin-top: 12rem;
+    margin-top: 12px;
 
     &::before {
       content: 'A. ';
       color: #bdec00;
     }
     /* 태블릿 뷰 */
-    @media (max-width: 1919.9px) and (min-width: 766px) {
+    @media (max-width: 119.99375rem) and (min-width: 47.875rem) {
       font-size: 22rem;
     }
     /* 모바일 뷰 */
-    @media (max-width: 765.9px) {
+    @media (max-width: 47.86875rem) {
       font-size: 14rem;
-      line-height: 22rem;
+      line-height: 22px;
     }
   `,
 };

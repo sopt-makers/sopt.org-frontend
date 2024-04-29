@@ -5,18 +5,18 @@ const SectionTitle = styled.div`
   color: ${colors.gray10};
   font-size: 28rem;
   font-weight: 700;
-  line-height: 150%; /* 42rem */
-  letter-spacing: -0.56rem;
-  margin-bottom: 40rem;
+  line-height: 150%; /* 42px */
+  letter-spacing: -0.56px;
+  margin-bottom: 40px;
   & > * {
     font-size: 100%;
   }
 
-  @media (max-width: 899px) {
+  @media (max-width: 56.1875rem) {
     font-size: 18rem;
     font-weight: 700;
-    letter-spacing: -0.36rem;
-    margin-bottom: 20rem;
+    letter-spacing: -0.36px;
+    margin-bottom: 20px;
 
     & > span {
       display: none;
@@ -35,13 +35,13 @@ const Root = styled.div`
   touch-action: pan-y;
 
   /* 모바일 뷰 */
-  @media (max-width: 899px) {
+  @media (max-width: 56.1875rem) {
     align-items: flex-start;
-    padding: 0 50rem;
+    padding: 0 50px;
   }
 
-  @media (max-width: 375px) {
-    padding: 0 20rem;
+  @media (max-width: 23.4375rem) {
+    padding: 0 20px;
   }
 `;
 
@@ -49,41 +49,41 @@ const ContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
 
-  width: 1112rem;
-  padding: 188rem 0;
+  width: 1112px;
+  padding: 188px 0;
 
   /* 태블릿 뷰 */
-  @media (max-width: 1279px) and (min-width: 900px) {
-    width: 732rem;
+  @media (max-width: 79.9375rem) and (min-width: 56.25rem) {
+    width: 732px;
   }
 
   /* 모바일 뷰 */
-  @media (max-width: 899px) {
+  @media (max-width: 56.1875rem) {
     width: 100%;
-    padding: 76rem 0;
+    padding: 76px 0;
   }
 `;
 
 const Spacing = styled.div`
-  height: 108rem;
-  @media (max-width: 899px) {
-    height: 48rem;
+  height: 108px;
+  @media (max-width: 56.1875rem) {
+    height: 48px;
   }
 `;
 
 const FilterWrapper = styled.div`
   display: flex;
-  gap: 10rem;
-  margin-bottom: 16rem;
+  gap: 10px;
+  margin-bottom: 16px;
 
   /* 모바일 뷰 */
-  @media (max-width: 899px) {
-    gap: 7rem;
+  @media (max-width: 56.1875rem) {
+    gap: 7px;
   }
 `;
 
 const PlaygroundLinkWrapper = styled.div`
-  @media (max-width: 899px) {
+  @media (max-width: 56.1875rem) {
     display: none;
   }
   color: ${colors.gray400};
@@ -92,12 +92,12 @@ const PlaygroundLinkWrapper = styled.div`
   font-size: 16rem;
   font-style: normal;
   font-weight: 500;
-  line-height: 165%; /* 26.4rem */
-  letter-spacing: -0.24rem;
-  margin-top: -44rem;
-  margin-bottom: 28rem;
+  line-height: 165%; /* 26.4px */
+  letter-spacing: -0.24px;
+  margin-top: -44px;
+  margin-bottom: 28px;
   display: flex;
-  gap: 4rem;
+  gap: 4px;
 
   & > * {
     font-size: 100%;
@@ -110,10 +110,10 @@ const PlaygroundLink = styled.a`
     content: '';
     position: absolute;
     width: 100%;
-    height: 1rem;
+    height: 1px;
     background-color: ${colors.gray400};
     left: 0;
-    bottom: 4rem;
+    bottom: 4px;
   }
 `;
 

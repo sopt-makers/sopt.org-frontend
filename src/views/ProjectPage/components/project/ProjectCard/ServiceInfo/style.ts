@@ -4,7 +4,7 @@ import { colors } from '@sopt-makers/colors';
 export const Info = styled.div`
   display: flex;
   align-items: center;
-  gap: 4rem;
+  gap: 4px;
 
   color: ${colors.gray100};
 
@@ -13,8 +13,8 @@ export const Info = styled.div`
   font-size: 12rem;
   font-style: normal;
   font-weight: 600;
-  line-height: 16rem; /* 133.333% */
-  letter-spacing: -0.24rem;
+  line-height: 16px; /* 133.333% */
+  letter-spacing: -0.24px;
 
   & > * {
     font-size: 100%;

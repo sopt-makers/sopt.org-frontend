@@ -7,8 +7,8 @@ export const Container = styled(Link)<{ isYellow: boolean }>`
   justify-content: center;
   position: fixed;
 
-  padding: 13rem 20rem;
-  margin-top: 80rem;
+  padding: 13px 20px;
+  margin-top: 80px;
   width: 100%;
   z-index: 95;
 
@@ -42,29 +42,29 @@ export const Container = styled(Link)<{ isYellow: boolean }>`
   }
 
   /* 태블릿 뷰 */
-  @media (max-width: 768px) and (min-width: 429px) {
-    margin-top: 48rem;
+  @media (max-width: 48rem) and (min-width: 26.8125rem) {
+    margin-top: 48px;
   }
   /* 모바일 뷰 */
-  @media (max-width: 428px) {
-    margin-top: 48rem;
-    padding: 8rem 20rem;
+  @media (max-width: 26.75rem) {
+    margin-top: 48px;
+    padding: 8px 20px;
   }
 `;
 export const Wrapper = styled.section`
   display: flex;
   align-items: center;
-  gap: 18rem;
+  gap: 18px;
 
-  max-width: 1200rem;
+  max-width: 1200px;
   width: 100%;
 
   /* 모바일 뷰 */
-  @media (max-width: 570px) {
+  @media (max-width: 35.625rem) {
     flex-direction: column;
     justify-content: start;
     align-items: baseline;
-    gap: 1rem;
+    gap: 1px;
   }
 `;
 
@@ -73,7 +73,7 @@ export const Title = styled.h1`
   line-height: 130%;
 
   /* 모바일 뷰 */
-  @media (max-width: 428px) {
+  @media (max-width: 26.75rem) {
     font-size: 12rem;
   }
 `;
@@ -88,13 +88,13 @@ export const Description = styled.div`
   font-weight: 500;
 
   /* 모바일 뷰 */
-  @media (max-width: 570px) {
+  @media (max-width: 35.625rem) {
     justify-content: space-between;
     width: 100%;
   }
 
   /* 모바일 뷰 */
-  @media (max-width: 428px) {
+  @media (max-width: 26.75rem) {
     font-size: 11rem;
   }
 `;
@@ -103,25 +103,25 @@ export const Timer = styled.div`
   align-items: center;
 
   /* 아이콘 위치 이동 방지*/
-  gap: 10rem;
+  gap: 10px;
   justify-content: flex-start;
 
   /* 태블릿 뷰 */
-  @media (max-width: 768px) and (min-width: 429px) {
+  @media (max-width: 48rem) and (min-width: 26.8125rem) {
     & > svg {
-      width: 24rem;
-      height: 24rem;
+      width: 24px;
+      height: 24px;
     }
   }
 
   /* 모바일 뷰 */
-  @media (max-width: 428px) {
-    gap: 4rem;
+  @media (max-width: 26.75rem) {
+    gap: 4px;
   }
 `;
 
 export const View = styled.p`
   display: flex;
   align-items: center;
-  gap: 10rem;
+  gap: 10px;
 `;

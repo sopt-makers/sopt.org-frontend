@@ -7,15 +7,15 @@ import icRightArrow from '@src/assets/icons/ic_arrow_right.svg';
 
 export const Wrapper = styled.div`
   position: relative;
-  padding-top: 256rem;
+  padding-top: 256px;
 
-  @media (max-width: 768px) {
-    padding-top: 149rem;
-    padding-bottom: 200rem;
+  @media (max-width: 48rem) {
+    padding-top: 149px;
+    padding-bottom: 200px;
   }
 
-  @media (max-width: 376px) {
-    padding-top: 111rem;
+  @media (max-width: 23.5rem) {
+    padding-top: 111px;
   }
 `;
 
@@ -23,11 +23,11 @@ export const TitleShadow = styled(motion.div)`
   position: absolute;
   width: 100%;
   height: calc(100% + 250px);
-  top: -120rem;
+  top: -120px;
   left: 0;
   background: linear-gradient(#f6f8fc 72%, transparent);
 
-  @media (max-width: 768px) {
+  @media (max-width: 48rem) {
     height: 100%;
   }
 `;
@@ -35,16 +35,16 @@ export const TitleShadow = styled(motion.div)`
 export const TitleWrapper = styled.div`
   position: sticky;
   color: white;
-  top: 200rem;
-  left: 88rem;
+  top: 200px;
+  left: 88px;
   z-index: 2;
-  margin-bottom: 200rem;
+  margin-bottom: 200px;
 
-  @media (max-width: 1600px) {
-    top: 120rem;
+  @media (max-width: 100rem) {
+    top: 120px;
     transition: 0.4s;
   }
-  @media (max-width: 768px) {
+  @media (max-width: 48rem) {
     position: static;
     padding-top: 0;
     margin-bottom: 0;
@@ -55,20 +55,20 @@ export const CardWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  padding-bottom: 200rem;
-  @media (max-width: 1600px) {
-    padding-bottom: 240rem;
+  padding-bottom: 200px;
+  @media (max-width: 100rem) {
+    padding-bottom: 240px;
   }
-  @media (max-width: 768px) {
-    padding-top: 64rem;
+  @media (max-width: 48rem) {
+    padding-top: 64px;
     padding-bottom: 0;
     flex-direction: row;
     align-items: center;
-    gap: 22rem;
+    gap: 22px;
   }
-  @media (max-width: 520px) {
-    padding-top: 32rem;
-    gap: 12rem;
+  @media (max-width: 32.5rem) {
+    padding-top: 32px;
+    gap: 12px;
   }
 `;
 
@@ -79,28 +79,28 @@ export const SectionTitle = styled.div`
   font-size: 55rem;
   font-style: normal;
   font-weight: 500;
-  line-height: 61.6rem; /* 112% */
-  letter-spacing: -1.65rem;
+  line-height: 61.6px; /* 112% */
+  letter-spacing: -1.65px;
   z-index: 2;
-  @media (max-width: 768px) and (min-width: 1600px) {
-    padding-bottom: 200rem;
+  @media (max-width: 48rem) and (min-width: 100rem) {
+    padding-bottom: 200px;
   }
-  @media (max-width: 768px) {
+  @media (max-width: 48rem) {
     font-family: SUIT;
     font-size: 41rem;
-    line-height: 45.956rem; /* 112.087% */
-    letter-spacing: -1.23rem;
+    line-height: 45.956px; /* 112.087% */
+    letter-spacing: -1.23px;
   }
-  @media (max-width: 520px) {
+  @media (max-width: 32.5rem) {
     font-size: 21rem;
     font-style: normal;
     font-weight: 500;
-    line-height: 24.28rem; /* 115.617% */
-    letter-spacing: -0.63rem;
+    line-height: 24.28px; /* 115.617% */
+    letter-spacing: -0.63px;
   }
-  @media (max-height: 860px) and (max-width: 1600px) {
+  @media (max-height: 53.75rem) and (max-width: 100rem) {
     font-size: 32rem;
-    line-height: 32rem;
+    line-height: 32px;
   }
 `;
 
@@ -109,16 +109,16 @@ export const SectionSubTitle = styled.p`
   font-family: SUIT;
   font-style: normal;
   font-weight: 600;
-  margin-bottom: 10rem;
+  margin-bottom: 10px;
   font-size: 20rem;
-  line-height: 46.311rem; /* 257.282% */
+  line-height: 46.311px; /* 257.282% */
   letter-spacing: -2%;
   z-index: 1;
 
-  @media (max-width: 376px) {
+  @media (max-width: 23.5rem) {
     font-size: 11rem;
-    line-height: 26.615rem; /* 241.956% */
-    letter-spacing: -0.22rem;
+    line-height: 26.615px; /* 241.956% */
+    letter-spacing: -0.22px;
   }
 `;
 
@@ -130,90 +130,90 @@ export const Summary = styled(motion.div)<{ color: string }>`
   font-style: normal;
   font-weight: 600;
   line-height: 110%;
-  letter-spacing: -2.31rem;
+  letter-spacing: -2.31px;
   white-space: pre-line;
-  padding-top: 36rem;
-  padding-left: 76rem;
+  padding-top: 36px;
+  padding-left: 76px;
   position: relative;
-  @media (max-width: 1640px) {
+  @media (max-width: 102.5rem) {
     font-size: 68rem;
-    height: 185rem;
+    height: 185px;
   }
-  @media (max-width: 1600px) {
+  @media (max-width: 100rem) {
     white-space: unset;
     height: auto;
   }
 
-  @media (max-width: 1100px) {
+  @media (max-width: 68.75rem) {
     white-space: pre-line;
   }
 
-  @media (max-width: 976px) {
+  @media (max-width: 61rem) {
     font-size: 60rem;
-    padding-top: 28rem;
-    padding-left: 60rem;
+    padding-top: 28px;
+    padding-left: 60px;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 48rem) {
     font-size: 57rem;
     font-weight: 600;
-    line-height: 60rem;
-    letter-spacing: -1.71rem;
-    padding-left: 48rem;
+    line-height: 60px;
+    letter-spacing: -1.71px;
+    padding-left: 48px;
   }
-  @media (max-width: 520px) {
+  @media (max-width: 32.5rem) {
     font-size: 30rem;
     font-style: normal;
     font-weight: 600;
-    line-height: 32rem;
-    letter-spacing: -0.9rem;
-    padding-top: 12rem;
-    padding-left: 32rem;
+    line-height: 32px;
+    letter-spacing: -0.9px;
+    padding-top: 12px;
+    padding-left: 32px;
   }
-  @media (max-height: 860px) and (max-width: 1600px) {
+  @media (max-height: 53.75rem) and (max-width: 100rem) {
     font-size: 46rem;
-    line-height: 48rem;
-    padding-left: 48rem;
-    padding-top: 24rem;
+    line-height: 48px;
+    padding-left: 48px;
+    padding-top: 24px;
   }
 
   &::before {
     content: '';
     position: absolute;
     left: 0;
-    top: 52rem;
+    top: 52px;
     mask-image: url(${icArrowComment});
     mask-size: contain;
     mask-repeat: no-repeat;
     background-color: ${({ color }) => color};
-    width: 58rem;
-    height: 58rem;
-    @media (max-width: 976px) {
-      width: 48rem;
-      height: 48rem;
-      top: 42rem;
+    width: 58px;
+    height: 58px;
+    @media (max-width: 61rem) {
+      width: 48px;
+      height: 48px;
+      top: 42px;
     }
-    @media (max-width: 768px) {
-      width: 40rem;
-      height: 40rem;
-      top: 48rem;
+    @media (max-width: 48rem) {
+      width: 40px;
+      height: 40px;
+      top: 48px;
     }
-    @media (max-width: 520px) {
-      width: 22rem;
-      height: 22rem;
-      top: 18rem;
+    @media (max-width: 32.5rem) {
+      width: 22px;
+      height: 22px;
+      top: 18px;
     }
-    @media (max-height: 860px) and (max-width: 1600px) {
-      width: 38rem;
-      height: 38rem;
-      top: 30rem;
+    @media (max-height: 53.75rem) and (max-width: 100rem) {
+      width: 38px;
+      height: 38px;
+      top: 30px;
     }
   }
 `;
 
 const Arrow = styled.div`
-  width: 26rem;
-  height: 42rem;
+  width: 26px;
+  height: 42px;
   background-color: #b1c3d9b2;
   flex-shrink: 0;
   cursor: pointer;
@@ -221,9 +221,9 @@ const Arrow = styled.div`
   mask-size: contain;
   mask-position: center;
 
-  @media (max-width: 520px) {
-    width: 15rem;
-    height: 24rem;
+  @media (max-width: 32.5rem) {
+    width: 15px;
+    height: 24px;
   }
 `;
 

@@ -44,34 +44,34 @@ const FaqInfo = () => {
 const FaqWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 16rem;
+  gap: 16px;
 `;
 
 const W = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 70rem;
+  gap: 70px;
   /* 태블릿 뷰 */
-  @media (max-width: 1299px) and (min-width: 766px) {
-    gap: 40rem;
+  @media (max-width: 81.1875rem) and (min-width: 47.875rem) {
+    gap: 40px;
   }
   /* 모바일 뷰 */
-  @media (max-width: 765.9px) {
-    gap: 24rem;
+  @media (max-width: 47.86875rem) {
+    gap: 24px;
   }
 `;
 
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 20rem;
+  gap: 20px;
   /* 태블릿 뷰 */
-  @media (max-width: 1299px) and (min-width: 766px) {
-    gap: 20rem;
+  @media (max-width: 81.1875rem) and (min-width: 47.875rem) {
+    gap: 20px;
   }
   /* 모바일 뷰 */
-  @media (max-width: 765.9px) {
-    gap: 2rem;
+  @media (max-width: 47.86875rem) {
+    gap: 2px;
   }
 `;
 

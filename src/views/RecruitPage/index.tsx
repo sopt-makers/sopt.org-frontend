@@ -1,12 +1,12 @@
 import styled from '@emotion/styled';
 import { lazy } from 'react';
 import PageLayout from '@src/components/common/PageLayout';
+import useCheckTime from '../../hooks/useCheckTime';
+import ApplySection from './components/ApplySection';
 import ChapterInfo from './components/ChapterInfo';
 import NotificationSection from './components/NotificationSection';
 import RecruiteeInfo from './components/RecruteeInfo';
 import Schedule from './components/Schedule';
-import ApplySection from './components/ApplySection';
-import useCheckTime from '../../hooks/useCheckTime';
 
 const FaqInfo = lazy(() => import('./components/FAQ'));
 const Contact = lazy(() => import('./components/Contact'));
@@ -14,12 +14,12 @@ const ActivityReview = lazy(() => import('./components/ActivityReview'));
 const BottomLogo = lazy(() => import('./components/BottomLogo'));
 
 function Recruit() {
-  const isValid = useCheckTime(); 
+  const isValid = useCheckTime();
 
   return (
     <PageLayout showScrollTopButton>
       <Root>
-        {isValid ? <ApplySection/> : <NotificationSection />}
+        {isValid ? <ApplySection /> : <NotificationSection />}
         <ContentWrapper>
           <RecruiteeInfo />
           <ChapterInfo />
@@ -53,12 +53,12 @@ const ContentWrapper = styled.div`
   padding: 100px 0;
 
   /* 태블릿 뷰 */
-  @media (max-width: 1299px) and (min-width: 766px) {
+  @media (max-width: 81.1875rem) and (min-width: 47.875rem) {
     width: 700px;
     gap: 120px;
   }
   /* 모바일 뷰 */
-  @media (max-width: 765.9px) {
+  @media (max-width: 47.86875rem) {
     width: 360px;
     gap: 80px;
   }

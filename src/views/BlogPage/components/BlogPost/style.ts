@@ -5,9 +5,9 @@ import Image from 'next/image';
 export const BlogPost = styled.section`
   display: flex;
   justify-content: space-between;
-  max-width: 900rem;
+  max-width: 900px;
   width: 100%;
-  gap: 36rem;
+  gap: 36px;
 
   cursor: pointer;
   transition: opacity 0.2s linear;
@@ -16,20 +16,20 @@ export const BlogPost = styled.section`
   }
 
   /* 모바일 뷰 */
-  @media (max-width: 767px) {
-    gap: 16rem;
+  @media (max-width: 47.9375rem) {
+    gap: 16px;
     width: 100%;
   }
 `;
 
 export const Body = styled.div`
-  height: 94rem;
+  height: 94px;
 
   /* 모바일 뷰 */
-  @media (max-width: 767px) {
+  @media (max-width: 47.9375rem) {
     display: flex;
     align-items: center;
-    height: 53rem;
+    height: 53px;
   }
 `;
 
@@ -41,18 +41,18 @@ export const Title = styled.div`
   text-overflow: ellipsis;
   word-break: break-all;
 
-  max-height: 72rem;
+  max-height: 72px;
 
   color: ${colors.white};
   font-size: 24rem;
   font-weight: 600;
   line-height: 150%;
-  letter-spacing: -0.48rem;
+  letter-spacing: -0.48px;
 
   /* 모바일 뷰 */
-  @media (max-width: 767px) {
+  @media (max-width: 47.9375rem) {
     font-size: 16rem;
-    letter-spacing: -0.24rem;
+    letter-spacing: -0.24px;
   }
 `;
 
@@ -68,22 +68,22 @@ export const Description = styled.div<{ descriptionLine: number }>`
   font-size: 16rem;
   font-weight: 400;
   line-height: 160%;
-  letter-spacing: -0.24rem;
+  letter-spacing: -0.24px;
 
   /* 모바일 뷰 */
-  @media (max-width: 767px) {
+  @media (max-width: 47.9375rem) {
     display: none;
   }
 `;
 
 export const TagList = styled.div`
   display: flex;
-  gap: 8rem;
-  margin-top: 10rem;
+  gap: 8px;
+  margin-top: 10px;
 
   /* 모바일 뷰 */
-  @media (max-width: 767px) {
-    margin-top: 18rem;
+  @media (max-width: 47.9375rem) {
+    margin-top: 18px;
   }
 `;
 
@@ -92,24 +92,24 @@ export const Tag = styled.div`
   justify-content: center;
   align-items: center;
 
-  height: 28rem;
-  padding: 0rem 6rem;
-  border-radius: 6rem;
+  height: 28px;
+  padding: 0px 6px;
+  border-radius: 6px;
   background: ${colors.gray700};
 
   color: ${colors.gray50};
   font-size: 12rem;
   font-weight: 500;
-  line-height: 135%; /* 16.2rem */
-  letter-spacing: -0.18rem;
+  line-height: 135%; /* 16.2px */
+  letter-spacing: -0.18px;
 
   /* 모바일 뷰 */
-  @media (max-width: 767px) {
-    height: 20rem;
+  @media (max-width: 47.9375rem) {
+    height: 20px;
 
     font-size: 11rem;
     font-weight: 600;
-    letter-spacing: -0.165rem;
+    letter-spacing: -0.165px;
   }
 `;
 
@@ -119,22 +119,22 @@ export const ThumbnailWrapper = styled.div`
   align-items: center;
 
   position: relative;
-  width: 239rem;
+  width: 239px;
 
   /* 모바일 뷰 */
-  @media (max-width: 767px) {
-    width: 105rem;
+  @media (max-width: 47.9375rem) {
+    width: 105px;
   }
 `;
 
 export const Thumbnail = styled(Image)`
-  border-radius: 8rem;
+  border-radius: 8px;
   object-fit: cover;
 
   /* 모바일 뷰 */
-  @media (max-width: 767px) {
-    width: 105rem;
-    height: 70rem;
-    border-radius: 5rem;
+  @media (max-width: 47.9375rem) {
+    width: 105px;
+    height: 70px;
+    border-radius: 5px;
   }
 `;

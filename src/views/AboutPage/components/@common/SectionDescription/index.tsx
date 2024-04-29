@@ -13,13 +13,13 @@ const Div = styled.div`
   white-space: pre-line;
   word-break: keep-all;
   /* 태블릿 뷰 */
-  @media (max-width: 1199px) and (min-width: 766px) {
+  @media (max-width: 74.9375rem) and (min-width: 47.875rem) {
     font-size: 18rem;
-    line-height: 26rem;
+    line-height: 26px;
     text-align: center;
   }
   /* 모바일 뷰 */
-  @media (max-width: 765.9px) {
+  @media (max-width: 47.86875rem) {
     font-size: 16rem;
     line-height: 150%;
     text-align: center;

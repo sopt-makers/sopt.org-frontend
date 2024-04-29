@@ -8,24 +8,24 @@ export const SectionTitle = styled.h3`
   font-size: 45rem;
   font-style: normal;
   font-weight: 700;
-  line-height: 60rem;
-  letter-spacing: -0.45rem;
+  line-height: 60px;
+  letter-spacing: -0.45px;
   white-space: pre-line;
   text-align: center;
 
   /* 태블릿 뷰 */
-  @media (max-width: 1299px) and (min-width: 766px) {
+  @media (max-width: 81.1875rem) and (min-width: 47.875rem) {
     font-size: 28rem;
-    line-height: 40rem;
-    letter-spacing: -0.28rem;
+    line-height: 40px;
+    letter-spacing: -0.28px;
   }
   /* 모바일 뷰 */
-  @media (max-width: 765.9px) {
+  @media (max-width: 47.86875rem) {
     font-size: 18rem;
     font-weight: 800;
-    line-height: 28rem;
-    letter-spacing: -0.18rem;
-    width: 360rem;
+    line-height: 28px;
+    letter-spacing: -0.18px;
+    width: 360px;
   }
 `;
 
@@ -34,32 +34,32 @@ export const SectionTitleTranslate = styled.h4`
   text-align: center;
   font-size: 17rem;
   font-weight: 500;
-  line-height: 140%; /* 23.8rem */
-  letter-spacing: -0.34rem;
+  line-height: 140%; /* 23.8px */
+  letter-spacing: -0.34px;
 `;
 
 export const SectionSubTitle = styled.h3`
   color: #787878;
   font-size: 30rem;
   font-weight: 400;
-  line-height: 30rem; /* 100% */
-  letter-spacing: -0.3rem;
+  line-height: 30px; /* 100% */
+  letter-spacing: -0.3px;
   text-align: center;
 
   /* 태블릿 뷰 */
-  @media (max-width: 1299px) and (min-width: 766px) {
+  @media (max-width: 81.1875rem) and (min-width: 47.875rem) {
     font-size: 20rem;
-    line-height: 100%; /* 20rem */
-    letter-spacing: -0.2rem;
+    line-height: 100%; /* 20px */
+    letter-spacing: -0.2px;
   }
   /* 모바일 뷰 */
-  @media (max-width: 765.9px) {
+  @media (max-width: 47.86875rem) {
     color: #fff;
     font-family: SUIT;
     font-size: 14rem;
     font-weight: 400;
-    line-height: 28rem; /* 200% */
-    letter-spacing: -0.14rem;
+    line-height: 28px; /* 200% */
+    letter-spacing: -0.14px;
   }
 `;
 
@@ -72,15 +72,15 @@ export const SectionDesc = styled.div`
   text-align: center;
 
   /* 태블릿 뷰 */
-  @media (max-width: 1299px) and (min-width: 766px) {
+  @media (max-width: 81.1875rem) and (min-width: 47.875rem) {
     font-size: 18rem;
-    line-height: 100%; /* 18rem */
-    letter-spacing: -0.18rem;
+    line-height: 100%; /* 18px */
+    letter-spacing: -0.18px;
   }
   /* 모바일 뷰 */
-  @media (max-width: 765.9px) {
+  @media (max-width: 47.86875rem) {
     text-align: center;
     font-size: 16rem;
-    line-height: 150%; /* 24rem */
+    line-height: 150%; /* 24px */
   }
 `;

@@ -10,7 +10,7 @@ function Comment(_props: unknown, ref: Ref<HTMLDivElement>) {
   const controls = useAnimationControls();
   const isWideScreen = useIsDesktop('1601px');
   const wrapperRef = useRef(null);
-  const isMobileSize = useIsMobile('768px');
+  const isMobileSize = useIsMobile('48rem');
   const tab = isMobileSize ? 'Review' : '';
 
   const changeActiveIdx = (idx: number) => {

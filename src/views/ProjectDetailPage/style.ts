@@ -10,15 +10,15 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 1200rem;
-  padding-top: 150rem;
-  @media (max-width: 1280px) {
-    width: 686rem;
-    padding-top: 80rem;
+  width: 1200px;
+  padding-top: 150px;
+  @media (max-width: 80rem) {
+    width: 686px;
+    padding-top: 80px;
   }
-  @media (max-width: 766px) {
-    width: 320rem;
-    padding-top: 80rem;
+  @media (max-width: 47.875rem) {
+    width: 320px;
+    padding-top: 80px;
   }
 `;
 
@@ -26,33 +26,33 @@ export const ProjectHeader = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
-  margin-bottom: 16rem;
-  border-radius: 10rem;
+  margin-bottom: 16px;
+  border-radius: 10px;
   background: #242424;
   width: 100%;
-  padding: 40rem;
+  padding: 40px;
 
   /* 태블릿 뷰 */
-  @media (max-width: 1280px) {
-    padding: 20rem;
+  @media (max-width: 80rem) {
+    padding: 20px;
   }
 
   & > div {
     & > h1 {
-      margin-bottom: 8rem;
+      margin-bottom: 8px;
       color: #ffffff;
       font-size: 32rem;
       font-weight: 700;
-      @media (max-width: 1280px) {
+      @media (max-width: 80rem) {
         font-size: 22rem;
       }
     }
     & > p {
-      line-height: 24rem;
+      line-height: 24px;
       color: #8e8e8e;
       font-size: 22rem;
       font-weight: 500;
-      @media (max-width: 1280px) {
+      @media (max-width: 80rem) {
         font-size: 15rem;
       }
     }
@@ -64,36 +64,36 @@ export const ProjectImageWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 786rem;
-  height: 443rem;
+  width: 786px;
+  height: 443px;
   object-fit: cover;
-  margin: 0 auto 32rem auto;
+  margin: 0 auto 32px auto;
   & > span {
-    border-radius: 5rem;
+    border-radius: 5px;
     overflow: hidden;
   }
   /* 태블릿 뷰 */
-  @media (max-width: 1280px) {
-    width: 686rem;
-    height: 387rem;
+  @media (max-width: 80rem) {
+    width: 686px;
+    height: 387px;
   }
   /* 모바일 뷰 */
-  @media (max-width: 766px) {
-    width: 320rem;
-    height: 180rem;
+  @media (max-width: 47.875rem) {
+    width: 320px;
+    height: 180px;
   }
 `;
 
 export const ProjectWrapper = styled.div`
   width: 100%;
   display: flex;
-  margin-bottom: 240rem;
+  margin-bottom: 240px;
   /* 태블릿 뷰 */
-  @media (max-width: 1280px) {
-    margin-bottom: 160rem;
+  @media (max-width: 80rem) {
+    margin-bottom: 160px;
   }
   /* 모바일 뷰 */
-  @media (max-width: 766px) {
+  @media (max-width: 47.875rem) {
     flex-direction: column;
   }
 `;
@@ -101,61 +101,61 @@ export const ProjectWrapper = styled.div`
 export const ToggleSection = styled.section`
   display: flex;
   flex-direction: column;
-  margin-right: 30rem;
+  margin-right: 30px;
   /* 태블릿 뷰 */
-  @media (max-width: 1280px) {
-    margin-right: 20rem;
+  @media (max-width: 80rem) {
+    margin-right: 20px;
   }
   /* 모바일 뷰 */
-  @media (max-width: 766px) {
+  @media (max-width: 47.875rem) {
     margin: 0;
   }
 `;
 
 export const LogoImageWrapper = styled.div`
   position: absolute;
-  top: 40rem;
-  right: 40rem;
+  top: 40px;
+  right: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
   object-fit: cover;
   & > span {
-    border-radius: 10rem;
+    border-radius: 10px;
   }
   /* 태블릿 뷰 */
-  @media (max-width: 1280px) {
-    width: 56rem;
-    height: 56rem;
-    top: 20rem;
-    right: 20rem;
+  @media (max-width: 80rem) {
+    width: 56px;
+    height: 56px;
+    top: 20px;
+    right: 20px;
   }
   /* 모바일 뷰 */
-  @media (max-width: 766px) {
+  @media (max-width: 47.875rem) {
     position: static;
-    margin-bottom: 24rem;
+    margin-bottom: 24px;
   }
 `;
 
 const CommonWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  width: 380rem;
+  width: 380px;
   height: fit-content;
-  border-radius: 8rem;
+  border-radius: 8px;
   background: #242424;
   /* 태블릿 뷰 */
-  @media (max-width: 1280px) {
-    width: 320rem;
+  @media (max-width: 80rem) {
+    width: 320px;
   }
 `;
 
 export const ProjectOverview = styled(CommonWrapper)<{ isOverviewOpened: boolean }>`
-  margin-bottom: 16rem;
-  padding: 40rem;
+  margin-bottom: 16px;
+  padding: 40px;
   /* 태블릿 뷰 */
-  @media (max-width: 1280px) {
-    padding: ${({ isOverviewOpened }) => (isOverviewOpened ? '28rem' : '25rem 28rem 32rem 28rem')};
+  @media (max-width: 80rem) {
+    padding: ${({ isOverviewOpened }) => (isOverviewOpened ? '28px' : '25px 28px 32px 28px')};
   }
 `;
 
@@ -167,8 +167,8 @@ export const ToggleWrapper = styled.div`
   cursor: pointer;
 
   & > button {
-    width: 24rem;
-    height: 24rem;
+    width: 24px;
+    height: 24px;
   }
 `;
 export const OverviewToggleImage = styled.div<{ isOverviewOpened: boolean }>`
@@ -185,13 +185,13 @@ export const Title = styled.h1`
   color: #fcfcfc;
   font-size: 22rem;
   font-weight: 700;
-  @media (max-width: 1280px) {
+  @media (max-width: 80rem) {
     font-size: 17rem;
   }
 `;
 
 export const ProjectOverviewDetail = styled.div<{ isOverviewOpened: boolean }>`
-  margin-top: ${({ isOverviewOpened }) => isOverviewOpened && '32rem'};
+  margin-top: ${({ isOverviewOpened }) => isOverviewOpened && '32px'};
   height: ${({ isOverviewOpened }) => !isOverviewOpened && '0'};
   overflow: hidden;
 `;
@@ -205,36 +205,36 @@ export const ProjectInfo = styled.div<{ isLinkExist: boolean }>`
   }
 
   & > div:first-of-type {
-    margin-right: 32rem;
+    margin-right: 32px;
 
     & > h1 {
-      margin-bottom: 48rem;
-      line-height: 18rem;
+      margin-bottom: 48px;
+      line-height: 18px;
       color: #cccccc;
       font-size: 17rem;
       font-weight: 500;
       /* 태블릿 뷰 */
-      @media (max-width: 1280px) {
+      @media (max-width: 80rem) {
         font-size: 14rem;
       }
       &:last-child {
-        margin-bottom: ${({ isLinkExist }) => (isLinkExist ? '48rem' : '0')};
+        margin-bottom: ${({ isLinkExist }) => (isLinkExist ? '48px' : '0')};
       }
     }
   }
 
   & > div:last-child > span {
-    margin-bottom: 48rem;
-    line-height: 18rem;
+    margin-bottom: 48px;
+    line-height: 18px;
     color: #ffffff;
     font-size: 18rem;
     font-weight: 600;
     /* 태블릿 뷰 */
-    @media (max-width: 1280px) {
+    @media (max-width: 80rem) {
       font-size: 15rem;
     }
     &:last-child {
-      margin-bottom: ${({ isLinkExist }) => (isLinkExist ? '48rem' : '0')};
+      margin-bottom: ${({ isLinkExist }) => (isLinkExist ? '48px' : '0')};
     }
   }
 `;
@@ -242,10 +242,10 @@ export const ProjectInfo = styled.div<{ isLinkExist: boolean }>`
 export const ProjectLinkWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  row-gap: 20rem;
+  row-gap: 20px;
   /* 태블릿 뷰 */
-  @media (max-width: 1280px) {
-    row-gap: 17rem;
+  @media (max-width: 80rem) {
+    row-gap: 17px;
   }
 `;
 
@@ -254,30 +254,30 @@ export const ProjectLink = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border-radius: 9rem;
+  border-radius: 9px;
   background: #313131;
   cursor: pointer;
-  padding: 6rem 4rem;
-  width: 88rem;
-  height: 100rem;
+  padding: 6px 4px;
+  width: 88px;
+  height: 100px;
   /* 태블릿 뷰 */
-  @media (max-width: 1280px) {
-    width: 80rem;
-    height: 94rem;
+  @media (max-width: 80rem) {
+    width: 80px;
+    height: 94px;
   }
 
   &:not(:last-child) {
-    margin-right: 16rem;
+    margin-right: 16px;
     /* 태블릿 뷰 */
-    @media (max-width: 1280px) {
-      margin-right: 12rem;
+    @media (max-width: 80rem) {
+      margin-right: 12px;
     }
   }
 
   & > span {
-    margin-top: 7rem;
+    margin-top: 7px;
     text-align: center;
-    line-height: 19rem;
+    line-height: 19px;
     color: #a9a9a9;
     font-size: 12rem;
     font-weight: 500;
@@ -289,16 +289,16 @@ export const ImageWrapper = styled.div`
   justify-content: center;
   align-items: center;
 
-  width: 56rem;
-  height: 56rem;
+  width: 56px;
+  height: 56px;
 `;
 
 export const ProjectTeam = styled(CommonWrapper)`
-  margin-bottom: 16rem;
-  padding: 40rem;
+  margin-bottom: 16px;
+  padding: 40px;
   /* 태블릿 뷰 */
-  @media (max-width: 1280px) {
-    padding: 28rem;
+  @media (max-width: 80rem) {
+    padding: 28px;
   }
 `;
 
@@ -306,21 +306,21 @@ export const TeamMembers = styled.div<{ isTeamMemberOpened: boolean }>`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin-top: ${({ isTeamMemberOpened }) => isTeamMemberOpened && '32rem'};
+  margin-top: ${({ isTeamMemberOpened }) => isTeamMemberOpened && '32px'};
   height: ${({ isTeamMemberOpened }) => !isTeamMemberOpened && '0'};
   overflow: hidden;
 `;
 
 export const Members = styled.div`
   &:not(:last-child) {
-    margin-bottom: 40rem;
+    margin-bottom: 40px;
   }
   & > h1 {
     color: #ffffff;
     font-size: 18rem;
     font-weight: 700;
-    letter-spacing: -0.01rem;
-    @media (max-width: 1280px) {
+    letter-spacing: -0.01px;
+    @media (max-width: 80rem) {
       font-size: 16rem;
     }
   }
@@ -330,58 +330,58 @@ export const MemberDetail = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin-top: 12rem;
-  border-radius: 10rem;
+  margin-top: 12px;
+  border-radius: 10px;
   background: #313131;
-  padding: 12rem 16rem;
+  padding: 12px 16px;
 
   & > h1 {
-    margin-bottom: 4rem;
-    line-height: 24rem;
+    margin-bottom: 4px;
+    line-height: 24px;
     color: #ffffff;
     font-size: 16rem;
     font-weight: 600;
     /* 태블릿 뷰 */
-    @media (max-width: 1280px) {
+    @media (max-width: 80rem) {
       font-size: 15rem;
     }
   }
   & > p {
-    line-height: 22rem;
+    line-height: 22px;
     color: #cccccc;
     font-size: 16rem;
     font-weight: 500;
-    @media (max-width: 1280px) {
+    @media (max-width: 80rem) {
       font-size: 14rem;
     }
   }
 `;
 
 export const ProjectDescription = styled(CommonWrapper)`
-  width: 790rem;
-  border: 2rem solid #3e3e3e;
-  border-radius: 10rem;
+  width: 790px;
+  border: 2px solid #3e3e3e;
+  border-radius: 10px;
   background-color: transparent;
-  padding: 40rem;
+  padding: 40px;
   white-space: pre-wrap;
   /* 태블릿 뷰 */
-  @media (max-width: 1280px) {
-    width: 346rem;
-    padding: 28rem;
+  @media (max-width: 80rem) {
+    width: 346px;
+    padding: 28px;
   }
   /* 모바일 뷰 */
-  @media (max-width: 766px) {
-    width: 320rem;
+  @media (max-width: 47.875rem) {
+    width: 320px;
   }
 
   & > p {
-    margin-top: 56rem;
+    margin-top: 56px;
     line-height: 180%;
     color: rgba(255, 255, 255, 0.8);
     font-size: 18rem;
     font-weight: 500;
-    @media (max-width: 1280px) {
-      margin-top: 32rem;
+    @media (max-width: 80rem) {
+      margin-top: 32px;
       font-size: 15rem;
     }
   }

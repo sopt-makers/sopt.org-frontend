@@ -27,7 +27,7 @@ function MobileViewContent() {
     handleCarouselSwipe,
     handleTouchStart,
     handleTouchEnd,
-  } = useInfiniteCarousel<OwnOrganizationCardProps>(OWN_ORGANIZATION_LIST, '(-100% - 20rem)');
+  } = useInfiniteCarousel<OwnOrganizationCardProps>(OWN_ORGANIZATION_LIST, '(-100% - 20px)');
 
   return (
     <S.CarouselWrapper>
@@ -71,7 +71,7 @@ type OwnOrganizationCardProps = {
 };
 
 function OwnOrganization(_props: unknown, ref: Ref<HTMLDivElement>) {
-  const isMobileSize = useIsMobile('768px');
+  const isMobileSize = useIsMobile('48rem');
   const tab = isMobileSize ? 'Team' : '';
 
   return (

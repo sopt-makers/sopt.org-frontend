@@ -22,11 +22,11 @@ interface RootProps {
 
 export const Root = styled.div<RootProps>`
   position: fixed;
-  top: 48rem;
+  top: 48px;
   right: 0;
 
   z-index: 9;
-  box-shadow: 0rem 0rem 5rem rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
 
   width: 100%;
   height: 100vh;
@@ -59,7 +59,7 @@ export const Root = styled.div<RootProps>`
 `;
 
 export const MenuWrap = styled.div`
-  /* padding: 0 30rem; */
+  /* padding: 0 30px; */
   height: 100%;
 `;
 
@@ -71,15 +71,15 @@ export const Background = styled.div`
 
 export const CloseButton = styled.button<CloseButtonProps>`
   position: relative;
-  top: 12rem;
-  left: 272rem;
+  top: 12px;
+  left: 272px;
 
   background: url(${(props: CloseButtonProps) => props.src}) no-repeat;
   background-size: cover;
   cursor: pointer;
 
-  width: 28rem;
-  height: 28rem;
+  width: 28px;
+  height: 28px;
 
   ${({ isMenuShown }) => {
     switch (isMenuShown) {
@@ -114,18 +114,18 @@ export const ContentsWrap = styled.div`
   justify-content: space-between;
   background: ${colors.gray950};
 
-  padding-top: 50rem;
-  margin-bottom: 0rem;
+  padding-top: 50px;
+  margin-bottom: 0px;
 
-  height: 364rem;
+  height: 364px;
 `;
 
 export const MenuTitlesWrap = styled.div`
   display: grid;
   grid-template-columns: repeat(1);
-  row-gap: 20rem;
+  row-gap: 20px;
 
-  padding-bottom: 30rem;
+  padding-bottom: 30px;
 `;
 
 export const MenuTitleAnchor = styled(Link)`
@@ -138,7 +138,7 @@ export const MenuTitleAnchor = styled(Link)`
 export const MenuTitle = styled.div<MenuTitleProps>`
   font-size: 16rem;
   font-weight: 500;
-  line-height: 32rem;
+  line-height: 32px;
   font-weight: ${({ isSelected }) => (isSelected ? '700' : '500')};
 
   color: ${({ isSelected }) => (isSelected ? '#fff' : 'rgba(255, 255, 255, 0.5)')};
@@ -150,15 +150,15 @@ export const MenuTitle = styled.div<MenuTitleProps>`
   }
 
   &:not(:last-child) {
-    margin-left: 30rem;
+    margin-left: 30px;
   }
 
   ${({ menuColor }) =>
     menuColor === 'SPECIAL' &&
     css`
-      padding: 0 20rem;
-      border-radius: 5.869rem;
-      border: 1.027rem solid #4786ff;
+      padding: 0 20px;
+      border-radius: 5.869px;
+      border: 1.027px solid #4786ff;
       background: rgba(71, 134, 255, 0.28);
       color: #267dff;
     `}
@@ -167,7 +167,7 @@ export const MenuTitle = styled.div<MenuTitleProps>`
 export const Rules = styled(Link)`
   cursor: pointer;
   text-decoration-line: underline;
-  line-height: 20rem;
+  line-height: 20px;
 
   letter-spacing: -0.04em;
 
@@ -177,12 +177,12 @@ export const Rules = styled(Link)`
 `;
 
 export const ChannelWrap = styled.div`
-  margin-top: 38rem;
+  margin-top: 38px;
 `;
 
 export const ChannelTitle = styled.p`
-  margin-bottom: 15rem;
-  line-height: 17rem;
+  margin-bottom: 15px;
+  line-height: 17px;
   letter-spacing: -0.04em;
 
   color: ${colors.gray10};

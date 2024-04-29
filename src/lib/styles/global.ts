@@ -21,7 +21,6 @@ export const global = css`
     margin: 0;
     padding: 0;
     border: 0;
-    font-size: 6.25%;
     vertical-align: baseline;
   }
   article,
@@ -61,6 +60,7 @@ export const global = css`
     -webkit-touch-callout: none;
     /* -webkit-user-select:none; */
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    font-size: 6.25%;
     scroll-behavior: smooth;
   }
 

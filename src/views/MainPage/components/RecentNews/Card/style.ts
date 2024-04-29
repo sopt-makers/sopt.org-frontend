@@ -3,11 +3,11 @@ import { colors } from '@sopt-makers/colors';
 import Image from 'next/image';
 
 export const Background = styled.main`
-  width: 286rem;
-  height: 381rem;
-  border-radius: 14rem;
-  margin-top: 51rem;
-  margin-right: 27rem;
+  width: 286px;
+  height: 381px;
+  border-radius: 14px;
+  margin-top: 51px;
+  margin-right: 27px;
   position: relative;
   flex-shrink: 0;
 
@@ -15,16 +15,16 @@ export const Background = styled.main`
 
   transition: all 0.2s linear;
 
-  @media (max-width: 768px) {
-    height: 315rem;
-    width: 237rem;
+  @media (max-width: 48rem) {
+    height: 315px;
+    width: 237px;
   }
 
-  @media (max-width: 444px) {
-    margin-top: 24rem;
-    width: 136rem;
-    height: 182rem;
-    margin-right: 12rem;
+  @media (max-width: 27.75rem) {
+    margin-top: 24px;
+    width: 136px;
+    height: 182px;
+    margin-right: 12px;
   }
 `;
 
@@ -35,22 +35,22 @@ export const Title = styled.h1`
   font-style: normal;
   font-weight: 700;
   line-height: normal;
-  letter-spacing: -0.6rem;
+  letter-spacing: -0.6px;
 
   position: absolute;
   top: 0;
-  margin: 18rem;
+  margin: 18px;
 
   z-index: 2;
 
-  @media (max-width: 428px) {
+  @media (max-width: 26.75rem) {
     font-size: 9rem;
-    letter-spacing: -0.285rem;
-    margin: 14rem;
+    letter-spacing: -0.285px;
+    margin: 14px;
   }
 `;
 
 export const CardImage = styled(Image)`
   object-fit: cover;
-  border-radius: 14rem;
+  border-radius: 14px;
 `;

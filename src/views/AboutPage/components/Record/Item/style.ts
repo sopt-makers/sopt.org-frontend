@@ -3,25 +3,25 @@ import Link from 'next/link';
 import { css } from '@emotion/react';
 
 const wrapperStyle = css`
-  width: 380rem;
-  height: 280rem;
+  width: 380px;
+  height: 280px;
   background-color: #181818;
-  border-radius: 10rem;
+  border-radius: 10px;
 
-  @media (max-width: 996px) and (min-width: 766px) {
-    width: 285rem;
-    height: 210rem;
+  @media (max-width: 62.25rem) and (min-width: 47.875rem) {
+    width: 285px;
+    height: 210px;
   }
 
   /* 태블릿 뷰 */
-  @media (max-width: 766px) and (min-width: 428px) {
-    width: 204rem;
-    height: 150rem;
+  @media (max-width: 47.875rem) and (min-width: 26.75rem) {
+    width: 204px;
+    height: 150px;
   }
   /* 모바일 뷰 */
-  @media (max-width: 428px) {
-    width: 204rem;
-    height: 150rem;
+  @media (max-width: 26.75rem) {
+    width: 204px;
+    height: 150px;
   }
 `;
 
@@ -38,16 +38,16 @@ export const Title = styled.div`
   letter-spacing: -1%;
   color: white;
 
-  @media (max-width: 996px) and (min-width: 766px) {
+  @media (max-width: 62.25rem) and (min-width: 47.875rem) {
     font-size: 16rem;
   }
 
   /* 태블릿 뷰 */
-  @media (max-width: 766px) and (min-width: 428px) {
+  @media (max-width: 47.875rem) and (min-width: 26.75rem) {
     font-size: 10rem;
   }
   /* 모바일 뷰 */
-  @media (max-width: 428px) {
+  @media (max-width: 26.75rem) {
     font-size: 10rem;
   }
 `;
@@ -57,20 +57,20 @@ export const Count = styled.div`
   font-weight: 600;
   font-size: 45rem;
   color: white;
-  line-height: 60rem;
+  line-height: 60px;
 
-  @media (max-width: 996px) and (min-width: 766px) {
+  @media (max-width: 62.25rem) and (min-width: 47.875rem) {
     font-size: 38rem;
-    line-height: 48rem;
+    line-height: 48px;
   }
   /* 태블릿 뷰 */
-  @media (max-width: 766px) and (min-width: 428px) {
+  @media (max-width: 47.875rem) and (min-width: 26.75rem) {
     font-size: 24rem;
-    line-height: 32rem;
+    line-height: 32px;
   }
   /* 모바일 뷰 */
-  @media (max-width: 428px) {
+  @media (max-width: 26.75rem) {
     font-size: 14rem;
-    line-height: 32rem;
+    line-height: 32px;
   }
 `;

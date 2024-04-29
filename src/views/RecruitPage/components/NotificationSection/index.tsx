@@ -70,23 +70,23 @@ const NotificationSection = () => {
 
 const Wrapper = styled.div`
   width: 100vw;
-  height: 700rem;
+  height: 700px;
   justify-content: center;
   align-items: center;
   display: flex;
   flex-direction: column;
-  gap: 31rem;
-  padding-top: 90rem;
+  gap: 31px;
+  padding-top: 90px;
 
   /* 태블릿 뷰 */
-  @media (max-width: 1299px) and (min-width: 766px) {
-    padding-top: 100rem;
-    height: 440rem;
+  @media (max-width: 81.1875rem) and (min-width: 47.875rem) {
+    padding-top: 100px;
+    height: 440px;
   }
   /* 모바일 뷰 */
-  @media (max-width: 765.9px) {
+  @media (max-width: 47.86875rem) {
     padding-top: 0;
-    height: 440rem;
+    height: 440px;
   }
 `;
 
@@ -100,11 +100,11 @@ const TitleText = styled.div`
   line-height: 140%;
 
   /* 태블릿 뷰 */
-  @media (max-width: 1299px) and (min-width: 766px) {
+  @media (max-width: 81.1875rem) and (min-width: 47.875rem) {
     font-size: 30rem;
   }
   /* 모바일 뷰 */
-  @media (max-width: 765.9px) {
+  @media (max-width: 47.86875rem) {
     font-size: 20rem;
     font-weight: 800;
   }
@@ -112,25 +112,25 @@ const TitleText = styled.div`
 
 const FormWrapper = styled.form`
   width: 100%;
-  max-width: 1000rem;
-  height: 100rem;
+  max-width: 1000px;
+  height: 100px;
   background-color: #ffffff24;
-  border-radius: 100rem;
+  border-radius: 100px;
   display: flex;
   justify-content: space-between;
-  padding: 15rem 20rem;
+  padding: 15px 20px;
 
   /* 태블릿 뷰 */
-  @media (max-width: 1299px) and (min-width: 766px) {
-    height: 85rem;
-    padding: 13rem 15rem;
-    max-width: 639rem;
+  @media (max-width: 81.1875rem) and (min-width: 47.875rem) {
+    height: 85px;
+    padding: 13px 15px;
+    max-width: 639px;
   }
   /* 모바일 뷰 */
-  @media (max-width: 765.9px) {
-    height: 50rem;
-    padding: 8rem 13rem;
-    max-width: 330rem;
+  @media (max-width: 47.86875rem) {
+    height: 50px;
+    padding: 8px 13px;
+    max-width: 330px;
   }
 `;
 
@@ -143,8 +143,8 @@ const Input = styled.input`
   font-size: 28rem;
   font-style: normal;
   font-weight: 400;
-  line-height: 150%; /* 42rem */
-  padding-left: 30rem;
+  line-height: 150%; /* 42px */
+  padding-left: 30px;
   flex: 1;
 
   &::placeholder {
@@ -152,19 +152,19 @@ const Input = styled.input`
   }
 
   /* 태블릿 뷰 */
-  @media (max-width: 1299px) and (min-width: 766px) {
+  @media (max-width: 81.1875rem) and (min-width: 47.875rem) {
     font-size: 20rem;
   }
   /* 모바일 뷰 */
-  @media (max-width: 765.9px) {
+  @media (max-width: 47.86875rem) {
     font-size: 12rem;
-    padding-left: 12rem;
+    padding-left: 12px;
   }
 `;
 
 const SubmitButton = styled.input`
-  border-radius: 50rem;
-  width: 184rem;
+  border-radius: 50px;
+  width: 184px;
   background: #ffffff;
   border: none;
   color: #000;
@@ -174,17 +174,17 @@ const SubmitButton = styled.input`
   font-size: 22rem;
   font-style: normal;
   font-weight: 600;
-  line-height: 100%; /* 22rem */
-  letter-spacing: -0.22rem;
+  line-height: 100%; /* 22px */
+  letter-spacing: -0.22px;
 
   /* 태블릿 뷰 */
-  @media (max-width: 1299px) and (min-width: 766px) {
-    width: 172rem;
+  @media (max-width: 81.1875rem) and (min-width: 47.875rem) {
+    width: 172px;
     font-size: 20rem;
   }
   /* 모바일 뷰 */
-  @media (max-width: 765.9px) {
-    width: 99rem;
+  @media (max-width: 47.86875rem) {
+    width: 99px;
     font-size: 12rem;
   }
 `;
@@ -193,17 +193,17 @@ const ConfirmText = styled.div<{ visible: boolean }>`
   visibility: ${({ visible }) => (visible ? 'visible' : 'hidden')};
   font-style: normal;
   font-weight: 400;
-  line-height: 100%; /* 22rem */
-  letter-spacing: -0.22rem;
+  line-height: 100%; /* 22px */
+  letter-spacing: -0.22px;
   font-size: 22rem;
   color: rgba(255, 255, 255, 0.5);
 
   /* 태블릿 뷰 */
-  @media (max-width: 1299px) and (min-width: 766px) {
+  @media (max-width: 81.1875rem) and (min-width: 47.875rem) {
     font-size: 20rem;
   }
   /* 모바일 뷰 */
-  @media (max-width: 765.9px) {
+  @media (max-width: 47.86875rem) {
     font-size: 12rem;
   }
 `;

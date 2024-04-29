@@ -3,7 +3,7 @@ import RecruitButton from '../Banner/RecruitButton';
 import * as S from './style';
 
 export default function RecruitMessage() {
-  const isMobileSize = useIsMobile('768px');
+  const isMobileSize = useIsMobile('48rem');
 
   return (
     <S.Background>
