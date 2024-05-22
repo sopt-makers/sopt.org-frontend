@@ -153,6 +153,36 @@ pnpm run dev
         </td>
     </tr>
 </tr>
+
+<tr>
+   <tr align="center">
+      <td >
+      <b>4기</b>
+      </td>
+        <td >
+            <a href="https://github.com/lydiacho">
+              <img src="https://github.com/lydiacho.png" width="50" />
+            </a>
+        </td>
+        <td>
+            <a href="https://github.com/eonseok-jeon">
+              <img src="https://github.com/eonseok-jeon.png" width="50" />
+            </a> 
+        </td>
+        <td></td>
+    </tr>
+    <tr align="center">
+     <td><sub>24.02 ~ 24.07</sup></td>
+        <td>
+            조승희 <br/>
+      </td>
+        <td>
+            전언석 <br />
+        </td>
+     <td></td>
+    </tr>
+</tr>
+
 </table>
 </div>
 
