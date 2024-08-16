@@ -24,6 +24,6 @@ export const menuTapList: MenuTapList = [
   {
     type: MenuTapType.SPECIAL,
     title: '지원하기',
-    href: '/recruit',
+    href: 'https://recruit.sopt.org/',
   },
 ];
