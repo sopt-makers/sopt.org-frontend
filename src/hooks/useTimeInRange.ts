@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-export default function useCheckTime(startDate: string, endDate: string) {
+export default function useTimeInRange(startDate: string, endDate: string) {
   const [isValid, setIsValid] = useState(
     Date.now() >= new Date(startDate).getTime() && Date.now() <= new Date(endDate).getTime(),
   );
