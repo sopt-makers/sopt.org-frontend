@@ -8,10 +8,7 @@ const ApplySection = () => {
         <span>SOPT의 35번째 열정을&nbsp;</span>
         <span>기다리고 있어요!</span>
       </S.Title>
-      <S.ApplyButton
-        href="https://sopt-recruiting.web.app/recruiting/application/yb"
-        target="_blank"
-      >
+      <S.ApplyButton href="https://recruit.sopt.org/" target="_blank">
         지원하기
       </S.ApplyButton>
     </S.Wrapper>
