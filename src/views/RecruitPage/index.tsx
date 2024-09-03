@@ -19,7 +19,7 @@ function Recruit() {
   return (
     <PageLayout showScrollTopButton>
       <Root>
-        {isValid ? <ApplySection /> : <NotificationSection />}
+        {!isValid ? <ApplySection /> : <NotificationSection />}
         <ContentWrapper>
           <RecruiteeInfo />
           <ChapterInfo />

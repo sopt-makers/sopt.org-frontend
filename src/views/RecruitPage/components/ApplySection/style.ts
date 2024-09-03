@@ -1,31 +1,6 @@
 import styled from '@emotion/styled';
 import { StaticImageData } from 'next/image';
 
-export const Values = styled.div`
-  display: flex;
-  justify-content: center;
-  gap: 90px;
-
-  & > svg {
-    transform: scale(2);
-  }
-
-  /* 태블릿 뷰 */
-  @media (max-width: 81.1875rem) and (min-width: 47.875rem) {
-    gap: 21px;
-    & > svg {
-      transform: scale(1);
-    }
-  }
-  /* 모바일 뷰 */
-  @media (max-width: 47.86875rem) {
-    gap: 18px;
-    & > svg {
-      transform: scale(1);
-    }
-  }
-`;
-
 export const ApplyButton = styled.a`
   width: 220px;
   padding: 24px 0;
@@ -37,7 +12,7 @@ export const ApplyButton = styled.a`
   font-weight: 700;
   line-height: 100%; /* 22px */
   letter-spacing: -0.44px;
-  background-color: #bdec00;
+  background-color: #5ba3ff;
   z-index: 2;
   /* 태블릿 뷰 */
   @media (max-width: 81.1875rem) and (min-width: 47.875rem) {
@@ -97,11 +72,12 @@ export const Wrapper = styled.div<{ imgRecruitBg: StaticImageData }>`
 
   /* 태블릿 뷰 */
   @media (max-width: 81.1875rem) and (min-width: 47.875rem) {
-    height: 400px;
+    height: 302px;
   }
   /* 모바일 뷰 */
   @media (max-width: 47.86875rem) {
     margin-top: 48px;
     font-size: 28rem;
+    height: 409px;
   }
 `;
