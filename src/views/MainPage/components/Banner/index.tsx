@@ -4,7 +4,7 @@ import RecruitButton from './RecruitButton';
 import * as S from './style';
 
 export default function Banner() {
-  const isValid = useCheckTime(); // 모집 여부
+  const isValid = useCheckTime('2024-09-08 10:00:00', '2024-09-13 18:00:00'); // 모집 여부
 
   const onScrollMoveDown = () => {
     const element = document.getElementById('nextContainer');

@@ -14,12 +14,12 @@ const ActivityReview = lazy(() => import('./components/ActivityReview'));
 const BottomLogo = lazy(() => import('./components/BottomLogo'));
 
 function Recruit() {
-  const isValid = useCheckTime();
+  const isValid = useCheckTime('2024-09-08 10:00:00', '2024-09-13 18:00:00'); // 모집 여부
 
   return (
     <PageLayout showScrollTopButton>
       <Root>
-        {!isValid ? <ApplySection /> : <NotificationSection />}
+        {isValid ? <ApplySection /> : <NotificationSection />}
         <ContentWrapper>
           <RecruiteeInfo />
           <ChapterInfo />

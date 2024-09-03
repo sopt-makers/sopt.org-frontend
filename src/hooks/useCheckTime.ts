@@ -1,15 +1,20 @@
 import { useEffect, useState } from 'react';
 
-export default function useCheckTime() {
-  const START_DATE = new Date('2024-03-03 00:00:00');
-  const END_DATE = new Date('2024-03-08 18:00:00');
-  const [startDiff, setStartDiff] = useState<number>(START_DATE.getTime() - Date.now());
-  const [endDiff, setEndDiff] = useState<number>(Date.now() - END_DATE.getTime());
-  
-  useEffect(()=>{
-    setStartDiff(START_DATE.getTime() - Date.now());
-    setEndDiff(Date.now() - END_DATE.getTime());
-  }, []);
+export default function useCheckTime(startDate: string, endDate: string) {
+  const [isValid, setIsValid] = useState(
+    Date.now() >= new Date(startDate).getTime() && Date.now() <= new Date(endDate).getTime(),
+  );
 
-  return startDiff<=0 && endDiff<=0 ;
+  useEffect(() => {
+    const check = () => {
+      setIsValid(
+        Date.now() >= new Date(startDate).getTime() && Date.now() <= new Date(endDate).getTime(),
+      );
+    };
+    const validate = setInterval(check, 1000);
+
+    return () => clearInterval(validate);
+  }, [startDate, endDate]);
+
+  return isValid;
 }
