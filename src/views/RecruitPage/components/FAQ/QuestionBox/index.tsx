@@ -65,7 +65,7 @@ const Styled = {
     color: #ffffff;
     &::before {
       content: 'Q. ';
-      color: #bdec00;
+      color: #5ba3ff;
     }
 
     /* 모바일 뷰 */
@@ -101,7 +101,7 @@ const Styled = {
 
     &::before {
       content: 'A. ';
-      color: #bdec00;
+      color: #5ba3ff;
     }
     /* 태블릿 뷰 */
     @media (max-width: 119.99375rem) and (min-width: 47.875rem) {

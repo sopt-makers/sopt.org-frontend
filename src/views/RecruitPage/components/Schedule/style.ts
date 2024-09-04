@@ -66,7 +66,7 @@ export const OddText = styled.div`
 `;
 
 export const Highlight = styled.span`
-  color: #bdec00;
+  color: #5ba3ff;
   font-size: 24rem;
   font-weight: 400;
   letter-spacing: -0.48px;
