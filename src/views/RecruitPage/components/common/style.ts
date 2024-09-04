@@ -30,7 +30,7 @@ export const SectionTitle = styled.h3`
 `;
 
 export const SectionTitleTranslate = styled.h4`
-  color: #bdec00;
+  color: #5ba3ff;
   text-align: center;
   font-size: 17rem;
   font-weight: 500;

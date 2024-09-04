@@ -1,3 +1,4 @@
+import imgLogoSopt from './img_logo_sopt.png';
 import logo11 from './logo_11.svg';
 import logo12 from './logo_12.svg';
 import logo14 from './logo_14.svg';
@@ -18,11 +19,12 @@ import logo28 from './logo_28.svg';
 import logo29 from './logo_29.svg';
 import logo30 from './logo_30.svg';
 import logo31 from './logo_31.svg';
+import logoAndSoptDark from './logo_andsopt_dark.png';
 import logoDoSopt from './logo_dosopt@3x.png';
-import imgLogoSopt from './img_logo_sopt.png';
 import logoNowSopt from './logo_nowsopt.png';
 
 export {
+  imgLogoSopt,
   logo11,
   logo12,
   logo14,
@@ -43,7 +45,7 @@ export {
   logo29,
   logo30,
   logo31,
+  logoAndSoptDark,
   logoDoSopt,
-  imgLogoSopt,
   logoNowSopt,
 };

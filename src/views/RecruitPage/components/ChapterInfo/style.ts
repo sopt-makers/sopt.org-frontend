@@ -25,7 +25,7 @@ const BlueChip = styled(BaseChip)`
 `;
 
 const GreenChip = styled(BaseChip)`
-  color: #bdec00;
+  color: #5ba3ff;
   padding-left: 20px;
   &:before {
     content: '👍';
@@ -73,6 +73,7 @@ const InfoWrapper = styled(BaseText)`
   padding: 45px 80px;
   font-weight: 600;
   line-height: 42px;
+  width: 100%;
 
   /* 태블릿 뷰 */
   @media (max-width: 81.1875rem) and (min-width: 47.875rem) {
@@ -92,7 +93,7 @@ const InfoWrapper = styled(BaseText)`
 
 const FitWrapper = styled(BaseText)`
   border-radius: 30px;
-  background: #21270f;
+  background: #1c2837;
   padding: 60px 80px;
   display: flex;
   flex-direction: column;
@@ -152,10 +153,10 @@ export {
   BaseChip,
   BaseText,
   BlueChip,
-  GreenChip,
-  FitWrapper,
-  InfoWrapper,
-  Wrapper,
   Container,
+  FitWrapper,
+  GreenChip,
+  InfoWrapper,
   SectionWrapper,
+  Wrapper,
 };

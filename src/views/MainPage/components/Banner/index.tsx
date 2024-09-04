@@ -1,10 +1,10 @@
 import imgMainPageBanner from '@src/assets/images/img_mainBanner.png';
-import useCheckTime from '@src/hooks/useCheckTime';
+import { checkIsTimeInRange } from '@src/lib/utils/date';
 import RecruitButton from './RecruitButton';
 import * as S from './style';
 
 export default function Banner() {
-  const isValid = useCheckTime(); // 모집 여부
+  const isValid = checkIsTimeInRange('2024-09-08 10:00:00', '2024-09-13 18:00:00'); // 모집 여부
 
   const onScrollMoveDown = () => {
     const element = document.getElementById('nextContainer');
