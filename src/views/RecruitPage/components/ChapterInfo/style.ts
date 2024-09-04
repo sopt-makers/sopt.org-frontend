@@ -73,6 +73,7 @@ const InfoWrapper = styled(BaseText)`
   padding: 45px 80px;
   font-weight: 600;
   line-height: 42px;
+  width: 100%;
 
   /* 태블릿 뷰 */
   @media (max-width: 81.1875rem) and (min-width: 47.875rem) {
