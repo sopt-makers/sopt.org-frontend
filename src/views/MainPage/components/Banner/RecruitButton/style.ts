@@ -9,8 +9,9 @@ export const RecruitButtonWrapper = styled(Link)`
   justify-content: center;
   align-items: center;
   border-radius: 99px;
-  background: linear-gradient(274deg, #bdec00 10%, #f0ffb6 100%);
-  animation: ${BackgroundMove} 3s linear 0s infinite alternate;
+  background: linear-gradient(274deg, #3c92ff 10%, #8fc0ff 74.12%, #3c92ff 100%);
+
+  animation: ${BackgroundMove} 3s linear infinite;
   color: ${colors.gray800};
   text-align: center;
   font-family: SUIT;
@@ -34,7 +35,7 @@ export const RecruitButtonWrapper = styled(Link)`
   }
 
   &:hover {
-    background: #f0ffaa;
+    background: #8fc0ff;
   }
 `;
 
@@ -72,12 +73,12 @@ export const MouseTrackerWrapper = styled.div<{ x: number; y: number }>`
     bottom: 0;
     background-image: radial-gradient(
         circle 110px at ${(props) => props.x}px ${(props) => props.y}px,
-        #bdec00,
+        #3c92ff,
         transparent
       ),
       radial-gradient(
         circle 180px at ${(props) => props.x}px ${(props) => props.y}px,
-        #fdffaa,
+        #8fc0ff,
         transparent
       );
     opacity: 0;
