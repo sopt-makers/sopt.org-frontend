@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { lazy } from 'react';
 import PageLayout from '@src/components/common/PageLayout';
-import useTimeInRange from '../../hooks/useTimeInRange';
+import { checkIsTimeInRange } from '@src/lib/utils/date';
 import ApplySection from './components/ApplySection';
 import ChapterInfo from './components/ChapterInfo';
 import NotificationSection from './components/NotificationSection';
@@ -14,7 +14,7 @@ const ActivityReview = lazy(() => import('./components/ActivityReview'));
 const BottomLogo = lazy(() => import('./components/BottomLogo'));
 
 function Recruit() {
-  const isValid = useTimeInRange('2024-09-08 10:00:00', '2024-09-13 18:00:00'); // 모집 여부
+  const isValid = checkIsTimeInRange('2024-09-08 10:00:00', '2024-09-13 18:00:00'); // 모집 여부
 
   return (
     <PageLayout showScrollTopButton>
