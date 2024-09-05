@@ -95,7 +95,7 @@ export const ValueNumber = styled.div`
   width: 25.154px;
   height: 25.154px;
   border-radius: 6px;
-  background: #364536;
+  background: rgba(58, 81, 109, 1);
 
   color: ${colors.white};
   font-family: SUIT;
