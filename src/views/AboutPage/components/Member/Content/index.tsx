@@ -1,5 +1,3 @@
-'use client';
-
 import { useMemo } from 'react';
 import Flex from '@src/components/common/Flex';
 import OvalSpinner from '@src/components/common/OvalSpinner';

@@ -18,7 +18,7 @@ const MemberSection = ({ generation }: MemberSectionProps) => {
       <SectionTop
         engTitle="Executives"
         korTitle={`${generation}기 임원진`}
-        description="200명의 활동 회원들이 열정을 외칠 수 있도록, 35기 NOW SOPT를 이끄는 임원진들이에요."
+        description="200명의 활동 회원들이 열정을 외칠 수 있도록, 35기 AND SOPT를 이끄는 임원진들이에요."
       />
       {/* TODO : 서버에서 description을 받아오도록 수정 */}
       <MemberContent />
