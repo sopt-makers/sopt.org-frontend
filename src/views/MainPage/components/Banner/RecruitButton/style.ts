@@ -9,15 +9,17 @@ export const RecruitButtonWrapper = styled(Link)`
   justify-content: center;
   align-items: center;
   border-radius: 99px;
-  background: linear-gradient(274deg, #3c92ff 10%, #8fc0ff 74.12%, #3c92ff 100%);
 
-  animation: ${BackgroundMove} 3s linear infinite;
+  background: linear-gradient(274deg, #3c92ff, #8fc0ff, #8fc0ff);
+  background-size: 200% 200%;
+  animation: ${BackgroundMove} 1.8s ease-out infinite alternate;
+
   color: ${colors.gray800};
   text-align: center;
-  font-family: SUIT;
+
   font-size: 28rem;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 130%; /* 36.4px */
 
   /* 모바일 뷰 */
@@ -83,7 +85,6 @@ export const MouseTrackerWrapper = styled.div<{ x: number; y: number }>`
       );
     opacity: 0;
     transition-duration: 0.4s;
-    transition-delay: 0.2s;
   }
 
   &:hover::before {
