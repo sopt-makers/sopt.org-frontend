@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import { InferGetServerSidePropsType } from 'next';
-import { lazy } from 'react';
+import dynamic from 'next/dynamic';
 import PageLayout from '@src/components/common/PageLayout';
 import { api } from '@src/lib/api';
 import {
@@ -10,7 +10,7 @@ import {
   RecordSection,
 } from '@src/views/AboutPage/components';
 
-const MemberSection = lazy(() => import('@src/views/AboutPage/components/Member/Section'));
+const MemberSection = dynamic(() => import('@src/views/AboutPage/components/Member/Section'));
 
 const AboutPage = ({
   aboutInfo,
