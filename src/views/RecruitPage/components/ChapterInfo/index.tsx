@@ -15,7 +15,7 @@ const ChapterInfo = () => {
       <SectionTitleWrapper>
         <SectionTitleTranslate>Positions</SectionTitleTranslate>
         <S.SectionWrapper>
-          <SectionTitle>SOPT 34기는 </SectionTitle>
+          <SectionTitle>SOPT 35기는</SectionTitle>
           <SectionTitle>총 6개의 파트로 이루어져 있어요.</SectionTitle>
         </S.SectionWrapper>
       </SectionTitleWrapper>
