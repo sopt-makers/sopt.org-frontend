@@ -12,8 +12,8 @@ export const ItemContainer = styled.div<{ src: string; isInView: boolean; order:
 
   padding: min(35.98px, 5vw) 0 min(80.5px, 4.19vw) 0;
   border-radius: 10px;
-  background: center bottom 0px no-repeat #181818 url(${({ src }) => src});
-  background-size: calc(170px + 7vw);
+  background: center bottom 20px no-repeat #181818 url(${({ src }) => src});
+  background-size: calc(120px + 7vw);
 
   opacity: 0;
 
@@ -28,15 +28,16 @@ export const ItemContainer = styled.div<{ src: string; isInView: boolean; order:
 
   /* 태블릿 뷰 */
   @media (max-width: 48rem) {
-    background-size: 90%;
-    background-position: center bottom -20px;
+    background-size: 60%;
+    background-position: center bottom 14px;
   }
 
   /* 모바일 뷰 */
   @media (max-width: 26.75rem) {
     width: 269px;
     height: 228px;
-    background-position: center bottom -20px;
+    background-size: 70%;
+    background-position: center bottom 0px;
   }
 `;
 
@@ -94,7 +95,7 @@ export const ValueNumber = styled.div`
   width: 25.154px;
   height: 25.154px;
   border-radius: 6px;
-  background: #364536;
+  background: rgba(58, 81, 109, 1);
 
   color: ${colors.white};
   font-family: SUIT;

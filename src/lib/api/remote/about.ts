@@ -10,7 +10,7 @@ const client = axios.create({
   timeout: DEFAULT_TIMEOUT,
 });
 
-const CURRENT_GENERATION = 34;
+const CURRENT_GENERATION = 35;
 
 const getAboutInfo = async (): Promise<GetAboutInfoResponse> => {
   const { data: dataCurrent } = await client.get(`/aboutsopt?generation=${CURRENT_GENERATION}`);
