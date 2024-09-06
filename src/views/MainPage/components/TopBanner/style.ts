@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import Link from 'next/link';
 import { css } from '@emotion/react';
 
-export const Container = styled(Link)<{ isYellow: boolean }>`
+export const Container = styled(Link)<{ isKeyColor: boolean }>`
   display: flex;
   justify-content: center;
   position: fixed;
@@ -12,18 +12,18 @@ export const Container = styled(Link)<{ isYellow: boolean }>`
   width: 100%;
   z-index: 95;
 
-  ${({ isYellow }) =>
-    isYellow
+  ${({ isKeyColor }) =>
+    isKeyColor
       ? css`
-          background-color: #bdec00;
-          color: #101111;
+          background-color: #5ba3ff;
+          color: #0f1012;
           & h1,
           p {
-            color: #101111;
+            color: #0f1012;
           }
           & path,
           circle {
-            stroke: #101111;
+            stroke: #0f1012;
           }
         `
       : css`
@@ -71,6 +71,7 @@ export const Wrapper = styled.section`
 export const Title = styled.h1`
   text-align: center;
   line-height: 130%;
+  font-size: 16rem;
 
   /* 모바일 뷰 */
   @media (max-width: 26.75rem) {
@@ -85,6 +86,7 @@ export const Description = styled.div`
   flex-grow: 1;
 
   text-align: center;
+  font-size: 16rem;
   font-weight: 500;
 
   /* 모바일 뷰 */
