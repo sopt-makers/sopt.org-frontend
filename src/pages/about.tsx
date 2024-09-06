@@ -12,10 +12,7 @@ import {
 
 const MemberSection = lazy(() => import('@src/views/AboutPage/components/Member/Section'));
 
-const AboutPage = ({
-  aboutInfo,
-  memberInfo,
-}: InferGetServerSidePropsType<typeof getStaticProps>) => {
+const AboutPage = ({ aboutInfo }: InferGetServerSidePropsType<typeof getStaticProps>) => {
   return (
     <PageLayout>
       <Root>
@@ -25,7 +22,7 @@ const AboutPage = ({
           coreValues={aboutInfo.aboutInfo.coreValue.eachValues}
         />
         <CurriculumSection curriculums={aboutInfo.aboutInfo.curriculums} />
-        <MemberSection members={memberInfo.members} generation={aboutInfo.aboutInfo.generation} />
+        <MemberSection generation={aboutInfo.aboutInfo.generation} />
         <RecordSection
           generation={aboutInfo.aboutInfo.generation}
           records={aboutInfo.aboutInfo.records}
@@ -37,12 +34,10 @@ const AboutPage = ({
 
 export const getStaticProps = async () => {
   const aboutInfo = await api.aboutAPI.getAboutInfo();
-  const memberInfo = await api.aboutAPI.getMemberInfo();
 
   return {
     props: {
       aboutInfo,
-      memberInfo,
     },
   };
 };
