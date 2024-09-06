@@ -142,10 +142,16 @@ const Container = styled.div`
 
 const SectionWrapper = styled.div`
   display: flex;
+  gap: 10px;
   justify-content: center;
+
+  @media (max-width: 81.1875rem) and (min-width: 47.875rem) {
+    gap: 6px;
+  }
 
   @media (max-width: 47.86875rem) {
     flex-direction: column;
+    gap: 0;
   }
 `;
 
