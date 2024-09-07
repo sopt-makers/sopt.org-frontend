@@ -1,6 +1,4 @@
-import { Suspense } from 'react';
 import Flex from '@src/components/common/Flex';
-import OvalSpinner from '@src/components/common/OvalSpinner';
 import { MemberType } from '@src/lib/types/about';
 import MemberCard from '@src/views/AboutPage/components/Member/Card';
 import SectionTop from '../../@common/SectionTop';
@@ -30,42 +28,34 @@ const MemberSection = ({ generation, members }: MemberSectionProps) => {
         gap={{ mobile: 18, tablet: 24, desktop: 48 }}
         style={{ alignItems: 'center' }}
       >
-        <Suspense
-          fallback={
-            <St.OvalSpinnerWrapper>
-              <OvalSpinner />
-            </St.OvalSpinnerWrapper>
-          }
-        >
-          {/* {errorContent} */}
-          <St.CardContainer>
-            {members.map(
-              ({
-                id,
-                name,
-                position,
-                description,
-                currentProject,
-                imageSrc,
-                gmail,
-                linkedin,
-                github,
-              }) => (
-                <MemberCard
-                  key={id}
-                  name={name}
-                  position={position}
-                  description={description}
-                  currentProject={currentProject}
-                  imageSrc={imageSrc}
-                  gmail={gmail}
-                  linkedin={linkedin}
-                  github={github}
-                />
-              ),
-            )}
-          </St.CardContainer>
-        </Suspense>
+        {/* {errorContent} */}
+        <St.CardContainer>
+          {members.map(
+            ({
+              id,
+              name,
+              position,
+              description,
+              currentProject,
+              imageSrc,
+              gmail,
+              linkedin,
+              github,
+            }) => (
+              <MemberCard
+                key={id}
+                name={name}
+                position={position}
+                description={description}
+                currentProject={currentProject}
+                imageSrc={imageSrc}
+                gmail={gmail}
+                linkedin={linkedin}
+                github={github}
+              />
+            ),
+          )}
+        </St.CardContainer>
       </Flex>
     </Flex>
   );
