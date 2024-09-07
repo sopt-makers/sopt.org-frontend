@@ -16,6 +16,7 @@ export interface MemberType {
   gmail?: string;
   linkedin?: string;
   github?: string;
+  behance?: string;
 }
 
 export type PositionType =

@@ -57,6 +57,7 @@ const getMemberInfo = async (): Promise<GetMembersInfoResponse> => ({
       description: '동아리, 그 이상의 가치',
       imageSrc: '/images/members/1.png',
       gmail: 'president@sopt.org',
+      linkedin: '건-정-4aa699303/?trk=public-profile-join-page',
     },
     {
       id: 12,
@@ -66,7 +67,6 @@ const getMemberInfo = async (): Promise<GetMembersInfoResponse> => ({
       description: '빛나는 열정을 펼칠 수 있도록',
       imageSrc: '/images/members/12.png',
       gmail: 'v_president@sopt.org',
-      github: 'sjk4618',
     },
     {
       id: 2,
@@ -124,6 +124,7 @@ const getMemberInfo = async (): Promise<GetMembersInfoResponse> => ({
       description: '세상을 바꾸는 디자이너들',
       imageSrc: '/images/members/7.png',
       gmail: 'design@sopt.org',
+      behance: '208a08e8',
     },
     {
       id: 8,
