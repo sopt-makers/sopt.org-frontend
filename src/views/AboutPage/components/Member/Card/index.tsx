@@ -29,7 +29,12 @@ const MemberCard = ({
   return (
     <St.Card>
       <St.ImageWrapper>
-        <St.ProfileImage src={imageSrc || NullImage.src} alt={`${name}의 프로필`} fill />
+        <St.ProfileImage
+          src={imageSrc || NullImage.src}
+          alt={`${name}의 프로필`}
+          fill
+          sizes="100%"
+        />
       </St.ImageWrapper>
       <St.NameWrapper>
         <St.Position>{position}</St.Position>

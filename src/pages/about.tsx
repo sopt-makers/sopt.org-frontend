@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import { InferGetServerSidePropsType } from 'next';
-import { lazy } from 'react';
+import dynamic from 'next/dynamic';
 import PageLayout from '@src/components/common/PageLayout';
 import { api } from '@src/lib/api';
 import {
@@ -10,9 +10,12 @@ import {
   RecordSection,
 } from '@src/views/AboutPage/components';
 
-const MemberSection = lazy(() => import('@src/views/AboutPage/components/Member/Section'));
+const MemberSection = dynamic(() => import('@src/views/AboutPage/components/Member/Section'));
 
-const AboutPage = ({ aboutInfo }: InferGetServerSidePropsType<typeof getStaticProps>) => {
+const AboutPage = ({
+  aboutInfo,
+  memberInfo,
+}: InferGetServerSidePropsType<typeof getStaticProps>) => {
   return (
     <PageLayout>
       <Root>
@@ -22,7 +25,7 @@ const AboutPage = ({ aboutInfo }: InferGetServerSidePropsType<typeof getStaticPr
           coreValues={aboutInfo.aboutInfo.coreValue.eachValues}
         />
         <CurriculumSection curriculums={aboutInfo.aboutInfo.curriculums} />
-        <MemberSection generation={aboutInfo.aboutInfo.generation} />
+        <MemberSection members={memberInfo.members} generation={aboutInfo.aboutInfo.generation} />
         <RecordSection
           generation={aboutInfo.aboutInfo.generation}
           records={aboutInfo.aboutInfo.records}
@@ -34,10 +37,12 @@ const AboutPage = ({ aboutInfo }: InferGetServerSidePropsType<typeof getStaticPr
 
 export const getStaticProps = async () => {
   const aboutInfo = await api.aboutAPI.getAboutInfo();
+  const memberInfo = await api.aboutAPI.getMemberInfo();
 
   return {
     props: {
       aboutInfo,
+      memberInfo,
     },
   };
 };
