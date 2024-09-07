@@ -41,6 +41,7 @@ const MemberSection = ({ generation, members }: MemberSectionProps) => {
               gmail,
               linkedin,
               github,
+              behance,
             }) => (
               <MemberCard
                 key={id}
@@ -52,6 +53,7 @@ const MemberSection = ({ generation, members }: MemberSectionProps) => {
                 gmail={gmail}
                 linkedin={linkedin}
                 github={github}
+                behance={behance}
               />
             ),
           )}
