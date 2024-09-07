@@ -15,7 +15,7 @@ const Schedule = () => {
         </S.EvenText>
         <S.OddText>YB 서류 결과 발표</S.OddText>
         <S.EvenText>
-          9월 19일 <S.Highlight>14시</S.Highlight>
+          9월 19일 <S.Highlight>16시</S.Highlight>
         </S.EvenText>
         <S.OddText>YB 면접</S.OddText>
         <S.EvenText>9월 21일 - 9월 22일</S.EvenText>
