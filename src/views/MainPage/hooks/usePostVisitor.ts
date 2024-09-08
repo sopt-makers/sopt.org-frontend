@@ -5,11 +5,11 @@ import axios from 'axios';
 
 const client = axios.create({ baseURL: BASE_URL });
 
-async function postVisitor() {
+const postVisitor = async () => {
   await client.post('/visitor');
-}
+};
 
-export default function usePostVisitor() {
+const usePostVisitor = () => {
   const { mutate } = useMutation({
     mutationFn: postVisitor,
     onSuccess: () => {
@@ -18,4 +18,5 @@ export default function usePostVisitor() {
   });
 
   return mutate;
-}
+};
+export default usePostVisitor;
