@@ -21,7 +21,7 @@ const NotificationSection = () => {
       if (!email) return;
       setIsLoading(true);
       const result = await client.post('/notification/register', {
-        generation: 35, // 리크루팅 시기 이후 변경되어야 함.
+        generation: 36, // 리크루팅 시기 이후 변경되어야 함.
         email,
       });
       if (result.status === 201) {
