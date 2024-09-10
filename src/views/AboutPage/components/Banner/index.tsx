@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import * as S from './style';
 
 interface BannerProps {
@@ -8,7 +9,19 @@ interface BannerProps {
 const Banner = (props: BannerProps) => {
   const { imageSrc } = props;
 
-  return <S.Banner src={imageSrc}></S.Banner>;
+  return (
+    <S.Banner>
+      <Image
+        src={imageSrc}
+        alt="SOPT banner"
+        fill
+        style={{
+          objectFit: 'cover',
+          objectPosition: 'center',
+        }}
+      />
+    </S.Banner>
+  );
 };
 
 export default Banner;
