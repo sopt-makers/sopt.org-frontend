@@ -1,10 +1,11 @@
 import styled from '@emotion/styled';
 
-export const Banner = styled.div<{ src: string }>`
+export const Banner = styled.div`
   width: 100vw;
   max-height: 630px;
   height: calc(376px + 13vw);
-  background: center / cover no-repeat url(${({ src }) => src});
+  position: relative;
+  overflow: hidden;
 
   /* 태블릿 뷰 */
   @media (max-width: 48rem) {

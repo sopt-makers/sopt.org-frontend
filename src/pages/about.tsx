@@ -44,6 +44,7 @@ export const getStaticProps = async () => {
       aboutInfo,
       memberInfo,
     },
+    revalidate: 120,
   };
 };
 
