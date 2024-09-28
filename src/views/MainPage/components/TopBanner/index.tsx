@@ -30,7 +30,7 @@ export default function TopBanner() {
     <S.Container href="/recruit" isKeyColor={isKeyColor}>
       <S.Wrapper>
         <div>
-          <S.Title>솝트의 35번째 열정이 되어주세요!</S.Title>
+          <S.Title>솝트의 36번째 열정이 되어주세요!</S.Title>
         </div>
         <S.Description>
           <S.Timer>
