@@ -1,14 +1,26 @@
 import styled from '@emotion/styled';
 import { useState } from 'react';
+import { questionList } from '@src/lib/constants/faq';
+import { PartQuestionType, QnAType } from '@src/lib/types/admin';
 import { ExtraPart, PartExtraType } from '@src/lib/types/universal';
+import { parseStringToPart } from '@src/lib/utils/parseStringToPart';
 import TabBar from '../common/Tabs';
 import { SectionTitle, SectionTitleTranslate, SectionTitleWrapper } from '../common/style';
 import QuestionBox from './QuestionBox';
-import { faqMap } from './constant';
 
-const FaqInfo = () => {
+const FaqInfo = ({ info }: { info: PartQuestionType[] }) => {
   const [selectedTab, setSelectedTab] = useState<ExtraPart>(PartExtraType.ALL);
   const [status, setStatus] = useState(new Set());
+
+  const infoMap = info.reduce(
+    (acc, { part, questions }) => {
+      acc[parseStringToPart(part)] = questions;
+      return acc;
+    },
+    {
+      ALL: questionList,
+    } as Record<ExtraPart, QnAType[]>,
+  );
 
   const toggleBox = (index: number) => {
     const updatedStatus = new Set(status);
@@ -31,7 +43,7 @@ const FaqInfo = () => {
         amplitudeTrackingName={'click_recruit_faq_part'}
       />
       <FaqWrapper>
-        {faqMap[selectedTab].map((info, index) => (
+        {infoMap[selectedTab].map((info, index) => (
           <div key={index} onClick={() => toggleBox(index)}>
             <QuestionBox info={info} status={status.has(index)} />
           </div>

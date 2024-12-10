@@ -1,9 +1,14 @@
 import styled from '@emotion/styled';
-import { lazy } from 'react';
+import { useQuery } from '@tanstack/react-query';
+import { Suspense, lazy } from 'react';
 import PageLayout from '@src/components/common/PageLayout';
+import { mockAdminAPI } from '@src/lib/api/mock/admin';
+import { remoteAdminAPI } from '@src/lib/api/remote/admin';
+import { GetRecruitpageResponse } from '@src/lib/types/admin';
 import { checkIsTimeInRange } from '@src/lib/utils/date';
 import ApplySection from './components/ApplySection';
 import ChapterInfo from './components/ChapterInfo';
+// import FaqInfo from './components/FAQ';
 import NotificationSection from './components/NotificationSection';
 import RecruiteeInfo from './components/RecruteeInfo';
 import Schedule from './components/Schedule';
@@ -16,15 +21,27 @@ const BottomLogo = lazy(() => import('./components/BottomLogo'));
 function Recruit() {
   const isValid = checkIsTimeInRange('2024-09-08 10:00:00', '2024-09-13 18:00:00'); // 모집 여부
 
+  const { data } = useQuery<GetRecruitpageResponse>({
+    queryKey: ['homepage/recruit'],
+    queryFn: mockAdminAPI.getRecruitpage,
+  });
+
   return (
     <PageLayout showScrollTopButton>
       <Root>
         {isValid ? <ApplySection /> : <NotificationSection />}
         <ContentWrapper>
           <RecruiteeInfo />
-          <ChapterInfo />
-          <Schedule />
-          <FaqInfo />
+          {data && (
+            <>
+              <ChapterInfo info={data.recruitPartCurriculum} />
+              <Schedule info={data.recruitSchedule} />
+              <Suspense>
+                <FaqInfo info={data.recruitQuestion} />
+              </Suspense>
+            </>
+          )}
+
           <Contact />
           <ActivityReview />
         </ContentWrapper>

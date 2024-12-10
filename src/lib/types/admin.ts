@@ -1,5 +1,5 @@
-type PartType = '기획' | '디자인' | '안드로이드' | 'iOS' | '웹' | '서버';
-type ExecutivesType = '부회장' | '총무' | '운영 팀장' | '미디어 팀장' | '메이커스 팀장';
+export type PartType = '기획' | '디자인' | '안드로이드' | 'iOS' | '웹' | '서버';
+export type ExecutivesType = '부회장' | '총무' | '운영 팀장' | '미디어 팀장' | '메이커스 팀장';
 
 export interface PartIntroType {
   part: string;
@@ -11,7 +11,7 @@ export interface LatestNewsType {
   image: string;
   link: string;
 }
-export interface GetHomepageRespons {
+export interface GetHomepageResponse {
   generation: number;
   name: string;
   brandingColor: {
@@ -74,7 +74,7 @@ export interface PartInfoType {
     preference: string;
   };
 }
-interface QnAType {
+export interface QnAType {
   question: string;
   answer: string;
 }
@@ -82,16 +82,17 @@ export interface PartQuestionType {
   part: PartType;
   questions: QnAType[];
 }
+export interface ScheduleType {
+  applicationStartTime: string;
+  applicationEndTime: string;
+  applicationResultTime: string;
+  interviewStartTime: string;
+  interviewEndTime: string;
+  finalResultTime: string;
+}
 export interface RecruitScheduleType {
   type: 'OB' | 'YB';
-  schedule: {
-    applicationStartTime: string;
-    applicationEndTime: string;
-    applicationResultTime: string;
-    interviewStartTime: string;
-    interviewEndTime: string;
-    finalResultTime: string;
-  };
+  schedule: ScheduleType;
 }
 export interface GetRecruitpageResponse {
   generation: number;
