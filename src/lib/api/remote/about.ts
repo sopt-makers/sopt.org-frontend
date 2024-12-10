@@ -14,7 +14,7 @@ const CURRENT_GENERATION = 35;
 
 const getAboutInfo = async (): Promise<GetAboutInfoResponse> => {
   const { data: dataCurrent } = await client.get(`/aboutsopt?generation=${CURRENT_GENERATION}`);
-  const { data: dataPrev } = await client.get(`/aboutsopt?generation=${CURRENT_GENERATION - 1}`);
+  // const { data: dataPrev } = await client.get(`/aboutsopt?generation=${CURRENT_GENERATION - 1}`);
 
   return {
     aboutInfo: {
@@ -38,9 +38,9 @@ const getAboutInfo = async (): Promise<GetAboutInfoResponse> => {
         [Part.WEB]: dataCurrent.aboutSopt.webCurriculum,
       },
       records: {
-        memberCount: dataPrev.activitiesRecords.activitiesMemberCount,
-        projectCount: dataPrev.activitiesRecords.projectCounts,
-        studyCount: dataPrev.activitiesRecords.studyCounts,
+        memberCount: dataCurrent.activitiesRecords.activitiesMemberCount,
+        projectCount: dataCurrent.activitiesRecords.projectCounts,
+        studyCount: dataCurrent.activitiesRecords.studyCounts,
       },
     },
   };
