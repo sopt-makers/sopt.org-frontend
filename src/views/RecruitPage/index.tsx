@@ -19,6 +19,7 @@ const ActivityReview = lazy(() => import('./components/ActivityReview'));
 const BottomLogo = lazy(() => import('./components/BottomLogo'));
 
 function Recruit() {
+  // TODO: API로 받아온 시간으로 체크
   const isValid = checkIsTimeInRange('2024-09-08 10:00:00', '2024-09-13 18:00:00'); // 모집 여부
 
   const { data } = useQuery<GetRecruitpageResponse>({

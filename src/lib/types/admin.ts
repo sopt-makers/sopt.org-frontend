@@ -1,5 +1,11 @@
 export type PartType = '기획' | '디자인' | '안드로이드' | 'iOS' | '웹' | '서버';
-export type ExecutivesType = '부회장' | '총무' | '운영 팀장' | '미디어 팀장' | '메이커스 팀장';
+export type ExecutivesType =
+  | '회장'
+  | '부회장'
+  | '총무'
+  | '운영 팀장'
+  | '미디어 팀장'
+  | '메이커스 팀장';
 
 export interface PartIntroType {
   part: string;
@@ -30,16 +36,16 @@ export interface GetHomepageResponse {
 }
 
 export interface MemberType {
-  role: ExecutivesType & PartType;
+  role: ExecutivesType | PartType;
   name: string;
   affiliation: string;
   introduction: string;
   profileImage: string;
   sns: {
-    email: string;
-    linkedin: string;
-    github: string;
-    behance: string;
+    email?: string;
+    linkedin?: string;
+    github?: string;
+    behance?: string;
   };
 }
 

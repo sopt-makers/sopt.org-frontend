@@ -1,4 +1,8 @@
-import { GetRecruitpageResponse } from '@src/lib/types/admin';
+import {
+  GetAboutpageResponse,
+  GetHomepageResponse,
+  GetRecruitpageResponse,
+} from '@src/lib/types/admin';
 
 const getRecruitpage = async (): Promise<GetRecruitpageResponse> => ({
   generation: 34,
@@ -200,6 +204,310 @@ const getRecruitpage = async (): Promise<GetRecruitpageResponse> => ({
   ],
 });
 
+const getAboutpage = async (): Promise<GetAboutpageResponse> => ({
+  generation: 34,
+  name: 'SOPT',
+  headerImage:
+    'https://s3.ap-northeast-2.amazonaws.com/sopt.org/admin/origin/about/35th/header_fix.png',
+  brandingColor: {
+    main: '#FF0000',
+    low: '#CC0000',
+    high: '#FF3333',
+    point: '#FF9999',
+  },
+  coreValue: [
+    {
+      value: '용기',
+      description: '새로운 도전을 위해 과감히 용기내는 사람',
+      image:
+        'https://s3.ap-northeast-2.amazonaws.com/sopt.org/admin/origin/about/35th/%E1%84%8B%E1%85%AD%E1%86%BC%E1%84%80%E1%85%B5_1.png',
+    },
+    {
+      value: '몰입',
+      description: '포기하지 않고 깊이 몰입하는 사람',
+      image:
+        'https://s3.ap-northeast-2.amazonaws.com/sopt.org/admin/origin/about/35th/%E1%84%86%E1%85%A9%E1%86%AF%E1%84%8B%E1%85%B5%E1%86%B8_1.png',
+    },
+    {
+      value: '화합',
+      description: '서로를 배려하며 함께 화합하는 사람',
+      image:
+        'https://s3.ap-northeast-2.amazonaws.com/sopt.org/admin/origin/about/35th/%E1%84%92%E1%85%AA%E1%84%92%E1%85%A1%E1%86%B8_1.png',
+    },
+  ],
+  partCurriculum: [
+    {
+      part: '기획',
+      curriculums: [
+        '기획 1주차',
+        '기획 2주차',
+        '기획 3주차',
+        '기획 4주차',
+        '기획 5주차',
+        '기획 6주차',
+        '기획 7주차',
+        '기획 8주차',
+      ],
+    },
+    {
+      part: '디자인',
+      curriculums: [
+        '디자인 1주차',
+        '디자인 2주차',
+        '디자인 3주차',
+        '디자인 4주차',
+        '디자인 5주차',
+        '디자인 6주차',
+        '디자인 7주차',
+        '디자인 8주차',
+      ],
+    },
+    {
+      part: '웹',
+      curriculums: [
+        '웹 1주차',
+        '웹 2주차',
+        '웹 3주차',
+        '웹 4주차',
+        '웹 5주차',
+        '웹 6주차',
+        '웹 7주차',
+        '웹 8주차',
+      ],
+    },
+    {
+      part: '서버',
+      curriculums: [
+        '서버 1주차',
+        '서버 2주차',
+        '서버 3주차',
+        '서버 4주차',
+        '서버 5주차',
+        '서버 6주차',
+        '서버 7주차',
+        '서버 8주차',
+      ],
+    },
+    {
+      part: 'iOS',
+      curriculums: [
+        'iOS 1주차',
+        'iOS 2주차',
+        'iOS 3주차',
+        'iOS 4주차',
+        'iOS 5주차',
+        'iOS 6주차',
+        'iOS 7주차',
+        'iOS 8주차',
+      ],
+    },
+    {
+      part: '안드로이드',
+      curriculums: [
+        '안드로이드 1주차',
+        '안드로이드 2주차',
+        '안드로이드 3주차',
+        '안드로이드 4주차',
+        '안드로이드 5주차',
+        '안드로이드 6주차',
+        '안드로이드 7주차',
+        '안드로이드 8주차',
+      ],
+    },
+  ],
+  member: [
+    {
+      name: '정건',
+      role: '회장',
+      affiliation: '건국대학교, 티키',
+      introduction: '동아리, 그 이상의 가치',
+      profileImage: '/images/members/1.png',
+      sns: {
+        email: 'president@sopt.org',
+        linkedin: 'https://www.linkedin.com/in/건-정-4aa699303/?trk=public-profile-join-page',
+      },
+    },
+    {
+      name: '김송이',
+      role: '부회장',
+      affiliation: '아주대학교',
+      introduction: '빛나는 열정을 펼칠 수 있도록',
+      profileImage: '/images/members/12.png',
+      sns: {
+        email: 'v_president@sopt.org',
+      },
+    },
+    {
+      name: '윤영서',
+      role: '총무',
+      affiliation: '동국대학교, doorip',
+      introduction: '열정을 쏟을 이곳에서 동료들과',
+      profileImage: '/images/members/2.png',
+      sns: {
+        email: 'manager@sopt.org',
+        github: 'https://github.com/0seoYun',
+      },
+    },
+    {
+      name: '이현진',
+      role: '운영 팀장',
+      affiliation: '가톨릭대학교, dateroad',
+      introduction: '매 순간을 소중한 추억으로!',
+      profileImage: '/images/members/5.png',
+      sns: {
+        email: 'master@sopt.org',
+        github: 'https://github.com/2hyunjinn',
+      },
+    },
+    {
+      name: '방민지',
+      role: '미디어 팀장',
+      affiliation: 'PINGLE',
+      introduction: '우리의 발자취를 기록하다.',
+      profileImage: '/images/members/4.png',
+      sns: {
+        email: 'media@sopt.org',
+        github: 'https://github.com/bangMinjI98',
+      },
+    },
+    {
+      name: '김가연',
+      role: '메이커스 팀장',
+      affiliation: '이화여자대학교, OFFROAD',
+      introduction: 'SOPT다움을 찾아서',
+      profileImage: '/images/members/3.png',
+      sns: {
+        email: 'makers@sopt.org',
+      },
+    },
+    {
+      name: '김소희',
+      role: '기획',
+      affiliation: '성신여자대학교',
+      introduction: '함께라면, 어떤 꿈도 현실이 됩니다',
+      profileImage: '/images/members/6.png',
+      sns: {
+        email: 'plan@sopt.org',
+      },
+    },
+    {
+      name: '송예솔',
+      role: '디자인',
+      affiliation: 'Lecue, 선약',
+      introduction: '세상을 바꾸는 디자이너들',
+      profileImage: '/images/members/7.png',
+      sns: {
+        email: 'design@sopt.org',
+        behance: 'https://www.behance.net/208a08e8',
+      },
+    },
+    {
+      name: '배지현',
+      role: '안드로이드',
+      affiliation: '건빵, PINGLE, dateroad',
+      introduction: '함께의 힘을 믿습니다.',
+      profileImage: '/images/members/8.png',
+      sns: {
+        email: 'develop@sopt.org',
+        github: 'https://github.com/jihyunniiii',
+      },
+    },
+    {
+      name: '한지석',
+      role: 'iOS',
+      affiliation: '수원대학교, Recordy',
+      introduction: '나는 더 나은 미래를 위해 싸운다',
+      profileImage: '/images/members/9.png',
+      sns: {
+        email: 'develop@sopt.org',
+        github: 'https://github.com/sozohoy',
+      },
+    },
+    {
+      name: '유태승',
+      role: '웹',
+      affiliation: '건국대학교, PICKPLE',
+      introduction: '저와 함께 도약할 준비 되셨나요?',
+      profileImage: '/images/members/10.png',
+      sns: {
+        email: 'develop@sopt.org',
+        github: 'https://github.com/gudusol',
+      },
+    },
+    {
+      name: '계대환',
+      role: '서버',
+      affiliation: 'smeem',
+      introduction: '부드럽고, 성실하고, 능숙하게',
+      profileImage: '/images/members/11.png',
+      sns: {
+        email: 'develop@sopt.org',
+      },
+    },
+  ],
+});
+
+const getHomepage = async (): Promise<GetHomepageResponse> => ({
+  generation: 34,
+  name: 'SOPT',
+  brandingColor: {
+    main: '#FF0000',
+    low: '#CC0000',
+    high: '#FF3333',
+    point: '#FF9999',
+  },
+  mainButton: {
+    text: '지원하기',
+    keyColor: '#FF0000',
+    subColor: '#CC0000',
+  },
+  partIntroduction: [
+    {
+      part: '안드로이드',
+      description: 'Android 앱 개발',
+    },
+  ],
+  latestNews: [
+    {
+      id: 36,
+      title: 'MIND 23',
+      image:
+        'https://s3.ap-northeast-2.amazonaws.com/sopt.org/develop/news/a906be00-0b6e-4ca6-bedc-69cc734f4318_%E1%84%8E%E1%85%AC%E1%84%8C%E1%85%AE%E1%84%8B%E1%85%AD%E1%86%BC.png',
+      link: 'https://disquiet.io/product/mind-23-%EC%98%A4%EB%8A%98%EB%8F%84-%EB%A9%88%EC%B6%94%EC%A7%80-%EC%95%8A%EB%8A%94-it%EC%9D%B8%EB%93%A4',
+    },
+    {
+      id: 40,
+      title: 'WUZOO',
+      image:
+        'https://s3.ap-northeast-2.amazonaws.com/sopt.org/develop/news/3a3df4a9-c7f4-48ce-a9af-14a62a139c77_%E1%84%8E%E1%85%AC%E1%84%8C%E1%85%AE%E1%84%8B%E1%85%AD%E1%86%BC.png',
+      link: '',
+    },
+    {
+      id: 41,
+      title: 'WUZOO',
+      image:
+        'https://s3.ap-northeast-2.amazonaws.com/sopt.org/develop/news/298cf8d3-0d17-4e71-919f-b70baaa260ec_%E1%84%8E%E1%85%AC%E1%84%8C%E1%85%AE%E1%84%8B%E1%85%AD%E1%86%BC.png',
+      link: '',
+    },
+    {
+      id: 42,
+      title: 'wuzoo',
+      image:
+        'https://s3.ap-northeast-2.amazonaws.com/sopt.org/develop/news/781d5e93-d98b-4a7b-a2d7-b20a4473c2d4_%E1%84%8E%E1%85%AC%E1%84%8C%E1%85%AE%E1%84%8B%E1%85%AD%E1%86%BC.png',
+      link: '',
+    },
+    {
+      id: 43,
+      title: 'wuzoo',
+      image:
+        'https://s3.ap-northeast-2.amazonaws.com/sopt.org/develop/news/500642d1-727f-4041-9935-f472e3913b79_%E1%84%8E%E1%85%AC%E1%84%8C%E1%85%AE%E1%84%8B%E1%85%AD%E1%86%BC.png',
+      link: '',
+    },
+  ],
+});
+
 export const mockAdminAPI = {
   getRecruitpage,
+  getAboutpage,
+  getHomepage,
 };
