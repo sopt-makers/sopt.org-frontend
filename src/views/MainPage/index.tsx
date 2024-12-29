@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
-import { useEffect } from 'react';
 import PageLayout from '@src/components/common/PageLayout';
+import { mockAdminAPI } from '@src/lib/api/mock/admin';
 import { remoteAdminAPI } from '@src/lib/api/remote/admin';
 import { GetHomepageResponse } from '@src/lib/types/admin';
 import BottomLayout from '@src/views/MainPage/components/BottomLayout';
@@ -23,7 +23,7 @@ function MainPage() {
 
   const { data } = useQuery<GetHomepageResponse>({
     queryKey: ['homepage'],
-    queryFn: remoteAdminAPI.getHomepage,
+    queryFn: mockAdminAPI.getHomepage,
   });
 
   return (
@@ -33,7 +33,9 @@ function MainPage() {
       <Introduce />
       <IntroSection />
       <ScrollInteractiveLogo />
-      <BottomLayout />
+      {data && (
+        <BottomLayout partIntroduction={data.partIntroduction} latestNews={data.latestNews} />
+      )}
     </PageLayout>
   );
 }

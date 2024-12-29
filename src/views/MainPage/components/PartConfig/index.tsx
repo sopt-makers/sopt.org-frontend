@@ -6,13 +6,18 @@ import { useIsMobile } from '@src/hooks/useDevice';
 import useDrag from '@src/hooks/useDrag';
 import useInfiniteCarousel from '@src/hooks/useInfiniteCarousel';
 import { tabs as carouselList } from '@src/lib/constants/tabs';
+import { PartIntroType } from '@src/lib/types/admin';
 import { TabType } from '@src/lib/types/universal';
+import { parseStringToPart } from '@src/lib/utils/parseStringToPart';
 import PartButton from '@src/views/MainPage/components/PartConfig/PartButton.tsx';
 import PartSlide from '@src/views/MainPage/components/PartConfig/PartSlide';
 import Tab from '@src/views/MainPage/components/Tab';
 import * as S from './style';
 
-function PartConfig(_props: unknown, ref: Ref<HTMLDivElement>) {
+function PartConfig(
+  { partIntroduction }: { partIntroduction: PartIntroType[] },
+  ref: Ref<HTMLDivElement>,
+) {
   const { dragRef, handleMouseDown, handleMouseMove, initDragging } = useDrag();
   const partRef = useRef<HTMLButtonElement[]>([]);
   const {
@@ -26,6 +31,11 @@ function PartConfig(_props: unknown, ref: Ref<HTMLDivElement>) {
   } = useInfiniteCarousel<TabType>(carouselList, '(-100% - 20px)', partRef);
   const isMobileSize = useIsMobile('48rem');
   const tab = isMobileSize ? 'Part' : '';
+
+  // formatter
+  const partIntro = Object.fromEntries(
+    partIntroduction.map((el) => [parseStringToPart(el.part), el.description]),
+  );
 
   return (
     <S.Wrapper id="part" ref={ref}>
@@ -74,7 +84,7 @@ function PartConfig(_props: unknown, ref: Ref<HTMLDivElement>) {
               onTouchEnd={handleTouchEnd}
             >
               {infiniteCarouselList.map(({ value }, index) => (
-                <PartSlide key={index} part={value} />
+                <PartSlide key={index} part={value} description={partIntro[value]} />
               ))}
             </S.Carousel>
             <S.RightArrow>
