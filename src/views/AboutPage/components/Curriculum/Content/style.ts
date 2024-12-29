@@ -38,3 +38,7 @@ export const ImageWrapper = styled.div`
     height: 238.901px;
   }
 `;
+
+export const CurriItem = styled.li`
+  color: white;
+`;

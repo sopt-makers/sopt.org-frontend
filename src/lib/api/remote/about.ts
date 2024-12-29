@@ -1,56 +1,46 @@
 import { BASE_URL, DEFAULT_TIMEOUT } from '@src/lib/constants/client';
-import { GetAboutInfoResponse, GetMembersInfoResponse } from '@src/lib/types/about';
-import { CoreValueResponseDto } from '@src/lib/types/dto';
-import { Part } from '@src/lib/types/universal';
+import { GetAboutInfoResponse } from '@src/lib/types/about';
+import { CoreValueType } from '@src/lib/types/admin';
 import axios from 'axios';
-import { mockAboutAPI } from '../mock/about';
+import { mockAdminAPI } from '../mock/admin';
 
 const client = axios.create({
   baseURL: BASE_URL,
   timeout: DEFAULT_TIMEOUT,
 });
 
-const CURRENT_GENERATION = 35;
-
 const getAboutInfo = async (): Promise<GetAboutInfoResponse> => {
-  const { data: dataCurrent } = await client.get(`/aboutsopt?generation=${CURRENT_GENERATION}`);
-  const { data: dataPrev } = await client.get(`/aboutsopt?generation=${CURRENT_GENERATION - 1}`);
+  // const { data: dataCurrent } = await client.get(`/aboutsopt?generation=${CURRENT_GENERATION}`);
+  const dataCurrent = await mockAdminAPI.getAboutpage();
+
+  const { data: dataPrev } = await client.get(
+    `/aboutsopt?generation=${dataCurrent.generation - 1}`,
+  );
 
   return {
     aboutInfo: {
-      generation: dataCurrent.aboutSopt.id,
-      title: dataCurrent.aboutSopt.title,
-      bannerImage: dataCurrent.aboutSopt.bannerImage,
+      generation: dataCurrent.generation,
+      title: dataCurrent.name,
+      bannerImage: dataCurrent.headerImage,
       coreValue: {
-        mainDescription: dataCurrent.aboutSopt.coreDescription,
-        eachValues: dataCurrent.aboutSopt.coreValues.map((coreValue: CoreValueResponseDto) => ({
-          title: coreValue.title,
-          description: coreValue.subTitle,
-          src: coreValue.imageUrl,
+        mainDescription: `${dataCurrent.generation}기 ${dataCurrent.name}가 함께 나아가고 싶은 사람입니다.`,
+        eachValues: dataCurrent.coreValue.map((coreValue: CoreValueType) => ({
+          title: coreValue.value,
+          description: coreValue.description,
+          src: coreValue.image,
         })),
       },
-      curriculums: {
-        [Part.PLAN]: dataCurrent.aboutSopt.planCurriculum,
-        [Part.DESIGN]: dataCurrent.aboutSopt.designCurriculum,
-        [Part.ANDROID]: dataCurrent.aboutSopt.androidCurriculum,
-        [Part.IOS]: dataCurrent.aboutSopt.iosCurriculum,
-        [Part.SERVER]: dataCurrent.aboutSopt.serverCurriculum,
-        [Part.WEB]: dataCurrent.aboutSopt.webCurriculum,
-      },
+      curriculums: dataCurrent.partCurriculum,
       records: {
         memberCount: dataPrev.activitiesRecords.activitiesMemberCount,
         projectCount: dataPrev.activitiesRecords.projectCounts,
         studyCount: dataPrev.activitiesRecords.studyCounts,
       },
+      members: dataCurrent.member,
     },
   };
 };
 
-const getMemberInfo = async (): Promise<GetMembersInfoResponse> => {
-  return mockAboutAPI.getMemberInfo(); // todo : implement server connection
-};
-
 export const remoteAboutAPI = {
   getAboutInfo,
-  getMemberInfo,
 };

@@ -1,22 +1,9 @@
-import { Part } from './universal';
+import { MemberType, PartCurriculumType, PartType } from './admin';
 
 export interface CoreValueType {
   title: string;
   description: string;
   src: string;
-}
-
-export interface MemberType {
-  id: number;
-  name: string;
-  position: PositionType;
-  currentProject: string;
-  description?: string;
-  imageSrc?: string;
-  gmail?: string;
-  linkedin?: string;
-  github?: string;
-  behance?: string;
 }
 
 export type PositionType =
@@ -42,15 +29,12 @@ export interface AboutInfoType {
     mainDescription: string;
     eachValues: CoreValueType[];
   };
-  curriculums: Record<Part, string>;
+  curriculums: Array<PartCurriculumType>;
   records: {
     memberCount: number;
     projectCount: number;
     studyCount: number;
   };
-}
-
-export interface GetMembersInfoResponse {
   members: MemberType[];
 }
 
@@ -60,7 +44,6 @@ export interface GetAboutInfoResponse {
 
 export interface AboutAPI {
   getAboutInfo(): Promise<GetAboutInfoResponse>;
-  getMemberInfo(): Promise<GetMembersInfoResponse>;
 }
 
 export type RecordTitle = '활동 멤버' | '프로젝트' | '스터디';

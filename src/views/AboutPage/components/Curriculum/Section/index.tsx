@@ -1,10 +1,10 @@
-import { Part } from '@src/lib/types/universal';
+import { PartCurriculumType } from '@src/lib/types/admin';
 import SectionTop from '@src/views/AboutPage/components/@common/SectionTop';
 import CurriculumContent from '../Content';
 import * as S from './style';
 
 type CurriculumSectionProps = {
-  curriculums: Record<Part, string>;
+  curriculums: PartCurriculumType[];
 };
 
 const CurriculumSection = ({ curriculums }: CurriculumSectionProps) => {

@@ -12,24 +12,18 @@ import {
 
 const MemberSection = dynamic(() => import('@src/views/AboutPage/components/Member/Section'));
 
-const AboutPage = ({
-  aboutInfo,
-  memberInfo,
-}: InferGetServerSidePropsType<typeof getStaticProps>) => {
+const AboutPage = ({ aboutInfo }: InferGetServerSidePropsType<typeof getStaticProps>) => {
   return (
     <PageLayout>
       <Root>
-        <Banner imageSrc={aboutInfo.aboutInfo.bannerImage} title={aboutInfo.aboutInfo.title} />
+        <Banner imageSrc={aboutInfo.bannerImage} title={aboutInfo.title} />
         <CoreValueSection
-          mainDescription={aboutInfo.aboutInfo.coreValue.mainDescription}
-          coreValues={aboutInfo.aboutInfo.coreValue.eachValues}
+          mainDescription={aboutInfo.coreValue.mainDescription}
+          coreValues={aboutInfo.coreValue.eachValues}
         />
-        <CurriculumSection curriculums={aboutInfo.aboutInfo.curriculums} />
-        <MemberSection members={memberInfo.members} generation={aboutInfo.aboutInfo.generation} />
-        <RecordSection
-          generation={aboutInfo.aboutInfo.generation}
-          records={aboutInfo.aboutInfo.records}
-        />
+        <CurriculumSection curriculums={aboutInfo.curriculums} />
+        <MemberSection members={aboutInfo.members} generation={aboutInfo.generation} />
+        <RecordSection generation={aboutInfo.generation} records={aboutInfo.records} />
       </Root>
     </PageLayout>
   );
@@ -37,13 +31,9 @@ const AboutPage = ({
 
 export const getStaticProps = async () => {
   const aboutInfo = await api.aboutAPI.getAboutInfo();
-  const memberInfo = await api.aboutAPI.getMemberInfo();
 
   return {
-    props: {
-      aboutInfo,
-      memberInfo,
-    },
+    props: aboutInfo,
     revalidate: 120,
   };
 };
