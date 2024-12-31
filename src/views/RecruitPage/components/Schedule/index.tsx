@@ -1,13 +1,12 @@
 import { useContext } from 'react';
-import { RecruitScheduleType, ScheduleType } from '@src/lib/types/admin';
+import { RecruitScheduleType } from '@src/lib/types/admin';
 import { BrandingColorContext } from '../..';
 import { SectionTitle, SectionTitleTranslate, SectionTitleWrapper } from '../common/style';
 import * as S from './style';
 
-const Schedule = ({ info }: { info: RecruitScheduleType[] }) => {
+const Schedule = ({ info }: { info: RecruitScheduleType }) => {
   const { main } = useContext(BrandingColorContext);
-  // TODO: OB, YB 구분 필요. 현재는 OB만
-  const { type, schedule } = info[0];
+  const { type, schedule } = info;
   const parseDate = (date: Date) => {
     const month = date.getMonth() + 1;
     const day = date.getDate();
