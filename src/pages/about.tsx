@@ -8,10 +8,11 @@ import {
   Banner,
   CoreValueSection,
   CurriculumSection,
+  MemberSection,
   RecordSection,
 } from '@src/views/AboutPage/components';
 
-const MemberSection = dynamic(() => import('@src/views/AboutPage/components/Member/Section'));
+// const MemberSection = dynamic(() => import('@src/views/AboutPage/components/Member/Section'));
 
 export const BrandingColorContext = createContext({
   main: '',
