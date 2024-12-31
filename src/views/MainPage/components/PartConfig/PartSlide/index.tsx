@@ -9,7 +9,6 @@ interface PartSlideProps {
 }
 
 export default function PartSlide({ part, description }: PartSlideProps) {
-  console.log('!!!', description);
   const { value, label } = partList[part];
   const isTablet = useIsTablet('429px', '75rem');
   const isMobile = useIsMobile('26.75rem');

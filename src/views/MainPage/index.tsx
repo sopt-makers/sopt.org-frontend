@@ -1,6 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
 import PageLayout from '@src/components/common/PageLayout';
-import { mockAdminAPI } from '@src/lib/api/mock/admin';
 import { remoteAdminAPI } from '@src/lib/api/remote/admin';
 import { GetHomepageResponse } from '@src/lib/types/admin';
 import BottomLayout from '@src/views/MainPage/components/BottomLayout';
@@ -21,20 +20,27 @@ function MainPage() {
   //   postVisiter();
   // }, [postVisiter]);
 
-  const { data } = useQuery<GetHomepageResponse>({
+  const { data: adminData } = useQuery<GetHomepageResponse>({
     queryKey: ['homepage'],
-    queryFn: mockAdminAPI.getHomepage,
+    queryFn: remoteAdminAPI.getHomepage,
   });
+  console.log('>>>', adminData);
 
   return (
     <PageLayout>
       {isValid && <TopBanner />}
-      <Banner />
+      <Banner
+        mainColor={'#' + adminData?.brandingColor.main ?? ''}
+        highColor={'#' + adminData?.brandingColor.high ?? ''}
+      />
       <Introduce />
       <IntroSection />
       <ScrollInteractiveLogo />
-      {data && (
-        <BottomLayout partIntroduction={data.partIntroduction} latestNews={data.latestNews} />
+      {adminData && (
+        <BottomLayout
+          partIntroduction={adminData.partIntroduction}
+          latestNews={adminData.latestNews}
+        />
       )}
     </PageLayout>
   );

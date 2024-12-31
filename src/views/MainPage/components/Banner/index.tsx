@@ -3,8 +3,13 @@ import { checkIsTimeInRange } from '@src/lib/utils/date';
 import RecruitButton from './RecruitButton';
 import * as S from './style';
 
-export default function Banner() {
-  const isValid = checkIsTimeInRange('2024-09-08 10:00:00', '2024-09-13 18:00:00'); // 모집 여부
+export interface BannerColor {
+  mainColor: string;
+  highColor: string;
+}
+export default function Banner({ mainColor, highColor }: BannerColor) {
+  // TODO: 모집 스케줄 연결
+  const isValid = checkIsTimeInRange('2024-09-08 10:00:00', '2024-09-13 18:00:00');
 
   const onScrollMoveDown = () => {
     const element = document.getElementById('nextContainer');
@@ -18,7 +23,7 @@ export default function Banner() {
           <S.Content>
             <S.Title>함께라서 외칠 수 있는 열정</S.Title>
             <S.Title>오직 이곳 SOPT에서만.</S.Title>
-            <RecruitButton>
+            <RecruitButton mainColor={mainColor} highColor={highColor}>
               {isValid ? '36기 YB 지원하기 ' : '모집 알림 신청하기 '}&gt;{' '}
             </RecruitButton>
           </S.Content>

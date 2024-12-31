@@ -3,14 +3,14 @@ import { colors } from '@sopt-makers/colors';
 import Link from 'next/link';
 import { BackgroundMove } from '@src/lib/styles/animation';
 
-export const RecruitButtonWrapper = styled(Link)`
+export const RecruitButtonWrapper = styled(Link)<{ mainColor: string; highColor: string }>`
   margin-top: 41px;
   display: inline-flex;
   justify-content: center;
   align-items: center;
   border-radius: 99px;
-
-  background: linear-gradient(274deg, #3c92ff, #8fc0ff, #8fc0ff);
+  background: ${({ mainColor, highColor }) =>
+    `linear-gradient(274deg,${mainColor}, ${highColor}, ${highColor})`};
   background-size: 200% 200%;
   animation: ${BackgroundMove} 1.8s ease-out infinite alternate;
 
@@ -37,11 +37,16 @@ export const RecruitButtonWrapper = styled(Link)`
   }
 
   &:hover {
-    background: #8fc0ff;
+    background: ${({ highColor }) => highColor};
   }
 `;
 
-export const MouseTrackerWrapper = styled.div<{ x: number; y: number }>`
+export const MouseTrackerWrapper = styled.div<{
+  x: number;
+  y: number;
+  mainColor: string;
+  highColor: string;
+}>`
   border-radius: 99px;
   border: none;
   width: 289px;
@@ -73,16 +78,17 @@ export const MouseTrackerWrapper = styled.div<{ x: number; y: number }>`
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: radial-gradient(
-        circle 110px at ${(props) => props.x}px ${(props) => props.y}px,
-        #3c92ff,
+    background-image: ${({ x, y, mainColor, highColor }) => `
+    radial-gradient(
+        circle 110px at ${x}px ${y}px,
+        ${mainColor},
         transparent
-      ),
-      radial-gradient(
-        circle 180px at ${(props) => props.x}px ${(props) => props.y}px,
-        #8fc0ff,
+      ), radial-gradient(
+        circle 180px at ${x}px ${y}px,
+       ${highColor},
         transparent
-      );
+      )
+    `};
     opacity: 0;
     transition-duration: 0.4s;
   }
