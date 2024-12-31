@@ -1,5 +1,7 @@
 import styled from '@emotion/styled';
 import Image from 'next/image';
+import { useContext } from 'react';
+import { BrandingColorContext } from '../..';
 import {
   SectionSubTitle,
   SectionTitle,
@@ -9,11 +11,12 @@ import {
 import { contactInDisplayOrder, contactMap } from './constant';
 
 const Contact = () => {
+  const { main } = useContext(BrandingColorContext);
   return (
     <Wrapper>
       <SectionWrapper>
         <SectionTitleWrapper>
-          <SectionTitleTranslate>Inquiry</SectionTitleTranslate>
+          <SectionTitleTranslate mainColor={'#' + main}>Inquiry</SectionTitleTranslate>
           <SectionTitle>문의하기</SectionTitle>
         </SectionTitleWrapper>
         <SectionSubTitle>SOPT 지원에 대해 궁금한 것이 더 있나요?</SectionSubTitle>

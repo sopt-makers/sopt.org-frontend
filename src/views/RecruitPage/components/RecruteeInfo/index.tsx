@@ -1,3 +1,5 @@
+import { useContext } from 'react';
+import { BrandingColorContext } from '../..';
 import {
   SectionSubTitle,
   SectionTitle,
@@ -7,10 +9,11 @@ import {
 import * as S from './style';
 
 const RecruiteeInfo = () => {
+  const { main } = useContext(BrandingColorContext);
   return (
     <S.Wrapper>
       <SectionTitleWrapper>
-        <SectionTitleTranslate>Recruitment target</SectionTitleTranslate>
+        <SectionTitleTranslate mainColor={'#' + main}>Recruitment target</SectionTitleTranslate>
         <SectionTitle>모집 대상</SectionTitle>
       </SectionTitleWrapper>
       <SectionSubTitle>아래 3가지 모두 해당 되는 분이라면, 누구든 지원 가능해요!</SectionSubTitle>

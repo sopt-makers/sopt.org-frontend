@@ -65,8 +65,8 @@ export const OddText = styled.div`
   }
 `;
 
-export const Highlight = styled.span`
-  color: #5ba3ff;
+export const Highlight = styled.span<{ mainColor: string }>`
+  color: ${({ mainColor }) => mainColor};
   font-size: 24rem;
   font-weight: 400;
   letter-spacing: -0.48px;

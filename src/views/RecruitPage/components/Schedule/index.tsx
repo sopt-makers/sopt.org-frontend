@@ -1,8 +1,11 @@
+import { useContext } from 'react';
 import { RecruitScheduleType, ScheduleType } from '@src/lib/types/admin';
+import { BrandingColorContext } from '../..';
 import { SectionTitle, SectionTitleTranslate, SectionTitleWrapper } from '../common/style';
 import * as S from './style';
 
 const Schedule = ({ info }: { info: RecruitScheduleType[] }) => {
+  const { main } = useContext(BrandingColorContext);
   // TODO: OB, YB 구분 필요. 현재는 OB만
   const { type, schedule } = info[0];
   const parseDate = (date: Date) => {
@@ -20,28 +23,34 @@ const Schedule = ({ info }: { info: RecruitScheduleType[] }) => {
   return (
     <S.Wrapper>
       <SectionTitleWrapper>
-        <SectionTitleTranslate>Schedule</SectionTitleTranslate>
+        <SectionTitleTranslate mainColor={'#' + main}>Schedule</SectionTitleTranslate>
         <SectionTitle>모집 일정</SectionTitle>
       </SectionTitleWrapper>
       <S.GridWrapper>
         <S.OddText> {type} 서류 접수</S.OddText>
         <S.EvenText>
           {`${formattedSchedule.applicationStartTime.date} `}
-          <S.Highlight>{formattedSchedule.applicationStartTime.hour}</S.Highlight> -
-          {` ${formattedSchedule.applicationEndTime.date} `}
-          <S.Highlight>{formattedSchedule.applicationEndTime.hour}</S.Highlight>
+          <S.Highlight mainColor={'#' + main}>
+            {formattedSchedule.applicationStartTime.hour}
+          </S.Highlight>{' '}
+          -{` ${formattedSchedule.applicationEndTime.date} `}
+          <S.Highlight mainColor={'#' + main}>
+            {formattedSchedule.applicationEndTime.hour}
+          </S.Highlight>
         </S.EvenText>
         <S.OddText>{type} 서류 결과 발표</S.OddText>
         <S.EvenText>
           {`${formattedSchedule.applicationResultTime.date} `}
-          <S.Highlight>{formattedSchedule.applicationResultTime.hour}</S.Highlight>
+          <S.Highlight mainColor={'#' + main}>
+            {formattedSchedule.applicationResultTime.hour}
+          </S.Highlight>
         </S.EvenText>
         <S.OddText>{type} 면접</S.OddText>
         <S.EvenText>{`${formattedSchedule.interviewStartTime.date} - ${formattedSchedule.interviewEndTime.date}`}</S.EvenText>
         <S.OddText>{type} 최종 결과 발표</S.OddText>
         <S.EvenText>
           {`${formattedSchedule.finalResultTime.date} `}
-          <S.Highlight>{formattedSchedule.finalResultTime.hour}</S.Highlight>
+          <S.Highlight mainColor={'#' + main}>{formattedSchedule.finalResultTime.hour}</S.Highlight>
         </S.EvenText>
       </S.GridWrapper>
     </S.Wrapper>

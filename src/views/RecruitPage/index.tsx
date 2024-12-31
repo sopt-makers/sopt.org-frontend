@@ -1,53 +1,61 @@
 import styled from '@emotion/styled';
 import { useQuery } from '@tanstack/react-query';
-import { Suspense, lazy } from 'react';
+import { Suspense, createContext, lazy } from 'react';
 import PageLayout from '@src/components/common/PageLayout';
-import { mockAdminAPI } from '@src/lib/api/mock/admin';
 import { remoteAdminAPI } from '@src/lib/api/remote/admin';
 import { GetRecruitpageResponse } from '@src/lib/types/admin';
 import { checkIsTimeInRange } from '@src/lib/utils/date';
+import ActivityReview from './components/ActivityReview';
 import ApplySection from './components/ApplySection';
+import BottomLogo from './components/BottomLogo';
 import ChapterInfo from './components/ChapterInfo';
-// import FaqInfo from './components/FAQ';
+import Contact from './components/Contact';
+import FaqInfo from './components/FAQ';
 import NotificationSection from './components/NotificationSection';
 import RecruiteeInfo from './components/RecruteeInfo';
 import Schedule from './components/Schedule';
 
-const FaqInfo = lazy(() => import('./components/FAQ'));
-const Contact = lazy(() => import('./components/Contact'));
-const ActivityReview = lazy(() => import('./components/ActivityReview'));
-const BottomLogo = lazy(() => import('./components/BottomLogo'));
+// const FaqInfo = lazy(() => import('./components/FAQ'));
+// const Contact = lazy(() => import('./components/Contact'));
+// const ActivityReview = lazy(() => import('./components/ActivityReview'));
+// const BottomLogo = lazy(() => import('./components/BottomLogo'));
 
+export const BrandingColorContext = createContext({
+  main: '',
+  low: '',
+  high: '',
+  point: '',
+});
 function Recruit() {
   // TODO: API로 받아온 시간으로 체크
   const isValid = checkIsTimeInRange('2024-09-08 10:00:00', '2024-09-13 18:00:00'); // 모집 여부
 
-  const { data } = useQuery<GetRecruitpageResponse>({
+  const { data: adminData } = useQuery<GetRecruitpageResponse>({
     queryKey: ['homepage/recruit'],
-    queryFn: mockAdminAPI.getRecruitpage,
+    queryFn: remoteAdminAPI.getRecruitpage,
   });
 
+  console.log(adminData);
+
+  if (!adminData) return;
   return (
     <PageLayout showScrollTopButton>
-      <Root>
-        {isValid ? <ApplySection /> : <NotificationSection />}
-        <ContentWrapper>
-          <RecruiteeInfo />
-          {data && (
-            <>
-              <ChapterInfo info={data.recruitPartCurriculum} />
-              <Schedule info={data.recruitSchedule} />
-              <Suspense>
-                <FaqInfo info={data.recruitQuestion} />
-              </Suspense>
-            </>
-          )}
-
-          <Contact />
-          <ActivityReview />
-        </ContentWrapper>
-        <BottomLogo />
-      </Root>
+      <BrandingColorContext.Provider value={adminData.brandingColor}>
+        <Root>
+          {isValid ? <ApplySection /> : <NotificationSection />}
+          <ContentWrapper>
+            <RecruiteeInfo />
+            <ChapterInfo info={adminData.recruitPartCurriculum} />
+            <Schedule info={adminData.recruitSchedule} />
+            <Suspense>
+              <FaqInfo info={adminData.recruitQuestion} />
+            </Suspense>
+            <Contact />
+            <ActivityReview />
+          </ContentWrapper>
+          {/* <BottomLogo /> */}
+        </Root>
+      </BrandingColorContext.Provider>
     </PageLayout>
   );
 }

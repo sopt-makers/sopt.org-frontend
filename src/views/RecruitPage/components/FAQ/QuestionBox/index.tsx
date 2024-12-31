@@ -1,6 +1,8 @@
 import styled from '@emotion/styled';
+import { useContext } from 'react';
 import { ReactComponent as IcArrow } from '@src/assets/icons/ic_arrow_right_white.svg';
 import { FAQType } from '@src/lib/types/faq';
+import { BrandingColorContext } from '@src/views/RecruitPage';
 
 interface QuestionBoxProps {
   info: FAQType;
@@ -12,16 +14,17 @@ function QuestionBox(props: QuestionBoxProps) {
     info: { question, answer },
     status,
   } = props;
+  const { main } = useContext(BrandingColorContext);
 
   return (
     <Styled.Root isOpened={status}>
       <Styled.QuestionWrapper isOpened={status}>
-        <Styled.Title>{question}</Styled.Title>
+        <Styled.Title main={'#' + main}>{question}</Styled.Title>
         <Styled.IconWrapper isOpened={status}>
           <IcArrow />
         </Styled.IconWrapper>
       </Styled.QuestionWrapper>
-      {status && <Styled.Content>{answer}</Styled.Content>}
+      {status && <Styled.Content main={'#' + main}>{answer}</Styled.Content>}
     </Styled.Root>
   );
 }
@@ -58,14 +61,14 @@ const Styled = {
       margin-bottom: ${({ isOpened }) => (isOpened ? '16px' : '0')};
     }
   `,
-  Title: styled.h1`
+  Title: styled.h1<{ main: string }>`
     font-weight: 600;
     font-size: 24rem;
     line-height: 100%;
     color: #ffffff;
     &::before {
       content: 'Q. ';
-      color: #5ba3ff;
+      color: ${({ main }) => main};
     }
 
     /* 모바일 뷰 */
@@ -91,7 +94,7 @@ const Styled = {
       transform-origin: center;
     }
   `,
-  Content: styled.div`
+  Content: styled.div<{ main: string }>`
     font-weight: 400;
     font-size: 25rem;
     line-height: 40px;
@@ -101,7 +104,7 @@ const Styled = {
 
     &::before {
       content: 'A. ';
-      color: #5ba3ff;
+      color: ${({ main }) => main};
     }
     /* 태블릿 뷰 */
     @media (max-width: 119.99375rem) and (min-width: 47.875rem) {

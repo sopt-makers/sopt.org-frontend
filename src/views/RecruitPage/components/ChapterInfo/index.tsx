@@ -1,14 +1,16 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import Flex from '@src/components/common/Flex';
 import { PartInfoType, PartType } from '@src/lib/types/admin';
 import { Part } from '@src/lib/types/universal';
 import { parsePartToKorean } from '@src/lib/utils/parsePartToKorean';
 import { parseStringToPart } from '@src/lib/utils/parseStringToPart';
+import { BrandingColorContext } from '../..';
 import TabBar from '../common/Tabs';
 import { SectionTitle, SectionTitleTranslate, SectionTitleWrapper } from '../common/style';
 import * as S from './style';
 
 const ChapterInfo = ({ info }: { info: PartInfoType[] }) => {
+  const { main, point } = useContext(BrandingColorContext);
   const [selectedTab, setSelectedTab] = useState<Part>(Part.PLAN);
   const parsedPart = parsePartToKorean(selectedTab);
 
@@ -20,7 +22,7 @@ const ChapterInfo = ({ info }: { info: PartInfoType[] }) => {
   return (
     <S.Wrapper id="chapter-info">
       <SectionTitleWrapper>
-        <SectionTitleTranslate>Positions</SectionTitleTranslate>
+        <SectionTitleTranslate mainColor={'#' + main}>Positions</SectionTitleTranslate>
         <S.SectionWrapper>
           <SectionTitle>SOPT 35기는</SectionTitle>
           <SectionTitle>총 6개의 파트로 이루어져 있어요.</SectionTitle>
@@ -39,9 +41,9 @@ const ChapterInfo = ({ info }: { info: PartInfoType[] }) => {
         </S.Container>
       </Flex>
       <Flex dir="column" gap="15px">
-        <S.GreenChip>이런 분이면 좋아요!</S.GreenChip>
+        <S.GreenChip mainColor={'#' + main}>이런 분이면 좋아요!</S.GreenChip>
         <S.Container>
-          <S.FitWrapper>{infoMap[selectedTab].preference}</S.FitWrapper>
+          <S.FitWrapper pointColor={'#' + point}>{infoMap[selectedTab].preference}</S.FitWrapper>
         </S.Container>
       </Flex>
     </S.Wrapper>
