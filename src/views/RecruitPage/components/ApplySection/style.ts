@@ -1,5 +1,4 @@
 import styled from '@emotion/styled';
-import { StaticImageData } from 'next/image';
 
 export const ApplyButton = styled.a<{ main: string }>`
   width: 220px;

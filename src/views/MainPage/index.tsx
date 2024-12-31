@@ -12,7 +12,8 @@ import Introduce from './components/Introduce';
 import ScrollInteractiveLogo from './components/ScrollInteractiveLogo';
 
 function MainPage() {
-  const isValid = checkIsTimeInRange('2024-09-08 10:00:00', '2024-09-13 18:00:00'); // 모집 여부
+  // TODO: API 필드 추가된 후에 RecruitPage처럼 바뀌어야 함
+  const isValid = checkIsTimeInRange('2024-09-08 10:00:00', '2024-09-13 18:00:00');
 
   // const postVisiter = usePostVisitor();
 
@@ -24,7 +25,6 @@ function MainPage() {
     queryKey: ['homepage'],
     queryFn: remoteAdminAPI.getHomepage,
   });
-  console.log('>>>', adminData);
 
   return (
     <PageLayout>
@@ -40,6 +40,8 @@ function MainPage() {
         <BottomLayout
           partIntroduction={adminData.partIntroduction}
           latestNews={adminData.latestNews}
+          mainColor={'#' + adminData?.brandingColor.main ?? ''}
+          highColor={'#' + adminData?.brandingColor.high ?? ''}
         />
       )}
     </PageLayout>

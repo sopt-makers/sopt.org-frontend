@@ -3,8 +3,13 @@ import { checkIsTimeInRange } from '@src/lib/utils/date';
 import RecruitButton from '../Banner/RecruitButton';
 import * as S from './style';
 
-export default function RecruitMessage() {
+interface RecruitMessageProp {
+  mainColor: string;
+  highColor: string;
+}
+export default function RecruitMessage({ mainColor, highColor }: RecruitMessageProp) {
   const isMobileSize = useIsMobile('48rem');
+  // TODO: API 필드 추가된 후에 RecruitPage처럼 바뀌어야 함
   const isValid = checkIsTimeInRange('2024-09-08 10:00:00', '2024-09-13 18:00:00'); // 모집 여부
 
   return (
@@ -15,7 +20,9 @@ export default function RecruitMessage() {
           아직 모집기간이 아니예요.{isMobileSize && <br />}알림 신청을 하시면, 봄에 찾아갈게요!
         </S.Description>
       )}
-      <RecruitButton>{isValid ? '36기 YB 지원하기 ' : '모집 알림 신청하기 '}&gt; </RecruitButton>
+      <RecruitButton mainColor={mainColor} highColor={highColor}>
+        {isValid ? '36기 YB 지원하기 ' : '모집 알림 신청하기 '}&gt;{' '}
+      </RecruitButton>
     </S.Background>
   );
 }

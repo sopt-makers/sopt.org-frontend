@@ -8,7 +8,7 @@ export interface BannerColor {
   highColor: string;
 }
 export default function Banner({ mainColor, highColor }: BannerColor) {
-  // TODO: 모집 스케줄 연결
+  // TODO: API 필드 추가된 후에 RecruitPage처럼 바뀌어야 함
   const isValid = checkIsTimeInRange('2024-09-08 10:00:00', '2024-09-13 18:00:00');
 
   const onScrollMoveDown = () => {
