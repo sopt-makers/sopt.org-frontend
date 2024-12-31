@@ -1,4 +1,4 @@
-import { MemberType, PartCurriculumType, PartType } from './admin';
+import { MemberType, PartCurriculumType } from './admin';
 
 export interface CoreValueType {
   title: string;
