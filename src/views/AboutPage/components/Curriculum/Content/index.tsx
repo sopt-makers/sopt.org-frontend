@@ -1,8 +1,9 @@
 import { track } from '@amplitude/analytics-browser';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { PartCurriculumType } from '@src/lib/types/admin';
 import { Part, TabType } from '@src/lib/types/universal';
 import { parseStringToPart } from '@src/lib/utils/parseStringToPart';
+import { BrandingColorContext } from '@src/pages/about';
 import TabBar from '../../@common/TabBar';
 import * as S from './style';
 
@@ -12,6 +13,7 @@ type CurriculumContentProps = {
 
 const CurriculumContent = ({ curriculums }: CurriculumContentProps) => {
   const [currentPart, setCurrentPart] = useState(Part.PLAN);
+  const { main } = useContext(BrandingColorContext);
 
   const handleTabClick = (tab: TabType) => {
     setCurrentPart(tab.value);
@@ -26,11 +28,16 @@ const CurriculumContent = ({ curriculums }: CurriculumContentProps) => {
   return (
     <S.CurriculumContent>
       <TabBar onTabClick={handleTabClick} selectedTab={currentPart} includesExtra={false} />
-      <ul>
-        {curriObj[currentPart].map((v) => (
-          <S.CurriItem key={v}>{v}</S.CurriItem>
+      <S.CurriList>
+        {curriObj[currentPart].map((v, idx) => (
+          <S.CurriItem key={v}>
+            <S.CurriHighlight mainColor={'#' + main}>
+              {String(idx + 1).padStart(2, '0')}
+            </S.CurriHighlight>
+            {v}
+          </S.CurriItem>
         ))}
-      </ul>
+      </S.CurriList>
     </S.CurriculumContent>
   );
 };

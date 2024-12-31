@@ -24,6 +24,12 @@ export type PositionType =
 export interface AboutInfoType {
   generation: number;
   title: string;
+  brandingColor: {
+    main: string;
+    low: string;
+    high: string;
+    point: string;
+  };
   bannerImage: string;
   coreValue: {
     mainDescription: string;

@@ -20,6 +20,7 @@ const getAboutInfo = async (): Promise<GetAboutInfoResponse> => {
     aboutInfo: {
       generation: dataCurrent.generation,
       title: dataCurrent.name,
+      brandingColor: dataCurrent.brandingColor,
       bannerImage: dataCurrent.headerImage,
       coreValue: {
         mainDescription: `${dataCurrent.generation}기 ${dataCurrent.name}가 함께 나아가고 싶은 사람입니다.`,
