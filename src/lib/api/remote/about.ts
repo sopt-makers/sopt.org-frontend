@@ -32,9 +32,9 @@ const getAboutInfo = async (): Promise<GetAboutInfoResponse> => {
       },
       curriculums: dataCurrent.partCurriculum,
       records: {
-        memberCount: dataCurrent.activitiesRecords.activitiesMemberCount,
-        projectCount: dataCurrent.activitiesRecords.projectCounts,
-        studyCount: dataCurrent.activitiesRecords.studyCounts,
+        memberCount: dataPrev.activitiesRecords.activitiesMemberCount,
+        projectCount: dataPrev.activitiesRecords.projectCounts,
+        studyCount: dataPrev.activitiesRecords.studyCounts,
       },
       members: dataCurrent.member,
     },

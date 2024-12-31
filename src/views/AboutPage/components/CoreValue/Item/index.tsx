@@ -1,7 +1,7 @@
 import { useContext, useState } from 'react';
 import useInView from '@src/hooks/useInView';
 import { CoreValueType } from '@src/lib/types/about';
-import { BrandingColorContext } from '@src/pages/about';
+import { BrandingColorContext } from '@src/views/AboutPage';
 import * as S from './style';
 
 type CoreValueProps = {

@@ -3,7 +3,6 @@ import * as S from './style';
 
 interface BannerProps {
   imageSrc: string;
-  title: string;
 }
 
 const Banner = (props: BannerProps) => {

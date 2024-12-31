@@ -3,7 +3,7 @@ import { useContext, useState } from 'react';
 import { PartCurriculumType } from '@src/lib/types/admin';
 import { Part, TabType } from '@src/lib/types/universal';
 import { parseStringToPart } from '@src/lib/utils/parseStringToPart';
-import { BrandingColorContext } from '@src/pages/about';
+import { BrandingColorContext } from '@src/views/AboutPage';
 import TabBar from '../../@common/TabBar';
 import * as S from './style';
 
