@@ -47,7 +47,11 @@ function Recruit() {
     <PageLayout showScrollTopButton>
       <BrandingColorContext.Provider value={adminData.brandingColor}>
         <Root>
-          {isRecruiting ? <ApplySection /> : <NotificationSection />}
+          {isRecruiting ? (
+            <ApplySection headerImg={adminData.recruitHeaderImage} />
+          ) : (
+            <NotificationSection />
+          )}
           <ContentWrapper>
             <RecruiteeInfo />
             <ChapterInfo info={adminData.recruitPartCurriculum} />
