@@ -1,10 +1,12 @@
 import { track } from '@amplitude/analytics-browser';
 import Link from 'next/link';
+import { useContext } from 'react';
 import { ReactComponent as ArrowLeft } from '@src/assets/icons/arrow_left_28x28.svg';
 import { ReactComponent as ArrowRight } from '@src/assets/icons/arrow_right_28x28.svg';
 import arrowRightWhite from '@src/assets/icons/arrow_right_white.svg';
 import { useHorizontalScroll } from '@src/hooks/useHorizontalScroll';
 import { parsePartToKorean } from '@src/lib/utils/parsePartToKorean';
+import { BrandingColorContext } from '../..';
 import { SectionTitle, SectionTitleTranslate, SectionTitleWrapper } from '../common/style';
 import useGetSampleReviews from './hooks/queries/useGetSampleReviews';
 import {
@@ -23,7 +25,7 @@ import {
 
 export default function ActivityReview() {
   const { data, isLoading } = useGetSampleReviews();
-
+  const { main } = useContext(BrandingColorContext);
   const {
     scrollableRef,
     onClickLeftButton,
@@ -37,7 +39,7 @@ export default function ActivityReview() {
   return (
     <ContainerWrapper>
       <SectionTitleWrapper>
-        <SectionTitleTranslate>Activity Review</SectionTitleTranslate>
+        <SectionTitleTranslate mainColor={'#' + main}>Activity Review</SectionTitleTranslate>
         <SectionTitle>{'회원들의 후기로\nSOPT 활동을 미리 만나보세요.'}</SectionTitle>
       </SectionTitleWrapper>
       <ContentWrapper>

@@ -1,7 +1,12 @@
 import { PropsWithChildren, useState } from 'react';
+import { BannerColor } from '..';
 import * as S from './style';
 
-export default function RecruitButton({ children }: PropsWithChildren<object>) {
+export default function RecruitButton({
+  children,
+  mainColor,
+  highColor,
+}: PropsWithChildren<BannerColor>) {
   const [blurPosition, setBlurPosition] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
 
   const handleMouseMove = (event: React.MouseEvent<HTMLDivElement>) => {
@@ -12,8 +17,14 @@ export default function RecruitButton({ children }: PropsWithChildren<object>) {
   };
 
   return (
-    <S.RecruitButtonWrapper href="/recruit">
-      <S.MouseTrackerWrapper onMouseMove={handleMouseMove} x={blurPosition.x} y={blurPosition.y}>
+    <S.RecruitButtonWrapper href="/recruit" mainColor={mainColor} highColor={highColor}>
+      <S.MouseTrackerWrapper
+        onMouseMove={handleMouseMove}
+        x={blurPosition.x}
+        y={blurPosition.y}
+        mainColor={mainColor}
+        highColor={highColor}
+      >
         <div>{children}</div>
       </S.MouseTrackerWrapper>
     </S.RecruitButtonWrapper>

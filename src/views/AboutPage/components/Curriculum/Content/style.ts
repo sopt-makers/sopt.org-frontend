@@ -38,3 +38,29 @@ export const ImageWrapper = styled.div`
     height: 238.901px;
   }
 `;
+
+export const CurriList = styled.ul`
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+  padding: 70px;
+`;
+export const CurriItem = styled.li`
+  width: 80%;
+  display: flex;
+  gap: 10px;
+  padding: 20px 41px;
+  background-color: #222528;
+  border-radius: 10px;
+  color: white;
+  font-family: SUIT;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: -0.5px;
+`;
+export const CurriHighlight = styled.span<{ mainColor: string }>`
+  color: ${({ mainColor }) => mainColor};
+`;

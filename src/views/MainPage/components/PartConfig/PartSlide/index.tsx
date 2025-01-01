@@ -5,10 +5,11 @@ import * as S from './style';
 
 interface PartSlideProps {
   part: Part;
+  description: string;
 }
 
-export default function PartSlide({ part }: PartSlideProps) {
-  const { value, label, description } = partList[part];
+export default function PartSlide({ part, description }: PartSlideProps) {
+  const { value, label } = partList[part];
   const isTablet = useIsTablet('429px', '75rem');
   const isMobile = useIsMobile('26.75rem');
   const contentDraw = {

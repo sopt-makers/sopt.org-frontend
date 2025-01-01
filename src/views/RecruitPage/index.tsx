@@ -1,35 +1,70 @@
 import styled from '@emotion/styled';
-import { lazy } from 'react';
+import { useQuery } from '@tanstack/react-query';
+import { Suspense, createContext, lazy } from 'react';
 import PageLayout from '@src/components/common/PageLayout';
+import { remoteAdminAPI } from '@src/lib/api/remote/admin';
+import { GetRecruitpageResponse } from '@src/lib/types/admin';
 import { checkIsTimeInRange } from '@src/lib/utils/date';
+import ActivityReview from './components/ActivityReview';
 import ApplySection from './components/ApplySection';
+import BottomLogo from './components/BottomLogo';
 import ChapterInfo from './components/ChapterInfo';
+import Contact from './components/Contact';
+import FaqInfo from './components/FAQ';
 import NotificationSection from './components/NotificationSection';
 import RecruiteeInfo from './components/RecruteeInfo';
 import Schedule from './components/Schedule';
 
-const FaqInfo = lazy(() => import('./components/FAQ'));
-const Contact = lazy(() => import('./components/Contact'));
-const ActivityReview = lazy(() => import('./components/ActivityReview'));
-const BottomLogo = lazy(() => import('./components/BottomLogo'));
+// const FaqInfo = lazy(() => import('./components/FAQ'));
+// const Contact = lazy(() => import('./components/Contact'));
+// const ActivityReview = lazy(() => import('./components/ActivityReview'));
+// const BottomLogo = lazy(() => import('./components/BottomLogo'));
 
+export const BrandingColorContext = createContext({
+  main: '',
+  low: '',
+  high: '',
+  point: '',
+});
 function Recruit() {
-  const isValid = checkIsTimeInRange('2024-09-08 10:00:00', '2024-09-13 18:00:00'); // 모집 여부
+  const { data: adminData } = useQuery<GetRecruitpageResponse>({
+    queryKey: ['homepage/recruit'],
+    queryFn: remoteAdminAPI.getRecruitpage,
+  });
 
+  const isOBRecruiting = checkIsTimeInRange(
+    adminData?.recruitSchedule[0].schedule.applicationStartTime ?? '',
+    adminData?.recruitSchedule[0].schedule.applicationEndTime ?? '',
+  );
+  const isYBRecruiting = checkIsTimeInRange(
+    adminData?.recruitSchedule[1].schedule.applicationStartTime ?? '',
+    adminData?.recruitSchedule[1].schedule.applicationEndTime ?? '',
+  );
+  const isRecruiting = isOBRecruiting || isYBRecruiting;
+
+  if (!adminData) return;
   return (
     <PageLayout showScrollTopButton>
-      <Root>
-        {isValid ? <ApplySection /> : <NotificationSection />}
-        <ContentWrapper>
-          <RecruiteeInfo />
-          <ChapterInfo />
-          <Schedule />
-          <FaqInfo />
-          <Contact />
-          <ActivityReview />
-        </ContentWrapper>
-        <BottomLogo />
-      </Root>
+      <BrandingColorContext.Provider value={adminData.brandingColor}>
+        <Root>
+          {isRecruiting ? (
+            <ApplySection headerImg={adminData.recruitHeaderImage} />
+          ) : (
+            <NotificationSection />
+          )}
+          <ContentWrapper>
+            <RecruiteeInfo />
+            <ChapterInfo info={adminData.recruitPartCurriculum} />
+            <Schedule info={adminData.recruitSchedule[isOBRecruiting ? 0 : 1]} />
+            <Suspense>
+              <FaqInfo info={adminData.recruitQuestion} />
+            </Suspense>
+            <Contact />
+            <ActivityReview />
+          </ContentWrapper>
+          {/* <BottomLogo /> */}
+        </Root>
+      </BrandingColorContext.Provider>
     </PageLayout>
   );
 }

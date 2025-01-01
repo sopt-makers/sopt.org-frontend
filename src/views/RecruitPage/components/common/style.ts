@@ -29,8 +29,8 @@ export const SectionTitle = styled.h3`
   }
 `;
 
-export const SectionTitleTranslate = styled.h4`
-  color: #5ba3ff;
+export const SectionTitleTranslate = styled.h4<{ mainColor: string }>`
+  color: ${({ mainColor }) => mainColor};
   text-align: center;
   font-size: 17rem;
   font-weight: 500;

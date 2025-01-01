@@ -1,7 +1,6 @@
 import styled from '@emotion/styled';
-import { StaticImageData } from 'next/image';
 
-export const ApplyButton = styled.a`
+export const ApplyButton = styled.a<{ main: string }>`
   width: 220px;
   padding: 24px 0;
   border-radius: 50px;
@@ -12,7 +11,7 @@ export const ApplyButton = styled.a`
   font-weight: 700;
   line-height: 100%; /* 22px */
   letter-spacing: -0.44px;
-  background-color: #5ba3ff;
+  background-color: ${({ main }) => main};
   z-index: 2;
   /* 태블릿 뷰 */
   @media (max-width: 81.1875rem) and (min-width: 47.875rem) {
@@ -55,7 +54,7 @@ export const Title = styled.div`
   }
 `;
 
-export const Wrapper = styled.div<{ imgRecruitBg: StaticImageData }>`
+export const Wrapper = styled.div<{ imgRecruitBg: string }>`
   width: 100vw;
   height: 580px;
   position: relative;
@@ -65,7 +64,7 @@ export const Wrapper = styled.div<{ imgRecruitBg: StaticImageData }>`
   flex-direction: column;
   margin-top: 80px;
 
-  background-image: url(${({ imgRecruitBg }) => imgRecruitBg.src});
+  background-image: url(${({ imgRecruitBg }) => imgRecruitBg});
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top center;

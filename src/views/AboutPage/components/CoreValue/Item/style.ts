@@ -86,7 +86,7 @@ export const ValueTop = styled.div`
   }
 `;
 
-export const ValueNumber = styled.div`
+export const ValueNumber = styled.div<{ pointColor: string }>`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -95,7 +95,7 @@ export const ValueNumber = styled.div`
   width: 25.154px;
   height: 25.154px;
   border-radius: 6px;
-  background: rgba(58, 81, 109, 1);
+  background: ${({ pointColor }) => pointColor};
 
   color: ${colors.white};
   font-family: SUIT;

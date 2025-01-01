@@ -24,8 +24,8 @@ const BlueChip = styled(BaseChip)`
   }
 `;
 
-const GreenChip = styled(BaseChip)`
-  color: #5ba3ff;
+const GreenChip = styled(BaseChip)<{ mainColor: string }>`
+  color: ${({ mainColor }) => mainColor};
   padding-left: 20px;
   &:before {
     content: '👍';
@@ -91,9 +91,9 @@ const InfoWrapper = styled(BaseText)`
   }
 `;
 
-const FitWrapper = styled(BaseText)`
+const FitWrapper = styled(BaseText)<{ pointColor: string }>`
   border-radius: 30px;
-  background: #1c2837;
+  background: ${({ pointColor }) => pointColor};
   padding: 60px 80px;
   display: flex;
   flex-direction: column;
