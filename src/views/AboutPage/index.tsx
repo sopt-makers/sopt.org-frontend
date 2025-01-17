@@ -42,7 +42,10 @@ const AboutPage = () => {
           />
           <CurriculumSection curriculums={adminData.partCurriculum} />
           <MemberSection members={adminData.member} generation={adminData.generation} />
-          {/* <RecordSection generation={adminData.generation} records={adminData.records} /> */}
+          <RecordSection
+            generation={adminData.generation}
+            activitiesRecords={adminData.activitiesRecords}
+          />
         </Root>
       </BrandingColorContext.Provider>
     </PageLayout>
