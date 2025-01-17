@@ -20,12 +20,19 @@ export type RefHandler = {
 };
 
 interface BottomLayoutProps {
+  isRecruiting: boolean;
   partIntroduction: PartIntroType[];
   latestNews: LatestNewsType[];
   mainColor: string;
   highColor: string;
 }
-function BottomLayout({ partIntroduction, latestNews, mainColor, highColor }: BottomLayoutProps) {
+function BottomLayout({
+  isRecruiting,
+  partIntroduction,
+  latestNews,
+  mainColor,
+  highColor,
+}: BottomLayoutProps) {
   const activity = useInView();
   const part = useInView();
   const team = useInView();
@@ -71,7 +78,7 @@ function BottomLayout({ partIntroduction, latestNews, mainColor, highColor }: Bo
       <div ref={targetRef} />
       <motion.div style={{ backgroundColor: wrapperBackground }}>
         <RecentNews latestNews={latestNews} />
-        <RecruitMessage mainColor={mainColor} highColor={highColor} />
+        <RecruitMessage isRecruiting={isRecruiting} mainColor={mainColor} highColor={highColor} />
       </motion.div>
     </>
   );

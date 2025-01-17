@@ -33,6 +33,9 @@ export interface GetHomepageResponse {
   };
   partIntroduction: PartIntroType[];
   latestNews: LatestNewsType[];
+  recruitSchedule: RecruitScheduleType[];
+  recruitPartCurriculum: PartInfoType[];
+  recruitQuestion: PartQuestionType[];
 }
 
 export interface MemberType {

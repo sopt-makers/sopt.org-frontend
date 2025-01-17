@@ -5,15 +5,26 @@ import { GetHomepageResponse } from '@src/lib/types/admin';
 import BottomLayout from '@src/views/MainPage/components/BottomLayout';
 import IntroSection from '@src/views/MainPage/components/IntroSection';
 import TopBanner from '@src/views/MainPage/components/TopBanner';
-import usePostVisitor from '@src/views/MainPage/hooks/usePostVisitor';
 import { checkIsTimeInRange } from '../../lib/utils/date';
 import Banner from './components/Banner';
 import Introduce from './components/Introduce';
 import ScrollInteractiveLogo from './components/ScrollInteractiveLogo';
 
 function MainPage() {
-  // TODO: API 필드 추가된 후에 RecruitPage처럼 바뀌어야 함
-  const isValid = checkIsTimeInRange('2024-09-08 10:00:00', '2024-09-13 18:00:00');
+  const { data: adminData } = useQuery<GetHomepageResponse>({
+    queryKey: ['homepage'],
+    queryFn: remoteAdminAPI.getHomepage,
+  });
+
+  const isOBRecruiting = checkIsTimeInRange(
+    adminData?.recruitSchedule[0].schedule.applicationStartTime ?? '',
+    adminData?.recruitSchedule[0].schedule.applicationEndTime ?? '',
+  );
+  const isYBRecruiting = checkIsTimeInRange(
+    adminData?.recruitSchedule[1].schedule.applicationStartTime ?? '',
+    adminData?.recruitSchedule[1].schedule.applicationEndTime ?? '',
+  );
+  const isRecruiting = isOBRecruiting || isYBRecruiting;
 
   // const postVisiter = usePostVisitor();
 
@@ -21,15 +32,11 @@ function MainPage() {
   //   postVisiter();
   // }, [postVisiter]);
 
-  const { data: adminData } = useQuery<GetHomepageResponse>({
-    queryKey: ['homepage'],
-    queryFn: remoteAdminAPI.getHomepage,
-  });
-
   return (
     <PageLayout>
-      {isValid && <TopBanner />}
+      {isRecruiting && <TopBanner />}
       <Banner
+        isRecruiting={isRecruiting}
         mainColor={'#' + adminData?.brandingColor.main ?? ''}
         highColor={'#' + adminData?.brandingColor.high ?? ''}
       />
@@ -38,6 +45,7 @@ function MainPage() {
       <ScrollInteractiveLogo />
       {adminData && (
         <BottomLayout
+          isRecruiting={isRecruiting}
           partIntroduction={adminData.partIntroduction}
           latestNews={adminData.latestNews}
           mainColor={'#' + adminData?.brandingColor.main ?? ''}

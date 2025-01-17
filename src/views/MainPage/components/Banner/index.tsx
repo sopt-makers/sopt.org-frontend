@@ -1,16 +1,13 @@
 import imgMainPageBanner from '@src/assets/images/img_mainBanner.png';
-import { checkIsTimeInRange } from '@src/lib/utils/date';
 import RecruitButton from './RecruitButton';
 import * as S from './style';
 
 export interface BannerColor {
+  isRecruiting: boolean;
   mainColor: string;
   highColor: string;
 }
-export default function Banner({ mainColor, highColor }: BannerColor) {
-  // TODO: API 필드 추가된 후에 RecruitPage처럼 바뀌어야 함
-  const isValid = checkIsTimeInRange('2024-09-08 10:00:00', '2024-09-13 18:00:00');
-
+export default function Banner({ isRecruiting, mainColor, highColor }: BannerColor) {
   const onScrollMoveDown = () => {
     const element = document.getElementById('nextContainer');
     if (element) element.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -24,7 +21,7 @@ export default function Banner({ mainColor, highColor }: BannerColor) {
             <S.Title>함께라서 외칠 수 있는 열정</S.Title>
             <S.Title>오직 이곳 SOPT에서만.</S.Title>
             <RecruitButton mainColor={mainColor} highColor={highColor}>
-              {isValid ? '36기 YB 지원하기 ' : '모집 알림 신청하기 '}&gt;{' '}
+              {isRecruiting ? '36기 YB 지원하기 ' : '모집 알림 신청하기 '}&gt;{' '}
             </RecruitButton>
           </S.Content>
           <S.DownScrollIcon onClick={onScrollMoveDown} />
