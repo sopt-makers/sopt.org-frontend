@@ -36,7 +36,7 @@ function ProjectDetailPage({ project }: GetProjectDetailResponse) {
     endAt,
     isFounding,
     isAvailable,
-    link,
+    links,
     members,
     detail,
   } = project;
@@ -74,7 +74,7 @@ function ProjectDetailPage({ project }: GetProjectDetailResponse) {
                     </button>
                   </S.ToggleWrapper>
                   <S.ProjectOverviewDetail isOverviewOpened={isOverviewOpened}>
-                    <S.ProjectInfo isLinkExist={link.length !== 0}>
+                    <S.ProjectInfo isLinkExist={links.length !== 0}>
                       <div>
                         {projectOverviewTitle.map((title) => (
                           <h1 key={title}>{title}</h1>
@@ -100,11 +100,11 @@ function ProjectDetailPage({ project }: GetProjectDetailResponse) {
                             ? '창업중'
                             : '운영중, 창업중'}
                         </span>
-                        <span>{link.length ? link.length + '개' : '-'}</span>
+                        <span>{links.length ? links.length + '개' : '-'}</span>
                       </div>
                     </S.ProjectInfo>
                     <S.ProjectLinkWrapper>
-                      {link.map(({ title, url }: ProjectLinkType) => {
+                      {links.map(({ title, url }: ProjectLinkType) => {
                         const { name, src } = getLinkNameAndSrcWithType(title);
                         return (
                           <Link href={url} key={title}>

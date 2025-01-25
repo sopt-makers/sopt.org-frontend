@@ -38,7 +38,7 @@ export interface ProjectType {
   id: number;
   isAvailable: boolean;
   isFounding: boolean;
-  link: ProjectLinkType[];
+  links: ProjectLinkType[];
   logoImage: string;
   projectImage?: string;
   thumbnailImage?: string;
