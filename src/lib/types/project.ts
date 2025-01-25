@@ -54,7 +54,7 @@ export interface ProjectType {
 
 export interface StaticProjectType {
   generation: number;
-  link: ProjectLinkType[];
+  links: ProjectLinkType[];
   logoImage: string;
   name: string;
   summary: string;

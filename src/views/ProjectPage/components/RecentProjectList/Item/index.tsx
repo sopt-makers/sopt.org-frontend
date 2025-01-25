@@ -42,7 +42,7 @@ const getTryLink = (
 
 export default function RecentProjectListItem(props: RecentProjectListItemProps) {
   const deviceType = useDeviceType();
-  const tryLink = getTryLink(props.link, deviceType);
+  const tryLink = getTryLink(props.links, deviceType);
 
   return (
     <S.MarginWrapper>
