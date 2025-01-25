@@ -39,7 +39,7 @@ export default function TopBanner() {
           </S.Timer>
           {data && (
             <S.View>
-              <span>오늘 {data.Count}명이 방문했어요 &nbsp; &gt;</span>
+              <span>오늘 {data.count}명이 방문했어요 &nbsp; &gt;</span>
             </S.View>
           )}
         </S.Description>
