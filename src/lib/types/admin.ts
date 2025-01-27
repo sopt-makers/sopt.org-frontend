@@ -72,6 +72,11 @@ export interface GetAboutpageResponse {
   coreValue: CoreValueType[];
   partCurriculum: PartCurriculumType[];
   member: MemberType[];
+  activitiesRecords: {
+    activitiesMemberCount: number;
+    projectCounts: number;
+    studyCounts: number;
+  };
 }
 
 export interface PartInfoType {
