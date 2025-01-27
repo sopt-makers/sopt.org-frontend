@@ -18,24 +18,30 @@ function MainPage() {
     queryFn: remoteAdminAPI.getHomepage,
   });
 
+  const isOBRecruiting = checkIsTimeInRange(
+    adminData?.recruitSchedule[0].schedule.applicationStartTime ?? '',
+    adminData?.recruitSchedule[0].schedule.applicationEndTime ?? '',
+  );
   const isYBRecruiting = checkIsTimeInRange(
     adminData?.recruitSchedule[1].schedule.applicationStartTime ?? '',
     adminData?.recruitSchedule[1].schedule.applicationEndTime ?? '',
   );
+  const isRecruiting = isOBRecruiting || isYBRecruiting;
 
   const postVisiter = usePostVisitor();
 
   useEffect(() => {
-    if (!isYBRecruiting) return;
+    if (!isRecruiting) return;
     postVisiter();
-  }, [isYBRecruiting, postVisiter]);
+  }, [isRecruiting, postVisiter]);
 
   return (
     <PageLayout>
-      {isYBRecruiting && <TopBanner />}
+      {isRecruiting && <TopBanner />}
       <Banner
         mainColor={'#' + adminData?.brandingColor.main ?? ''}
         highColor={'#' + adminData?.brandingColor.high ?? ''}
+        isRecruiting={isRecruiting}
       />
       <Introduce />
       <IntroSection />
@@ -46,6 +52,7 @@ function MainPage() {
           latestNews={adminData.latestNews}
           mainColor={'#' + adminData?.brandingColor.main ?? ''}
           highColor={'#' + adminData?.brandingColor.high ?? ''}
+          isRecruiting={isRecruiting}
         />
       )}
     </PageLayout>

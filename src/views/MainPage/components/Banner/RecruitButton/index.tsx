@@ -6,7 +6,7 @@ export default function RecruitButton({
   children,
   mainColor,
   highColor,
-}: PropsWithChildren<BannerColor>) {
+}: PropsWithChildren<Omit<BannerColor, 'isRecruiting'>>) {
   const [blurPosition, setBlurPosition] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
 
   const handleMouseMove = (event: React.MouseEvent<HTMLDivElement>) => {

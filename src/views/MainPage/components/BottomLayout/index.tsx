@@ -24,8 +24,15 @@ interface BottomLayoutProps {
   latestNews: LatestNewsType[];
   mainColor: string;
   highColor: string;
+  isRecruiting: boolean;
 }
-function BottomLayout({ partIntroduction, latestNews, mainColor, highColor }: BottomLayoutProps) {
+function BottomLayout({
+  partIntroduction,
+  latestNews,
+  mainColor,
+  highColor,
+  isRecruiting,
+}: BottomLayoutProps) {
   const activity = useInView();
   const part = useInView();
   const team = useInView();
@@ -71,7 +78,7 @@ function BottomLayout({ partIntroduction, latestNews, mainColor, highColor }: Bo
       <div ref={targetRef} />
       <motion.div style={{ backgroundColor: wrapperBackground }}>
         <RecentNews latestNews={latestNews} />
-        <RecruitMessage mainColor={mainColor} highColor={highColor} />
+        <RecruitMessage mainColor={mainColor} highColor={highColor} isRecruiting={isRecruiting} />
       </motion.div>
     </>
   );
