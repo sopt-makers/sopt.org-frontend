@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
-import { useEffect } from 'react';
+import { useEffect, useMemo } from 'react';
 import PageLayout from '@src/components/common/PageLayout';
 import { remoteAdminAPI } from '@src/lib/api/remote/admin';
 import { GetHomepageResponse } from '@src/lib/types/admin';
@@ -28,6 +28,13 @@ function MainPage() {
   );
   const isRecruiting = isOBRecruiting || isYBRecruiting;
 
+  const ctaText = useMemo(() => {
+    if (adminData?.generation === undefined) return '모집 알림 신청하기 ';
+    if (isOBRecruiting) return `${adminData.generation}기 OB 지원하기 `;
+    if (isYBRecruiting) return `${adminData.generation}기 YB 지원하기 `;
+    return '모집 알림 신청하기 ';
+  }, [isOBRecruiting, isYBRecruiting, adminData]);
+
   const postVisiter = usePostVisitor();
 
   useEffect(() => {
@@ -41,7 +48,7 @@ function MainPage() {
       <Banner
         mainColor={'#' + adminData?.brandingColor.main ?? ''}
         highColor={'#' + adminData?.brandingColor.high ?? ''}
-        isRecruiting={isRecruiting}
+        ctaText={ctaText}
       />
       <Introduce />
       <IntroSection />
@@ -52,7 +59,7 @@ function MainPage() {
           latestNews={adminData.latestNews}
           mainColor={'#' + adminData?.brandingColor.main ?? ''}
           highColor={'#' + adminData?.brandingColor.high ?? ''}
-          isRecruiting={isRecruiting}
+          ctaText={ctaText}
         />
       )}
     </PageLayout>

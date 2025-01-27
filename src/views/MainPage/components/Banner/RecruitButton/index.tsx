@@ -1,12 +1,15 @@
 import { PropsWithChildren, useState } from 'react';
-import { BannerColor } from '..';
 import * as S from './style';
 
+interface BannerColor {
+  mainColor: string;
+  highColor: string;
+}
 export default function RecruitButton({
   children,
   mainColor,
   highColor,
-}: PropsWithChildren<Omit<BannerColor, 'isRecruiting'>>) {
+}: PropsWithChildren<BannerColor>) {
   const [blurPosition, setBlurPosition] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
 
   const handleMouseMove = (event: React.MouseEvent<HTMLDivElement>) => {

@@ -2,12 +2,12 @@ import imgMainPageBanner from '@src/assets/images/img_mainBanner.png';
 import RecruitButton from './RecruitButton';
 import * as S from './style';
 
-export interface BannerColor {
+interface BannerProps {
   mainColor: string;
   highColor: string;
-  isRecruiting: boolean;
+  ctaText: string;
 }
-export default function Banner({ mainColor, highColor, isRecruiting }: BannerColor) {
+export default function Banner({ mainColor, highColor, ctaText }: BannerProps) {
   const onScrollMoveDown = () => {
     const element = document.getElementById('nextContainer');
     if (element) element.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -21,7 +21,8 @@ export default function Banner({ mainColor, highColor, isRecruiting }: BannerCol
             <S.Title>함께라서 외칠 수 있는 열정</S.Title>
             <S.Title>오직 이곳 SOPT에서만.</S.Title>
             <RecruitButton mainColor={mainColor} highColor={highColor}>
-              {isRecruiting ? '36기 YB 지원하기 ' : '모집 알림 신청하기 '}&gt;{' '}
+              {ctaText}
+              &gt;
             </RecruitButton>
           </S.Content>
           <S.DownScrollIcon onClick={onScrollMoveDown} />
