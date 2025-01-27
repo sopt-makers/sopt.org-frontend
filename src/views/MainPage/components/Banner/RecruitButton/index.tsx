@@ -1,7 +1,10 @@
 import { PropsWithChildren, useState } from 'react';
-import { BannerColor } from '..';
 import * as S from './style';
 
+interface BannerColor {
+  mainColor: string;
+  highColor: string;
+}
 export default function RecruitButton({
   children,
   mainColor,
