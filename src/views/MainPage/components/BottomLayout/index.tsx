@@ -20,6 +20,7 @@ export type RefHandler = {
 };
 
 interface BottomLayoutProps {
+  generation: number;
   partIntroduction: PartIntroType[];
   latestNews: LatestNewsType[];
   mainColor: string;
@@ -27,6 +28,7 @@ interface BottomLayoutProps {
   ctaText: string;
 }
 function BottomLayout({
+  generation,
   partIntroduction,
   latestNews,
   mainColor,
@@ -78,7 +80,12 @@ function BottomLayout({
       <div ref={targetRef} />
       <motion.div style={{ backgroundColor: wrapperBackground }}>
         <RecentNews latestNews={latestNews} />
-        <RecruitMessage mainColor={mainColor} highColor={highColor} ctaText={ctaText} />
+        <RecruitMessage
+          generation={generation}
+          mainColor={mainColor}
+          highColor={highColor}
+          ctaText={ctaText}
+        />
       </motion.div>
     </>
   );

@@ -44,7 +44,16 @@ function MainPage() {
 
   return (
     <PageLayout>
-      {isRecruiting && <TopBanner />}
+      {isRecruiting && (
+        <TopBanner
+          targetTime={
+            isYBRecruiting
+              ? adminData?.recruitSchedule[1].schedule.applicationEndTime
+              : adminData?.recruitSchedule[0].schedule.applicationEndTime
+          }
+          generation={adminData?.generation ?? 0}
+        />
+      )}
       <Banner
         mainColor={'#' + adminData?.brandingColor.main ?? ''}
         highColor={'#' + adminData?.brandingColor.high ?? ''}
@@ -55,6 +64,7 @@ function MainPage() {
       <ScrollInteractiveLogo />
       {adminData && (
         <BottomLayout
+          generation={adminData?.generation ?? 0}
           partIntroduction={adminData.partIntroduction}
           latestNews={adminData.latestNews}
           mainColor={'#' + adminData?.brandingColor.main ?? ''}

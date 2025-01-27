@@ -5,8 +5,13 @@ import { useIsMobile } from '@src/hooks/useDevice';
 import useGetVisitor from '../../hooks/useGetVisitor';
 import * as S from './style';
 
-export default function TopBanner() {
-  const TARGET_DATE = new Date('2024-09-13 18:00:00');
+interface TopBannerProps {
+  targetTime?: string;
+  generation: number;
+}
+
+export default function TopBanner({ targetTime, generation }: TopBannerProps) {
+  const TARGET_DATE = targetTime ? new Date(targetTime) : new Date();
   const isMobile = useIsMobile();
   const CHANGE_POSITION = isMobile ? 495 : 605;
   const { data } = useGetVisitor(); // 방문자 조회
@@ -30,7 +35,7 @@ export default function TopBanner() {
     <S.Container href="/recruit" isKeyColor={isKeyColor}>
       <S.Wrapper>
         <div>
-          <S.Title>솝트의 36번째 열정이 되어주세요!</S.Title>
+          <S.Title>솝트의 {generation}번째 열정이 되어주세요!</S.Title>
         </div>
         <S.Description>
           <S.Timer>
