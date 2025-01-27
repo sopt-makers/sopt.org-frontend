@@ -54,7 +54,7 @@ function Recruit() {
           )}
           <ContentWrapper>
             <RecruiteeInfo />
-            <ChapterInfo info={adminData.recruitPartCurriculum} />
+            <ChapterInfo info={adminData.recruitPartCurriculum} generation={adminData.generation} />
             <Schedule info={adminData.recruitSchedule[isOBRecruiting ? 0 : 1]} />
             <Suspense>
               <FaqInfo info={adminData.recruitQuestion} />

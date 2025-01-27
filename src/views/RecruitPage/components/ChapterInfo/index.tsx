@@ -1,6 +1,6 @@
 import { useContext, useState } from 'react';
 import Flex from '@src/components/common/Flex';
-import { PartInfoType, PartType } from '@src/lib/types/admin';
+import { PartInfoType } from '@src/lib/types/admin';
 import { Part } from '@src/lib/types/universal';
 import { parsePartToKorean } from '@src/lib/utils/parsePartToKorean';
 import { parseStringToPart } from '@src/lib/utils/parseStringToPart';
@@ -9,7 +9,7 @@ import TabBar from '../common/Tabs';
 import { SectionTitle, SectionTitleTranslate, SectionTitleWrapper } from '../common/style';
 import * as S from './style';
 
-const ChapterInfo = ({ info }: { info: PartInfoType[] }) => {
+const ChapterInfo = ({ info, generation }: { info: PartInfoType[]; generation: number }) => {
   const { main, point } = useContext(BrandingColorContext);
   const [selectedTab, setSelectedTab] = useState<Part>(Part.PLAN);
   const parsedPart = parsePartToKorean(selectedTab);
@@ -24,7 +24,7 @@ const ChapterInfo = ({ info }: { info: PartInfoType[] }) => {
       <SectionTitleWrapper>
         <SectionTitleTranslate mainColor={'#' + main}>Positions</SectionTitleTranslate>
         <S.SectionWrapper>
-          <SectionTitle>SOPT 35기는</SectionTitle>
+          <SectionTitle>SOPT {generation}기는</SectionTitle>
           <SectionTitle>총 6개의 파트로 이루어져 있어요.</SectionTitle>
         </S.SectionWrapper>
       </SectionTitleWrapper>
