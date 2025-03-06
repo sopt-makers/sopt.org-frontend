@@ -1,13 +1,12 @@
 import styled from '@emotion/styled';
 import { useQuery } from '@tanstack/react-query';
-import { Suspense, createContext, lazy } from 'react';
+import { Suspense, createContext } from 'react';
 import PageLayout from '@src/components/common/PageLayout';
 import { remoteAdminAPI } from '@src/lib/api/remote/admin';
 import { GetRecruitpageResponse } from '@src/lib/types/admin';
 import { checkIsTimeInRange } from '@src/lib/utils/date';
 import ActivityReview from './components/ActivityReview';
 import ApplySection from './components/ApplySection';
-import BottomLogo from './components/BottomLogo';
 import ChapterInfo from './components/ChapterInfo';
 import Contact from './components/Contact';
 import FaqInfo from './components/FAQ';

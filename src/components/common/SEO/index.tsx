@@ -6,7 +6,7 @@ interface HeadProps {
 }
 
 function SEO(props: HeadProps) {
-  const { projectTitle, projectImageURL } = props;
+  const { projectTitle } = props;
 
   return (
     <Head>
@@ -17,7 +17,7 @@ function SEO(props: HeadProps) {
       <meta property="twitter:site" content="https://sopt.org/" />
       <meta
         name="twitter:image"
-        content="https://s3.ap-northeast-2.amazonaws.com/sopt.org/admin/origin/about/35th/OG+1.png"
+        content="/36th_og.png"
       />
       <meta property="twitter:image:alt" content="SOPT 공식 홈페이지 이미지" />
 
@@ -31,8 +31,8 @@ function SEO(props: HeadProps) {
       <meta
         property="og:image"
         content={
-          projectImageURL ||
-          'https://s3.ap-northeast-2.amazonaws.com/sopt.org/admin/origin/about/35th/OG+1.png'
+          "/36th_og.png"// ||
+          // 'https://s3.ap-northeast-2.amazonaws.com/sopt.org/admin/origin/about/35th/OG+1.png'
         }
       />
       <meta property="og:image:alt" content="SOPT 공식 홈페이지 이미지" />
