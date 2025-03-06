@@ -37,7 +37,7 @@ const MemberCard = ({
           </St.AnchorIconWrapper>
         )}
         {linkedin && (
-          <St.AnchorIconWrapper href={linkedin} target="_blank">
+          <St.AnchorIconWrapper href={`https://${linkedin}`} target="_blank">
             <IcLinkedin />
           </St.AnchorIconWrapper>
         )}
