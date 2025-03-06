@@ -24,16 +24,13 @@ function SEO(props: HeadProps) {
       {/*  Open Graph */}
       <meta property="og:type" content="website" />
       <meta property="og:locale" content="ko_KR" />
-      <meta property="og:url" content={'https://sopt.org/'} />
+      <meta property="og:url" content={"https://sopt.org/"} />
       <meta property="og:title" content={projectTitle ? `SOPT 프로젝트 ${projectTitle}` : 'SOPT'} />
       <meta property="og:site_name" content="SOPT 공식 홈페이지" />
       <meta property="og:description" content={'대학생 연합 IT 벤처 창업 동아리'} />
       <meta
         property="og:image"
-        content={
-          "/36th_og.png"// ||
-          // 'https://s3.ap-northeast-2.amazonaws.com/sopt.org/admin/origin/about/35th/OG+1.png'
-        }
+        content={"/36th_og.png"}
       />
       <meta property="og:image:alt" content="SOPT 공식 홈페이지 이미지" />
     </Head>
