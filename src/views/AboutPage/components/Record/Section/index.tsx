@@ -8,7 +8,7 @@ type RecordSectionProps = Pick<GetAboutpageResponse, 'generation' | 'activitiesR
 const RecordSection = ({ generation, activitiesRecords }: RecordSectionProps) => {
   return (
     <St.Wrapper>
-      <SectionTop engTitle="Activity Records" korTitle={`${generation}기 활동 레코드`} />
+      <SectionTop engTitle="Activity Records" korTitle={`${generation - 1}기 활동 레코드`} />
       <RecordList activitiesRecords={activitiesRecords} />
     </St.Wrapper>
   );
