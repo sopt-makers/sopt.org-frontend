@@ -26,6 +26,7 @@ interface BottomLayoutProps {
   mainColor: string;
   highColor: string;
   ctaText: string;
+  isRecruitEnd: boolean;
 }
 function BottomLayout({
   generation,
@@ -34,6 +35,7 @@ function BottomLayout({
   mainColor,
   highColor,
   ctaText,
+  isRecruitEnd,
 }: BottomLayoutProps) {
   const activity = useInView();
   const part = useInView();
@@ -85,6 +87,7 @@ function BottomLayout({
           mainColor={mainColor}
           highColor={highColor}
           ctaText={ctaText}
+          isRecruitEnd={isRecruitEnd}
         />
       </motion.div>
     </>

@@ -27,6 +27,9 @@ function MainPage() {
     adminData?.recruitSchedule[1].schedule.applicationEndTime ?? '',
   );
   const isRecruiting = isOBRecruiting || isYBRecruiting;
+  const isRecruitEnd =
+    Date.now() >
+    new Date(adminData?.recruitSchedule[1].schedule.applicationEndTime ?? '').getTime();
 
   const ctaText = useMemo(() => {
     if (adminData?.generation === undefined) return '모집 알림 신청하기 ';
@@ -70,6 +73,7 @@ function MainPage() {
           mainColor={'#' + adminData?.brandingColor.main ?? ''}
           highColor={'#' + adminData?.brandingColor.high ?? ''}
           ctaText={ctaText}
+          isRecruitEnd={isRecruitEnd}
         />
       )}
     </PageLayout>

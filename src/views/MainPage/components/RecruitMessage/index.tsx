@@ -7,19 +7,21 @@ interface RecruitMessageProp {
   mainColor: string;
   highColor: string;
   ctaText: string;
+  isRecruitEnd?: boolean;
 }
 export default function RecruitMessage({
   generation,
   mainColor,
   highColor,
   ctaText,
+  isRecruitEnd,
 }: RecruitMessageProp) {
   const isMobileSize = useIsMobile('48rem');
-
   return (
     <S.Background>
       <S.Title>
-        솝트의 {generation + 1}번째{isMobileSize ? <br /> : ' '}열정이 되어주세요!
+        솝트의 {generation + (isRecruitEnd ? 1 : 0)}번째{isMobileSize ? <br /> : ' '}열정이
+        되어주세요!
       </S.Title>
       {ctaText === '모집 알림 신청하기 ' && (
         <S.Description>
