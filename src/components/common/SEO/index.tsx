@@ -6,7 +6,7 @@ interface HeadProps {
 }
 
 function SEO(props: HeadProps) {
-  const { projectTitle, projectImageURL } = props;
+  const { projectTitle } = props;
 
   return (
     <Head>
