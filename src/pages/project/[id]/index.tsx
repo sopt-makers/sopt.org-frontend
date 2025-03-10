@@ -50,7 +50,13 @@ function ProjectDetailPage({ project }: GetProjectDetailResponse) {
           <S.Container>
             <S.ProjectHeader>
               <S.LogoImageWrapper>
-                <Image src={logoImage} alt={`${name} 프로젝트 로고`} width="72" height="72" />
+                <Image
+                  src={logoImage}
+                  alt={`${name} 프로젝트 로고`}
+                  width="72"
+                  height="72"
+                  unoptimized
+                />
               </S.LogoImageWrapper>
               <div>
                 <h1>{name}</h1>
@@ -59,7 +65,7 @@ function ProjectDetailPage({ project }: GetProjectDetailResponse) {
             </S.ProjectHeader>
             {projectImage && (
               <S.ProjectImageWrapper>
-                <Image src={projectImage} alt={`${name} 프로젝트 썸네일`} fill />
+                <Image src={projectImage} alt={`${name} 프로젝트 썸네일`} fill unoptimized />
               </S.ProjectImageWrapper>
             )}
             <S.ProjectWrapper>
