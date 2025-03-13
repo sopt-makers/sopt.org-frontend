@@ -9,7 +9,7 @@ export default function Card({ title, url, src }: RecentNewsListType) {
       }}
     >
       <S.Title>{title}</S.Title>
-      <S.CardImage src={src} alt="최근뉴스 이미지" fill sizes="auto" priority={true} />
+      <S.CardImage src={src} alt="최근뉴스 이미지" fill sizes="auto" priority={true} unoptimized />
     </S.Background>
   );
 }
