@@ -64,6 +64,7 @@ export default function BlogPost({ selectedTab, blogPost }: BlogPostProps) {
           onError={onThumbnailError}
           placeholder="blur"
           blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPU0zOtBwACNQES9P3nGQAAAABJRU5ErkJggg=="
+          unoptimized
         />
         {selectedTab === 'article' && <Like blogPost={blogPost} />}
       </S.ThumbnailWrapper>

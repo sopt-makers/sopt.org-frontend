@@ -11,6 +11,7 @@ export default function DefaultProfileImage() {
         width={10}
         height={10}
         loading="lazy"
+        unoptimized
       />
     </S.DefaultProfileImage>
   );

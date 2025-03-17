@@ -23,6 +23,7 @@ const MemberCard = ({
           fill
           sizes="100%"
           quality={80}
+          unoptimized
         />
       </St.ImageWrapper>
       <St.NameWrapper>
