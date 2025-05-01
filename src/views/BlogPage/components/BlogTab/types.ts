@@ -5,12 +5,7 @@ export enum BlogTabType {
   ARTICLE = 'article',
 }
 
-type BlogTabContent = {
-  title: string;
-  description: string;
-};
-
-export type BlogTabMap = Record<BlogTabType, BlogTabContent>;
+export type BlogTabMap = Record<BlogTabType, string>;
 
 export type selectedType = {
   selectedTab: BlogTabType;

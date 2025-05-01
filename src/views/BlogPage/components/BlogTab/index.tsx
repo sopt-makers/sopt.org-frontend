@@ -10,8 +10,7 @@ import {
 import { PartCategoryType } from '@src/lib/types/blog';
 import { PageType } from '@src/lib/types/universal';
 import * as S from './style';
-import { BlogTabMap, BlogTabType } from './types';
-import { selectedType } from './types';
+import { BlogTabMap, BlogTabType, selectedType } from './types';
 
 interface BlogTabProps {
   selected: selectedType;
@@ -29,14 +28,8 @@ export default function BlogTab({
   const { selectedTab, selectedMajorCategory, selectedSubCategory } = selected;
 
   const blogTabList: BlogTabMap = {
-    review: {
-      title: '활동후기',
-      description: '회원들의 진솔한 후기를 통해 SOPT를 미리 만나보세요.  ',
-    },
-    article: {
-      title: '아티클',
-      description: '회원들의 아티클을 통해 SOPT에서 얻은 인사이트를 확인해보세요.',
-    },
+    review: 'SOPT 후기',
+    article: 'SOPT 이야기',
   };
 
   return (
@@ -53,12 +46,11 @@ export default function BlogTab({
                 }}
                 isSelected={selectedTab === blogTab}
               >
-                {tabInfo.title}
+                {tabInfo}
               </S.TabTitle>
             );
           })}
         </S.TabContainer>
-        <S.TabDescription>{blogTabList[selectedTab]?.description}</S.TabDescription>
         <S.SelectContainer>
           <Select
             options={activeGenerationCategoryList}
