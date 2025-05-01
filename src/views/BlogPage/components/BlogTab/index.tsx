@@ -51,26 +51,36 @@ export default function BlogTab({
             );
           })}
         </S.TabContainer>
-        <S.SelectContainer>
-          <Select
-            options={activeGenerationCategoryList}
-            labels={generationCategoryLabel}
-            baseLabel="기수"
-            selectedValue={selectedMajorCategory}
-            setSelectedValue={setMajorCategory}
-            baseValue={activeGenerationCategoryList[0]}
-            breakPoint={pageBreakPoint[PageType.BLOG]}
-          />
-          <Select
-            options={activePartCategoryList}
-            labels={partCategoryLabel}
-            baseLabel="파트"
-            selectedValue={selectedSubCategory}
-            setSelectedValue={setSubCategory}
-            baseValue={PartCategoryType.ALL}
-            breakPoint={pageBreakPoint[PageType.BLOG]}
-          />
-        </S.SelectContainer>
+        <S.Layout>
+          {selectedTab === BlogTabType.REVIEW && (
+            <S.TagContainer>
+              <S.Tag isSelected={selectedSubCategory === PartCategoryType.ALL}>
+                서류/면접 후기
+              </S.Tag>
+              <S.Tag isSelected={selectedSubCategory !== PartCategoryType.ALL}>활동 후기</S.Tag>
+            </S.TagContainer>
+          )}
+          <S.SelectContainer>
+            <Select
+              options={activeGenerationCategoryList}
+              labels={generationCategoryLabel}
+              baseLabel="기수"
+              selectedValue={selectedMajorCategory}
+              setSelectedValue={setMajorCategory}
+              baseValue={activeGenerationCategoryList[0]}
+              breakPoint={pageBreakPoint[PageType.BLOG]}
+            />
+            <Select
+              options={activePartCategoryList}
+              labels={partCategoryLabel}
+              baseLabel="파트"
+              selectedValue={selectedSubCategory}
+              setSelectedValue={setSubCategory}
+              baseValue={PartCategoryType.ALL}
+              breakPoint={pageBreakPoint[PageType.BLOG]}
+            />
+          </S.SelectContainer>
+        </S.Layout>
       </S.Container>
     </S.Wrapper>
   );
