@@ -11,6 +11,7 @@ interface SelectProps<T extends LabelKeyType> {
   setSelectedValue: (newValue: T) => void;
   labels: Record<T, string>;
   breakPoint: string;
+  variant?: 'round' | 'square';
 }
 
 export default function Select<T extends LabelKeyType>({
@@ -21,6 +22,7 @@ export default function Select<T extends LabelKeyType>({
   baseLabel,
   labels,
   breakPoint,
+  variant = 'round',
 }: SelectProps<T>) {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -46,6 +48,7 @@ export default function Select<T extends LabelKeyType>({
         isOpened={isOpen}
         isWide={currentSelectedValue.length >= 5}
         breakPoint={breakPoint}
+        variant={variant}
       >
         <S.SelectTriggerContent
           isSelectionExist={selectedValue !== baseValue}

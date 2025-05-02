@@ -1,12 +1,13 @@
 import styled from '@emotion/styled';
 import { colors } from '@sopt-makers/colors';
-import chevronDown from '@src/assets/icons/chevronDown.svg';
+import chevronDown from '@src/assets/icons/ic_chevron-down.svg';
 
 export const SelectTrigger = styled.button<{
   isSelectionExist: boolean;
   isOpened: boolean;
   isWide: boolean;
   breakPoint: string;
+  variant: 'round' | 'square';
 }>`
   display: flex;
   flex-direction: row;
@@ -16,10 +17,10 @@ export const SelectTrigger = styled.button<{
   position: relative;
   min-width: 110px;
   width: ${({ isWide }) => isWide && 'auto'};
-  padding: 9px 22px;
+  padding: ${({ variant }) => (variant === 'round' ? '9px 22px' : '11px 12px')};
   text-align: left;
   color: ${({ isSelectionExist }) => (isSelectionExist ? colors.white : colors.gray200)};
-  border-radius: 20px;
+  border-radius: ${({ variant }) => (variant === 'round' ? '20px' : '10px')};
   background-color: ${({ isSelectionExist }) =>
     isSelectionExist ? colors.gray800 : colors.gray700};
   border: 1px solid;
