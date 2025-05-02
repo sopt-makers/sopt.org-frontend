@@ -1,4 +1,5 @@
 import { track } from '@amplitude/analytics-browser';
+import { useState } from 'react';
 import Select from '@src/components/common/Select';
 import { pageBreakPoint } from '@src/lib/constants/project';
 import {
@@ -25,6 +26,11 @@ export default function BlogTab({
   setMajorCategory,
   setSubCategory,
 }: BlogTabProps) {
+  const [isTagSelected, setIsTagSelected] = useState({
+    recruit: false,
+    activity: false,
+  });
+
   const { selectedTab, selectedMajorCategory, selectedSubCategory } = selected;
 
   const blogTabList: BlogTabMap = {
@@ -54,10 +60,28 @@ export default function BlogTab({
         <S.Layout>
           {selectedTab === BlogTabType.REVIEW && (
             <S.TagContainer>
-              <S.Tag isSelected={selectedSubCategory === PartCategoryType.ALL}>
+              <S.Tag
+                isSelected={isTagSelected.recruit}
+                onClick={() => {
+                  setIsTagSelected({
+                    ...isTagSelected,
+                    recruit: !isTagSelected.recruit,
+                  });
+                }}
+              >
                 서류/면접 후기
               </S.Tag>
-              <S.Tag isSelected={selectedSubCategory !== PartCategoryType.ALL}>활동 후기</S.Tag>
+              <S.Tag
+                isSelected={isTagSelected.activity}
+                onClick={() => {
+                  setIsTagSelected({
+                    ...isTagSelected,
+                    activity: !isTagSelected.activity,
+                  });
+                }}
+              >
+                활동 후기
+              </S.Tag>
             </S.TagContainer>
           )}
           <S.SelectContainer>
@@ -69,6 +93,7 @@ export default function BlogTab({
               setSelectedValue={setMajorCategory}
               baseValue={activeGenerationCategoryList[0]}
               breakPoint={pageBreakPoint[PageType.BLOG]}
+              variant="square"
             />
             <Select
               options={activePartCategoryList}
@@ -78,6 +103,7 @@ export default function BlogTab({
               setSelectedValue={setSubCategory}
               baseValue={PartCategoryType.ALL}
               breakPoint={pageBreakPoint[PageType.BLOG]}
+              variant="square"
             />
           </S.SelectContainer>
         </S.Layout>
