@@ -10,6 +10,7 @@ export const SelectTrigger = styled.button<{
   isWide: boolean;
   breakPoint: string;
   variant: 'round' | 'square';
+  isSort: boolean;
 }>`
   display: flex;
   flex-direction: row;
@@ -26,20 +27,24 @@ export const SelectTrigger = styled.button<{
   border-color: ${({ isOpened }) => (isOpened ? colors.gray400 : colors.gray800)};
 
   ${({ variant }) =>
-    variant === 'round' &&
-    css`
-      min-width: 110px;
-      padding: 9px 22px;
-      border-radius: 20px;
-    `}
+    variant === 'round'
+      ? css`
+          min-width: 110px;
+          padding: 9px 22px;
+          border-radius: 20px;
+        `
+      : variant === 'square' &&
+        css`
+          min-width: 130px;
+          padding: 11px 12px;
+          border-radius: 10px;
+          background-color: ${colors.gray800};
+        `}
 
-  ${({ variant }) =>
-    variant === 'square' &&
+  ${({ isSort }) =>
+    isSort &&
     css`
-      min-width: 130px;
-      padding: 11px 12px;
-      border-radius: 10px;
-      background-color: ${colors.gray800};
+      min-width: 160px;
     `}
 
   @media (max-width: ${({ breakPoint }) => breakPoint}) {
@@ -104,6 +109,7 @@ export const SelectItemWrapper = styled.div<{
   isWide: boolean;
   breakPoint: string;
   variant: 'round' | 'square';
+  isSort: boolean;
 }>`
   display: flex;
   flex-direction: column;
@@ -157,6 +163,11 @@ export const SelectItemWrapper = styled.div<{
       }
     `}
 
+  ${({ isSort }) =>
+    isSort &&
+    css`
+      min-width: 160px;
+    `}
 
   @media (max-width: ${({ breakPoint }) => breakPoint}) {
     min-width: 76px;

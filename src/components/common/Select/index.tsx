@@ -52,6 +52,7 @@ export default function Select<T extends LabelKeyType>({
         isWide={currentSelectedValue.length >= 5}
         breakPoint={breakPoint}
         variant={variant}
+        isSort={isSort}
       >
         <S.SelectTriggerContent
           isSelectionExist={selectedValue !== baseValue}
@@ -67,6 +68,7 @@ export default function Select<T extends LabelKeyType>({
           isWide={currentSelectedValue.length >= 5}
           variant={variant}
           breakPoint={breakPoint}
+          isSort={isSort}
         >
           {options.map((option, index) => (
             <S.SelectItem

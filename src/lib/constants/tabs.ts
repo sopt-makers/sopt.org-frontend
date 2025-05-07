@@ -90,7 +90,7 @@ export const partCategoryLabel: Record<PartCategoryType, string> = {
 };
 
 export const sortLabel: Record<SortType, string> = {
-  [SortType.LATEST]: '최신순',
+  [SortType.LATEST]: '최근 등록순',
   [SortType.LIKE]: '좋아요순',
 };
 
