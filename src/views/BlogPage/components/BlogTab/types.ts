@@ -1,4 +1,5 @@
 import type { PartCategoryType } from '@src/lib/types/blog';
+import { ActivitySelectType } from '@src/lib/types/main';
 
 export enum BlogTabType {
   REVIEW = 'review',
@@ -11,4 +12,5 @@ export type selectedType = {
   selectedTab: BlogTabType;
   selectedMajorCategory: number;
   selectedSubCategory: PartCategoryType;
+  selectedActivity: ActivitySelectType;
 };

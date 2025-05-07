@@ -5,10 +5,13 @@ import { pageBreakPoint } from '@src/lib/constants/project';
 import {
   activeGenerationCategoryList,
   activePartCategoryList,
+  activities,
+  activitySelectLabel,
   generationCategoryLabel,
   partCategoryLabel,
 } from '@src/lib/constants/tabs';
 import { PartCategoryType } from '@src/lib/types/blog';
+import { ActivitySelectType } from '@src/lib/types/main';
 import { PageType } from '@src/lib/types/universal';
 import * as S from './style';
 import { BlogTabMap, BlogTabType, selectedType } from './types';
@@ -18,6 +21,7 @@ interface BlogTabProps {
   setSelectedTab: (newValue: BlogTabType) => void;
   setMajorCategory: (newValue: number) => void;
   setSubCategory: (newValue: PartCategoryType) => void;
+  setSelectedActivity: (newValue: ActivitySelectType) => void;
 }
 
 export default function BlogTab({
@@ -25,13 +29,14 @@ export default function BlogTab({
   setSelectedTab,
   setMajorCategory,
   setSubCategory,
+  setSelectedActivity,
 }: BlogTabProps) {
   const [isTagSelected, setIsTagSelected] = useState({
     recruit: false,
     activity: false,
   });
 
-  const { selectedTab, selectedMajorCategory, selectedSubCategory } = selected;
+  const { selectedTab, selectedMajorCategory, selectedSubCategory, selectedActivity } = selected;
 
   const blogTabList: BlogTabMap = {
     review: 'SOPT 후기',
@@ -82,6 +87,18 @@ export default function BlogTab({
               >
                 활동 후기
               </S.Tag>
+              {isTagSelected.activity && (
+                <Select
+                  options={activities}
+                  labels={activitySelectLabel}
+                  baseLabel="전체 활동"
+                  selectedValue={selectedActivity}
+                  setSelectedValue={setSelectedActivity}
+                  baseValue={ActivitySelectType.ALL}
+                  breakPoint={pageBreakPoint[PageType.BLOG]}
+                  variant="square"
+                />
+              )}
             </S.TagContainer>
           )}
           <S.SelectContainer>
