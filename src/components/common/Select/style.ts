@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { colors } from '@sopt-makers/colors';
+import { css } from '@emotion/react';
 import chevronDown from '@src/assets/icons/ic_chevron-down.svg';
 
 export const SelectTrigger = styled.button<{
@@ -15,16 +16,30 @@ export const SelectTrigger = styled.button<{
   justify-content: space-between;
   cursor: pointer;
   position: relative;
-  min-width: 110px;
   width: ${({ isWide }) => isWide && 'auto'};
-  padding: ${({ variant }) => (variant === 'round' ? '9px 22px' : '11px 12px')};
   text-align: left;
   color: ${({ isSelectionExist }) => (isSelectionExist ? colors.white : colors.gray200)};
-  border-radius: ${({ variant }) => (variant === 'round' ? '20px' : '10px')};
   background-color: ${({ isSelectionExist }) =>
     isSelectionExist ? colors.gray800 : colors.gray700};
   border: 1px solid;
-  border-color: ${({ isSelectionExist }) => (isSelectionExist ? colors.gray400 : colors.gray700)};
+  border-color: ${({ isOpened }) => (isOpened ? colors.gray400 : colors.gray800)};
+
+  ${({ variant }) =>
+    variant === 'round' &&
+    css`
+      min-width: 110px;
+      padding: 9px 22px;
+      border-radius: 20px;
+    `}
+
+  ${({ variant }) =>
+    variant === 'square' &&
+    css`
+      min-width: 130px;
+      padding: 11px 12px;
+      border-radius: 10px;
+      background-color: ${colors.gray800};
+    `}
 
   @media (max-width: ${({ breakPoint }) => breakPoint}) {
     min-width: 76px;
@@ -48,16 +63,19 @@ export const Arrow = styled.div<{
   transform: ${({ isOpened }) => (isOpened ? 'rotate(180deg)' : 'none')};
 `;
 
-export const SelectItem = styled.div<{ isSelected: boolean }>`
+export const SelectItem = styled.div<{ isSelected: boolean; variant: 'round' | 'square' }>`
   background-color: ${({ isSelected }) => (isSelected ? colors.gray600 : 'transparent')};
-  padding: 8px 5px;
+  padding: ${({ variant }) => (variant === 'round' ? '8px 5px' : '8px 12px')};
   border-radius: 6px;
   cursor: pointer;
   transition: 0.1s;
   color: ${colors.gray30};
 `;
 
-export const SelectTriggerContent = styled.p<{ isSelectionExist: boolean; breakPoint: string }>`
+export const SelectTriggerContent = styled.p<{
+  isSelectionExist: boolean;
+  breakPoint: string;
+}>`
   color: ${({ isSelectionExist }) => (isSelectionExist ? colors.white : colors.gray200)};
   margin-right: 8px;
   font-size: 16rem;
@@ -80,32 +98,63 @@ export const SelectItemContent = styled.p<{ isWide: boolean; breakPoint: string 
   }
 `;
 
-export const SelectItemWrapper = styled.div<{ isWide: boolean; breakPoint: string }>`
+export const SelectItemWrapper = styled.div<{
+  isWide: boolean;
+  breakPoint: string;
+  variant: 'round' | 'square';
+}>`
   display: flex;
   flex-direction: column;
 
   position: absolute;
-  background-color: ${colors.gray700};
+
   z-index: 200;
-  min-width: 110px;
   width: ${({ isWide }) => isWide && 'auto'};
-  max-height: 262px;
   overflow-y: scroll;
-  border-radius: 13px;
   padding: 7px;
   padding-right: ${({ isWide }) => isWide && '5px'};
   margin-top: 8px;
-  /* gap: 8px; */
   font-size: 100%;
 
-  &:hover {
-    ${SelectItem} {
-      background-color: transparent;
+  ${({ variant }) =>
+    variant === 'round' &&
+    css`
+      border-radius: 13px;
+      min-width: 110px;
+      max-height: 262px;
+      background-color: ${colors.gray700};
+
       &:hover {
-        background-color: ${colors.gray400};
+        ${SelectItem} {
+          background-color: transparent;
+          &:hover {
+            background-color: ${colors.gray400};
+          }
+        }
       }
-    }
-  }
+    `}
+  ${({ variant }) =>
+    variant === 'square' &&
+    css`
+      padding: 8px;
+      border-radius: 8px;
+      min-width: 130px;
+      max-height: 346px;
+      background-color: ${colors.gray800};
+
+      &:hover {
+        ${SelectItem} {
+          background-color: transparent;
+          &:hover {
+            background-color: ${colors.gray700};
+          }
+          &:active {
+            background-color: ${colors.gray600};
+          }
+        }
+      }
+    `}
+
 
   @media (max-width: ${({ breakPoint }) => breakPoint}) {
     min-width: 76px;

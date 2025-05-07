@@ -38,13 +38,13 @@ export const tabs = extraTabs.slice(1) as TabType[];
 export const activeGenerationCategoryList: number[] = [0];
 
 export const activitySelectLabel: Record<ActivitySelectType, string> = {
-  [ActivitySelectType.ALL]: '전체',
+  [ActivitySelectType.ALL]: '전체 활동',
   [ActivitySelectType.APPJAM]: '앱잼',
   [ActivitySelectType.SOPKATHON]: '솝커톤',
   [ActivitySelectType.SEMINAR]: '세미나',
   [ActivitySelectType.STUDY]: '스터디',
   [ActivitySelectType.SOPTERM]: '솝텀',
-  [ActivitySelectType.EVENTS]: '이벤트',
+  [ActivitySelectType.MAKERS]: '메이커스',
 };
 
 export const activities: ActivitySelectType[] = [
@@ -54,10 +54,10 @@ export const activities: ActivitySelectType[] = [
   ActivitySelectType.SEMINAR,
   ActivitySelectType.STUDY,
   ActivitySelectType.SOPTERM,
-  ActivitySelectType.EVENTS,
+  ActivitySelectType.MAKERS,
 ];
 
-for (let i = 31; i >= 24; i--) {
+for (let i = 35; i >= 24; i--) {
   activeGenerationCategoryList.push(i);
 }
 

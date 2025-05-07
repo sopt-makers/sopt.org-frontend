@@ -30,6 +30,7 @@ export default function Select<T extends LabelKeyType>({
 
   const handleSelect = (value: T) => {
     setSelectedValue(value);
+    setIsOpen(false);
   };
 
   const closeSelectItem = useCallback(() => setIsOpen(false), []);
@@ -62,12 +63,14 @@ export default function Select<T extends LabelKeyType>({
         <S.SelectItemWrapper
           ref={selectItemWrapperRef}
           isWide={currentSelectedValue.length >= 5}
+          variant={variant}
           breakPoint={breakPoint}
         >
           {options.map((option, index) => (
             <S.SelectItem
               key={index}
               isSelected={selectedValue === option}
+              variant={variant}
               onClick={() => handleSelect(option)}
             >
               <S.SelectItemContent

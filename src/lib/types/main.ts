@@ -28,7 +28,7 @@ export enum ActivitySelectType {
   SEMINAR = 'SEMINAR',
   STUDY = 'STUDY',
   SOPTERM = 'SOPTERM',
-  EVENTS = 'EVENTS',
+  MAKERS = 'MAKERS',
 }
 
 export interface ActivityContentType {
