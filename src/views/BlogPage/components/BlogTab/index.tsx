@@ -32,7 +32,7 @@ export default function BlogTab({
   setSelectedActivity,
 }: BlogTabProps) {
   const [isTagSelected, setIsTagSelected] = useState({
-    recruit: false,
+    recruit: true,
     activity: false,
   });
 
