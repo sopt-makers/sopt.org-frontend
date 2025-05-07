@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 import { colors } from '@sopt-makers/colors';
 import { css } from '@emotion/react';
 import chevronDown from '@src/assets/icons/ic_chevron-down.svg';
+import sort from '@src/assets/icons/ic_sort.svg';
 
 export const SelectTrigger = styled.button<{
   isSelectionExist: boolean;
@@ -53,13 +54,14 @@ export const SelectTrigger = styled.button<{
 
 export const Arrow = styled.div<{
   isOpened: boolean;
+  isSort: boolean;
 }>`
   background-repeat: no-repeat;
   background-position: center;
   transition: 0.2s;
-  width: 10px;
-  height: 18px;
-  background-image: url(${chevronDown});
+  width: ${({ isSort }) => (isSort ? '20px' : '18px')};
+  height: ${({ isSort }) => (isSort ? '20px' : '18px')};
+  background-image: ${({ isSort }) => (isSort ? `url(${sort})` : `url(${chevronDown})`)};
   transform: ${({ isOpened }) => (isOpened ? 'rotate(180deg)' : 'none')};
 `;
 

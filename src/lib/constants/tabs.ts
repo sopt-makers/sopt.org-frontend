@@ -1,4 +1,4 @@
-import { PartCategoryType } from '@src/lib/types/blog';
+import { PartCategoryType, SortType } from '@src/lib/types/blog';
 import { ActivitySelectType } from '@src/lib/types/main';
 import { ExtraTabType, Part, PartExtraType, TabType } from '../types/universal';
 
@@ -88,3 +88,10 @@ export const partCategoryLabel: Record<PartCategoryType, string> = {
   [PartCategoryType.WEB]: '웹',
   [PartCategoryType.SERVER]: '서버',
 };
+
+export const sortLabel: Record<SortType, string> = {
+  [SortType.LATEST]: '최신순',
+  [SortType.LIKE]: '좋아요순',
+};
+
+export const sortValues: SortType[] = [SortType.LATEST, SortType.LIKE];

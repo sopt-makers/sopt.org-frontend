@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { colors } from '@sopt-makers/colors';
 
 export const BlogPostList = styled.div`
   display: flex;
@@ -25,4 +26,12 @@ export const SpinnerWrapper = styled.section`
   justify-content: center;
   align-items: center;
   margin: 50px 0;
+`;
+
+export const Title = styled.h2`
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 42px;
+  letter-spacing: -0.56px;
+  color: ${colors.white};
 `;

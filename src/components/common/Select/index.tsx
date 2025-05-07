@@ -12,6 +12,7 @@ interface SelectProps<T extends LabelKeyType> {
   labels: Record<T, string>;
   breakPoint: string;
   variant?: 'round' | 'square';
+  isSort?: boolean;
 }
 
 export default function Select<T extends LabelKeyType>({
@@ -23,6 +24,7 @@ export default function Select<T extends LabelKeyType>({
   labels,
   breakPoint,
   variant = 'round',
+  isSort = false,
 }: SelectProps<T>) {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -57,7 +59,7 @@ export default function Select<T extends LabelKeyType>({
         >
           {selectedValue === baseValue ? baseLabel : currentSelectedValue}
         </S.SelectTriggerContent>
-        <S.Arrow isOpened={isOpen} />
+        <S.Arrow isOpened={isOpen} isSort={isSort} />
       </S.SelectTrigger>
       {isOpen && (
         <S.SelectItemWrapper

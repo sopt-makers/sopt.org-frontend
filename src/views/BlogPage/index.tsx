@@ -3,9 +3,10 @@ import { Suspense } from 'react';
 import PageLayout from '@src/components/common/PageLayout';
 import useStorage from '@src/hooks/useStorage';
 import { activeGenerationCategoryList } from '@src/lib/constants/tabs';
-import { PartCategoryType } from '@src/lib/types/blog';
+import { PartCategoryType, SortType } from '@src/lib/types/blog';
 import { ActivitySelectType } from '@src/lib/types/main';
 import BlogPostSkeletonUI from '@src/views/BlogPage/components/BlogPostSkeletonUI';
+import OfficialVideo from '@src/views/BlogPage/components/OfficialVideo';
 import BlogPostList from './components/BlogPostList';
 import BlogTab from './components/BlogTab';
 import { BlogTabType } from './components/BlogTab/types';
@@ -32,6 +33,12 @@ export default function BlogPage() {
     ActivitySelectType.ALL,
   );
 
+  const [selectedSort, setSelectedSort] = useStorage(
+    'selectedSort',
+    'sessionStorage',
+    SortType.LATEST,
+  );
+
   const selected = { selectedTab, selectedMajorCategory, selectedSubCategory, selectedActivity };
 
   return (
@@ -49,11 +56,15 @@ export default function BlogPage() {
         setSubCategory={setSubCategory}
         setSelectedActivity={setSelectedActivity}
       />
+      {selectedTab === BlogTabType.ARTICLE && <OfficialVideo />}
       <Suspense fallback={<BlogPostSkeletonUI />}>
         <BlogPostList
           selected={selected}
+          selectedTab={selectedTab}
+          selectedSort={selectedSort}
           setMajorCategory={setMajorCategory}
           setSubCategory={setSubCategory}
+          setSelectedSort={setSelectedSort}
         />
       </Suspense>
     </PageLayout>
