@@ -6,7 +6,6 @@ import { activeGenerationCategoryList } from '@src/lib/constants/tabs';
 import { PartCategoryType, SortType } from '@src/lib/types/blog';
 import { ActivitySelectType } from '@src/lib/types/main';
 import BlogPostSkeletonUI from '@src/views/BlogPage/components/BlogPostSkeletonUI';
-import OfficialVideo from '@src/views/BlogPage/components/OfficialVideo';
 import BlogPostList from './components/BlogPostList';
 import BlogTab from './components/BlogTab';
 import { BlogTabType } from './components/BlogTab/types';
@@ -56,7 +55,6 @@ export default function BlogPage() {
         setSubCategory={setSubCategory}
         setSelectedActivity={setSelectedActivity}
       />
-      {selectedTab === BlogTabType.ARTICLE && <OfficialVideo />}
       <Suspense fallback={<BlogPostSkeletonUI />}>
         <BlogPostList
           selected={selected}

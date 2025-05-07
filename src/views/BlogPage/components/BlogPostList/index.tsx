@@ -5,6 +5,7 @@ import { sortLabel, sortValues } from '@src/lib/constants/tabs';
 import type { PartCategoryType, SortType } from '@src/lib/types/blog';
 import { PageType } from '@src/lib/types/universal';
 import BlogPost from '@src/views/BlogPage/components/BlogPost';
+import OfficialVideo from '@src/views/BlogPage/components/OfficialVideo';
 import { useGetResponse } from '../../hooks/useGetResponse';
 import useInfiniteScroll from '../../hooks/useInfiniteScroll';
 import { BlogTabType, selectedType } from '../BlogTab/types';
@@ -41,6 +42,7 @@ export default function BlogPostList({
   return (
     <S.Wrapper>
       <S.Container>
+        {selectedTab === BlogTabType.ARTICLE && <OfficialVideo />}
         {response?.length == 0 ? (
           <EmptyBlogPostList
             selectedTab={selectedTab}
