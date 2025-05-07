@@ -40,11 +40,23 @@ export enum PartCategoryType {
 
 export type BlogResponse = {
   hasNextPage: boolean;
+  hasPrevPage: boolean;
   response: BlogPostType[];
   currentPage: number;
+  totalPages: number;
+  totalCount: number;
 };
 
 export enum SortType {
   LATEST = 'latest',
   LIKE = 'like',
+}
+
+export enum BlogCategoryType {
+  DOCUMENT_INTERVIEW = '서류/면접',
+  ALL_ACTIVITIES = '전체 활동',
+}
+
+export enum ActivityType {
+  ALL = '전체',
 }
