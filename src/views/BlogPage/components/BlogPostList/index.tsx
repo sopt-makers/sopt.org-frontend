@@ -39,43 +39,45 @@ export default function BlogPostList({
   const { ref } = useInfiniteScroll(fetchNextPage);
 
   return (
-    <>
-      {response?.length == 0 ? (
-        <EmptyBlogPostList
-          selectedTab={selectedTab}
-          setMajorCategory={setMajorCategory}
-          setSubCategory={setSubCategory}
-        />
-      ) : (
-        <>
-          {selectedTab === BlogTabType.ARTICLE && (
-            <>
-              <S.Title>✍️ SOPT 회원들의 이야기를 확인해보세요</S.Title>
-              <Select
-                options={sortValues}
-                baseValue={sortValues[0]}
-                baseLabel={sortLabel[sortValues[0]]}
-                selectedValue={selectedSort}
-                setSelectedValue={setSelectedSort}
-                labels={sortLabel}
-                breakPoint={pageBreakPoint[PageType.PROJECT]}
-                variant="square"
-                isSort
-              />
-            </>
-          )}
-          <S.BlogPostList>
-            {response?.map((blogPost) => (
-              <BlogPost key={blogPost.title} blogPost={blogPost} selectedTab={selectedTab} />
-            ))}
-          </S.BlogPostList>
-          {hasNextPage && (
-            <S.SpinnerWrapper ref={hasNextPage ? ref : undefined}>
-              <OvalSpinner />
-            </S.SpinnerWrapper>
-          )}
-        </>
-      )}
-    </>
+    <S.Wrapper>
+      <S.Container>
+        {response?.length == 0 ? (
+          <EmptyBlogPostList
+            selectedTab={selectedTab}
+            setMajorCategory={setMajorCategory}
+            setSubCategory={setSubCategory}
+          />
+        ) : (
+          <>
+            {selectedTab === BlogTabType.ARTICLE && (
+              <S.Layout>
+                <S.Title>✍️ SOPT 회원들의 이야기를 확인해보세요</S.Title>
+                <Select
+                  options={sortValues}
+                  baseValue={sortValues[0]}
+                  baseLabel={sortLabel[sortValues[0]]}
+                  selectedValue={selectedSort}
+                  setSelectedValue={setSelectedSort}
+                  labels={sortLabel}
+                  breakPoint={pageBreakPoint[PageType.PROJECT]}
+                  variant="square"
+                  isSort
+                />
+              </S.Layout>
+            )}
+            <S.BlogPostList>
+              {response?.map((blogPost) => (
+                <BlogPost key={blogPost.title} blogPost={blogPost} selectedTab={selectedTab} />
+              ))}
+            </S.BlogPostList>
+            {hasNextPage && (
+              <S.SpinnerWrapper ref={hasNextPage ? ref : undefined}>
+                <OvalSpinner />
+              </S.SpinnerWrapper>
+            )}
+          </>
+        )}
+      </S.Container>
+    </S.Wrapper>
   );
 }
