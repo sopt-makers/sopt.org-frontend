@@ -1,27 +1,30 @@
 import styled from '@emotion/styled';
 import { colors } from '@sopt-makers/colors';
-import { useState } from 'react';
 import { ReactComponent as IcPaginationLeft } from '@src/assets/icons/ic_pagination_left.svg';
 import { ReactComponent as IcPaginationRight } from '@src/assets/icons/ic_pagination_right.svg';
 
 const BACKWARD_PAGE_BUTTON_COUNT = 2;
 const ADDITIONAL_PAGE_BUTTON_COUNT = 4;
-const INIT_PAGE = 1;
 
 interface PaginationProps {
   currentPage: number;
-  totalPages: number;
+  totalPage: number;
   hasPrevPage: boolean;
   hasNextPage: boolean;
+  onPageChange: (page: number) => void;
 }
 
-const Pagination = ({ currentPage, totalPages, hasPrevPage, hasNextPage }: PaginationProps) => {
-  const [, setCurrentPage] = useState(INIT_PAGE);
-
+const Pagination = ({
+  currentPage,
+  totalPage,
+  hasPrevPage,
+  hasNextPage,
+  onPageChange,
+}: PaginationProps) => {
   const renderPaginationButtons = () => {
     const pageButtons = [];
     let startPage = Math.max(1, currentPage - BACKWARD_PAGE_BUTTON_COUNT);
-    let endPage = Math.min(totalPages, startPage + ADDITIONAL_PAGE_BUTTON_COUNT);
+    let endPage = Math.min(totalPage, startPage + ADDITIONAL_PAGE_BUTTON_COUNT);
 
     if (endPage - startPage < ADDITIONAL_PAGE_BUTTON_COUNT) {
       startPage = Math.max(1, endPage - ADDITIONAL_PAGE_BUTTON_COUNT);
@@ -37,7 +40,7 @@ const Pagination = ({ currentPage, totalPages, hasPrevPage, hasNextPage }: Pagin
   };
 
   const handlePageChange = (page: number) => {
-    setCurrentPage(page);
+    onPageChange(page);
   };
 
   return (
@@ -65,10 +68,10 @@ export default Pagination;
 
 const StPagination = styled.div`
   display: flex;
-  margin-top: 2rem;
+  margin: 20px 0 72px 0;
   justify-content: center;
   align-items: center;
-  gap: 1.2rem;
+  gap: 12px;
 
   svg {
     path {
@@ -77,11 +80,11 @@ const StPagination = styled.div`
   }
 
   button:first-of-type {
-    margin-right: 1.2rem;
+    margin-right: 12px;
   }
 
   button:last-of-type {
-    margin-left: 1.2rem;
+    margin-left: 12px;
   }
 
   button:disabled {
@@ -105,18 +108,18 @@ const StPagination = styled.div`
 
 const StPageButton = styled.button<{ active: boolean }>`
   display: flex;
-  width: 4rem;
-  height: 4rem;
-  padding: 1.1rem 0.8rem;
+  width: 40px;
+  height: 40px;
+  padding: 11px 8px;
   justify-content: center;
   align-items: center;
-  border-radius: 2rem;
+  border-radius: 20px;
   background-color: ${({ active }) => active && colors.gray10};
   color: ${({ active }) => (active ? colors.gray950 : colors.gray200)};
   font-size: 18px;
   font-weight: 700;
   line-height: 28px;
-  letter-spacing: -0.09px;
+  cursor: pointer;
 
   &:hover {
     color: ${colors.white};
