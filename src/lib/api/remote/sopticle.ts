@@ -1,5 +1,5 @@
 import { BASE_URL, DEFAULT_TIMEOUT } from '@src/lib/constants/client';
-import { BlogPostType, BlogResponse, PartCategoryType } from '@src/lib/types/blog';
+import { BlogPostType, BlogResponse, SortType } from '@src/lib/types/blog';
 import { PostSopticleLikeResponse, SopticleAPI } from '@src/lib/types/sopticle';
 import { getStorageHandler } from '@src/lib/utils/storageHandler';
 import axios from 'axios';
@@ -12,27 +12,33 @@ const client = axios.create({
 });
 
 export const getResponse = async (
-  majorTab: number,
-  subTab: PartCategoryType,
+  sort: SortType,
   pageNo: number | unknown = 1,
+  limit: number = 10,
 ): Promise<BlogResponse> => {
-  const generationParameter = majorTab === 0 ? {} : { generation: majorTab };
-  const partParameter = subTab === PartCategoryType.ALL ? {} : { part: subTab };
-  const pageParameter = { pageNo, limit: 6 };
+  const sortParameter = { sort };
+  const pageParameter = { pageNo };
+  const limitParameter = { limit };
   const sessionStorageHandler = getStorageHandler('sessionStorage');
   const sessionId = sessionStorageHandler.getItemOrGenerate('session-id', nanoid);
-  const parameter = qs.stringify({ ...partParameter, ...pageParameter, ...generationParameter });
+  const parameter = qs.stringify({ ...sortParameter, ...pageParameter, ...limitParameter });
 
   const { data } = await client.get<{
     hasNextPage: boolean;
     data: BlogPostType[];
     currentPage: number;
-  }>(`/sopticle?${parameter}`, { headers: { 'session-id': sessionId } });
+    hasPrevPage: boolean;
+    totalPages: number;
+    totalCount: number;
+  }>(`/soptstory?${parameter}`, { headers: { 'session-id': sessionId } });
 
   return {
     hasNextPage: data.hasNextPage,
     response: data.data,
     currentPage: data.currentPage,
+    hasPrevPage: data.hasPrevPage,
+    totalPages: data.totalPages,
+    totalCount: data.totalCount,
   };
 };
 
@@ -44,7 +50,7 @@ const postSopticleLike = async (
   const sessionId = sessionStorageHandler.getItemOrGenerate('session-id', nanoid);
   const headers = { 'session-id': sessionId };
   const response = await client.post(
-    `sopticle/${sopticleId}/${prevLike ? 'unlike' : 'like'}`,
+    `soptstory/${sopticleId}/${prevLike ? 'unlike' : 'like'}`,
     {},
     { headers },
   );
