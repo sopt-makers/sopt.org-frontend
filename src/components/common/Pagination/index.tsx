@@ -24,7 +24,7 @@ const Pagination = ({
   const renderPaginationButtons = () => {
     const pageButtons = [];
     let startPage = Math.max(1, currentPage - BACKWARD_PAGE_BUTTON_COUNT);
-    let endPage = Math.min(totalPage, startPage + ADDITIONAL_PAGE_BUTTON_COUNT);
+    const endPage = Math.min(totalPage, startPage + ADDITIONAL_PAGE_BUTTON_COUNT);
 
     if (endPage - startPage < ADDITIONAL_PAGE_BUTTON_COUNT) {
       startPage = Math.max(1, endPage - ADDITIONAL_PAGE_BUTTON_COUNT);

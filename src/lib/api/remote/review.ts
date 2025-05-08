@@ -1,10 +1,6 @@
 import { BASE_URL, DEFAULT_TIMEOUT } from '@src/lib/constants/client';
-import {
-  ActivityType,
-  BlogCategoryType,
-  BlogResponse,
-  PartCategoryType,
-} from '@src/lib/types/blog';
+import { BlogCategoryType, BlogResponse, PartCategoryType } from '@src/lib/types/blog';
+import { ActivitySelectType } from '@src/lib/types/main';
 import { ReviewAPI } from '@src/lib/types/review';
 import axios from 'axios';
 import qs from 'qs';
@@ -16,11 +12,11 @@ const client = axios.create({
 
 export const getResponse = async (
   category: BlogCategoryType,
-  activity: ActivityType | null,
+  activity: ActivitySelectType | null,
   generation: number | null,
   part: PartCategoryType | null,
-  pageNo: number = 1,
-  limit: number = 10,
+  pageNo = 1,
+  limit = 10,
 ): Promise<BlogResponse> => {
   const parameters = {
     category,

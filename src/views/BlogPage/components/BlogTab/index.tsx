@@ -1,5 +1,4 @@
 import { track } from '@amplitude/analytics-browser';
-import { useState } from 'react';
 import Select from '@src/components/common/Select';
 import { pageBreakPoint } from '@src/lib/constants/project';
 import {
@@ -14,10 +13,11 @@ import { PartCategoryType } from '@src/lib/types/blog';
 import { ActivitySelectType } from '@src/lib/types/main';
 import { PageType } from '@src/lib/types/universal';
 import * as S from './style';
-import { BlogTabMap, BlogTabType, selectedType } from './types';
+import { BlogTabMap, BlogTabType, SelectedType } from './types';
 
 interface BlogTabProps {
-  selected: selectedType;
+  selected: SelectedType;
+  setSelected: (newValue: SelectedType) => void;
   setSelectedTab: (newValue: BlogTabType) => void;
   setMajorCategory: (newValue: number) => void;
   setSubCategory: (newValue: PartCategoryType) => void;
@@ -26,17 +26,22 @@ interface BlogTabProps {
 
 export default function BlogTab({
   selected,
+  setSelected,
   setSelectedTab,
   setMajorCategory,
   setSubCategory,
   setSelectedActivity,
 }: BlogTabProps) {
-  const [isTagSelected, setIsTagSelected] = useState({
-    recruit: true,
-    activity: false,
-  });
-
   const { selectedTab, selectedMajorCategory, selectedSubCategory, selectedActivity } = selected;
+
+  const handleTagClick = (tag: SelectedType['tag']) => {
+    if (selected.tag === tag) return;
+
+    setSelected({
+      ...selected,
+      tag,
+    });
+  };
 
   const blogTabList: BlogTabMap = {
     review: 'SOPT 후기',
@@ -67,28 +72,18 @@ export default function BlogTab({
             <>
               <S.TagContainer>
                 <S.Tag
-                  isSelected={isTagSelected.recruit}
-                  onClick={() => {
-                    setIsTagSelected({
-                      ...isTagSelected,
-                      recruit: !isTagSelected.recruit,
-                    });
-                  }}
+                  isSelected={selected.tag === 'recruit'}
+                  onClick={() => handleTagClick('recruit')}
                 >
                   서류/면접 후기
                 </S.Tag>
                 <S.Tag
-                  isSelected={isTagSelected.activity}
-                  onClick={() => {
-                    setIsTagSelected({
-                      ...isTagSelected,
-                      activity: !isTagSelected.activity,
-                    });
-                  }}
+                  isSelected={selected.tag === 'activity'}
+                  onClick={() => handleTagClick('activity')}
                 >
                   활동 후기
                 </S.Tag>
-                {isTagSelected.activity && (
+                {selected.tag === 'activity' && (
                   <Select
                     options={activities}
                     labels={activitySelectLabel}

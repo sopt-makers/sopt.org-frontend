@@ -56,7 +56,3 @@ export enum BlogCategoryType {
   DOCUMENT_INTERVIEW = '서류/면접',
   ALL_ACTIVITIES = '전체 활동',
 }
-
-export enum ActivityType {
-  ALL = '전체',
-}

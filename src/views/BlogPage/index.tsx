@@ -8,37 +8,34 @@ import { ActivitySelectType } from '@src/lib/types/main';
 import BlogPostSkeletonUI from '@src/views/BlogPage/components/BlogPostSkeletonUI';
 import BlogPostList from './components/BlogPostList';
 import BlogTab from './components/BlogTab';
-import { BlogTabType } from './components/BlogTab/types';
+import { BlogTabType, SelectedType } from './components/BlogTab/types';
+
+const initialState: SelectedType = {
+  selectedTab: BlogTabType.REVIEW,
+  selectedMajorCategory: activeGenerationCategoryList[0],
+  selectedSubCategory: PartCategoryType.ALL,
+  selectedActivity: ActivitySelectType.ALL,
+  tag: 'recruit',
+};
 
 export default function BlogPage() {
-  const [selectedTab, setSelectedTab] = useStorage(
-    'selectedTab',
+  const [selected, setSelected] = useStorage<SelectedType>(
+    'selected',
     'sessionStorage',
-    BlogTabType.REVIEW,
+    initialState,
   );
-  const [selectedMajorCategory, setMajorCategory] = useStorage(
-    'selectedMajorCategory',
-    'sessionStorage',
-    activeGenerationCategoryList[0],
-  );
-  const [selectedSubCategory, setSubCategory] = useStorage(
-    'selectedSubCategory',
-    'sessionStorage',
-    PartCategoryType.ALL,
-  );
-  const [selectedActivity, setSelectedActivity] = useStorage(
-    'selectedActivity',
-    'sessionStorage',
-    ActivitySelectType.ALL,
-  );
-
   const [selectedSort, setSelectedSort] = useStorage(
     'selectedSort',
     'sessionStorage',
     SortType.LATEST,
   );
 
-  const selected = { selectedTab, selectedMajorCategory, selectedSubCategory, selectedActivity };
+  const updateSelected = <K extends keyof SelectedType>(key: K, value: SelectedType[K]) => {
+    setSelected({
+      ...selected,
+      [key]: value,
+    });
+  };
 
   return (
     <PageLayout
@@ -50,18 +47,19 @@ export default function BlogPage() {
     >
       <BlogTab
         selected={selected}
-        setSelectedTab={setSelectedTab}
-        setMajorCategory={setMajorCategory}
-        setSubCategory={setSubCategory}
-        setSelectedActivity={setSelectedActivity}
+        setSelected={setSelected}
+        setSelectedTab={(value) => updateSelected('selectedTab', value)}
+        setMajorCategory={(value) => updateSelected('selectedMajorCategory', value)}
+        setSubCategory={(value) => updateSelected('selectedSubCategory', value)}
+        setSelectedActivity={(value) => updateSelected('selectedActivity', value)}
       />
       <Suspense fallback={<BlogPostSkeletonUI />}>
         <BlogPostList
           selected={selected}
-          selectedTab={selectedTab}
+          selectedTab={selected.selectedTab}
           selectedSort={selectedSort}
-          setMajorCategory={setMajorCategory}
-          setSubCategory={setSubCategory}
+          setMajorCategory={(value) => updateSelected('selectedMajorCategory', value)}
+          setSubCategory={(value) => updateSelected('selectedSubCategory', value)}
           setSelectedSort={setSelectedSort}
         />
       </Suspense>

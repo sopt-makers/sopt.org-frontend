@@ -10,11 +10,11 @@ import BlogPost from '@src/views/BlogPage/components/BlogPost';
 import EmptyBlogPostList from '@src/views/BlogPage/components/EmptyBlogPostList';
 import OfficialVideo from '@src/views/BlogPage/components/OfficialVideo';
 import { useGetResponse } from '../../hooks/useGetResponse';
-import { BlogTabType, selectedType } from '../BlogTab/types';
+import { BlogTabType, SelectedType } from '../BlogTab/types';
 import * as S from './style';
 
 interface BlogPostListProps {
-  selected: selectedType;
+  selected: SelectedType;
   selectedTab: BlogTabType;
   selectedSort: SortType;
   setMajorCategory: (newValue: number) => void;
@@ -41,6 +41,7 @@ export default function BlogPostList({
     selectedSubCategory,
     selectedSort,
     currentPage,
+    selected,
   );
 
   return (

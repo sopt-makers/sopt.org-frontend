@@ -13,8 +13,8 @@ const client = axios.create({
 
 export const getResponse = async (
   sort: SortType,
-  pageNo: number = 1,
-  limit: number = 10,
+  pageNo = 1,
+  limit = 10,
 ): Promise<BlogResponse> => {
   const sortParameter = { sort };
   const pageParameter = { pageNo };
