@@ -48,7 +48,7 @@ export const Body = styled.div`
   }
 `;
 
-export const Title = styled.div`
+export const Title = styled.h1`
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
@@ -71,7 +71,7 @@ export const Title = styled.div`
   }
 `;
 
-export const Description = styled.div<{ descriptionLine: number }>`
+export const Description = styled.p<{ descriptionLine: number }>`
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: ${({ descriptionLine }) => descriptionLine};

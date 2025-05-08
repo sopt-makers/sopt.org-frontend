@@ -1,5 +1,8 @@
+import { track } from '@amplitude/analytics-browser';
 import videoImg from '@src/assets/images/img_video.png';
 import * as S from './style';
+
+const VIDEO_URL = 'https://www.youtube.com/watch?v=f4-QwhPIlLI';
 
 const VIDEO_INFO = {
   title: "35기 AND SOPT 데모데이: \n'Connecting Dots'",
@@ -9,7 +12,12 @@ const VIDEO_INFO = {
 
 const OfficialVideo = () => {
   return (
-    <S.Wrapper>
+    <S.Wrapper
+      onClick={() => {
+        track('click_sopt_official_video');
+        window.open(VIDEO_URL, '_target');
+      }}
+    >
       <S.Title>🎥 공식 영상을 통해 SOPT를 만나보세요</S.Title>
       <S.VideoWrapper>
         <S.Video src={videoImg.src} alt="공식 영상" />
