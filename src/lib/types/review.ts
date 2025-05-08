@@ -15,4 +15,5 @@ export interface ReviewAPI {
     pageNo?: number,
     limit?: number,
   ): Promise<BlogResponse>;
+  getSampleReviews(): Promise<GetSampleReviewsResponse>;
 }

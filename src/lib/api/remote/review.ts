@@ -1,7 +1,7 @@
 import { BASE_URL, DEFAULT_TIMEOUT } from '@src/lib/constants/client';
 import { BlogCategoryType, BlogResponse, PartCategoryType } from '@src/lib/types/blog';
 import { ActivitySelectType } from '@src/lib/types/main';
-import { ReviewAPI } from '@src/lib/types/review';
+import { GetSampleReviewsResponse, ReviewAPI } from '@src/lib/types/review';
 import axios from 'axios';
 import qs from 'qs';
 
@@ -40,6 +40,13 @@ export const getResponse = async (
   };
 };
 
+export const getSampleReviews = async (): Promise<GetSampleReviewsResponse> => {
+  const { data } = await client.get('/reviews/random');
+
+  return data;
+};
+
 export const remoteReviewAPI: ReviewAPI = {
   getResponse,
+  getSampleReviews,
 };
