@@ -23,12 +23,37 @@ export default function BlogPost({ selectedTab, blogPost }: BlogPostProps) {
     setError(true);
   };
 
+  const getThumbnailUrl = () => {
+    if (!blogPost.thumbnailUrl) {
+      return img_blog_default;
+    }
+
+    try {
+      if (
+        blogPost.thumbnailUrl.startsWith('http://') ||
+        blogPost.thumbnailUrl.startsWith('https://')
+      ) {
+        return blogPost.thumbnailUrl;
+      }
+      if (blogPost.thumbnailUrl.startsWith('//')) {
+        return `https:${blogPost.thumbnailUrl}`;
+      }
+
+      return `https://${blogPost.thumbnailUrl}`;
+    } catch (e) {
+      console.error('URL Processing Error', blogPost.thumbnailUrl, e);
+      return img_blog_default;
+    }
+  };
+
   useEffect(() => {
     if (titleRef.current) {
       const titleHeight = titleRef.current.clientHeight;
       setDescriptionLine(titleHeight >= TWO_LINE_TITLE_HEIGHT ? 1 : 2);
     }
   }, []);
+
+  const thumbnailUrl = getThumbnailUrl();
 
   return (
     <S.BlogPost
@@ -50,13 +75,7 @@ export default function BlogPost({ selectedTab, blogPost }: BlogPostProps) {
       </div>
       <S.ThumbnailWrapper>
         <S.Thumbnail
-          src={
-            blogPost.thumbnailUrl?.charAt(0) !== 'h'
-              ? `https:${blogPost.thumbnailUrl}`
-              : error
-              ? img_blog_default
-              : blogPost.thumbnailUrl
-          }
+          src={error ? img_blog_default : thumbnailUrl}
           alt="게시물 썸네일"
           width={239}
           height={160}
