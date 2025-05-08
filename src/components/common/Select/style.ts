@@ -1,8 +1,7 @@
 import styled from '@emotion/styled';
 import { colors } from '@sopt-makers/colors';
 import { css } from '@emotion/react';
-import chevronDown from '@src/assets/icons/ic_chevron-down.svg';
-import sort from '@src/assets/icons/ic_sort.svg';
+import { SVGProps } from 'react';
 
 export const SelectTrigger = styled.button<{
   isSelectionExist: boolean;
@@ -10,7 +9,6 @@ export const SelectTrigger = styled.button<{
   isWide: boolean;
   breakPoint: string;
   variant: 'round' | 'square';
-  isSort: boolean;
 }>`
   display: flex;
   flex-direction: row;
@@ -41,12 +39,6 @@ export const SelectTrigger = styled.button<{
           background-color: ${colors.gray800};
         `}
 
-  ${({ isSort }) =>
-    isSort &&
-    css`
-      min-width: 160px;
-    `}
-
   @media (max-width: ${({ breakPoint }) => breakPoint}) {
     min-width: 76px;
     padding: 8px 12px;
@@ -59,14 +51,14 @@ export const SelectTrigger = styled.button<{
 
 export const Arrow = styled.div<{
   isOpened: boolean;
-  isSort: boolean;
+  icon: SVGProps<SVGSVGElement>;
 }>`
   background-repeat: no-repeat;
   background-position: center;
   transition: 0.2s;
-  width: ${({ isSort }) => (isSort ? '20px' : '18px')};
-  height: ${({ isSort }) => (isSort ? '20px' : '18px')};
-  background-image: ${({ isSort }) => (isSort ? `url(${sort})` : `url(${chevronDown})`)};
+  width: 18px;
+  height: 18px;
+  background-image: ${({ icon }) => `url(${icon})`};
   transform: ${({ isOpened }) => (isOpened ? 'rotate(180deg)' : 'none')};
 `;
 
@@ -109,7 +101,6 @@ export const SelectItemWrapper = styled.div<{
   isWide: boolean;
   breakPoint: string;
   variant: 'round' | 'square';
-  isSort: boolean;
 }>`
   display: flex;
   flex-direction: column;
@@ -161,12 +152,6 @@ export const SelectItemWrapper = styled.div<{
           }
         }
       }
-    `}
-
-  ${({ isSort }) =>
-    isSort &&
-    css`
-      min-width: 160px;
     `}
 
   @media (max-width: ${({ breakPoint }) => breakPoint}) {

@@ -1,3 +1,4 @@
+import IcSort from '@src/assets/icons/ic_sort.svg';
 import Pagination from '@src/components/common/Pagination';
 import Select from '@src/components/common/Select';
 import { pageBreakPoint } from '@src/lib/constants/project';
@@ -39,7 +40,7 @@ export default function BlogPostList({
       <S.Wrapper>
         <S.Container>
           {selectedTab === BlogTabType.ARTICLE && <OfficialVideo />}
-          {response?.response.length === 0 ? (
+          {response?.response.length == 0 ? (
             <EmptyBlogPostList
               selectedTab={selectedTab}
               setMajorCategory={setMajorCategory}
@@ -59,7 +60,8 @@ export default function BlogPostList({
                     labels={sortLabel}
                     breakPoint={pageBreakPoint[PageType.PROJECT]}
                     variant="square"
-                    isSort
+                    icon={IcSort}
+                    style={{ minWidth: '160px' }}
                   />
                 </S.Layout>
               )}
@@ -72,6 +74,7 @@ export default function BlogPostList({
           )}
         </S.Container>
       </S.Wrapper>
+
       <Pagination
         currentPage={response?.currentPage ?? 1}
         totalPages={response?.totalPages ?? 1}
