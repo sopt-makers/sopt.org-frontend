@@ -6,6 +6,7 @@ import {
   BlogCategoryType,
   BlogResponse,
   PartCategoryType,
+  SortType,
 } from '@src/lib/types/blog';
 import { BlogTabType } from '../components/BlogTab/types';
 
@@ -13,29 +14,32 @@ const getTabResponse = (
   selectedTab: BlogTabType,
   generation: number,
   part: PartCategoryType,
-  count: number,
+  page: number,
+  sort: SortType,
 ): Promise<BlogResponse> => {
-  return selectedTab === 'review'
+  return selectedTab === BlogTabType.REVIEW
     ? getReviewResponse(
         BlogCategoryType.DOCUMENT_INTERVIEW,
         ActivityType.ALL,
         generation,
         part,
-        count,
+        page,
       )
-    : getArticleResponse(generation, part, count);
+    : getArticleResponse(sort, page);
 };
 
 export const useGetResponse = (
   selectedTab: BlogTabType,
   generation: number,
   part: PartCategoryType,
+  sort: SortType,
+  page: number = 1,
 ) => {
-  const queryKey = [selectedTab, generation, part];
+  const queryKey = [selectedTab, generation, part, sort, page];
 
   const { data, isFetching } = useQuery<BlogResponse>({
     queryKey,
-    queryFn: () => getTabResponse(selectedTab, generation, part, 1),
+    queryFn: () => getTabResponse(selectedTab, generation, part, page, sort),
   });
 
   return {

@@ -5,6 +5,7 @@ import {
   BlogResponse,
   PartCategoryType,
 } from '@src/lib/types/blog';
+import { ReviewAPI } from '@src/lib/types/review';
 import axios from 'axios';
 import qs from 'qs';
 
@@ -41,4 +42,8 @@ export const getResponse = async (
     totalPages: data.totalPages,
     totalCount: data.totalCount,
   };
+};
+
+export const remoteReviewAPI: ReviewAPI = {
+  getResponse,
 };

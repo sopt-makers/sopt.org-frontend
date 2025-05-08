@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import IcSort from '@src/assets/icons/ic_sort.svg';
 import Pagination from '@src/components/common/Pagination';
 import Select from '@src/components/common/Select';
@@ -21,6 +22,8 @@ interface BlogPostListProps {
   setSelectedSort: (newValue: SortType) => void;
 }
 
+const INIT_PAGE = 1;
+
 export default function BlogPostList({
   selected,
   selectedTab,
@@ -30,17 +33,22 @@ export default function BlogPostList({
   setSelectedSort,
 }: BlogPostListProps) {
   const { selectedMajorCategory, selectedSubCategory } = selected;
+  const [currentPage, setCurrentPage] = useState(INIT_PAGE);
 
-  const { response } = useGetResponse(selectedTab, selectedMajorCategory, selectedSubCategory);
-
-  console.log(response);
+  const { response } = useGetResponse(
+    selectedTab,
+    selectedMajorCategory,
+    selectedSubCategory,
+    selectedSort,
+    currentPage,
+  );
 
   return (
     <>
       <S.Wrapper>
         <S.Container>
           {selectedTab === BlogTabType.ARTICLE && <OfficialVideo />}
-          {response?.response.length == 0 ? (
+          {response?.response.length === 0 ? (
             <EmptyBlogPostList
               selectedTab={selectedTab}
               setMajorCategory={setMajorCategory}
@@ -67,7 +75,7 @@ export default function BlogPostList({
               )}
               <S.BlogPostList>
                 {response?.response.map((blogPost) => (
-                  <BlogPost key={blogPost.title} blogPost={blogPost} selectedTab={selectedTab} />
+                  <BlogPost key={blogPost.id} blogPost={blogPost} selectedTab={selectedTab} />
                 ))}
               </S.BlogPostList>
             </>
@@ -80,6 +88,7 @@ export default function BlogPostList({
         totalPages={response?.totalPages ?? 1}
         hasPrevPage={response?.hasPrevPage ?? false}
         hasNextPage={response?.hasNextPage ?? false}
+        onPageChange={setCurrentPage}
       />
     </>
   );

@@ -1,4 +1,4 @@
-import { PartCategoryType } from '@src/lib/types/blog';
+import { ActivityType, BlogCategoryType, PartCategoryType } from '@src/lib/types/blog';
 import { BlogPostType, BlogResponse } from './blog';
 
 export type GetSampleReviewsResponse = {
@@ -6,6 +6,12 @@ export type GetSampleReviewsResponse = {
 };
 
 export interface ReviewAPI {
-  getResponse(majorTab: number, subTab: PartCategoryType, page: number): Promise<BlogResponse>;
-  getSampleReviews(): Promise<GetSampleReviewsResponse>;
+  getResponse(
+    category: BlogCategoryType,
+    activity: ActivityType | null,
+    generation: number | null,
+    part: PartCategoryType | null,
+    pageNo?: number,
+    limit?: number,
+  ): Promise<BlogResponse>;
 }
