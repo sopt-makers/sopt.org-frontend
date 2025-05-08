@@ -1,19 +1,21 @@
-import { useCallback, useRef, useState } from 'react';
+import { ComponentPropsWithoutRef, SVGProps, useCallback, useRef, useState } from 'react';
+import IcChevronDown from '@src/assets/icons/ic_chevron-down.svg';
 import useOutsideClickListener from '@src/hooks/useOutsideClickListener';
 import { LabelKeyType } from '@src/lib/types/universal';
 import * as S from './style';
 
-interface SelectProps<T extends LabelKeyType> {
-  options: T[];
-  baseValue: T;
-  baseLabel: string;
-  selectedValue: T;
-  setSelectedValue: (newValue: T) => void;
-  labels: Record<T, string>;
-  breakPoint: string;
-  variant?: 'round' | 'square';
-  isSort?: boolean;
-}
+type SelectProps<T extends LabelKeyType> = ComponentPropsWithoutRef<'div'> &
+  ComponentPropsWithoutRef<'button'> & {
+    options: T[];
+    baseValue: T;
+    baseLabel: string;
+    selectedValue: T;
+    setSelectedValue: (newValue: T) => void;
+    labels: Record<T, string>;
+    breakPoint: string;
+    variant?: 'round' | 'square';
+    icon?: SVGProps<SVGSVGElement>;
+  };
 
 export default function Select<T extends LabelKeyType>({
   options,
@@ -24,7 +26,8 @@ export default function Select<T extends LabelKeyType>({
   labels,
   breakPoint,
   variant = 'round',
-  isSort = false,
+  icon = IcChevronDown,
+  ...props
 }: SelectProps<T>) {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -52,7 +55,7 @@ export default function Select<T extends LabelKeyType>({
         isWide={currentSelectedValue.length >= 5}
         breakPoint={breakPoint}
         variant={variant}
-        isSort={isSort}
+        {...props}
       >
         <S.SelectTriggerContent
           isSelectionExist={selectedValue !== baseValue}
@@ -60,7 +63,7 @@ export default function Select<T extends LabelKeyType>({
         >
           {selectedValue === baseValue ? baseLabel : currentSelectedValue}
         </S.SelectTriggerContent>
-        <S.Arrow isOpened={isOpen} isSort={isSort} />
+        <S.Arrow isOpened={isOpen} icon={icon} />
       </S.SelectTrigger>
       {isOpen && (
         <S.SelectItemWrapper
@@ -68,7 +71,7 @@ export default function Select<T extends LabelKeyType>({
           isWide={currentSelectedValue.length >= 5}
           variant={variant}
           breakPoint={breakPoint}
-          isSort={isSort}
+          {...props}
         >
           {options.map((option, index) => (
             <S.SelectItem
