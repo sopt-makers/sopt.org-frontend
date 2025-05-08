@@ -40,7 +40,7 @@ export const getResponse = async (
   };
 };
 
-export const getSampleReviews = async (): Promise<GetSampleReviewsResponse> => {
+const getSampleReviews = async (): Promise<GetSampleReviewsResponse> => {
   const { data } = await client.get('/reviews/random');
 
   return data;
