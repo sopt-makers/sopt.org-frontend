@@ -39,7 +39,7 @@ export const getResponse = async (
     hasPrevPage: data.hasPrevPage,
     response: data.data,
     currentPage: data.currentPage,
-    totalPages: data.totalPages,
+    totalPage: data.totalPage,
     totalCount: data.totalCount,
   };
 };

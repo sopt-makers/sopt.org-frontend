@@ -43,7 +43,7 @@ export type BlogResponse = {
   hasPrevPage: boolean;
   response: BlogPostType[];
   currentPage: number;
-  totalPages: number;
+  totalPage: number;
   totalCount: number;
 };
 

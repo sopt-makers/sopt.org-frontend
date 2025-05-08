@@ -84,8 +84,8 @@ export default function BlogPostList({
       </S.Wrapper>
 
       <Pagination
-        currentPage={response?.currentPage ?? 1}
-        totalPages={response?.totalPages ?? 1}
+        currentPage={response?.currentPage ?? INIT_PAGE}
+        totalPage={response?.totalPage ?? INIT_PAGE}
         hasPrevPage={response?.hasPrevPage ?? false}
         hasNextPage={response?.hasNextPage ?? false}
         onPageChange={setCurrentPage}

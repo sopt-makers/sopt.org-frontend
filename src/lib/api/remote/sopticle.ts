@@ -13,7 +13,7 @@ const client = axios.create({
 
 export const getResponse = async (
   sort: SortType,
-  pageNo: number | unknown = 1,
+  pageNo: number = 1,
   limit: number = 10,
 ): Promise<BlogResponse> => {
   const sortParameter = { sort };
@@ -28,7 +28,7 @@ export const getResponse = async (
     data: BlogPostType[];
     currentPage: number;
     hasPrevPage: boolean;
-    totalPages: number;
+    totalPage: number;
     totalCount: number;
   }>(`/soptstory?${parameter}`, { headers: { 'session-id': sessionId } });
 
@@ -37,7 +37,7 @@ export const getResponse = async (
     response: data.data,
     currentPage: data.currentPage,
     hasPrevPage: data.hasPrevPage,
-    totalPages: data.totalPages,
+    totalPage: data.totalPage,
     totalCount: data.totalCount,
   };
 };
