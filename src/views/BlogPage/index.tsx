@@ -29,11 +29,6 @@ export default function BlogPage() {
     'sessionStorage',
     SortType.LATEST,
   );
-  const [selectedActivity, setSelectedActivity] = useStorage(
-    'selectedActivity',
-    'sessionStorage',
-    ActivitySelectType.ALL,
-  );
 
   const updateSelected = <K extends keyof SelectedType>(key: K, value: SelectedType[K]) => {
     setSelected({
