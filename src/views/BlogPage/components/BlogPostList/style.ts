@@ -1,4 +1,33 @@
 import styled from '@emotion/styled';
+import { colors } from '@sopt-makers/colors';
+
+export const Wrapper = styled.section`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const Container = styled.main`
+  width: 900px;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 48px;
+
+  /* 태블릿, 모바일 뷰 */
+  @media (max-width: 58.6875rem) {
+    margin-left: 20px;
+    margin-right: 20px;
+    width: 100%;
+  }
+`;
+
+export const Layout = styled.section`
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+`;
 
 export const BlogPostList = styled.div`
   display: flex;
@@ -25,4 +54,12 @@ export const SpinnerWrapper = styled.section`
   justify-content: center;
   align-items: center;
   margin: 50px 0;
+`;
+
+export const Title = styled.h2`
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 42px;
+  letter-spacing: -0.56px;
+  color: ${colors.white};
 `;

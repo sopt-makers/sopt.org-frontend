@@ -21,6 +21,16 @@ export enum ActivityType {
   EVENTS = 'EVENTS',
 }
 
+export enum ActivitySelectType {
+  ALL = 'ALL',
+  APPJAM = 'APPJAM',
+  SOPKATHON = 'SOPKATHON',
+  SEMINAR = 'SEMINAR',
+  STUDY = 'STUDY',
+  SOPTERM = 'SOPTERM',
+  MAKERS = 'MAKERS',
+}
+
 export interface ActivityContentType {
   img: string;
   navKor: string;

@@ -1,23 +1,27 @@
 import { track } from '@amplitude/analytics-browser';
+import { useState } from 'react';
 import Select from '@src/components/common/Select';
 import { pageBreakPoint } from '@src/lib/constants/project';
 import {
   activeGenerationCategoryList,
   activePartCategoryList,
+  activities,
+  activitySelectLabel,
   generationCategoryLabel,
   partCategoryLabel,
 } from '@src/lib/constants/tabs';
 import { PartCategoryType } from '@src/lib/types/blog';
+import { ActivitySelectType } from '@src/lib/types/main';
 import { PageType } from '@src/lib/types/universal';
 import * as S from './style';
-import { BlogTabMap, BlogTabType } from './types';
-import { selectedType } from './types';
+import { BlogTabMap, BlogTabType, selectedType } from './types';
 
 interface BlogTabProps {
   selected: selectedType;
   setSelectedTab: (newValue: BlogTabType) => void;
   setMajorCategory: (newValue: number) => void;
   setSubCategory: (newValue: PartCategoryType) => void;
+  setSelectedActivity: (newValue: ActivitySelectType) => void;
 }
 
 export default function BlogTab({
@@ -25,18 +29,18 @@ export default function BlogTab({
   setSelectedTab,
   setMajorCategory,
   setSubCategory,
+  setSelectedActivity,
 }: BlogTabProps) {
-  const { selectedTab, selectedMajorCategory, selectedSubCategory } = selected;
+  const [isTagSelected, setIsTagSelected] = useState({
+    recruit: true,
+    activity: false,
+  });
+
+  const { selectedTab, selectedMajorCategory, selectedSubCategory, selectedActivity } = selected;
 
   const blogTabList: BlogTabMap = {
-    review: {
-      title: '활동후기',
-      description: '회원들의 진솔한 후기를 통해 SOPT를 미리 만나보세요.  ',
-    },
-    article: {
-      title: '아티클',
-      description: '회원들의 아티클을 통해 SOPT에서 얻은 인사이트를 확인해보세요.',
-    },
+    review: 'SOPT 후기',
+    article: 'SOPT 이야기',
   };
 
   return (
@@ -53,32 +57,75 @@ export default function BlogTab({
                 }}
                 isSelected={selectedTab === blogTab}
               >
-                {tabInfo.title}
+                {tabInfo}
               </S.TabTitle>
             );
           })}
         </S.TabContainer>
-        <S.TabDescription>{blogTabList[selectedTab]?.description}</S.TabDescription>
-        <S.SelectContainer>
-          <Select
-            options={activeGenerationCategoryList}
-            labels={generationCategoryLabel}
-            baseLabel="기수"
-            selectedValue={selectedMajorCategory}
-            setSelectedValue={setMajorCategory}
-            baseValue={activeGenerationCategoryList[0]}
-            breakPoint={pageBreakPoint[PageType.BLOG]}
-          />
-          <Select
-            options={activePartCategoryList}
-            labels={partCategoryLabel}
-            baseLabel="파트"
-            selectedValue={selectedSubCategory}
-            setSelectedValue={setSubCategory}
-            baseValue={PartCategoryType.ALL}
-            breakPoint={pageBreakPoint[PageType.BLOG]}
-          />
-        </S.SelectContainer>
+        <S.Layout>
+          {selectedTab === BlogTabType.REVIEW && (
+            <>
+              <S.TagContainer>
+                <S.Tag
+                  isSelected={isTagSelected.recruit}
+                  onClick={() => {
+                    setIsTagSelected({
+                      ...isTagSelected,
+                      recruit: !isTagSelected.recruit,
+                    });
+                  }}
+                >
+                  서류/면접 후기
+                </S.Tag>
+                <S.Tag
+                  isSelected={isTagSelected.activity}
+                  onClick={() => {
+                    setIsTagSelected({
+                      ...isTagSelected,
+                      activity: !isTagSelected.activity,
+                    });
+                  }}
+                >
+                  활동 후기
+                </S.Tag>
+                {isTagSelected.activity && (
+                  <Select
+                    options={activities}
+                    labels={activitySelectLabel}
+                    baseLabel="전체 활동"
+                    selectedValue={selectedActivity}
+                    setSelectedValue={setSelectedActivity}
+                    baseValue={ActivitySelectType.ALL}
+                    breakPoint={pageBreakPoint[PageType.BLOG]}
+                    variant="square"
+                  />
+                )}
+              </S.TagContainer>
+              <S.SelectContainer>
+                <Select
+                  options={activeGenerationCategoryList}
+                  labels={generationCategoryLabel}
+                  baseLabel="기수"
+                  selectedValue={selectedMajorCategory}
+                  setSelectedValue={setMajorCategory}
+                  baseValue={activeGenerationCategoryList[0]}
+                  breakPoint={pageBreakPoint[PageType.BLOG]}
+                  variant="square"
+                />
+                <Select
+                  options={activePartCategoryList}
+                  labels={partCategoryLabel}
+                  baseLabel="파트"
+                  selectedValue={selectedSubCategory}
+                  setSelectedValue={setSubCategory}
+                  baseValue={PartCategoryType.ALL}
+                  breakPoint={pageBreakPoint[PageType.BLOG]}
+                  variant="square"
+                />
+              </S.SelectContainer>
+            </>
+          )}
+        </S.Layout>
       </S.Container>
     </S.Wrapper>
   );

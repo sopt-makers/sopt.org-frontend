@@ -1,0 +1,58 @@
+import styled from '@emotion/styled';
+import { colors } from '@sopt-makers/colors';
+
+export const Wrapper = styled.section`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 48px;
+`;
+
+export const VideoWrapper = styled.div`
+  display: flex;
+  width: 100%;
+  padding: 32px;
+  align-items: center;
+  gap: 32px;
+  border-radius: 20px;
+  background-color: ${colors.gray800};
+  cursor: pointer;
+`;
+
+export const Video = styled.img`
+  width: 401px;
+  height: auto;
+  object-fit: cover;
+`;
+
+export const VideoDescription = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+`;
+
+export const VideoTitle = styled.h3`
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 36px;
+  letter-spacing: -0.48px;
+  color: ${colors.white};
+  white-space: pre-line;
+`;
+
+export const VideoDescriptionText = styled.p`
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 26px;
+  letter-spacing: -0.24px;
+  color: ${colors.white};
+  white-space: pre-line;
+`;
+
+export const Title = styled.h2`
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 42px;
+  letter-spacing: -0.56px;
+  color: ${colors.white};
+`;

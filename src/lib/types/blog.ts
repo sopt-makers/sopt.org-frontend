@@ -43,3 +43,8 @@ export type BlogResponse = {
   response: BlogPostType[];
   currentPage: number;
 };
+
+export enum SortType {
+  LATEST = 'latest',
+  LIKE = 'like',
+}
