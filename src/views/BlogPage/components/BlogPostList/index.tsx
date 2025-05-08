@@ -73,7 +73,7 @@ export default function BlogPostList({
                   />
                 </S.Layout>
               )}
-              <S.BlogPostList>
+              <S.BlogPostList selectedTab={selectedTab}>
                 {response?.response.map((blogPost) => (
                   <BlogPost key={blogPost.id} blogPost={blogPost} selectedTab={selectedTab} />
                 ))}

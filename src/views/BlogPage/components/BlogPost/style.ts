@@ -1,13 +1,28 @@
 import styled from '@emotion/styled';
 import { colors } from '@sopt-makers/colors';
 import Image from 'next/image';
+import { css } from '@emotion/react';
+import { BlogTabType } from '@src/views/BlogPage/components/BlogTab/types';
 
-export const BlogPost = styled.section`
+export const PostWrapper = styled.section<{ tab: BlogTabType }>`
   display: flex;
   justify-content: space-between;
   max-width: 900px;
   width: 100%;
+  padding: 20px 0;
   gap: 36px;
+
+  ${({ tab }) =>
+    tab === BlogTabType.REVIEW &&
+    css`
+      padding: 0px;
+    `}
+`;
+
+export const BlogPost = styled.section`
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 
   cursor: pointer;
   transition: opacity 0.2s linear;

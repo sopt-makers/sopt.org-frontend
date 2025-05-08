@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { colors } from '@sopt-makers/colors';
+import { BlogTabType } from '@src/views/BlogPage/components/BlogTab/types';
 
 export const Wrapper = styled.section`
   display: flex;
@@ -29,7 +30,7 @@ export const Layout = styled.section`
   justify-content: space-between;
 `;
 
-export const BlogPostList = styled.div`
+export const BlogPostList = styled.div<{ selectedTab: BlogTabType }>`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -39,7 +40,7 @@ export const BlogPostList = styled.div`
   padding-right: 20px;
   margin-bottom: 108px;
 
-  margin-top: 30px;
+  margin-top: ${({ selectedTab }) => (selectedTab === BlogTabType.REVIEW ? '47px' : '3px')};
   gap: 80px;
 
   /* 모바일 뷰 */
