@@ -19,7 +19,7 @@ export const PostWrapper = styled.section<{ tab: BlogTabType }>`
     `}
 `;
 
-export const BlogPost = styled.section`
+export const BlogPost = styled.article`
   display: flex;
   justify-content: space-between;
   width: 100%;
