@@ -1,3 +1,4 @@
+import IcSort from '@src/assets/icons/ic_sort.svg';
 import OvalSpinner from '@src/components/common/OvalSpinner';
 import Select from '@src/components/common/Select';
 import { pageBreakPoint } from '@src/lib/constants/project';
@@ -63,7 +64,8 @@ export default function BlogPostList({
                   labels={sortLabel}
                   breakPoint={pageBreakPoint[PageType.PROJECT]}
                   variant="square"
-                  isSort
+                  icon={IcSort}
+                  style={{ minWidth: '160px' }}
                 />
               </S.Layout>
             )}
