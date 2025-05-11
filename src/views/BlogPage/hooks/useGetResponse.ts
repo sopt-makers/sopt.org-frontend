@@ -1,39 +1,48 @@
-import { useInfiniteQuery } from '@tanstack/react-query';
+import { useQuery } from '@tanstack/react-query';
 import { getResponse as getReviewResponse } from '@src/lib/api/remote/review';
 import { getResponse as getArticleResponse } from '@src/lib/api/remote/sopticle';
-import { BlogResponse, PartCategoryType } from '@src/lib/types/blog';
-import { BlogTabType } from '../components/BlogTab/types';
+import { BlogCategoryType, BlogResponse, PartCategoryType, SortType } from '@src/lib/types/blog';
+import { ActivitySelectType } from '@src/lib/types/main';
+import { BlogTabType, SelectedType } from '../components/BlogTab/types';
 
 const getTabResponse = (
   selectedTab: BlogTabType,
   generation: number,
   part: PartCategoryType,
-  count: number | unknown,
+  page: number,
+  sort: SortType,
+  selected: SelectedType,
 ): Promise<BlogResponse> => {
-  return selectedTab === 'review'
-    ? getReviewResponse(generation, part, count)
-    : getArticleResponse(generation, part, count);
+  return selectedTab === BlogTabType.REVIEW
+    ? getReviewResponse(
+        selected.tag === 'recruit'
+          ? BlogCategoryType.DOCUMENT_INTERVIEW
+          : BlogCategoryType.ALL_ACTIVITIES,
+        selected.tag === 'activity' ? selected.selectedActivity : ActivitySelectType.ALL,
+        generation,
+        part,
+        page,
+      )
+    : getArticleResponse(sort, page);
 };
 
 export const useGetResponse = (
   selectedTab: BlogTabType,
   generation: number,
   part: PartCategoryType,
+  sort: SortType,
+  page = 1,
+  selected: SelectedType,
 ) => {
-  const queryKey = [selectedTab, generation, part];
+  const queryKey = [selectedTab, generation, part, sort, page, selected];
 
-  const { data, fetchNextPage, hasNextPage, isFetching } = useInfiniteQuery<BlogResponse>({
+  const { data, isFetching } = useQuery<BlogResponse>({
     queryKey,
-    queryFn: ({ pageParam }: { pageParam: number | unknown }) =>
-      getTabResponse(selectedTab, generation, part, pageParam),
-    getNextPageParam: (lastPage) => (lastPage.hasNextPage ? lastPage.currentPage + 1 : undefined),
-    initialPageParam: 1,
+    queryFn: () => getTabResponse(selectedTab, generation, part, page, sort, selected),
   });
 
   return {
-    response: data?.pages.flatMap((page) => page.response),
-    hasNextPage,
-    fetchNextPage,
+    response: data,
     isFetching,
   };
 };

@@ -3,6 +3,7 @@ import { colors } from '@sopt-makers/colors';
 
 export const Wrapper = styled.section`
   display: flex;
+  margin-bottom: 11px;
   flex-direction: column;
   justify-content: center;
   gap: 48px;

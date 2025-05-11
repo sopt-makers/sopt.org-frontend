@@ -3,6 +3,7 @@ import { colors } from '@sopt-makers/colors';
 
 export const EmptyBlogPostListWrapper = styled.section`
   display: flex;
+  width: 100%;
   flex-direction: column;
   align-items: center;
 `;

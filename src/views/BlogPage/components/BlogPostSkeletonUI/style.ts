@@ -20,7 +20,7 @@ export const BlogPostList = styled.div`
   max-width: 900px;
   width: 100%;
 
-  margin-top: 30px;
+  margin-top: 47px;
 
   /* 모바일 뷰 */
   @media (max-width: 47.9375rem) {

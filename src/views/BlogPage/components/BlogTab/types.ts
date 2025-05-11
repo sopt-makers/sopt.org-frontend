@@ -8,9 +8,10 @@ export enum BlogTabType {
 
 export type BlogTabMap = Record<BlogTabType, string>;
 
-export type selectedType = {
+export type SelectedType = {
   selectedTab: BlogTabType;
   selectedMajorCategory: number;
   selectedSubCategory: PartCategoryType;
   selectedActivity: ActivitySelectType;
+  tag: 'recruit' | 'activity';
 };

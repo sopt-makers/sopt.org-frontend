@@ -83,7 +83,7 @@ export const TagContainer = styled.section`
   gap: 12px;
 `;
 
-export const Tag = styled.div<{ isSelected: boolean }>`
+export const Tag = styled.button<{ isSelected: boolean }>`
   display: flex;
   padding: 10px 20px;
   justify-content: center;
