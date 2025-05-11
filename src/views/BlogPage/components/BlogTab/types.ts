@@ -15,12 +15,3 @@ export type SelectedType = {
   selectedActivity: ActivitySelectType;
   tag: 'recruit' | 'activity';
 };
-
-export interface BlogTabProps {
-  selected: SelectedType;
-  setSelected: (newValue: SelectedType) => void;
-  setSelectedTab: (newValue: BlogTabType) => void;
-  setMajorCategory: (newValue: number) => void;
-  setSubCategory: (newValue: PartCategoryType) => void;
-  setSelectedActivity: (newValue: ActivitySelectType) => void;
-}

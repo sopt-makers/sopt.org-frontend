@@ -15,6 +15,28 @@ interface BlogPostProps {
   blogPost: BlogPostType;
 }
 
+const getThumbnailUrl = (blogPost: BlogPostType) => {
+  if (!blogPost.thumbnailUrl) {
+    return img_blog_default;
+  }
+  try {
+    if (
+      blogPost.thumbnailUrl.startsWith('http://') ||
+      blogPost.thumbnailUrl.startsWith('https://')
+    ) {
+      return blogPost.thumbnailUrl;
+    }
+    if (blogPost.thumbnailUrl.startsWith('//')) {
+      return `https:${blogPost.thumbnailUrl}`;
+    }
+
+    return `https://${blogPost.thumbnailUrl}`;
+  } catch (e) {
+    console.error('URL Processing Error', blogPost.thumbnailUrl, e);
+    return img_blog_default;
+  }
+};
+
 export default function BlogPost({ selectedTab, blogPost }: BlogPostProps) {
   const titleRef = useRef<HTMLDivElement>(null);
   const [descriptionLine, setDescriptionLine] = useState(1);
@@ -24,29 +46,6 @@ export default function BlogPost({ selectedTab, blogPost }: BlogPostProps) {
     setError(true);
   };
 
-  const getThumbnailUrl = () => {
-    if (!blogPost.thumbnailUrl) {
-      return img_blog_default;
-    }
-
-    try {
-      if (
-        blogPost.thumbnailUrl.startsWith('http://') ||
-        blogPost.thumbnailUrl.startsWith('https://')
-      ) {
-        return blogPost.thumbnailUrl;
-      }
-      if (blogPost.thumbnailUrl.startsWith('//')) {
-        return `https:${blogPost.thumbnailUrl}`;
-      }
-
-      return `https://${blogPost.thumbnailUrl}`;
-    } catch (e) {
-      console.error('URL Processing Error', blogPost.thumbnailUrl, e);
-      return img_blog_default;
-    }
-  };
-
   useEffect(() => {
     if (titleRef.current) {
       const titleHeight = titleRef.current.clientHeight;
@@ -54,7 +53,7 @@ export default function BlogPost({ selectedTab, blogPost }: BlogPostProps) {
     }
   }, []);
 
-  const thumbnailUrl = getThumbnailUrl();
+  const thumbnailUrl = getThumbnailUrl(blogPost);
 
   return (
     <S.PostWrapper tab={selectedTab}>

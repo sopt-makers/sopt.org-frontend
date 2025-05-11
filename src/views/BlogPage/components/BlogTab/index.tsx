@@ -74,12 +74,14 @@ export default function BlogTab({
                 <S.Tag
                   isSelected={selected.tag === 'recruit'}
                   onClick={() => handleTagClick('recruit')}
+                  aria-label="서류/면접 후기"
                 >
                   서류/면접 후기
                 </S.Tag>
                 <S.Tag
                   isSelected={selected.tag === 'activity'}
                   onClick={() => handleTagClick('activity')}
+                  aria-label="활동 후기"
                 >
                   활동 후기
                 </S.Tag>

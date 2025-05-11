@@ -29,10 +29,14 @@ const Pagination = ({
     if (endPage - startPage < ADDITIONAL_PAGE_BUTTON_COUNT) {
       startPage = Math.max(1, endPage - ADDITIONAL_PAGE_BUTTON_COUNT);
     }
-    for (let i = startPage; i <= endPage; i++) {
+    for (let pageNumber = startPage; pageNumber <= endPage; pageNumber++) {
       pageButtons.push(
-        <StPageButton key={i} onClick={() => handlePageChange(i)} active={i === currentPage}>
-          {i}
+        <StPageButton
+          key={pageNumber}
+          onClick={() => handlePageChange(pageNumber)}
+          active={pageNumber === currentPage}
+        >
+          {pageNumber}
         </StPageButton>,
       );
     }

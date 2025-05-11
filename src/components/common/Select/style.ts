@@ -64,11 +64,20 @@ export const Arrow = styled.div<{
 
 export const SelectItem = styled.div<{ isSelected: boolean; variant: 'round' | 'square' }>`
   background-color: ${({ isSelected }) => (isSelected ? colors.gray600 : 'transparent')};
-  padding: ${({ variant }) => (variant === 'round' ? '8px 5px' : '8px 12px')};
   border-radius: 6px;
   cursor: pointer;
   transition: 0.1s;
   color: ${colors.gray30};
+
+  ${({ variant }) =>
+    variant === 'round'
+      ? css`
+          padding: 8px 5px;
+        `
+      : variant === 'square' &&
+        css`
+          padding: 8px 12px;
+        `}
 `;
 
 export const SelectTriggerContent = styled.p<{
