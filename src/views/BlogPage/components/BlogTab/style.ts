@@ -75,6 +75,7 @@ export const TabTitle = styled.article<{ isSelected: boolean }>`
 export const Layout = styled.div`
   display: flex;
   width: 100%;
+  min-width: 56.4rem;
   justify-content: space-between;
 `;
 
@@ -85,7 +86,7 @@ export const TagContainer = styled.section`
 
 export const Tag = styled.button<{ isSelected: boolean }>`
   display: flex;
-  padding: 10px 20px;
+  padding: 9px 20px;
   justify-content: center;
   align-items: center;
   border: ${({ isSelected }) =>
@@ -99,6 +100,7 @@ export const Tag = styled.button<{ isSelected: boolean }>`
   font-weight: 600;
   line-height: 22px;
   letter-spacing: -0.32px;
+  white-space: nowrap;
 
   cursor: pointer;
 `;
