@@ -18,7 +18,7 @@ export const Wrapper = styled.section`
   }
 `;
 
-export const Container = styled.main`
+export const Container = styled.div`
   width: 900px;
   display: flex;
   align-items: flex-start;
@@ -27,8 +27,7 @@ export const Container = styled.main`
 
   /* 태블릿, 모바일 뷰 */
   @media (max-width: 58.6875rem) {
-    margin-left: 20px;
-    margin-right: 20px;
+    padding: 0 20px;
     width: 100%;
   }
 `;
@@ -74,9 +73,12 @@ export const TabTitle = styled.article<{ isSelected: boolean }>`
 
 export const Layout = styled.div`
   display: flex;
-  width: 100%;
-  min-width: 56.4rem;
   justify-content: space-between;
+  gap: 12px;
+
+  width: 100%;
+
+  overflow-x: auto;
 `;
 
 export const TagContainer = styled.section`
