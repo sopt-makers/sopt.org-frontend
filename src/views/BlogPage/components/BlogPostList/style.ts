@@ -36,8 +36,6 @@ export const BlogPostList = styled.div<{ selectedTab: BlogTabType }>`
   align-items: center;
   width: 100%;
 
-  padding-left: 20px;
-  padding-right: 20px;
   margin-bottom: 108px;
 
   margin-top: ${({ selectedTab }) => (selectedTab === BlogTabType.REVIEW ? '47px' : '3px')};
