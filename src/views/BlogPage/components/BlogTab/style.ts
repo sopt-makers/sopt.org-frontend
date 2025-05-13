@@ -117,5 +117,5 @@ export const Tag = styled.button<{ isSelected: boolean }>`
 
 export const SelectContainer = styled.section`
   display: flex;
-  gap: 6px;
+  gap: 16px;
 `;
