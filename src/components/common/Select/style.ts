@@ -3,6 +3,12 @@ import { colors } from '@sopt-makers/colors';
 import { css } from '@emotion/react';
 import { SVGProps } from 'react';
 
+export const SelectWrapper = styled.div<{ isOpen: boolean }>`
+  position: relative;
+
+  height: ${({ isOpen }) => isOpen && '404px'};
+`;
+
 export const SelectTrigger = styled.button<{
   isSelectionExist: boolean;
   isOpened: boolean;

@@ -71,14 +71,21 @@ export const TabTitle = styled.article<{ isSelected: boolean }>`
   }
 `;
 
+export const LayoutContainer = styled.div`
+  position: relative;
+  width: 100%;
+  height: 48px;
+`;
+
 export const Layout = styled.div`
   display: flex;
   justify-content: space-between;
   gap: 12px;
 
+  position: absolute;
   width: 100%;
 
-  overflow-x: auto;
+  overflow-x: scroll;
 `;
 
 export const TagContainer = styled.section`
@@ -89,6 +96,7 @@ export const TagContainer = styled.section`
 export const Tag = styled.button<{ isSelected: boolean }>`
   display: flex;
   padding: 9px 20px;
+  max-height: 42px;
   justify-content: center;
   align-items: center;
   border: ${({ isSelected }) =>

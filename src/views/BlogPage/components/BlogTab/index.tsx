@@ -11,7 +11,6 @@ import {
 } from '@src/lib/constants/tabs';
 import { PartCategoryType } from '@src/lib/types/blog';
 import { ActivitySelectType } from '@src/lib/types/main';
-import { PageType } from '@src/lib/types/universal';
 import * as S from './style';
 import { BlogTabMap, BlogTabType, SelectedType } from './types';
 
@@ -67,62 +66,65 @@ export default function BlogTab({
             );
           })}
         </S.TabContainer>
-        <S.Layout>
-          {selectedTab === BlogTabType.REVIEW && (
-            <>
-              <S.TagContainer>
-                <S.Tag
-                  isSelected={selected.tag === 'recruit'}
-                  onClick={() => handleTagClick('recruit')}
-                  aria-label="서류/면접 후기"
-                >
-                  서류/면접 후기
-                </S.Tag>
-                <S.Tag
-                  isSelected={selected.tag === 'activity'}
-                  onClick={() => handleTagClick('activity')}
-                  aria-label="활동 후기"
-                >
-                  활동 후기
-                </S.Tag>
-                {selected.tag === 'activity' && (
+
+        <S.LayoutContainer>
+          <S.Layout>
+            {selectedTab === BlogTabType.REVIEW && (
+              <>
+                <S.TagContainer>
+                  <S.Tag
+                    isSelected={selected.tag === 'recruit'}
+                    onClick={() => handleTagClick('recruit')}
+                    aria-label="서류/면접 후기"
+                  >
+                    서류/면접 후기
+                  </S.Tag>
+                  <S.Tag
+                    isSelected={selected.tag === 'activity'}
+                    onClick={() => handleTagClick('activity')}
+                    aria-label="활동 후기"
+                  >
+                    활동 후기
+                  </S.Tag>
+                  {selected.tag === 'activity' && (
+                    <Select
+                      options={activities}
+                      labels={activitySelectLabel}
+                      baseLabel="전체 활동"
+                      selectedValue={selectedActivity}
+                      setSelectedValue={setSelectedActivity}
+                      baseValue={ActivitySelectType.ALL}
+                      breakPoint={'0px'}
+                      variant="square"
+                    />
+                  )}
+                </S.TagContainer>
+                <S.SelectContainer>
                   <Select
-                    options={activities}
-                    labels={activitySelectLabel}
-                    baseLabel="전체 활동"
-                    selectedValue={selectedActivity}
-                    setSelectedValue={setSelectedActivity}
-                    baseValue={ActivitySelectType.ALL}
-                    breakPoint={pageBreakPoint[PageType.BLOG]}
+                    options={activeGenerationCategoryList}
+                    labels={generationCategoryLabel}
+                    baseLabel="기수"
+                    selectedValue={selectedMajorCategory}
+                    setSelectedValue={setMajorCategory}
+                    baseValue={activeGenerationCategoryList[0]}
+                    breakPoint={'0px'}
                     variant="square"
                   />
-                )}
-              </S.TagContainer>
-              <S.SelectContainer>
-                <Select
-                  options={activeGenerationCategoryList}
-                  labels={generationCategoryLabel}
-                  baseLabel="기수"
-                  selectedValue={selectedMajorCategory}
-                  setSelectedValue={setMajorCategory}
-                  baseValue={activeGenerationCategoryList[0]}
-                  breakPoint={'0px'}
-                  variant="square"
-                />
-                <Select
-                  options={activePartCategoryList}
-                  labels={partCategoryLabel}
-                  baseLabel="파트"
-                  selectedValue={selectedSubCategory}
-                  setSelectedValue={setSubCategory}
-                  baseValue={PartCategoryType.ALL}
-                  breakPoint={'0px'}
-                  variant="square"
-                />
-              </S.SelectContainer>
-            </>
-          )}
-        </S.Layout>
+                  <Select
+                    options={activePartCategoryList}
+                    labels={partCategoryLabel}
+                    baseLabel="파트"
+                    selectedValue={selectedSubCategory}
+                    setSelectedValue={setSubCategory}
+                    baseValue={PartCategoryType.ALL}
+                    breakPoint={'0px'}
+                    variant="square"
+                  />
+                </S.SelectContainer>
+              </>
+            )}
+          </S.Layout>
+        </S.LayoutContainer>
       </S.Container>
     </S.Wrapper>
   );
