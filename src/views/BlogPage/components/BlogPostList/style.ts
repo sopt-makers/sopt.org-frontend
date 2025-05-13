@@ -28,6 +28,12 @@ export const Layout = styled.section`
   width: 100%;
   align-items: center;
   justify-content: space-between;
+
+  @media (max-width: 767px) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+  }
 `;
 
 export const BlogPostList = styled.div<{ selectedTab: BlogTabType }>`
