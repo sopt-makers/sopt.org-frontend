@@ -86,6 +86,10 @@ export const Layout = styled.div`
   width: 100%;
 
   overflow-x: scroll;
+
+  &:has([class*='SelectItemWrapper']) {
+    height: 404px;
+  }
 `;
 
 export const TagContainer = styled.section`

@@ -46,7 +46,7 @@ export default function Select<T extends LabelKeyType>({
   useOutsideClickListener([selectItemWrapperRef, selectTriggerRef], closeSelectItem);
 
   return (
-    <S.SelectWrapper isOpen={isOpen}>
+    <div>
       <S.SelectTrigger
         ref={selectTriggerRef}
         onClick={toggleSelect}
@@ -90,6 +90,6 @@ export default function Select<T extends LabelKeyType>({
           ))}
         </S.SelectItemWrapper>
       )}
-    </S.SelectWrapper>
+    </div>
   );
 }
