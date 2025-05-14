@@ -18,12 +18,24 @@ export const VideoWrapper = styled.div`
   border-radius: 20px;
   background-color: ${colors.gray800};
   cursor: pointer;
+
+  @media (max-width: 767px) {
+    flex-direction: column;
+  }
 `;
 
 export const Video = styled.img`
   width: 401px;
   height: auto;
   object-fit: cover;
+
+  @media (max-width: 767px) {
+    width: 320px;
+  }
+
+  @media (max-width: 430px) {
+    width: 271px;
+  }
 `;
 
 export const VideoDescription = styled.div`

@@ -18,7 +18,7 @@ export const Wrapper = styled.section`
   }
 `;
 
-export const Container = styled.main`
+export const Container = styled.div`
   width: 900px;
   display: flex;
   align-items: flex-start;
@@ -27,8 +27,7 @@ export const Container = styled.main`
 
   /* 태블릿, 모바일 뷰 */
   @media (max-width: 58.6875rem) {
-    margin-left: 20px;
-    margin-right: 20px;
+    padding: 0 20px;
     width: 100%;
   }
 `;
@@ -72,10 +71,25 @@ export const TabTitle = styled.article<{ isSelected: boolean }>`
   }
 `;
 
+export const LayoutContainer = styled.div`
+  position: relative;
+  width: 100%;
+  height: 48px;
+`;
+
 export const Layout = styled.div`
   display: flex;
-  width: 100%;
   justify-content: space-between;
+  gap: 12px;
+
+  position: absolute;
+  width: 100%;
+
+  overflow-x: scroll;
+
+  &:has([class*='SelectItemWrapper']) {
+    height: 404px;
+  }
 `;
 
 export const TagContainer = styled.section`
@@ -85,7 +99,8 @@ export const TagContainer = styled.section`
 
 export const Tag = styled.button<{ isSelected: boolean }>`
   display: flex;
-  padding: 10px 20px;
+  padding: 9px 20px;
+  max-height: 42px;
   justify-content: center;
   align-items: center;
   border: ${({ isSelected }) =>
@@ -99,11 +114,12 @@ export const Tag = styled.button<{ isSelected: boolean }>`
   font-weight: 600;
   line-height: 22px;
   letter-spacing: -0.32px;
+  white-space: nowrap;
 
   cursor: pointer;
 `;
 
 export const SelectContainer = styled.section`
   display: flex;
-  gap: 6px;
+  gap: 16px;
 `;

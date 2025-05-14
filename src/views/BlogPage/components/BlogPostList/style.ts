@@ -28,6 +28,12 @@ export const Layout = styled.section`
   width: 100%;
   align-items: center;
   justify-content: space-between;
+
+  @media (max-width: 767px) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+  }
 `;
 
 export const BlogPostList = styled.div<{ selectedTab: BlogTabType }>`
@@ -36,8 +42,6 @@ export const BlogPostList = styled.div<{ selectedTab: BlogTabType }>`
   align-items: center;
   width: 100%;
 
-  padding-left: 20px;
-  padding-right: 20px;
   margin-bottom: 108px;
 
   margin-top: ${({ selectedTab }) => (selectedTab === BlogTabType.REVIEW ? '47px' : '3px')};
