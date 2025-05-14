@@ -30,7 +30,11 @@ export const Video = styled.img`
   object-fit: cover;
 
   @media (max-width: 767px) {
-    width: 100%;
+    width: 320px;
+  }
+
+  @media (max-width: 430px) {
+    width: 271px;
   }
 `;
 
