@@ -1,6 +1,5 @@
 import { track } from '@amplitude/analytics-browser';
 import Select from '@src/components/common/Select';
-import { pageBreakPoint } from '@src/lib/constants/project';
 import {
   activeGenerationCategoryList,
   activePartCategoryList,
