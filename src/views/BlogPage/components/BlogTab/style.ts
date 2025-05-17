@@ -87,7 +87,7 @@ export const Layout = styled.div`
 
   overflow-x: scroll;
 
-  &:has([class*='SelectItemWrapper']) {
+  &:has([id*='selectItemWrapper']) {
     height: 404px;
   }
 `;

@@ -67,6 +67,7 @@ export default function Select<T extends LabelKeyType>({
       </S.SelectTrigger>
       {isOpen && (
         <S.SelectItemWrapper
+          id={'selectItemWrapper'}
           ref={selectItemWrapperRef}
           isWide={currentSelectedValue.length >= 5}
           variant={variant}
