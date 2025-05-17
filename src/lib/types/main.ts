@@ -22,13 +22,13 @@ export enum ActivityType {
 }
 
 export enum ActivitySelectType {
-  ALL = 'ALL',
-  APPJAM = 'APPJAM',
-  SOPKATHON = 'SOPKATHON',
-  SEMINAR = 'SEMINAR',
-  STUDY = 'STUDY',
-  SOPTERM = 'SOPTERM',
-  MAKERS = 'MAKERS',
+  ALL = '전체',
+  APPJAM = '앱잼',
+  SOPKATHON = '솝커톤',
+  SEMINAR = '세미나',
+  STUDY = '스터디',
+  SOPTERM = '솝텀',
+  MAKERS = '메이커스',
 }
 
 export interface ActivityContentType {
