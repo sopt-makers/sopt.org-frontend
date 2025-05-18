@@ -26,20 +26,31 @@ export const VideoWrapper = styled.div`
 
 export const Video = styled.div`
   min-width: 401px;
+  max-width: 401px;
   overflow: hidden;
   border-radius: 17px;
 
   & > iframe {
+    min-width: 401px;
     height: 224px;
     background-color: transparent;
   }
 
   @media (max-width: 767px) {
-    width: 320px;
+    height: auto;
+
+    & > iframe {
+      min-width: 320px;
+    }
   }
 
   @media (max-width: 430px) {
-    width: 271px;
+    min-width: 271px;
+    height: auto;
+
+    & > iframe {
+      min-width: 271px;
+    }
   }
 `;
 
