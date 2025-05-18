@@ -33,7 +33,6 @@ export const Video = styled.div`
   & > iframe {
     min-width: 401px;
     height: 224px;
-    background-color: transparent;
   }
 
   @media (max-width: 767px) {
