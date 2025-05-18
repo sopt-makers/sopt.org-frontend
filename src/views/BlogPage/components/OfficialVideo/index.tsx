@@ -1,8 +1,17 @@
 import { track } from '@amplitude/analytics-browser';
-import videoImg from '@src/assets/images/img_video.png';
 import * as S from './style';
+import YouTube from 'react-youtube';
 
 const VIDEO_URL = 'https://www.youtube.com/watch?v=f4-QwhPIlLI';
+const VIDEO_ID = 'f4-QwhPIlLI';
+
+const videoOpts = {
+  width: '100%',
+  height: '224px',
+  playerVars: {
+    autoplay: 1,
+  },
+};
 
 const VIDEO_INFO = {
   title: '35기 AND SOPT 데모데이: \n\'Connecting Dots\'',
@@ -20,7 +29,9 @@ const OfficialVideo = () => {
     >
       <S.Title>🎥 공식 영상을 통해 SOPT를 만나보세요</S.Title>
       <S.VideoWrapper>
-        <S.Video src={videoImg.src} alt="공식 영상" />
+        <S.Video>
+          <YouTube videoId={VIDEO_ID} opts={videoOpts} mute={1} />
+        </S.Video>
         <S.VideoDescription>
           <S.VideoTitle>{VIDEO_INFO.title}</S.VideoTitle>
           <S.VideoDescriptionText>{VIDEO_INFO.description}</S.VideoDescriptionText>

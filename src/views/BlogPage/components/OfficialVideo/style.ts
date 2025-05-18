@@ -24,10 +24,14 @@ export const VideoWrapper = styled.div`
   }
 `;
 
-export const Video = styled.img`
-  width: 401px;
-  height: auto;
-  object-fit: cover;
+export const Video = styled.div`
+  min-width: 401px;
+  overflow: hidden;
+  border-radius: 17px;
+
+  & > iframe {
+    height: 224px;
+  }
 
   @media (max-width: 767px) {
     width: 320px;
