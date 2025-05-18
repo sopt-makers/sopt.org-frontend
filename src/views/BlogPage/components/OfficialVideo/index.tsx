@@ -30,7 +30,7 @@ const OfficialVideo = () => {
       <S.Title>🎥 공식 영상을 통해 SOPT를 만나보세요</S.Title>
       <S.VideoWrapper>
         <S.Video>
-          <YouTube videoId={VIDEO_ID} opts={videoOpts} mute={1} />
+          <YouTube videoId={VIDEO_ID} opts={videoOpts} />
         </S.Video>
         <S.VideoDescription>
           <S.VideoTitle>{VIDEO_INFO.title}</S.VideoTitle>
