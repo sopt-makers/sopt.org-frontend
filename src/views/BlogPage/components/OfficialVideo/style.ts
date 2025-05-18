@@ -26,7 +26,6 @@ export const VideoWrapper = styled.div`
 
 export const Video = styled.div`
   min-width: 401px;
-  max-width: 401px;
   overflow: hidden;
   border-radius: 17px;
 
