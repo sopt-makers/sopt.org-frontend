@@ -80,7 +80,7 @@ export const activePartCategoryList: PartCategoryType[] = [
 ];
 
 export const partCategoryLabel: Record<PartCategoryType, string> = {
-  [PartCategoryType.ALL]: '파트',
+  [PartCategoryType.ALL]: '전체',
   [PartCategoryType.PLAN]: '기획',
   [PartCategoryType.DESIGN]: '디자인',
   [PartCategoryType.ANDROID]: '안드로이드',
