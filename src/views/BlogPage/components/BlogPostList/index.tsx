@@ -54,6 +54,7 @@ export default function BlogPostList({
           {response?.response.length === 0 ? (
             <EmptyBlogPostList
               selectedTab={selectedTab}
+              selectedReviewTag={selectedReviewTag}
               setMajorCategory={setMajorCategory}
               setSubCategory={setSubCategory}
             />
@@ -77,7 +78,12 @@ export default function BlogPostList({
               )}
               <S.BlogPostList selectedTab={selectedTab}>
                 {response?.response.map((blogPost) => (
-                  <BlogPost key={blogPost.id} blogPost={blogPost} selectedTab={selectedTab} selectedReviewTag={selectedReviewTag} />
+                  <BlogPost
+                    key={blogPost.id}
+                    blogPost={blogPost}
+                    selectedTab={selectedTab}
+                    selectedReviewTag={selectedReviewTag}
+                  />
                 ))}
               </S.BlogPostList>
             </>
