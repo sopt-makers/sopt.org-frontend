@@ -51,3 +51,8 @@ export const ProfileImage = styled(Image)`
 export const Divider = styled.div`
   padding: 0 2px 0 2px;
 `;
+
+export const Part = styled.div`
+  display: flex;
+  align-items: center;
+`;

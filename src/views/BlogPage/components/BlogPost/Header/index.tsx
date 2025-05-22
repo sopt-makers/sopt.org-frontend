@@ -2,6 +2,7 @@ import { BlogPostType } from '@src/lib/types/blog';
 import { formatDate } from '@src/lib/utils/dateFormat';
 import DefaultProfileImage from '@src/views/BlogPage/components/BlogPost/DefaultProfileImage';
 import * as S from './style';
+import { parsePartToKorean } from '@src/lib/utils/parsePartToKorean';
 
 interface HeaderProps {
   selectedTab: string;
@@ -30,7 +31,7 @@ export default function Header({ selectedTab, blogPost }: HeaderProps) {
           <div>{formatDate(new Date(blogPost.uploadedAt), 'yyyymmdd', '.')}</div>
         </>
       ) : (
-        <div>{blogPost.subject}</div>
+        <S.Part>{blogPost.generation}기 <S.Divider>∙</S.Divider> {parsePartToKorean(blogPost.part)}</S.Part>
       )}
     </S.Header>
   );

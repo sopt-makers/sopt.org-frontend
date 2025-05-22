@@ -73,8 +73,11 @@ export default function BlogPost({ selectedTab, blogPost }: BlogPostProps) {
           </S.Body>
           {selectedTab === BlogTabType.REVIEW && (
             <S.TagList>
-              <S.Tag>{blogPost.generation}기</S.Tag>
-              <S.Tag>{parsePartToKorean(blogPost.part)}</S.Tag>
+              {
+                blogPost.subject?.map((subjectItem, index) => (
+                  <S.Tag key={`${subjectItem}-${index}`}>{subjectItem}</S.Tag>
+                ))
+              }
             </S.TagList>
           )}
         </div>

@@ -23,7 +23,7 @@ export type BlogPostType = {
 
   /* review */
   generation?: number;
-  subject?: string;
+  subject?: string[];
   author?: string;
   authorProfileImageUrl?: string | null;
 };
