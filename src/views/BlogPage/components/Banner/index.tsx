@@ -32,7 +32,7 @@ const Banner = ({ selectedTab }: { selectedTab: BlogTabType }) => {
     } else if (isMobile) {
       return reviewBannerMobile.src;
     }
-  }
+  };
 
   const getStoryBannerImage = () => {
     if (isDesktop) {
@@ -44,7 +44,7 @@ const Banner = ({ selectedTab }: { selectedTab: BlogTabType }) => {
     } else if (isMobile) {
       return storyBannerMobile.src;
     }
-  }
+  };
 
   return (
     <>
@@ -56,7 +56,7 @@ const Banner = ({ selectedTab }: { selectedTab: BlogTabType }) => {
         )
       }
     </>
-  )
-}
+  );
+};
 
 export default Banner;

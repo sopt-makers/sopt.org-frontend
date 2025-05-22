@@ -12,7 +12,6 @@ import Banner from '@src/views/BlogPage/components/Banner';
 import BlogTab from '@src/views/BlogPage/components/BlogTab';
 import BlogPostList from '@src/views/BlogPage/components/BlogPostList';
 
-
 const initialState: SelectedType = {
   selectedTab: BlogTabType.REVIEW,
   selectedMajorCategory: activeGenerationCategoryList[0],
