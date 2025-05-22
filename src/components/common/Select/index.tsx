@@ -7,7 +7,7 @@ import * as S from './style';
 type SelectProps<T extends LabelKeyType> = ComponentPropsWithoutRef<'div'> &
   ComponentPropsWithoutRef<'button'> & {
     options: T[];
-    baseValue: T;
+    baseValue?: T;
     baseLabel: string;
     selectedValue: T;
     setSelectedValue: (newValue: T) => void;
@@ -50,7 +50,7 @@ export default function Select<T extends LabelKeyType>({
       <S.SelectTrigger
         ref={selectTriggerRef}
         onClick={toggleSelect}
-        isSelectionExist={selectedValue !== baseValue}
+        isSelectionExist={!baseValue || selectedValue !== baseValue}
         isOpened={isOpen}
         isWide={currentSelectedValue.length >= 5}
         breakPoint={breakPoint}
@@ -58,7 +58,7 @@ export default function Select<T extends LabelKeyType>({
         {...props}
       >
         <S.SelectTriggerContent
-          isSelectionExist={selectedValue !== baseValue}
+          isSelectionExist={!baseValue || selectedValue !== baseValue}
           breakPoint={breakPoint}
         >
           {selectedValue === baseValue ? baseLabel : currentSelectedValue}

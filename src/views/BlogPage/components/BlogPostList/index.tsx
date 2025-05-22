@@ -62,7 +62,6 @@ export default function BlogPostList({
                   <S.Title>✍️ SOPT 회원들의 이야기를 확인해보세요</S.Title>
                   <Select
                     options={sortValues}
-                    baseValue={sortValues[0]}
                     baseLabel={sortLabel[sortValues[0]]}
                     selectedValue={selectedSort}
                     setSelectedValue={setSelectedSort}
