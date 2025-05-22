@@ -37,6 +37,18 @@ export const tabs = extraTabs.slice(1) as TabType[];
 
 export const activeGenerationCategoryList: number[] = [0];
 
+for (let i = 35; i >= 24; i--) {
+  activeGenerationCategoryList.push(i);
+}
+
+export const generationCategoryLabel: Record<number, string> = {
+  [0]: '전체',
+};
+
+for (let i = 35; i >= 24; i--) {
+  generationCategoryLabel[i] = `${i}기`;
+}
+
 export const activitySelectLabel: Record<ActivitySelectType, string> = {
   [ActivitySelectType.ALL]: '전체 활동',
   [ActivitySelectType.APPJAM]: '앱잼',
@@ -56,18 +68,6 @@ export const activities: ActivitySelectType[] = [
   ActivitySelectType.SOPTERM,
   ActivitySelectType.MAKERS,
 ];
-
-for (let i = 35; i >= 24; i--) {
-  activeGenerationCategoryList.push(i);
-}
-
-export const generationCategoryLabel: Record<number, string> = {
-  [0]: '전체',
-};
-
-for (let i = 35; i >= 24; i--) {
-  generationCategoryLabel[i] = `${i}기`;
-}
 
 export const activePartCategoryList: PartCategoryType[] = [
   PartCategoryType.ALL,
