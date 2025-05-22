@@ -4,7 +4,7 @@ import Pagination from '@src/components/common/Pagination';
 import Select from '@src/components/common/Select';
 import { pageBreakPoint } from '@src/lib/constants/project';
 import { sortLabel, sortValues } from '@src/lib/constants/tabs';
-import type { PartCategoryType, SortType } from '@src/lib/types/blog';
+import type { BlogCategoryType, PartCategoryType, SortType } from '@src/lib/types/blog';
 import { PageType } from '@src/lib/types/universal';
 import BlogPost from '@src/views/BlogPage/components/BlogPost';
 import EmptyBlogPostList from '@src/views/BlogPage/components/EmptyBlogPostList';
@@ -17,6 +17,7 @@ interface BlogPostListProps {
   selected: SelectedType;
   selectedTab: BlogTabType;
   selectedSort: SortType;
+  selectedReviewTag: BlogCategoryType;
   setMajorCategory: (newValue: number) => void;
   setSubCategory: (newValue: PartCategoryType) => void;
   setSelectedSort: (newValue: SortType) => void;
@@ -28,6 +29,7 @@ export default function BlogPostList({
   selected,
   selectedTab,
   selectedSort,
+  selectedReviewTag,
   setMajorCategory,
   setSubCategory,
   setSelectedSort,
@@ -75,7 +77,7 @@ export default function BlogPostList({
               )}
               <S.BlogPostList selectedTab={selectedTab}>
                 {response?.response.map((blogPost) => (
-                  <BlogPost key={blogPost.id} blogPost={blogPost} selectedTab={selectedTab} />
+                  <BlogPost key={blogPost.id} blogPost={blogPost} selectedTab={selectedTab} selectedReviewTag={selectedReviewTag} />
                 ))}
               </S.BlogPostList>
             </>

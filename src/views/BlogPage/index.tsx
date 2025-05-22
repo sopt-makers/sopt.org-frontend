@@ -3,7 +3,7 @@ import { Suspense } from 'react';
 import PageLayout from '@src/components/common/PageLayout';
 import useStorage from '@src/hooks/useStorage';
 import { activeGenerationCategoryList } from '@src/lib/constants/tabs';
-import { PartCategoryType, SortType } from '@src/lib/types/blog';
+import { BlogCategoryType, PartCategoryType, SortType } from '@src/lib/types/blog';
 import { ActivitySelectType } from '@src/lib/types/main';
 import BlogPostSkeletonUI from '@src/views/BlogPage/components/BlogPostSkeletonUI';
 import BlogPostList from './components/BlogPostList';
@@ -58,6 +58,7 @@ export default function BlogPage() {
           selected={selected}
           selectedTab={selected.selectedTab}
           selectedSort={selectedSort}
+          selectedReviewTag={selected.tag === 'recruit' ? BlogCategoryType.DOCUMENT_INTERVIEW : BlogCategoryType.ALL_ACTIVITIES}
           setMajorCategory={(value) => updateSelected('selectedMajorCategory', value)}
           setSubCategory={(value) => updateSelected('selectedSubCategory', value)}
           setSelectedSort={setSelectedSort}

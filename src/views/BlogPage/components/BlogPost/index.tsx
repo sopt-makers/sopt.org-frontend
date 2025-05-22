@@ -1,7 +1,7 @@
 import { track } from '@amplitude/analytics-browser';
 import { useEffect, useRef, useState } from 'react';
 import img_blog_default from '@src/assets/icons/img_blog_default.svg';
-import type { BlogPostType } from '@src/lib/types/blog';
+import { BlogCategoryType, BlogPostType } from '@src/lib/types/blog';
 import { parsePartToKorean } from '@src/lib/utils/parsePartToKorean';
 import Header from '@src/views/BlogPage/components/BlogPost/Header';
 import Like from '@src/views/BlogPage/components/BlogPost/Like';
@@ -13,6 +13,7 @@ const TWO_LINE_TITLE_HEIGHT = 72;
 interface BlogPostProps {
   selectedTab: BlogTabType;
   blogPost: BlogPostType;
+  selectedReviewTag: BlogCategoryType;
 }
 
 const getThumbnailUrl = (blogPost: BlogPostType) => {
@@ -37,7 +38,7 @@ const getThumbnailUrl = (blogPost: BlogPostType) => {
   }
 };
 
-export default function BlogPost({ selectedTab, blogPost }: BlogPostProps) {
+export default function BlogPost({ selectedTab, blogPost, selectedReviewTag }: BlogPostProps) {
   const titleRef = useRef<HTMLDivElement>(null);
   const [descriptionLine, setDescriptionLine] = useState(1);
   const [error, setError] = useState(false);
@@ -54,6 +55,8 @@ export default function BlogPost({ selectedTab, blogPost }: BlogPostProps) {
   }, []);
 
   const thumbnailUrl = getThumbnailUrl(blogPost);
+  const isApplyReview = selectedTab === BlogTabType.REVIEW && selectedReviewTag === BlogCategoryType.DOCUMENT_INTERVIEW;
+  const isActivityReview = selectedTab === BlogTabType.REVIEW && selectedReviewTag === BlogCategoryType.ALL_ACTIVITIES;
 
   return (
     <S.PostWrapper tab={selectedTab}>
@@ -65,13 +68,19 @@ export default function BlogPost({ selectedTab, blogPost }: BlogPostProps) {
       >
         <div>
           {selectedTab === BlogTabType.REVIEW && (
-            <Header selectedTab={selectedTab} blogPost={blogPost} />
+            <Header selectedTab={selectedTab} blogPost={blogPost} selectedReviewTag={selectedReviewTag} />
           )}
           <S.Body>
             <S.Title ref={titleRef}>{blogPost.title}</S.Title>
             <S.Description descriptionLine={descriptionLine}>{blogPost.description}</S.Description>
           </S.Body>
-          {selectedTab === BlogTabType.REVIEW && (
+          {isApplyReview && (
+            <S.TagList>
+              <S.Tag>{blogPost.generation}기</S.Tag>
+              <S.Tag>{parsePartToKorean(blogPost.part)}</S.Tag>
+            </S.TagList>
+          )}
+          {isActivityReview && (
             <S.TagList>
               {
                 blogPost.subject?.map((subjectItem, index) => (
