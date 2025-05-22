@@ -50,7 +50,7 @@ export default function Select<T extends LabelKeyType>({
       <S.SelectTrigger
         ref={selectTriggerRef}
         onClick={toggleSelect}
-        isSelectionExist={!baseValue || selectedValue !== baseValue}
+        isSelectionExist={selectedValue !== baseValue}
         isOpened={isOpen}
         isWide={currentSelectedValue.length >= 5}
         breakPoint={breakPoint}
@@ -58,7 +58,7 @@ export default function Select<T extends LabelKeyType>({
         {...props}
       >
         <S.SelectTriggerContent
-          isSelectionExist={!baseValue || selectedValue !== baseValue}
+          isSelectionExist={selectedValue !== baseValue}
           breakPoint={breakPoint}
         >
           {selectedValue === baseValue ? baseLabel : currentSelectedValue}
