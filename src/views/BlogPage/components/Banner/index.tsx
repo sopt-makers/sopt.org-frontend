@@ -12,14 +12,14 @@ import { useIsDesktop, useIsTablet } from '@src/hooks/useDevice';
 import { useIsMobile } from '@src/hooks/useDevice';
 
 const DESKTOP_WIDTH = '940px';
-const DESKTOP_TABLET_WIDTH = '768px';
-const TABLET_WIDTH = '376px';
+const TABLET_MAX_WIDTH = '768px';
+const TABLET_MIN_WIDTH = '376px';
 const MOBILE_WIDTH = '375px';
 
 const Banner = ({ selectedTab }: { selectedTab: BlogTabType }) => {
   const isDesktop = useIsDesktop(DESKTOP_WIDTH);
-  const isDesktopTablet = useIsTablet(DESKTOP_TABLET_WIDTH, DESKTOP_WIDTH);
-  const isTablet = useIsTablet(TABLET_WIDTH, DESKTOP_TABLET_WIDTH);
+  const isDesktopTablet = useIsTablet(TABLET_MAX_WIDTH, DESKTOP_WIDTH);
+  const isTablet = useIsTablet(TABLET_MIN_WIDTH, TABLET_MAX_WIDTH);
   const isMobile = useIsMobile(MOBILE_WIDTH);
 
   const getReviewBannerImage = () => {
