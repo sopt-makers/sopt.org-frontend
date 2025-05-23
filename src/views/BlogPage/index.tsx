@@ -6,9 +6,11 @@ import { activeGenerationCategoryList } from '@src/lib/constants/tabs';
 import { PartCategoryType, SortType } from '@src/lib/types/blog';
 import { ActivitySelectType } from '@src/lib/types/main';
 import BlogPostSkeletonUI from '@src/views/BlogPage/components/BlogPostSkeletonUI';
-import BlogPostList from './components/BlogPostList';
-import BlogTab from './components/BlogTab';
+import styled from '@emotion/styled';
 import { BlogTabType, SelectedType } from './components/BlogTab/types';
+import Banner from '@src/views/BlogPage/components/Banner';
+import BlogTab from '@src/views/BlogPage/components/BlogTab';
+import BlogPostList from '@src/views/BlogPage/components/BlogPostList';
 
 const initialState: SelectedType = {
   selectedTab: BlogTabType.REVIEW,
@@ -45,24 +47,39 @@ export default function BlogPage() {
         height: 100vh;
       `}
     >
-      <BlogTab
-        selected={selected}
-        setSelected={setSelected}
-        setSelectedTab={(value) => updateSelected('selectedTab', value)}
-        setMajorCategory={(value) => updateSelected('selectedMajorCategory', value)}
-        setSubCategory={(value) => updateSelected('selectedSubCategory', value)}
-        setSelectedActivity={(value) => updateSelected('selectedActivity', value)}
-      />
-      <Suspense fallback={<BlogPostSkeletonUI />}>
-        <BlogPostList
+      <PageContainer>
+        <Banner selectedTab={selected.selectedTab} />
+        <BlogTab
           selected={selected}
-          selectedTab={selected.selectedTab}
-          selectedSort={selectedSort}
+          setSelected={setSelected}
+          setSelectedTab={(value) => updateSelected('selectedTab', value)}
           setMajorCategory={(value) => updateSelected('selectedMajorCategory', value)}
           setSubCategory={(value) => updateSelected('selectedSubCategory', value)}
-          setSelectedSort={setSelectedSort}
+          setSelectedActivity={(value) => updateSelected('selectedActivity', value)}
         />
-      </Suspense>
+        <Suspense fallback={<BlogPostSkeletonUI />}>
+          <BlogPostList
+            selected={selected}
+            selectedTab={selected.selectedTab}
+            selectedSort={selectedSort}
+            setMajorCategory={(value) => updateSelected('selectedMajorCategory', value)}
+            setSubCategory={(value) => updateSelected('selectedSubCategory', value)}
+            setSelectedSort={setSelectedSort}
+          />
+        </Suspense>
+      </PageContainer>
     </PageLayout>
   );
 }
+
+const PageContainer = styled.div`
+  margin-top: 80px;
+
+  @media (max-width: 767px) {
+    margin-top: 48px;
+  }
+
+  @media (max-width: 375px) {
+    margin-top: 48px;
+  }
+`;

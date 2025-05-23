@@ -3,18 +3,18 @@ import { colors } from '@sopt-makers/colors';
 
 export const Wrapper = styled.section`
   width: 100%;
-  margin-top: 188px;
+  margin-top: 48px;
   display: flex;
   align-items: center;
   justify-content: center;
 
   /* 태블릿 뷰 */
   @media (max-width: 58.6875rem) and (min-width: 48rem) {
-    margin-top: 188px;
+    margin-top: 48px;
   }
   /* 모바일 뷰 */
   @media (max-width: 47.9375rem) {
-    margin-top: 76px;
+    margin-top: 48px;
   }
 `;
 
@@ -28,6 +28,7 @@ export const Container = styled.div`
   /* 태블릿, 모바일 뷰 */
   @media (max-width: 58.6875rem) {
     padding: 0 20px;
+    gap: 25px;
     width: 100%;
   }
 `;
