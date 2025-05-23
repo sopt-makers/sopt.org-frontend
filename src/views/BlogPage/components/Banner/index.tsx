@@ -1,15 +1,16 @@
-import { BlogTabType } from '@src/views/BlogPage/components/BlogTab/types';
-import * as S from './style';
+import Image from 'next/image';
 import reviewBanner from '@src/assets/images/img_review_banner.png';
 import reviewBannerMobile from '@src/assets/images/img_review_banner_mobile.png';
 import reviewBannerDesktopTablet from '@src/assets/images/img_review_banner_responsive.png';
-import storyBannerDesktopTablet from '@src/assets/images/img_story_banner_responsive.png';
 import reviewBannerTablet from '@src/assets/images/img_review_banner_tablet.png';
 import storyBanner from '@src/assets/images/img_story_banner.png';
 import storyBannerMobile from '@src/assets/images/img_story_banner_mobile.png';
+import storyBannerDesktopTablet from '@src/assets/images/img_story_banner_responsive.png';
 import storyBannerTablet from '@src/assets/images/img_story_banner_tablet.png';
 import { useIsDesktop, useIsTablet } from '@src/hooks/useDevice';
 import { useIsMobile } from '@src/hooks/useDevice';
+import { BlogTabType } from '@src/views/BlogPage/components/BlogTab/types';
+import * as S from './style';
 
 const DESKTOP_WIDTH = '940px';
 const TABLET_MAX_WIDTH = '768px';
@@ -32,6 +33,7 @@ const Banner = ({ selectedTab }: { selectedTab: BlogTabType }) => {
     } else if (isMobile) {
       return reviewBannerMobile.src;
     }
+    return reviewBannerMobile.src;
   };
 
   const getStoryBannerImage = () => {
@@ -44,18 +46,29 @@ const Banner = ({ selectedTab }: { selectedTab: BlogTabType }) => {
     } else if (isMobile) {
       return storyBannerMobile.src;
     }
+    return storyBannerMobile.src;
   };
 
   return (
-    <>
-      {
-        selectedTab === BlogTabType.REVIEW ? (
-          <S.BannerImage src={getReviewBannerImage()} />
-        ) : (
-          <S.BannerImage src={getStoryBannerImage()} />
-        )
-      }
-    </>
+    <S.BannerWrapper>
+      {selectedTab === BlogTabType.REVIEW ? (
+        <Image
+          src={getReviewBannerImage()}
+          fill
+          style={{ objectFit: 'cover' }}
+          alt="blog review banner"
+          priority
+        />
+      ) : (
+        <Image
+          src={getStoryBannerImage()}
+          fill
+          style={{ objectFit: 'cover' }}
+          alt="blog story banner"
+          priority
+        />
+      )}
+    </S.BannerWrapper>
   );
 };
 
