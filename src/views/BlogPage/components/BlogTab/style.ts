@@ -76,6 +76,10 @@ export const LayoutContainer = styled.div`
   position: relative;
   width: 100%;
   height: 48px;
+
+  @media (max-width: 375px) {
+    height: 38px;
+  }
 `;
 
 export const Layout = styled.div`
