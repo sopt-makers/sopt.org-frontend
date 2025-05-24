@@ -96,6 +96,13 @@ export const Layout = styled.div`
 export const TagContainer = styled.section`
   display: flex;
   gap: 12px;
+
+  /* 모바일 뷰 */
+  @media (max-width: 375px) {
+    & > div > button {
+      max-height: 38px;
+    }
+  }
 `;
 
 export const Tag = styled.button<{ isSelected: boolean }>`
@@ -118,9 +125,21 @@ export const Tag = styled.button<{ isSelected: boolean }>`
   white-space: nowrap;
 
   cursor: pointer;
+
+  /* 모바일 뷰 */
+  @media (max-width: 375px) {
+    max-height: 38px;
+  }
 `;
 
 export const SelectContainer = styled.section`
   display: flex;
   gap: 16px;
+
+  /* 모바일 뷰 */
+  @media (max-width: 375px) {
+    & > div > button {
+      max-height: 38px;
+    }
+  }
 `;
