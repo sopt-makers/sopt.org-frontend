@@ -1,23 +1,48 @@
+import { useEffect } from 'react';
 import { activeGenerationCategoryList } from '@src/lib/constants/tabs';
 import { BlogCategoryType, PartCategoryType } from '@src/lib/types/blog';
-import { BlogTabType } from '../BlogTab/types';
+import { ActivitySelectType } from '@src/lib/types/main';
+import { BlogTabType, SelectedType } from '../BlogTab/types';
 import * as S from './style';
 
 interface EmptyBlogPostListProps {
+  selected: SelectedType;
+  setSelected: (newValue: SelectedType) => void;
   selectedTab: BlogTabType;
   selectedReviewTag: BlogCategoryType;
-  setMajorCategory: (newValue: number) => void;
-  setSubCategory: (newValue: PartCategoryType) => void;
 }
+
 export default function EmptyBlogPostList({
+  selected,
+  setSelected,
   selectedTab,
   selectedReviewTag,
-  setMajorCategory,
-  setSubCategory,
 }: EmptyBlogPostListProps) {
-  const showTotalPostList = () => {
-    setMajorCategory(activeGenerationCategoryList[0]);
-    setSubCategory(PartCategoryType.ALL);
+  const showTotalPost = () => {
+    if (selectedTab === BlogTabType.REVIEW) {
+      if (selectedReviewTag === BlogCategoryType.DOCUMENT_INTERVIEW) {
+        showTotalApplyReview();
+      } else {
+        showTotalActivityReview();
+      }
+    }
+  };
+
+  const showTotalApplyReview = () => {
+    setSelected({
+      ...selected,
+      selectedMajorCategory: activeGenerationCategoryList[0],
+      selectedSubCategory: PartCategoryType.ALL,
+    });
+  };
+
+  const showTotalActivityReview = () => {
+    setSelected({
+      ...selected,
+      selectedActivity: ActivitySelectType.ALL,
+      selectedMajorCategory: activeGenerationCategoryList[0],
+      selectedSubCategory: PartCategoryType.ALL,
+    });
   };
 
   const isApplyReview =
@@ -36,7 +61,7 @@ export default function EmptyBlogPostList({
             : isActivityReview && '활동후기가'
         } 없어요`}
       </S.EmptyBlogPostList>
-      <S.Total onClick={showTotalPostList}>{`${
+      <S.Total onClick={showTotalPost}>{`${
         selectedTab === BlogTabType.ARTICLE
           ? '아티클'
           : isApplyReview

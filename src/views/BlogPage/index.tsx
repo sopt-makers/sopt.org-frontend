@@ -1,5 +1,5 @@
 import { css } from '@emotion/react';
-import { Suspense } from 'react';
+import { Suspense, useEffect } from 'react';
 import PageLayout from '@src/components/common/PageLayout';
 import useStorage from '@src/hooks/useStorage';
 import { activeGenerationCategoryList } from '@src/lib/constants/tabs';
@@ -56,11 +56,8 @@ export default function BlogPage() {
       <Suspense fallback={<BlogPostSkeletonUI />}>
         <BlogPostList
           selected={selected}
-          selectedTab={selected.selectedTab}
+          setSelected={setSelected}
           selectedSort={selectedSort}
-          selectedReviewTag={selected.tag === 'recruit' ? BlogCategoryType.DOCUMENT_INTERVIEW : BlogCategoryType.ALL_ACTIVITIES}
-          setMajorCategory={(value) => updateSelected('selectedMajorCategory', value)}
-          setSubCategory={(value) => updateSelected('selectedSubCategory', value)}
           setSelectedSort={setSelectedSort}
         />
       </Suspense>

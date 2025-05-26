@@ -1,10 +1,12 @@
+import { setLazyProp } from 'next/dist/server/api-utils';
 import { useState } from 'react';
 import IcSort from '@src/assets/icons/ic_sort.svg';
 import Pagination from '@src/components/common/Pagination';
 import Select from '@src/components/common/Select';
 import { pageBreakPoint } from '@src/lib/constants/project';
 import { sortLabel, sortValues } from '@src/lib/constants/tabs';
-import type { BlogCategoryType, PartCategoryType, SortType } from '@src/lib/types/blog';
+import { BlogCategoryType, PartCategoryType, SortType } from '@src/lib/types/blog';
+import { ActivitySelectType } from '@src/lib/types/main';
 import { PageType } from '@src/lib/types/universal';
 import BlogPost from '@src/views/BlogPage/components/BlogPost';
 import EmptyBlogPostList from '@src/views/BlogPage/components/EmptyBlogPostList';
@@ -15,11 +17,8 @@ import * as S from './style';
 
 interface BlogPostListProps {
   selected: SelectedType;
-  selectedTab: BlogTabType;
+  setSelected: (newValue: SelectedType) => void;
   selectedSort: SortType;
-  selectedReviewTag: BlogCategoryType;
-  setMajorCategory: (newValue: number) => void;
-  setSubCategory: (newValue: PartCategoryType) => void;
   setSelectedSort: (newValue: SortType) => void;
 }
 
@@ -27,13 +26,16 @@ const INIT_PAGE = 1;
 
 export default function BlogPostList({
   selected,
-  selectedTab,
+  setSelected,
   selectedSort,
-  selectedReviewTag,
-  setMajorCategory,
-  setSubCategory,
   setSelectedSort,
 }: BlogPostListProps) {
+  const selectedTab = selected.selectedTab;
+  const selectedReviewTag =
+    selected.tag === 'recruit'
+      ? BlogCategoryType.DOCUMENT_INTERVIEW
+      : BlogCategoryType.ALL_ACTIVITIES;
+
   const { selectedMajorCategory, selectedSubCategory } = selected;
   const [currentPage, setCurrentPage] = useState(INIT_PAGE);
 
@@ -53,10 +55,10 @@ export default function BlogPostList({
           {selectedTab === BlogTabType.ARTICLE && <OfficialVideo />}
           {response?.response.length === 0 ? (
             <EmptyBlogPostList
+              selected={selected}
+              setSelected={setSelected}
               selectedTab={selectedTab}
               selectedReviewTag={selectedReviewTag}
-              setMajorCategory={setMajorCategory}
-              setSubCategory={setSubCategory}
             />
           ) : (
             <>
