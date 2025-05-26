@@ -1,3 +1,4 @@
+import styled from '@emotion/styled';
 import { css } from '@emotion/react';
 import { Suspense } from 'react';
 import PageLayout from '@src/components/common/PageLayout';
@@ -5,9 +6,10 @@ import useStorage from '@src/hooks/useStorage';
 import { activeGenerationCategoryList } from '@src/lib/constants/tabs';
 import { PartCategoryType, SortType } from '@src/lib/types/blog';
 import { ActivitySelectType } from '@src/lib/types/main';
+import Banner from '@src/views/BlogPage/components/Banner';
+import BlogPostList from '@src/views/BlogPage/components/BlogPostList';
 import BlogPostSkeletonUI from '@src/views/BlogPage/components/BlogPostSkeletonUI';
-import BlogPostList from './components/BlogPostList';
-import BlogTab from './components/BlogTab';
+import BlogTab from '@src/views/BlogPage/components/BlogTab';
 import { BlogTabType, SelectedType } from './components/BlogTab/types';
 
 const initialState: SelectedType = {
@@ -45,22 +47,37 @@ export default function BlogPage() {
         height: 100vh;
       `}
     >
-      <BlogTab
-        selected={selected}
-        setSelected={setSelected}
-        setSelectedTab={(value) => updateSelected('selectedTab', value)}
-        setMajorCategory={(value) => updateSelected('selectedMajorCategory', value)}
-        setSubCategory={(value) => updateSelected('selectedSubCategory', value)}
-        setSelectedActivity={(value) => updateSelected('selectedActivity', value)}
-      />
-      <Suspense fallback={<BlogPostSkeletonUI />}>
-        <BlogPostList
+      <PageContainer>
+        <Banner selectedTab={selected.selectedTab} />
+        <BlogTab
           selected={selected}
           setSelected={setSelected}
-          selectedSort={selectedSort}
-          setSelectedSort={setSelectedSort}
+          setSelectedTab={(value) => updateSelected('selectedTab', value)}
+          setMajorCategory={(value) => updateSelected('selectedMajorCategory', value)}
+          setSubCategory={(value) => updateSelected('selectedSubCategory', value)}
+          setSelectedActivity={(value) => updateSelected('selectedActivity', value)}
         />
-      </Suspense>
+        <Suspense fallback={<BlogPostSkeletonUI />}>
+          <BlogPostList
+            selected={selected}
+            selectedSort={selectedSort}
+            setSelected={setSelected}
+            setSelectedSort={setSelectedSort}
+          />
+        </Suspense>
+      </PageContainer>
     </PageLayout>
   );
 }
+
+const PageContainer = styled.div`
+  margin-top: 80px;
+
+  @media (max-width: 767px) {
+    margin-top: 48px;
+  }
+
+  @media (max-width: 375px) {
+    margin-top: 48px;
+  }
+`;
