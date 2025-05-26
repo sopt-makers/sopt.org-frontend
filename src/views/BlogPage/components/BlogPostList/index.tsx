@@ -1,12 +1,10 @@
-import { setLazyProp } from 'next/dist/server/api-utils';
 import { useState } from 'react';
 import IcSort from '@src/assets/icons/ic_sort.svg';
 import Pagination from '@src/components/common/Pagination';
 import Select from '@src/components/common/Select';
 import { pageBreakPoint } from '@src/lib/constants/project';
 import { sortLabel, sortValues } from '@src/lib/constants/tabs';
-import { BlogCategoryType, PartCategoryType, SortType } from '@src/lib/types/blog';
-import { ActivitySelectType } from '@src/lib/types/main';
+import { BlogCategoryType, SortType } from '@src/lib/types/blog';
 import { PageType } from '@src/lib/types/universal';
 import BlogPost from '@src/views/BlogPage/components/BlogPost';
 import EmptyBlogPostList from '@src/views/BlogPage/components/EmptyBlogPostList';

@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { activeGenerationCategoryList } from '@src/lib/constants/tabs';
 import { BlogCategoryType, PartCategoryType } from '@src/lib/types/blog';
 import { ActivitySelectType } from '@src/lib/types/main';
