@@ -7,7 +7,7 @@ import * as S from './style';
 type SelectProps<T extends LabelKeyType> = ComponentPropsWithoutRef<'div'> &
   ComponentPropsWithoutRef<'button'> & {
     options: T[];
-    baseValue: T;
+    baseValue?: T;
     baseLabel: string;
     selectedValue: T;
     setSelectedValue: (newValue: T) => void;
