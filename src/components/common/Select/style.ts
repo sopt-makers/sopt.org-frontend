@@ -96,8 +96,6 @@ export const SelectTriggerContent = styled.p<{
 `;
 
 export const SelectItemContent = styled.p<{ isWide: boolean; breakPoint: string }>`
-  /* margin-right: ${({ isWide }) => isWide && '42px'}; */
-
   font-size: 16rem;
 
   @media (max-width: ${({ breakPoint }) => breakPoint}) {
