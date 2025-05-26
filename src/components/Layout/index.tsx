@@ -12,5 +12,4 @@ export function Layout({
 const Main = styled.div<{ moreStyle?: SerializedStyles }>`
   display: flex;
   flex-direction: column;
-  height: 100dvh;
 `;
