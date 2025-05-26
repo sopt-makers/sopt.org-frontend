@@ -7,9 +7,10 @@ import * as St from './style';
 type MemberSectionProps = {
   generation: number;
   members: MemberType[];
+  name: string;
 };
 
-const MemberSection = ({ generation, members }: MemberSectionProps) => {
+const MemberSection = ({ generation, members, name: soptName }: MemberSectionProps) => {
   return (
     <Flex
       dir="column"
@@ -20,7 +21,7 @@ const MemberSection = ({ generation, members }: MemberSectionProps) => {
       <SectionTop
         engTitle="Executives"
         korTitle={`${generation}기 임원진`}
-        description="200명의 활동 회원들이 열정을 외칠 수 있도록, 35기 AND SOPT를 이끄는 임원진들이에요."
+        description={`200명의 활동 회원들이 열정을 외칠 수 있도록, ${generation}기 ${soptName}를 이끄는 임원진들이에요.`}
       />
       <Flex
         dir="column"

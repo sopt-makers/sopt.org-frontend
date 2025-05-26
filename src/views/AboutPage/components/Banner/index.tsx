@@ -18,6 +18,7 @@ const Banner = (props: BannerProps) => {
           objectFit: 'cover',
           objectPosition: 'center',
         }}
+        unoptimized
       />
     </S.Banner>
   );

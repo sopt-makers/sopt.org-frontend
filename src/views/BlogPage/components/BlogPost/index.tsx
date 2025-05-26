@@ -5,14 +5,37 @@ import type { BlogPostType } from '@src/lib/types/blog';
 import { parsePartToKorean } from '@src/lib/utils/parsePartToKorean';
 import Header from '@src/views/BlogPage/components/BlogPost/Header';
 import Like from '@src/views/BlogPage/components/BlogPost/Like';
+import { BlogTabType } from '@src/views/BlogPage/components/BlogTab/types';
 import * as S from './style';
 
 const TWO_LINE_TITLE_HEIGHT = 72;
 
 interface BlogPostProps {
-  selectedTab: string;
+  selectedTab: BlogTabType;
   blogPost: BlogPostType;
 }
+
+const getThumbnailUrl = (blogPost: BlogPostType) => {
+  if (!blogPost.thumbnailUrl) {
+    return img_blog_default;
+  }
+  try {
+    if (
+      blogPost.thumbnailUrl.startsWith('http://') ||
+      blogPost.thumbnailUrl.startsWith('https://')
+    ) {
+      return blogPost.thumbnailUrl;
+    }
+    if (blogPost.thumbnailUrl.startsWith('//')) {
+      return `https:${blogPost.thumbnailUrl}`;
+    }
+
+    return `https://${blogPost.thumbnailUrl}`;
+  } catch (e) {
+    console.error('URL Processing Error', blogPost.thumbnailUrl, e);
+    return img_blog_default;
+  }
+};
 
 export default function BlogPost({ selectedTab, blogPost }: BlogPostProps) {
   const titleRef = useRef<HTMLDivElement>(null);
@@ -30,33 +53,35 @@ export default function BlogPost({ selectedTab, blogPost }: BlogPostProps) {
     }
   }, []);
 
+  const thumbnailUrl = getThumbnailUrl(blogPost);
+
   return (
-    <S.BlogPost
-      onClick={() => {
-        track(`click_${selectedTab}_detail`);
-        window.open(blogPost.url);
-      }}
-    >
-      <div>
-        <Header selectedTab={selectedTab} blogPost={blogPost} />
-        <S.Body>
-          <S.Title ref={titleRef}>{blogPost.title}</S.Title>
-          <S.Description descriptionLine={descriptionLine}>{blogPost.description}</S.Description>
-        </S.Body>
-        <S.TagList>
-          <S.Tag>{blogPost.generation}기</S.Tag>
-          <S.Tag>{parsePartToKorean(blogPost.part)}</S.Tag>
-        </S.TagList>
-      </div>
+    <S.PostWrapper tab={selectedTab}>
+      <S.BlogPost
+        onClick={() => {
+          track(`click_${selectedTab}_detail`);
+          window.open(blogPost.url);
+        }}
+      >
+        <div>
+          {selectedTab === BlogTabType.REVIEW && (
+            <Header selectedTab={selectedTab} blogPost={blogPost} />
+          )}
+          <S.Body>
+            <S.Title ref={titleRef}>{blogPost.title}</S.Title>
+            <S.Description descriptionLine={descriptionLine}>{blogPost.description}</S.Description>
+          </S.Body>
+          {selectedTab === BlogTabType.REVIEW && (
+            <S.TagList>
+              <S.Tag>{blogPost.generation}기</S.Tag>
+              <S.Tag>{parsePartToKorean(blogPost.part)}</S.Tag>
+            </S.TagList>
+          )}
+        </div>
+      </S.BlogPost>
       <S.ThumbnailWrapper>
         <S.Thumbnail
-          src={
-            blogPost.thumbnailUrl?.charAt(0) !== 'h'
-              ? `https:${blogPost.thumbnailUrl}`
-              : error
-              ? img_blog_default
-              : blogPost.thumbnailUrl
-          }
+          src={error ? img_blog_default : thumbnailUrl}
           alt="게시물 썸네일"
           width={239}
           height={160}
@@ -64,9 +89,10 @@ export default function BlogPost({ selectedTab, blogPost }: BlogPostProps) {
           onError={onThumbnailError}
           placeholder="blur"
           blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPU0zOtBwACNQES9P3nGQAAAABJRU5ErkJggg=="
+          unoptimized
         />
-        {selectedTab === 'article' && <Like blogPost={blogPost} />}
+        {selectedTab === BlogTabType.ARTICLE && <Like blogPost={blogPost} />}
       </S.ThumbnailWrapper>
-    </S.BlogPost>
+    </S.PostWrapper>
   );
 }

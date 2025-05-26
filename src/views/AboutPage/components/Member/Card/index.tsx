@@ -22,6 +22,8 @@ const MemberCard = ({
           alt={`${name}의 프로필`}
           fill
           sizes="100%"
+          quality={80}
+          unoptimized
         />
       </St.ImageWrapper>
       <St.NameWrapper>

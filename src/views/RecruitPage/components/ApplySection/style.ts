@@ -4,7 +4,7 @@ export const ApplyButton = styled.a<{ main: string }>`
   width: 220px;
   padding: 24px 0;
   border-radius: 50px;
-  color: #212121;
+  color: white;
   text-align: center;
   font-size: 22rem;
   font-style: normal;

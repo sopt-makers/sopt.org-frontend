@@ -45,6 +45,18 @@ export const CurriList = styled.ul`
   gap: 12px;
   align-items: center;
   padding: 70px;
+
+  /* 태블릿 뷰 */
+  @media (max-width: 48rem) {
+    gap: 8px;
+    padding: 30px;
+  }
+
+  /* 모바일 뷰 */
+  @media (max-width: 26.75rem) {
+    gap: 6px;
+    padding: 10px;
+  }
 `;
 export const CurriItem = styled.li`
   width: 80%;
@@ -60,6 +72,20 @@ export const CurriItem = styled.li`
   font-weight: 500;
   line-height: normal;
   letter-spacing: -0.5px;
+
+  /* 태블릿 뷰 */
+  @media (max-width: 48rem) {
+    font-size: 14px;
+    gap: 6px;
+    padding: 10px 20px;
+  }
+
+  /* 모바일 뷰 */
+  @media (max-width: 26.75rem) {
+    font-size: 12px;
+    gap: 3px;
+    padding: 8px 12px;
+  }
 `;
 export const CurriHighlight = styled.span<{ mainColor: string }>`
   color: ${({ mainColor }) => mainColor};

@@ -14,6 +14,7 @@ export default function ProjectCard({ project }: { project: ProjectType }) {
         loading="lazy"
         placeholder="blur"
         blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPU0zOtBwACNQES9P3nGQAAAABJRU5ErkJggg=="
+        unoptimized
       />
       <S.ProjectHeader>
         <S.ProjectText>

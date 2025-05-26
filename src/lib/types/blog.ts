@@ -11,12 +11,9 @@ export type BlogPostListType = {
 export type BlogPostType = {
   id: number;
   part: string;
-  generation: number;
   thumbnailUrl: string;
   title: string;
   description: string;
-  author: string;
-  authorProfileImageUrl: string | null;
   url: string;
   uploadedAt: string;
 
@@ -25,7 +22,10 @@ export type BlogPostType = {
   liked?: boolean;
 
   /* review */
+  generation?: number;
   subject?: string;
+  author?: string;
+  authorProfileImageUrl?: string | null;
 };
 
 export enum PartCategoryType {
@@ -40,6 +40,19 @@ export enum PartCategoryType {
 
 export type BlogResponse = {
   hasNextPage: boolean;
+  hasPrevPage: boolean;
   response: BlogPostType[];
   currentPage: number;
+  totalPage: number;
+  totalCount: number;
 };
+
+export enum SortType {
+  LATEST = 'latest',
+  LIKES = 'likes',
+}
+
+export enum BlogCategoryType {
+  DOCUMENT_INTERVIEW = '서류/면접',
+  ALL_ACTIVITIES = '전체 활동',
+}

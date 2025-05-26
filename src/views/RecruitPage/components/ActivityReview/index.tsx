@@ -47,7 +47,7 @@ export default function ActivityReview() {
           <ArrowLeft stroke={isLeftScrollable ? 'white' : 'grey'} />
         </ArrowWrapper>
         <Content ref={scrollableRef}>
-          {data?.map((review) => (
+          {data?.reviews.map((review) => (
             <Link
               key={review.id}
               href={review.url}

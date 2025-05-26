@@ -2,12 +2,12 @@ import RecordItem from '../Item';
 import * as St from './style';
 
 const RecordList = ({
-  records,
+  activitiesRecords: { activitiesMemberCount, projectCounts, studyCounts },
 }: {
-  records: {
-    memberCount: number;
-    projectCount: number;
-    studyCount: number;
+  activitiesRecords: {
+    activitiesMemberCount: number;
+    projectCounts: number;
+    studyCounts: number;
   };
 }) => {
   return (
@@ -15,17 +15,17 @@ const RecordList = ({
       <RecordItem
         type="block"
         title="활동 멤버"
-        countNumber={records?.memberCount}
+        countNumber={activitiesMemberCount}
         countString="명"
       />
       <RecordItem
         type="link"
         title="프로젝트"
-        countNumber={records?.projectCount !== 0 ? records?.projectCount : undefined}
-        countString={records?.projectCount !== 0 ? '개' : '진행중'}
+        countNumber={projectCounts !== 0 ? projectCounts : undefined}
+        countString={projectCounts !== 0 ? '개' : '진행중'}
         href="/project"
       />
-      <RecordItem type="block" title="스터디" countNumber={records?.studyCount} countString="개" />
+      <RecordItem type="block" title="스터디" countNumber={studyCounts} countString="개" />
     </St.Wrapper>
   );
 };

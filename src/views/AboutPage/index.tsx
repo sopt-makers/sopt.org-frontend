@@ -41,8 +41,15 @@ const AboutPage = () => {
             }))}
           />
           <CurriculumSection curriculums={adminData.partCurriculum} />
-          <MemberSection members={adminData.member} generation={adminData.generation} />
-          {/* <RecordSection generation={adminData.generation} records={adminData.records} /> */}
+          <MemberSection
+            members={adminData.member}
+            generation={adminData.generation}
+            name={adminData.name}
+          />
+          <RecordSection
+            generation={adminData.generation}
+            activitiesRecords={adminData.activitiesRecords}
+          />
         </Root>
       </BrandingColorContext.Provider>
     </PageLayout>

@@ -1,15 +1,15 @@
-import { AboutInfoType } from '@src/lib/types/about';
+import { GetAboutpageResponse } from '@src/lib/types/admin';
 import SectionTop from '../../@common/SectionTop';
 import RecordList from '../List';
 import * as St from './style';
 
-type RecordSectionProps = Pick<AboutInfoType, 'generation' | 'records'>;
+type RecordSectionProps = Pick<GetAboutpageResponse, 'generation' | 'activitiesRecords'>;
 
-const RecordSection = ({ generation, records }: RecordSectionProps) => {
+const RecordSection = ({ generation, activitiesRecords }: RecordSectionProps) => {
   return (
     <St.Wrapper>
-      <SectionTop engTitle="Activity Records" korTitle={`${generation}기 활동 레코드`} />
-      <RecordList records={records} />
+      <SectionTop engTitle="Activity Records" korTitle={`${generation - 1}기 활동 레코드`} />
+      <RecordList activitiesRecords={activitiesRecords} />
     </St.Wrapper>
   );
 };

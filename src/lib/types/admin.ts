@@ -33,6 +33,7 @@ export interface GetHomepageResponse {
   };
   partIntroduction: PartIntroType[];
   latestNews: LatestNewsType[];
+  recruitSchedule: RecruitScheduleType[];
 }
 
 export interface MemberType {
@@ -71,6 +72,11 @@ export interface GetAboutpageResponse {
   coreValue: CoreValueType[];
   partCurriculum: PartCurriculumType[];
   member: MemberType[];
+  activitiesRecords: {
+    activitiesMemberCount: number;
+    projectCounts: number;
+    studyCounts: number;
+  };
 }
 
 export interface PartInfoType {

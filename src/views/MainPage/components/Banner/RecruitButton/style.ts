@@ -106,6 +106,8 @@ export const MouseTrackerWrapper = styled.div<{
   }
 
   & > div {
+    color: ${colors.white};
+
     font-size: 100%;
   }
 `;

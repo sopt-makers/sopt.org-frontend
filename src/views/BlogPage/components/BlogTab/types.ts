@@ -1,19 +1,17 @@
 import type { PartCategoryType } from '@src/lib/types/blog';
+import { ActivitySelectType } from '@src/lib/types/main';
 
 export enum BlogTabType {
   REVIEW = 'review',
   ARTICLE = 'article',
 }
 
-type BlogTabContent = {
-  title: string;
-  description: string;
-};
+export type BlogTabMap = Record<BlogTabType, string>;
 
-export type BlogTabMap = Record<BlogTabType, BlogTabContent>;
-
-export type selectedType = {
+export type SelectedType = {
   selectedTab: BlogTabType;
   selectedMajorCategory: number;
   selectedSubCategory: PartCategoryType;
+  selectedActivity: ActivitySelectType;
+  tag: 'recruit' | 'activity';
 };

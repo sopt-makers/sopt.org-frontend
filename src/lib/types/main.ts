@@ -21,6 +21,16 @@ export enum ActivityType {
   EVENTS = 'EVENTS',
 }
 
+export enum ActivitySelectType {
+  ALL = '전체',
+  APPJAM = '앱잼',
+  SOPKATHON = '솝커톤',
+  SEMINAR = '세미나',
+  STUDY = '스터디',
+  SOPTERM = '솝텀',
+  MAKERS = '메이커스',
+}
+
 export interface ActivityContentType {
   img: string;
   navKor: string;
