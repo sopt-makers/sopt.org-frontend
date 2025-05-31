@@ -55,8 +55,10 @@ export default function BlogPost({ selectedTab, blogPost, selectedReviewTag }: B
   }, []);
 
   const thumbnailUrl = getThumbnailUrl(blogPost);
-  const isApplyReview = selectedTab === BlogTabType.REVIEW && selectedReviewTag === BlogCategoryType.DOCUMENT_INTERVIEW;
-  const isActivityReview = selectedTab === BlogTabType.REVIEW && selectedReviewTag === BlogCategoryType.ALL_ACTIVITIES;
+  const isApplyReview =
+    selectedTab === BlogTabType.REVIEW && selectedReviewTag === BlogCategoryType.DOCUMENT_INTERVIEW;
+  const isActivityReview =
+    selectedTab === BlogTabType.REVIEW && selectedReviewTag === BlogCategoryType.ALL_ACTIVITIES;
 
   return (
     <S.PostWrapper tab={selectedTab}>
@@ -68,7 +70,11 @@ export default function BlogPost({ selectedTab, blogPost, selectedReviewTag }: B
       >
         <div>
           {selectedTab === BlogTabType.REVIEW && (
-            <Header selectedTab={selectedTab} blogPost={blogPost} selectedReviewTag={selectedReviewTag} />
+            <Header
+              selectedTab={selectedTab}
+              blogPost={blogPost}
+              selectedReviewTag={selectedReviewTag}
+            />
           )}
           <S.Body>
             <S.Title ref={titleRef}>{blogPost.title}</S.Title>
@@ -82,11 +88,9 @@ export default function BlogPost({ selectedTab, blogPost, selectedReviewTag }: B
           )}
           {isActivityReview && (
             <S.TagList>
-              {
-                blogPost.subject?.map((subjectItem, index) => (
-                  <S.Tag key={`${subjectItem}-${index}`}>{subjectItem}</S.Tag>
-                ))
-              }
+              {blogPost.subject?.map((subjectItem, index) => (
+                <S.Tag key={`${subjectItem}-${index}`}>{subjectItem}</S.Tag>
+              ))}
             </S.TagList>
           )}
         </div>
