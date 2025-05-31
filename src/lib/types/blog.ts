@@ -20,6 +20,7 @@ export type BlogPostType = {
   /* article */
   likeCount?: number;
   liked?: boolean;
+  isLikedByUser: boolean;
 
   /* review */
   generation?: number;
@@ -44,6 +45,7 @@ export type BlogResponse = {
   response: BlogPostType[];
   currentPage: number;
   totalPage: number;
+  isLikedByUser: boolean;
   totalCount: number;
 };
 
