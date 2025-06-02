@@ -34,6 +34,7 @@ export const getResponse = async (
     hasNextPage: data.hasNextPage,
     hasPrevPage: data.hasPrevPage,
     response: data.data,
+    isLikedByUser: data.isLikedByUser,
     currentPage: data.currentPage,
     totalPage: data.totalPage,
     totalCount: data.totalCount,
