@@ -6,8 +6,8 @@ import { ReactComponent as ArrowRight } from '@src/assets/icons/arrow_right_28x2
 import arrowRightWhite from '@src/assets/icons/arrow_right_white.svg';
 import { useHorizontalScroll } from '@src/hooks/useHorizontalScroll';
 import { parsePartToKorean } from '@src/lib/utils/parsePartToKorean';
-import { BrandingColorContext } from '../..';
-import { SectionTitle, SectionTitleTranslate, SectionTitleWrapper } from '../common/style';
+import { BrandingColorContext } from '../../views/RecruitPage';
+import { SectionTitle, SectionTitleTranslate, SectionTitleWrapper } from '../../views/RecruitPage/components/common/style';
 import useGetSampleReviews from './hooks/queries/useGetSampleReviews';
 import {
   Arrow,

@@ -1,5 +1,5 @@
 import { Suspense } from 'react';
-import S from '../../styles';
+import S from './style';
 import RecentProjectListCarousel from './Carousel';
 import RecentProjectListSkeletonUI from './RecentProjectListSkeletonUI';
 
