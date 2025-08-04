@@ -1,7 +1,7 @@
 import Carousel from '@src/components/common/Carousel';
 import { useDeviceType, useIsDesktop, useIsMobile } from '@src/hooks/useDevice';
+import RecentProjectListItem from '@src/legacy/RecentProjectList/Item';
 import { staticReleaseProjectList } from '@src/lib/constants/project';
-import RecentProjectListItem from '@src/views/ProjectPage/components/RecentProjectList/Item';
 
 export default function RecentProjectListCarousel() {
   const isDesktopSize = useIsDesktop('80rem');

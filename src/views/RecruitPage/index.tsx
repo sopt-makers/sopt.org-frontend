@@ -5,7 +5,6 @@ import PageLayout from '@src/components/common/PageLayout';
 import { remoteAdminAPI } from '@src/lib/api/remote/admin';
 import { GetRecruitpageResponse } from '@src/lib/types/admin';
 import { checkIsTimeInRange } from '@src/lib/utils/date';
-import ActivityReview from './components/ActivityReview';
 import ApplySection from './components/ApplySection';
 import ChapterInfo from './components/ChapterInfo';
 import Contact from './components/Contact';
@@ -16,7 +15,6 @@ import Schedule from './components/Schedule';
 
 // const FaqInfo = lazy(() => import('./components/FAQ'));
 // const Contact = lazy(() => import('./components/Contact'));
-// const ActivityReview = lazy(() => import('./components/ActivityReview'));
 // const BottomLogo = lazy(() => import('./components/BottomLogo'));
 
 export const BrandingColorContext = createContext({
@@ -59,7 +57,6 @@ function Recruit() {
               <FaqInfo info={adminData.recruitQuestion} />
             </Suspense>
             <Contact />
-            <ActivityReview />
           </ContentWrapper>
           {/* <BottomLogo /> */}
         </Root>
