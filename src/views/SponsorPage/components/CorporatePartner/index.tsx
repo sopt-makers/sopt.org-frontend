@@ -54,7 +54,7 @@ function CoporatePartner() {
             <ArrowRight stroke={isRightScrollable ? 'white' : 'grey'} />
           </S.ArrowWrapper>
         </S.ContentWrapper>
-        <S.RequestSponsorButton href="https://docs.google.com/forms/d/e/1FAIpQLSeifUjywwsEEmtmvVbKWa42_GGm1Dty_rfGCSXQtPuegYxodw/viewform?usp=sf_link" target='_blank'>
+        <S.RequestSponsorButton href=" https://forms.gle/Vb4iq1xM6PSULhZS9" target="_blank">
           후원 문의하기
         </S.RequestSponsorButton>
       </S.Container>
