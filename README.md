@@ -181,6 +181,35 @@ pnpm run dev
         </td>
      <td></td>
     </tr>
+
+<tr>
+   <tr align="center">
+      <td >
+      <b>5기</b>
+      </td>
+        <td >
+            <a href="https://github.com/namdaeun">
+              <img src="https://github.com/namdaeun.png" width="50" />
+            </a>
+        </td>
+        <td  background-color="white">
+            <a href="https://github.com/rtttr1">
+              <img src="https://github.com/rtttr1.png" width="50" />
+            </a> 
+        </td>
+        <td></td>
+    </tr>
+    <tr align="center">
+     <td><sub>25.03 ~ 현재</sup></td>
+        <td>
+            남다은 <br/>
+      </td>
+        <td>
+            김규홍 <br />
+        </td>
+         <td></td>
+    </tr>
+ </tr>
 </tr>
 
 </table>
