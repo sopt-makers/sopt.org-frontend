@@ -14,7 +14,6 @@ import { ProjectCategoryType, ProjectPlatformType } from '@src/lib/types/project
 import { PageType } from '@src/lib/types/universal';
 import { ProjectList } from '@src/views/ProjectPage/components/project/ProjectList';
 import ProjectListFallback from '@src/views/ProjectPage/components/project/ProjectListFallback';
-import RecentProjectList from './components/RecentProjectList';
 import S from './styles';
 
 function Projects() {
@@ -38,8 +37,6 @@ function Projects() {
     >
       <S.Root>
         <S.ContentWrapper>
-          <RecentProjectList />
-          <S.Spacing />
           <S.SectionTitle>
             SOPT<span>에서 진행된</span> 프로젝트 둘러보기
           </S.SectionTitle>

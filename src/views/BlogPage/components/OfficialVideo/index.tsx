@@ -1,9 +1,9 @@
 import { track } from '@amplitude/analytics-browser';
-import * as S from './style';
 import YouTube from 'react-youtube';
+import * as S from './style';
 
-const VIDEO_URL = 'https://www.youtube.com/watch?v=f4-QwhPIlLI';
-const VIDEO_ID = 'f4-QwhPIlLI';
+const VIDEO_URL = 'https://youtu.be/5ZU8iexL538?si=Ty2H_iPV8eZVOB4w';
+const VIDEO_ID = '5ZU8iexL538';
 
 const videoOpts = {
   width: '100%',
@@ -14,21 +14,21 @@ const videoOpts = {
 };
 
 const VIDEO_INFO = {
-  title: '35기 AND SOPT 데모데이: \n\'Connecting Dots\'',
+  title: '[Momentum: 축적된 움직임이 그려낸 단 하나의 궤도]',
   description:
-    '작년 9월 작은 점으로 모인 우리가 8번의 세미나와 5주간의 앱잼을 지나 비로소 연결되었던 데모데이의 현장 사진을 공개합니다. \n작은 열정들이 모여 엄청난 결과물이 보여졌듯 앞으로 모든 팀의 여정을 응원합니다 ❕',
+    '지난 19일 솝트의 꽃, 5주간의 장기 해커톤 앱잼의 데모데이가 국회의사당 대회의실에서 진행되었는데요. \n 이번 데모데이 \'Momentum:\'에는 500명에 가까운 분들이 찾아주셨습니다. \n 뜨거웠던 열정의 현장을 카메라에 담아보았는데요, 그 열기를 한 번 느껴보시죠 🚀',
 };
 
 const OfficialVideo = () => {
   return (
-    <S.Wrapper
-      onClick={() => {
-        track('click_sopt_official_video');
-        window.open(VIDEO_URL, '_target');
-      }}
-    >
+    <S.Wrapper>
       <S.Title>🎥 공식 영상을 통해 SOPT를 만나보세요</S.Title>
-      <S.VideoWrapper>
+      <S.VideoWrapper
+        onClick={() => {
+          track('click_sopt_official_video');
+          window.open(VIDEO_URL, '_target');
+        }}
+      >
         <S.Video>
           <YouTube videoId={VIDEO_ID} opts={videoOpts} />
         </S.Video>

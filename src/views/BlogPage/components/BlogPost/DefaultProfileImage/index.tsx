@@ -7,7 +7,7 @@ export default function DefaultProfileImage() {
     <S.DefaultProfileImage>
       <Image
         src={icProfileDefault}
-        alt="작성자 프로필 이미지"
+        alt="작성자 프로필"
         width={10}
         height={10}
         loading="lazy"

@@ -5,6 +5,7 @@ export const Root = styled.footer`
   width: 100%;
   min-height: 162px;
   background-color: #202020;
+  margin-top: auto;
 
   /* 태블릿 + 데스크탑 뷰 */
   @media (min-width: 47.875rem) {

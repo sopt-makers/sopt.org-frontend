@@ -1,3 +1,4 @@
+import styled from '@emotion/styled';
 import { css } from '@emotion/react';
 import { Suspense } from 'react';
 import PageLayout from '@src/components/common/PageLayout';
@@ -5,12 +6,11 @@ import useStorage from '@src/hooks/useStorage';
 import { activeGenerationCategoryList } from '@src/lib/constants/tabs';
 import { PartCategoryType, SortType } from '@src/lib/types/blog';
 import { ActivitySelectType } from '@src/lib/types/main';
-import BlogPostSkeletonUI from '@src/views/BlogPage/components/BlogPostSkeletonUI';
-import styled from '@emotion/styled';
-import { BlogTabType, SelectedType } from './components/BlogTab/types';
 import Banner from '@src/views/BlogPage/components/Banner';
-import BlogTab from '@src/views/BlogPage/components/BlogTab';
 import BlogPostList from '@src/views/BlogPage/components/BlogPostList';
+import BlogPostSkeletonUI from '@src/views/BlogPage/components/BlogPostSkeletonUI';
+import BlogTab from '@src/views/BlogPage/components/BlogTab';
+import { BlogTabType, SelectedType } from './components/BlogTab/types';
 
 const initialState: SelectedType = {
   selectedTab: BlogTabType.REVIEW,
@@ -60,10 +60,8 @@ export default function BlogPage() {
         <Suspense fallback={<BlogPostSkeletonUI />}>
           <BlogPostList
             selected={selected}
-            selectedTab={selected.selectedTab}
             selectedSort={selectedSort}
-            setMajorCategory={(value) => updateSelected('selectedMajorCategory', value)}
-            setSubCategory={(value) => updateSelected('selectedSubCategory', value)}
+            setSelected={setSelected}
             setSelectedSort={setSelectedSort}
           />
         </Suspense>

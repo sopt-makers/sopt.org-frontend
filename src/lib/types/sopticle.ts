@@ -1,10 +1,7 @@
 import { BlogResponse, SortType } from './blog';
 
-export type PostSopticleLikeResponse = {
-  currentLike: boolean;
-  likeChanged: boolean;
-};
 export interface SopticleAPI {
   getResponse(sort: SortType, page: number): Promise<BlogResponse>;
-  postSopticleLike(sopticleId: number, prevLike: boolean): Promise<PostSopticleLikeResponse>;
+  postSopticleLike(sopticleId: number): Promise<void>;
+  postSopticleUnlike(sopticleId: number): Promise<void>;
 }
