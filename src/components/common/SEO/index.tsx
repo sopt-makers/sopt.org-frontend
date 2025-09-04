@@ -15,10 +15,7 @@ function SEO(props: HeadProps) {
       <meta name="twitter:description" content="대학생 연합 IT 벤처 창업 동아리" />
       <meta property="twitter:card" content="website" />
       <meta property="twitter:site" content="https://sopt.org/" />
-      <meta
-        name="twitter:image"
-        content="/36th_og.png"
-      />
+      <meta name="twitter:image" content="/37th_og.png" />
       <meta property="twitter:image:alt" content="SOPT 공식 홈페이지 이미지" />
 
       {/*  Open Graph */}
@@ -28,10 +25,7 @@ function SEO(props: HeadProps) {
       <meta property="og:title" content={projectTitle ? `SOPT 프로젝트 ${projectTitle}` : 'SOPT'} />
       <meta property="og:site_name" content="SOPT 공식 홈페이지" />
       <meta property="og:description" content={'대학생 연합 IT 벤처 창업 동아리'} />
-      <meta
-        property="og:image"
-        content="/36th_og.png"
-      />
+      <meta property="og:image" content="/37th_og.png" />
       <meta property="og:image:alt" content="SOPT 공식 홈페이지 이미지" />
     </Head>
   );

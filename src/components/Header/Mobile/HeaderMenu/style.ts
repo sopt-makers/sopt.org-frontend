@@ -14,6 +14,7 @@ interface CloseButtonProps extends RootProps {
 interface MenuTitleProps {
   isSelected?: boolean;
   menuColor: MenuTapType;
+  mainColor: string;
 }
 
 interface RootProps {
@@ -153,14 +154,14 @@ export const MenuTitle = styled.div<MenuTitleProps>`
     margin-left: 30px;
   }
 
-  ${({ menuColor }) =>
+  ${({ menuColor, mainColor }) =>
     menuColor === 'SPECIAL' &&
     css`
       padding: 0 20px;
       border-radius: 5.869px;
-      border: 1.027px solid #4786ff;
-      background: rgba(71, 134, 255, 0.28);
-      color: #267dff;
+      border: 1.027px solid ${mainColor};
+      background: ${mainColor}1A;
+      color: ${mainColor};
     `}
 `;
 

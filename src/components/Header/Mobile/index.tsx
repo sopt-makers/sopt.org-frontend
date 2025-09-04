@@ -10,7 +10,11 @@ import { Condition } from '@src/components/common/Condition';
 import { MenuState } from '../types';
 import HeaderMenu from './HeaderMenu';
 
-function MobileHeader() {
+interface MobileHeaderProps {
+  mainColor: string;
+}
+
+function MobileHeader({ mainColor }: MobileHeaderProps) {
   const router = useRouter();
   const [isMenuShown, setIsMenuShown] = useState<MenuState>('idle');
 
@@ -27,7 +31,11 @@ function MobileHeader() {
         </ToggleButton>
       </StyledHeader>
       <Condition statement={isMenuShown === 'open'}>
-        <HeaderMenu isMenuShown={isMenuShown} handleHeaderToggleButton={handleHeaderToggleButton} />
+        <HeaderMenu
+          isMenuShown={isMenuShown}
+          handleHeaderToggleButton={handleHeaderToggleButton}
+          mainColor={mainColor}
+        />
       </Condition>
     </>
   );

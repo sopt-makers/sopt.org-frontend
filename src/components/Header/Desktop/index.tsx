@@ -8,7 +8,11 @@ import { GrowDown } from '@src/lib/styles/animation';
 import { menuTapList } from '../constants/menuTapList';
 import { MenuTapType } from '../types';
 
-function DesktopHeader() {
+interface DesktopHeaderProps {
+  mainColor: string;
+}
+
+function DesktopHeader({ mainColor }: DesktopHeaderProps) {
   const { handleClickLogo, handleIsSelected } = useHeader();
 
   return (
@@ -24,6 +28,7 @@ function DesktopHeader() {
               key={menuTap.title}
               href={menuTap.href}
               isSelected={handleIsSelected(menuTap.href)}
+              mainColor={mainColor}
             >
               {menuTap.title}
             </MenuTitle>
@@ -38,6 +43,7 @@ interface MenuTitleProps {
   isSelected?: boolean;
   isOpened?: boolean;
   menuColor: MenuTapType;
+  mainColor: string;
 }
 
 export const Wrapper = styled.div`
@@ -106,14 +112,14 @@ export const MenuTitle = styled(Link)<MenuTitleProps>`
     }
   }
 
-  ${({ menuColor }) =>
+  ${({ menuColor, mainColor }) =>
     menuColor === 'SPECIAL' &&
     css`
       margin-left: 20px;
       border-radius: 5.869px;
-      border: 1.027px solid #4786ff;
-      background: rgba(71, 134, 255, 0.28);
-      color: #267dff;
+      border: 1.027px solid ${mainColor};
+      background: ${mainColor}1A;
+      color: ${mainColor};
     `}
 `;
 

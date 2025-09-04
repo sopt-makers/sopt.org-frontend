@@ -24,9 +24,10 @@ function useNoScroll(isMenuShown: MenuState) {
 interface HeaderMenuProps {
   isMenuShown: MenuState;
   handleHeaderToggleButton: () => void;
+  mainColor: string;
 }
 
-function HeaderMenu({ isMenuShown, handleHeaderToggleButton }: HeaderMenuProps) {
+function HeaderMenu({ isMenuShown, handleHeaderToggleButton, mainColor }: HeaderMenuProps) {
   useNoScroll(isMenuShown);
 
   const { handleIsSelected } = useHeader();
@@ -41,6 +42,7 @@ function HeaderMenu({ isMenuShown, handleHeaderToggleButton }: HeaderMenuProps) 
                 menuColor={menuTap.type}
                 key={menuTap.title}
                 isSelected={handleIsSelected(menuTap.href)}
+                mainColor={mainColor}
               >
                 <Link href={menuTap.href}>{menuTap.title}</Link>
               </S.MenuTitle>
