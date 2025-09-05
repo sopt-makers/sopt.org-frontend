@@ -24,7 +24,10 @@ export const Card = styled.article`
 `;
 
 export const ProfileImage = styled(Image)`
-  object-fit: cover;
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
 `;
 
 export const ImageWrapper = styled.div`
