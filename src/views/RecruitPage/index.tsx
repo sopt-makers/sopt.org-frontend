@@ -45,7 +45,10 @@ function Recruit() {
       <BrandingColorContext.Provider value={adminData.brandingColor}>
         <Root>
           {isRecruiting ? (
-            <ApplySection headerImg={adminData.recruitHeaderImage} />
+            <ApplySection
+              headerImg={adminData.recruitHeaderImage}
+              generation={adminData.generation}
+            />
           ) : (
             <NotificationSection />
           )}
