@@ -25,7 +25,8 @@ export default function RecruitMessage({
       </S.Title>
       {ctaText === '모집 알림 신청하기 ' && (
         <S.Description>
-          아직 모집기간이 아니에요.{isMobileSize && <br />}알림 신청을 하시면, 가을에 찾아갈게요!
+          아직 모집기간이 아니에요.{isMobileSize && <br />} 알림 신청을 하시면,{' '}
+          {generation % 2 === 0 ? '가을' : '봄'}에 찾아갈게요!
         </S.Description>
       )}
       <RecruitButton mainColor={mainColor} highColor={highColor}>
