@@ -13,7 +13,7 @@ const getAboutInfo = async (): Promise<GetAboutInfoResponse> => {
   const dataCurrent = await remoteAdminAPI.getAboutpage();
   // TODO: 기존 API 의존성 떼기
   const { data: dataPrev } = await client.get(
-    `/aboutsopt?generation=${dataCurrent.generation - 1}`,
+    `/aboutsopt/v2?generation=${dataCurrent.generation - 1}`,
   );
 
   return {

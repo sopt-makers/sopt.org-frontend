@@ -31,7 +31,7 @@ export const getResponse = async (
     totalPage: number;
     isLikedByUser: boolean;
     totalCount: number;
-  }>(`/soptstory?${parameter}`, { headers: { 'session-id': sessionId } });
+  }>(`/soptstory/v2?${parameter}`, { headers: { 'session-id': sessionId } });
 
   return {
     hasNextPage: data.hasNextPage,
@@ -45,13 +45,13 @@ export const getResponse = async (
 };
 
 const postSopticleLike = async (sopticleId: number): Promise<void> => {
-  const response = await client.post(`soptstory/${sopticleId}/like`, {});
+  const response = await client.post(`soptstory/v2/${sopticleId}/like`, {});
 
   return response.data;
 };
 
 const postSopticleUnlike = async (sopticleId: number): Promise<void> => {
-  const response = await client.post(`soptstory/${sopticleId}/unlike`, {});
+  const response = await client.post(`soptstory/v2/${sopticleId}/unlike`, {});
 
   return response.data;
 };

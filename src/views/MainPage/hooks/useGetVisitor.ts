@@ -5,7 +5,7 @@ import axios from 'axios';
 const client = axios.create({ baseURL: BASE_URL });
 
 const getVisitor = async () => {
-  const { data } = await client.get('/visitor');
+  const { data } = await client.get('/visitor/v2');
 
   return data;
 };

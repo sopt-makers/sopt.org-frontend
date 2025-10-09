@@ -12,7 +12,7 @@ import {
 const client = axios.create({ baseURL: BASE_URL });
 
 const getProjectDetail = async (projectId: number): Promise<GetProjectDetailResponse> => {
-  const { data } = await client.get(`/projects/${projectId}`);
+  const { data } = await client.get(`/projects/v2/${projectId}`);
   const dataServiceType = data.serviceType;
 
   const serviceType = Array.isArray(dataServiceType) ? dataServiceType : [dataServiceType];
@@ -28,7 +28,7 @@ const getProjectList = async (
   const categoryParameter = category === ProjectCategoryType.ALL ? {} : { filter: category };
   const platformParameter = platform === ProjectPlatformType.ALL ? {} : { platform };
   const parameter = qs.stringify({ ...categoryParameter, ...platformParameter, pageNo });
-  const { data } = await client.get(`/projects?${parameter}`);
+  const { data } = await client.get(`/projects/v2?${parameter}`);
   return data;
 };
 

@@ -6,7 +6,7 @@ import axios from 'axios';
 const client = axios.create({ baseURL: BASE_URL });
 
 const postVisitor = async () => {
-  await client.post('/visitor');
+  await client.post('/visitor/v2');
 };
 
 const usePostVisitor = () => {

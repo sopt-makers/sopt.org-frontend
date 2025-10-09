@@ -28,7 +28,7 @@ export const getResponse = async (
   };
 
   const parameter = qs.stringify(parameters);
-  const { data } = await client.get(`/reviews?${parameter}`);
+  const { data } = await client.get(`/reviews/v2?${parameter}`);
 
   return {
     hasNextPage: data.hasNextPage,
@@ -42,7 +42,7 @@ export const getResponse = async (
 };
 
 const getSampleReviews = async (): Promise<GetSampleReviewsResponse> => {
-  const { data } = await client.get('/reviews/random');
+  const { data } = await client.get('/reviews/v2/random');
 
   return data;
 };

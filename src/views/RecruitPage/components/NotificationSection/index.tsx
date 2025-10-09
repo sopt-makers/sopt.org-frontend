@@ -20,7 +20,7 @@ const NotificationSection = () => {
       const email = emailInputRef.current?.value;
       if (!email) return;
       setIsLoading(true);
-      const result = await client.post('/notification/register', {
+      const result = await client.post('/notification/v2/register', {
         generation: 36, // 리크루팅 시기 이후 변경되어야 함.
         email,
       });
