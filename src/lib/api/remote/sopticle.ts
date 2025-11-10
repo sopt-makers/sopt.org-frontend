@@ -25,7 +25,7 @@ export const getResponse = async (
 
   const { data } = await client.get<{
     hasNextPage: boolean;
-    data: BlogPostType[];
+    content: BlogPostType[];
     currentPage: number;
     hasPrevPage: boolean;
     totalPage: number;
@@ -35,7 +35,7 @@ export const getResponse = async (
 
   return {
     hasNextPage: data.hasNextPage,
-    response: data.data,
+    response: data.content,
     currentPage: data.currentPage,
     hasPrevPage: data.hasPrevPage,
     totalPage: data.totalPage,
