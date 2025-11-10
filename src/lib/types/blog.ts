@@ -10,7 +10,7 @@ export type BlogPostListType = {
 
 export type BlogPostType = {
   id: number;
-  part: string;
+  partType: string;
   thumbnailUrl: string;
   title: string;
   description: string;

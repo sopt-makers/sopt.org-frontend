@@ -83,7 +83,7 @@ export default function BlogPost({ selectedTab, blogPost, selectedReviewTag }: B
           {isApplyReview && (
             <S.TagList>
               <S.Tag>{blogPost.generation}기</S.Tag>
-              <S.Tag>{parsePartToKorean(blogPost.part)}</S.Tag>
+              <S.Tag>{parsePartToKorean(blogPost.partType)}</S.Tag>
             </S.TagList>
           )}
           {isActivityReview && (
