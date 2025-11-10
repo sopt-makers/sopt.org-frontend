@@ -1,9 +1,9 @@
 import { BlogCategoryType, BlogPostType } from '@src/lib/types/blog';
 import { formatDate } from '@src/lib/utils/dateFormat';
-import DefaultProfileImage from '@src/views/BlogPage/components/BlogPost/DefaultProfileImage';
-import * as S from './style';
 import { parsePartToKorean } from '@src/lib/utils/parsePartToKorean';
+import DefaultProfileImage from '@src/views/BlogPage/components/BlogPost/DefaultProfileImage';
 import { BlogTabType } from '@src/views/BlogPage/components/BlogTab/types';
+import * as S from './style';
 
 interface HeaderProps {
   selectedTab: BlogTabType;
@@ -32,7 +32,8 @@ export default function Header({ selectedTab, blogPost, selectedReviewTag }: Hea
           <S.Divider>∙</S.Divider>
           <div>{formatDate(new Date(blogPost.uploadedAt), 'yyyymmdd', '.')}</div>
         </>
-      ) : selectedTab === BlogTabType.REVIEW && selectedReviewTag === BlogCategoryType.DOCUMENT_INTERVIEW ? (
+      ) : selectedTab === BlogTabType.REVIEW &&
+        selectedReviewTag === BlogCategoryType.DOCUMENT_INTERVIEW ? (
         <>
           <S.Profile>
             {blogPost.authorProfileImageUrl ? (
@@ -49,7 +50,9 @@ export default function Header({ selectedTab, blogPost, selectedReviewTag }: Hea
           </S.Profile>
         </>
       ) : (
-        <S.Part>{blogPost.generation}기 <S.Divider>∙</S.Divider> {parsePartToKorean(blogPost.part)}</S.Part>
+        <S.Part>
+          {blogPost.generation}기 <S.Divider>∙</S.Divider> {parsePartToKorean(blogPost.partType)}
+        </S.Part>
       )}
     </S.Header>
   );

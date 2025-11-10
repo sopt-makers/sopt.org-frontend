@@ -7,7 +7,11 @@ import arrowRightWhite from '@src/assets/icons/arrow_right_white.svg';
 import { useHorizontalScroll } from '@src/hooks/useHorizontalScroll';
 import { parsePartToKorean } from '@src/lib/utils/parsePartToKorean';
 import { BrandingColorContext } from '../../views/RecruitPage';
-import { SectionTitle, SectionTitleTranslate, SectionTitleWrapper } from '../../views/RecruitPage/components/common/style';
+import {
+  SectionTitle,
+  SectionTitleTranslate,
+  SectionTitleWrapper,
+} from '../../views/RecruitPage/components/common/style';
 import useGetSampleReviews from './hooks/queries/useGetSampleReviews';
 import {
   Arrow,
@@ -57,7 +61,7 @@ export default function ActivityReview() {
                 <CardTitle>{review.title}</CardTitle>
                 <DescWrapper>
                   <Desc>
-                    {parsePartToKorean(review.part)}파트 {review.generation}기{'\n'}
+                    {parsePartToKorean(review.partType)}파트 {review.generation}기{'\n'}
                     <DescName>{review.author}</DescName>
                   </Desc>
                   <Arrow
