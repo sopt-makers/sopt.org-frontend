@@ -51,7 +51,7 @@ export default function BlogPostList({
       <S.Wrapper>
         <S.Container>
           {selectedTab === BlogTabType.ARTICLE && <OfficialVideo />}
-          {response?.response.length === 0 ? (
+          {response?.response?.length === 0 ? (
             <EmptyBlogPostList
               selected={selected}
               setSelected={setSelected}
@@ -77,7 +77,7 @@ export default function BlogPostList({
                 </S.Layout>
               )}
               <S.BlogPostList selectedTab={selectedTab}>
-                {response?.response.map((blogPost) => (
+                {response?.response?.map((blogPost) => (
                   <BlogPost
                     key={blogPost.id}
                     blogPost={blogPost}
