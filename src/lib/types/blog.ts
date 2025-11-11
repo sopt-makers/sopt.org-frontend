@@ -34,7 +34,7 @@ export enum PartCategoryType {
   PLAN = 'PLAN',
   DESIGN = 'DESIGN',
   ANDROID = 'ANDROID',
-  IOS = 'iOS',
+  IOS = 'IOS',
   WEB = 'WEB',
   SERVER = 'SERVER',
 }
