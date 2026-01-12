@@ -78,7 +78,7 @@ const TabBar = ({ type, onTabClick, selectedTab, amplitudeTrackingName }: TabBar
   if (type === 'with-all')
     return (
       <S.TabBar>
-        {allTabs.map((tab) => (
+        {allTabs?.map((tab) => (
           <Tab
             key={tab.value}
             onClick={() => {
@@ -93,7 +93,7 @@ const TabBar = ({ type, onTabClick, selectedTab, amplitudeTrackingName }: TabBar
     );
   return (
     <S.TabBar>
-      {tabs.map((tab) => (
+      {tabs?.map((tab) => (
         <Tab
           key={tab.value}
           onClick={() => {
