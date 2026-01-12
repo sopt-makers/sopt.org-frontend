@@ -34,7 +34,7 @@ function PartConfig(
 
   // formatter
   const partIntro = Object.fromEntries(
-    partIntroduction.map((el) => [parseStringToPart(el.part), el.description]),
+    partIntroduction?.map((el) => [parseStringToPart(el.part), el.description]),
   );
 
   return (
@@ -56,7 +56,7 @@ function PartConfig(
             onMouseUp={initDragging}
           >
             <S.PartButtonList>
-              {carouselList.map(({ label }, index) => (
+              {carouselList?.map(({ label }, index) => (
                 <PartButton
                   ref={(el: HTMLButtonElement) => (partRef.current[index] = el)}
                   key={index}
@@ -83,7 +83,7 @@ function PartConfig(
               onTouchStart={handleTouchStart}
               onTouchEnd={handleTouchEnd}
             >
-              {infiniteCarouselList.map(({ value }, index) => (
+              {infiniteCarouselList?.map(({ value }, index) => (
                 <PartSlide key={index} part={value} description={partIntro[value]} />
               ))}
             </S.Carousel>
