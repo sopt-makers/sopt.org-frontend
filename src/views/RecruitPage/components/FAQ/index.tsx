@@ -45,7 +45,7 @@ const FaqInfo = ({ info }: { info: PartQuestionType[] }) => {
         amplitudeTrackingName={'click_recruit_faq_part'}
       />
       <FaqWrapper>
-        {infoMap[selectedTab].map((info, index) => (
+        {infoMap[selectedTab]?.map((info, index) => (
           <div key={index} onClick={() => toggleBox(index)}>
             <QuestionBox info={info} status={status.has(index)} />
           </div>
