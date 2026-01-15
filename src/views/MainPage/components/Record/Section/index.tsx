@@ -29,10 +29,8 @@ const RecordSection = ({
         <Button
           onClick={() => router.push('/about')}
           aria-label="소개페이지로 이동"
-          onMouseEnter={() => setIsGradientActive(true)}
-          onMouseLeave={() => setIsGradientActive(false)}
-          onTouchStart={() => setIsGradientActive(true)}
-          onTouchEnd={() => setIsGradientActive(false)}
+          onPointerEnter={() => setIsGradientActive(true)}
+          onPointerLeave={() => setIsGradientActive(false)}
         >
           이번 기수가 궁금하다면 <S.RightArrowIcon />
         </Button>
