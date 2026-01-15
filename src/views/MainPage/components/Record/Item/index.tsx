@@ -35,7 +35,7 @@ const RecordItemWrapper = (props: PropsWithChildren<RecordItemProps>) => {
   return <St.BlockWrapper>{props.children}</St.BlockWrapper>;
 };
 
-const RecordItem = (props: RecordItemProps) => {
+const RecordItem = (props: RecordItemProps & { mainColor: string }) => {
   return (
     <RecordItemWrapper {...props}>
       <Flex
@@ -44,7 +44,7 @@ const RecordItem = (props: RecordItemProps) => {
         style={{ alignItems: 'center', justifyContent: 'center', height: '100%' }}
       >
         <St.Title>{props.title}</St.Title>
-        <St.Count>
+        <St.Count mainColor={props.mainColor}>
           {props.countNumber && <NumberRoller goalNumber={props.countNumber} />}
           {props.countString && <span>{props.countString}</span>}
         </St.Count>

@@ -52,11 +52,11 @@ export const Title = styled.div`
   }
 `;
 
-export const Count = styled.div`
+export const Count = styled.div<{ mainColor: string }>`
   position: relative;
   font-weight: 600;
   font-size: 45rem;
-  color: white;
+  color: ${({ mainColor }) => mainColor};
   line-height: 60px;
 
   @media (max-width: 62.25rem) and (min-width: 47.875rem) {

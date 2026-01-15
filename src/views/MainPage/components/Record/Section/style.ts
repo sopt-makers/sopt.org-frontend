@@ -1,8 +1,6 @@
 import styled from '@emotion/styled';
 
 export const Wrapper = styled.section`
-  margin-top: 275px;
-  margin-bottom: 340px;
   gap: 48px;
   display: flex;
   flex-direction: column;
