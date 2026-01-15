@@ -66,6 +66,7 @@ function MainPage() {
       <Introduce />
       <RecordSection
         mainColor={'#' + adminData.brandingColor.main}
+        highColor={'#' + adminData.brandingColor.high}
         generation={adminData.generation}
         activitiesRecords={
           adminData.activitiesRecords ?? {
