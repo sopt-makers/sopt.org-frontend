@@ -7,16 +7,20 @@ type NumberRollerProps = {
 };
 
 const NumberRoller = ({ goalNumber, rollRange = 50 }: NumberRollerProps) => {
-  const [number, setNumber] = useState(Math.max(goalNumber - rollRange, 0));
+  const startNumber = Math.max(goalNumber - rollRange, 0);
+  const [number, setNumber] = useState(startNumber);
   const { isInView, ref: wrapperRef } = useInView();
 
   useEffect(() => {
-    if (isInView && number < goalNumber) {
-      setTimeout(() => {
-        setNumber((n) => n + 1);
-      }, 100);
-    }
-  }, [goalNumber, isInView, number]);
+    if (isInView) setNumber(startNumber);
+  }, [isInView, startNumber]);
+
+  useEffect(() => {
+    if (!isInView || number >= goalNumber) return;
+    const id = window.setTimeout(() => setNumber((n) => n + 1), 40);
+
+    return () => window.clearTimeout(id);
+  }, [isInView, number, goalNumber]);
 
   return <span ref={wrapperRef}>{number}</span>;
 };
