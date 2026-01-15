@@ -28,6 +28,7 @@ const RecordSection = ({
         <RecordList activitiesRecords={activitiesRecords} mainColor={mainColor} />
         <Button
           onClick={() => router.push('/about')}
+          aria-label="소개페이지로 이동"
           onMouseEnter={() => setIsGradientActive(true)}
           onMouseLeave={() => setIsGradientActive(false)}
           onTouchStart={() => setIsGradientActive(true)}
