@@ -1,28 +1,41 @@
-import { useEffect, useState } from 'react';
-import useInView from '@src/hooks/useInView';
+import { animate, motion, useInView, useMotionValue, useTransform } from 'framer-motion';
+import { useEffect, useRef } from 'react';
 
-type NumberRollerProps = {
+interface NumberRollerProps {
   goalNumber: number;
+  duration?: number;
   rollRange?: number;
-};
+}
 
-const NumberRoller = ({ goalNumber, rollRange = 50 }: NumberRollerProps) => {
+const NumberRoller = ({ goalNumber, duration = 2, rollRange = 50 }: NumberRollerProps) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref);
+
   const startNumber = Math.max(goalNumber - rollRange, 0);
-  const [number, setNumber] = useState(startNumber);
-  const { isInView, ref: wrapperRef } = useInView();
+
+  const count = useMotionValue(startNumber);
+
+  const roundedNumber = useTransform(count, (latest) => Math.round(latest));
 
   useEffect(() => {
-    if (isInView) setNumber(startNumber);
-  }, [isInView, startNumber]);
+    const handleAnimateNumber = () => {
+      if (isInView) {
+        const controls = animate(count, goalNumber, {
+          type: 'tween',
+          duration,
+          ease: 'circOut',
+        });
 
-  useEffect(() => {
-    if (!isInView || number >= goalNumber) return;
-    const id = window.setTimeout(() => setNumber((n) => n + 1), 40);
+        return controls.stop;
+      } else {
+        count.set(startNumber);
+      }
+    };
 
-    return () => window.clearTimeout(id);
-  }, [isInView, number, goalNumber]);
+    handleAnimateNumber();
+  }, [isInView, count, goalNumber, duration, startNumber]);
 
-  return <span ref={wrapperRef}>{number}</span>;
+  return <motion.span ref={ref}>{roundedNumber}</motion.span>;
 };
 
 export default NumberRoller;

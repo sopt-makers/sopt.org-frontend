@@ -1,9 +1,9 @@
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { GetAboutpageResponse } from '@src/lib/types/admin';
+import SectionTop from '@src/views/AboutPage/components/@common/SectionTop';
 import Button from '@src/views/MainPage/components/@common/Button';
-import SectionTop from '../../../../AboutPage/components/@common/SectionTop';
-import RecordList from '../List';
+import RecordList from '@src/views/MainPage/components/Record/List';
 import * as S from './style';
 
 type RecordSectionProps = Pick<GetAboutpageResponse, 'generation' | 'activitiesRecords'> & {
