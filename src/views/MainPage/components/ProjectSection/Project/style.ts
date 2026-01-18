@@ -94,9 +94,12 @@ export const StatusLayout = styled.div`
   gap: 4px;
 `;
 
-export const StatusIcon = styled.img`
+export const StatusCircle = styled.div`
   width: 5px;
   height: 5px;
+  background-color: ${colors.information};
+  border-radius: 50%;
+  border: 1px solid ${colors.information};
 `;
 
 export const FooterLayout = styled.div`
@@ -110,7 +113,8 @@ export const Status = styled.p`
   font-size: 12px;
   font-weight: 600;
   line-height: 16px;
-  color: ${colors.gray400};
+  color: ${colors.gray100};
+  white-space: nowrap;
 
   @media (max-width: 74.9375rem) {
     font-size: 6px;
@@ -119,6 +123,11 @@ export const Status = styled.p`
 `;
 
 export const Members = styled.p`
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 4px;
+  justify-content: flex-end;
   font-size: 12px;
   font-weight: 600;
   line-height: 16px;

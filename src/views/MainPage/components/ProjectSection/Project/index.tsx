@@ -21,8 +21,13 @@ export default function Project({ thumbnail, title, category, description, statu
         <S.Description>{description}</S.Description>
       </S.ContentWrapper>
       <S.FooterLayout> 
-        {status !== '' ? <S.StatusLayout><S.StatusIcon /><S.Status>{status}</S.Status></S.StatusLayout> : <></>}
-        <S.Members>{members}</S.Members>
+        {status !== '' ? 
+        <S.StatusLayout>
+          <S.StatusCircle />
+          <S.Status>{status}</S.Status>
+        </S.StatusLayout> 
+        : <></>}
+        <S.Members>{members} members</S.Members>
       </S.FooterLayout>
 
     </S.Wrapper>
