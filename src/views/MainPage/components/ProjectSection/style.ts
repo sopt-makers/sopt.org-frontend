@@ -24,16 +24,6 @@ export const Wrapper = styled.section`
   }
 `;
 
-export const InViewTrigger = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 1px;
-  height: 1px;
-  pointer-events: none;
-  opacity: 0;
-`;
-
 export const ProjectList = styled.div<{ $active?: boolean }>`
   position: relative;
   flex-shrink: 0;
@@ -260,6 +250,13 @@ export const Title = styled.p`
   font-size: 24px;
   font-weight: 700;
   color: ${colors.gray100};
+
+  /* 태블릿 뷰 */
+  @media (max-width: 74.9375rem) {
+    font-size: 16px;
+  }
+
+
 `;
 
 export const Strong = styled.p<{ mainColor: string }>`
@@ -268,6 +265,12 @@ export const Strong = styled.p<{ mainColor: string }>`
   line-height: 43.2px;
   color: ${({ mainColor }) => mainColor ?? colors.gray100};
   white-space: pre-line;
+
+  /* 태블릿 뷰 */
+  @media (max-width: 74.9375rem) {
+    font-size: 24px;
+    line-height: 28.8px;
+  }
 `;
 
 export const RightArrowIcon = styled.span`

@@ -38,8 +38,7 @@ export default function ProjectSection({ mainColor, highColor }: ProjectSectionP
   }, [isMobileView, isInView]);
 
   return (
-    <S.Wrapper>
-      <S.InViewTrigger ref={inViewRef} aria-hidden="true" />
+    <S.Wrapper ref={inViewRef}>
       <S.GradientWrapper mainColor={mainColor} highColor={highColor} active={isGradientActive}>
         <S.TitleWrapper>
           <S.Title>270개의 IT 서비스</S.Title>
