@@ -10,6 +10,13 @@ export const Wrapper = styled.article`
   border: 1px solid ${colors.gray700};
   border-radius: 20px;
   background-color: ${colors.gray900};
+
+  @media (max-width: 74.9375rem) {
+    width: 176px;
+    height: 172.5px;
+    padding: 7px;
+    border-radius: 10px;
+  }
 `;
 
 export const Thumbnail = styled.img`
@@ -17,18 +24,28 @@ export const Thumbnail = styled.img`
   height: 192px;
   border-radius: 8px;
   object-fit: cover;
+
+  @media (max-width: 74.9375rem) {
+    width: 162px;
+    height: 96px;
+    border-radius: 4px;
+  } 
 `;
 
 export const ContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 10px;
+
+  @media (max-width: 74.9375rem) {
+    gap: 0px;
+  }
 `;
 
 export const TitleWrapper = styled.div`
   display: flex;
-  flex-direction: column;
-  gap: 6px;
+  align-items: center;
+  gap: 3px;
 `;
 
 export const Title = styled.h1`
@@ -36,6 +53,12 @@ export const Title = styled.h1`
   font-weight: 700;
   line-height: 28px;
   color: ${colors.white};
+
+  @media (max-width: 74.9375rem) {
+    font-size: 9px;
+    line-height: 14px;
+  }
+
 `;
 
 export const Category = styled.p`
@@ -43,6 +66,12 @@ export const Category = styled.p`
   font-weight: 600;
   line-height: 16px;
   color: ${colors.gray400};
+
+  @media (max-width: 74.9375rem) {
+    font-size: 6px;
+    line-height: 8px;
+  }
+
 `;
 
 export const Description = styled.p`
@@ -51,6 +80,12 @@ export const Description = styled.p`
   line-height: 20px;
   color: ${colors.gray50};
   white-space: pre-line;
+
+  @media (max-width: 74.9375rem) {
+    font-size: 7px;
+    line-height: 11px;
+    white-space: normal;
+  }
 `;
 
 export const StatusLayout = styled.div`
@@ -76,6 +111,11 @@ export const Status = styled.p`
   font-weight: 600;
   line-height: 16px;
   color: ${colors.gray400};
+
+  @media (max-width: 74.9375rem) {
+    font-size: 6px;
+    line-height: 8px;
+  }
 `;
 
 export const Members = styled.p`
@@ -83,5 +123,11 @@ export const Members = styled.p`
   font-weight: 600;
   line-height: 16px;
   color: ${colors.white};
+
+  @media (max-width: 74.9375rem) {
+    font-size: 6px;
+    line-height: 8px;
+  }
+
 `;
 

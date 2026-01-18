@@ -2,10 +2,11 @@ import styled from '@emotion/styled';
 import chevronRight from '@src/assets/icons/chevronRight.svg';
 
 export const Wrapper = styled.section`
-  gap: 32px;
   display: flex;
+  
   flex-direction: column;
   align-items: center;
+    gap: 32px;
 
   @media (max-width: 47.875rem) and (min-width: 26.75rem) {
     margin-top: 190px;
@@ -36,25 +37,25 @@ export const GradientWrapper = styled.div<{
   &::before {
     content: '';
     position: absolute;
-    top: -35%;
+    top: -10%;
     left: 50%;
     width: 90%;
     height: 150%;
     transform: translateX(-50%);
     border-radius: 999px;
 
-    background-image: radial-gradient(
-        ellipse 95% 80% at 50% 65%,
-        color-mix(in srgb, ${({ mainColor }) => mainColor} 35%, transparent) 0%,
-        color-mix(in srgb, ${({ mainColor }) => mainColor} 22%, transparent) 22%,
-        transparent 60%
+    background:
+      radial-gradient(
+        45.16% 45.16% at 50% 50%,
+        color-mix(in srgb, ${({ mainColor }) => mainColor} 20%, transparent) 0%,
+        rgba(15, 15, 18, 0) 100%
       ),
       radial-gradient(
-        ellipse 115% 105% at 50% 90%,
-        color-mix(in srgb, ${({ highColor }) => highColor} 30%, transparent) 0%,
-        color-mix(in srgb, ${({ highColor }) => highColor} 18%, transparent) 28%,
-        transparent 70%
+        45.16% 45.16% at 50% 50%,
+        color-mix(in srgb, ${({ highColor }) => highColor} 20%, transparent) 0%,
+        rgba(15, 15, 18, 0) 100%
       );
+
     opacity: ${({ active }) => (active ? 0.45 : 0)};
     filter: blur(56px);
     transition: opacity 0.3s ease;
