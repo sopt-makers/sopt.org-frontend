@@ -4,9 +4,12 @@ import projectThumbnail2 from '@src/assets/images/img_project_thumbnail2.png';
 import projectThumbnail3 from '@src/assets/images/img_project_thumbnail3.png';
 import projectThumbnail4 from '@src/assets/images/img_project_thumbnail4.png';
 import * as S from './style';
+import Button from '@src/views/MainPage/components/@common/Button';
+import { useState } from 'react';
 
 interface ProjectSectionProps {
   mainColor: string;
+  highColor: string;
 }
 
 const projects = [
@@ -45,18 +48,27 @@ const projects = [
   },
 ];
 
-export default function ProjectSection({ mainColor }: ProjectSectionProps) {
+export default function ProjectSection({ mainColor, highColor }: ProjectSectionProps) {
+  const [isGradientActive, setIsGradientActive] = useState(false);
+
   return (
     <S.Wrapper>
+      <S.GradientWrapper mainColor={mainColor} highColor={highColor} active={isGradientActive}>
       <S.TitleWrapper>
         <S.Title>270개의 IT 서비스</S.Title>
         <S.Strong mainColor={mainColor}>{'매 기수\n+20개의 프로젝트'}</S.Strong>
       </S.TitleWrapper>
-      <S.ProjectList>
-        {projects.map((project, idx) => (
-          <Project key={`${project.title}-${idx}`} {...project} />
-        ))}
-      </S.ProjectList>
+        <S.ProjectListLayout>
+          <S.ProjectList onPointerEnter={() => setIsGradientActive(true)} onPointerLeave={() => setIsGradientActive(false)}>
+            {projects.map((project, idx) => (
+              <Project key={`${project.title}-${idx}`} {...project} />
+            ))}
+          </S.ProjectList>
+          <Button onMouseEnter={() => setIsGradientActive(true)} onMouseLeave={() => setIsGradientActive(false)}>
+            역대 프로젝트 더보기 <S.RightArrowIcon />
+          </Button>
+        </S.ProjectListLayout>
+      </S.GradientWrapper>
     </S.Wrapper>
   );
 }
