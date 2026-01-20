@@ -146,6 +146,7 @@ export const INTRO_CONTENT_LIST = [
     detail:
       '열정 하나로 뭉친 솝트는 끊임 없이 집중하며 성장합니다.\n언제나 어떤 일에 대해서든 최고 수준의 몰입을 유지합니다.',
     src: ImgIntroCard1.src,
+    value: '몰입',
   },
   {
     id: 2,
@@ -153,6 +154,7 @@ export const INTRO_CONTENT_LIST = [
     detail:
       '솝트에서는 모두가 자신의 지식과 경험을\n적극적으로 나눕니다. 이를 통해 다양한 관점에서\n세상의 문제를 해결할 수 있습니다.',
     src: ImgIntroCard2.src,
+    value: '공유',
   },
   {
     id: 3,
@@ -160,6 +162,7 @@ export const INTRO_CONTENT_LIST = [
     detail:
       '200여 명의 활동 회원, 3000여 명의 명예 회원들과 함께이기에\n그 어떤 목표에도 용기 내어 도전할 수 있습니다.',
     src: ImgIntroCard3.src,
+    value: '도전',
   },
 ];
 
