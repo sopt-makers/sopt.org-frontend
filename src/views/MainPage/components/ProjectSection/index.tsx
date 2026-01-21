@@ -21,7 +21,10 @@ export default function ProjectSection({ mainColor, highColor }: ProjectSectionP
   const isTabletView = useIsTablet('768px', '1023px');
   const isMobileView = useIsMobile('767px');
 
-  const { isInView, ref: inViewRef } = useInView({ options: { threshold: isTabletView || isMobileView ? 1 : 0 } });
+  const isSmallView = isTabletView || isMobileView;
+  const { isInView, ref: inViewRef } = useInView({
+    options: { threshold: isSmallView ? 0.5 : 0 },
+  });
 
   const activateGradient = () => {
     setIsGradientActive(true);
@@ -32,10 +35,10 @@ export default function ProjectSection({ mainColor, highColor }: ProjectSectionP
   };
 
   useEffect(() => {
-    if (!isTabletView || isMobileView) return;
+    if (!isSmallView) return;
     if (isInView) activateGradient();
     else deactivateGradient();
-  }, [isTabletView || isMobileView, isInView]);
+  }, [isSmallView, isInView]);
 
   return (
     <S.Wrapper>
