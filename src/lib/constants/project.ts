@@ -85,8 +85,6 @@ export const staticReleaseProjectList: StaticProjectType[] = [
   },
 ];
 
-
-
 export const MAIN_PROJECT_LIST = [
   {
 

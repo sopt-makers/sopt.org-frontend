@@ -36,5 +36,5 @@ export default function Project({ thumbnail, title, category, description, statu
         </S.Members>
       </S.FooterLayout>
     </S.Wrapper>
-  )
+  );
 }

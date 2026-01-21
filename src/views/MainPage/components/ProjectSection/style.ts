@@ -208,7 +208,6 @@ export const ProjectContainer = styled.div`
   }
 `;
 
-
 export const TitleWrapper = styled.div`
   display: flex;
   flex-direction: column;
