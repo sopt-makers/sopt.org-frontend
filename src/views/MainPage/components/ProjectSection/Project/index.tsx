@@ -1,4 +1,5 @@
 import * as S from './style';
+import icMembers from '@src/assets/icons/ic_members.svg';
 
 interface ProjectProps {
   thumbnail: string;
@@ -13,6 +14,7 @@ export default function Project({ thumbnail, title, category, description, statu
   return (
     <S.Wrapper>
       <S.Thumbnail src={thumbnail} alt={title} />
+
       <S.ContentWrapper>
         <S.TitleWrapper>
           <S.Title>{title}</S.Title>
@@ -20,16 +22,19 @@ export default function Project({ thumbnail, title, category, description, statu
         </S.TitleWrapper>
         <S.Description>{description}</S.Description>
       </S.ContentWrapper>
+      
       <S.FooterLayout> 
-        {status !== '' ? 
+        {status !== '' && (
         <S.StatusLayout>
           <S.StatusCircle />
           <S.Status>{status}</S.Status>
         </S.StatusLayout> 
-        : <></>}
-        <S.Members>{members} members</S.Members>
+        )}
+        <S.Members>
+          <S.MembersIcon src={icMembers} alt="members" aria-hidden="true" />
+          {members} members
+        </S.Members>
       </S.FooterLayout>
-
     </S.Wrapper>
   )
 }

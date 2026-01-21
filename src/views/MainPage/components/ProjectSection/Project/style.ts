@@ -15,6 +15,7 @@ export const Wrapper = styled.article`
     width: 176px;
     height: 172.5px;
     padding: 7px;
+    gap: 4px;
     border-radius: 10px;
   }
 `;
@@ -38,7 +39,7 @@ export const ContentWrapper = styled.div`
   gap: 10px;
 
   @media (max-width: 1023px) {
-    gap: 0px;
+    gap: 4px;
   }
 `;
 
@@ -126,8 +127,8 @@ export const Members = styled.p`
   display: flex;
   width: 100%;
   align-items: center;
-  gap: 4px;
   justify-content: flex-end;
+  gap: 4px;
   font-size: 12px;
   font-weight: 600;
   line-height: 16px;
@@ -137,6 +138,17 @@ export const Members = styled.p`
     font-size: 6px;
     line-height: 8px;
   }
-
 `;
 
+export const MembersIcon = styled.img`
+  display: inline-block;
+  width: 72px;
+  height: 30px;
+  object-fit: contain;
+  flex-shrink: 0;
+
+  @media (max-width: 1023px) {
+    width: 36px;
+    height: 15px;
+  }
+`;
