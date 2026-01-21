@@ -1,12 +1,13 @@
 import styled from '@emotion/styled';
 import chevronRight from '@src/assets/icons/chevronRight.svg';
+import { convertRadialGradient } from '@src/lib/styles/gradient';
 
 export const Wrapper = styled.section`
   display: flex;
   
   flex-direction: column;
   align-items: center;
-    gap: 32px;
+  gap: 32px;
 
   @media (max-width: 47.875rem) and (min-width: 26.75rem) {
     gap: 44px;
@@ -41,17 +42,7 @@ export const GradientWrapper = styled.div<{
     transform: translateX(-50%);
     border-radius: 999px;
 
-    background:
-      radial-gradient(
-        45.16% 45.16% at 50% 50%,
-        color-mix(in srgb, ${({ mainColor }) => mainColor} 20%, transparent) 0%,
-        rgba(15, 15, 18, 0) 100%
-      ),
-      radial-gradient(
-        45.16% 45.16% at 50% 50%,
-        color-mix(in srgb, ${({ highColor }) => highColor} 20%, transparent) 0%,
-        rgba(15, 15, 18, 0) 100%
-      );
+    background: ${({ mainColor, highColor }) => convertRadialGradient(mainColor, highColor)};
 
     opacity: ${({ active }) => (active ? 0.45 : 0)};
     filter: blur(56px);

@@ -20,9 +20,8 @@ export default function ProjectSection({ mainColor, highColor }: ProjectSectionP
   const isDesktopView = useIsDesktop('1260px');
   const isTabletView = useIsTablet('768px', '1023px');
   const isMobileView = useIsMobile('767px');
-  const isSmallView = isMobileView || isTabletView;
 
-  const { isInView, ref: inViewRef } = useInView({ options: { threshold: isSmallView ? 1 : 0 } });
+  const { isInView, ref: inViewRef } = useInView({ options: { threshold: isTabletView || isMobileView ? 1 : 0 } });
 
   const activateGradient = () => {
     setIsGradientActive(true);
@@ -33,10 +32,10 @@ export default function ProjectSection({ mainColor, highColor }: ProjectSectionP
   };
 
   useEffect(() => {
-    if (!isSmallView) return;
+    if (!isTabletView || isMobileView) return;
     if (isInView) activateGradient();
     else deactivateGradient();
-  }, [isSmallView, isInView]);
+  }, [isTabletView || isMobileView, isInView]);
 
   return (
     <S.Wrapper>
@@ -45,15 +44,16 @@ export default function ProjectSection({ mainColor, highColor }: ProjectSectionP
         mainColor={mainColor}
         highColor={highColor}
         active={isGradientActive}
-        onMouseEnter={isDesktopView ? activateGradient : undefined}
-        onMouseLeave={isDesktopView ? deactivateGradient : undefined}
       >
         <S.TitleWrapper>
           <S.Title>270개의 IT 서비스</S.Title>
           <S.Strong mainColor={mainColor}>{'매 기수\n+20개의 프로젝트'}</S.Strong>
         </S.TitleWrapper>
 
-        <S.ProjectContainer>
+        <S.ProjectContainer
+          onPointerEnter={isDesktopView ? activateGradient : undefined}
+          onPointerLeave={isDesktopView ? deactivateGradient : undefined}
+        >
           <S.ProjectList
             $active={isGradientActive}
           >

@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import { colors } from '@sopt-makers/colors';
 import chevronRight from '@src/assets/icons/chevronRight.svg';
+import { convertRadialGradient } from '@src/lib/styles/gradient';
 
 export const Wrapper = styled.section`
   position: relative;
@@ -159,7 +160,7 @@ export const GradientOverlay = styled.div<{ mainColor: string; highColor: string
     transform: translate(-50%, -50%);
     border-radius: 999px;
 
-    background: radial-gradient(45.16% 45.16% at 50% 50%, rgba(193, 73, 94, 0.20) 0%, rgba(15, 15, 18, 0.00) 100%); 
+    background: ${({ mainColor, highColor }) => convertRadialGradient(mainColor, highColor)};
 
     opacity: ${({ active }) => (active ? 1 : 0)};
     filter: blur(56px);
@@ -174,7 +175,7 @@ export const GradientOverlay = styled.div<{ mainColor: string; highColor: string
     gap: 32px;
 
     &::before {
-      background: radial-gradient(45.16% 45.16% at 50% 50%, rgba(193, 73, 94, 0.20) 0%, rgba(15, 15, 18, 0.00) 100%);
+      background: ${({ mainColor, highColor }) => convertRadialGradient(mainColor, highColor)};
     }
   }
 
@@ -187,7 +188,7 @@ export const GradientOverlay = styled.div<{ mainColor: string; highColor: string
     &::before {
       top: 90%;
       left: 50%;
-      background: radial-gradient(45.16% 45.16% at 50% 50%, rgba(193, 73, 94, 0.20) 0%, rgba(15, 15, 18, 0.00) 100%);
+      background: ${({ mainColor, highColor }) => convertRadialGradient(mainColor, highColor)};
     }
   }
 `;
