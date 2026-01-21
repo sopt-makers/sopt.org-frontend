@@ -7,19 +7,18 @@ export const Wrapper = styled.section`
   display: flex;
   height: 100vh;
   align-items: center;
-  justify-content: space-between;
-  padding: 215px 300px;
+  justify-content: center;
+  padding: 275px 0;
 
   /* 태블릿 뷰 */
-  @media (max-width: 74.9375rem) {
+  @media (max-width: 1023px) {
     height: auto;
     min-height: 100vh;
-    padding: 180px 64px;
-    justify-content: center;
+    padding: 180px 0;
   }
 
   /* 모바일 뷰 */
-  @media (max-width: 47.86875rem) {
+  @media (max-width: 767px) {
     padding: 180px 24px;
   }
 `;
@@ -30,9 +29,7 @@ export const ProjectList = styled.div<{ $active?: boolean }>`
   overflow: visible;
   width: 460px;
   height: 430px;
-  margin-bottom: 50px;
-  grid-area: project;
-  justify-self: center;
+  margin-bottom: 30px;
 
   --project-transition-duration: 500ms;
 
@@ -45,36 +42,36 @@ export const ProjectList = styled.div<{ $active?: boolean }>`
 
   & > article:nth-of-type(1) {
     top: 120px;
-    left: 40px;
+    left: 60px;
     z-index: 3;
     transform: translateX(0) rotate(0deg);
   }
 
   & > article:nth-of-type(2) {
     top: 65px;
-    left: -32.96px;
+    left: -12.96px;
     z-index: 2;
     transform: translateX(0) rotate(4.31deg);
   }
 
   & > article:nth-of-type(3) {
     top: -16px;
-    left: 107px;
+    left: 127px;
     z-index: 1;
     transform: translateX(0) rotate(0deg);
   }
 
   & > article:nth-of-type(4) {
     top: -40px;
-    left: -48px;
+    left: -28px;
     transform: translateX(0) rotate(-7.542deg);
   }
 
   /* 태블릿 뷰 */
-  @media (max-width: 74.9375rem) {
+  @media (max-width: 1023px) {
     width: 240px;
     height: 260px;
-    margin-bottom: 23px;
+    margin-bottom: 0;
 
     & > article:nth-of-type(1) {
       top: 80px;
@@ -119,7 +116,7 @@ export const ProjectList = styled.div<{ $active?: boolean }>`
     }
 
     /* 태블릿 뷰 */
-    @media (max-width: 74.9375rem) {
+    @media (max-width: 1023px) {
       & > article:nth-of-type(2) {
         transform: translateX(-3px) translateY(9px) rotate(0deg);
       }
@@ -132,20 +129,19 @@ export const ProjectList = styled.div<{ $active?: boolean }>`
     }
   `
       : ''}
+
+  @media (max-width: 767px) {
+    order: 1;
+  }
 `;
 
-export const GradientWrapper = styled.div<{ mainColor: string; highColor: string; active: boolean }>`
-  display: grid;
+export const GradientOverlay = styled.div<{ mainColor: string; highColor: string; active: boolean }>`
   position: relative;
-  width: 100%;
+  display: flex;
+  width: 1200px;
   align-items: center;
-  grid-template-columns: 1fr auto;
-  grid-template-rows: auto auto;
-  grid-template-areas:
-    'title project'
-    'title button';
-  column-gap: 80px;
-  row-gap: 30px;
+  justify-content: space-between;
+  gap: 80px;
 
   & > * {
     position: relative;
@@ -163,17 +159,7 @@ export const GradientWrapper = styled.div<{ mainColor: string; highColor: string
     transform: translate(-50%, -50%);
     border-radius: 999px;
 
-    background:
-      radial-gradient(
-        45.16% 45.16% at 50% 50%,
-        color-mix(in srgb, ${({ mainColor }) => mainColor} 20%, transparent) 0%,
-        rgba(15, 15, 18, 0) 100%
-      ),
-      radial-gradient(
-        45.16% 45.16% at 50% 50%,
-        color-mix(in srgb, ${({ highColor }) => highColor} 20%, transparent) 0%,
-        rgba(15, 15, 18, 0) 100%
-      );
+    background: radial-gradient(45.16% 45.16% at 50% 50%, rgba(193, 73, 94, 0.20) 0%, rgba(15, 15, 18, 0.00) 100%); 
 
     opacity: ${({ active }) => (active ? 1 : 0)};
     filter: blur(56px);
@@ -183,51 +169,41 @@ export const GradientWrapper = styled.div<{ mainColor: string; highColor: string
   }
 
 
-  @media (hover: hover) and (pointer: fine) and (min-width: 75rem) {
-    &:hover ${ProjectList} {
-      --project-transition-duration: 300ms;
-    }
-
-    &:hover ${ProjectList} > article {
-      transform: translateX(0) rotate(0deg);
-    }
-
-    &:hover ${ProjectList} > article:nth-of-type(2) {
-      transition-delay: 30ms;
-      transform: translateX(-5px) rotate(0deg);
-    }
-
-    &:hover ${ProjectList} > article:nth-of-type(3) {
-      transition-delay: 30ms;
-      transform: translateY(30px) rotate(0deg);
-    }
-
-    &:hover ${ProjectList} > article:nth-of-type(4) {
-      transition-delay: 60ms;
-      transform: translateX(85px) translateY(0px) rotate(0deg);
-    }
-  }
-
-  @media (max-width: 74.9375rem) {
-    column-gap: 32px;
-    row-gap: 24px;
-  }
-
-  @media (max-width: 47.86875rem) {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto;
-    grid-template-areas:
-      'project'
-      'title'
-      'button';
-    justify-items: center;
-    row-gap: 28px;
-    column-gap: 0;
+  @media (max-width: 1023px) {
+    width: 640px;
+    gap: 32px;
 
     &::before {
-      top: 28%;
-      left: 50%;
+      background: radial-gradient(45.16% 45.16% at 50% 50%, rgba(193, 73, 94, 0.20) 0%, rgba(15, 15, 18, 0.00) 100%);
     }
+  }
+
+  @media (max-width: 767px) {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 28px;
+
+    &::before {
+      top: 90%;
+      left: 50%;
+      background: radial-gradient(45.16% 45.16% at 50% 50%, rgba(193, 73, 94, 0.20) 0%, rgba(15, 15, 18, 0.00) 100%);
+    }
+  }
+`;
+
+export const ProjectContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+
+  @media (max-width: 1023px) {
+    gap: 24px;
+  }
+
+  @media (max-width: 767px) {
+    display: contents;
   }
 `;
 
@@ -236,13 +212,13 @@ export const TitleWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 20px;
-  grid-area: title;
 
   /* 모바일 뷰 */
-  @media (max-width: 47.86875rem) {
+  @media (max-width: 767px) {
     align-items: center;
     text-align: center;
     gap: 16px;
+    order: 2;
   }
 `;
 
@@ -252,7 +228,7 @@ export const Title = styled.p`
   color: ${colors.gray100};
 
   /* 태블릿 뷰 */
-  @media (max-width: 74.9375rem) {
+  @media (max-width: 1023px) {
     font-size: 16px;
   }
 
@@ -267,21 +243,29 @@ export const Strong = styled.p<{ mainColor: string }>`
   white-space: pre-line;
 
   /* 태블릿 뷰 */
-  @media (max-width: 74.9375rem) {
+  @media (max-width: 1023px) {
     font-size: 24px;
     line-height: 28.8px;
   }
 `;
 
-export const RightArrowIcon = styled.span`
+export const RightArrowIcon = styled.i`
   width: 24px;
   height: 24px;
+  flex-shrink: 0;
+  font-style: normal;
   background-color: currentColor;
   -webkit-mask-image: url(${chevronRight});
   mask-image: url(${chevronRight});
 `;
 
 export const ButtonWrapper = styled.div`
-  grid-area: button;
-  justify-self: center;
+  display: flex;
+  justify-content: center;
+
+  /* 모바일 뷰 */
+  @media (max-width: 767px) {
+    order: 3;
+    }
+  }
 `;

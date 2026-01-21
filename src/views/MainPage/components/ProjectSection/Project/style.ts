@@ -11,7 +11,7 @@ export const Wrapper = styled.article`
   border-radius: 20px;
   background-color: ${colors.gray900};
 
-  @media (max-width: 74.9375rem) {
+  @media (max-width: 1023px) {
     width: 176px;
     height: 172.5px;
     padding: 7px;
@@ -25,7 +25,7 @@ export const Thumbnail = styled.img`
   border-radius: 8px;
   object-fit: cover;
 
-  @media (max-width: 74.9375rem) {
+  @media (max-width: 1023px) {
     width: 162px;
     height: 96px;
     border-radius: 4px;
@@ -37,7 +37,7 @@ export const ContentWrapper = styled.div`
   flex-direction: column;
   gap: 10px;
 
-  @media (max-width: 74.9375rem) {
+  @media (max-width: 1023px) {
     gap: 0px;
   }
 `;
@@ -54,7 +54,7 @@ export const Title = styled.h1`
   line-height: 28px;
   color: ${colors.white};
 
-  @media (max-width: 74.9375rem) {
+  @media (max-width: 1023px) {
     font-size: 9px;
     line-height: 14px;
   }
@@ -67,7 +67,7 @@ export const Category = styled.p`
   line-height: 16px;
   color: ${colors.gray400};
 
-  @media (max-width: 74.9375rem) {
+  @media (max-width: 1023px) {
     font-size: 6px;
     line-height: 8px;
   }
@@ -81,7 +81,7 @@ export const Description = styled.p`
   color: ${colors.gray50};
   white-space: pre-line;
 
-  @media (max-width: 74.9375rem) {
+  @media (max-width: 1023px) {
     font-size: 7px;
     line-height: 11px;
     white-space: normal;
@@ -116,7 +116,7 @@ export const Status = styled.p`
   color: ${colors.gray100};
   white-space: nowrap;
 
-  @media (max-width: 74.9375rem) {
+  @media (max-width: 1023px) {
     font-size: 6px;
     line-height: 8px;
   }
@@ -133,7 +133,7 @@ export const Members = styled.p`
   line-height: 16px;
   color: ${colors.white};
 
-  @media (max-width: 74.9375rem) {
+  @media (max-width: 1023px) {
     font-size: 6px;
     line-height: 8px;
   }
