@@ -8,18 +8,18 @@ export const Wrapper = styled.section`
   height: 100vh;
   align-items: center;
   justify-content: center;
-  padding: 275px 0;
+  margin: 275px 0;
 
   /* 태블릿 뷰 */
   @media (max-width: 1023px) {
     height: auto;
     min-height: 100vh;
-    padding: 180px 0;
+    margin: 180px 0;
   }
 
   /* 모바일 뷰 */
   @media (max-width: 767px) {
-    padding: 180px 24px;
+    margin: 180px 0;
   }
 `;
 
