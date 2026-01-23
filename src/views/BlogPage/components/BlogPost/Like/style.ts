@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { colors } from '@sopt-makers/colors';
+import { BREAKPOINT } from '@src/lib/styles/breakpoint';
 
 export const Like = styled.div`
   display: flex;
@@ -30,7 +31,7 @@ export const Like = styled.div`
   }
 
   /* 모바일 뷰 */
-  @media (max-width: 47.9375rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     display: none;
   }
 `;

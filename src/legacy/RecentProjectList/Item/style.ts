@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { css } from '@emotion/react';
 import icArrowStickRight from '@src/assets/icons/ic_arrow_stick_right.svg';
 import { textpluralLinesEllipsis } from '@src/lib/styles/textEllipsis';
+import { BREAKPOINT } from '@src/lib/styles/breakpoint';
 
 const GridWrapper = styled.div`
   width: 544px;
@@ -16,7 +17,7 @@ const GridWrapper = styled.div`
   padding: 24px;
 
   /* 모바일 뷰 */
-  @media (max-width: 56.1875rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     width: 320px;
     height: 139px;
     grid-template-areas:
@@ -44,7 +45,7 @@ const ThumbnailImage = styled(Image)`
   border-radius: 10px;
 
   /* 모바일 뷰 */
-  @media (max-width: 56.1875rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     width: 48px;
     height: 48px;
   }
@@ -67,7 +68,7 @@ const TextName = styled.div`
   letter-spacing: -0.48px;
 
   /* 모바일 뷰 */
-  @media (max-width: 56.1875rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     font-size: 16rem;
     letter-spacing: -0.24px;
   }
@@ -87,7 +88,7 @@ const TextSummary = styled.div`
   letter-spacing: -0.21px;
 
   /* 모바일 뷰 */
-  @media (max-width: 56.1875rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     font-size: 13rem;
     font-weight: 400;
     letter-spacing: -0.195px;
@@ -106,7 +107,7 @@ const Chip = styled.div`
   letter-spacing: -0.18px;
 
   /* 모바일 뷰 */
-  @media (max-width: 56.1875rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     height: 26px;
     padding: 5px 8px;
     font-size: 11rem;
@@ -161,7 +162,7 @@ const TryLink = styled.a`
   }
 
   /* 모바일 뷰 */
-  @media (max-width: 56.1875rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     font-size: 14rem;
     letter-spacing: -0.21px;
     border-radius: 13px;

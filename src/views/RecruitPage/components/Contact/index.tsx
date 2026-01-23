@@ -9,6 +9,7 @@ import {
   SectionTitleWrapper,
 } from '../common/style';
 import { contactInDisplayOrder, contactMap } from './constant';
+import { BREAKPOINT } from '@src/lib/styles/breakpoint';
 
 const Contact = () => {
   const { main } = useContext(BrandingColorContext);
@@ -67,11 +68,11 @@ const SectionWrapper = styled.div`
   flex-direction: column;
   gap: 8px;
   /* 태블릿 뷰 */
-  @media (max-width: 81.1875rem) and (min-width: 47.875rem) {
+  @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) and (min-width: ${BREAKPOINT.TABLET_MIN_WIDTH}) {
     gap: 8px;
   }
   /* 모바일 뷰 */
-  @media (max-width: 47.86875rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     gap: 2px;
   }
 `;
@@ -81,11 +82,11 @@ const ItemWrapper = styled.div`
   gap: 40px;
 
   /* 태블릿 뷰 */
-  @media (max-width: 81.1875rem) and (min-width: 47.875rem) {
+  @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) and (min-width: ${BREAKPOINT.TABLET_MIN_WIDTH}) {
     gap: 24px;
   }
   /* 모바일 뷰 */
-  @media (max-width: 47.86875rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     gap: 16px;
   }
 `;
@@ -94,12 +95,12 @@ const IconImage = styled(Image)`
   width: 98px;
   height: 98px;
   /* 태블릿 뷰 */
-  @media (max-width: 81.1875rem) and (min-width: 47.875rem) {
+  @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) and (min-width: ${BREAKPOINT.TABLET_MIN_WIDTH}) {
     width: 60px;
     height: 60px;
   }
   /* 모바일 뷰 */
-  @media (max-width: 47.86875rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     width: 50px;
     height: 50px;
   }
@@ -113,13 +114,13 @@ const GridWrapper = styled.div`
   column-gap: 160px;
   margin-top: 80px;
   /* 태블릿 뷰 */
-  @media (max-width: 81.1875rem) and (min-width: 47.875rem) {
+  @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) and (min-width: ${BREAKPOINT.TABLET_MIN_WIDTH}) {
     grid-template-columns: 1fr;
     row-gap: 60px;
     margin-top: 48px;
   }
   /* 모바일 뷰 */
-  @media (max-width: 47.86875rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     grid-template-columns: 1fr;
     row-gap: 40px;
     margin-top: 30px;
@@ -130,7 +131,7 @@ const IconWrapper = styled.div`
   width: 100px;
   height: 100px;
   /* 태블릿 뷰 */
-  @media (max-width: 81.1875rem) and (min-width: 47.875rem) {
+  @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) and (min-width: ${BREAKPOINT.TABLET_MIN_WIDTH}) {
     width: 60px;
     height: 60px;
     & svg {
@@ -139,7 +140,7 @@ const IconWrapper = styled.div`
     }
   }
   /* 모바일 뷰 */
-  @media (max-width: 47.86875rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     width: 50px;
     height: 50px;
     & svg {
@@ -157,7 +158,7 @@ const Title = styled.div`
   letter-spacing: -0.3px;
   margin-bottom: 18px;
   /* 태블릿 뷰 */
-  @media (max-width: 81.1875rem) and (min-width: 47.875rem) {
+  @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) and (min-width: ${BREAKPOINT.TABLET_MIN_WIDTH}) {
     color: #787878;
     font-size: 18rem;
     font-style: normal;
@@ -167,7 +168,7 @@ const Title = styled.div`
     margin-bottom: 4px;
   }
   /* 모바일 뷰 */
-  @media (max-width: 47.86875rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     color: #787878;
     font-size: 14rem;
     font-style: normal;
@@ -188,7 +189,7 @@ const Sub = styled.div`
   cursor: pointer;
 
   /* 태블릿 뷰 */
-  @media (max-width: 81.1875rem) and (min-width: 47.875rem) {
+  @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) and (min-width: ${BREAKPOINT.TABLET_MIN_WIDTH}) {
     color: #fff;
     font-size: 24.534rem;
     font-style: normal;
@@ -198,7 +199,7 @@ const Sub = styled.div`
     text-decoration-line: underline;
   }
   /* 모바일 뷰 */
-  @media (max-width: 47.86875rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     color: #fff;
     font-size: 18rem;
     font-style: normal;

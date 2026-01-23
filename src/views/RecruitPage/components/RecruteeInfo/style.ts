@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { BREAKPOINT } from '@src/lib/styles/breakpoint';
 
 export const Wrapper = styled.div`
   display: flex;
@@ -15,11 +16,11 @@ export const CardList = styled.ul`
   margin-top: 24px;
 
   /* 태블릿 뷰 */
-  @media (max-width: 81.1875rem) and (min-width: 47.875rem) {
+  @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) and (min-width: ${BREAKPOINT.TABLET_MIN_WIDTH}) {
     flex-direction: column;
   }
   /* 모바일 뷰 */
-  @media (max-width: 47.86875rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     flex-direction: column;
     gap: 20px;
   }
@@ -56,12 +57,12 @@ export const CardItem = styled.li`
   }
 
   /* 태블릿 뷰 */
-  @media (max-width: 81.1875rem) and (min-width: 47.875rem) {
+  @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) and (min-width: ${BREAKPOINT.TABLET_MIN_WIDTH}) {
     padding: 42px 0 54px 0;
     font-size: 22rem;
   }
   /* 모바일 뷰 */
-  @media (max-width: 47.86875rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     padding: 42px 0 66px 0;
     width: 323px;
     border-radius: 20px;

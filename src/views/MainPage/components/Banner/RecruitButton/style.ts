@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 import { colors } from '@sopt-makers/colors';
 import Link from 'next/link';
 import { BackgroundMove } from '@src/lib/styles/animation';
+import { BREAKPOINT } from '@src/lib/styles/breakpoint';
 
 export const RecruitButtonWrapper = styled(Link)<{ mainColor: string; highColor: string }>`
   margin-top: 41px;
@@ -23,13 +24,13 @@ export const RecruitButtonWrapper = styled(Link)<{ mainColor: string; highColor:
   line-height: 130%; /* 36.4px */
 
   /* 모바일 뷰 */
-  @media (max-width: 90rem) {
+  @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) {
     font-size: 24rem;
     margin-top: 51px;
   }
 
   /* 모바일 뷰 */
-  @media (max-width: 48rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     margin-top: 28px;
     font-size: 18rem;
     line-height: 28px; /* 155.556% */
@@ -60,13 +61,13 @@ export const MouseTrackerWrapper = styled.div<{
   font-size: 100%;
 
   /* 모바일 뷰 */
-  @media (max-width: 90rem) {
+  @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) {
     width: 256px;
     height: 59px;
   }
 
   /* 모바일 뷰 */
-  @media (max-width: 48rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     width: 188px;
     height: 44px;
   }

@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 import { colors } from '@sopt-makers/colors';
 import { css } from '@emotion/react';
 import { FadeInDown } from '@src/lib/styles/animation';
+import { BREAKPOINT } from '@src/lib/styles/breakpoint';
 
 export const ItemContainer = styled.div<{ src: string; isInView: boolean; order: number }>`
   color: white;
@@ -27,13 +28,13 @@ export const ItemContainer = styled.div<{ src: string; isInView: boolean; order:
   }
 
   /* 태블릿 뷰 */
-  @media (max-width: 48rem) {
+  @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) and (min-width: ${BREAKPOINT.TABLET_MIN_WIDTH}) {
     background-size: 60%;
     background-position: center bottom 14px;
   }
 
   /* 모바일 뷰 */
-  @media (max-width: 26.75rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     width: 269px;
     height: 228px;
     background-size: 70%;
@@ -76,11 +77,11 @@ export const ValueTop = styled.div`
   gap: 11px;
 
   /* 태블릿 뷰 */
-  @media (max-width: 48rem) {
+  @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) and (min-width: ${BREAKPOINT.TABLET_MIN_WIDTH}) {
     font-size: 24rem;
   }
   /* 모바일 뷰 */
-  @media (max-width: 26.75rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     font-size: 24rem;
     line-height: 33px;
   }
@@ -106,7 +107,7 @@ export const ValueNumber = styled.div<{ pointColor: string }>`
   letter-spacing: -0.17px;
 
   /* 모바일 뷰 */
-  @media (max-width: 26.75rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     width: 17.791px;
     height: 17.791px;
 
@@ -127,7 +128,7 @@ export const ValueTitle = styled.h2`
   text-align: center;
 
   /* 모바일 뷰 */
-  @media (max-width: 26.75rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     font-size: 19.097rem;
     line-height: 42.437px; /* 222.222% */
     letter-spacing: -0.191px;
@@ -161,7 +162,7 @@ export const ValueDescription = styled.div<{ isHovered: boolean }>`
   ${({ isHovered }) => isHovered && 'opacity: 1'};
 
   /* 모바일 뷰 */
-  @media (max-width: 26.75rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     width: 159px;
     font-size: 16rem;
     line-height: 30px;

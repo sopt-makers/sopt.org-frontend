@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { BREAKPOINT } from '@src/lib/styles/breakpoint';
 
 export const PartButton = styled.button<{ isSelected: boolean }>`
   width: 144px;
@@ -16,7 +17,7 @@ export const PartButton = styled.button<{ isSelected: boolean }>`
 
   cursor: pointer;
 
-  @media (max-width: 48rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     width: 118.982px;
     height: 41.313px;
 
@@ -25,7 +26,7 @@ export const PartButton = styled.button<{ isSelected: boolean }>`
     letter-spacing: -0.694px;
   }
 
-  @media (max-width: 26.75rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     width: 68.38px;
     height: 23.743px;
     border-radius: 5.698px;

@@ -1,12 +1,13 @@
 import styled from '@emotion/styled';
+import { BREAKPOINT } from '@src/lib/styles/breakpoint';
 
 export const MarginTop = styled.div`
   height: 275px;
-  @media (max-width: 90rem) and (min-width: 47.875rem) {
+  @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) and (min-width: ${BREAKPOINT.TABLET_MIN_WIDTH}) {
     height: 190px;
   }
   /* 모바일 뷰 */
-  @media (max-width: 47.86875rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     height: 120px;
   }
 `;
@@ -18,7 +19,7 @@ export const CardContainer = styled.div`
   gap: 34px;
   width: 1200px;
 
-  @media (max-width: 80rem) and (min-width: 73.125rem) {
+  @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) and (min-width: ${BREAKPOINT.TABLET_MIN_WIDTH}) {
     width: calc(100% - 40px);
   }
 
@@ -33,7 +34,7 @@ export const CardContainer = styled.div`
     width: 576px;
   }
   /* 모바일 뷰 */
-  @media (max-width: 36.5rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     grid-template-columns: repeat(2, 1fr);
     gap: 15px;
     width: max(350px, 100% - 40px);

@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
+import { BREAKPOINT } from '@src/lib/styles/breakpoint';
 
 export const Wrapper = styled.header<{ isTransparent: boolean }>`
   width: 100%;
@@ -23,13 +24,13 @@ export const Wrapper = styled.header<{ isTransparent: boolean }>`
   padding: 0 20px;
 
   /* 태블릿 + 데스크탑 뷰 */
-  @media (max-width: 58.75rem) and (min-width: 48rem) {
+  @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) and (min-width: ${BREAKPOINT.TABLET_MIN_WIDTH}) {
     height: 48px;
     padding: 0;
   }
 
   /* 모바일 뷰 */
-  @media (max-width: 47.9375rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     height: 48px;
     min-height: 48px;
     padding: 0;

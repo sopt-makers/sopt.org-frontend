@@ -11,6 +11,7 @@ import BlogPostList from '@src/views/BlogPage/components/BlogPostList';
 import BlogPostSkeletonUI from '@src/views/BlogPage/components/BlogPostSkeletonUI';
 import BlogTab from '@src/views/BlogPage/components/BlogTab';
 import { BlogTabType, SelectedType } from './components/BlogTab/types';
+import { BREAKPOINT } from '@src/lib/styles/breakpoint';
 
 const initialState: SelectedType = {
   selectedTab: BlogTabType.REVIEW,
@@ -73,11 +74,11 @@ export default function BlogPage() {
 const PageContainer = styled.div`
   margin-top: 80px;
 
-  @media (max-width: 767px) {
+  @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) and (min-width: ${BREAKPOINT.TABLET_MIN_WIDTH}) {
     margin-top: 48px;
   }
 
-  @media (max-width: 375px) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     margin-top: 48px;
   }
 `;

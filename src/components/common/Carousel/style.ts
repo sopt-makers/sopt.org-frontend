@@ -4,6 +4,7 @@ import { css } from '@emotion/react';
 import arrowLeft from '@src/assets/icons/arrow_left_28x28.svg';
 import arrowRight from '@src/assets/icons/arrow_right_28x28.svg';
 import { HideScrollbar } from '@src/lib/styles/scrollbar';
+import { BREAKPOINT } from '@src/lib/styles/breakpoint';
 
 const Wrapper = styled(HideScrollbar)<{ isSliding: boolean; lastIndex: boolean }>`
   width: 100%;
@@ -19,7 +20,7 @@ const Wrapper = styled(HideScrollbar)<{ isSliding: boolean; lastIndex: boolean }
     width: 70px;
     height: 164px;
 
-    @media (max-width: 56.1875rem) {
+    @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
       display: none;
     }
   }
@@ -44,7 +45,7 @@ const Wrapper = styled(HideScrollbar)<{ isSliding: boolean; lastIndex: boolean }
         transition: opacity 0.3s ease-out;
       `};
 
-    @media (max-width: 79.9375rem) {
+    @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) {
       opacity: ${({ lastIndex }) => (lastIndex ? 0 : 1)};
     }
   }
@@ -64,7 +65,7 @@ const Arrow = styled.div`
   background-repeat: no-repeat;
   background-position: center;
 
-  @media (max-width: 56.1875rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     display: none;
   }
 `;
@@ -105,7 +106,7 @@ const Blur = styled.div`
   top: 0;
   background: ${colors.background};
 
-  @media (max-width: 56.1875rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     display: none;
   }
 `;

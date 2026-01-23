@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import { colors } from '@sopt-makers/colors';
 import { css } from '@emotion/react';
+import { BREAKPOINT } from '@src/lib/styles/breakpoint';
 
 export const TabBar = styled.ul`
   display: flex;
@@ -9,7 +10,7 @@ export const TabBar = styled.ul`
   width: 100%;
 
   /* 태블릿 뷰 */
-  @media (max-width: 48rem) {
+  @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) {
     display: grid;
     grid-template-columns: repeat(3, auto);
     grid-template-rows: repeat(2, 1fr);
@@ -17,7 +18,7 @@ export const TabBar = styled.ul`
   }
 
   /* 모바일 뷰 */
-  @media (max-width: 26.75rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     gap: 13px 13.46px;
   }
 `;
@@ -51,7 +52,7 @@ export const Tab = styled.li<{ selected: boolean }>`
     `};
 
   /* 태블릿 뷰 */
-  @media (max-width: 48rem) {
+  @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) {
     width: 130.254px;
     padding: 14.635px 11.708px;
     border-radius: 7.318px;
@@ -60,7 +61,7 @@ export const Tab = styled.li<{ selected: boolean }>`
   }
 
   /* 모바일 뷰 */
-  @media (max-width: 26.75rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     width: 92.127px;
     padding: 10.351px 8.281px;
     border-radius: 5.176px;

@@ -3,6 +3,7 @@ import { useContext } from 'react';
 import { ReactComponent as IcArrow } from '@src/assets/icons/ic_arrow_right_white.svg';
 import { FAQType } from '@src/lib/types/faq';
 import { BrandingColorContext } from '@src/views/RecruitPage';
+import { BREAKPOINT } from '@src/lib/styles/breakpoint';
 
 interface QuestionBoxProps {
   info: FAQType;
@@ -41,13 +42,13 @@ const Styled = {
     padding: 40px 50px;
     cursor: pointer;
     /* 태블릿 뷰 */
-    @media (max-width: 119.99375rem) and (min-width: 47.875rem) {
+    @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) and (min-width: ${BREAKPOINT.TABLET_MIN_WIDTH}) {
       font-size: 25rem;
       padding: 32px 40px;
       border-radius: 20px;
     }
     /* 모바일 뷰 */
-    @media (max-width: 47.86875rem) {
+    @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
       padding: 18px 30px;
       border-radius: 20px;
     }
@@ -57,7 +58,7 @@ const Styled = {
     align-items: center;
     justify-content: space-between;
     /* 태블릿 뷰 */
-    @media (max-width: 119.99375rem) and (min-width: 47.875rem) {
+    @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) and (min-width: ${BREAKPOINT.TABLET_MIN_WIDTH}) {
       margin-bottom: ${({ isOpened }) => (isOpened ? '16px' : '0')};
     }
   `,
@@ -72,7 +73,7 @@ const Styled = {
     }
 
     /* 모바일 뷰 */
-    @media (max-width: 47.86875rem) {
+    @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
       font-size: 16rem;
       line-height: 24px;
     }
@@ -84,12 +85,12 @@ const Styled = {
     width: 40px;
     height: 40px;
     /* 태블릿 뷰 */
-    @media (max-width: 119.99375rem) and (min-width: 47.875rem) {
+    @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) and (min-width: ${BREAKPOINT.TABLET_MIN_WIDTH}) {
       transform: ${({ isOpened }) => (isOpened ? 'rotate(180deg)' : 'rotate(0deg)')} scale(0.9);
       transform-origin: center;
     }
     /* 모바일 뷰 */
-    @media (max-width: 47.86875rem) {
+    @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
       transform: ${({ isOpened }) => (isOpened ? 'rotate(180deg)' : 'rotate(0deg)')} scale(0.7);
       transform-origin: center;
     }
@@ -107,11 +108,11 @@ const Styled = {
       color: ${({ main }) => main};
     }
     /* 태블릿 뷰 */
-    @media (max-width: 119.99375rem) and (min-width: 47.875rem) {
+    @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) and (min-width: ${BREAKPOINT.TABLET_MIN_WIDTH}) {
       font-size: 22rem;
     }
     /* 모바일 뷰 */
-    @media (max-width: 47.86875rem) {
+    @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
       font-size: 14rem;
       line-height: 22px;
     }

@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { css } from '@emotion/react';
 import icPolygon from '@src/assets/icons/ic_polygon.svg';
+import { BREAKPOINT } from '@src/lib/styles/breakpoint';
 
 export const Wrapper = styled(motion.section)`
   display: flex;
@@ -13,7 +14,7 @@ export const Wrapper = styled(motion.section)`
   padding: 104px 2.86vw 0;
   background-color: ${colors.white};
 
-  @media (max-width: 48rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     padding: 0;
   }
 `;
@@ -27,7 +28,7 @@ export const FloatingMenu = styled.div`
 
   height: fit-content;
 
-  @media (max-width: 48rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     display: none;
   }
 `;
@@ -94,12 +95,12 @@ export const Layout = styled(motion.div)`
   background: #f6f8fc;
   z-index: 1;
 
-  @media (max-width: 48rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     width: 100%;
     padding: 0 6.25vw 0 6.25vw;
   }
 
-  @media (max-width: 26.75rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     padding: 0 6.54vw 0 6.54vw;
   }
 `;

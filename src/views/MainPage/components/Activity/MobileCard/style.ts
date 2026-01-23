@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { BREAKPOINT } from '@src/lib/styles/breakpoint';
 
 export const Container = styled.section`
   display: flex;
@@ -28,7 +29,7 @@ export const DotButton = styled.div<{ isSelected: boolean }>`
     cursor: pointer;
   }
 
-  @media (max-width: 26.75rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     width: 4px;
     height: 4px;
   }
@@ -62,11 +63,11 @@ export const Arrow = styled.div`
     cursor: pointer;
   }
 
-  @media (max-width: 48rem) {
+  @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) {
     width: 26px;
   }
 
-  @media (max-width: 26.75rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     width: 15.293px;
     & > img {
       height: 24.138px;

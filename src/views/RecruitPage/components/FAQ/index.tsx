@@ -8,6 +8,7 @@ import { BrandingColorContext } from '../..';
 import TabBar from '../common/Tabs';
 import { SectionTitle, SectionTitleTranslate, SectionTitleWrapper } from '../common/style';
 import QuestionBox from './QuestionBox';
+import { BREAKPOINT } from '@src/lib/styles/breakpoint';
 
 const FaqInfo = ({ info }: { info: PartQuestionType[] }) => {
   const { main } = useContext(BrandingColorContext);
@@ -66,11 +67,11 @@ const W = styled.div`
   flex-direction: column;
   gap: 70px;
   /* 태블릿 뷰 */
-  @media (max-width: 81.1875rem) and (min-width: 47.875rem) {
+  @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) and (min-width: ${BREAKPOINT.TABLET_MIN_WIDTH}) {
     gap: 40px;
   }
   /* 모바일 뷰 */
-  @media (max-width: 47.86875rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     gap: 24px;
   }
 `;
@@ -80,11 +81,11 @@ const Wrapper = styled.div`
   flex-direction: column;
   gap: 20px;
   /* 태블릿 뷰 */
-  @media (max-width: 81.1875rem) and (min-width: 47.875rem) {
+  @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) and (min-width: ${BREAKPOINT.TABLET_MIN_WIDTH}) {
     gap: 20px;
   }
   /* 모바일 뷰 */
-  @media (max-width: 47.86875rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     gap: 2px;
   }
 `;

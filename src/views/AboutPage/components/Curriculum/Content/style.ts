@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { BREAKPOINT } from '@src/lib/styles/breakpoint';
 
 export const CurriculumContent = styled.div`
   display: flex;
@@ -6,12 +7,12 @@ export const CurriculumContent = styled.div`
   gap: min(33px, 1.71875vw);
 
   /* 태블릿 뷰 */
-  @media (max-width: 48rem) {
+  @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) and (min-width: ${BREAKPOINT.TABLET_MIN_WIDTH}) {
     gap: 19px;
   }
 
   /* 모바일 뷰 */
-  @media (max-width: 26.75rem) {
+    @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     gap: 13.44px;
   }
 `;
@@ -23,7 +24,7 @@ export const ImageWrapper = styled.div`
   border-radius: 10px;
 
   /* 태블릿 뷰 */
-  @media (max-width: 48rem) {
+  @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) and (min-width: ${BREAKPOINT.TABLET_MIN_WIDTH}) {
     max-width: 662.42px;
     width: 86vw;
     min-width: 429.34px;
@@ -31,7 +32,7 @@ export const ImageWrapper = styled.div`
   }
 
   /* 모바일 뷰 */
-  @media (max-width: 26.75rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     max-width: 361.06px;
     width: 84vw;
     min-width: 312.48px;
@@ -47,13 +48,13 @@ export const CurriList = styled.ul`
   padding: 70px;
 
   /* 태블릿 뷰 */
-  @media (max-width: 48rem) {
+  @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) and (min-width: ${BREAKPOINT.TABLET_MIN_WIDTH}) {
     gap: 8px;
     padding: 30px;
   }
 
   /* 모바일 뷰 */
-  @media (max-width: 26.75rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     gap: 6px;
     padding: 10px;
   }
@@ -74,14 +75,14 @@ export const CurriItem = styled.li`
   letter-spacing: -0.5px;
 
   /* 태블릿 뷰 */
-  @media (max-width: 48rem) {
+  @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) and (min-width: ${BREAKPOINT.TABLET_MIN_WIDTH}) {
     font-size: 14px;
     gap: 6px;
     padding: 10px 20px;
   }
 
   /* 모바일 뷰 */
-  @media (max-width: 26.75rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     font-size: 12px;
     gap: 3px;
     padding: 8px 12px;

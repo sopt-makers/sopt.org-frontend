@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { colors } from '@sopt-makers/colors';
+import { BREAKPOINT } from '@src/lib/styles/breakpoint';
 
 export const Wrapper = styled.section`
   width: 100%;
@@ -9,11 +10,11 @@ export const Wrapper = styled.section`
   justify-content: center;
 
   /* 태블릿 뷰 */
-  @media (max-width: 58.6875rem) and (min-width: 48rem) {
+  @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) and (min-width: ${BREAKPOINT.TABLET_MIN_WIDTH}) {
     margin-top: 48px;
   }
   /* 모바일 뷰 */
-  @media (max-width: 47.9375rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     margin-top: 48px;
   }
 `;
@@ -26,9 +27,8 @@ export const Container = styled.div`
   gap: 48px;
 
   /* 태블릿, 모바일 뷰 */
-  @media (max-width: 58.6875rem) {
+  @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH})) {
     padding: 0 20px;
-    gap: 25px;
     width: 100%;
   }
 `;
@@ -41,7 +41,7 @@ export const TabContainer = styled.section`
 
 export const TabTitle = styled.article<{ isSelected: boolean }>`
   display: flex;
-  font-size: 24rem;
+  font-size: 24px;
   width: 100%;
   height: 100%;
   align-items: center;
@@ -60,10 +60,10 @@ export const TabTitle = styled.article<{ isSelected: boolean }>`
   margin-right: 20px;
 
   /* 모바일 뷰 */
-  @media (max-width: 47.9375rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     border-bottom: ${({ isSelected }) => isSelected && `1px solid ${colors.gray30}`};
     margin-right: 12px;
-    font-size: 18rem;
+    font-size: 18px;
     padding-bottom: 6px;
   }
 
@@ -77,7 +77,7 @@ export const LayoutContainer = styled.div`
   width: 100%;
   height: 48px;
 
-  @media (max-width: 375px) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     height: 38px;
   }
 `;
@@ -102,7 +102,7 @@ export const TagContainer = styled.section`
   gap: 12px;
 
   /* 모바일 뷰 */
-  @media (max-width: 375px) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     & > div > button {
       max-height: 38px;
     }
@@ -131,7 +131,7 @@ export const Tag = styled.button<{ isSelected: boolean }>`
   cursor: pointer;
 
   /* 모바일 뷰 */
-  @media (max-width: 375px) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     max-height: 38px;
   }
 `;
@@ -141,7 +141,7 @@ export const SelectContainer = styled.section`
   gap: 16px;
 
   /* 모바일 뷰 */
-  @media (max-width: 375px) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     & > div > button {
       max-height: 38px;
     }

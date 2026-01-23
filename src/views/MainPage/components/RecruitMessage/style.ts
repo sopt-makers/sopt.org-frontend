@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { colors } from '@sopt-makers/colors';
+import { BREAKPOINT } from '@src/lib/styles/breakpoint';
 
 export const Background = styled.section`
   margin-top: 505px;
@@ -10,12 +11,12 @@ export const Background = styled.section`
   align-items: center;
   justify-content: center;
 
-  @media (max-width: 90rem) {
+  @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) {
     margin-top: 349px;
     margin-bottom: 375px;
   }
 
-  @media (max-width: 48rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     margin-top: 221px;
     margin-bottom: 221px;
   }
@@ -37,11 +38,11 @@ export const Title = styled.h1`
   letter-spacing: -2%;
   margin-bottom: 11px;
 
-  @media (max-width: 48rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     font-size: 34rem;
   }
 
-  @media (max-width: 23.5rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     font-size: 20rem;
   }
 `;
@@ -57,13 +58,13 @@ export const Description = styled.p`
   letter-spacing: -2%;
   margin-bottom: 75px;
 
-  @media (max-width: 48rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     font-size: 21rem;
     line-height: 142%; /* 17.04px */
     margin-bottom: 59px;
   }
 
-  @media (max-width: 23.5rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     font-size: 12rem;
     margin-bottom: 34px;
   }
@@ -88,7 +89,7 @@ export const GoToRecruit = styled.a`
   line-height: 30px; /* 100% */
   letter-spacing: -0.6px;
 
-  @media (max-width: 48rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     width: 216px;
     height: 64px;
 
@@ -100,7 +101,7 @@ export const GoToRecruit = styled.a`
     letter-spacing: -0.46px;
   }
 
-  @media (max-width: 23.5rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     width: 124px;
     height: 36px;
     border-radius: 11.046px;

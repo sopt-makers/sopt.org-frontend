@@ -7,6 +7,7 @@ import useHeader from '@src/hooks/useHeader';
 import { GrowDown } from '@src/lib/styles/animation';
 import { menuTapList } from '../constants/menuTapList';
 import { MenuTapType } from '../types';
+import { BREAKPOINT } from '@src/lib/styles/breakpoint';
 
 interface DesktopHeaderProps {
   mainColor: string;
@@ -78,7 +79,7 @@ export const Logo = styled.button`
   background-size: 100% 100%;
   cursor: pointer;
 
-  @media (max-width: 58.75rem) {
+  @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) {
     width: 63px;
     height: 21px;
   }

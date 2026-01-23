@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { BREAKPOINT } from '@src/lib/styles/breakpoint';
 
 export const Wrapper = styled.section`
   display: flex;
@@ -7,11 +8,11 @@ export const Wrapper = styled.section`
   margin-bottom: 31px;
 
   /* 태블릿 뷰 */
-  @media (max-width: 48rem) {
+  @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) {
     margin-bottom: 26px;
   }
   /* 모바일 뷰 */
-  @media (max-width: 23.5rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     margin-bottom: 14px;
   }
 `;
@@ -27,7 +28,7 @@ export const Tab = styled.h2`
   letter-spacing: -2%;
   z-index: 1;
 
-  @media (max-width: 23.5rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     font-size: 11rem;
     line-height: 26.615px; /* 241.956% */
     letter-spacing: -0.22px;
@@ -47,12 +48,12 @@ export const Title = styled.h1`
   margin-bottom: 16px;
   word-break: keep-all;
 
-  @media (max-width: 48rem) {
+  @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) {
     font-size: 36rem;
     letter-spacing: -1.08px;
   }
 
-  @media (max-width: 23.5rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     font-size: 21rem;
     line-height: 29.103px; /* 138.588% */
     letter-spacing: -0.63px;
@@ -71,13 +72,13 @@ export const Description = styled.p`
   word-break: keep-all;
   white-space: pre-line;
 
-  @media (max-width: 48rem) {
+  @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) {
     font-size: 16rem;
     line-height: 26px; /* 162.5% */
     letter-spacing: -0.64px;
   }
 
-  @media (max-width: 23.5rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     font-size: 10rem;
     line-height: 14.942px; /* 149.424% */
     letter-spacing: -0.4px;

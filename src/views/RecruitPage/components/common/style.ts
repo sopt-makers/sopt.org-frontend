@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { BREAKPOINT } from '@src/lib/styles/breakpoint';
 
 export const SectionTitleWrapper = styled.div``;
 
@@ -14,13 +15,13 @@ export const SectionTitle = styled.h3`
   text-align: center;
 
   /* 태블릿 뷰 */
-  @media (max-width: 81.1875rem) and (min-width: 47.875rem) {
+  @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) and (min-width: ${BREAKPOINT.TABLET_MIN_WIDTH}) {
     font-size: 28rem;
     line-height: 40px;
     letter-spacing: -0.28px;
   }
   /* 모바일 뷰 */
-  @media (max-width: 47.86875rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     font-size: 18rem;
     font-weight: 800;
     line-height: 28px;
@@ -47,13 +48,13 @@ export const SectionSubTitle = styled.h3`
   text-align: center;
 
   /* 태블릿 뷰 */
-  @media (max-width: 81.1875rem) and (min-width: 47.875rem) {
+  @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) and (min-width: ${BREAKPOINT.TABLET_MIN_WIDTH}) {
     font-size: 20rem;
     line-height: 100%; /* 20px */
     letter-spacing: -0.2px;
   }
   /* 모바일 뷰 */
-  @media (max-width: 47.86875rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     color: #fff;
     font-family: SUIT;
     font-size: 14rem;
@@ -72,13 +73,13 @@ export const SectionDesc = styled.div`
   text-align: center;
 
   /* 태블릿 뷰 */
-  @media (max-width: 81.1875rem) and (min-width: 47.875rem) {
+  @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) and (min-width: ${BREAKPOINT.TABLET_MIN_WIDTH}) {
     font-size: 18rem;
     line-height: 100%; /* 18px */
     letter-spacing: -0.18px;
   }
   /* 모바일 뷰 */
-  @media (max-width: 47.86875rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     text-align: center;
     font-size: 16rem;
     line-height: 150%; /* 24px */

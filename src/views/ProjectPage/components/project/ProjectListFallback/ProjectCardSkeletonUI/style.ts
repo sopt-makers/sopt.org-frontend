@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { colors } from '@sopt-makers/colors';
+import { BREAKPOINT } from '@src/lib/styles/breakpoint';
 
 export const CardList = styled.div`
   display: grid;
@@ -7,12 +8,12 @@ export const CardList = styled.div`
   gap: 50px 28px;
   width: 1112px;
 
-  @media (max-width: 79.9375rem) and (min-width: 56.25rem) {
+  @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) and (min-width: ${BREAKPOINT.TABLET_MIN_WIDTH}) {
     grid-template-columns: 1fr 1fr;
     width: 732px;
   }
 
-  @media (max-width: 56.1875rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     grid-template-columns: 1fr;
     gap: 16px;
     width: 100%;
@@ -30,7 +31,7 @@ export const ProjectCard = styled.div`
   border: 1px solid ${colors.gray700};
   border-radius: 20px;
 
-  @media (max-width: 56.1875rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     width: 100%;
     height: 88px;
     padding: 0 0 10px 0;
@@ -45,7 +46,7 @@ export const ProjectContent = styled.div`
   flex-direction: column;
   gap: 4px;
 
-  @media (max-width: 56.1875rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     gap: 12px;
   }
 `;
@@ -56,7 +57,7 @@ export const ProjectThumbnail = styled.div`
   background-color: ${colors.gray900};
   border-radius: 8px;
 
-  @media (max-width: 56.1875rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     display: none;
   }
 `;
@@ -67,7 +68,7 @@ export const ProjectLogo = styled.div`
   background-color: ${colors.gray900};
   border-radius: 8px;
 
-  @media (min-width: 56.25rem) {
+  @media (min-width: ${BREAKPOINT.TABLET_MIN_WIDTH}) {
     display: none;
   }
 `;
@@ -103,7 +104,7 @@ export const ProjectSummary = styled.div`
   background-color: ${colors.gray900};
   border-radius: 8px;
 
-  @media (max-width: 56.1875rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     width: 40%;
   }
 `;

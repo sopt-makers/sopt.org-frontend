@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 import { colors } from '@sopt-makers/colors';
 import Image from 'next/image';
 import icSchool from '@src/assets/icons/ic_school.svg';
+import { BREAKPOINT } from '@src/lib/styles/breakpoint';
 
 export const Card = styled.article`
   display: flex;
@@ -14,11 +15,11 @@ export const Card = styled.article`
   border-radius: 10px;
 
   /* 태블릿 뷰 */
-  @media (max-width: 48rem) and (min-width: 26.75rem) {
+  @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) and (min-width: ${BREAKPOINT.TABLET_MIN_WIDTH}) {
     padding: 30px 0 22px 0;
   }
   /* 모바일 뷰 */
-  @media (max-width: 26.74375rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     padding: 17px 0 14px 0;
   }
 `;
@@ -40,12 +41,12 @@ export const ImageWrapper = styled.div`
   overflow: hidden;
 
   /* 태블릿, 모바일 뷰 */
-  @media (max-width: 48rem) and (min-width: 26.75rem) {
+  @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) and (min-width: ${BREAKPOINT.TABLET_MIN_WIDTH}) {
     width: 120px;
     height: 120px;
   }
   /* 태블릿, 모바일 뷰 */
-  @media (max-width: 26.74375rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     width: 80px;
     height: 80px;
   }
@@ -59,12 +60,12 @@ export const NameWrapper = styled.div`
   margin: 40px 0 16px 0;
 
   /* 태블릿 뷰 */
-  @media (max-width: 48rem) and (min-width: 26.75rem) {
+  @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) and (min-width: ${BREAKPOINT.TABLET_MIN_WIDTH}) {
     margin: 24px 0 10px 0;
     gap: 3px;
   }
   /* 모바일 뷰 */
-  @media (max-width: 26.74375rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     margin: 13px 0 7px 0;
     gap: 2px;
   }
@@ -81,14 +82,14 @@ export const Position = styled.span`
   letter-spacing: -0.34px;
 
   /* 태블릿 뷰 */
-  @media (max-width: 48rem) and (min-width: 26.75rem) {
+  @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) and (min-width: ${BREAKPOINT.TABLET_MIN_WIDTH}) {
     padding: 4px;
     font-size: 12.413rem;
     line-height: 18.984px; /* 152.941% */
     letter-spacing: -0.248px;
   }
   /* 모바일 뷰 */
-  @media (max-width: 26.74375rem) {
+    @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     padding: 3px;
     font-size: 7.535rem;
     line-height: 11.524px; /* 152.941% */
@@ -106,11 +107,11 @@ export const Name = styled.strong`
   letter-spacing: -0.28px;
 
   /* 태블릿 뷰 */
-  @media (max-width: 48rem) and (min-width: 26.75rem) {
+  @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) and (min-width: ${BREAKPOINT.TABLET_MIN_WIDTH}) {
     font-size: 18rem;
   }
   /* 모바일 뷰 */
-  @media (max-width: 26.74375rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     font-size: 16rem;
   }
 `;
@@ -128,7 +129,7 @@ export const Desc = styled.span`
   padding: 10px 16px;
   border-radius: 10px;
   /* 태블릿 뷰 */
-  @media (max-width: 48rem) and (min-width: 26.75rem) {
+  @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) and (min-width: ${BREAKPOINT.TABLET_MIN_WIDTH}) {
     margin: 12px 0 28px 0;
     font-size: 10.952rem;
     font-style: normal;
@@ -139,7 +140,7 @@ export const Desc = styled.span`
     border-radius: 8px;
   }
   /* 모바일 뷰 */
-  @media (max-width: 26.74375rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     margin: 8px 0 18px 0;
     font-size: 6.648rem;
     font-style: normal;
@@ -164,12 +165,12 @@ export const CurrentProject = styled.span`
     width: 24px;
     height: 24px;
     /* 태블릿 뷰 */
-    @media (max-width: 48rem) and (min-width: 26.75rem) {
+    @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) and (min-width: ${BREAKPOINT.TABLET_MIN_WIDTH}) {
       width: 18px;
       height: 18px;
     }
     /* 모바일 뷰 */
-    @media (max-width: 26.74375rem) {
+    @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
       width: 12px;
       height: 12px;
     }
@@ -185,7 +186,7 @@ export const CurrentProject = styled.span`
   letter-spacing: -0.3px;
 
   /* 태블릿 뷰 */
-  @media (max-width: 48rem) and (min-width: 26.75rem) {
+  @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) and (min-width: ${BREAKPOINT.TABLET_MIN_WIDTH}) {
     height: 18px;
     padding-left: 20px;
     font-size: 10.952rem;
@@ -195,7 +196,7 @@ export const CurrentProject = styled.span`
     letter-spacing: -0.219px;
   }
   /* 모바일 뷰 */
-  @media (max-width: 26.74375rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     height: 12px;
     padding-left: 13px;
     font-size: 6.648rem;
@@ -213,18 +214,18 @@ export const LinkWrapper = styled.div`
   flex: 1;
   height: 100%;
   /* 태블릿 뷰 */
-  @media (max-width: 48rem) and (min-width: 26.75rem) {
+  @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) and (min-width: ${BREAKPOINT.TABLET_MIN_WIDTH}) {
     gap: 12px;
   }
   /* 모바일 뷰 */
-  @media (max-width: 26.74375rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     gap: 0;
   }
 `;
 
 export const AnchorIconWrapper = styled.a`
   /* 모바일 뷰 */
-  @media (max-width: 26.74375rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     transform: scale(0.7);
   }
 `;

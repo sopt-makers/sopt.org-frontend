@@ -7,12 +7,12 @@ export const SectionTop = styled.div`
   gap: 10.46px;
 
   /* 태블릿 뷰 */
-  @media (max-width: 48rem) {
+  @media (max-width: 1023px) {
     gap: 10.54px;
   }
 
   /* 모바일 뷰 */
-  @media (max-width: 26.75rem) {
+  @media (max-width: 767px) {
     gap: 10.46px;
   }
 `;
@@ -23,12 +23,12 @@ export const SectionTitle = styled.div`
   gap: 1px;
 
   /* 태블릿 뷰 */
-  @media (max-width: 48rem) {
+  @media (max-width: 1023px) {
     gap: 1.5px;
   }
 
   /* 모바일 뷰 */
-  @media (max-width: 26.75rem) {
+  @media (max-width: 767px) {
     gap: 2px;
   }
 `;
@@ -38,21 +38,21 @@ export const EngTitle = styled.h1`
 
   text-align: center;
   font-family: SUIT;
-  font-size: 17rem;
+  font-size: 17px;
   font-style: normal;
   font-weight: 500;
   line-height: 140%; /* 23.8px */
   letter-spacing: -0.34px;
 
   /* 태블릿 뷰 */
-  @media (max-width: 48rem) {
-    font-size: 14rem;
+  @media (max-width: 1023px) {
+    font-size: 14px;
     letter-spacing: -0.28px;
   }
 
   /* 모바일 뷰 */
-  @media (max-width: 26.75rem) {
-    font-size: 9rem;
+  @media (max-width: 767px) {
+    font-size: 9px;
     letter-spacing: -0.18px;
   }
 `;
@@ -62,21 +62,21 @@ export const KorTitle = styled.h1`
 
   text-align: center;
   font-family: SUIT;
-  font-size: 29rem;
+  font-size: 29px;
   font-style: normal;
   font-weight: 700;
   line-height: 140%; /* 40.6px */
   letter-spacing: -0.58px;
 
   /* 태블릿 뷰 */
-  @media (max-width: 48rem) {
-    font-size: 22rem;
+  @media (max-width: 1023px) {
+    font-size: 22px;
     letter-spacing: -0.44px;
   }
 
   /* 모바일 뷰 */
-  @media (max-width: 26.75rem) {
-    font-size: 15rem;
+  @media (max-width: 767px) {
+    font-size: 15px;
     letter-spacing: -0.3px;
   }
 `;
@@ -96,13 +96,13 @@ export const Description = styled.p`
   word-break: keep-all;
 
   /* 태블릿 뷰 */
-  @media (max-width: 48rem) {
+  @media (max-width: 1023px) {
     font-size: 16rem;
     letter-spacing: -0.32px;
   }
 
   /* 모바일 뷰 */
-  @media (max-width: 26.75rem) {
+  @media (max-width: 767px) {
     font-size: 11rem;
     letter-spacing: -0.22px;
   }

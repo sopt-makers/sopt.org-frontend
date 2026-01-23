@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { BREAKPOINT } from '@src/lib/styles/breakpoint';
 
 export const ApplyButton = styled.a<{ main: string }>`
   width: 220px;
@@ -14,13 +15,13 @@ export const ApplyButton = styled.a<{ main: string }>`
   background-color: ${({ main }) => main};
   z-index: 2;
   /* 태블릿 뷰 */
-  @media (max-width: 81.1875rem) and (min-width: 47.875rem) {
+  @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) and (min-width: ${BREAKPOINT.TABLET_MIN_WIDTH}) {
     font-size: 18rem;
     width: 180px;
     padding: 20px 0;
   }
   /* 모바일 뷰 */
-  @media (max-width: 47.86875rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     font-size: 16rem;
     width: 160px;
     padding: 16px 0;
@@ -43,12 +44,12 @@ export const Title = styled.div`
   z-index: 2;
   word-break: keep-all;
   /* 태블릿 뷰 */
-  @media (max-width: 81.1875rem) and (min-width: 47.875rem) {
+  @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) and (min-width: ${BREAKPOINT.TABLET_MIN_WIDTH}) {
     margin-top: 32px;
     font-size: 28rem;
   }
   /* 모바일 뷰 */
-  @media (max-width: 47.86875rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     margin-top: 26px;
     font-size: 28rem;
   }
@@ -70,11 +71,11 @@ export const Wrapper = styled.div<{ imgRecruitBg: string }>`
   background-position: top center;
 
   /* 태블릿 뷰 */
-  @media (max-width: 81.1875rem) and (min-width: 47.875rem) {
+  @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) and (min-width: ${BREAKPOINT.TABLET_MIN_WIDTH}) {
     height: 302px;
   }
   /* 모바일 뷰 */
-  @media (max-width: 47.86875rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     margin-top: 48px;
     font-size: 28rem;
     height: 409px;

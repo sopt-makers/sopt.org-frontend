@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { colors } from '@sopt-makers/colors';
+import { BREAKPOINT } from '@src/lib/styles/breakpoint';
 
 export const Root = styled.button`
   display: flex;
@@ -10,14 +11,14 @@ export const Root = styled.button`
   background: ${colors.gray10};
 
   color: ${colors.gray950};
-  font-size: 22rem;
+  font-size: 22px;
   font-weight: 600;
   line-height: 150%; /* 36px */
   letter-spacing: -0.48px;
   cursor: pointer;
 
-  @media (max-width: 26.75rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     padding: 8px 22px;
-    font-size: 18rem;
+    font-size: 18px;
   }
 `;

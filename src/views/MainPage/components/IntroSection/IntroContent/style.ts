@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { BREAKPOINT } from '@src/lib/styles/breakpoint';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 
@@ -32,7 +33,7 @@ export const Intro = styled.div`
   position: relative;
   padding: 0 60px 0 104px;
 
-  @media (max-width: 48rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     padding: 0 30px;
   }
 `;
@@ -48,7 +49,7 @@ export const AnimatedLine = styled(motion.svg)`
   stroke-width: 4px;
   stroke-linecap: round;
 
-  @media (max-width: 48rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     top: 285px;
     left: 42px;
   }
@@ -86,7 +87,7 @@ export const Circle = styled(motion.div)`
     grid-gap: 24px 0px;
   }
 
-  @media (max-width: 48rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     top: 80.19px;
     left: -315.83px;
 
@@ -114,7 +115,7 @@ export const Content = styled(motion.div)`
     grid-gap: 24px 36px;
   }
 
-  @media (max-width: 48rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     grid-template-areas:
       'image'
       'title'
@@ -147,7 +148,7 @@ export const ContentTitle = styled(motion.h2)`
     font-size: 40rem;
   }
 
-  @media (max-width: 48rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     width: fit-content;
     margin-top: 48px;
     margin-left: 58px;
@@ -176,7 +177,7 @@ export const ContentDetail = styled(motion.h3)`
     white-space: normal;
   }
 
-  @media (max-width: 48rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     max-width: 259px;
     margin-left: 58px;
     font-size: 16rem;
@@ -200,7 +201,7 @@ export const ContentImage = styled(Image)`
     border-radius: 36px;
   }
 
-  @media (max-width: 48rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     max-width: 323px;
     min-width: 264px;
     height: 215px;
@@ -223,7 +224,7 @@ export const BackLight = styled.div<{ isContentVisible: boolean }>`
   opacity: ${({ isContentVisible }) => (isContentVisible ? '1' : '0')};
   transition: opacity 0.3s ease-in-out;
 
-  @media (max-width: 48rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     opacity: 0;
   }
 `;

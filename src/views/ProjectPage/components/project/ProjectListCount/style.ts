@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { colors } from '@sopt-makers/colors';
+import { BREAKPOINT } from '@src/lib/styles/breakpoint';
 
 export const Count = styled.div`
   color: ${colors.gray100};
@@ -12,14 +13,14 @@ export const Count = styled.div`
   line-height: 165%; /* 29.7px */
   letter-spacing: -0.27px;
 
-  @media (max-width: 79.9375rem) and (min-width: 56.25rem) {
-    & > span {
+  @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) and (min-width: ${BREAKPOINT.TABLET_MIN_WIDTH}) {
+    & > span {  
       display: none;
     }
   }
 
   /* 모바일 뷰 */
-  @media (max-width: 56.1875rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     /* Body/3_Medium_14 */
     font-family: SUIT;
     font-size: 14rem;

@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { BREAKPOINT } from '@src/lib/styles/breakpoint';
 import React, { useMemo } from 'react';
 
 type Responsive<T> = { mobile: T; tablet: T; desktop: T };
@@ -60,12 +61,12 @@ const Div = styled.div<{
   gap: ${(props) => cssGapToString(props.gap.desktop)};
   flex-direction: ${(props) => props.flexDirection.desktop};
 
-  @media (max-width: 74.9375rem) {
+  @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) {
     gap: ${(props) => cssGapToString(props.gap.tablet)};
     flex-direction: ${(props) => props.flexDirection.tablet};
   }
 
-  @media (max-width: 47.86875rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     gap: ${(props) => cssGapToString(props.gap.mobile)};
     flex-direction: ${(props) => props.flexDirection.mobile};
   }

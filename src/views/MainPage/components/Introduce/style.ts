@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { colors } from '@sopt-makers/colors';
+import { BREAKPOINT } from '@src/lib/styles/breakpoint';
 import { motion } from 'framer-motion';
 
 export const Background = styled.section`
@@ -27,19 +28,19 @@ export const TextContainer = styled(motion.span)`
   overflow: hidden;
   display: block;
   text-align: center;
-  font-size: 36rem;
+  font-size: 36px;
   font-style: normal;
   font-weight: 700;
   line-height: 73px;
   white-space: pre-line;
 
-  @media (max-width: 90rem) {
-    font-size: 24rem;
+  @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) {
+    font-size: 24px;
     line-height: 36px;
   }
 
-  @media (max-width: 48.375rem) {
-    font-size: 24rem;
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
+    font-size: 24px;
     line-height: 36px;
     word-break: keep-all;
   }

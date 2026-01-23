@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { colors } from '@sopt-makers/colors';
+import { BREAKPOINT } from '@src/lib/styles/breakpoint';
 
 export const Wrapper = styled.section`
   display: flex;
@@ -7,6 +8,12 @@ export const Wrapper = styled.section`
   flex-direction: column;
   justify-content: center;
   gap: 48px;
+
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
+    gap: 28px;
+  }
+
+
 `;
 
 export const VideoWrapper = styled.div`
@@ -19,7 +26,7 @@ export const VideoWrapper = styled.div`
   background-color: ${colors.gray800};
   cursor: pointer;
 
-  @media (max-width: 767px) {
+  @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) {
     flex-direction: column;
   }
 `;
@@ -34,7 +41,7 @@ export const Video = styled.div`
     height: 224px;
   }
 
-  @media (max-width: 767px) {
+  @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) {
     height: auto;
 
     & > iframe {
@@ -42,7 +49,7 @@ export const Video = styled.div`
     }
   }
 
-  @media (max-width: 430px) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     min-width: 271px;
     height: auto;
 
@@ -82,4 +89,10 @@ export const Title = styled.h2`
   line-height: 42px;
   letter-spacing: -0.56px;
   color: ${colors.white};
+
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: -0.36px;
+  }
 `;

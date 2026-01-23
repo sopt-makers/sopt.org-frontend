@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { colors } from '@sopt-makers/colors';
+import { BREAKPOINT } from '@src/lib/styles/breakpoint';
 
 const SectionTitle = styled.div`
   color: ${colors.gray10};
@@ -12,8 +13,8 @@ const SectionTitle = styled.div`
     font-size: 100%;
   }
 
-  @media (max-width: 56.1875rem) {
-    font-size: 18rem;
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
+    font-size: 18px;
     font-weight: 700;
     letter-spacing: -0.36px;
     margin-bottom: 20px;
@@ -25,13 +26,13 @@ const SectionTitle = styled.div`
 `;
 
 const PlaygroundLinkWrapper = styled.div`
-  @media (max-width: 56.1875rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     display: none;
   }
   color: ${colors.gray400};
   /* Body/2_Medium_16 */
   font-family: SUIT;
-  font-size: 16rem;
+  font-size: 16px;
   font-style: normal;
   font-weight: 500;
   line-height: 165%; /* 26.4px */

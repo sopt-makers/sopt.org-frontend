@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { colors } from '@sopt-makers/colors';
+import { BREAKPOINT } from '@src/lib/styles/breakpoint';
 
 export const BlogPostListWrapper = styled.div`
   display: flex;
@@ -23,7 +24,7 @@ export const BlogPostList = styled.div`
   margin-top: 47px;
 
   /* 모바일 뷰 */
-  @media (max-width: 47.9375rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     width: 100%;
     margin-top: 24px;
     gap: 36px;
@@ -39,7 +40,7 @@ export const BlogPost = styled.section`
   transition: opacity 0.2s linear;
 
   /* 모바일 뷰 */
-  @media (max-width: 47.9375rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     gap: 16px;
   }
 `;
@@ -59,7 +60,7 @@ export const Header = styled.div`
   background-color: ${colors.gray800};
 
   /* 모바일 뷰 */
-  @media (max-width: 47.9375rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     height: 16px;
     margin-bottom: 0;
   }
@@ -70,7 +71,7 @@ export const Body = styled.div`
   width: 100%;
 
   /* 모바일 뷰 */
-  @media (max-width: 47.9375rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     display: flex;
     align-items: center;
     height: 53px;
@@ -90,7 +91,7 @@ export const ProfileImage = styled.div`
   background-color: ${colors.gray800};
 
   /* 모바일 뷰 */
-  @media (max-width: 47.9375rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     width: 15px;
     height: 15px;
   }
@@ -107,7 +108,7 @@ export const Title = styled.div`
   margin-bottom: 5px;
   width: 100%;
 
-  @media (max-width: 47.9375rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     height: 24px;
   }
 `;
@@ -120,7 +121,7 @@ export const Description = styled.div`
   height: 52px;
 
   /* 모바일 뷰 */
-  @media (max-width: 47.9375rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     display: none;
   }
 `;
@@ -131,7 +132,7 @@ export const TagList = styled.div`
   margin-top: 10px;
 
   /* 모바일 뷰 */
-  @media (max-width: 47.9375rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     margin-top: 18px;
   }
 `;
@@ -148,7 +149,7 @@ export const Tag = styled.div`
   background-color: ${colors.gray800};
 
   /* 모바일 뷰 */
-  @media (max-width: 47.9375rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     height: 20px;
   }
 `;
@@ -162,7 +163,7 @@ export const ThumbnailWrapper = styled.div`
   width: 239px;
 
   /* 모바일 뷰 */
-  @media (max-width: 47.9375rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     width: 105px;
   }
 `;
@@ -176,7 +177,7 @@ export const Thumbnail = styled.div`
   height: 160px;
 
   /* 모바일 뷰 */
-  @media (max-width: 47.9375rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     width: 105px;
     height: 70px;
     border-radius: 5px;

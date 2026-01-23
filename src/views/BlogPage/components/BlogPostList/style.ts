@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { colors } from '@sopt-makers/colors';
+import { BREAKPOINT } from '@src/lib/styles/breakpoint';
 import { BlogTabType } from '@src/views/BlogPage/components/BlogTab/types';
 
 export const Wrapper = styled.section`
@@ -16,7 +17,7 @@ export const Container = styled.main`
   gap: 48px;
 
   /* 태블릿, 모바일 뷰 */
-  @media (max-width: 58.6875rem) {
+  @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) {
     margin-left: 20px;
     margin-right: 20px;
     width: 100%;
@@ -29,7 +30,7 @@ export const Layout = styled.section`
   align-items: center;
   justify-content: space-between;
 
-  @media (max-width: 767px) {
+  @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) and (min-width: ${BREAKPOINT.TABLET_MIN_WIDTH}) {
     flex-direction: column;
     align-items: flex-start;
     gap: 24px;
@@ -48,7 +49,7 @@ export const BlogPostList = styled.div<{ selectedTab: BlogTabType }>`
   gap: 80px;
 
   /* 모바일 뷰 */
-  @media (max-width: 47.9375rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     margin-top: 24px;
     gap: 36px;
   }
@@ -67,4 +68,10 @@ export const Title = styled.h2`
   line-height: 42px;
   letter-spacing: -0.56px;
   color: ${colors.white};
+
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: -0.36px;
+  }
 `;

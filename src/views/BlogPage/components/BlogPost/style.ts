@@ -3,6 +3,7 @@ import { colors } from '@sopt-makers/colors';
 import Image from 'next/image';
 import { css } from '@emotion/react';
 import { BlogTabType } from '@src/views/BlogPage/components/BlogTab/types';
+import { BREAKPOINT } from '@src/lib/styles/breakpoint';
 
 export const PostWrapper = styled.section<{ tab: BlogTabType }>`
   display: flex;
@@ -31,7 +32,7 @@ export const BlogPost = styled.article`
   }
 
   /* 모바일 뷰 */
-  @media (max-width: 47.9375rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     gap: 16px;
     width: 100%;
   }
@@ -41,7 +42,7 @@ export const Body = styled.div`
   height: 94px;
 
   /* 모바일 뷰 */
-  @media (max-width: 47.9375rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     display: flex;
     align-items: center;
     height: 53px;
@@ -65,7 +66,7 @@ export const Title = styled.h1`
   letter-spacing: -0.48px;
 
   /* 모바일 뷰 */
-  @media (max-width: 47.9375rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     font-size: 16rem;
     letter-spacing: -0.24px;
   }
@@ -86,7 +87,7 @@ export const Description = styled.p<{ descriptionLine: number }>`
   letter-spacing: -0.24px;
 
   /* 모바일 뷰 */
-  @media (max-width: 47.9375rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     display: none;
   }
 `;
@@ -97,7 +98,7 @@ export const TagList = styled.div`
   margin-top: 10px;
 
   /* 모바일 뷰 */
-  @media (max-width: 47.9375rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     margin-top: 18px;
   }
 `;
@@ -119,7 +120,7 @@ export const Tag = styled.div`
   letter-spacing: -0.18px;
 
   /* 모바일 뷰 */
-  @media (max-width: 47.9375rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     height: 20px;
 
     font-size: 11rem;
@@ -137,7 +138,7 @@ export const ThumbnailWrapper = styled.div`
   width: 239px;
 
   /* 모바일 뷰 */
-  @media (max-width: 47.9375rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     width: 105px;
   }
 `;
@@ -147,7 +148,7 @@ export const Thumbnail = styled(Image)`
   object-fit: cover;
 
   /* 모바일 뷰 */
-  @media (max-width: 47.9375rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     width: 105px;
     height: 70px;
     border-radius: 5px;

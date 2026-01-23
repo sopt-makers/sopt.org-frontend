@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import { colors } from '@sopt-makers/colors';
 import Image from 'next/image';
+import { BREAKPOINT } from '@src/lib/styles/breakpoint';
 
 export const Header = styled.div`
   display: flex;
@@ -18,7 +19,7 @@ export const Header = styled.div`
   }
 
   /* 모바일 뷰 */
-  @media (max-width: 47.9375rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     height: 16px;
     margin-bottom: 0;
 
@@ -42,7 +43,7 @@ export const ProfileImage = styled(Image)`
   border-radius: 18px;
 
   /* 모바일 뷰 */
-  @media (max-width: 47.9375rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     width: 15px;
     height: 15px;
   }

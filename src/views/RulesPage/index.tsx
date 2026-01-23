@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 import PageLayout from '@src/components/common/PageLayout';
 import { useIsDesktop } from '@src/hooks/useDevice';
 import { RulesHead, RulesList, UnderlinedText } from './components';
+import { BREAKPOINT } from '@src/lib/styles/breakpoint';
 
 const SOPT_RULES = 'SOPT 회칙';
 
@@ -28,7 +29,7 @@ const Content = styled.div`
   margin-bottom: 130px;
   width: 100%;
   max-width: 1192px;
-  @media screen and (max-width: 80rem) {
+  @media screen and (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) {
     width: 92%;
   }
 `;

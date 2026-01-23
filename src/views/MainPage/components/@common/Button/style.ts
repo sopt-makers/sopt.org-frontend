@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { colors } from '@sopt-makers/colors';
+import { BREAKPOINT } from '@src/lib/styles/breakpoint';
 
 export const Button = styled.button`
   display: flex;
@@ -24,14 +25,14 @@ export const Button = styled.button`
   }
 
   /* 태블릿 뷰 */
-  @media (max-width: 1023px){
+  @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}){
     padding: 12px 20px;
     font-size: 16px;
     line-height: 24px;
   }
 
   /* 모바일 뷰 */
-  @media (max-width: 767px) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     padding: 9px 14px;
     font-size: 14px;
     line-height: 18px;

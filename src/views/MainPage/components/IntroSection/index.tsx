@@ -1,6 +1,6 @@
 import * as S from './style';
 import { GetHomepageResponse } from '@src/lib/types/admin';
-import RecordSection from '@src/views/MainPage/components/IntroSection/Record/Section';
+import RecordSection from '@src/views/MainPage/components/Record/Section';
 import ProjectSection from '@src/views/MainPage/components/IntroSection/ProjectSection';
 
 export default function IntroCardList({ adminData }: { adminData: GetHomepageResponse }) {

@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { ProjectCategoryType } from '@src/lib/types/project';
+import { BREAKPOINT } from '@src/lib/styles/breakpoint';
 
 export const ProjectListHeader = styled.div<{ selectedCategory: ProjectCategoryType }>`
   display: flex;
@@ -8,7 +9,7 @@ export const ProjectListHeader = styled.div<{ selectedCategory: ProjectCategoryT
   margin-bottom: 30px;
 
   /* 모바일 뷰 */
-  @media (max-width: 56.1875rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     flex-direction: column;
     gap: 20px;
     margin-bottom: 28px;

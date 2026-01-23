@@ -1,14 +1,15 @@
 import styled from '@emotion/styled';
+import { BREAKPOINT } from '@src/lib/styles/breakpoint';
 import Link from 'next/link';
 
 export const Wrapper = styled.div`
   padding-top: 104px;
 
-  @media (max-width: 48rem) {
+  @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) {
     padding-top: 125px;
   }
 
-  @media (max-width: 23.5rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     padding-top: 74px;
   }
 `;
@@ -38,12 +39,12 @@ export const PartButtonList = styled.div`
   display: flex;
   gap: 15px;
 
-  @media (max-width: 75rem) {
+  @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) {
     width: 776px;
     gap: 12.39px;
   }
 
-  @media (max-width: 26.75rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     width: 446px;
     gap: 7.12px;
   }
@@ -55,7 +56,7 @@ export const CarouselWrapper = styled.div`
   overflow: hidden;
   border-radius: 19px;
 
-  @media (max-width: 26.75rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     border-radius: 10.919px;
   }
 `;
@@ -76,12 +77,12 @@ export const RequiredAbility = styled(Link)`
   letter-spacing: -0.8px;
   text-decoration-line: underline;
 
-  @media (max-width: 75rem) {
+  @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) {
     text-align: center;
     font-size: 15rem;
   }
 
-  @media (max-width: 26.75rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     font-size: 10rem;
   }
 `;
@@ -100,11 +101,11 @@ export const Arrow = styled.div`
     cursor: pointer;
   }
 
-  @media (max-width: 75rem) {
+  @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) {
     width: 26px;
   }
 
-  @media (max-width: 26.75rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     width: 15.293px;
     & > img {
       height: 24.138px;
@@ -115,7 +116,7 @@ export const Arrow = styled.div`
 export const LeftArrow = styled(Arrow)`
   left: 1.5625vw;
 
-  @media (max-width: 75rem) {
+  @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) {
     left: 0;
   }
 `;
@@ -123,7 +124,7 @@ export const LeftArrow = styled(Arrow)`
 export const RightArrow = styled(Arrow)`
   right: 1.5625vw;
 
-  @media (max-width: 75rem) {
+  @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) {
     right: 0;
   }
 `;

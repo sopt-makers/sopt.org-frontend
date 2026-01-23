@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 import { colors } from '@sopt-makers/colors';
 import chevronRight from '@src/assets/icons/chevronRight.svg';
 import { convertRadialGradient } from '@src/lib/styles/gradient';
+import { BREAKPOINT } from '@src/lib/styles/breakpoint';
 
 export const Wrapper = styled.section`
   position: relative;
@@ -12,14 +13,14 @@ export const Wrapper = styled.section`
   margin: 275px 0;
 
   /* 태블릿 뷰 */
-  @media (max-width: 1023px) {
+  @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) {
     height: auto;
     min-height: 100vh;
     margin: 180px 0;
   }
 
   /* 모바일 뷰 */
-  @media (max-width: 767px) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     margin: 180px 0;
   }
 `;
@@ -69,7 +70,7 @@ export const ProjectList = styled.div<{ $active?: boolean }>`
   }
 
   /* 태블릿 뷰 */
-  @media (max-width: 1023px) {
+  @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) {
     width: 240px;
     height: 260px;
     margin-bottom: 0;
@@ -117,7 +118,7 @@ export const ProjectList = styled.div<{ $active?: boolean }>`
     }
 
     /* 태블릿 뷰 */
-    @media (max-width: 1023px) {
+    @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) {
       & > article:nth-of-type(2) {
         transform: translateX(-3px) translateY(9px) rotate(0deg);
       }
@@ -131,7 +132,7 @@ export const ProjectList = styled.div<{ $active?: boolean }>`
   `
       : ''}
 
-  @media (max-width: 767px) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     order: 1;
   }
 `;
@@ -170,7 +171,7 @@ export const GradientOverlay = styled.div<{ mainColor: string; highColor: string
   }
 
 
-  @media (max-width: 1023px) {
+  @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) {
     width: 640px;
     gap: 32px;
 
@@ -179,7 +180,7 @@ export const GradientOverlay = styled.div<{ mainColor: string; highColor: string
     }
   }
 
-  @media (max-width: 767px) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
@@ -199,11 +200,11 @@ export const ProjectContainer = styled.div`
   align-items: center;
   gap: 30px;
 
-  @media (max-width: 1023px) {
+  @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) {
     gap: 24px;
   }
 
-  @media (max-width: 767px) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     display: contents;
   }
 `;
@@ -214,7 +215,7 @@ export const TitleWrapper = styled.div`
   gap: 20px;
 
   /* 모바일 뷰 */
-  @media (max-width: 767px) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     align-items: center;
     text-align: center;
     gap: 16px;
@@ -228,7 +229,7 @@ export const Title = styled.p`
   color: ${colors.gray100};
 
   /* 태블릿 뷰 */
-  @media (max-width: 1023px) {
+  @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) {
     font-size: 16px;
   }
 
@@ -243,7 +244,7 @@ export const Strong = styled.p<{ mainColor: string }>`
   white-space: pre-line;
 
   /* 태블릿 뷰 */
-  @media (max-width: 1023px) {
+  @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) {
     font-size: 24px;
     line-height: 28.8px;
   }
@@ -264,7 +265,7 @@ export const ButtonWrapper = styled.div`
   justify-content: center;
 
   /* 모바일 뷰 */
-  @media (max-width: 767px) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     order: 3;
     }
   }

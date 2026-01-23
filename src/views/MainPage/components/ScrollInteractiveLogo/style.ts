@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import icSoptLogoWhite from '@src/assets/icons/ic_logo_sopt_white.svg';
+import { BREAKPOINT } from '@src/lib/styles/breakpoint';
 
 export const Container = styled.div`
   height: 250vh;
@@ -26,12 +27,12 @@ export const Logo = styled.div`
   width: 415px;
   height: 144px;
 
-  @media (max-width: 48rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     width: 225px;
     height: 84px;
   }
 
-  @media (max-width: 23.5rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     height: 78px;
   }
 `;
@@ -58,7 +59,7 @@ export const DescriptionText = styled.div`
   -webkit-text-fill-color: transparent;
 
   /* 모바일 뷰 */
-  @media (max-width: 56.1875rem) {
+  @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) {
     font-family: SUIT;
     font-size: 14.656rem;
     font-style: normal;

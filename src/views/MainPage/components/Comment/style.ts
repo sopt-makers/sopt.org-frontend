@@ -4,17 +4,18 @@ import { motion } from 'framer-motion';
 import icArrowComment from '@src/assets/icons/ic_arrow_comment.svg';
 import icLeftArrow from '@src/assets/icons/ic_arrow_left.svg';
 import icRightArrow from '@src/assets/icons/ic_arrow_right.svg';
+import { BREAKPOINT } from '@src/lib/styles/breakpoint';
 
 export const Wrapper = styled.div`
   position: relative;
   padding-top: 256px;
 
-  @media (max-width: 48rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     padding-top: 149px;
     padding-bottom: 200px;
   }
 
-  @media (max-width: 23.5rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     padding-top: 111px;
   }
 `;
@@ -27,7 +28,7 @@ export const TitleShadow = styled(motion.div)`
   left: 0;
   background: linear-gradient(#f6f8fc 72%, transparent);
 
-  @media (max-width: 48rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     height: 100%;
   }
 `;
@@ -40,11 +41,11 @@ export const TitleWrapper = styled.div`
   z-index: 2;
   margin-bottom: 200px;
 
-  @media (max-width: 100rem) {
+  @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) {
     top: 120px;
     transition: 0.4s;
   }
-  @media (max-width: 48rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     position: static;
     padding-top: 0;
     margin-bottom: 0;
@@ -56,17 +57,17 @@ export const CardWrapper = styled.div`
   flex-direction: column;
   align-items: flex-end;
   padding-bottom: 200px;
-  @media (max-width: 100rem) {
+  @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) {
     padding-bottom: 240px;
   }
-  @media (max-width: 48rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     padding-top: 64px;
     padding-bottom: 0;
     flex-direction: row;
     align-items: center;
     gap: 22px;
   }
-  @media (max-width: 32.5rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     padding-top: 32px;
     gap: 12px;
   }
@@ -82,23 +83,23 @@ export const SectionTitle = styled.div`
   line-height: 61.6px; /* 112% */
   letter-spacing: -1.65px;
   z-index: 2;
-  @media (max-width: 48rem) and (min-width: 100rem) {
+  @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) and (min-width: ${BREAKPOINT.TABLET_MIN_WIDTH}) {
     padding-bottom: 200px;
   }
-  @media (max-width: 48rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     font-family: SUIT;
     font-size: 41rem;
     line-height: 45.956px; /* 112.087% */
     letter-spacing: -1.23px;
   }
-  @media (max-width: 32.5rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     font-size: 21rem;
     font-style: normal;
     font-weight: 500;
     line-height: 24.28px; /* 115.617% */
     letter-spacing: -0.63px;
   }
-  @media (max-height: 53.75rem) and (max-width: 100rem) {
+  @media (max-height: 53.75rem) and (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) and (min-width: ${BREAKPOINT.TABLET_MIN_WIDTH}) {
     font-size: 32rem;
     line-height: 32px;
   }
@@ -115,7 +116,7 @@ export const SectionSubTitle = styled.p`
   letter-spacing: -2%;
   z-index: 1;
 
-  @media (max-width: 23.5rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     font-size: 11rem;
     line-height: 26.615px; /* 241.956% */
     letter-spacing: -0.22px;

@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import Link from 'next/link';
 import { css } from '@emotion/react';
+import { BREAKPOINT } from '@src/lib/styles/breakpoint';
 
 export const Container = styled(Link)<{ isKeyColor: boolean }>`
   display: flex;
@@ -42,11 +43,11 @@ export const Container = styled(Link)<{ isKeyColor: boolean }>`
   }
 
   /* 태블릿 뷰 */
-  @media (max-width: 48rem) and (min-width: 26.8125rem) {
+  @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) and (min-width: ${BREAKPOINT.TABLET_MIN_WIDTH}) {
     margin-top: 48px;
   }
   /* 모바일 뷰 */
-  @media (max-width: 26.75rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     margin-top: 48px;
     padding: 8px 20px;
   }
@@ -60,7 +61,7 @@ export const Wrapper = styled.section`
   width: 100%;
 
   /* 모바일 뷰 */
-  @media (max-width: 35.625rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     flex-direction: column;
     justify-content: start;
     align-items: baseline;
@@ -74,7 +75,7 @@ export const Title = styled.h1`
   font-size: 16rem;
 
   /* 모바일 뷰 */
-  @media (max-width: 26.75rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     font-size: 12rem;
   }
 `;
@@ -90,13 +91,13 @@ export const Description = styled.div`
   font-weight: 500;
 
   /* 모바일 뷰 */
-  @media (max-width: 35.625rem) {
+  @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) {
     justify-content: space-between;
     width: 100%;
   }
 
   /* 모바일 뷰 */
-  @media (max-width: 26.75rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     font-size: 11rem;
   }
 `;
@@ -109,7 +110,7 @@ export const Timer = styled.div`
   justify-content: flex-start;
 
   /* 태블릿 뷰 */
-  @media (max-width: 48rem) and (min-width: 26.8125rem) {
+  @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) and (min-width: ${BREAKPOINT.TABLET_MIN_WIDTH}) {
     & > svg {
       width: 24px;
       height: 24px;
@@ -117,7 +118,7 @@ export const Timer = styled.div`
   }
 
   /* 모바일 뷰 */
-  @media (max-width: 26.75rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     gap: 4px;
   }
 `;

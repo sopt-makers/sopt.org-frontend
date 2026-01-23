@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { BREAKPOINT } from '@src/lib/styles/breakpoint';
 
 export const Root = styled.main`
   display: flex;
@@ -31,7 +32,7 @@ export const ErrorText = styled.p`
   line-height: 150%;
   letter-spacing: -0.96px;
 
-  @media (max-width: 26.75rem) {
+  @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) and (min-width: ${BREAKPOINT.TABLET_MIN_WIDTH}) {
     font-size: 24rem;
   }
 `;
@@ -48,7 +49,7 @@ export const ContactButton = styled.button`
 
   cursor: pointer;
 
-  @media (max-width: 26.75rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     font-size: 18rem;
   }
 `;

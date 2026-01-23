@@ -1,13 +1,14 @@
 import styled from '@emotion/styled';
+import { BREAKPOINT } from '@src/lib/styles/breakpoint';
 
 export const Wrapper = styled.div`
   padding-top: 104px;
 
-  @media (max-width: 48rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     padding-top: 125px;
   }
 
-  @media (max-width: 23.5rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     padding-top: 74px;
   }
 `;
@@ -17,21 +18,21 @@ export const ContentWrapper = styled.div`
   gap: 28px;
   grid-template-columns: repeat(2, 1fr);
 
-  @media (max-width: 90rem) {
+  @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) {
     grid-template-columns: repeat(auto-fit, minmax(385px, 1fr));
     gap: 24px;
   }
 
-  @media (max-width: 48rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     display: flex;
     overflow-x: scroll;
   }
 
-  @media (max-width: 32rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     gap: 16px;
   }
 
-  @media (max-width: 26.75rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     gap: 14px;
   }
 `;
@@ -58,11 +59,11 @@ export const Slide = styled.div`
   padding: 0 6.5vw;
   border-radius: 19px;
 
-  @media (max-width: 48rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     height: 434px;
   }
 
-  @media (max-width: 23.5rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     height: 249px;
   }
 `;
@@ -81,11 +82,11 @@ export const Arrow = styled.div`
     cursor: pointer;
   }
 
-  @media (max-width: 48rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     width: 26px;
   }
 
-  @media (max-width: 26.75rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     width: 15.293px;
     & > img {
       height: 24.138px;

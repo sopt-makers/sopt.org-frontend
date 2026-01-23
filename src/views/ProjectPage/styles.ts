@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { colors } from '@sopt-makers/colors';
+import { BREAKPOINT } from '@src/lib/styles/breakpoint';
 
 const SectionTitle = styled.div`
   color: ${colors.gray10};
@@ -12,7 +13,7 @@ const SectionTitle = styled.div`
     font-size: 100%;
   }
 
-  @media (max-width: 56.1875rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     font-size: 18rem;
     font-weight: 700;
     letter-spacing: -0.36px;
@@ -35,7 +36,7 @@ const Root = styled.div`
   touch-action: pan-y;
 
   /* 모바일 뷰 */
-  @media (max-width: 56.1875rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     align-items: flex-start;
     padding: 0 50px;
   }
@@ -53,12 +54,12 @@ const ContentWrapper = styled.div`
   padding: 188px 0;
 
   /* 태블릿 뷰 */
-  @media (max-width: 79.9375rem) and (min-width: 56.25rem) {
+  @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) and (min-width: ${BREAKPOINT.TABLET_MIN_WIDTH}) {
     width: 732px;
   }
 
   /* 모바일 뷰 */
-  @media (max-width: 56.1875rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     width: 100%;
     padding: 76px 0;
   }
@@ -66,7 +67,7 @@ const ContentWrapper = styled.div`
 
 const Spacing = styled.div`
   height: 108px;
-  @media (max-width: 56.1875rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     height: 48px;
   }
 `;
@@ -77,13 +78,13 @@ const FilterWrapper = styled.div`
   margin-bottom: 16px;
 
   /* 모바일 뷰 */
-  @media (max-width: 56.1875rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     gap: 7px;
   }
 `;
 
 const PlaygroundLinkWrapper = styled.div`
-  @media (max-width: 56.1875rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     display: none;
   }
   color: ${colors.gray400};

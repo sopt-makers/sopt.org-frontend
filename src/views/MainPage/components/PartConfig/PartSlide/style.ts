@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { colors } from '@sopt-makers/colors';
+import { BREAKPOINT } from '@src/lib/styles/breakpoint';
 import { motion } from 'framer-motion';
 
 export const PartSlide = styled.div`
@@ -12,7 +13,7 @@ export const PartSlide = styled.div`
   border-radius: 19px;
   background: linear-gradient(98deg, #1a2035 33.84%, #304f84 96.92%);
 
-  @media (max-width: 75rem) {
+  @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) {
     justify-content: center;
     position: static;
 
@@ -21,7 +22,7 @@ export const PartSlide = styled.div`
     background: none;
   }
 
-  @media (max-width: 26.75rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     height: 280.74px;
   }
 `;
@@ -31,7 +32,7 @@ export const Wrapper = styled.div`
   width: 100%;
   padding: 77px 0 62px calc(4.375vw + 1.5625vw + 42px);
 
-  @media (max-width: 75rem) {
+  @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) {
     width: calc(100% - 5.46vw - 54px);
     position: relative;
     padding: 4.57vw 5.5vw 0 5.5vw;
@@ -39,11 +40,11 @@ export const Wrapper = styled.div`
     background: linear-gradient(98deg, #1a2035 33.84%, #304f84 96.92%);
   }
 
-  @media (max-width: 48rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     padding: 6.57vw 6.5vw 0 6.5vw;
   }
 
-  @media (max-width: 26.75rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     width: calc(100% - 5.46vw - 31px);
     padding: 6.78vw 6.71vw 0 6.71vw;
     border-radius: 10.919px;
@@ -57,7 +58,7 @@ export const PartDetail = styled.div`
   height: 100%;
   width: calc(70px + 20vw);
 
-  @media (max-width: 75rem) {
+  @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) {
     justify-content: normal;
     width: 100%;
   }
@@ -68,11 +69,11 @@ export const PartTop = styled.div`
   flex-direction: column;
   gap: 17px;
 
-  @media (max-width: 75rem) {
+  @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) {
     gap: calc(3px + 0.4vw);
   }
 
-  @media (max-width: 26.75rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     gap: 2.87px;
   }
 `;
@@ -97,14 +98,14 @@ export const PartBadge = styled.div`
   line-height: 100%; /* 19px */
   letter-spacing: -0.38px;
 
-  @media (max-width: 75rem) {
+  @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) {
     border-radius: 8.836px;
     font-size: 15rem;
     letter-spacing: -0.3px;
     padding: 4.899px 12.247px;
   }
 
-  @media (max-width: 26.75rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     border-radius: 5.078px;
     padding: 2.815px 7.038px;
     font-size: 9rem;
@@ -125,7 +126,7 @@ export const PartTitle = styled.div`
   line-height: 100%; /* 56px */
   letter-spacing: -1.12px;
 
-  @media (max-width: 75rem) {
+  @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) {
     height: calc(40px + 1.8vw);
     font-size: max(30px, 4.34vw);
     line-height: 96%; /* 36.48px */
@@ -134,7 +135,7 @@ export const PartTitle = styled.div`
     margin-bottom: 1.82vw;
   }
 
-  @media (max-width: 26.75rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     height: max(28px, 7.21vw);
     font-size: max(20px, 5.14vw);
     letter-spacing: -0.44px;
@@ -153,17 +154,17 @@ export const PartDescription = styled.div`
   letter-spacing: -0.38px;
   /* word-break: keep-all; */
 
-  @media (max-width: 75rem) {
+  @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) {
     font-size: 18rem;
     letter-spacing: -0.34px;
   }
 
-  @media (max-width: 48rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     font-size: max(16px, 2.41vw);
     letter-spacing: -0.34px;
   }
 
-  @media (max-width: 26.75rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     font-size: max(9px, 2.33vw);
     letter-spacing: -0.2px;
   }
@@ -186,19 +187,19 @@ export const Keyword = styled(motion.div)`
   line-height: 162%; /* 35.64px */
   letter-spacing: -0.44px;
 
-  @media (max-width: 75rem) {
+  @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) {
     padding: 13.115px 18.215px;
     font-size: max(16px, 1.5vw);
     letter-spacing: -0.32px;
   }
 
-  @media (max-width: 48rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     padding: 11.115px 16.215px;
     font-size: max(14px, 2vw);
     letter-spacing: -0.32px;
   }
 
-  @media (max-width: 26.75rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     padding: max(6px, 1.76vw) max(8px, 2.44vw);
     font-size: 9rem;
     letter-spacing: -0.18px;

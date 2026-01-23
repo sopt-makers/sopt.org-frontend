@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { colors } from '@sopt-makers/colors';
+import { BREAKPOINT } from '@src/lib/styles/breakpoint';
 import { HideScrollbar } from '@src/lib/styles/scrollbar';
 
 export const Wrapper = styled(HideScrollbar)`
@@ -11,7 +12,7 @@ export const CarouselWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 544px);
   gap: 24px;
-  @media (max-width: 56.1875rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     width: 654px;
     grid-template-columns: repeat(2, 320px);
     gap: 14px;
@@ -55,7 +56,7 @@ export const GridWrapper = styled.div`
   padding: 24px;
   margin-right: 20px;
   /* 모바일 뷰 */
-  @media (max-width: 56.1875rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     width: 320px;
     height: 122px;
     grid-template-areas:
@@ -86,7 +87,7 @@ export const Description = styled.div`
   height: 21px;
   background-color: ${colors.gray700};
   /* 모바일 뷰 */
-  @media (max-width: 56.1875rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     height: 19.5px;
   }
 `;
@@ -101,7 +102,7 @@ export const ThumbnailImage = styled.div`
   border-radius: 10px;
   background-color: ${colors.gray700};
   /* 모바일 뷰 */
-  @media (max-width: 56.1875rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     width: 48px;
     height: 48px;
   }
@@ -120,7 +121,7 @@ export const Chip = styled.div`
   border-radius: 6px;
   background-color: ${colors.gray700};
   /* 모바일 뷰 */
-  @media (max-width: 56.1875rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     height: 26px;
     padding: 5px 8px;
   }

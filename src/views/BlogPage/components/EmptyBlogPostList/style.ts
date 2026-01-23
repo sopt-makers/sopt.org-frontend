@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { colors } from '@sopt-makers/colors';
+import { BREAKPOINT } from '@src/lib/styles/breakpoint';
 
 export const EmptyBlogPostListWrapper = styled.section`
   display: flex;
@@ -19,7 +20,7 @@ export const EmptyBlogPostList = styled.section`
   text-align: center;
 
   /* 모바일 뷰 */
-  @media (max-width: 47.9375rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     font-size: 18rem;
     line-height: 28px; /* 155.556% */
     letter-spacing: -0.36px;
@@ -49,7 +50,7 @@ export const Total = styled.button`
   cursor: pointer;
 
   /* 모바일 뷰 */
-  @media (max-width: 47.9375rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     height: 36px;
     padding: 8px 14px;
     font-size: 14rem;

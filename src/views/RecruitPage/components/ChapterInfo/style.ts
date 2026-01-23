@@ -1,15 +1,16 @@
 import styled from '@emotion/styled';
+import { BREAKPOINT } from '@src/lib/styles/breakpoint';
 
 const BaseChip = styled.div`
   line-height: 42px;
   font-size: 22rem;
 
   /* 태블릿 뷰 */
-  @media (max-width: 81.1875rem) and (min-width: 47.875rem) {
+  @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) and (min-width: ${BREAKPOINT.TABLET_MIN_WIDTH}) {
     font-size: 18rem;
   }
 
-  @media (max-width: 47.86875rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     line-height: 18px;
     font-size: 16rem;
   }
@@ -38,11 +39,11 @@ const Wrapper = styled.div`
   flex-direction: column;
   gap: 70px;
   /* 태블릿 뷰 */
-  @media (max-width: 81.1875rem) and (min-width: 47.875rem) {
+  @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) and (min-width: ${BREAKPOINT.TABLET_MIN_WIDTH}) {
     gap: 40px;
   }
   /* 모바일 뷰 */
-  @media (max-width: 47.86875rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     gap: 24px;
   }
 `;
@@ -76,14 +77,14 @@ const InfoWrapper = styled(BaseText)`
   width: 100%;
 
   /* 태블릿 뷰 */
-  @media (max-width: 81.1875rem) and (min-width: 47.875rem) {
+  @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) and (min-width: ${BREAKPOINT.TABLET_MIN_WIDTH}) {
     width: 640px;
     padding: 32px 56px;
     border-radius: 20px;
     line-height: 180%;
   }
   /* 모바일 뷰 */
-  @media (max-width: 47.86875rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     width: 323px;
     padding: 22px 28px;
     border-radius: 20px;
@@ -118,14 +119,14 @@ const FitWrapper = styled(BaseText)<{ pointColor: string }>`
     padding-right: 5px;
   }
   /* 태블릿 뷰 */
-  @media (max-width: 81.1875rem) and (min-width: 47.875rem) {
+  @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) and (min-width: ${BREAKPOINT.TABLET_MIN_WIDTH}) {
     width: 640px;
     padding: 32px 56px;
     border-radius: 24px;
     line-height: 180%;
   }
   /* 모바일 뷰 */
-  @media (max-width: 47.86875rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     width: 323px;
     padding: 22px 28px;
     gap: 8px;
@@ -145,11 +146,11 @@ const SectionWrapper = styled.div`
   gap: 10px;
   justify-content: center;
 
-  @media (max-width: 81.1875rem) and (min-width: 47.875rem) {
+  @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) and (min-width: ${BREAKPOINT.TABLET_MIN_WIDTH}) {
     gap: 6px;
   }
 
-  @media (max-width: 47.86875rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     flex-direction: column;
     gap: 0;
   }

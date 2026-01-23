@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import Link from 'next/link';
 import { css } from '@emotion/react';
+import { BREAKPOINT } from '@src/lib/styles/breakpoint';
 
 const FooterForm = styled.div<{ hide: boolean }>`
   display: flex;
@@ -25,7 +26,7 @@ const FooterForm = styled.div<{ hide: boolean }>`
       : ''}
 
   /* 모바일 뷰 */
-  @media (max-width: 47.8125rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     padding: 0 0 0 10px;
   }
 `;
@@ -35,7 +36,7 @@ const FooterLink = styled(Link)`
 
   color: #c0c5c9;
   line-height: normal;
-  font-size: 16rem;
+  font-size: 16px;
 
   &:hover {
     cursor: pointer;
@@ -46,7 +47,7 @@ const FooterButton = styled.button`
   padding: 17px 10px;
 
   color: #c0c5c9;
-  font-size: 16rem;
+  font-size: 16px;
 
   &:hover {
     cursor: pointer;

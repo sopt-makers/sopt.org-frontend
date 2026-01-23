@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { FadeIn } from '@src/lib/styles/animation';
+import { BREAKPOINT } from '@src/lib/styles/breakpoint';
 
 export const Wrapper = styled.button`
   position: fixed;
@@ -9,7 +10,7 @@ export const Wrapper = styled.button`
   background: #242424;
 
   // 모바일
-  @media (max-width: 47.8125rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     width: 56px;
     height: 56px;
     right: 20px;
@@ -18,7 +19,7 @@ export const Wrapper = styled.button`
   }
 
   // 태블릿
-  @media (min-width: 47.875rem) and (max-width: 119.9375rem) {
+  @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) {
     width: 70px;
     height: 70px;
     border-radius: 50%;
@@ -27,7 +28,7 @@ export const Wrapper = styled.button`
   }
 
   // 데스크탑
-  @media (min-width: 120rem) {
+  @media (min-width: ${BREAKPOINT.DESKTOP_MIN_WIDTH}) {
     width: 123px;
     height: 80px;
     border-radius: 52px;
@@ -49,7 +50,7 @@ export const Text = styled.span`
   line-height: 48px;
   color: #ffffff;
   // 모바일 태블릿
-  @media (min-width: 22.5rem) and (max-width: 119.9375rem) {
+  @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) {
     display: none;
   }
 `;

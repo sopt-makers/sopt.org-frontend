@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { BREAKPOINT } from '@src/lib/styles/breakpoint';
 import Image from 'next/image';
 
 export const ContainerWrapper = styled.div`
@@ -6,10 +7,10 @@ export const ContainerWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 108px;
-  @media (max-width: 47.86875rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     gap: 40px;
   }
-  @media (max-width: 81.1875rem) and (min-width: 47.875rem) {
+  @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) and (min-width: ${BREAKPOINT.TABLET_MIN_WIDTH}) {
     gap: 30px;
   }
 `;
@@ -21,10 +22,10 @@ export const TitleWrapper = styled.div`
   width: 100%;
   flex-direction: row;
   justify-content: space-between;
-  @media (max-width: 47.86875rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     gap: 8px;
   }
-  @media (max-width: 81.1875rem) and (min-width: 47.875rem) {
+  @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) and (min-width: ${BREAKPOINT.TABLET_MIN_WIDTH}) {
     gap: 24px;
   }
 `;
@@ -34,38 +35,38 @@ export const ContentWrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  @media (max-width: 47.86875rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     width: 100vw;
     padding: 0 16px;
   }
-  @media (max-width: 81.1875rem) and (min-width: 47.875rem) {
+  @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) and (min-width: ${BREAKPOINT.TABLET_MIN_WIDTH}) {
     width: 100vw;
     padding: 0 24px;
   }
 `;
 export const MoreLinkWrapper = styled.p`
   color: #fff;
-  font-size: 25rem;
+  font-size: 25px;
   font-weight: 500;
   line-height: 40px; /* 160% */
   letter-spacing: -0.25px;
   opacity: 0.6;
   border-bottom: 1px solid #959595;
 
-  @media (max-width: 81.1875rem) and (min-width: 47.875rem) {
-    font-size: 20rem;
+  @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) and (min-width: ${BREAKPOINT.TABLET_MIN_WIDTH}) {
+    font-size: 20px;
     font-weight: 400;
     line-height: 100%; /* 20px */
     letter-spacing: -0.2px;
   }
 
-  @media (max-width: 47.86875rem) {
-    font-size: 16rem;
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
+    font-size: 16px;
   }
 `;
 
 export const ArrowWrapper = styled.div`
-  @media (max-width: 81.1875rem) {
+  @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) {
     display: none;
   }
   display: flex;
@@ -86,12 +87,12 @@ export const Content = styled.div`
   gap: 24px;
   max-width: 1008px;
 
-  @media (max-width: 81.1875rem) and (min-width: 47.875rem) {
+  @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) and (min-width: ${BREAKPOINT.TABLET_MIN_WIDTH}) {
     overflow-x: scroll;
     gap: 24px;
   }
 
-  @media (max-width: 47.86875rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     overflow-x: scroll;
     gap: 16px;
   }
@@ -107,12 +108,12 @@ export const CardWrapper = styled.div`
   min-width: 320px;
   height: 300px;
   padding: 38px 34px;
-  @media (max-width: 47.86875rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     min-width: 232px;
     height: 218px;
     padding: 40px 26px;
   }
-  @media (max-width: 81.1875rem) and (min-width: 47.875rem) {
+  @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) and (min-width: ${BREAKPOINT.TABLET_MIN_WIDTH}) {
     min-width: 310px;
     height: 250px;
     padding: 40px 28px;
@@ -128,15 +129,15 @@ export const CardTitle = styled.div`
   word-break: break-all;
   color: #c8c8c8;
   font-weight: 500;
-  font-size: 25rem;
+  font-size: 25px;
   line-height: 40px;
-  @media (max-width: 47.86875rem) {
-    font-size: 16rem;
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
+    font-size: 16px;
     line-height: 25px;
     letter-spacing: -0.32px;
   }
-  @media (max-width: 81.1875rem) and (min-width: 47.875rem) {
-    font-size: 18rem;
+  @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) and (min-width: ${BREAKPOINT.TABLET_MIN_WIDTH}) {
+    font-size: 18px;
     line-height: 29px;
   }
 `;
@@ -150,15 +151,15 @@ export const DescWrapper = styled.div`
 export const Desc = styled.div`
   color: #848484;
   font-weight: 500;
-  font-size: 22rem;
+  font-size: 22px;
   line-height: 32px;
   white-space: pre-wrap;
-  @media (max-width: 47.86875rem) {
-    font-size: 14rem;
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
+    font-size: 14px;
     line-height: 22px;
   }
-  @media (max-width: 81.1875rem) and (min-width: 47.875rem) {
-    font-size: 16rem;
+  @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) and (min-width: ${BREAKPOINT.TABLET_MIN_WIDTH}) {
+    font-size: 16px;
     line-height: 23px;
     white-space: pre-wrap;
   }
@@ -167,7 +168,7 @@ export const Desc = styled.div`
 export const DescName = styled.div`
   font-weight: 700;
   line-height: 100%;
-  @media (max-width: 47.86875rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     font-weight: 500;
   }
 `;
@@ -175,11 +176,11 @@ export const DescName = styled.div`
 export const Arrow = styled(Image)`
   width: 30px;
   height: 30px;
-  @media (max-width: 47.86875rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     width: 17px;
     height: 15px;
   }
-  @media (max-width: 81.1875rem) and (min-width: 47.875rem) {
+  @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) and (min-width: ${BREAKPOINT.TABLET_MIN_WIDTH}) {
     width: 30px;
     height: 30px;
   }

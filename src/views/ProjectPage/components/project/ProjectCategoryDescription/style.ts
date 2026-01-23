@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { colors } from '@sopt-makers/colors';
+import { BREAKPOINT } from '@src/lib/styles/breakpoint';
 import { ProjectCategoryDescriptionProps } from '@src/views/ProjectPage/components/project/ProjectCategoryDescription';
 
 export const Description = styled.div<ProjectCategoryDescriptionProps>`
@@ -14,7 +15,7 @@ export const Description = styled.div<ProjectCategoryDescriptionProps>`
   letter-spacing: -0.27px;
 
   /* 모바일 뷰 */
-  @media (max-width: 56.1875rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     padding: 16px;
     border-radius: 12px;
     background: ${colors.gray800};

@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { colors } from '@sopt-makers/colors';
+import { BREAKPOINT } from '@src/lib/styles/breakpoint';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 
@@ -12,18 +13,18 @@ export const Background = styled(motion.main)`
   position: relative;
   z-index: 2;
 
-  @media (max-width: 48rem) {
+  @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) {
     width: calc(100% - 5.46vw - 54px);
   }
 
-  @media (max-width: 26.75rem) and (min-width: 23.5rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     border-radius: 21px;
     max-width: 296px;
     width: calc(100% - 5.46vw - 31px);
     height: 188px;
   }
 
-  @media (max-width: 23.4375rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     border-radius: 21px;
     max-width: 258px;
     height: 164px;
@@ -69,7 +70,7 @@ export const CardKorNav = styled.nav`
   margin-top: 26px;
   z-index: 3;
 
-  @media (max-width: 26.75rem) and (min-width: 23.5rem) {
+  @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) and (min-width: ${BREAKPOINT.TABLET_MIN_WIDTH}) {
     font-size: 13rem;
     line-height: 16.258px; /* 135.48% */
     letter-spacing: -0.48px;
@@ -80,7 +81,7 @@ export const CardKorNav = styled.nav`
     border-radius: 8px;
   }
 
-  @media (max-width: 23.4375rem) {
+  @media (max-width: ${BREAKPOINT.MOBILE_MAX_WIDTH}) {
     font-size: 10rem;
     line-height: 14.188px; /* 135.48% */
     letter-spacing: -0.419px;
@@ -127,7 +128,7 @@ export const Content = styled.span<{ color: string }>`
   line-height: 30.476px;
   letter-spacing: -0.708px;
 
-  @media (max-width: 26.75rem) {
+  @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) and (min-width: ${BREAKPOINT.TABLET_MIN_WIDTH}) {
     font-size: 11rem;
     line-height: 19px;
   }
