@@ -24,15 +24,16 @@ export const Button = styled.button`
   }
 
   /* 태블릿 뷰 */
-  @media (max-width: 47.875rem) and (min-width: 26.75rem) {
+  @media (max-width: 1023px){
     padding: 12px 20px;
-    font-size: 16rem;
+    font-size: 16px;
     line-height: 24px;
   }
+
   /* 모바일 뷰 */
-  @media (max-width: 26.75rem) {
+  @media (max-width: 767px) {
     padding: 9px 14px;
-    font-size: 14rem;
+    font-size: 14px;
     line-height: 18px;
   }
 `;

@@ -1,22 +1,22 @@
 import styled from '@emotion/styled';
 import chevronRight from '@src/assets/icons/chevronRight.svg';
+import { convertRadialGradient } from '@src/lib/styles/gradient';
 
 export const Wrapper = styled.section`
-  gap: 32px;
   display: flex;
+  
   flex-direction: column;
   align-items: center;
+  gap: 32px;
 
-  @media (max-width: 47.875rem) and (min-width: 26.75rem) {
-    margin-top: 190px;
-    margin-bottom: 218px;
+  /* 태블릿 뷰 */
+  @media (max-width: 1023px) {
     gap: 44px;
   }
 
   /* 모바일 뷰 */
-  @media (max-width: 26.75rem) {
+  @media (max-width: 767px) {
     margin-top: 120px;
-    margin-bottom: 136px;
     gap: 32px;
   }
 `;
@@ -36,25 +36,13 @@ export const GradientWrapper = styled.div<{
   &::before {
     content: '';
     position: absolute;
-    top: -35%;
+    top: -10%;
     left: 50%;
     width: 90%;
     height: 150%;
     transform: translateX(-50%);
     border-radius: 999px;
-
-    background-image: radial-gradient(
-        ellipse 95% 80% at 50% 65%,
-        color-mix(in srgb, ${({ mainColor }) => mainColor} 35%, transparent) 0%,
-        color-mix(in srgb, ${({ mainColor }) => mainColor} 22%, transparent) 22%,
-        transparent 60%
-      ),
-      radial-gradient(
-        ellipse 115% 105% at 50% 90%,
-        color-mix(in srgb, ${({ highColor }) => highColor} 30%, transparent) 0%,
-        color-mix(in srgb, ${({ highColor }) => highColor} 18%, transparent) 28%,
-        transparent 70%
-      );
+    background: ${({ mainColor, highColor }) => convertRadialGradient(mainColor, highColor)};
     opacity: ${({ active }) => (active ? 0.45 : 0)};
     filter: blur(56px);
     transition: opacity 0.3s ease;
@@ -68,7 +56,7 @@ export const GradientWrapper = styled.div<{
   }
 
   /* 태블릿 뷰 */
-  @media (max-width: 74.9375rem) and (min-width: 47.875rem) {
+  @media (max-width: 1023px) {
     &::before {
       top: -20%;
       height: 115%;
@@ -76,7 +64,7 @@ export const GradientWrapper = styled.div<{
   }
 
   /* 모바일 뷰 */
-  @media (max-width: 47.86875rem) {
+  @media (max-width: 767px) {
     &::before {
       top: 50%;
       height: 30%;

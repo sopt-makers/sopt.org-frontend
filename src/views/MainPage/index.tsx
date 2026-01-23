@@ -11,6 +11,7 @@ import { checkIsTimeInRange } from '../../lib/utils/date';
 import Banner from './components/Banner';
 import Introduce from './components/Introduce';
 import ScrollInteractiveLogo from './components/ScrollInteractiveLogo';
+import ProjectSection from '@src/views/MainPage/components/ProjectSection';
 
 function MainPage() {
   const { data: adminData } = useQuery<GetHomepageResponse>({
@@ -76,7 +77,7 @@ function MainPage() {
           }
         }
       />
-      {/* <IntroSection /> */}
+      <ProjectSection mainColor={'#' + adminData.brandingColor.main} highColor={'#' + adminData.brandingColor.high} />
       <ScrollInteractiveLogo />
       {adminData && (
         <BottomLayout
