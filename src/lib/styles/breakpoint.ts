@@ -1,0 +1,6 @@
+export const BREAKPOINT = {
+  DESKTOP_MIN_WIDTH: '1260px',
+  TABLET_MIN_WIDTH: '768px',
+  TABLET_MAX_WIDTH: '1023px',
+  MOBILE_MAX_WIDTH: '767px',
+};
