@@ -4,7 +4,7 @@ import PageLayout from '@src/components/common/PageLayout';
 import { remoteAdminAPI } from '@src/lib/api/remote/admin';
 import { GetHomepageResponse } from '@src/lib/types/admin';
 import BottomLayout from '@src/views/MainPage/components/BottomLayout';
-import IntroSection from '@src/views/MainPage/components/IntroSection';
+import RecordSection from '@src/views/MainPage/components/Record/Section';
 import TopBanner from '@src/views/MainPage/components/TopBanner';
 import usePostVisitor from '@src/views/MainPage/hooks/usePostVisitor';
 import { checkIsTimeInRange } from '../../lib/utils/date';
@@ -45,33 +45,46 @@ function MainPage() {
     postVisiter();
   }, [isRecruiting, postVisiter]);
 
+  if (!adminData) return;
   return (
     <PageLayout>
       {isRecruiting && (
         <TopBanner
           targetTime={
             isYBRecruiting
-              ? adminData?.recruitSchedule[1].schedule.applicationEndTime
-              : adminData?.recruitSchedule[0].schedule.applicationEndTime
+              ? adminData.recruitSchedule[1].schedule.applicationEndTime
+              : adminData.recruitSchedule[0].schedule.applicationEndTime
           }
-          generation={adminData?.generation ?? 0}
+          generation={adminData.generation ?? 0}
         />
       )}
       <Banner
-        mainColor={'#' + adminData?.brandingColor.main ?? ''}
-        highColor={'#' + adminData?.brandingColor.high ?? ''}
+        mainColor={'#' + adminData.brandingColor.main}
+        highColor={'#' + adminData.brandingColor.high}
         ctaText={ctaText}
       />
       <Introduce />
-      <IntroSection />
+      <RecordSection
+        mainColor={'#' + adminData.brandingColor.main}
+        highColor={'#' + adminData.brandingColor.high}
+        generation={adminData.generation}
+        activitiesRecords={
+          adminData.activitiesRecords ?? {
+            activitiesMemberCount: 0,
+            projectCounts: 0,
+            studyCounts: 0,
+          }
+        }
+      />
+      {/* <IntroSection /> */}
       <ScrollInteractiveLogo />
       {adminData && (
         <BottomLayout
-          generation={adminData?.generation ?? 0}
+          generation={adminData.generation ?? 0}
           partIntroduction={adminData.partIntroduction}
           latestNews={adminData.latestNews}
-          mainColor={'#' + adminData?.brandingColor.main ?? ''}
-          highColor={'#' + adminData?.brandingColor.high ?? ''}
+          mainColor={'#' + adminData.brandingColor.main}
+          highColor={'#' + adminData.brandingColor.high}
           ctaText={ctaText}
           isRecruitEnd={isRecruitEnd}
         />
