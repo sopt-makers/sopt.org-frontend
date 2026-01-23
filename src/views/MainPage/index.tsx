@@ -4,14 +4,13 @@ import PageLayout from '@src/components/common/PageLayout';
 import { remoteAdminAPI } from '@src/lib/api/remote/admin';
 import { GetHomepageResponse } from '@src/lib/types/admin';
 import BottomLayout from '@src/views/MainPage/components/BottomLayout';
-import RecordSection from '@src/views/MainPage/components/Record/Section';
 import TopBanner from '@src/views/MainPage/components/TopBanner';
 import usePostVisitor from '@src/views/MainPage/hooks/usePostVisitor';
 import { checkIsTimeInRange } from '../../lib/utils/date';
 import Banner from './components/Banner';
 import Introduce from './components/Introduce';
 import ScrollInteractiveLogo from './components/ScrollInteractiveLogo';
-import ProjectSection from '@src/views/MainPage/components/ProjectSection';
+import IntroSection from '@src/views/MainPage/components/IntroSection';
 
 function MainPage() {
   const { data: adminData } = useQuery<GetHomepageResponse>({
@@ -65,19 +64,7 @@ function MainPage() {
         ctaText={ctaText}
       />
       <Introduce />
-      <RecordSection
-        mainColor={'#' + adminData.brandingColor.main}
-        highColor={'#' + adminData.brandingColor.high}
-        generation={adminData.generation}
-        activitiesRecords={
-          adminData.activitiesRecords ?? {
-            activitiesMemberCount: 0,
-            projectCounts: 0,
-            studyCounts: 0,
-          }
-        }
-      />
-      <ProjectSection mainColor={'#' + adminData.brandingColor.main} highColor={'#' + adminData.brandingColor.high} />
+      <IntroSection adminData={adminData} />
       <ScrollInteractiveLogo />
       {adminData && (
         <BottomLayout
