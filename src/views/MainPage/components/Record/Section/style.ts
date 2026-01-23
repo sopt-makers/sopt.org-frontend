@@ -9,12 +9,13 @@ export const Wrapper = styled.section`
   align-items: center;
   gap: 32px;
 
-  @media (max-width: 47.875rem) and (min-width: 26.75rem) {
+  /* 태블릿 뷰 */
+  @media (max-width: 1023px) {
     gap: 44px;
   }
 
   /* 모바일 뷰 */
-  @media (max-width: 26.75rem) {
+  @media (max-width: 767px) {
     margin-top: 120px;
     gap: 32px;
   }
@@ -41,9 +42,7 @@ export const GradientWrapper = styled.div<{
     height: 150%;
     transform: translateX(-50%);
     border-radius: 999px;
-
     background: ${({ mainColor, highColor }) => convertRadialGradient(mainColor, highColor)};
-
     opacity: ${({ active }) => (active ? 0.45 : 0)};
     filter: blur(56px);
     transition: opacity 0.3s ease;
@@ -57,7 +56,7 @@ export const GradientWrapper = styled.div<{
   }
 
   /* 태블릿 뷰 */
-  @media (max-width: 74.9375rem) and (min-width: 47.875rem) {
+  @media (max-width: 1023px) {
     &::before {
       top: -20%;
       height: 115%;
@@ -65,7 +64,7 @@ export const GradientWrapper = styled.div<{
   }
 
   /* 모바일 뷰 */
-  @media (max-width: 47.86875rem) {
+  @media (max-width: 767px) {
     &::before {
       top: 50%;
       height: 30%;

@@ -78,7 +78,6 @@ function MainPage() {
         }
       />
       <ProjectSection mainColor={'#' + adminData.brandingColor.main} highColor={'#' + adminData.brandingColor.high} />
-      {/* <IntroSection /> */}
       <ScrollInteractiveLogo />
       {adminData && (
         <BottomLayout
