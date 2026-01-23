@@ -27,9 +27,10 @@ export const Container = styled.div`
   gap: 48px;
 
   /* 태블릿, 모바일 뷰 */
-  @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH})) {
+  @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) {
     padding: 0 20px;
     width: 100%;
+    gap: 0px;
   }
 `;
 

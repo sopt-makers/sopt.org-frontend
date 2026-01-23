@@ -18,6 +18,7 @@ export const CardContainer = styled.div`
   grid-template-columns: repeat(3, 1fr);
   gap: 34px;
   width: 1200px;
+  padding-bottom: 100px;
 
   @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) and (min-width: ${BREAKPOINT.TABLET_MIN_WIDTH}) {
     width: calc(100% - 40px);

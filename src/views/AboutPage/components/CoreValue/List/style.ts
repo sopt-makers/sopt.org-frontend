@@ -6,7 +6,7 @@ export const CoreValueList = styled.div`
   justify-content: center;
   gap: min(30px, calc(15px + 0.78vw));
 
-  @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) and (min-width: ${BREAKPOINT.TABLET_MIN_WIDTH}) {
+  @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) {
     flex-direction: column;
     align-items: center;
     gap: 30px;

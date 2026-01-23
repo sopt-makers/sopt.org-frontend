@@ -6,7 +6,7 @@ export const BannerWrapper = styled.div`
   width: 100%;
   height: 288px;
 
-  @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) and (min-width: ${BREAKPOINT.TABLET_MIN_WIDTH}) {
+  @media (max-width: ${BREAKPOINT.TABLET_MAX_WIDTH}) {
     height: 200px;
   }
 
