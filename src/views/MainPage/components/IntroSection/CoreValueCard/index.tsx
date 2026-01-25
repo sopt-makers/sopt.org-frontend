@@ -4,9 +4,9 @@ import * as S from './style';
 interface CoreValueCardProps {
   card: IntroContentType;
   isActive: boolean;
-  onHover?: () => void;
-  onClick?: () => void;
-  onMouseLeave?: () => void;
+  onHover: () => void;
+  onClick: () => void;
+  onMouseLeave: () => void;
   isMobile?: boolean;
 }
 
