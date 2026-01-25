@@ -1,4 +1,4 @@
-import Project from '@src/views/MainPage/components/ProjectSection/Project';
+import Project from '@src/views/MainPage/components/IntroSection/ProjectSection/Project';
 import * as S from './style';
 import Button from '@src/views/MainPage/components/@common/Button';
 import { useEffect, useState } from 'react';

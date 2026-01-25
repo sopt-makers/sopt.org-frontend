@@ -27,7 +27,7 @@ export const CoreValueSection = styled.div`
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  padding: 120px 0;
+  padding: 0 0 120px 0;
   z-index: 1;
 
   @media (max-width: 48rem) {
