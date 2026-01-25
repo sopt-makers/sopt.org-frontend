@@ -18,21 +18,17 @@ const NumberRoller = ({ goalNumber, duration = 2, rollRange = 50 }: NumberRoller
   const roundedNumber = useTransform(count, (latest) => Math.round(latest));
 
   useEffect(() => {
-    const handleAnimateNumber = () => {
-      if (isInView) {
-        const controls = animate(count, goalNumber, {
-          type: 'tween',
-          duration,
-          ease: 'circOut',
-        });
+    if (isInView) {
+      const controls = animate(count, goalNumber, {
+        type: 'tween',
+        duration,
+        ease: 'circOut',
+      });
 
-        return controls.stop;
-      } else {
-        count.set(startNumber);
-      }
-    };
-
-    handleAnimateNumber();
+      return () => controls.stop();
+    } else {
+      count.set(startNumber);
+    }
   }, [isInView, count, goalNumber, duration, startNumber]);
 
   return <motion.span ref={ref}>{roundedNumber}</motion.span>;
