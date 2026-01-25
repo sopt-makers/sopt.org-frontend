@@ -5,6 +5,7 @@ export type IntroContentType = {
   title: string;
   detail: string;
   src: string;
+  value: string;
 };
 
 export type TextColorType = {
