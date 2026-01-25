@@ -6,7 +6,6 @@ interface CoreValueCardProps {
   isActive: boolean;
   onHover: () => void;
   onClick: () => void;
-  onMouseLeave: () => void;
   isMobile?: boolean;
 }
 
@@ -15,13 +14,11 @@ export default function CoreValueCard({
   isActive,
   onHover,
   onClick,
-  onMouseLeave,
   isMobile,
 }: CoreValueCardProps) {
   return (
     <S.CardContainer
       onMouseEnter={onHover}
-      onMouseLeave={onMouseLeave}
       onClick={onClick}
       isActive={isActive}
     >
