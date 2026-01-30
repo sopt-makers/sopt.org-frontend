@@ -8,8 +8,7 @@ import { CoreValueType, GetAboutpageResponse } from '@src/lib/types/admin';
 import {
   Banner,
   CoreValueSection,
-  CurriculumSection,
-  RecordSection,
+  CurriculumSection
 } from '@src/views/AboutPage/components';
 
 const MemberSection = dynamic(() => import('@src/views/AboutPage/components/Member/Section'));
@@ -46,10 +45,10 @@ const AboutPage = () => {
             generation={adminData.generation}
             name={adminData.name}
           />
-          <RecordSection
+          {/* <RecordSection
             generation={adminData.generation}
             activitiesRecords={adminData.activitiesRecords}
-          />
+          /> */}
         </Root>
       </BrandingColorContext.Provider>
     </PageLayout>
