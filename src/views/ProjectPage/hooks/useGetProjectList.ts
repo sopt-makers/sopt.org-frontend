@@ -1,17 +1,24 @@
-import { useInfiniteQuery } from '@tanstack/react-query';
+import { useSuspenseQuery } from '@tanstack/react-query';
 import { api } from '@src/lib/api';
-import { ProjectCategoryType, ProjectPlatformType } from '@src/lib/types/project';
+import {
+  ProjectCategoryType,
+  ProjectPlatformType,
+  ProjectResponse,
+} from '@src/lib/types/project';
 
-export const useGetProjectList = (category: ProjectCategoryType, platform: ProjectPlatformType) => {
-  const queryKey = ['getProjectList', category, platform];
+export const useGetProjectList = (
+  category: ProjectCategoryType,
+  platform: ProjectPlatformType,
+  page = 1,
+) => {
+  const queryKey = ['getProjectList', category, platform, page];
 
-  const { data, hasNextPage, fetchNextPage } = useInfiniteQuery({
+  const { data } = useSuspenseQuery<ProjectResponse>({
     queryKey,
-    queryFn: ({ pageParam }: { pageParam: number }) =>
-      api.projectAPI.getProjectList(category, platform, pageParam),
-    getNextPageParam: (lastPage) => (lastPage.hasNextPage ? lastPage.currentPage + 1 : undefined),
-    initialPageParam: 1,
+    queryFn: () => api.projectAPI.getProjectList(category, platform, page),
   });
 
-  return { data: data?.pages.flatMap((page) => page.data), hasNextPage, fetchNextPage };
+  return {
+    response: data,
+  };
 };
