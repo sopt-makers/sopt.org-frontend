@@ -54,4 +54,5 @@ const Root = styled.main`
   flex-direction: column;
   justify-content: center;
   min-height: 100vh;
+  padding-bottom: 188px;
 `;
