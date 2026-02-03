@@ -62,6 +62,7 @@ export const global = css`
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     font-size: 6.25%;
     scroll-behavior: smooth;
+    overflow-x: hidden;
   }
 
   * {
@@ -83,6 +84,7 @@ export const global = css`
   body {
     background-color: ${colors.background};
     line-height: 1;
+    overflow-x: hidden;
   }
 
   button {
