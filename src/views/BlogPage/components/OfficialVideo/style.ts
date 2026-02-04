@@ -74,6 +74,7 @@ export const VideoDescriptionText = styled.p`
   letter-spacing: -0.24px;
   color: ${colors.white};
   white-space: pre-line;
+  word-break: keep-all;
 `;
 
 export const Title = styled.h2`
