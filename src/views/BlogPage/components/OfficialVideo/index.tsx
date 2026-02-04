@@ -2,8 +2,8 @@ import { track } from '@amplitude/analytics-browser';
 import YouTube from 'react-youtube';
 import * as S from './style';
 
-const VIDEO_URL = 'https://youtu.be/5ZU8iexL538?si=Ty2H_iPV8eZVOB4w';
-const VIDEO_ID = '5ZU8iexL538';
+const VIDEO_URL = 'https://youtu.be/Fnf_exsuhOw?si=5vX_talfMv43VNKB';
+const VIDEO_ID = 'Fnf_exsuhOw';
 
 const videoOpts = {
   width: '100%',
