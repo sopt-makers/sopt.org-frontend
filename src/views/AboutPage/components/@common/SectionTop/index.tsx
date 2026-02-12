@@ -2,7 +2,7 @@ import { useIsMobile } from '@src/hooks/useDevice';
 import * as S from './style';
 
 interface SectionTopProps {
-  engTitle: string;
+  engTitle?: string;
   korTitle: string;
   description?: string;
 }
@@ -15,7 +15,9 @@ export default function SectionTop({ engTitle, korTitle, description }: SectionT
         <S.EngTitle>{engTitle}</S.EngTitle>
         <S.KorTitle>{korTitle}</S.KorTitle>
       </S.SectionTitle>
-      {description && <S.Description>{isMobile ? description.replace(',', ',\n') : description}</S.Description>}
+      {description && (
+        <S.Description>{isMobile ? description.replace(',', ',\n') : description}</S.Description>
+      )}
     </S.SectionTop>
   );
 }

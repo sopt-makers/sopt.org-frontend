@@ -1,0 +1,82 @@
+import styled from '@emotion/styled';
+import chevronRight from '@src/assets/icons/chevronRight.svg';
+import { convertRadialGradient } from '@src/lib/styles/gradient';
+
+export const Wrapper = styled.section`
+  display: flex;
+  
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+
+  /* 태블릿 뷰 */
+  @media (max-width: 1023px) {
+    gap: 44px;
+  }
+
+  /* 모바일 뷰 */
+  @media (max-width: 767px) {
+    margin-top: 120px;
+    gap: 32px;
+  }
+`;
+
+export const GradientWrapper = styled.div<{
+  mainColor: string;
+  highColor: string;
+  active: boolean;
+}>`
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  border-radius: 24px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -10%;
+    left: 50%;
+    width: 90%;
+    height: 150%;
+    transform: translateX(-50%);
+    border-radius: 999px;
+    background: ${({ mainColor, highColor }) => convertRadialGradient(mainColor, highColor)};
+    opacity: ${({ active }) => (active ? 0.45 : 0)};
+    filter: blur(56px);
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  & > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* 태블릿 뷰 */
+  @media (max-width: 1023px) {
+    &::before {
+      top: -20%;
+      height: 115%;
+    }
+  }
+
+  /* 모바일 뷰 */
+  @media (max-width: 767px) {
+    &::before {
+      top: 50%;
+      height: 30%;
+    }
+  }
+`;
+
+export const RightArrowIcon = styled.span`
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  background-color: currentColor;
+  -webkit-mask-image: url(${chevronRight});
+  mask-image: url(${chevronRight});
+`;

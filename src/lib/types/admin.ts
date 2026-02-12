@@ -34,6 +34,11 @@ export interface GetHomepageResponse {
   partIntroduction: PartIntroType[];
   latestNews: LatestNewsType[];
   recruitSchedule: RecruitScheduleType[];
+  activitiesRecords: {
+    activitiesMemberCount: number;
+    projectCounts: number;
+    studyCounts: number;
+  };
 }
 
 export interface MemberType {

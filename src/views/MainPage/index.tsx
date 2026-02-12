@@ -4,13 +4,13 @@ import PageLayout from '@src/components/common/PageLayout';
 import { remoteAdminAPI } from '@src/lib/api/remote/admin';
 import { GetHomepageResponse } from '@src/lib/types/admin';
 import BottomLayout from '@src/views/MainPage/components/BottomLayout';
-import IntroSection from '@src/views/MainPage/components/IntroSection';
 import TopBanner from '@src/views/MainPage/components/TopBanner';
 import usePostVisitor from '@src/views/MainPage/hooks/usePostVisitor';
 import { checkIsTimeInRange } from '../../lib/utils/date';
 import Banner from './components/Banner';
 import Introduce from './components/Introduce';
 import ScrollInteractiveLogo from './components/ScrollInteractiveLogo';
+import IntroSection from '@src/views/MainPage/components/IntroSection';
 
 function MainPage() {
   const { data: adminData } = useQuery<GetHomepageResponse>({
@@ -45,33 +45,34 @@ function MainPage() {
     postVisiter();
   }, [isRecruiting, postVisiter]);
 
+  if (!adminData) return;
   return (
     <PageLayout>
       {isRecruiting && (
         <TopBanner
           targetTime={
             isYBRecruiting
-              ? adminData?.recruitSchedule[1].schedule.applicationEndTime
-              : adminData?.recruitSchedule[0].schedule.applicationEndTime
+              ? adminData.recruitSchedule[1].schedule.applicationEndTime
+              : adminData.recruitSchedule[0].schedule.applicationEndTime
           }
-          generation={adminData?.generation ?? 0}
+          generation={adminData.generation ?? 0}
         />
       )}
       <Banner
-        mainColor={'#' + adminData?.brandingColor.main ?? ''}
-        highColor={'#' + adminData?.brandingColor.high ?? ''}
+        mainColor={'#' + adminData.brandingColor.main}
+        highColor={'#' + adminData.brandingColor.high}
         ctaText={ctaText}
       />
       <Introduce />
-      <IntroSection />
+      <IntroSection adminData={adminData} />
       <ScrollInteractiveLogo />
       {adminData && (
         <BottomLayout
-          generation={adminData?.generation ?? 0}
+          generation={adminData.generation ?? 0}
           partIntroduction={adminData.partIntroduction}
           latestNews={adminData.latestNews}
-          mainColor={'#' + adminData?.brandingColor.main ?? ''}
-          highColor={'#' + adminData?.brandingColor.high ?? ''}
+          mainColor={'#' + adminData.brandingColor.main}
+          highColor={'#' + adminData.brandingColor.high}
           ctaText={ctaText}
           isRecruitEnd={isRecruitEnd}
         />

@@ -5,11 +5,7 @@ import { createContext } from 'react';
 import PageLayout from '@src/components/common/PageLayout';
 import { remoteAdminAPI } from '@src/lib/api/remote/admin';
 import { CoreValueType, GetAboutpageResponse } from '@src/lib/types/admin';
-import {
-  Banner,
-  CoreValueSection,
-  CurriculumSection
-} from '@src/views/AboutPage/components';
+import { Banner, CoreValueSection, CurriculumSection } from '@src/views/AboutPage/components';
 
 const MemberSection = dynamic(() => import('@src/views/AboutPage/components/Member/Section'));
 
@@ -45,10 +41,6 @@ const AboutPage = () => {
             generation={adminData.generation}
             name={adminData.name}
           />
-          {/* <RecordSection
-            generation={adminData.generation}
-            activitiesRecords={adminData.activitiesRecords}
-          /> */}
         </Root>
       </BrandingColorContext.Provider>
     </PageLayout>
@@ -62,4 +54,5 @@ const Root = styled.main`
   flex-direction: column;
   justify-content: center;
   min-height: 100vh;
+  padding-bottom: 188px;
 `;
