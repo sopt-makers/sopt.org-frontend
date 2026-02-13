@@ -84,6 +84,7 @@ export const global = css`
   body {
     background-color: ${colors.background};
     line-height: 1;
+    overflow-x: clip;
   }
 
   button {
