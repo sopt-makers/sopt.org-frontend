@@ -1,13 +1,13 @@
 import { INTRO_CONTENT_LIST } from '@src/lib/constants/main';
-import CoreValueCardList from '@src/views/MainPage/components/IntroSection/CoreValueCardList';
-import * as S from './style';
 import { GetHomepageResponse } from '@src/lib/types/admin';
-import RecordSection from '@src/views/MainPage/components/IntroSection/Record/Section';
+import CoreValueCardList from '@src/views/MainPage/components/IntroSection/CoreValueCardList';
 import ProjectSection from '@src/views/MainPage/components/IntroSection/ProjectSection';
+import RecordSection from '@src/views/MainPage/components/IntroSection/Record/Section';
+import * as S from './style';
 
 export default function IntroCardList({ adminData }: { adminData: GetHomepageResponse }) {
   return (
-    <S.IntroSection >
+    <S.IntroSection>
       <RecordSection
         mainColor={'#' + adminData.brandingColor.main}
         highColor={'#' + adminData.brandingColor.high}
@@ -20,9 +20,15 @@ export default function IntroCardList({ adminData }: { adminData: GetHomepageRes
           }
         }
       />
-      <ProjectSection mainColor={'#' + adminData.brandingColor.main} highColor={'#' + adminData.brandingColor.high} />
+      <ProjectSection
+        mainColor={'#' + adminData.brandingColor.main}
+        highColor={'#' + adminData.brandingColor.high}
+      />
       <S.CoreValueSection>
-        <CoreValueCardList cards={INTRO_CONTENT_LIST} />
+        <CoreValueCardList
+          cards={INTRO_CONTENT_LIST}
+          mainColor={'#' + adminData.brandingColor.main}
+        />
       </S.CoreValueSection>
     </S.IntroSection>
   );
