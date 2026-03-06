@@ -27,7 +27,7 @@ export default function IntroCardList({ adminData }: { adminData: GetHomepageRes
       <S.CoreValueSection>
         <CoreValueCardList
           cards={INTRO_CONTENT_LIST}
-          mainColor={'#' + adminData.brandingColor.main}
+          highColor={'#' + adminData.brandingColor.high}
         />
       </S.CoreValueSection>
     </S.IntroSection>

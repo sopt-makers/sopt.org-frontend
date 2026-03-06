@@ -115,6 +115,7 @@ export const CardDetail = styled.p`
   line-height: 160%;
   letter-spacing: -0.48px;
   word-break: keep-all;
+  white-space: pre-line;
 
   @media (max-width: 1023px) and (min-width: 768px) {
     font-size: 14px;
@@ -145,7 +146,7 @@ export const CardValue = styled.p<{ isActive: boolean }>`
   }
 `;
 
-export const PrimaryColorCircle = styled.div<{ isActive: boolean; mainColor: string }>`
+export const PrimaryColorCircle = styled.div<{ isActive: boolean; highColor: string }>`
   position: absolute;
   top: 50%;
   left: 50%;
@@ -153,7 +154,7 @@ export const PrimaryColorCircle = styled.div<{ isActive: boolean; mainColor: str
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background-color: ${({ mainColor }) => mainColor};
+  background-color: ${({ highColor }) => highColor};
   z-index: 30;
   opacity: ${({ isActive }) => (isActive ? 0 : 1)};
   transition: opacity 0.5s ease;
