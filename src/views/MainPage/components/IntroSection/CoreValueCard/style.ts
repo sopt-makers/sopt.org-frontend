@@ -118,7 +118,6 @@ export const CardDetail = styled.p`
 
   @media (max-width: 1023px) and (min-width: 768px) {
     font-size: 14px;
-
   }
 
   @media (max-width: 767px) {
@@ -146,7 +145,7 @@ export const CardValue = styled.p<{ isActive: boolean }>`
   }
 `;
 
-export const PrimaryColorCircle = styled.div<{ isActive: boolean }>`
+export const PrimaryColorCircle = styled.div<{ isActive: boolean; mainColor: string }>`
   position: absolute;
   top: 50%;
   left: 50%;
@@ -154,7 +153,7 @@ export const PrimaryColorCircle = styled.div<{ isActive: boolean }>`
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background-color: #ff5976;
+  background-color: ${({ mainColor }) => mainColor};
   z-index: 30;
   opacity: ${({ isActive }) => (isActive ? 0 : 1)};
   transition: opacity 0.5s ease;

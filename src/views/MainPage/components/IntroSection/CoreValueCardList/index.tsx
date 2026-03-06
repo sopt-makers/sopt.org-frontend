@@ -6,15 +6,16 @@ import * as S from './style';
 
 interface CoreValueCardListProps {
   cards: IntroContentType[];
+  mainColor: string;
 }
 
-export default function CoreValueCardList({ cards }: CoreValueCardListProps) {
+export default function CoreValueCardList({ cards, mainColor }: CoreValueCardListProps) {
   const isDesktop = useIsDesktop('1024px');
   const isTablet = useIsTablet('768px', '1023px');
   const isMobile = useIsMobile('767px');
 
   const [activeCardId, setActiveCardId] = useState<number | null>(1);
-  
+
   // 데스크탑: 호버 시 활성화
   const handleMouseEnter = (id: number) => {
     if (isDesktop) {
@@ -39,6 +40,7 @@ export default function CoreValueCardList({ cards }: CoreValueCardListProps) {
           onHover={() => handleMouseEnter(card.id)}
           onClick={() => handleClick(card.id)}
           isMobile={isMobile}
+          mainColor={mainColor}
         />
       ))}
     </S.CardListContainer>
