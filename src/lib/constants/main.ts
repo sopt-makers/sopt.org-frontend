@@ -7,18 +7,10 @@ import { default as ImgMakersCardBigPc } from '@src/assets/images/img_main_maker
 import { default as ImgMakersCardMo } from '@src/assets/images/img_main_makers_card_mo.png';
 import { default as ImgMakersCardPc } from '@src/assets/images/img_main_makers_card_pc.png';
 import { default as ImgMakersCardTa } from '@src/assets/images/img_main_makers_card_ta.png';
-import { default as ImgManageCardBigPc } from '@src/assets/images/img_main_manage_card_big_pc.png';
-import { default as ImgManageCardMo } from '@src/assets/images/img_main_manage_card_mo.png';
-import { default as ImgManageCardPc } from '@src/assets/images/img_main_manage_card_pc.png';
-import { default as ImgManageCardTa } from '@src/assets/images/img_main_manage_card_ta.png';
 import { default as ImgMediaCardBigPc } from '@src/assets/images/img_main_media_card_big_pc.png';
 import { default as ImgMediaCardMo } from '@src/assets/images/img_main_media_card_mo.png';
 import { default as ImgMediaCardPc } from '@src/assets/images/img_main_media_card_pc.png';
 import { default as ImgMediaCardTa } from '@src/assets/images/img_main_media_card_ta.png';
-import { default as ImgMindCardBigPc } from '@src/assets/images/img_main_mind_card_big_pc.png';
-import { default as ImgMindCardMo } from '@src/assets/images/img_main_mind_card_mo.png';
-import { default as ImgMindCardPc } from '@src/assets/images/img_main_mind_card_pc.png';
-import { default as ImgMindCardTa } from '@src/assets/images/img_main_mind_card_ta.png';
 import { default as ImgRecentNews1 } from '@src/assets/images/img_recent_news_1.png';
 import { default as ImgRecentNews2 } from '@src/assets/images/img_recent_news_2.jpg';
 import { default as ImgRecentNews3 } from '@src/assets/images/img_recent_news_3.jpg';
@@ -400,31 +392,31 @@ export const OWN_ORGANIZATION_LIST: {
   frontSideBg: { mo: string; pc: string; ta: string; bigPc: string };
   backSideBg: string;
 }[] = [
-  {
-    nameKor: '운영팀',
-    nameEng: 'Manage',
-    description: [
-      { content: '운영팀은 솝트의 ', weight: 'normal' },
-      { content: '1, 2차 행사와 다양한 이벤트를 직접 브랜딩, 기획, 진행하며', weight: 'bold' },
-      {
-        content:
-          ' 회원들간의 네트워킹을 도모해요. 솝트 구성원들이 재미있게 행사를 즐기고, 다양한 사람들과의 네트워킹을 통해 ',
-        weight: 'normal',
-      },
-      { content: '더욱 더 소중하고 기억에 남는 솝트 생활', weight: 'bold' },
-      {
-        content: '을 만들어 가실 수 있도록 도와요.',
-        weight: 'normal',
-      },
-    ],
-    frontSideBg: {
-      bigPc: ImgManageCardBigPc.src,
-      pc: ImgManageCardPc.src,
-      ta: ImgManageCardTa.src,
-      mo: ImgManageCardMo.src,
-    },
-    backSideBg: '#FFC700',
-  },
+  // {
+  //   nameKor: '운영팀',
+  //   nameEng: 'Manage',
+  //   description: [
+  //     { content: '운영팀은 솝트의 ', weight: 'normal' },
+  //     { content: '1, 2차 행사와 다양한 이벤트를 직접 브랜딩, 기획, 진행하며', weight: 'bold' },
+  //     {
+  //       content:
+  //         ' 회원들간의 네트워킹을 도모해요. 솝트 구성원들이 재미있게 행사를 즐기고, 다양한 사람들과의 네트워킹을 통해 ',
+  //       weight: 'normal',
+  //     },
+  //     { content: '더욱 더 소중하고 기억에 남는 솝트 생활', weight: 'bold' },
+  //     {
+  //       content: '을 만들어 가실 수 있도록 도와요.',
+  //       weight: 'normal',
+  //     },
+  //   ],
+  //   frontSideBg: {
+  //     bigPc: ImgManageCardBigPc.src,
+  //     pc: ImgManageCardPc.src,
+  //     ta: ImgManageCardTa.src,
+  //     mo: ImgManageCardMo.src,
+  //   },
+  //   backSideBg: '#FFC700',
+  // },
   {
     nameKor: '미디어팀',
     nameEng: 'Media',
@@ -450,32 +442,32 @@ export const OWN_ORGANIZATION_LIST: {
     },
     backSideBg: '#3E74FD',
   },
-  {
-    nameKor: '마인드',
-    nameEng: 'Mind',
-    description: [
-      { content: '솝트 MIND는 솝트 내외에 ', weight: 'normal' },
-      { content: '기업가정신과 창업도전 문화 확산 목적', weight: 'bold' },
-      {
-        content:
-          '으로 하는 기구입니다. 매 기수 솝트 앱잼 팀이 더 적극적이고 똑똑하게 창업에 도전할 수 있도록 필요한 콘텐츠와 시스템을 고민하고 있어요. ',
-        weight: 'normal',
-      },
-      {
-        content:
-          '솝트가 창업동아리 임을 잊지 않도록, 그리고 전국에 열정으로 도전하는 솝트의 MIND가 널리 공유되도록',
-        weight: 'bold',
-      },
-      { content: ' MIND도 도전하겠습니다.', weight: 'normal' },
-    ],
-    frontSideBg: {
-      bigPc: ImgMindCardBigPc.src,
-      pc: ImgMindCardPc.src,
-      ta: ImgMindCardTa.src,
-      mo: ImgMindCardMo.src,
-    },
-    backSideBg: '#F66FF8',
-  },
+  // {
+  //   nameKor: '마인드',
+  //   nameEng: 'Mind',
+  //   description: [
+  //     { content: '솝트 MIND는 솝트 내외에 ', weight: 'normal' },
+  //     { content: '기업가정신과 창업도전 문화 확산 목적', weight: 'bold' },
+  //     {
+  //       content:
+  //         '으로 하는 기구입니다. 매 기수 솝트 앱잼 팀이 더 적극적이고 똑똑하게 창업에 도전할 수 있도록 필요한 콘텐츠와 시스템을 고민하고 있어요. ',
+  //       weight: 'normal',
+  //     },
+  //     {
+  //       content:
+  //         '솝트가 창업동아리 임을 잊지 않도록, 그리고 전국에 열정으로 도전하는 솝트의 MIND가 널리 공유되도록',
+  //       weight: 'bold',
+  //     },
+  //     { content: ' MIND도 도전하겠습니다.', weight: 'normal' },
+  //   ],
+  //   frontSideBg: {
+  //     bigPc: ImgMindCardBigPc.src,
+  //     pc: ImgMindCardPc.src,
+  //     ta: ImgMindCardTa.src,
+  //     mo: ImgMindCardMo.src,
+  //   },
+  //   backSideBg: '#F66FF8',
+  // },
   {
     nameKor: '메이커스',
     nameEng: 'Makers',
