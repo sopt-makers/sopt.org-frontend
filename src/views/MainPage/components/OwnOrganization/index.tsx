@@ -80,7 +80,7 @@ function OwnOrganization(_props: unknown, ref: Ref<HTMLDivElement>) {
         tab={tab}
         title={'솝트가 운영하는 자체 기구'}
         description={
-          '솝트에는 자체적으로 운영하는 네 가지의 팀이 있습니다.\n솝트의 보다 유연하고 열정적인 경험을 위해 노력하죠.'
+          '솝트에는 자체적으로 운영하는 두 가지의 팀이 있습니다.\n솝트의 보다 유연하고 열정적인 경험을 위해 노력하죠.'
         }
       />
       {!isMobileSize && <DesktopViewContent />}
