@@ -30,14 +30,14 @@ const NotificationSection = () => {
       if (emailInputRef.current) {
         emailInputRef.current.value = '';
       }
-      open({ icon: 'success', content: '알림 신청이 완료되었습니다.' });
+      open({ icon: 'success', content: '알림 신청이 완료되었어요.' });
       setIsRegistered(true);
     } catch (e) {
       if (axios.isAxiosError(e) && e.response?.status === 409) {
-        open({ icon: 'alert', content: '이미 신청된 이메일입니다.' });
+        open({ icon: 'alert', content: '이미 신청된 이메일이에요.' });
       } else {
         console.error(e);
-        open({ icon: 'error', content: '알림 신청에 실패했습니다.' });
+        open({ icon: 'error', content: '알림 신청에 실패했어요.' });
       }
     } finally {
       setIsLoading(false);
