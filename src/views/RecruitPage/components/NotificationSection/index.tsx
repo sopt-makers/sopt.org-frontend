@@ -1,5 +1,6 @@
 import { track } from '@amplitude/analytics-browser';
 import styled from '@emotion/styled';
+import { useToast } from '@sopt-makers/ui';
 import { useRef, useState } from 'react';
 import { BASE_URL, DEFAULT_TIMEOUT } from '@src/lib/constants/client';
 import axios from 'axios';
@@ -13,26 +14,32 @@ const NotificationSection = () => {
   const [isRegistered, setIsRegistered] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const emailInputRef = useRef<HTMLInputElement | null>(null);
+  const { open } = useToast();
 
   const onRegister = async () => {
+    if (isLoading) return;
+    const email = emailInputRef.current?.value;
+    if (!email) return;
+
+    setIsLoading(true);
     try {
-      if (isLoading) return;
-      const email = emailInputRef.current?.value;
-      if (!email) return;
-      setIsLoading(true);
-      const result = await client.post('/notification/register', {
-        generation: 36, // 리크루팅 시기 이후 변경되어야 함.
+      await client.post('/notification/register', {
+        generation: 39, // 리크루팅 시기 이후 변경되어야 함.
         email,
       });
-      if (result.status === 201) {
-        if (emailInputRef.current?.value) {
-          emailInputRef.current.value = '';
-        }
-        setIsRegistered(true);
+      if (emailInputRef.current) {
+        emailInputRef.current.value = '';
       }
-      setIsLoading(false);
+      open({ icon: 'success', content: '알림 신청이 완료되었어요.' });
+      setIsRegistered(true);
     } catch (e) {
-      console.error(e);
+      if (axios.isAxiosError(e) && e.response?.status === 409) {
+        open({ icon: 'alert', content: '이미 신청된 이메일이에요.' });
+      } else {
+        console.error(e);
+        open({ icon: 'error', content: '알림 신청에 실패했어요.' });
+      }
+    } finally {
       setIsLoading(false);
     }
   };
