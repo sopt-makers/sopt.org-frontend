@@ -1,5 +1,7 @@
+import '@sopt-makers/ui/dist/index.css';
 import * as amplitude from '@amplitude/analytics-browser';
 import isValidProp from '@emotion/is-prop-valid';
+import { ToastProvider } from '@sopt-makers/ui';
 import { MotionConfig } from 'framer-motion';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
@@ -111,10 +113,12 @@ function MyApp({ Component, pageProps }: AppProps) {
       <KakaoScript />
       <Global styles={global} />
       <QueryClientProvider client={queryClient}>
-        <MotionConfig isValidProp={isValidProp}>
-          <Component {...pageProps} />
-        </MotionConfig>
-        <ReactQueryDevtools initialIsOpen={false} />
+        <ToastProvider>
+          <MotionConfig isValidProp={isValidProp}>
+            <Component {...pageProps} />
+          </MotionConfig>
+          <ReactQueryDevtools initialIsOpen={false} />
+        </ToastProvider>
       </QueryClientProvider>
       <GoogleTagManagerNoscript />
     </>
