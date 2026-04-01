@@ -102,4 +102,23 @@ export const global = css`
   ::-webkit-scrollbar {
     display: none;
   }
+
+  div[role='dialog'] {
+    min-width: 704px;
+    height: 510px;
+    overflow: hidden;
+    padding: 30px;
+
+    @media (max-width: 768px) {
+      min-width: 310px;
+      height: 496px;
+      padding: 30px 20px;
+    }
+  }
+
+  div[role='dialog']:has(> hr) > div:last-of-type {
+    max-height: none;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
 `;
