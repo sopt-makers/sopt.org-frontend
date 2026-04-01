@@ -6,7 +6,6 @@ import PageLayout from '@src/components/common/PageLayout';
 import { remoteAdminAPI } from '@src/lib/api/remote/admin';
 import { CoreValueType, GetAboutpageResponse } from '@src/lib/types/admin';
 import { Banner, CoreValueSection, CurriculumSection } from '@src/views/AboutPage/components';
-import Modal from '@src/views/AboutPage/components/Modal';
 
 const MemberSection = dynamic(() => import('@src/views/AboutPage/components/Member/Section'));
 
@@ -25,7 +24,6 @@ const AboutPage = () => {
   if (!adminData) return;
   return (
     <PageLayout>
-      <Modal />
       <BrandingColorContext.Provider value={adminData.brandingColor}>
         <Root>
           <Banner imageSrc={adminData.headerImage} />
