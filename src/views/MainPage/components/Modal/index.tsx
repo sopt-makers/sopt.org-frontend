@@ -7,6 +7,7 @@ import { DESKTOP_DESCRIPTION, MOBILE_DESCRIPTION } from '@src/lib/constants/moda
 import * as S from './style';
 
 const Modal = () => {
+  // TODO: 임시 모달 컴포넌트 -> 추후 제거 (26.05.01 기준 main 페이지에서는 제거)
   const [isOpen, setIsOpen] = useState(true);
   const isMobile = useIsMobile('768px');
 
