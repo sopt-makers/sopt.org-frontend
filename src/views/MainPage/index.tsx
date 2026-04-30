@@ -5,7 +5,6 @@ import { remoteAdminAPI } from '@src/lib/api/remote/admin';
 import { GetHomepageResponse } from '@src/lib/types/admin';
 import BottomLayout from '@src/views/MainPage/components/BottomLayout';
 import IntroSection from '@src/views/MainPage/components/IntroSection';
-import Modal from '@src/views/MainPage/components/Modal';
 import TopBanner from '@src/views/MainPage/components/TopBanner';
 import usePostVisitor from '@src/views/MainPage/hooks/usePostVisitor';
 import { checkIsTimeInRange } from '../../lib/utils/date';
@@ -49,7 +48,6 @@ function MainPage() {
   if (!adminData) return;
   return (
     <PageLayout>
-      <Modal />
       {isRecruiting && (
         <TopBanner
           targetTime={
