@@ -25,7 +25,7 @@ function Channels({ isFooter = false }: ChannelsProps) {
         window.open('https://www.youtube.com/c/SOPTMEDIA');
         break;
       default:
-        window.open('http://pf.kakao.com/_JdTKd');
+        window.open('https://pf.kakao.com/_sxaIWG');
         break;
     }
   };
