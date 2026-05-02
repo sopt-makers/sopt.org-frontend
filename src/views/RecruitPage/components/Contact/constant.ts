@@ -59,7 +59,7 @@ export const contactMap: Record<ContactType, ContactItem> = {
     },
     link: {
       type: 'open',
-      href: 'http://pf.kakao.com/_JdTKd',
+      href: 'https://pf.kakao.com/_sxaIWG',
     },
   },
   [ContactType.INSTAGRAM]: {
