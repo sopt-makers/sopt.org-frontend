@@ -1,6 +1,7 @@
 import { ComponentPropsWithoutRef, SVGProps, useCallback, useRef, useState } from 'react';
 import IcChevronDown from '@src/assets/icons/ic_chevron-down.svg';
 import useOutsideClickListener from '@src/hooks/useOutsideClickListener';
+import { Breakpoint } from '@src/lib/styles/breakpoints';
 import { LabelKeyType } from '@src/lib/types/universal';
 import * as S from './style';
 
@@ -12,7 +13,7 @@ type SelectProps<T extends LabelKeyType> = ComponentPropsWithoutRef<'div'> &
     selectedValue: T;
     setSelectedValue: (newValue: T) => void;
     labels: Record<T, string>;
-    breakPoint: string;
+    breakPoint?: Breakpoint;
     variant?: 'round' | 'square';
     icon?: SVGProps<SVGSVGElement>;
   };
