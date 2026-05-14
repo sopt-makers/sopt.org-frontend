@@ -3,6 +3,7 @@ import { GetHomepageResponse } from '@src/lib/types/admin';
 import CoreValueCardList from '@src/views/MainPage/components/IntroSection/CoreValueCardList';
 import ProjectSection from '@src/views/MainPage/components/IntroSection/ProjectSection';
 import RecordSection from '@src/views/MainPage/components/IntroSection/Record/Section';
+import PartIntroduction from '@src/views/MainPage/components/PartIntroduction';
 import * as S from './style';
 
 export default function IntroCardList({ adminData }: { adminData: GetHomepageResponse }) {
@@ -30,6 +31,7 @@ export default function IntroCardList({ adminData }: { adminData: GetHomepageRes
           highColor={'#' + adminData.brandingColor.high}
         />
       </S.CoreValueSection>
+      <PartIntroduction partIntroduction={adminData.partIntroduction} />
     </S.IntroSection>
   );
 }

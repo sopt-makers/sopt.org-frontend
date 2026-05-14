@@ -604,3 +604,12 @@ export const SOPT_COMMENT_LIST: SoptCommentType[] = [
     },
   },
 ];
+
+export const PART_LABEL_MAP: Record<string, string> = {
+  기획: 'Plan',
+  디자인: 'Design',
+  안드로이드: 'Android',
+  iOS: 'iOS',
+  웹: 'Web',
+  서버: 'Server',
+};
