@@ -5,7 +5,7 @@ export const breakpoints = {
   desktopLarge: '2560px',
 } as const;
 
-export type Breakpoint = keyof typeof breakpoints;
+export type Breakpoint = keyof typeof media;
 
 export const media = {
   mobile: `@media (max-width: ${breakpoints.mobile})`,

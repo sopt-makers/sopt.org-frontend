@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import { colors } from '@sopt-makers/colors';
 import { css } from '@emotion/react';
 import { SVGProps } from 'react';
-import { media, Breakpoint } from '@src/lib/styles/breakpoints';
+import { Breakpoint, media } from '@src/lib/styles/breakpoints';
 
 export const SelectTrigger = styled.button<{
   isSelectionExist: boolean;
