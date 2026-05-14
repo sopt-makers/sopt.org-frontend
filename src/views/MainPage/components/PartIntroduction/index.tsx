@@ -1,8 +1,11 @@
 import { Tag } from '@sopt-makers/ui';
+import { useRouter } from 'next/router';
+import { ReactComponent as ArrowRight } from '@src/assets/icons/arrow_right_16x16.svg';
 import { useIsMobile, useIsTablet } from '@src/hooks/useDevice';
 import { PART_LABEL_MAP } from '@src/lib/constants/main';
 import { breakpoints } from '@src/lib/styles/breakpoints';
 import { PartIntroType } from '@src/lib/types/admin';
+import Button from '@src/views/MainPage/components/@common/Button';
 import * as S from './style';
 
 const PART_ORDER = Object.keys(PART_LABEL_MAP);
@@ -15,6 +18,10 @@ interface Props {
 }
 
 const PartIntroduction = ({ partIntroduction }: Props) => {
+  const router = useRouter();
+
+  const isMobileSize = useIsMobile(breakpoints.mobile);
+
   return (
     <S.Wrapper>
       <S.TextWrapper>
@@ -22,6 +29,12 @@ const PartIntroduction = ({ partIntroduction }: Props) => {
         <S.Description>{DESCRIPTION}</S.Description>
       </S.TextWrapper>
       <PartList partIntroduction={partIntroduction} />
+      {!isMobileSize && (
+        <Button aria-label="파트 소개 페이지로 이동" onClick={() => router.push('/about')}>
+          각 파트에 대해 더 궁금하다면
+          <ArrowRight />
+        </Button>
+      )}
     </S.Wrapper>
   );
 };
