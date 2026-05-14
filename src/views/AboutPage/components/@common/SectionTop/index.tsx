@@ -1,4 +1,6 @@
+import { useContext } from 'react';
 import { useIsMobile } from '@src/hooks/useDevice';
+import { BrandingColorContext } from '@src/views/AboutPage';
 import * as S from './style';
 
 interface SectionTopProps {
@@ -9,10 +11,13 @@ interface SectionTopProps {
 
 export default function SectionTop({ engTitle, korTitle, description }: SectionTopProps) {
   const isMobile = useIsMobile();
+
+  const { main } = useContext(BrandingColorContext);
+
   return (
     <S.SectionTop>
       <S.SectionTitle>
-        <S.EngTitle>{engTitle}</S.EngTitle>
+        <S.EngTitle $color={main && `#${main}`}>{engTitle}</S.EngTitle>
         <S.KorTitle>{korTitle}</S.KorTitle>
       </S.SectionTitle>
       {description && (
