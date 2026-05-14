@@ -33,8 +33,8 @@ export const SectionTitle = styled.div`
   }
 `;
 
-export const EngTitle = styled.h1`
-  color: #696969;
+export const EngTitle = styled.h1<{ $color?: string }>`
+  color: ${({ $color }) => $color || '#696969'};
 
   text-align: center;
   font-family: SUIT;
