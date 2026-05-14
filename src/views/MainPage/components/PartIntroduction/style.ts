@@ -65,6 +65,7 @@ export const Description = styled.p`
   ${media.mobile} {
     ${fontsObject.LABEL_5_11_SB};
     white-space: normal;
+    word-break: keep-all;
   }
 `;
 
