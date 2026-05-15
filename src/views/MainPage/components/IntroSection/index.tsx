@@ -31,7 +31,10 @@ export default function IntroCardList({ adminData }: { adminData: GetHomepageRes
           highColor={'#' + adminData.brandingColor.high}
         />
       </S.CoreValueSection>
-      <PartIntroduction parts={adminData.partIntroduction} />
+      <PartIntroduction
+        parts={adminData.partIntroduction}
+        mainColor={'#' + adminData.brandingColor.main}
+      />
     </S.IntroSection>
   );
 }
