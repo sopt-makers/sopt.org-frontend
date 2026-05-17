@@ -93,7 +93,6 @@ export default function BlogTab({
                       selectedValue={selectedActivity}
                       setSelectedValue={setSelectedActivity}
                       baseValue={ActivitySelectType.ALL}
-                      breakPoint={'0px'}
                       variant="square"
                     />
                   )}
@@ -106,7 +105,6 @@ export default function BlogTab({
                     selectedValue={selectedMajorCategory}
                     setSelectedValue={setMajorCategory}
                     baseValue={activeGenerationCategoryList[0]}
-                    breakPoint={'0px'}
                     variant="square"
                   />
                   <Select
@@ -116,7 +114,6 @@ export default function BlogTab({
                     selectedValue={selectedSubCategory}
                     setSelectedValue={setSubCategory}
                     baseValue={PartCategoryType.ALL}
-                    breakPoint={'0px'}
                     variant="square"
                   />
                 </S.SelectContainer>
