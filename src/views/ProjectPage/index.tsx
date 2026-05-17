@@ -46,7 +46,6 @@ function Projects() {
               selectedValue={selectedCategory}
               setSelectedValue={setCategory}
               baseValue={ProjectCategoryType.ALL}
-              breakPoint="tablet"
             />
             <Select
               options={activeProjectPlatformList}
@@ -55,7 +54,6 @@ function Projects() {
               selectedValue={selectedPlatform}
               setSelectedValue={setPlatform}
               baseValue={ProjectPlatformType.ALL}
-              breakPoint="tablet"
             />
           </S.FilterWrapper>
           <Suspense fallback={<ProjectListFallback />}>
