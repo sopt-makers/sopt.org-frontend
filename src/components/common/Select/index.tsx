@@ -12,7 +12,6 @@ type SelectProps<T extends LabelKeyType> = ComponentPropsWithoutRef<'div'> &
     selectedValue: T;
     setSelectedValue: (newValue: T) => void;
     labels: Record<T, string>;
-    breakPoint: string;
     variant?: 'round' | 'square';
     icon?: SVGProps<SVGSVGElement>;
   };
@@ -24,7 +23,6 @@ export default function Select<T extends LabelKeyType>({
   baseValue,
   baseLabel,
   labels,
-  breakPoint,
   variant = 'round',
   icon = IcChevronDown,
   ...props
@@ -53,13 +51,11 @@ export default function Select<T extends LabelKeyType>({
         isSelectionExist={selectedValue !== baseValue}
         isOpened={isOpen}
         isWide={currentSelectedValue.length >= 5}
-        breakPoint={breakPoint}
         variant={variant}
         {...props}
       >
         <S.SelectTriggerContent
           isSelectionExist={selectedValue !== baseValue}
-          breakPoint={breakPoint}
         >
           {selectedValue === baseValue ? baseLabel : currentSelectedValue}
         </S.SelectTriggerContent>
@@ -71,7 +67,6 @@ export default function Select<T extends LabelKeyType>({
           ref={selectItemWrapperRef}
           isWide={currentSelectedValue.length >= 5}
           variant={variant}
-          breakPoint={breakPoint}
           {...props}
         >
           {options.map((option, index) => (
@@ -83,7 +78,6 @@ export default function Select<T extends LabelKeyType>({
             >
               <S.SelectItemContent
                 isWide={currentSelectedValue.length >= 5}
-                breakPoint={breakPoint}
               >
                 {labels[option]}
               </S.SelectItemContent>
