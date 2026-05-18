@@ -5,14 +5,20 @@ interface SectionTopProps {
   engTitle?: string;
   korTitle: string;
   description?: string;
+  mainColor: string;
 }
 
-export default function SectionTop({ engTitle, korTitle, description }: SectionTopProps) {
+export default function SectionTop({
+  engTitle,
+  korTitle,
+  description,
+  mainColor,
+}: SectionTopProps) {
   const isMobile = useIsMobile();
   return (
     <S.SectionTop>
       <S.SectionTitle>
-        <S.EngTitle>{engTitle}</S.EngTitle>
+        <S.EngTitle mainColor={mainColor}>{engTitle}</S.EngTitle>
         <S.KorTitle>{korTitle}</S.KorTitle>
       </S.SectionTitle>
       {description && (
