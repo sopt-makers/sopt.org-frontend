@@ -64,6 +64,11 @@ export interface CoreValueType {
   description: string;
   image: string;
 }
+export interface ActivityScheduleItemType {
+  date: string;
+  name: string;
+}
+
 export interface GetAboutpageResponse {
   generation: number;
   name: string;
@@ -77,6 +82,7 @@ export interface GetAboutpageResponse {
   coreValue: CoreValueType[];
   partCurriculum: PartCurriculumType[];
   member: MemberType[];
+  activitySchedule?: ActivityScheduleItemType[];
   activitiesRecords: {
     activitiesMemberCount: number;
     projectCounts: number;
