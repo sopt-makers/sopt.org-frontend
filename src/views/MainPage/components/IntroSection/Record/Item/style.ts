@@ -54,7 +54,6 @@ export const Title = styled.div({
   },
 });
 
-// 객체형태로 변경
 export const Count = styled.div<{ mainColor: string }>(({ mainColor }) => ({
   position: 'relative',
   color: mainColor,
