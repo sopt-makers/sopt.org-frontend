@@ -39,3 +39,5 @@ yarn-error.log*
 
 # env files
 .env.*
+
+.omc
