@@ -5,7 +5,13 @@ import { createContext } from 'react';
 import PageLayout from '@src/components/common/PageLayout';
 import { remoteAdminAPI } from '@src/lib/api/remote/admin';
 import { CoreValueType, GetAboutpageResponse } from '@src/lib/types/admin';
-import { Banner, CoreValueSection, CurriculumSection } from '@src/views/AboutPage/components';
+import {
+  Banner,
+  CoreValueSection,
+  CurriculumSection,
+  ScheduleSection,
+} from '@src/views/AboutPage/components';
+import { MOCK_ACTIVITY_SCHEDULE } from '@src/views/AboutPage/components/Schedule/mockData';
 
 const MemberSection = dynamic(() => import('@src/views/AboutPage/components/Member/Section'));
 
@@ -34,6 +40,11 @@ const AboutPage = () => {
               description: coreValue.description,
               src: coreValue.image,
             }))}
+          />
+          {/* TODO: API 스키마 추가 전 mock data 임시 사용 */}
+          <ScheduleSection
+            generation={adminData.generation}
+            schedules={adminData.activitySchedule ?? MOCK_ACTIVITY_SCHEDULE}
           />
           <CurriculumSection curriculums={adminData.partCurriculum} />
           <MemberSection
