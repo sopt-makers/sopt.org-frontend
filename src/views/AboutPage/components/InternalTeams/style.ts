@@ -8,6 +8,7 @@ export const Wrapper = styled.section`
 
   ${media.mobile} {
     padding: 0 20px;
+    gap: 24px;
   }
 `;
 
