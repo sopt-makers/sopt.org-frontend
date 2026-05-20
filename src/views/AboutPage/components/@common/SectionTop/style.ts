@@ -1,5 +1,7 @@
 import styled from '@emotion/styled';
 import { colors } from '@sopt-makers/colors';
+import { fontsObject } from '@sopt-makers/fonts';
+import { media } from '@src/lib/styles/breakpoints';
 
 export const SectionTop = styled.div`
   display: flex;
@@ -33,77 +35,59 @@ export const SectionTitle = styled.div`
   }
 `;
 
-export const EngTitle = styled.h1<{ $color?: string }>`
-  color: ${({ $color }) => $color || '#696969'};
+export const EngTitle = styled.h1<{ mainColor: string }>(({ mainColor }) => ({
+  color: mainColor,
+  textAlign: 'center',
+  ...fontsObject.BODY_2_16_M,
 
-  text-align: center;
-  font-family: SUIT;
-  font-size: 17rem;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 140%; /* 23.8px */
-  letter-spacing: -0.34px;
+  [media.desktop]: {
+    ...fontsObject.BODY_2_16_M,
+  },
 
-  /* 태블릿 뷰 */
-  @media (max-width: 48rem) {
-    font-size: 14rem;
-    letter-spacing: -0.28px;
-  }
+  [media.tablet]: {
+    ...fontsObject.LABEL_4_12_SB,
+  },
 
-  /* 모바일 뷰 */
-  @media (max-width: 26.75rem) {
-    font-size: 9rem;
-    letter-spacing: -0.18px;
-  }
-`;
+  [media.mobile]: {
+    ...fontsObject.LABEL_4_12_SB,
+  },
+}));
 
-export const KorTitle = styled.h1`
-  color: ${colors.white};
+export const KorTitle = styled.h1({
+  color: colors.white,
+  textAlign: 'center',
 
-  text-align: center;
-  font-family: SUIT;
-  font-size: 29rem;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 140%; /* 40.6px */
-  letter-spacing: -0.58px;
+  ...fontsObject.HEADING_2_32_B,
 
-  /* 태블릿 뷰 */
-  @media (max-width: 48rem) {
-    font-size: 22rem;
-    letter-spacing: -0.44px;
-  }
+  [media.desktop]: {
+    ...fontsObject.HEADING_2_32_B,
+  },
 
-  /* 모바일 뷰 */
-  @media (max-width: 26.75rem) {
-    font-size: 15rem;
-    letter-spacing: -0.3px;
-  }
-`;
+  [media.tablet]: {
+    ...fontsObject.HEADING_6_18_B,
+  },
 
-export const Description = styled.p`
-  color: ${colors.white};
+  [media.mobile]: {
+    ...fontsObject.HEADING_6_18_B,
+  },
+});
 
-  text-align: center;
-  font-family: SUIT;
-  font-size: 19rem;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 151%; /* 26.6px */
-  letter-spacing: -0.38px;
+export const Description = styled.p({
+  color: colors.white,
+  textAlign: 'center',
+  ...fontsObject.TITLE_5_18_SB,
+  whiteSpace: 'pre-line',
+  wordBreak: 'keep-all',
 
-  white-space: pre-line;
-  word-break: keep-all;
+  [media.desktop]: {
+    ...fontsObject.TITLE_5_18_SB,
+  },
 
-  /* 태블릿 뷰 */
-  @media (max-width: 48rem) {
-    font-size: 16rem;
-    letter-spacing: -0.32px;
-  }
+  [media.tablet]: {
+    ...fontsObject.BODY_3_14_M,
+  },
 
-  /* 모바일 뷰 */
-  @media (max-width: 26.75rem) {
-    font-size: 11rem;
-    letter-spacing: -0.22px;
-  }
-`;
+  [media.mobile]: {
+    ...fontsObject.BODY_3_14_M,
+  },
+});

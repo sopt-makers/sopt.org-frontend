@@ -1,6 +1,9 @@
 import RecordItem from '../Item';
 import * as St from './style';
 
+// TODO: API에 operationPeriod 필드 추가되면 activitiesRecords에서 받아올 것
+const OPERATION_PERIOD = 36;
+
 const RecordList = ({
   activitiesRecords: { activitiesMemberCount, projectCounts, studyCounts },
   mainColor,
@@ -9,11 +12,19 @@ const RecordList = ({
     activitiesMemberCount: number;
     projectCounts: number;
     studyCounts: number;
+    // operationPeriod: number;
   };
   mainColor: string;
 }) => {
   return (
     <St.Wrapper>
+      <RecordItem
+        type="block"
+        title="운영기간"
+        countNumber={OPERATION_PERIOD}
+        countString="년"
+        mainColor={mainColor}
+      />
       <RecordItem
         type="block"
         title="활동 멤버"

@@ -52,7 +52,7 @@ export interface AboutAPI {
   getAboutInfo(): Promise<GetAboutInfoResponse>;
 }
 
-export type RecordTitle = '활동 멤버' | '프로젝트' | '스터디';
+export type RecordTitle = '운영기간' | '활동 멤버' | '프로젝트' | '스터디';
 export type RecordTitleType = {
-  [key in RecordTitle]: 'member' | 'project' | 'study';
+  [key in RecordTitle]: 'period' | 'member' | 'project' | 'study';
 };

@@ -1,7 +1,6 @@
 import { ComponentPropsWithoutRef, SVGProps, useCallback, useRef, useState } from 'react';
 import IcChevronDown from '@src/assets/icons/ic_chevron-down.svg';
 import useOutsideClickListener from '@src/hooks/useOutsideClickListener';
-import { Breakpoint } from '@src/lib/styles/breakpoints';
 import { LabelKeyType } from '@src/lib/types/universal';
 import * as S from './style';
 
@@ -13,7 +12,6 @@ type SelectProps<T extends LabelKeyType> = ComponentPropsWithoutRef<'div'> &
     selectedValue: T;
     setSelectedValue: (newValue: T) => void;
     labels: Record<T, string>;
-    breakPoint?: Breakpoint;
     variant?: 'round' | 'square';
     icon?: SVGProps<SVGSVGElement>;
   };
@@ -25,7 +23,6 @@ export default function Select<T extends LabelKeyType>({
   baseValue,
   baseLabel,
   labels,
-  breakPoint,
   variant = 'round',
   icon = IcChevronDown,
   ...props
@@ -54,14 +51,10 @@ export default function Select<T extends LabelKeyType>({
         isSelectionExist={selectedValue !== baseValue}
         isOpened={isOpen}
         isWide={currentSelectedValue.length >= 5}
-        breakPoint={breakPoint}
         variant={variant}
         {...props}
       >
-        <S.SelectTriggerContent
-          isSelectionExist={selectedValue !== baseValue}
-          breakPoint={breakPoint}
-        >
+        <S.SelectTriggerContent isSelectionExist={selectedValue !== baseValue}>
           {selectedValue === baseValue ? baseLabel : currentSelectedValue}
         </S.SelectTriggerContent>
         <S.Arrow isOpened={isOpen} icon={icon} />
@@ -72,7 +65,6 @@ export default function Select<T extends LabelKeyType>({
           ref={selectItemWrapperRef}
           isWide={currentSelectedValue.length >= 5}
           variant={variant}
-          breakPoint={breakPoint}
           {...props}
         >
           {options.map((option, index) => (
@@ -82,10 +74,7 @@ export default function Select<T extends LabelKeyType>({
               variant={variant}
               onClick={() => handleSelect(option)}
             >
-              <S.SelectItemContent
-                isWide={currentSelectedValue.length >= 5}
-                breakPoint={breakPoint}
-              >
+              <S.SelectItemContent isWide={currentSelectedValue.length >= 5}>
                 {labels[option]}
               </S.SelectItemContent>
             </S.SelectItem>

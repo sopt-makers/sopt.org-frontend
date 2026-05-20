@@ -7,17 +7,23 @@ interface SectionTopProps {
   engTitle?: string;
   korTitle: string;
   description?: string;
+  mainColor?: string;
 }
 
-export default function SectionTop({ engTitle, korTitle, description }: SectionTopProps) {
+export default function SectionTop({
+  engTitle,
+  korTitle,
+  description,
+  mainColor,
+}: SectionTopProps) {
   const isMobile = useIsMobile();
-
   const { main } = useContext(BrandingColorContext);
+  const resolvedColor = mainColor ?? '#' + main;
 
   return (
     <S.SectionTop>
       <S.SectionTitle>
-        <S.EngTitle $color={main && `#${main}`}>{engTitle}</S.EngTitle>
+        <S.EngTitle mainColor={resolvedColor}>{engTitle}</S.EngTitle>
         <S.KorTitle>{korTitle}</S.KorTitle>
       </S.SectionTitle>
       {description && (

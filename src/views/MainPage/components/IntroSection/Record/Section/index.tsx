@@ -24,7 +24,11 @@ const RecordSection = ({
   return (
     <S.GradientWrapper mainColor={mainColor} highColor={highColor} active={isGradientActive}>
       <S.Wrapper>
-        <SectionTop korTitle={`${generation - 1}기 활동 레코드`} />
+        <SectionTop
+          korTitle={`${generation - 1}기 활동 레코드`}
+          engTitle="Records"
+          mainColor={mainColor}
+        />
         <RecordList activitiesRecords={activitiesRecords} mainColor={mainColor} />
         <Button
           onClick={() => router.push('/about')}
