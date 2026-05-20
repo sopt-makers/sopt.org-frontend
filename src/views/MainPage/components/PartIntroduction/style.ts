@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 import { colors } from '@sopt-makers/colors';
 import { fontsObject } from '@sopt-makers/fonts';
 import { IconArrowUpRight } from '@sopt-makers/icons';
+import { Tag } from '@sopt-makers/ui';
 import NextLink from 'next/link';
 import { media } from '@src/lib/styles/breakpoints';
 
@@ -184,6 +185,13 @@ export const HoverIconBadge = styled.div<{ mainColor: string }>`
     width: 48px;
     height: 48px;
   }
+
+  ${media.mobile} {
+    right: 20px;
+    bottom: 20px;
+    width: 48px;
+    height: 48px;
+  }
 `;
 
 export const HoverIcon = styled(IconArrowUpRight)`
@@ -200,6 +208,11 @@ export const HoverIcon = styled(IconArrowUpRight)`
     width: 24px;
     height: 24px;
   }
+`;
+
+export const TagComponent = styled(Tag)<{ mainColor: string }>`
+  color: ${({ mainColor }) => mainColor};
+  background-color: ${({ mainColor }) => `${mainColor}1A`};
 `;
 
 export const PartItemTitle = styled.h3`
