@@ -1,5 +1,5 @@
 import SectionTop from '@src/views/AboutPage/components/@common/SectionTop';
-import TeamCard from '@src/views/AboutPage/components/InternalTeams/Card';
+import TeamCard from '@src/views/AboutPage/components/InternalTeams/TeamCard';
 import * as S from './style';
 
 export type TeamKey = 'media' | 'makers';
