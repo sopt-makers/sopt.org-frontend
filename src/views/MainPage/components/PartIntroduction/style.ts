@@ -2,8 +2,8 @@ import styled from '@emotion/styled';
 import { colors } from '@sopt-makers/colors';
 import { fontsObject } from '@sopt-makers/fonts';
 import { IconArrowUpRight } from '@sopt-makers/icons';
-import { media } from '@src/lib/styles/breakpoints';
 import NextLink from 'next/link';
+import { media } from '@src/lib/styles/breakpoints';
 
 export const Wrapper = styled.section`
   display: flex;
@@ -191,7 +191,12 @@ export const HoverIcon = styled(IconArrowUpRight)`
   height: 32px;
   color: ${colors.white};
 
-  ${media.tablet || media.mobile} {
+  ${media.tablet} {
+    width: 24px;
+    height: 24px;
+  }
+
+  ${media.mobile} {
     width: 24px;
     height: 24px;
   }
@@ -203,6 +208,10 @@ export const PartItemTitle = styled.h3`
   ${media.tablet} {
     ${fontsObject.TITLE_6_16_SB}
   }
+
+  ${media.mobile} {
+    ${fontsObject.TITLE_6_16_SB}
+  }
 `;
 
 export const PartItemDescription = styled.p`
@@ -210,6 +219,10 @@ export const PartItemDescription = styled.p`
   color: ${colors.gray10};
 
   ${media.tablet} {
+    ${fontsObject.BODY_4_13_R}
+  }
+
+  ${media.mobile} {
     ${fontsObject.BODY_4_13_R}
   }
 `;
