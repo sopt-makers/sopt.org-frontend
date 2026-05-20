@@ -1,9 +1,10 @@
 import { useRouter } from 'next/router';
+import { PATHS } from '@src/constants/routes';
 
 function useHeader() {
   const router = useRouter();
 
-  const handleClickLogo = () => router.push('/');
+  const handleClickLogo = () => router.push(PATHS.MAIN);
 
   const handleIsSelected = (path: string | string[]) => {
     if (typeof path === 'string') return router.pathname.startsWith(path);

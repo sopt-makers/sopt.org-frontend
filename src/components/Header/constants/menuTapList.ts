@@ -1,29 +1,30 @@
+import { PATHS } from '@src/constants/routes';
 import { MenuTapList, MenuTapType } from '../types';
 
 export const menuTapList: MenuTapList = [
   {
     type: MenuTapType.DEFAULT,
     title: '소개',
-    href: '/about',
+    href: PATHS.ABOUT,
   },
   {
     type: MenuTapType.DEFAULT,
     title: '프로젝트',
-    href: '/project',
+    href: PATHS.PROJECT,
   },
   {
     type: MenuTapType.DEFAULT,
     title: '블로그',
-    href: '/blog',
+    href: PATHS.BLOG,
   },
   {
     type: MenuTapType.DEFAULT,
     title: '후원',
-    href: '/sponsor',
+    href: PATHS.SPONSOR,
   },
   {
     type: MenuTapType.SPECIAL,
     title: '지원하기',
-    href: '/recruit',
+    href: PATHS.RECRUIT,
   },
 ];

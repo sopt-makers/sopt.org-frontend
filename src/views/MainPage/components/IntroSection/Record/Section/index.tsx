@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router';
 import { useState } from 'react';
+import { PATHS } from '@src/constants/routes';
 import { GetAboutpageResponse } from '@src/lib/types/admin';
 import SectionTop from '@src/views/AboutPage/components/@common/SectionTop';
 import Button from '@src/views/MainPage/components/@common/Button';
@@ -31,7 +32,7 @@ const RecordSection = ({
         />
         <RecordList activitiesRecords={activitiesRecords} mainColor={mainColor} />
         <Button
-          onClick={() => router.push('/about')}
+          onClick={() => router.push(PATHS.ABOUT)}
           aria-label="소개페이지로 이동"
           onPointerEnter={() => setIsGradientActive(true)}
           onPointerLeave={() => setIsGradientActive(false)}

@@ -3,6 +3,7 @@ import * as S from './style';
 import Button from '@src/views/MainPage/components/@common/Button';
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
+import { PATHS } from '@src/constants/routes';
 import { MAIN_PROJECT_LIST } from '@src/lib/constants/project';
 import useInView from '@src/hooks/useInView';
 import { useIsDesktop, useIsMobile, useIsTablet } from '@src/hooks/useDevice';
@@ -67,7 +68,7 @@ export default function ProjectSection({ mainColor, highColor }: ProjectSectionP
 
           <S.ButtonWrapper>
             <Button
-              onClick={() => router.push('/project')}
+              onClick={() => router.push(PATHS.PROJECT)}
               aria-label="프로젝트 페이지로 이동"
             >
               역대 프로젝트 더보기 <S.RightArrowIcon />

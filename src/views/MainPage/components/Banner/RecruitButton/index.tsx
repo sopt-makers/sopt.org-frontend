@@ -1,4 +1,5 @@
 import { PropsWithChildren, useState } from 'react';
+import { PATHS } from '@src/constants/routes';
 import * as S from './style';
 
 interface BannerColor {
@@ -20,7 +21,7 @@ export default function RecruitButton({
   };
 
   return (
-    <S.RecruitButtonWrapper href="/recruit" mainColor={mainColor} highColor={highColor}>
+    <S.RecruitButtonWrapper href={PATHS.RECRUIT} mainColor={mainColor} highColor={highColor}>
       <S.MouseTrackerWrapper
         onMouseMove={handleMouseMove}
         x={blurPosition.x}
