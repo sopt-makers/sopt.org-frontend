@@ -10,7 +10,6 @@ import usePostVisitor from '@src/views/MainPage/hooks/usePostVisitor';
 import { checkIsTimeInRange } from '../../lib/utils/date';
 import Banner from './components/Banner';
 import Introduce from './components/Introduce';
-import ScrollInteractiveLogo from './components/ScrollInteractiveLogo';
 
 function MainPage() {
   const { data: adminData } = useQuery<GetHomepageResponse>({
@@ -65,7 +64,7 @@ function MainPage() {
       />
       <Introduce />
       <IntroSection adminData={adminData} />
-      <ScrollInteractiveLogo />
+      {/* <ScrollInteractiveLogo /> */}
       {adminData && (
         <BottomLayout
           generation={adminData.generation ?? 0}

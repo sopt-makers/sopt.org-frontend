@@ -54,9 +54,7 @@ export default function Select<T extends LabelKeyType>({
         variant={variant}
         {...props}
       >
-        <S.SelectTriggerContent
-          isSelectionExist={selectedValue !== baseValue}
-        >
+        <S.SelectTriggerContent isSelectionExist={selectedValue !== baseValue}>
           {selectedValue === baseValue ? baseLabel : currentSelectedValue}
         </S.SelectTriggerContent>
         <S.Arrow isOpened={isOpen} icon={icon} />
@@ -76,9 +74,7 @@ export default function Select<T extends LabelKeyType>({
               variant={variant}
               onClick={() => handleSelect(option)}
             >
-              <S.SelectItemContent
-                isWide={currentSelectedValue.length >= 5}
-              >
+              <S.SelectItemContent isWide={currentSelectedValue.length >= 5}>
                 {labels[option]}
               </S.SelectItemContent>
             </S.SelectItem>

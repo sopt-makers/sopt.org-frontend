@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router';
 import { Header } from '@src/components';
+import { PATHS } from '@src/lib/constants/routes';
 import RoundButton from '@src/components/common/RoundButton';
 import ErrorCode from './components/ErrorCode';
 import ERROR_BUTTON from './constants/errorButton';
@@ -15,7 +16,7 @@ function ErrorPage({ code }: ErrorPageProps) {
   const CODE_KEY: 'CODE404' | 'CODE500' = `CODE${code}`;
 
   const handleButtonClick = () => {
-    code === 404 ? router.push('/') : router.back();
+    code === 404 ? router.push(PATHS.MAIN) : router.back();
   };
 
   const handleClickKakao = () => {
