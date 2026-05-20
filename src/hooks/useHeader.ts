@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router';
-import { PATHS } from '@src/constants/routes';
+import { PATHS } from '@src/lib/constants/routes';
 
 function useHeader() {
   const router = useRouter();

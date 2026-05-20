@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router';
 import { FC } from 'react';
 import { ReactComponent as ArrowRight } from '@src/assets/icons/arrow_right_16x16.svg';
-import { PATHS } from '@src/constants/routes';
+import { PATHS } from '@src/lib/constants/routes';
 import Channels from '@src/components/Footer/Channels';
 import * as St from './style';
 

@@ -1,5 +1,5 @@
 import { track } from '@amplitude/analytics-browser';
-import { PATHS } from '@src/constants/routes';
+import { PATHS } from '@src/lib/constants/routes';
 import { ProjectType } from '@src/lib/types/project';
 import ServiceInfo from '@src/views/ProjectPage/components/project/ProjectCard/ServiceInfo';
 import * as S from './style';

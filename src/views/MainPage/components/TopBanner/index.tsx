@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import { ReactComponent as IcTimer } from '@src/assets/icons/ic_timer.svg';
-import { PATHS } from '@src/constants/routes';
 import Timer from '@src/components/common/Timer';
 import { useIsMobile } from '@src/hooks/useDevice';
+import { PATHS } from '@src/lib/constants/routes';
 import useGetVisitor from '../../hooks/useGetVisitor';
 import * as S from './style';
 

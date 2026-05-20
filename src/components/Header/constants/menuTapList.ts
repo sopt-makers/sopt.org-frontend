@@ -1,4 +1,4 @@
-import { PATHS } from '@src/constants/routes';
+import { PATHS } from '@src/lib/constants/routes';
 import { MenuTapList, MenuTapType } from '../types';
 
 export const menuTapList: MenuTapList = [

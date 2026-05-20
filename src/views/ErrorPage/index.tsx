@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router';
 import { Header } from '@src/components';
-import { PATHS } from '@src/constants/routes';
+import { PATHS } from '@src/lib/constants/routes';
 import RoundButton from '@src/components/common/RoundButton';
 import ErrorCode from './components/ErrorCode';
 import ERROR_BUTTON from './constants/errorButton';

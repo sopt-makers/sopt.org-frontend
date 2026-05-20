@@ -1,5 +1,5 @@
 import RecordItem from '../Item';
-import { PATHS } from '@src/constants/routes';
+import { PATHS } from '@src/lib/constants/routes';
 import * as St from './style';
 
 // TODO: API에 operationPeriod 필드 추가되면 activitiesRecords에서 받아올 것

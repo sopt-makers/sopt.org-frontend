@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { Ref, forwardRef, useRef } from 'react';
 import IcArrowLeft from '@src/assets/icons/ic_arrow_left.svg';
 import IcArrowRight from '@src/assets/icons/ic_arrow_right.svg';
-import { PATHS } from '@src/constants/routes';
+import { PATHS } from '@src/lib/constants/routes';
 import { useIsMobile } from '@src/hooks/useDevice';
 import useDrag from '@src/hooks/useDrag';
 import useInfiniteCarousel from '@src/hooks/useInfiniteCarousel';

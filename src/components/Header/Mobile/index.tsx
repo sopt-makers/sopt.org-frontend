@@ -7,7 +7,7 @@ import menuBar from '@src/assets/icons/menuBar.svg';
 import xButton from '@src/assets/icons/xButton.png';
 import { imgLogoSopt } from '@src/assets/mainLogo';
 import { Condition } from '@src/components/common/Condition';
-import { PATHS } from '@src/constants/routes';
+import { PATHS } from '@src/lib/constants/routes';
 import { MenuState } from '../types';
 import HeaderMenu from './HeaderMenu';
 

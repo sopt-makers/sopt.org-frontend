@@ -1,5 +1,5 @@
 import { PropsWithChildren, useState } from 'react';
-import { PATHS } from '@src/constants/routes';
+import { PATHS } from '@src/lib/constants/routes';
 import * as S from './style';
 
 interface BannerColor {
