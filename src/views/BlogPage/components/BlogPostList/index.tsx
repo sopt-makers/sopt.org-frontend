@@ -67,7 +67,6 @@ export default function BlogPostList({
                     selectedValue={selectedSort}
                     setSelectedValue={setSelectedSort}
                     labels={sortLabel}
-                    breakPoint="tablet"
                     variant="square"
                     icon={IcSort}
                     style={{ minWidth: '160px' }}

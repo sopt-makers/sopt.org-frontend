@@ -1,29 +1,31 @@
 import styled from '@emotion/styled';
 import { colors } from '@sopt-makers/colors';
+import { fontsObject } from '@sopt-makers/fonts';
 import Link from 'next/link';
 import { css } from '@emotion/react';
+import { media } from '@src/lib/styles/breakpoints';
 
 const wrapperStyle = css`
-  width: 380px;
-  height: 280px;
-  background-color: ${colors.gray700};
+  width: 282px;
+  height: 200px;
+  background-color: ${colors.gray900};
   border-radius: 10px;
 
-  @media (max-width: 62.25rem) and (min-width: 47.875rem) {
-    width: 285px;
-    height: 210px;
+  ${media.desktop} {
+    width: 218px;
+    height: 200px;
   }
 
   /* 태블릿 뷰 */
-  @media (max-width: 47.875rem) and (min-width: 26.75rem) {
-    width: 203px;
-    height: 149px;
+  ${media.tablet} {
+    width: 160px;
+    height: 154px;
   }
 
   /* 모바일 뷰 */
-  @media (max-width: 26.75rem) {
-    width: 203px;
-    height: 150px;
+  ${media.mobile} {
+    max-width: 280px;
+    height: 154px;
   }
 `;
 
@@ -35,48 +37,42 @@ export const BlockWrapper = styled.div`
   ${wrapperStyle}
 `;
 
-export const Title = styled.div`
-  font-size: 20rem;
-  font-weight: 400;
-  letter-spacing: -1%;
-  color: white;
+export const Title = styled.div({
+  ...fontsObject.TITLE_4_20_SB,
+  color: 'white',
 
-  @media (max-width: 62.25rem) and (min-width: 47.875rem) {
-    font-size: 16rem;
-  }
+  [media.desktop]: {
+    ...fontsObject.TITLE_4_20_SB,
+  },
 
-  /* 태블릿 뷰 */
-  @media (max-width: 47.875rem) and (min-width: 26.75rem) {
-    font-size: 10rem;
-  }
+  [media.tablet]: {
+    ...fontsObject.TITLE_6_16_SB,
+  },
 
-  /* 모바일 뷰 */
-  @media (max-width: 26.75rem) {
-    font-size: 10rem;
-  }
-`;
+  [media.mobile]: {
+    ...fontsObject.TITLE_6_16_SB,
+  },
+});
 
-export const Count = styled.div<{ mainColor: string }>`
-  position: relative;
-  font-weight: 600;
-  font-size: 36rem;
-  color: ${({ mainColor }) => mainColor};
-  line-height: 60px;
+export const Count = styled.div<{ mainColor: string }>(({ mainColor }) => ({
+  position: 'relative',
+  color: mainColor,
+  // TODO: makers fonts에 Heading_40_B가 없음..
+  fontSize: 40,
+  lineHeight: '60px',
+  fontWeight: 700,
 
-  @media (max-width: 62.25rem) and (min-width: 47.875rem) {
-    font-size: 38rem;
-    line-height: 48px;
-  }
+  [media.desktop]: {
+    fontSize: 40,
+    lineHeight: '60px',
+    fontWeight: 700,
+  },
 
-  /* 태블릿 뷰 */
-  @media (max-width: 47.875rem) and (min-width: 26.75rem) {
-    font-size: 24rem;
-    line-height: 32px;
-  }
+  [media.tablet]: {
+    ...fontsObject.HEADING_3_28_B,
+  },
 
-  /* 모바일 뷰 */
-  @media (max-width: 26.75rem) {
-    font-size: 24rem;
-    line-height: 32px;
-  }
-`;
+  [media.mobile]: {
+    ...fontsObject.HEADING_3_28_B,
+  },
+}));

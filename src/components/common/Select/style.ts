@@ -2,13 +2,12 @@ import styled from '@emotion/styled';
 import { colors } from '@sopt-makers/colors';
 import { css } from '@emotion/react';
 import { SVGProps } from 'react';
-import { Breakpoint, media } from '@src/lib/styles/breakpoints';
+import { media } from '@src/lib/styles/breakpoints';
 
 export const SelectTrigger = styled.button<{
   isSelectionExist: boolean;
   isOpened: boolean;
   isWide: boolean;
-  breakPoint?: Breakpoint;
   variant: 'round' | 'square';
 }>`
   display: flex;
@@ -40,18 +39,14 @@ export const SelectTrigger = styled.button<{
           background-color: ${colors.gray800};
         `}
 
-  ${({ breakPoint }) =>
-    breakPoint &&
-    css`
-      ${media[breakPoint]} {
-        min-width: 76px;
-        padding: 8px 12px;
-        border-radius: 99px;
-        font-size: 13rem;
-        line-height: 150%;
-        letter-spacing: -0.13px;
-      }
-    `}
+  ${media.tablet} {
+    min-width: 76px;
+    padding: 8px 12px;
+    border-radius: 99px;
+    font-size: 13rem;
+    line-height: 150%;
+    letter-spacing: -0.13px;
+  }
 `;
 
 export const Arrow = styled.div<{
@@ -87,7 +82,6 @@ export const SelectItem = styled.div<{ isSelected: boolean; variant: 'round' | '
 
 export const SelectTriggerContent = styled.p<{
   isSelectionExist: boolean;
-  breakPoint?: Breakpoint;
 }>`
   color: ${({ isSelectionExist }) => (isSelectionExist ? colors.white : colors.gray200)};
   margin-right: 8px;
@@ -95,31 +89,24 @@ export const SelectTriggerContent = styled.p<{
   font-weight: 500;
   white-space: nowrap;
 
-  ${({ breakPoint }) =>
-    breakPoint &&
-    css`
-      ${media[breakPoint]} {
-        font-size: 13rem;
-      }
-    `}
+  ${media.tablet} {
+    font-size: 13rem;
+  }
 `;
 
-export const SelectItemContent = styled.p<{ isWide: boolean; breakPoint?: Breakpoint }>`
+export const SelectItemContent = styled.p<{ isWide: boolean }>`
   font-size: 16rem;
 
-  ${({ breakPoint, isWide }) =>
-    breakPoint &&
-    css`
-      ${media[breakPoint]} {
-        margin-right: ${isWide && '22px'};
-        font-size: 13rem;
-      }
-    `}
+  ${({ isWide }) => css`
+    ${media.tablet} {
+      margin-right: ${isWide && '22px'};
+      font-size: 13rem;
+    }
+  `}
 `;
 
 export const SelectItemWrapper = styled.div<{
   isWide: boolean;
-  breakPoint?: Breakpoint;
   variant: 'round' | 'square';
 }>`
   display: flex;
@@ -174,11 +161,7 @@ export const SelectItemWrapper = styled.div<{
       }
     `}
 
-  ${({ breakPoint }) =>
-    breakPoint &&
-    css`
-      ${media[breakPoint]} {
-        min-width: 76px;
-      }
-    `}
+  ${media.tablet} {
+    min-width: 76px;
+  }
 `;
