@@ -1,7 +1,8 @@
 import styled from '@emotion/styled';
+import { fontsObject } from '@sopt-makers/fonts';
+import { IconChevronLeft, IconChevronRight } from '@sopt-makers/icons';
 import { motion } from 'framer-motion';
 import icArrowComment from '@src/assets/icons/ic_arrow_comment.svg';
-import { IconChevronLeft, IconChevronRight } from '@sopt-makers/icons';
 import { media } from '@src/lib/styles/breakpoints';
 
 export const Wrapper = styled.section`
@@ -21,17 +22,19 @@ export const Wrapper = styled.section`
   }
 
   ${media.mobile} {
-    padding: 100px 0 0;
+    padding: 100px 40px 0;
   }
 `;
 
 export const Summary = styled(motion.div)<{ color: string }>`
   color: ${({ color }) => color};
-  font-family: SUIT;
-  font-size: 77rem;
+
+  font-size: 72rem;
   font-weight: 500;
-  line-height: 79px;
-  letter-spacing: -2.31px;
+  font-size: 72px;
+  line-height: 1;
+  letter-spacing: -0.03em;
+
   padding-left: 76px;
   white-space: pre-line;
   position: relative;
@@ -51,7 +54,12 @@ export const Summary = styled(motion.div)<{ color: string }>`
   }
 
   ${media.desktop} {
-    font-size: 64rem;
+    font-size: 72rem;
+    font-weight: 500;
+    font-size: 72px;
+    line-height: 1;
+    letter-spacing: -0.03em;
+
     padding-left: 64px;
 
     &::before {
@@ -61,8 +69,13 @@ export const Summary = styled(motion.div)<{ color: string }>`
   }
 
   ${media.tablet} {
-    font-size: 52rem;
-    line-height: 60px;
+    /* mds X */
+    font-family: 'SUIT', sans-serif;
+    font-weight: 500;
+    font-size: 64px;
+    line-height: 1;
+    letter-spacing: -0.03em;
+
     padding-left: 52px;
 
     &::before {
@@ -73,9 +86,7 @@ export const Summary = styled(motion.div)<{ color: string }>`
   }
 
   ${media.mobile} {
-    font-size: 38rem;
-    line-height: 44px;
-    letter-spacing: -1.14px;
+    ${fontsObject.TITLE_2_28_SB}
     padding-left: 44px;
     margin-bottom: 24px;
 
