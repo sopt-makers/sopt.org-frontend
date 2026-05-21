@@ -13,6 +13,11 @@ export const ArrowButton = styled.button`
   border-radius: 50%;
   background-color: ${colors.gray800};
 
+  ${media.mobile} {
+    width: 24px;
+    height: 24px;
+  }
+
   &:hover:not(:disabled) {
     cursor: pointer;
   }

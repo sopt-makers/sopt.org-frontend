@@ -71,11 +71,10 @@ export const ScrollContentLayout = styled.div`
   width: 80%;
   z-index: 1;
   overflow: visible;
-  gap: 42px;
 `;
 
 export const ScrollContainer = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 42px;
+  gap: 132px;
 `;
