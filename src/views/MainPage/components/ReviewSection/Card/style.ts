@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { colors } from '@sopt-makers/colors';
 import { fontsObject } from '@sopt-makers/fonts';
 import { motion } from 'framer-motion';
 import { media } from '@src/lib/styles/breakpoints';
@@ -43,6 +44,7 @@ export const Wrapper = styled(motion.div)<{ isActive: boolean }>`
 export const Comment = styled.p<{ isActive: boolean }>(({ isActive }) => ({
   flex: 1,
   overflow: 'hidden',
+  color: isActive ? colors.white : colors.gray400,
 
   ...(isActive ? fontsObject.BODY_1_18_M : fontsObject.BODY_2_16_M),
 
@@ -56,6 +58,7 @@ export const Footer = styled.div<{ isActive: boolean }>(({ isActive }) => ({
   alignItems: 'center',
   gap: '8px',
   flexShrink: 0,
+  color: isActive ? colors.white : colors.gray400,
 
   ...(isActive ? fontsObject.TITLE_6_16_SB : fontsObject.BODY_3_14_M),
 
