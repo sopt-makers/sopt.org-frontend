@@ -11,8 +11,8 @@ export const Wrapper = styled.section`
   width: 100%;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  padding: 0 40px;
+  align-items: start;
+  padding-top: 100px;
   gap: 24px;
 
   ${media.mobile} {

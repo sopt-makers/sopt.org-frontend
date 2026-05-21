@@ -1,3 +1,4 @@
+import { Ref, forwardRef } from 'react';
 import { useIsMobile, useIsTablet } from '@src/hooks/useDevice';
 import { PART_NAMES } from '@src/lib/constants/main';
 import { PATHS } from '@src/lib/constants/routes';
@@ -15,14 +16,14 @@ interface PartIntro {
   description: string;
 }
 
-interface Props {
+interface SectionProps {
   parts: PartIntro[];
   mainColor: string;
 }
 
-const PartIntroduction = ({ parts, mainColor }: Props) => {
+const PartIntroduction = forwardRef(({ parts, mainColor }: SectionProps, ref: Ref<HTMLElement>) => {
   return (
-    <S.Wrapper>
+    <S.Wrapper ref={ref} id="part">
       <S.TextWrapper>
         <S.Title>{TITLE}</S.Title>
         <S.Description>{DESCRIPTION}</S.Description>
@@ -30,10 +31,16 @@ const PartIntroduction = ({ parts, mainColor }: Props) => {
       <PartList parts={parts} mainColor={mainColor} />
     </S.Wrapper>
   );
-};
+});
+
 export default PartIntroduction;
 
-const PartList = ({ parts, mainColor }: Props) => {
+interface ListProps {
+  parts: PartIntro[];
+  mainColor: string;
+}
+
+const PartList = ({ parts, mainColor }: ListProps) => {
   const sortedParts = [...parts].sort(
     (a, b) => PART_ORDER.indexOf(a.part) - PART_ORDER.indexOf(b.part),
   );
@@ -47,7 +54,12 @@ const PartList = ({ parts, mainColor }: Props) => {
   );
 };
 
-const PartItem = ({ partIntro, mainColor }: { partIntro: PartIntro; mainColor: string }) => {
+interface ItemProps {
+  partIntro: PartIntro;
+  mainColor: string;
+}
+
+const PartItem = ({ partIntro, mainColor }: ItemProps) => {
   /* TODO: useDevice 파일 수정 필요 */
   const isTablet = useIsTablet(`${breakpoints.mobile}px`, `${breakpoints.tablet}px`);
   const isMobile = useIsMobile(`${breakpoints.mobile}px`);
