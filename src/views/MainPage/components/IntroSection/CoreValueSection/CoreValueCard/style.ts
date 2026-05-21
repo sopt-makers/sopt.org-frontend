@@ -12,7 +12,7 @@ export const CardContainer = styled.div<{ isActive: boolean }>`
   width: 236px;
   height: 446px;
   overflow: hidden;
-  border-radius: 12px;
+  border-radius: 20px;
   transition: width 0.7s ease;
 
   ${media.desktopLarge} {
@@ -24,30 +24,31 @@ export const CardContainer = styled.div<{ isActive: boolean }>`
   }
 
   ${media.desktop} {
+    width: 150px;
+    height: 430px;
+
     ${({ isActive }) =>
       isActive &&
       css`
-        width: 400px;
+        width: 600px;
       `};
   }
 
   ${media.tablet} {
-    width: 140px;
+    width: 135px;
     height: 300px;
-    border-radius: 36px;
+    border-radius: 20px;
     ${({ isActive }) =>
       isActive &&
       css`
-        width: 400px;
+        width: 386px;
       `};
   }
 
   ${media.mobile} {
     width: 100%;
-    height: 160px;
-    border-radius: 12px;
-    scroll-snap-align: center;
-    scroll-snap-stop: always;
+    height: 154px;
+    border-radius: 20px;
   }
 `;
 
@@ -91,7 +92,7 @@ export const CardContent = styled.div<{ isActive: boolean }>`
 
   ${media.mobile} {
     width: 100%;
-    padding: 16px;
+    padding: 12px;
   }
 `;
 
@@ -110,15 +111,14 @@ export const CardTitle = styled.h3`
 
   ${media.mobile} {
     position: relative;
+    width: 193px;
+    margin-bottom: 8px;
     z-index: 1;
     ${fontsObject.HEADING_7_16_B}
   }
 `;
 
-// max-width 570px은 데스크탑뷰에서 줄넘기기 깔끔하게 하기 위해 설정. 멘트가 바뀐다면 삭제해도 됨.
 export const CardDetail = styled.p`
-  max-width: 570px;
-
   color: ${colors.gray100};
   font-family: SUIT;
   font-size: 24px;
@@ -135,6 +135,7 @@ export const CardDetail = styled.p`
   }
 
   ${media.mobile} {
+    width: 193px;
     ${fontsObject.LABEL_5_11_SB}
   }
 `;
