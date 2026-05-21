@@ -5,6 +5,7 @@ import { LatestNewsType, PartIntroType } from '@src/lib/types/admin';
 import ActivitySection from '@src/views/MainPage/components/ActivitySection';
 import RecentNews from '@src/views/MainPage/components/RecentNews';
 import RecruitMessage from '@src/views/MainPage/components/RecruitMessage';
+import ReviewSection from '@src/views/MainPage/components/ReviewSection';
 import * as S from './style';
 
 const MenuList = [
@@ -81,6 +82,7 @@ function BottomLayout({
       </S.Wrapper>
       <div ref={targetRef} />
       <motion.div style={{ backgroundColor: wrapperBackground }}>
+        <ReviewSection />
         <RecentNews latestNews={latestNews} />
         <RecruitMessage
           generation={generation}
