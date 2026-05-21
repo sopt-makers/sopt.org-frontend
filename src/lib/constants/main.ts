@@ -1,8 +1,8 @@
-import { default as ImgAppjam } from '@src/assets/images/img_appjam.jpg';
-import { default as ImgEvent } from '@src/assets/images/img_event.jpg';
+import { default as Img앱잼 } from '@src/assets/images/img_appjam.png';
 import { default as ImgIntroCard1 } from '@src/assets/images/img_intro_card1.png';
 import { default as ImgIntroCard2 } from '@src/assets/images/img_intro_card2.png';
 import { default as ImgIntroCard3 } from '@src/assets/images/img_intro_card3.png';
+import { default as Img합동세미나 } from '@src/assets/images/img_join_seminar.png';
 import { default as ImgMakersCardBigPc } from '@src/assets/images/img_main_makers_card_big_pc.png';
 import { default as ImgMakersCardMo } from '@src/assets/images/img_main_makers_card_mo.png';
 import { default as ImgMakersCardPc } from '@src/assets/images/img_main_makers_card_pc.png';
@@ -11,15 +11,15 @@ import { default as ImgMediaCardBigPc } from '@src/assets/images/img_main_media_
 import { default as ImgMediaCardMo } from '@src/assets/images/img_main_media_card_mo.png';
 import { default as ImgMediaCardPc } from '@src/assets/images/img_main_media_card_pc.png';
 import { default as ImgMediaCardTa } from '@src/assets/images/img_main_media_card_ta.png';
+import { default as Img네트워킹행사 } from '@src/assets/images/img_networking.png';
 import { default as ImgRecentNews1 } from '@src/assets/images/img_recent_news_1.png';
 import { default as ImgRecentNews2 } from '@src/assets/images/img_recent_news_2.jpg';
 import { default as ImgRecentNews3 } from '@src/assets/images/img_recent_news_3.jpg';
 import { default as ImgRecentNews4 } from '@src/assets/images/img_recent_news_4.webp';
 import { default as ImgRecentNews5 } from '@src/assets/images/img_recent_news_5.png';
-import { default as ImgSeminar } from '@src/assets/images/img_seminar.jpg';
-import { default as ImgSoptkaton } from '@src/assets/images/img_soptkaton.jpg';
-import { default as ImgSoptterm } from '@src/assets/images/img_soptterm.jpg';
-import { default as ImgStudy } from '@src/assets/images/img_study.jpg';
+import { default as Img정기세미나 } from '@src/assets/images/img_regular_seminar.png';
+import { default as Img솝커톤 } from '@src/assets/images/img_soptkaton.png';
+import { default as Img스터디 } from '@src/assets/images/img_study.png';
 import {
   ActivityListType,
   ActivityType,
@@ -35,96 +35,77 @@ export const LAST_INTRO_CONTENT = 3;
 
 export const Activity: ActivityListType = {
   [ActivityType.APPJAM]: {
-    img: ImgAppjam.src,
+    img: Img앱잼.src,
     navKor: '앱잼',
     navEng: 'App jam',
+    link: {
+      label: '37기 데모데이 스케치 보러 가기',
+      href: 'https://www.instagram.com/sopt_media_official/',
+    },
     description: [
-      { content: '4~5주간 ', color: 'yellow' },
       {
         content:
-          '기획, 디자인, 개발 파트가 팀을 이뤄 하나의 웹 또는 앱 서비스를 제작하는 솝트 내 장기 ',
-        color: 'white',
-      },
-      { content: '해커톤', color: 'yellow' },
-      {
-        content: '예요. 데모데이 에서 각 파트 현직자들에게 결과물에 대한 피드백을 받아요.',
+          '약 5주간 기획·디자인·개발 파트가 팀을 이뤄 하나의 웹 또는 앱 서비스를 제작하는 SOPT의 장기 해커톤이에요.\n데모데이는 모든 팀이 5주간 만든 결과물을 함께 발표하고 공유하는 자리로, 각 파트 현직자에게 피드백도 받아요.',
         color: 'white',
       },
     ],
   },
   [ActivityType.SOPKATHON]: {
-    img: ImgSoptkaton.src,
+    img: Img솝커톤.src,
     navKor: '솝커톤',
     navEng: 'Sopkathon',
     description: [
-      { content: '무박 2일', color: 'yellow' },
       {
-        content: '간 기획, 디자인, 개발 파트가 팀을 이뤄 최소 단위의 서비스를 제작하는 솝트내 ',
-        color: 'white',
-      },
-      { content: '단기 해커톤', color: 'yellow' },
-      {
-        content: '예요. 팀 단위의 협업과정을 빠르게 경험할 수 있어요.',
+        content:
+          '무박 2일간 기획·디자인·개발 파트가 팀을 이뤄 작은 규모의 서비스를 제작하는 SOPT의 단기 해커톤이에요.\n짧은 시간 안에 팀을 이루어 협업하며, 빠르게 아이디어를 구현하는 경험을 쌓아요. ',
         color: 'white',
       },
     ],
   },
   [ActivityType.SOPTERM]: {
-    img: ImgSoptterm.src,
-    navKor: '솝텀',
-    navEng: 'Sopt-term',
-    description: [
-      { content: '솝트를 ', color: 'white' },
-      {
-        content: '한 기수 이상 수료한 회원',
-        color: 'yellow',
-      },
-      {
-        content:
-          '끼리 모여 자유로운 주제로 IT 프로젝트를 진행해요. SOPT에서 쌓은 실력을 기반으로 보다 ',
-        color: 'white',
-      },
-      { content: '자율적인 프로젝트', color: 'yellow' },
-      { content: '를 진행할 수 있어요.', color: 'white' },
-    ],
-  },
-  [ActivityType.SEMINAR]: {
-    img: ImgSeminar.src,
-    navKor: '정기 세미나',
+    img: Img합동세미나.src,
+    navKor: '합동 세미나',
     navEng: 'Seminar',
     description: [
-      { content: '활동 기간 동안 ', color: 'white' },
-      { content: '총 8회의 파트별 세미나', color: 'yellow' },
       {
         content:
-          '를 통해 각자 자신의 파트에서 실력을 다져요. 각 파트장의 강연, 파트원간의 지식 공유, 외부 연사 초정 등 다양한 세미나가 진행돼요.',
-        color: 'white',
-      },
-    ],
-  },
-  [ActivityType.STUDY]: {
-    img: ImgStudy.src,
-    navKor: '스터디',
-    navEng: 'Study',
-    description: [
-      { content: '실력을 심도있게 다질 수 있는 ', color: 'white' },
-      { content: '스터디와 다양한 파트원들과 친목을 쌓을 수 있는 네트워킹', color: 'yellow' },
-      {
-        content: '이 열려요. 자율적으로 개설하고 참여할 수 있어요.',
+          '모든 파트가 한자리에 모여 진행하는 SOPT의 합동 프로젝트 자리예요.\n파트의 경계를 넘어 서로의 분야를 이해하고, 협업에 필요한 시야를 함께 넓혀가요. ',
         color: 'white',
       },
     ],
   },
   [ActivityType.EVENTS]: {
-    img: ImgEvent.src,
-    navKor: '행사',
+    img: Img네트워킹행사.src,
+    navKor: '네트워킹 행사',
     navEng: 'Events',
     description: [
-      { content: '솝트 내 운영팀이 기획한 ', color: 'white' },
-      { content: '1차, 2차 행사', color: 'yellow' },
       {
         content:
-          '가 열려요. 행사 내 다양한 콘텐츠를 통해 모든 파트 회원들과 자연스럽게 유대감을 쌓고 잊지 못 할 즐거운 추억을 만들어요.',
+          '기수마다 새롭게 기획되는 SOPT의 교류 행사예요.\n다양한 콘텐츠를 통해 모든 파트 회원이 한자리에 모여 서로를 알아가고, 유대감을 쌓으며 풍성한 추억을 만들어가요.',
+        color: 'white',
+      },
+    ],
+  },
+  [ActivityType.SEMINAR]: {
+    img: Img정기세미나.src,
+    navKor: '정기 세미나',
+    navEng: 'Seminar',
+    description: [
+      {
+        content:
+          '활동 기간 동안 파트별로 진행되는 SOPT의 정기 학습 자리예요.\n파트장 강연, 파트원 간 지식 공유, 외부 연사 초청 등 다양한 형식으로 자신의 파트에서 실력을 다질 수 있어요.',
+        color: 'white',
+      },
+    ],
+  },
+  [ActivityType.STUDY]: {
+    img: Img스터디.src,
+    navKor: '스터디',
+    navEng: 'Study',
+    description: [
+      {
+        content:
+          '파트원이 자율적으로 개설하고 참여하는 SOPT의 자유 학습 및 친목 모임이에요.\n관심 분야를 함께 깊이 파고들며, 같은 목표를 가진 파트원들과 실력을, 다양한 회원들과 친목을 다질 수 있어요.',
         color: 'white',
       },
     ],
