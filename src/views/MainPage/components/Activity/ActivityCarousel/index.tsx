@@ -1,9 +1,8 @@
-import { useIsDesktopLarge } from '@src/hooks/useDevice';
 import { Activity } from '@src/lib/constants/main';
 import { activity as activityCarouselList } from '@src/lib/types/main';
 import ArrowButton from '@src/views/MainPage/components/Activity/ActivityCarousel/ArrowButton';
 import useCarouselLayout from '@src/views/MainPage/hooks/useCarouselLayout';
-import useSlideIndex from '@src/views/MainPage/hooks/useSlideIndex';
+import useCarouselSlide from '@src/views/MainPage/hooks/useCarouselSlide';
 import ActivityCard from './ActivityCard';
 import * as S from './style';
 
@@ -13,15 +12,12 @@ const SLIDE_TRANSITION = {
   damping: 20,
 };
 
-export default function ActivityCarousel() {
-  const isDesktopLarge = useIsDesktopLarge();
-
-  const { currentSlide, isFirstSlide, isLastSlide, selectSlide, onPrev, onNext } = useSlideIndex({
+const ActivityCarousel = () => {
+  const { currentSlide, isFirstSlide, isLastSlide, onSelect, onPrev, onNext } = useCarouselSlide({
     slideCount: activityCarouselList.length,
   });
 
   const { containerRef, carouselRef, trackX, carouselLayoutStyle } = useCarouselLayout({
-    isDesktopLarge,
     currentSlide,
     slideCount: activityCarouselList.length,
   });
@@ -30,12 +26,13 @@ export default function ActivityCarousel() {
   const currentTabLabel = tabItems[currentSlide];
 
   const handleTabChange = (selected: string) => {
-    selectSlide(tabItems.indexOf(selected));
+    onSelect(tabItems.indexOf(selected));
   };
 
   const handleSlideClick = (index: number) => {
     if (index === currentSlide) return;
-    selectSlide(index);
+
+    onSelect(index);
   };
 
   return (
@@ -69,4 +66,6 @@ export default function ActivityCarousel() {
       </S.ArrowLayout>
     </S.Container>
   );
-}
+};
+
+export default ActivityCarousel;
