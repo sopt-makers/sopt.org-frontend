@@ -1,8 +1,7 @@
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 import icArrowComment from '@src/assets/icons/ic_arrow_comment.svg';
-import icArrowLeft from '@src/assets/icons/ic_arrow_left.svg';
-import icArrowRight from '@src/assets/icons/ic_arrow_right.svg';
+import { IconChevronLeft, IconChevronRight } from '@sopt-makers/icons';
 import { media } from '@src/lib/styles/breakpoints';
 
 export const Wrapper = styled.section`
@@ -149,22 +148,14 @@ export const NavButton = styled.button`
   }
 `;
 
-export const ArrowLeftIcon = styled.div`
+export const ArrowLeftIcon = styled(IconChevronLeft)`
   width: 20px;
   height: 20px;
-  background-color: #fff;
-  mask-size: contain;
-  mask-repeat: no-repeat;
-  mask-position: center;
-  mask-image: url(${icArrowLeft});
+  color: #fff;
 `;
 
-export const ArrowRightIcon = styled.div`
+export const ArrowRightIcon = styled(IconChevronRight)`
   width: 20px;
   height: 20px;
-  background-color: #fff;
-  mask-size: contain;
-  mask-repeat: no-repeat;
-  mask-position: center;
-  mask-image: url(${icArrowRight});
+  color: #fff;
 `;
