@@ -1,7 +1,10 @@
 import styled from '@emotion/styled';
-import { colors } from '@sopt-makers/colors';
 import Image from 'next/image';
 import { ReactComponent as IcDownScroll } from '@src/assets/icons/ic_downScroll.svg';
+import { media } from '@src/lib/styles/breakpoints';
+
+/** 제목 그라데이션에 쓰일 branding 색상 변환 */
+const toBrandTintColor = (mainColor: string) => `color-mix(in srgb, ${mainColor} 37%, white)`;
 
 export const Container = styled.section`
   position: relative;
@@ -54,37 +57,42 @@ export const ContentWrapper = styled.article`
   position: absolute;
   z-index: 2;
 
-  @media (max-width: 90rem) {
+  ${media.tablet} {
     gap: 70px;
   }
 
-  @media (max-width: 48rem) {
+  ${media.mobile} {
     gap: 80px;
     padding-top: 60vh;
     padding-bottom: 50px;
   }
 `;
 
-export const Title = styled.h1`
+export const Title = styled.h1<{ mainColor: string }>`
   white-space: pre-line;
   text-align: center;
-  font-size: 72rem;
+  font-family: SUIT;
+  font-size: 72px;
   font-style: normal;
   font-weight: 700;
-  line-height: 130%; /* 93.6px */
+  line-height: 130%;
   letter-spacing: -0.72px;
-  background: linear-gradient(93deg, ${colors.white} 29.05%, #b7c8d8 89.19%);
+
+  background: linear-gradient(
+    93deg,
+    #fff 29.05%,
+    ${({ mainColor }) => toBrandTintColor(mainColor)} 68.37%,
+    #fff 89.19%
+  );
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 
-  /* 모바일 뷰 */
-  @media (max-width: 90rem) {
+  ${media.tablet} {
     font-size: 64rem;
   }
 
-  /* 모바일 뷰 */
-  @media (max-width: 48rem) {
+  ${media.mobile} {
     font-size: 28rem;
     line-height: 42px;
     letter-spacing: -2%;
@@ -98,14 +106,14 @@ export const DownScrollIcon = styled(IcDownScroll)`
   height: 56px;
   cursor: pointer;
 
-  @media (max-width: 90rem) {
+  ${media.tablet} {
     min-width: 42px;
     width: 42px;
     min-height: 42;
     height: 42px;
   }
 
-  @media (max-width: 48rem) {
+  ${media.mobile} {
     min-width: 28px;
     min-height: 28px;
     width: 28px;
