@@ -33,6 +33,8 @@ const PartIntroduction = forwardRef(({ parts, mainColor }: SectionProps, ref: Re
   );
 });
 
+PartIntroduction.displayName = 'PartIntroduction';
+
 export default PartIntroduction;
 
 interface ListProps {
