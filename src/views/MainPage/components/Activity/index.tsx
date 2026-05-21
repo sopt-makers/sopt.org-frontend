@@ -1,43 +1,20 @@
 import { Ref, forwardRef } from 'react';
-import { useIsMobile } from '@src/hooks/useDevice';
-import { Activity } from '@src/lib/constants/main';
 import Tab from '../Tab';
-import Card from './Card';
-import MobileCard from './MobileCard';
+import ActivityCarousel from './ActivityCarousel';
 import * as S from './style';
 
-function CardHover(_props: unknown, ref: Ref<HTMLDivElement>) {
-  const isMobileSize = useIsMobile('48rem');
-  const tab = isMobileSize ? 'Activity' : '';
-
+function Activity(_props: unknown, ref: Ref<HTMLDivElement>) {
   return (
-    <div ref={ref}>
+    <S.Wrapper ref={ref} id="activity">
       <Tab
-        tab={tab}
-        title={'매 기수 진행되는, 다양한 활동들!'}
+        title={'매 기수 함께하는 다양한 활동!'}
         description={
-          '솝트에서는 매 기수 내 정기적으로 진행되는 다양한 활동들이 있어요.\n 각 파트원들과 친목 및 실력을 쌓을 수 있는 행사들을 통해, 솝트를 더 즐겁게 보낼 수 있어요.'
+          'SOPT에는 매 기수마다 정기적으로 진행되는 다양한 활동이 있어요.\n파트원과 친목을 다지고 실력을 함께 쌓으며, 솝트에서의 시간을 더 풍성하게 만들 수 있어요.'
         }
       />
-      {isMobileSize ? (
-        <MobileCard />
-      ) : (
-        <S.CardWrapper>
-          {Object.values(Activity).map(({ img, navKor, navEng, description }) => {
-            return (
-              <Card
-                key={navEng}
-                img={img}
-                navKor={navKor}
-                navEng={navEng}
-                description={description}
-              />
-            );
-          })}
-        </S.CardWrapper>
-      )}
-    </div>
+      <ActivityCarousel />
+    </S.Wrapper>
   );
 }
 
-export default forwardRef(CardHover);
+export default forwardRef(Activity);
