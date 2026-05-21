@@ -1,7 +1,9 @@
 import styled from '@emotion/styled';
 import { colors } from '@sopt-makers/colors';
+import { fontsObject } from '@sopt-makers/fonts';
 import Image from 'next/image';
 import { css } from '@emotion/react';
+import { media } from '@src/lib/styles/breakpoints';
 
 export const CardContainer = styled.div<{ isActive: boolean }>`
   position: relative;
@@ -13,28 +15,36 @@ export const CardContainer = styled.div<{ isActive: boolean }>`
   border-radius: 12px;
   transition: width 0.7s ease;
 
-  @media (min-width: 1024px) {
+  ${media.desktopLarge} {
     ${({ isActive }) =>
       isActive &&
       css`
-        width: 664px;
+        width: 682px;
       `};
   }
 
-  @media (max-width: 1023px) and (min-width: 768px) {
+  ${media.desktop} {
+    ${({ isActive }) =>
+      isActive &&
+      css`
+        width: 400px;
+      `};
+  }
+
+  ${media.tablet} {
     width: 140px;
     height: 300px;
     border-radius: 36px;
     ${({ isActive }) =>
       isActive &&
       css`
-        width: 296px;
+        width: 400px;
       `};
   }
 
-  @media (max-width: 767px) {
-    width: 300px;
-    height: 260px;
+  ${media.mobile} {
+    width: 100%;
+    height: 160px;
     border-radius: 12px;
     scroll-snap-align: center;
     scroll-snap-stop: always;
@@ -74,14 +84,14 @@ export const CardContent = styled.div<{ isActive: boolean }>`
   opacity: ${({ isActive }) => (isActive ? 1 : 0)};
   transition: opacity 0.5s ease;
 
-  @media (max-width: 1023px) and (min-width: 768px) {
+  ${media.tablet} {
     width: 296px;
     padding: 24px;
   }
 
-  @media (max-width: 767px) {
+  ${media.mobile} {
     width: 100%;
-    padding: 26px;
+    padding: 16px;
   }
 `;
 
@@ -94,12 +104,14 @@ export const CardTitle = styled.h3`
   white-space: pre-line;
   margin-bottom: 12px;
 
-  @media (max-width: 1023px) and (min-width: 768px) {
+  ${media.tablet} {
     font-size: 24px;
   }
 
-  @media (max-width: 767px) {
-    font-size: 19px;
+  ${media.mobile} {
+    position: relative;
+    z-index: 1;
+    ${fontsObject.HEADING_7_16_B}
   }
 `;
 
@@ -117,12 +129,13 @@ export const CardDetail = styled.p`
   word-break: keep-all;
   white-space: pre-line;
 
-  @media (max-width: 1023px) and (min-width: 768px) {
+  ${media.tablet} {
+    width: 219px;
     font-size: 14px;
   }
 
-  @media (max-width: 767px) {
-    font-size: 14px;
+  ${media.mobile} {
+    ${fontsObject.LABEL_5_11_SB}
   }
 `;
 
@@ -144,6 +157,18 @@ export const CardValue = styled.p<{ isActive: boolean }>`
   @media (max-width: 1023px) and (min-width: 768px) {
     font-size: 24px;
   }
+`;
+
+export const MobilePrimaryColorCircle = styled.div<{ highColor: string }>`
+  position: absolute;
+  top: 12px;
+  left: -10px;
+  transform: translate(15%, -85%);
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: ${({ highColor }) => highColor};
+  z-index: -1;
 `;
 
 export const PrimaryColorCircle = styled.div<{ isActive: boolean; highColor: string }>`
