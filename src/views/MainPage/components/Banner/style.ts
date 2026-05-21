@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { fontsObject } from '@sopt-makers/fonts';
 import Image from 'next/image';
 import { ReactComponent as IcDownScroll } from '@src/assets/icons/ic_downScroll.svg';
 import { media } from '@src/lib/styles/breakpoints';
@@ -44,6 +45,14 @@ export const Content = styled.main`
   flex-direction: column;
   justify-content: center;
   gap: 40px;
+
+  ${media.tablet} {
+    gap: 24px;
+  }
+
+  ${media.mobile} {
+    gap: 16px;
+  }
 `;
 
 export const ContentWrapper = styled.article`
@@ -89,13 +98,15 @@ export const Title = styled.h1<{ mainColor: string }>`
   -webkit-text-fill-color: transparent;
 
   ${media.tablet} {
-    font-size: 64rem;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 130%;
+    letter-spacing: -0.4px;
   }
 
   ${media.mobile} {
-    font-size: 28rem;
-    line-height: 42px;
-    letter-spacing: -2%;
+    ${fontsObject.HEADING_4_24_B}
   }
 `;
 
