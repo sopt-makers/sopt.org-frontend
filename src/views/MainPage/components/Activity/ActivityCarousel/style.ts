@@ -5,7 +5,6 @@ import { media } from '@src/lib/styles/breakpoints';
 import { IMAGE_SIZE } from '@src/views/MainPage/components/Activity/ActivityCarousel/ActivityCard/style';
 
 export const CAROUSEL_GAP = 24;
-export const SLIDE_WIDTH = IMAGE_SIZE.desktopLarge.width;
 
 export const Container = styled.section`
   display: flex;
