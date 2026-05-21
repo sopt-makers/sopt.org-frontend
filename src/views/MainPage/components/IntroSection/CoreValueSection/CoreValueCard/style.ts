@@ -9,28 +9,29 @@ export const CardContainer = styled.div<{ isActive: boolean }>`
   position: relative;
   cursor: pointer;
   flex-shrink: 0;
-  width: 236px;
-  height: 446px;
   overflow: hidden;
   border-radius: 20px;
   transition: width 0.7s ease;
 
   ${media.desktopLarge} {
+    width: 236px;
+    height: 446px;
+
     ${({ isActive }) =>
       isActive &&
       css`
-        width: 682px;
+        width: 664px;
       `};
   }
 
   ${media.desktop} {
-    width: 150px;
-    height: 430px;
+    width: 127px;
+    height: 446px;
 
     ${({ isActive }) =>
       isActive &&
       css`
-        width: 600px;
+        width: 626px;
       `};
   }
 
@@ -102,10 +103,9 @@ export const CardTitle = styled.h3`
   font-style: normal;
   font-weight: 700;
   line-height: normal;
-  white-space: pre-line;
-  margin-bottom: 12px;
 
   ${media.tablet} {
+    width: 270px;
     font-size: 24px;
   }
 
@@ -145,15 +145,16 @@ export const CardValue = styled.p<{ isActive: boolean }>`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  opacity: ${({ isActive }) => (isActive ? 0 : 1)};
+  transition: opacity 0.5s ease;
+  z-index: 40;
+  white-space: nowrap;
+
   font-family: SUIT;
   font-size: 40px;
   font-style: normal;
   font-weight: 700;
-  line-height: 100%;
   letter-spacing: -0.8px;
-  opacity: ${({ isActive }) => (isActive ? 0 : 1)};
-  transition: opacity 0.5s ease;
-  z-index: 40;
 
   @media (max-width: 1023px) and (min-width: 768px) {
     font-size: 24px;
@@ -169,6 +170,7 @@ export const MobilePrimaryColorCircle = styled.div<{ highColor: string }>`
   height: 24px;
   border-radius: 50%;
   background-color: ${({ highColor }) => highColor};
+  opacity: 0.8;
   z-index: -1;
 `;
 
@@ -182,7 +184,7 @@ export const PrimaryColorCircle = styled.div<{ isActive: boolean; highColor: str
   border-radius: 50%;
   background-color: ${({ highColor }) => highColor};
   z-index: 30;
-  opacity: ${({ isActive }) => (isActive ? 0 : 1)};
+  opacity: ${({ isActive }) => (isActive ? 0 : 0.7)};
   transition: opacity 0.5s ease;
 
   @media (max-width: 1023px) and (min-width: 768px) {

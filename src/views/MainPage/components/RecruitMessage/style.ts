@@ -1,71 +1,57 @@
 import styled from '@emotion/styled';
 import { colors } from '@sopt-makers/colors';
+import { fontsObject } from '@sopt-makers/fonts';
+import { media } from '@src/lib/styles/breakpoints';
 
-export const Background = styled.section`
-  margin-top: 505px;
-  margin-bottom: 600px;
-
+export const Wrapper = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 372px 0 480px 0;
+  gap: 48px;
 
-  @media (max-width: 90rem) {
-    margin-top: 349px;
-    margin-bottom: 375px;
+  ${media.tablet} {
+    padding: 458px 0 119px 0;
   }
 
-  @media (max-width: 48rem) {
-    margin-top: 221px;
-    margin-bottom: 221px;
+  ${media.mobile} {
+    padding: 226px 0 358px 0;
+    gap: 24px;
   }
+`;
 
-  @media (max-width: 23.5rem) {
-    margin-top: 154px;
-    margin-bottom: 150px;
-  }
+export const MessageWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
 `;
 
 export const Title = styled.h1`
   color: ${colors.white};
   text-align: center;
   font-family: SUIT;
-  font-size: 40rem;
+  font-size: 40px;
   font-style: normal;
   font-weight: 700;
-  line-height: 140%; /* 56px */
-  letter-spacing: -2%;
-  margin-bottom: 11px;
+  line-height: 60px;
+  letter-spacing: -0.8px;
 
-  @media (max-width: 48rem) {
-    font-size: 34rem;
-  }
-
-  @media (max-width: 23.5rem) {
-    font-size: 20rem;
+  ${media.mobile} {
+    ${fontsObject.HEADING_4_24_B}
   }
 `;
 
 export const Description = styled.p`
   color: rgba(255, 255, 255, 0.7);
   text-align: center;
-  font-family: SUIT;
-  font-size: 24rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 140%; /* 33.6px */
-  letter-spacing: -2%;
-  margin-bottom: 75px;
+  white-space: pre-line;
+  ${fontsObject.TITLE_3_24_SB}
 
-  @media (max-width: 48rem) {
-    font-size: 21rem;
-    line-height: 142%; /* 17.04px */
-    margin-bottom: 59px;
-  }
-
-  @media (max-width: 23.5rem) {
-    font-size: 12rem;
-    margin-bottom: 34px;
+  ${media.mobile} {
+    ${fontsObject.TITLE_6_16_SB}
   }
 `;
 

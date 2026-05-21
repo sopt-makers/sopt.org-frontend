@@ -40,6 +40,7 @@ export const Content = styled.main`
   align-items: center;
   flex-direction: column;
   justify-content: center;
+  gap: 40px;
 `;
 
 export const ContentWrapper = styled.article`
@@ -65,6 +66,7 @@ export const ContentWrapper = styled.article`
 `;
 
 export const Title = styled.h1`
+  white-space: pre-line;
   text-align: center;
   font-size: 72rem;
   font-style: normal;
