@@ -1,30 +1,30 @@
 import { useLayoutEffect, useMemo, useRef, useState } from 'react';
-import { getDefaultViewportStyle } from '@src/views/MainPage/utils/carousel';
+import { getCarouselStyle } from '@src/views/MainPage/utils/carousel';
 
 const useCarouselLayout = () => {
   const [carouselWidth, setCarouselWidth] = useState(0);
   const [slideOffsets, setSlideOffsets] = useState<number[]>([]);
 
-  const containerRef = useRef<HTMLDivElement>(null);
   const carouselRef = useRef<HTMLDivElement>(null);
+  const trackRef = useRef<HTMLDivElement>(null);
 
   useLayoutEffect(() => {
-    const container = containerRef.current;
     const carousel = carouselRef.current;
-
-    if (!container || !carousel) return;
+    if (!carousel) return;
 
     const updateLayout = () => {
       setCarouselWidth(carousel.clientWidth);
 
-      const slides = carousel.querySelectorAll<HTMLElement>('[data-carousel-track] > *');
-      setSlideOffsets(Array.from(slides, (slide) => slide.offsetLeft));
+      const track = trackRef.current;
+      if (track) {
+        const slides = track.children as HTMLCollectionOf<HTMLElement>;
+        setSlideOffsets(Array.from(slides, (slide) => slide.offsetLeft));
+      }
     };
 
     updateLayout();
 
     const resizeObserver = new ResizeObserver(updateLayout);
-    resizeObserver.observe(container);
     resizeObserver.observe(carousel);
     window.addEventListener('resize', updateLayout);
 
@@ -34,16 +34,13 @@ const useCarouselLayout = () => {
     };
   }, []);
 
-  const carouselLayoutStyle = useMemo(
-    () => getDefaultViewportStyle(carouselWidth),
-    [carouselWidth],
-  );
+  const carouselStyle = useMemo(() => getCarouselStyle(carouselWidth), [carouselWidth]);
 
   return {
-    containerRef,
     carouselRef,
+    trackRef,
     slideOffsets,
-    carouselLayoutStyle,
+    carouselStyle,
   };
 };
 
