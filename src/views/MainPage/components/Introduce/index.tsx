@@ -8,7 +8,7 @@ const SCROLL_CONFIG = {
   mobile: {
     content: '전국 최대 규모의\n대학생 연합 IT 벤처 창업 동아리,\n솝트를 소개합니다',
     offset: ['end center', 'start end'],
-    scrollEnd: 0.1,
+    scrollEnd: 0.2,
   },
   desktop: {
     content: '전국 최대 규모의 대학생 연합 IT 벤처 창업 동아리,\n솝트를 소개합니다',
