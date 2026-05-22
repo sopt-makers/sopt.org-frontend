@@ -19,5 +19,6 @@ export const Wrapper = styled.div`
   ${media.mobile} {
     flex-direction: column;
     gap: 16px;
+    width: 100%;
   }
 `;

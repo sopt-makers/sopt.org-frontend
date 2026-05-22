@@ -4,9 +4,9 @@ import { convertRadialGradient } from '@src/lib/styles/gradient';
 
 export const Wrapper = styled.section`
   display: flex;
-  
   flex-direction: column;
   align-items: center;
+  width: 100%;
   gap: 32px;
 
   /* 태블릿 뷰 */
@@ -16,7 +16,6 @@ export const Wrapper = styled.section`
 
   /* 모바일 뷰 */
   @media (max-width: 767px) {
-    margin-top: 120px;
     gap: 32px;
   }
 `;
