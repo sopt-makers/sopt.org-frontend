@@ -11,6 +11,12 @@ export const Wrapper = styled.section`
   padding: 154px 40px 0 40px;
   gap: 40px;
 
+  @media (min-width: 1580px) {
+    display: grid;
+    grid-template-columns: 1fr minmax(0, 1200px) 1fr;
+    gap: 0;
+  }
+
   ${media.tablet} {
     padding-top: 100px;
   }
@@ -25,13 +31,20 @@ export const MenuLayout = styled.div`
   display: none;
 
   @media (min-width: 1580px) {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-self: end;
+    padding-right: 40px;
   }
 `;
 
 export const MenuOffset = styled.div`
   height: 100px;
   flex-shrink: 0;
+
+  @media (min-width: 1580px) {
+    height: 0;
+  }
 `;
 
 export const FloatingMenu = styled.div`
@@ -41,7 +54,7 @@ export const FloatingMenu = styled.div`
   position: sticky;
   top: 104px;
   height: fit-content;
-  z-index: 100;
+  z-index: 10;
 `;
 
 export const MenuWrapper = styled.div<{ isInView?: boolean; mainColor: string }>`
@@ -76,6 +89,11 @@ export const ScrollContentLayout = styled.div`
   margin: 0 auto;
   z-index: 1;
   overflow: visible;
+
+  @media (min-width: 1580px) {
+    margin: 0;
+    max-width: 100%;
+  }
 
   ${media.desktop} {
     max-width: 944px;
