@@ -3,22 +3,23 @@ import { colors } from '@sopt-makers/colors';
 import Link from 'next/link';
 import Slider from 'react-slick';
 import { ReactComponent as IconInstagram } from '@src/assets/icons/ic_instagram.svg';
+import { media } from '@src/lib/styles/breakpoints';
 
-export const RecentNews = styled.section`
-  padding: 589px 0 65px;
+export const RecentNews = styled.section({
+  paddingTop: 432,
 
-  @media (max-width: 90rem) {
-    padding-top: 384px;
-  }
+  [media.desktop]: {
+    paddingTop: 432,
+  },
 
-  @media (max-width: 48rem) {
-    padding: 253px 0 42px;
-  }
+  [media.tablet]: {
+    paddingTop: 100,
+  },
 
-  @media (max-width: 27.75rem) {
-    padding: 157px 0 24px;
-  }
-`;
+  [media.mobile]: {
+    paddingTop: 100,
+  },
+});
 
 export const Title = styled.h1`
   color: ${colors.white};
