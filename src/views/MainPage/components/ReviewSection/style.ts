@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { colors } from '@sopt-makers/colors';
 import { fontsObject } from '@sopt-makers/fonts';
 import { IconChevronLeft, IconChevronRight } from '@sopt-makers/icons';
 import { motion } from 'framer-motion';
@@ -6,22 +7,14 @@ import icArrowComment from '@src/assets/icons/ic_arrow_comment.svg';
 import { media } from '@src/lib/styles/breakpoints';
 
 export const Wrapper = styled.section`
-  padding: 232px 0 0;
   max-width: 1200px;
-  margin: 0 auto;
 
   ${media.desktop} {
-    padding: 232px 0 0;
     max-width: 944px;
   }
 
   ${media.tablet} {
-    padding: 100px 0 0;
     max-width: 688px;
-  }
-
-  ${media.mobile} {
-    padding: 100px 40px 0;
   }
 `;
 
@@ -101,10 +94,6 @@ export const CardsWrapper = styled.div`
   height: 520px;
   overflow: visible;
 
-  ${media.desktop} {
-    height: 520px;
-  }
-
   ${media.tablet} {
     height: 480px;
   }
@@ -161,11 +150,11 @@ export const NavButton = styled.button`
 export const ArrowLeftIcon = styled(IconChevronLeft)`
   width: 20px;
   height: 20px;
-  color: #fff;
+  color: ${colors.white};
 `;
 
 export const ArrowRightIcon = styled(IconChevronRight)`
   width: 20px;
   height: 20px;
-  color: #fff;
+  color: ${colors.white};
 `;

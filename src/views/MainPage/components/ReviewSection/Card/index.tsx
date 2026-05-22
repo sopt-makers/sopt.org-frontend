@@ -22,18 +22,13 @@ export default function ReviewCard({
       isActive={isActive}
       animate={{
         backgroundColor: isActive ? color : colors.gray900,
-        color: isActive ? colors.white : colors.gray400,
       }}
       transition={{ duration: 0.4 }}
       onClick={onClick}
     >
       <S.Comment isActive={isActive}>{comment}</S.Comment>
       <S.Footer isActive={isActive}>
-        <span>{commenter.name}</span>
-        <span>|</span>
-        <span>{commenter.history}</span>
-        <span>|</span>
-        <span>{commenter.part}</span>
+        {commenter.name} | {commenter.history} | {commenter.part}
       </S.Footer>
     </S.Wrapper>
   );

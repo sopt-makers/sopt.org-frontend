@@ -4,42 +4,41 @@ import { fontsObject } from '@sopt-makers/fonts';
 import { motion } from 'framer-motion';
 import { media } from '@src/lib/styles/breakpoints';
 
-export const Wrapper = styled(motion.div)<{ isActive: boolean }>`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  overflow: hidden;
-  flex-shrink: 0;
-  cursor: ${({ isActive }) => (isActive ? 'default' : 'pointer')};
+const CARD_VARIANT = {
+  active: {
+    base: { width: '420px', height: '520px', borderRadius: '19px', padding: '44px 48px', cursor: 'default' },
+    desktop: { width: '420px', height: '520px', padding: '44px 48px' },
+    tablet: { width: '360px', height: '480px', padding: '32px 24px' },
+  },
+  inactive: {
+    base: { width: '340px', height: '428px', borderRadius: '15px', padding: '32px 40px', cursor: 'pointer' },
+    desktop: { width: '340px', height: '428px', padding: '32px 40px' },
+    tablet: { width: '300px', height: '388px', padding: '24px 24px' },
+  },
+} as const;
 
-  width: ${({ isActive }) => (isActive ? '420px' : '340px')};
-  height: ${({ isActive }) => (isActive ? '520px' : '428px')};
-  border-radius: ${({ isActive }) => (isActive ? '19px' : '15px')};
-  padding: ${({ isActive }) => (isActive ? '44px 48px' : '32px 40px')};
-
-  transition: width 0.4s ease, height 0.4s ease, padding 0.4s ease, border-radius 0.4s ease;
-
-  ${media.desktop} {
-    width: ${({ isActive }) => (isActive ? '420px' : '340px')};
-    height: ${({ isActive }) => (isActive ? '520px' : '428px')};
-    padding: ${({ isActive }) => (isActive ? '44px 48px' : '32px 40px')};
-  }
-
-  ${media.tablet} {
-    width: ${({ isActive }) => (isActive ? '360px' : '300px')};
-    height: ${({ isActive }) => (isActive ? '480px' : '388px')};
-    padding: ${({ isActive }) => (isActive ? '32px 24px' : '24px 24px')};
-  }
-
-  ${media.mobile} {
-    width: 100%;
-    height: 280px;
-    border-radius: 19px;
-    padding: 32px 24px;
-    cursor: default;
-    transition: none;
-  }
-`;
+export const Wrapper = styled(motion.div)<{ isActive: boolean }>(({ isActive }) => {
+  const variant = CARD_VARIANT[isActive ? 'active' : 'inactive'];
+  return {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+    overflow: 'hidden',
+    flexShrink: 0,
+    transition: 'width 0.4s ease, height 0.4s ease, padding 0.4s ease, border-radius 0.4s ease',
+    ...variant.base,
+    [media.desktop]: variant.desktop,
+    [media.tablet]: variant.tablet,
+    [media.mobile]: {
+      width: '100%',
+      height: '280px',
+      borderRadius: '19px',
+      padding: '32px 24px',
+      cursor: 'default',
+      transition: 'none',
+    },
+  };
+});
 
 export const Comment = styled.p<{ isActive: boolean }>(({ isActive }) => ({
   flex: 1,

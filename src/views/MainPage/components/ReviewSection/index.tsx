@@ -8,6 +8,26 @@ import * as S from './style';
 
 const CARD_GAP = 24;
 
+interface NavButtonsProps {
+  onPrev: () => void;
+  onNext: () => void;
+  disablePrev: boolean;
+  disableNext: boolean;
+}
+
+function NavButtons({ onPrev, onNext, disablePrev, disableNext }: NavButtonsProps) {
+  return (
+    <S.NavButtons>
+      <S.NavButton onClick={onPrev} aria-label="이전" disabled={disablePrev}>
+        <S.ArrowLeftIcon />
+      </S.NavButton>
+      <S.NavButton onClick={onNext} aria-label="다음" disabled={disableNext}>
+        <S.ArrowRightIcon />
+      </S.NavButton>
+    </S.NavButtons>
+  );
+}
+
 const INACTIVE_CARD_WIDTHS = {
   desktopLarge: 340, // ≥1260px
   desktop: 340, // 1024px–1259px
@@ -57,63 +77,38 @@ function ReviewSection(_props: unknown, ref: Ref<HTMLDivElement>) {
         {activeComment.summary}
       </S.Summary>
 
-      {isMobile ? (
-        <>
-          <S.CardsWrapper>
-            <ReviewCard
-              isActive
-              color={activeComment.color}
-              comment={activeComment.comment}
-              commenter={activeComment.commenter}
-            />
-          </S.CardsWrapper>
-
-          <S.NavButtons>
-            <S.NavButton onClick={handlePrev} aria-label="이전" disabled={activeIdx === 0}>
-              <S.ArrowLeftIcon />
-            </S.NavButton>
-            <S.NavButton
-              onClick={handleNext}
-              aria-label="다음"
-              disabled={activeIdx === commentLength - 1}
-            >
-              <S.ArrowRightIcon />
-            </S.NavButton>
-          </S.NavButtons>
-        </>
-      ) : (
-        <>
-          <S.CardsWrapper>
-            <S.CardList
-              animate={{ x: translateX }}
-              transition={{ type: 'tween', duration: 0.4, ease: 'easeInOut' }}
-            >
-              {SOPT_COMMENT_LIST.map((comment, idx) => (
-                <ReviewCard
-                  key={idx}
-                  isActive={activeIdx === idx}
-                  color={comment.color}
-                  comment={comment.comment}
-                  commenter={comment.commenter}
-                  onClick={() => changeActiveIdx(idx)}
-                />
-              ))}
-            </S.CardList>
-          </S.CardsWrapper>
-          <S.NavButtons>
-            <S.NavButton onClick={handlePrev} aria-label="이전" disabled={activeIdx === 0}>
-              <S.ArrowLeftIcon />
-            </S.NavButton>
-            <S.NavButton
-              onClick={handleNext}
-              aria-label="다음"
-              disabled={activeIdx === commentLength - 1}
-            >
-              <S.ArrowRightIcon />
-            </S.NavButton>
-          </S.NavButtons>
-        </>
-      )}
+      <S.CardsWrapper>
+        {isMobile ? (
+          <ReviewCard
+            isActive
+            color={activeComment.color}
+            comment={activeComment.comment}
+            commenter={activeComment.commenter}
+          />
+        ) : (
+          <S.CardList
+            animate={{ x: translateX }}
+            transition={{ type: 'tween', duration: 0.4, ease: 'easeInOut' }}
+          >
+            {SOPT_COMMENT_LIST.map((comment, idx) => (
+              <ReviewCard
+                key={idx}
+                isActive={activeIdx === idx}
+                color={comment.color}
+                comment={comment.comment}
+                commenter={comment.commenter}
+                onClick={() => changeActiveIdx(idx)}
+              />
+            ))}
+          </S.CardList>
+        )}
+      </S.CardsWrapper>
+      <NavButtons
+        onPrev={handlePrev}
+        onNext={handleNext}
+        disablePrev={activeIdx === 0}
+        disableNext={activeIdx === commentLength - 1}
+      />
     </S.Wrapper>
   );
 }
