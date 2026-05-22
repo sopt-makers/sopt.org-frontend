@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
+import { breakpoints } from '@src/lib/styles/breakpoints';
 
 export function useIsDesktop(minWidth = '1920px') {
   const [isDesktop, setIsDesktop] = useState(false);
@@ -21,6 +22,20 @@ export function useIsTablet(minWidth = '47.875rem', maxWidth = '1919.9px') {
     setIsTablet(tablet);
   }, [tablet]);
   return isTablet;
+}
+
+export function useIsDesktopLarge(minWidth = `${breakpoints.desktopLarge}px`) {
+  const [isDesktopLarge, setIsDesktopLarge] = useState(false);
+
+  const desktopLarge = useMediaQuery({
+    query: `(min-width: ${minWidth})`,
+  });
+
+  useEffect(() => {
+    setIsDesktopLarge(desktopLarge);
+  }, [desktopLarge]);
+
+  return isDesktopLarge;
 }
 
 export function useIsMobile(maxWidth = '47.86875rem') {
