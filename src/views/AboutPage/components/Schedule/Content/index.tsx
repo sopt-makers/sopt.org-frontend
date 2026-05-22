@@ -1,12 +1,8 @@
+import { ActivityScheduleItemType } from '@src/lib/types/admin';
 import * as S from './style';
 
-export type ScheduleItem = {
-  date: string;
-  name: string;
-};
-
 type ScheduleContentProps = {
-  schedules: ScheduleItem[];
+  schedules: ActivityScheduleItemType[];
 };
 
 const ScheduleContent = ({ schedules }: ScheduleContentProps) => {
