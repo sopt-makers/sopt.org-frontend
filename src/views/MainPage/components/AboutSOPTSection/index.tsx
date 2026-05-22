@@ -1,7 +1,7 @@
 import useInView from '@src/hooks/useInView';
 import { LatestNewsType, PartIntroType } from '@src/lib/types/admin';
 import Activity from '@src/views/MainPage/components/Activity';
-import Comment from '@src/views/MainPage/components/Comment';
+import ReviewSection from '@src/views/MainPage/components/ReviewSection';
 import PartIntroduction from '@src/views/MainPage/components/PartIntroduction';
 import RecentNews from '@src/views/MainPage/components/RecentNews';
 import RecruitMessage from '@src/views/MainPage/components/RecruitMessage';
@@ -59,7 +59,7 @@ function AboutSOPTSection({
           <S.ScrollContainer>
             <Activity ref={activity.ref} />
             <PartIntroduction ref={part.ref} parts={partIntroduction} mainColor={mainColor} />
-            <Comment ref={review.ref} />
+            <ReviewSection ref={review.ref} />
           </S.ScrollContainer>
         </S.ScrollContentLayout>
       </S.Wrapper>

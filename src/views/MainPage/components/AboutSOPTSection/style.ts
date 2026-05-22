@@ -10,6 +10,10 @@ export const Wrapper = styled.section`
   width: 100%;
   padding: 0 40px;
   gap: 40px;
+
+  ${media.mobile} {
+    padding: 0 20px;
+  }
 `;
 
 export const MenuLayout = styled.div`
@@ -70,5 +74,13 @@ export const ScrollContentLayout = styled.div`
 export const ScrollContainer = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 132px;
+  gap: 232px;
+
+  ${media.tablet} {
+    gap: 100px;
+  }
+
+  ${media.mobile} {
+    gap: 100px;
+  }
 `;
