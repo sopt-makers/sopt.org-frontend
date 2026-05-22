@@ -1,6 +1,6 @@
-import { ScheduleItem } from './Content';
+import { ActivityScheduleItemType } from '@src/lib/types/admin';
 
-export const MOCK_ACTIVITY_SCHEDULE: ScheduleItem[] = [
+export const MOCK_ACTIVITY_SCHEDULE: ActivityScheduleItemType[] = [
   { date: '3월 28일', name: 'OT' },
   { date: '4월 4일', name: '1차 세미나' },
   { date: '4월 11일', name: '2차 세미나' },

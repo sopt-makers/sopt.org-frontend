@@ -1,10 +1,11 @@
+import { ActivityScheduleItemType } from '@src/lib/types/admin';
 import SectionTop from '@src/views/AboutPage/components/@common/SectionTop';
-import ScheduleContent, { ScheduleItem } from '../Content';
+import ScheduleContent from '../Content';
 import * as S from './style';
 
 type ScheduleSectionProps = {
   generation: number;
-  schedules: ScheduleItem[];
+  schedules: ActivityScheduleItemType[];
 };
 
 const ScheduleSection = ({ generation, schedules }: ScheduleSectionProps) => {
