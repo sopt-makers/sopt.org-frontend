@@ -5,9 +5,25 @@ type ScheduleContentProps = {
   schedules: ActivityScheduleItemType[];
 };
 
+const formatDate = (startDate: string, endDate: string | null): string => {
+  const start = new Date(startDate);
+  const startMonth = start.getMonth() + 1;
+  const startDay = start.getDate();
+
+  if (!endDate) return `${startMonth}월 ${startDay}일`;
+
+  const end = new Date(endDate);
+  const endMonth = end.getMonth() + 1;
+  const endDay = end.getDate();
+
+  if (startMonth === endMonth) return `${startMonth}월 ${startDay}~${endDay}일`;
+  return `${startMonth}월 ${startDay}일 ~ ${endMonth}월 ${endDay}일`;
+};
+
+const ITEMS_PER_COLUMN = 8;
+
 const ScheduleContent = ({ schedules }: ScheduleContentProps) => {
-  const mid = Math.ceil(schedules.length / 2);
-  const boxes = [schedules.slice(0, mid), schedules.slice(mid)];
+  const boxes = [schedules.slice(0, ITEMS_PER_COLUMN), schedules.slice(ITEMS_PER_COLUMN)];
 
   return (
     <S.ScheduleContent>
@@ -15,7 +31,7 @@ const ScheduleContent = ({ schedules }: ScheduleContentProps) => {
         <S.ScheduleBox key={boxIdx}>
           {box.map((item, idx) => (
             <S.ScheduleItem key={idx}>
-              <S.ScheduleDate>{item.date}</S.ScheduleDate>
+              <S.ScheduleDate>{formatDate(item.startDate, item.endDate)}</S.ScheduleDate>
               <S.ScheduleName>{item.name}</S.ScheduleName>
             </S.ScheduleItem>
           ))}
