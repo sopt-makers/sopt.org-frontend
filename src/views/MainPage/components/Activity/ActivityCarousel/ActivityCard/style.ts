@@ -35,7 +35,8 @@ export const ImageWrapper = styled.div`
     ${setImageSize(IMAGE_SIZE.desktop)}
   }
   ${media.tablet} {
-    ${setImageSize(IMAGE_SIZE.tablet)}
+    width: 100%;
+    aspect-ratio: ${IMAGE_SIZE.tablet.width} / ${IMAGE_SIZE.tablet.height};
   }
   ${media.mobile} {
     width: 100%;
@@ -53,7 +54,8 @@ export const CardImage = styled(Image)`
     ${setImageSize(IMAGE_SIZE.desktop)}
   }
   ${media.tablet} {
-    ${setImageSize(IMAGE_SIZE.tablet)}
+    width: 100%;
+    height: 100%;
   }
   ${media.mobile} {
     width: 100%;
