@@ -1,6 +1,8 @@
 import styled from '@emotion/styled';
 import { colors } from '@sopt-makers/colors';
+import { fontsObject } from '@sopt-makers/fonts';
 import { motion } from 'framer-motion';
+import { media } from '@src/lib/styles/breakpoints';
 
 export const Background = styled.section`
   display: flex;
@@ -27,38 +29,31 @@ export const TextContainer = styled(motion.span)`
   overflow: hidden;
   display: block;
   text-align: center;
-  font-size: 36rem;
+
+  font-family: SUIT;
+  font-size: 36px;
   font-style: normal;
   font-weight: 700;
-  line-height: 73px;
-  white-space: pre-line;
+  line-height: 150%;
 
-  @media (max-width: 90rem) {
-    font-size: 24rem;
-    line-height: 36px;
+  ${media.tablet} {
+    ${fontsObject.HEADING_2_32_B}
   }
 
-  @media (max-width: 48.375rem) {
-    font-size: 24rem;
-    line-height: 36px;
-    word-break: keep-all;
+  ${media.mobile} {
+    ${fontsObject.HEADING_4_24_B}
   }
 `;
 
 export const MotionTitle = styled(motion.span)`
   position: absolute;
-  left: 0;
-  opacity: 0;
+  inset: 0;
   font-size: 100%;
-
-  ::before {
-    content: attr(data-text);
-    display: inline-block;
-    background: linear-gradient(93deg, #c9d8dd 78.65%, #fff 128.82%, #c9d8dd 137.19%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
+  white-space: pre-line;
+  background: linear-gradient(93deg, #c9d8dd 78.65%, #fff 128.82%, #c9d8dd 137.19%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 `;
 
 export const BackgroundTitle = styled.span`
@@ -67,4 +62,5 @@ export const BackgroundTitle = styled.span`
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  white-space: pre-line;
 `;

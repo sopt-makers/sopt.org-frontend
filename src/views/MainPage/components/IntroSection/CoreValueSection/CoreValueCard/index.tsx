@@ -23,7 +23,10 @@ export default function CoreValueCard({
       <S.CoreValueImage src={card.src} alt={card.title} width={540} height={360} loading="lazy" />
       <S.GradientOverlay isActive={isActive} />
       <S.CardContent isActive={isActive}>
-        <S.CardTitle>{card.title}</S.CardTitle>
+        <S.CardTitle>
+          {isMobile && <S.MobilePrimaryColorCircle highColor={highColor} />}
+          {card.title}
+        </S.CardTitle>
         <S.CardDetail>{card.detail}</S.CardDetail>
       </S.CardContent>
       {!isMobile && (

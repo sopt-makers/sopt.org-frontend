@@ -1,5 +1,6 @@
 import { useIsMobile } from '@src/hooks/useDevice';
-import RecruitButton from '../Banner/RecruitButton';
+import { breakpoints } from '@src/lib/styles/breakpoints';
+import RecruitButton from '../@common/RecruitButton';
 import * as S from './style';
 
 interface RecruitMessageProp {
@@ -9,6 +10,7 @@ interface RecruitMessageProp {
   ctaText: string;
   isRecruitEnd?: boolean;
 }
+
 export default function RecruitMessage({
   generation,
   mainColor,
@@ -16,22 +18,27 @@ export default function RecruitMessage({
   ctaText,
   isRecruitEnd,
 }: RecruitMessageProp) {
-  const isMobileSize = useIsMobile('48rem');
+  const recruitGeneration = generation + (isRecruitEnd ? 1 : 0);
+  const recruitMonth = generation % 2 === 0 ? '9' : '3';
+
+  const isMobileSize = useIsMobile(`${breakpoints.tablet - 1}px`);
+
   return (
-    <S.Background>
-      <S.Title>
-        솝트의 {generation + (isRecruitEnd ? 1 : 0)}번째{isMobileSize ? <br /> : ' '}열정이
-        되어주세요!
-      </S.Title>
-      {ctaText === '모집 알림 신청하기 ' && (
-        <S.Description>
-          아직 모집기간이 아니에요.{isMobileSize && <br />} 알림 신청을 하시면,{' '}
-          {generation % 2 === 0 ? '가을' : '봄'}에 찾아갈게요!
-        </S.Description>
-      )}
-      <RecruitButton mainColor={mainColor} highColor={highColor}>
+    <S.Wrapper>
+      <S.MessageWrapper>
+        <S.Title>SOPT의 열정이 되어주세요!</S.Title>
+        {ctaText === '모집 알림 신청하기 ' && (
+          <S.Description>
+            아직 모집기간이 아니에요.{isMobileSize ? <br /> : ' '}
+            {recruitGeneration}기 모집은 {recruitMonth}월에 시작돼요.
+            <br />
+            알림을 신청하면 가장 먼저 소식을 전해드려요.
+          </S.Description>
+        )}
+      </S.MessageWrapper>
+      <RecruitButton size="md" mainColor={mainColor} highColor={highColor}>
         {ctaText}&gt;
       </RecruitButton>
-    </S.Background>
+    </S.Wrapper>
   );
 }

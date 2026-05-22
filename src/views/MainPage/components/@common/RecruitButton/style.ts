@@ -1,40 +1,85 @@
 import styled from '@emotion/styled';
 import { colors } from '@sopt-makers/colors';
-import Link from 'next/link';
+import { fontsObject } from '@sopt-makers/fonts';
+import { css } from '@emotion/react';
 import { BackgroundMove } from '@src/lib/styles/animation';
+import { media } from '@src/lib/styles/breakpoints';
+import type { RecruitButtonSize } from '@src/views/MainPage/components/@common/RecruitButton';
 
-export const RecruitButtonWrapper = styled(Link)<{ mainColor: string; highColor: string }>`
-  margin-top: 41px;
+const recruitButtonInnerSizeStyle: Record<RecruitButtonSize, ReturnType<typeof css>> = {
+  md: css`
+    ${media.desktopLarge} {
+      width: 600px;
+      padding: 18px 40px;
+      ${fontsObject.HEADING_4_24_B}
+    }
+
+    ${media.desktop} {
+      width: 600px;
+      padding: 18px 40px;
+      ${fontsObject.HEADING_4_24_B}
+    }
+
+    ${media.tablet} {
+      width: 256px;
+      height: 59px;
+      ${fontsObject.LABEL_1_18_SB}
+    }
+
+    ${media.mobile} {
+      width: 188px;
+      height: 44px;
+      ${fontsObject.LABEL_2_16_SB}
+    }
+  `,
+
+  sm: css`
+    ${media.desktopLarge} {
+      width: 289px;
+      padding: 18px 40px;
+      ${fontsObject.HEADING_4_24_B}
+    }
+
+    ${media.desktop} {
+      width: 289px;
+      padding: 18px 40px 18px 32px;
+      ${fontsObject.HEADING_4_24_B}
+    }
+
+    ${media.tablet} {
+      width: 211px;
+      padding: 16px 26px;
+      ${fontsObject.LABEL_1_18_SB}
+    }
+
+    ${media.mobile} {
+      width: 181px;
+      padding: 12px 20px;
+      ${fontsObject.LABEL_2_16_SB}
+    }
+  `,
+};
+
+export const RecruitButtonWrapper = styled.button<{
+  mainColor: string;
+  highColor: string;
+  size: RecruitButtonSize;
+}>`
   display: inline-flex;
   justify-content: center;
   align-items: center;
   border-radius: 99px;
+
   background: ${({ mainColor, highColor }) =>
     `linear-gradient(274deg,${mainColor}, ${highColor}, ${highColor})`};
   background-size: 200% 200%;
   animation: ${BackgroundMove} 1.8s ease-out infinite alternate;
 
+  ${({ size }) => recruitButtonInnerSizeStyle[size]}
+
   color: ${colors.gray800};
   text-align: center;
-
-  font-size: 28rem;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 130%; /* 36.4px */
-
-  /* 모바일 뷰 */
-  @media (max-width: 90rem) {
-    font-size: 24rem;
-    margin-top: 51px;
-  }
-
-  /* 모바일 뷰 */
-  @media (max-width: 48rem) {
-    margin-top: 28px;
-    font-size: 18rem;
-    line-height: 28px; /* 155.556% */
-    letter-spacing: -0.36px;
-  }
+  cursor: pointer;
 
   &:hover {
     background: ${({ highColor }) => highColor};
@@ -46,30 +91,19 @@ export const MouseTrackerWrapper = styled.div<{
   y: number;
   mainColor: string;
   highColor: string;
+  size: RecruitButtonSize;
 }>`
   border-radius: 99px;
   border: none;
-  width: 289px;
-  height: 66px;
   background: transparent;
+
   position: relative;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 100%;
-
-  /* 모바일 뷰 */
-  @media (max-width: 90rem) {
-    width: 256px;
-    height: 59px;
-  }
-
-  /* 모바일 뷰 */
-  @media (max-width: 48rem) {
-    width: 188px;
-    height: 44px;
-  }
+  white-space: nowrap;
 
   &::before {
     content: '';
