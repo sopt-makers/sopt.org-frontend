@@ -1,8 +1,6 @@
-import { useLayoutEffect, useMemo, useRef, useState } from 'react';
-import { getCarouselStyle } from '@src/views/MainPage/utils/carousel';
+import { useLayoutEffect, useRef, useState } from 'react';
 
 const useCarouselLayout = () => {
-  const [carouselWidth, setCarouselWidth] = useState(0);
   const [slideOffsets, setSlideOffsets] = useState<number[]>([]);
 
   const carouselRef = useRef<HTMLDivElement>(null);
@@ -13,8 +11,6 @@ const useCarouselLayout = () => {
     if (!carousel) return;
 
     const updateLayout = () => {
-      setCarouselWidth(carousel.clientWidth);
-
       const track = trackRef.current;
       if (track) {
         const slides = track.children as HTMLCollectionOf<HTMLElement>;
@@ -34,13 +30,10 @@ const useCarouselLayout = () => {
     };
   }, []);
 
-  const carouselStyle = useMemo(() => getCarouselStyle(carouselWidth), [carouselWidth]);
-
   return {
     carouselRef,
     trackRef,
     slideOffsets,
-    carouselStyle,
   };
 };
 

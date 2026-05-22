@@ -30,6 +30,10 @@ export const Track = styled(motion.div)`
   display: flex;
   align-items: stretch;
   width: fit-content;
+
+  ${media.mobile} {
+    width: 100%;
+  }
 `;
 
 export const Slide = styled.div<{ $isActive: boolean }>`
@@ -45,8 +49,8 @@ export const Slide = styled.div<{ $isActive: boolean }>`
     width: ${IMAGE_SIZE.tablet.width}px;
   }
   ${media.mobile} {
-    flex: 0 0 var(--carousel-slide-width, 100%);
-    width: var(--carousel-slide-width, 100%);
+    flex: 0 0 100%;
+    width: 100%;
     margin-right: 0;
   }
 `;

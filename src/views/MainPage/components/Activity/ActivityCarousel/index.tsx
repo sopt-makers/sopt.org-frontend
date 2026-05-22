@@ -17,7 +17,7 @@ const ActivityCarousel = () => {
     slideCount: activityCarouselList.length,
   });
 
-  const { carouselRef, trackRef, slideOffsets, carouselStyle } = useCarouselLayout();
+  const { carouselRef, trackRef, slideOffsets } = useCarouselLayout();
 
   const tabItems = activityCarouselList.map(({ value }) => Activity[value].navKor);
   const currentTabLabel = tabItems[currentSlide];
@@ -43,7 +43,7 @@ const ActivityCarousel = () => {
         onChange={handleTabChange}
       />
 
-      <S.CarouselWrapper ref={carouselRef} style={carouselStyle}>
+      <S.CarouselWrapper ref={carouselRef}>
         <S.Track
           ref={trackRef}
           animate={{ x: -(slideOffsets[currentSlide] ?? 0) }}
