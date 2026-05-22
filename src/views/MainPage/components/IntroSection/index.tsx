@@ -4,7 +4,7 @@ import ProjectSection from '@src/views/MainPage/components/IntroSection/ProjectS
 import RecordSection from '@src/views/MainPage/components/IntroSection/Record/Section';
 import * as S from './style';
 
-export default function IntroCardList({ adminData }: { adminData: GetHomepageResponse }) {
+export default function IntroSection({ adminData }: { adminData: GetHomepageResponse }) {
   return (
     <S.IntroSection>
       <RecordSection

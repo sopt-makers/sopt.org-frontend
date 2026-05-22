@@ -11,16 +11,13 @@ export const Wrapper = styled.section`
   align-items: center;
   gap: 48px;
   width: 100%;
-  margin: 275px 0;
 
   ${media.tablet} {
     gap: 24px;
-    margin: 180px 0;
   }
 
   ${media.mobile} {
     gap: 16px;
-    margin: 180px 0;
   }
 `;
 

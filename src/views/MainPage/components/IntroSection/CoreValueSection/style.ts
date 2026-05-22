@@ -6,8 +6,6 @@ export const Wrapper = styled.section`
   width: 100%;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  min-height: 100vh;
   padding: 0 40px;
   gap: 24px;
   z-index: 1;
