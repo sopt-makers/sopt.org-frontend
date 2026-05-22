@@ -3,12 +3,12 @@ import SectionTop from '@src/views/AboutPage/components/@common/SectionTop';
 import ScheduleContent from '../Content';
 import * as S from './style';
 
-type ScheduleSectionProps = {
+interface Props {
   generation: number;
   schedules: ActivityScheduleItemType[];
-};
+}
 
-const ScheduleSection = ({ generation, schedules }: ScheduleSectionProps) => {
+const ScheduleSection = ({ generation, schedules }: Props) => {
   return (
     <S.ScheduleSection>
       <SectionTop engTitle="Schedule" korTitle={`${generation}기 전체 일정`} />

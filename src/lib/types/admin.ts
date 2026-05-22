@@ -65,8 +65,9 @@ export interface CoreValueType {
   image: string;
 }
 export interface ActivityScheduleItemType {
-  date: string;
   name: string;
+  startDate: string;
+  endDate: string | null;
 }
 
 export interface GetAboutpageResponse {
@@ -82,7 +83,7 @@ export interface GetAboutpageResponse {
   coreValue: CoreValueType[];
   partCurriculum: PartCurriculumType[];
   member: MemberType[];
-  activitySchedule?: ActivityScheduleItemType[];
+  schedule?: ActivityScheduleItemType[];
   activitiesRecords: {
     activitiesMemberCount: number;
     projectCounts: number;
