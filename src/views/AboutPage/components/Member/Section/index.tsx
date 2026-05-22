@@ -17,7 +17,6 @@ const MemberSection = ({ generation, members, name: soptName }: MemberSectionPro
       gap={{ mobile: 24, tablet: 48, desktop: 60 }}
       style={{ position: 'relative' }}
     >
-      <St.MarginTop />
       <SectionTop
         engTitle="Executives"
         korTitle={`${generation}기 임원진`}
