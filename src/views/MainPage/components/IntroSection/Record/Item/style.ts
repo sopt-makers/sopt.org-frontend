@@ -24,7 +24,7 @@ const wrapperStyle = css`
 
   /* 모바일 뷰 */
   ${media.mobile} {
-    max-width: 280px;
+    width: 100%;
     height: 154px;
   }
 `;
