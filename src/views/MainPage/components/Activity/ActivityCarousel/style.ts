@@ -31,6 +31,9 @@ export const Track = styled(motion.div)`
   align-items: stretch;
   width: fit-content;
 
+  ${media.tablet} {
+    width: 100%;
+  }
   ${media.mobile} {
     width: 100%;
   }
@@ -46,7 +49,9 @@ export const Slide = styled.div<{ $isActive: boolean }>`
     width: ${IMAGE_SIZE.desktopLarge.width}px;
   }
   ${media.tablet} {
-    width: ${IMAGE_SIZE.tablet.width}px;
+    flex: 0 0 100%;
+    width: 100%;
+    margin-right: 0;
   }
   ${media.mobile} {
     flex: 0 0 100%;

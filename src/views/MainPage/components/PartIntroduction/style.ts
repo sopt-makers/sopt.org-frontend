@@ -21,21 +21,12 @@ export const Wrapper = styled.section`
 
 export const TextWrapper = styled.div`
   display: flex;
-  width: 960px;
+  width: 100%;
   flex-direction: column;
   gap: 8px;
 
-  ${media.desktopLarge} {
-    width: 1200px;
-  }
-
   ${media.tablet} {
-    width: 720px;
     gap: 4px;
-  }
-
-  ${media.mobile} {
-    width: 100%;
   }
 `;
 
@@ -73,18 +64,10 @@ export const Description = styled.p`
 
 export const PartList = styled.ul`
   display: grid;
-  width: 960px;
+  width: 100%;
   grid-template-rows: repeat(2, fit-content(100%));
   grid-template-columns: repeat(3, fit-content(100%));
   gap: 24px;
-
-  ${media.desktopLarge} {
-    width: 1200px;
-  }
-
-  ${media.tablet} {
-    width: 720px;
-  }
 
   ${media.mobile} {
     display: flex;

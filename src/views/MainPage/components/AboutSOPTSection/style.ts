@@ -8,18 +8,23 @@ import { media } from '@src/lib/styles/breakpoints';
 export const Wrapper = styled.section`
   display: flex;
   width: 100%;
-  padding: 0 40px;
+  padding: 154px 40px 0 40px;
   gap: 40px;
+
+  ${media.tablet} {
+    padding-top: 100px;
+  }
 
   ${media.mobile} {
     padding: 0 20px;
+    padding-top: 100px;
   }
 `;
 
 export const MenuLayout = styled.div`
   display: none;
 
-  ${media.desktopLarge} {
+  @media (min-width: 1580px) {
     display: block;
   }
 `;
@@ -66,9 +71,15 @@ export const ScrollContentLayout = styled.div`
   display: flex;
   flex: 1;
   flex-direction: column;
-  width: 80%;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
   z-index: 1;
   overflow: visible;
+
+  ${media.desktop} {
+    max-width: 944px;
+  }
 `;
 
 export const ScrollContainer = styled.div`

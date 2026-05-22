@@ -1,7 +1,22 @@
 import styled from '@emotion/styled';
+import { media } from '@src/lib/styles/breakpoints';
 
 export const IntroSection = styled.section`
   position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 232px;
+  padding-bottom: 423px;
+
+  ${media.tablet} {
+    gap: 100px;
+    padding-bottom: 0;
+  }
+
+  ${media.mobile} {
+    gap: 100px;
+    padding-bottom: 0;
+  }
 `;
 
 export const Shadow = styled.div`
