@@ -5,7 +5,12 @@ import { createContext } from 'react';
 import PageLayout from '@src/components/common/PageLayout';
 import { remoteAdminAPI } from '@src/lib/api/remote/admin';
 import { CoreValueType, GetAboutpageResponse } from '@src/lib/types/admin';
-import { Banner, CoreValueSection, CurriculumSection } from '@src/views/AboutPage/components';
+import {
+  Banner,
+  CoreValueSection,
+  CurriculumSection,
+  ScheduleSection,
+} from '@src/views/AboutPage/components';
 
 const MemberSection = dynamic(() => import('@src/views/AboutPage/components/Member/Section'));
 
@@ -15,6 +20,7 @@ export const BrandingColorContext = createContext({
   high: '',
   point: '',
 });
+
 const AboutPage = () => {
   const { data: adminData } = useQuery<GetAboutpageResponse>({
     queryKey: ['homepage', 'about'],
@@ -35,6 +41,7 @@ const AboutPage = () => {
               src: coreValue.image,
             }))}
           />
+          <ScheduleSection generation={adminData.generation} schedules={adminData.schedule ?? []} />
           <CurriculumSection curriculums={adminData.partCurriculum} />
           <MemberSection
             members={adminData.member}
