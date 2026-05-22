@@ -19,10 +19,7 @@ export default function IntroCardList({ adminData }: { adminData: GetHomepageRes
           }
         }
       />
-      <ProjectSection
-        mainColor={'#' + adminData.brandingColor.main}
-        highColor={'#' + adminData.brandingColor.high}
-      />
+      <ProjectSection mainColor={'#' + adminData.brandingColor.main} />
       <CoreValueSection adminData={adminData} />
     </S.IntroSection>
   );
