@@ -13,16 +13,10 @@ export const Wrapper = styled.section`
 `;
 
 export const MenuLayout = styled.div`
-  ${media.desktop} {
-    display: none;
-  }
+  display: none;
 
-  ${media.tablet} {
-    display: none;
-  }
-
-  ${media.mobile} {
-    display: none;
+  ${media.desktopLarge} {
+    display: block;
   }
 `;
 
