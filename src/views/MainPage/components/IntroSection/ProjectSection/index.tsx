@@ -9,11 +9,9 @@ import { ProjectCategoryType, ProjectPlatformType } from '@src/lib/types/project
 import SectionTop from '@src/views/AboutPage/components/@common/SectionTop';
 import Project from './Project';
 import {
-  ACTIVE_CARD_WIDTH,
+  CARD_WIDTHS,
   CAROUSEL_GAP,
   CONTAINER_WIDTHS,
-  INACTIVE_CARD_WIDTH,
-  MOBILE_CARD_WIDTH,
 } from './constants';
 import * as S from './style';
 
@@ -58,8 +56,9 @@ export default function ProjectSection({ mainColor }: ProjectSectionProps) {
     ? CONTAINER_WIDTHS.desktop
     : CONTAINER_WIDTHS.desktopLarge;
 
-  const activeCardWidth = isMobile ? MOBILE_CARD_WIDTH : ACTIVE_CARD_WIDTH;
-  const inactiveCardWidth = isMobile ? MOBILE_CARD_WIDTH : INACTIVE_CARD_WIDTH;
+  const cardWidths = isMobile ? CARD_WIDTHS.mobile : CARD_WIDTHS.desktop;
+  const activeCardWidth = cardWidths.active;
+  const inactiveCardWidth = cardWidths.inactive;
 
   // 중앙 정렬을 위한 translateX 계산식: 컨테이너 중앙 - (현재 인덱스 * 카드 너비 + 간격) - (활성 카드 너비 / 2)
   const translateX =
@@ -95,6 +94,7 @@ export default function ProjectSection({ mainColor }: ProjectSectionProps) {
         </S.CarouselClip>
 
         <S.NavButton
+          type="button"
           $direction="prev"
           onClick={() => goTo(currentIndex - 1)}
           aria-label="이전 프로젝트"
@@ -103,6 +103,7 @@ export default function ProjectSection({ mainColor }: ProjectSectionProps) {
         </S.NavButton>
 
         <S.NavButton
+          type="button"
           $direction="next"
           onClick={() => goTo(currentIndex + 1)}
           aria-label="다음 프로젝트"
@@ -115,6 +116,7 @@ export default function ProjectSection({ mainColor }: ProjectSectionProps) {
         {projectList.map((_, idx) => (
           <S.Indicator
             key={idx}
+            type="button"
             $active={idx === currentIndex}
             onClick={() => goTo(idx)}
             aria-label={`${idx + 1}번째 프로젝트 보기`}
@@ -122,7 +124,7 @@ export default function ProjectSection({ mainColor }: ProjectSectionProps) {
         ))}
       </S.IndicatorList>
 
-      <S.MoreButton onClick={() => router.push(PATHS.PROJECT)}>
+      <S.MoreButton type="button" onClick={() => router.push(PATHS.PROJECT)}>
         전체 프로젝트가 궁금하다면
         <S.RightArrowIcon />
       </S.MoreButton>

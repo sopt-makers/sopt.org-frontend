@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import { colors } from '@sopt-makers/colors';
 import { fontsObject } from '@sopt-makers/fonts';
 import { media } from '@src/lib/styles/breakpoints';
-import { ACTIVE_CARD_WIDTH, INACTIVE_CARD_WIDTH, MOBILE_CARD_WIDTH } from '../constants';
+import { CARD_WIDTHS } from '../constants';
 
 export const Wrapper = styled.article<{ $isActive: boolean }>`
   flex-shrink: 0;
@@ -16,14 +16,14 @@ export const Wrapper = styled.article<{ $isActive: boolean }>`
   ${({ $isActive }) =>
     $isActive
       ? `
-    width: ${ACTIVE_CARD_WIDTH}px;
+    width: ${CARD_WIDTHS.desktop.active}px;
     height: 448px;
     gap: 14px;
     padding: 24px 24px 48px;
     border-radius: 32px;
   `
       : `
-    width: ${INACTIVE_CARD_WIDTH}px;
+    width: ${CARD_WIDTHS.desktop.inactive}px;
     height: 324px;
     gap: 16px;
     padding: 16px;
@@ -31,7 +31,7 @@ export const Wrapper = styled.article<{ $isActive: boolean }>`
   `}
 
   ${media.mobile} {
-    width: ${MOBILE_CARD_WIDTH}px;
+    width: ${CARD_WIDTHS.mobile.active}px;
     height: auto;
     gap: 14px;
     padding: 16px 24px;

@@ -1,7 +1,6 @@
 import styled from '@emotion/styled';
 import { colors } from '@sopt-makers/colors';
 import { fontsObject } from '@sopt-makers/fonts';
-// import { ReactComponent as ChevronRightSvg } from '@src/assets/icons/chevronRight.svg';
 import { IconChevronLeft, IconChevronRight } from '@sopt-makers/icons';
 import { media } from '@src/lib/styles/breakpoints';
 import { CAROUSEL_GAP, CONTAINER_WIDTHS } from './constants';
