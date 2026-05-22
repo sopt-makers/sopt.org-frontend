@@ -11,7 +11,6 @@ import {
   CurriculumSection,
   ScheduleSection,
 } from '@src/views/AboutPage/components';
-import { MOCK_ACTIVITY_SCHEDULE } from '@src/views/AboutPage/components/Schedule/mockData';
 
 const MemberSection = dynamic(() => import('@src/views/AboutPage/components/Member/Section'));
 
@@ -21,6 +20,7 @@ export const BrandingColorContext = createContext({
   high: '',
   point: '',
 });
+
 const AboutPage = () => {
   const { data: adminData } = useQuery<GetAboutpageResponse>({
     queryKey: ['homepage', 'about'],
@@ -41,11 +41,7 @@ const AboutPage = () => {
               src: coreValue.image,
             }))}
           />
-          {/* TODO: API 스키마 추가 전 mock data 임시 사용 */}
-          <ScheduleSection
-            generation={adminData.generation}
-            schedules={adminData.activitySchedule ?? MOCK_ACTIVITY_SCHEDULE}
-          />
+          <ScheduleSection generation={adminData.generation} schedules={adminData.schedule ?? []} />
           <CurriculumSection curriculums={adminData.partCurriculum} />
           <MemberSection
             members={adminData.member}
