@@ -1,6 +1,8 @@
 import styled from '@emotion/styled';
 import { colors } from '@sopt-makers/colors';
+import { fontsObject } from '@sopt-makers/fonts';
 import Image from 'next/image';
+import { media } from '@src/lib/styles/breakpoints';
 
 export const Background = styled.main`
   width: 286px;
@@ -15,12 +17,12 @@ export const Background = styled.main`
 
   transition: all 0.2s linear;
 
-  @media (max-width: 48rem) {
+  ${media.tablet} {
     height: 315px;
     width: 237px;
   }
 
-  @media (max-width: 27.75rem) {
+  ${media.mobile} {
     margin-top: 24px;
     width: 136px;
     height: 182px;
@@ -29,24 +31,20 @@ export const Background = styled.main`
 `;
 
 export const Title = styled.h1`
-  color: ${colors.white};
-  font-family: SUIT;
-  font-size: 20rem;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-  letter-spacing: -0.6px;
-
   position: absolute;
   top: 0;
   margin: 18px;
-
   z-index: 2;
 
-  @media (max-width: 26.75rem) {
-    font-size: 9rem;
-    letter-spacing: -0.285px;
-    margin: 14px;
+  color: ${colors.white};
+  ${fontsObject.HEADING_5_20_B}
+
+  ${media.tablet} {
+    ${fontsObject.HEADING_7_16_B}
+  }
+
+  ${media.mobile} {
+    ${fontsObject.TITLE_7_14_SB}
   }
 `;
 
