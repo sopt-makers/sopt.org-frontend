@@ -1,5 +1,5 @@
 import { INTRO_CONTENT_LIST } from '@src/lib/constants/main';
-import { GetHomepageResponse } from '@src/lib/types/admin';
+import { type GetHomepageResponse } from '@src/lib/types/admin';
 import SectionTop from '@src/views/AboutPage/components/@common/SectionTop';
 import CoreValueCardList from '@src/views/MainPage/components/IntroSection/CoreValueSection/CoreValueCardList';
 import * as S from './style';
