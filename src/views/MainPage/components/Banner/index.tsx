@@ -1,5 +1,5 @@
 import imgMainPageBanner from '@src/assets/images/img_mainBanner.png';
-import RecruitButton from './RecruitButton';
+import RecruitButton from '../@common/RecruitButton';
 import * as S from './style';
 
 interface BannerProps {
@@ -18,9 +18,10 @@ export default function Banner({ mainColor, highColor, ctaText }: BannerProps) {
       <S.Container>
         <S.ContentWrapper>
           <S.Content>
-            <S.Title>함께라서 외칠 수 있는 열정</S.Title>
-            <S.Title>오직 이곳 SOPT에서만.</S.Title>
-            <RecruitButton mainColor={mainColor} highColor={highColor}>
+            <S.Title mainColor={mainColor}>
+              {'함께이기에 외칠 수 있는 열정\n오직 이곳 솝트에서 —'}
+            </S.Title>
+            <RecruitButton size="sm" mainColor={mainColor} highColor={highColor}>
               {ctaText}
               &gt;
             </RecruitButton>

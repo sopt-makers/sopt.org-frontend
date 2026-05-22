@@ -1,19 +1,22 @@
 import styled from '@emotion/styled';
 import { colors } from '@sopt-makers/colors';
+import { fontsObject } from '@sopt-makers/fonts';
 import Image from 'next/image';
 import { css } from '@emotion/react';
+import { media } from '@src/lib/styles/breakpoints';
 
 export const CardContainer = styled.div<{ isActive: boolean }>`
   position: relative;
   cursor: pointer;
   flex-shrink: 0;
-  width: 236px;
-  height: 446px;
   overflow: hidden;
-  border-radius: 12px;
+  border-radius: 20px;
   transition: width 0.7s ease;
 
-  @media (min-width: 1024px) {
+  ${media.desktopLarge} {
+    width: 236px;
+    height: 446px;
+
     ${({ isActive }) =>
       isActive &&
       css`
@@ -21,23 +24,32 @@ export const CardContainer = styled.div<{ isActive: boolean }>`
       `};
   }
 
-  @media (max-width: 1023px) and (min-width: 768px) {
-    width: 140px;
-    height: 300px;
-    border-radius: 36px;
+  ${media.desktop} {
+    width: 127px;
+    height: 446px;
+
     ${({ isActive }) =>
       isActive &&
       css`
-        width: 296px;
+        width: 626px;
       `};
   }
 
-  @media (max-width: 767px) {
-    width: 300px;
-    height: 260px;
-    border-radius: 12px;
-    scroll-snap-align: center;
-    scroll-snap-stop: always;
+  ${media.tablet} {
+    width: 135px;
+    height: 300px;
+    border-radius: 20px;
+    ${({ isActive }) =>
+      isActive &&
+      css`
+        width: 386px;
+      `};
+  }
+
+  ${media.mobile} {
+    width: 100%;
+    height: 154px;
+    border-radius: 20px;
   }
 `;
 
@@ -74,14 +86,14 @@ export const CardContent = styled.div<{ isActive: boolean }>`
   opacity: ${({ isActive }) => (isActive ? 1 : 0)};
   transition: opacity 0.5s ease;
 
-  @media (max-width: 1023px) and (min-width: 768px) {
+  ${media.tablet} {
     width: 296px;
     padding: 24px;
   }
 
-  @media (max-width: 767px) {
+  ${media.mobile} {
     width: 100%;
-    padding: 26px;
+    padding: 12px;
   }
 `;
 
@@ -91,22 +103,22 @@ export const CardTitle = styled.h3`
   font-style: normal;
   font-weight: 700;
   line-height: normal;
-  white-space: pre-line;
-  margin-bottom: 12px;
 
-  @media (max-width: 1023px) and (min-width: 768px) {
+  ${media.tablet} {
+    width: 270px;
     font-size: 24px;
   }
 
-  @media (max-width: 767px) {
-    font-size: 19px;
+  ${media.mobile} {
+    position: relative;
+    width: 193px;
+    margin-bottom: 8px;
+    z-index: 1;
+    ${fontsObject.HEADING_7_16_B}
   }
 `;
 
-// max-width 570px은 데스크탑뷰에서 줄넘기기 깔끔하게 하기 위해 설정. 멘트가 바뀐다면 삭제해도 됨.
 export const CardDetail = styled.p`
-  max-width: 570px;
-
   color: ${colors.gray100};
   font-family: SUIT;
   font-size: 24px;
@@ -117,12 +129,14 @@ export const CardDetail = styled.p`
   word-break: keep-all;
   white-space: pre-line;
 
-  @media (max-width: 1023px) and (min-width: 768px) {
+  ${media.tablet} {
+    width: 219px;
     font-size: 14px;
   }
 
-  @media (max-width: 767px) {
-    font-size: 14px;
+  ${media.mobile} {
+    width: 193px;
+    ${fontsObject.LABEL_5_11_SB}
   }
 `;
 
@@ -131,19 +145,33 @@ export const CardValue = styled.p<{ isActive: boolean }>`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  opacity: ${({ isActive }) => (isActive ? 0 : 1)};
+  transition: opacity 0.5s ease;
+  z-index: 40;
+  white-space: nowrap;
+
   font-family: SUIT;
   font-size: 40px;
   font-style: normal;
   font-weight: 700;
-  line-height: 100%;
   letter-spacing: -0.8px;
-  opacity: ${({ isActive }) => (isActive ? 0 : 1)};
-  transition: opacity 0.5s ease;
-  z-index: 40;
 
   @media (max-width: 1023px) and (min-width: 768px) {
     font-size: 24px;
   }
+`;
+
+export const MobilePrimaryColorCircle = styled.div<{ highColor: string }>`
+  position: absolute;
+  top: 12px;
+  left: -10px;
+  transform: translate(15%, -85%);
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: ${({ highColor }) => highColor};
+  opacity: 0.8;
+  z-index: -1;
 `;
 
 export const PrimaryColorCircle = styled.div<{ isActive: boolean; highColor: string }>`
@@ -156,7 +184,7 @@ export const PrimaryColorCircle = styled.div<{ isActive: boolean; highColor: str
   border-radius: 50%;
   background-color: ${({ highColor }) => highColor};
   z-index: 30;
-  opacity: ${({ isActive }) => (isActive ? 0 : 1)};
+  opacity: ${({ isActive }) => (isActive ? 0 : 0.7)};
   transition: opacity 0.5s ease;
 
   @media (max-width: 1023px) and (min-width: 768px) {

@@ -1,6 +1,5 @@
-import { INTRO_CONTENT_LIST } from '@src/lib/constants/main';
 import { GetHomepageResponse } from '@src/lib/types/admin';
-import CoreValueCardList from '@src/views/MainPage/components/IntroSection/CoreValueCardList';
+import CoreValueSection from '@src/views/MainPage/components/IntroSection/CoreValueSection';
 import ProjectSection from '@src/views/MainPage/components/IntroSection/ProjectSection';
 import RecordSection from '@src/views/MainPage/components/IntroSection/Record/Section';
 import * as S from './style';
@@ -21,12 +20,7 @@ export default function IntroCardList({ adminData }: { adminData: GetHomepageRes
         }
       />
       <ProjectSection mainColor={'#' + adminData.brandingColor.main} />
-      <S.CoreValueSection>
-        <CoreValueCardList
-          cards={INTRO_CONTENT_LIST}
-          highColor={'#' + adminData.brandingColor.high}
-        />
-      </S.CoreValueSection>
+      <CoreValueSection adminData={adminData} />
     </S.IntroSection>
   );
 }
