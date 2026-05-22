@@ -1,11 +1,12 @@
+import { useRouter } from 'next/router';
+import { useEffect, useState } from 'react';
+import { useIsDesktop, useIsMobile, useIsTablet } from '@src/hooks/useDevice';
+import useInView from '@src/hooks/useInView';
+import { MAIN_PROJECT_LIST } from '@src/lib/constants/project';
+import { PATHS } from '@src/lib/constants/routes';
+import Button from '@src/views/MainPage/components/@common/Button';
 import Project from '@src/views/MainPage/components/IntroSection/ProjectSection/Project';
 import * as S from './style';
-import Button from '@src/views/MainPage/components/@common/Button';
-import { useEffect, useState } from 'react';
-import { useRouter } from 'next/router';
-import { MAIN_PROJECT_LIST } from '@src/lib/constants/project';
-import useInView from '@src/hooks/useInView';
-import { useIsDesktop, useIsMobile, useIsTablet } from '@src/hooks/useDevice';
 
 interface ProjectSectionProps {
   mainColor: string;
@@ -57,19 +58,14 @@ export default function ProjectSection({ mainColor, highColor }: ProjectSectionP
           onPointerEnter={isDesktopView ? activateGradient : undefined}
           onPointerLeave={isDesktopView ? deactivateGradient : undefined}
         >
-          <S.ProjectList
-            $active={isGradientActive}
-          >
+          <S.ProjectList $active={isGradientActive}>
             {MAIN_PROJECT_LIST.map((project, idx) => (
               <Project key={`${project.title}-${idx}`} {...project} />
             ))}
           </S.ProjectList>
 
           <S.ButtonWrapper>
-            <Button
-              onClick={() => router.push('/project')}
-              aria-label="프로젝트 페이지로 이동"
-            >
+            <Button onClick={() => router.push(PATHS.PROJECT)} aria-label="프로젝트 페이지로 이동">
               역대 프로젝트 더보기 <S.RightArrowIcon />
             </Button>
           </S.ButtonWrapper>

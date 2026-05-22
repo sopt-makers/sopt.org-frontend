@@ -1,11 +1,12 @@
 import { track } from '@amplitude/analytics-browser';
+import { PATHS } from '@src/lib/constants/routes';
 import { ProjectType } from '@src/lib/types/project';
 import ServiceInfo from '@src/views/ProjectPage/components/project/ProjectCard/ServiceInfo';
 import * as S from './style';
 
 export default function ProjectCard({ project }: { project: ProjectType }) {
   return (
-    <S.ProjectCard href={`/project/${project.id}`} onClick={() => track('click_project_detail')}>
+    <S.ProjectCard href={`${PATHS.PROJECT}/${project.id}`} onClick={() => track('click_project_detail')}>
       <S.ProjectThumbnail
         src={project.thumbnailImage ?? project.logoImage}
         alt="프로젝트 썸네일"

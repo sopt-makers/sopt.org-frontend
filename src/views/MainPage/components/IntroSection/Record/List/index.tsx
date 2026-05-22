@@ -1,4 +1,5 @@
 import RecordItem from '../Item';
+import { PATHS } from '@src/lib/constants/routes';
 import * as St from './style';
 
 // TODO: API에 operationPeriod 필드 추가되면 activitiesRecords에서 받아올 것
@@ -37,7 +38,7 @@ const RecordList = ({
         title="프로젝트"
         countNumber={projectCounts !== 0 ? projectCounts : undefined}
         countString={projectCounts !== 0 ? '개' : '진행중'}
-        href="/project"
+        href={PATHS.PROJECT}
         mainColor={mainColor}
       />
       <RecordItem

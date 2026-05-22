@@ -2,7 +2,6 @@ import styled from '@emotion/styled';
 
 export const IntroSection = styled.section`
   position: relative;
-  height: calc(300vh + 240px);
 `;
 
 export const Shadow = styled.div`

@@ -11,6 +11,7 @@ import {
   CoreValueSection,
   CurriculumSection,
   InternalTeams,
+  ScheduleSection,
 } from '@src/views/AboutPage/components';
 
 const MemberSection = dynamic(() => import('@src/views/AboutPage/components/Member/Section'));
@@ -21,6 +22,7 @@ export const BrandingColorContext = createContext({
   high: '',
   point: '',
 });
+
 const AboutPage = () => {
   const { data: adminData } = useQuery<GetAboutpageResponse>({
     queryKey: ['homepage', 'about'],
@@ -42,6 +44,7 @@ const AboutPage = () => {
               src: coreValue.image,
             }))}
           />
+          <ScheduleSection generation={adminData.generation} schedules={adminData.schedule ?? []} />
           <CurriculumSection curriculums={adminData.partCurriculum} />
           <MemberSection
             members={adminData.member}
