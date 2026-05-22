@@ -6,7 +6,6 @@ import icArrowComment from '@src/assets/icons/ic_arrow_comment.svg';
 import { media } from '@src/lib/styles/breakpoints';
 
 export const Wrapper = styled.section`
-  background-color: #000;
   padding: 232px 0 0;
   max-width: 1200px;
   margin: 0 auto;

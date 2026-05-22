@@ -1,5 +1,5 @@
 import { useAnimationControls } from 'framer-motion';
-import { useState } from 'react';
+import { Ref, forwardRef, useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
 import { SOPT_COMMENT_LIST } from '@src/lib/constants/main';
 import { breakpoints } from '@src/lib/styles/breakpoints';
@@ -14,7 +14,7 @@ const INACTIVE_CARD_WIDTHS = {
   tablet: 300, // 768px–1023px
 } as const;
 
-export default function ReviewSection() {
+function ReviewSection(_props: unknown, ref: Ref<HTMLDivElement>) {
   const [activeIdx, setActiveIdx] = useState(0);
   const controls = useAnimationControls();
   const commentLength = SOPT_COMMENT_LIST.length;
@@ -52,7 +52,7 @@ export default function ReviewSection() {
   const translateX = -(activeIdx * (inactiveCardWidth + CARD_GAP));
 
   return (
-    <S.Wrapper>
+    <S.Wrapper id="review" ref={ref}>
       <S.Summary animate={controls} color={activeComment.color}>
         {activeComment.summary}
       </S.Summary>
@@ -117,3 +117,5 @@ export default function ReviewSection() {
     </S.Wrapper>
   );
 }
+
+export default forwardRef(ReviewSection);

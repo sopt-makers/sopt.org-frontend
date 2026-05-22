@@ -4,8 +4,15 @@ import { useQuery } from '@tanstack/react-query';
 import { createContext } from 'react';
 import PageLayout from '@src/components/common/PageLayout';
 import { remoteAdminAPI } from '@src/lib/api/remote/admin';
+import { media } from '@src/lib/styles/breakpoints';
 import { CoreValueType, GetAboutpageResponse } from '@src/lib/types/admin';
-import { Banner, CoreValueSection, CurriculumSection } from '@src/views/AboutPage/components';
+import {
+  Banner,
+  CoreValueSection,
+  CurriculumSection,
+  InternalTeams,
+  ScheduleSection,
+} from '@src/views/AboutPage/components';
 
 const MemberSection = dynamic(() => import('@src/views/AboutPage/components/Member/Section'));
 
@@ -15,6 +22,7 @@ export const BrandingColorContext = createContext({
   high: '',
   point: '',
 });
+
 const AboutPage = () => {
   const { data: adminData } = useQuery<GetAboutpageResponse>({
     queryKey: ['homepage', 'about'],
@@ -22,6 +30,7 @@ const AboutPage = () => {
   });
 
   if (!adminData) return;
+
   return (
     <PageLayout>
       <BrandingColorContext.Provider value={adminData.brandingColor}>
@@ -35,12 +44,14 @@ const AboutPage = () => {
               src: coreValue.image,
             }))}
           />
+          <ScheduleSection generation={adminData.generation} schedules={adminData.schedule ?? []} />
           <CurriculumSection curriculums={adminData.partCurriculum} />
           <MemberSection
             members={adminData.member}
             generation={adminData.generation}
             name={adminData.name}
           />
+          <InternalTeams />
         </Root>
       </BrandingColorContext.Provider>
     </PageLayout>
@@ -54,5 +65,20 @@ const Root = styled.main`
   flex-direction: column;
   justify-content: center;
   min-height: 100vh;
-  padding-bottom: 188px;
+  padding: 0 40px 423px 40px;
+  gap: 232px;
+
+  ${media.desktopLarge} {
+    padding: 0 40px 319px 40px;
+  }
+
+  ${media.tablet} {
+    padding: 0 20px 334px 20px;
+    gap: 100px;
+  }
+
+  ${media.mobile} {
+    padding: 0 20px 41px 20px;
+    gap: 100px;
+  }
 `;
