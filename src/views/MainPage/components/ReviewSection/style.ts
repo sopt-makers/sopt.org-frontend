@@ -7,15 +7,7 @@ import icArrowComment from '@src/assets/icons/ic_arrow_comment.svg';
 import { media } from '@src/lib/styles/breakpoints';
 
 export const Wrapper = styled.section`
-  max-width: 1200px;
-
-  ${media.desktop} {
-    max-width: 944px;
-  }
-
-  ${media.tablet} {
-    max-width: 688px;
-  }
+  width: 100%;
 `;
 
 export const Summary = styled(motion.div)<{ color: string }>`
