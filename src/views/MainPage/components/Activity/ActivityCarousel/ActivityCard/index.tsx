@@ -3,18 +3,9 @@ import { Button } from '@sopt-makers/ui';
 import { ActivityContentType } from '@src/lib/types/main';
 import * as S from './style';
 
-type ActivityCardProps = Pick<
-  ActivityContentType,
-  'img' | 'navKor' | 'navEng' | 'description' | 'link'
->;
+type Props = ActivityContentType;
 
-export default function ActivityCard({
-  img,
-  navKor,
-  navEng,
-  description,
-  link,
-}: ActivityCardProps) {
+export default function ActivityCard({ img, navKor, navEng, description, link }: Props) {
   return (
     <S.Wrapper>
       <S.ImageWrapper>
