@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import { colors } from '@sopt-makers/colors';
 import { fontsObject } from '@sopt-makers/fonts';
+import { media } from '@src/lib/styles/breakpoints';
 
 export const Button = styled.button`
   display: flex;
@@ -22,12 +23,12 @@ export const Button = styled.button`
     color: ${colors.black};
   }
 
-  @media (max-width: 1023px) {
+  ${media.tablet} {
     padding: 9px 14px;
     ${fontsObject.LABEL_3_14_SB}
   }
 
-  @media (max-width: 767px) {
+  ${media.mobile} {
     padding: 9px 14px;
     ${fontsObject.LABEL_3_14_SB}
   }
