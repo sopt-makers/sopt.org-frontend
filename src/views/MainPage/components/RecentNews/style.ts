@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Slider from 'react-slick';
 import { ReactComponent as IconInstagram } from '@src/assets/icons/ic_instagram.svg';
 import { media } from '@src/lib/styles/breakpoints';
+import { media } from '@src/lib/styles/breakpoints';
 
 export const RecentNews = styled.section`
   padding: 432px 0 372px 0px;

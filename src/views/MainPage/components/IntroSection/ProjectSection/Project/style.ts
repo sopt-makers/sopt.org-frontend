@@ -1,154 +1,109 @@
 import styled from '@emotion/styled';
 import { colors } from '@sopt-makers/colors';
+import { fontsObject } from '@sopt-makers/fonts';
+import { media } from '@src/lib/styles/breakpoints';
+import { CARD_WIDTHS } from '../constants';
 
-export const Wrapper = styled.article`
+export const Wrapper = styled.article<{ $isActive: boolean }>`
+  flex-shrink: 0;
   display: flex;
-  width: 352px;
   flex-direction: column;
-  padding: 14px;
-  gap: 10px;
-  border: 1px solid ${colors.gray700};
-  border-radius: 20px;
   background-color: ${colors.gray900};
+  cursor: pointer;
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1), height 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    padding 0.4s cubic-bezier(0.4, 0, 0.2, 1), border-radius 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 
-  @media (max-width: 1023px) {
-    width: 176px;
-    height: 172.5px;
-    padding: 7px;
-    gap: 4px;
-    border-radius: 10px;
+  ${({ $isActive }) =>
+    $isActive
+      ? `
+    width: ${CARD_WIDTHS.desktop.active}px;
+    height: 448px;
+    gap: 14px;
+    padding: 24px 24px 48px;
+    border-radius: 32px;
+  `
+      : `
+    width: ${CARD_WIDTHS.desktop.inactive}px;
+    height: 324px;
+    gap: 16px;
+    padding: 16px;
+    border-radius: 24px;
+  `}
+
+  ${media.mobile} {
+    width: ${CARD_WIDTHS.mobile.active}px;
+    height: auto;
+    gap: 14px;
+    padding: 16px 24px;
+    border-radius: 32px;
   }
 `;
 
-export const Thumbnail = styled.img`
-  width: 324px;
-  height: 192px;
-  border-radius: 8px;
+export const Thumbnail = styled.img<{ $isActive: boolean }>`
+  width: 100%;
   object-fit: cover;
+  flex-shrink: 0;
+  transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    border-radius 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 
-  @media (max-width: 1023px) {
-    width: 162px;
-    height: 96px;
-    border-radius: 4px;
-  } 
+  ${({ $isActive }) =>
+    $isActive
+      ? `
+    height: 270px;
+    border-radius: 12px;
+  `
+      : `
+    height: 192px;
+    border-radius: 8px;
+  `}
+
+  ${media.mobile} {
+    height: 154px;
+    border-radius: 12px;
+  }
 `;
 
 export const ContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 10px;
-
-  @media (max-width: 1023px) {
-    gap: 4px;
-  }
+  gap: 6px;
 `;
 
 export const TitleWrapper = styled.div`
   display: flex;
   align-items: center;
-  gap: 3px;
+  gap: 8px;
 `;
 
-export const Title = styled.h1`
-  font-size: 18px;
-  font-weight: 700;
-  line-height: 28px;
-  color: ${colors.white};
+export const Title = styled.h3<{ $isActive: boolean }>(({ $isActive }) => ({
+  color: colors.white,
+  ...($isActive ? fontsObject.HEADING_4_24_B : fontsObject.HEADING_6_18_B),
 
-  @media (max-width: 1023px) {
-    font-size: 9px;
-    line-height: 14px;
-  }
+  [media.mobile]: {
+    ...fontsObject.HEADING_7_16_B,
+  },
+}));
 
-`;
+export const Category = styled.p<{ $isActive: boolean }>(({ $isActive }) => ({
+  color: colors.gray400,
+  ...($isActive ? fontsObject.TITLE_6_16_SB : fontsObject.LABEL_4_12_SB),
 
-export const Category = styled.p`
-  font-size: 12px;
-  font-weight: 600;
-  line-height: 16px;
-  color: ${colors.gray400};
+  [media.mobile]: {
+    ...fontsObject.LABEL_4_12_SB,
+  },
+}));
 
-  @media (max-width: 1023px) {
-    font-size: 6px;
-    line-height: 8px;
-  }
+export const Description = styled.p<{ $isActive: boolean }>(({ $isActive }) => ({
+  color: colors.gray50,
+  ...($isActive ? fontsObject.TITLE_4_20_SB : fontsObject.BODY_3_14_R),
+  ...(!$isActive && {
+    display: '-webkit-box',
+    WebkitLineClamp: 3,
+    WebkitBoxOrient: 'vertical',
+    overflow: 'hidden',
+  }),
 
-`;
-
-export const Description = styled.p`
-  font-size: 13px;
-  font-weight: 400;
-  line-height: 20px;
-  color: ${colors.gray50};
-  white-space: pre-line;
-
-  @media (max-width: 1023px) {
-    font-size: 7px;
-    line-height: 11px;
-    white-space: normal;
-  }
-`;
-
-export const StatusLayout = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 4px;
-`;
-
-export const StatusCircle = styled.div`
-  width: 5px;
-  height: 5px;
-  background-color: ${colors.information};
-  border-radius: 50%;
-  border: 1px solid ${colors.information};
-`;
-
-export const FooterLayout = styled.div`
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-  align-items: center;
-`;
-
-export const Status = styled.p` 
-  font-size: 12px;
-  font-weight: 600;
-  line-height: 16px;
-  color: ${colors.gray100};
-  white-space: nowrap;
-
-  @media (max-width: 1023px) {
-    font-size: 6px;
-    line-height: 8px;
-  }
-`;
-
-export const Members = styled.p`
-  display: flex;
-  width: 100%;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 4px;
-  font-size: 12px;
-  font-weight: 600;
-  line-height: 16px;
-  color: ${colors.white};
-
-  @media (max-width: 1023px) {
-    font-size: 6px;
-    line-height: 8px;
-  }
-`;
-
-export const MembersIcon = styled.img`
-  display: inline-block;
-  width: 72px;
-  height: 30px;
-  object-fit: contain;
-  flex-shrink: 0;
-
-  @media (max-width: 1023px) {
-    width: 36px;
-    height: 15px;
-  }
-`;
+  [media.mobile]: {
+    ...fontsObject.BODY_3_14_M,
+  },
+}));
