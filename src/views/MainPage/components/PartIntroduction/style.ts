@@ -69,6 +69,10 @@ export const PartList = styled.ul`
   grid-template-columns: repeat(3, fit-content(100%));
   gap: 24px;
 
+  ${media.tablet} {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
   ${media.mobile} {
     display: flex;
     width: 100%;
@@ -93,7 +97,7 @@ export const PartItem = styled.li`
 export const Link = styled(NextLink)`
   position: relative;
   display: flex;
-  width: 304px;
+  width: 298px;
   height: 284px;
   flex-direction: column;
   color: inherit;
@@ -115,7 +119,7 @@ export const Link = styled(NextLink)`
   }
 
   ${media.tablet} {
-    width: 224px;
+    width: 100%;
     height: 220px;
     padding: 20px;
     border-radius: 16px;
