@@ -1,19 +1,13 @@
 import styled from '@emotion/styled';
+import { colors } from '@sopt-makers/colors';
+import { fontsObject } from '@sopt-makers/fonts';
+import { media } from '@src/lib/styles/breakpoints';
 
 export const Wrapper = styled.section`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-bottom: 31px;
-
-  /* 태블릿 뷰 */
-  @media (max-width: 48rem) {
-    margin-bottom: 26px;
-  }
-  /* 모바일 뷰 */
-  @media (max-width: 23.5rem) {
-    margin-bottom: 14px;
-  }
+  gap: 8px;
 `;
 
 export const Tab = styled.h2`
@@ -36,50 +30,33 @@ export const Tab = styled.h2`
 `;
 
 export const Title = styled.h1`
-  color: #30324d;
   font-family: SUIT;
-  font-size: 45rem;
+  font-size: 40px;
   font-style: normal;
-  font-weight: 600;
-  line-height: 50.64px; /* 112.534% */
-  letter-spacing: -1.35px;
-
-  margin-bottom: 16px;
+  font-weight: 700;
+  line-height: 60px;
+  letter-spacing: -0.8px;
   word-break: keep-all;
 
-  @media (max-width: 48rem) {
-    font-size: 36rem;
-    letter-spacing: -1.08px;
+  ${media.tablet} {
+    ${fontsObject.HEADING_2_32_B}
   }
-
-  @media (max-width: 23.5rem) {
-    font-size: 21rem;
-    line-height: 29.103px; /* 138.588% */
-    letter-spacing: -0.63px;
-    margin-bottom: 3.5px;
+  ${media.mobile} {
+    ${fontsObject.HEADING_5_20_B}
   }
 `;
 
 export const Description = styled.p`
-  color: #727272;
-  font-family: SUIT;
-  font-size: 17rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 28px; /* 164.706% */
-  letter-spacing: -0.68px;
+  color: ${colors.gray100};
+  ${fontsObject.BODY_1_18_M}
   word-break: keep-all;
   white-space: pre-line;
 
-  @media (max-width: 48rem) {
-    font-size: 16rem;
-    line-height: 26px; /* 162.5% */
-    letter-spacing: -0.64px;
+  ${media.tablet} {
+    ${fontsObject.BODY_2_16_M}
   }
-
-  @media (max-width: 23.5rem) {
-    font-size: 10rem;
-    line-height: 14.942px; /* 149.424% */
-    letter-spacing: -0.4px;
+  ${media.mobile} {
+    ${fontsObject.LABEL_5_11_SB}
+    white-space: normal;
   }
 `;

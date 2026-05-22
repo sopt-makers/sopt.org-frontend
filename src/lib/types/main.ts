@@ -32,11 +32,17 @@ export enum ActivitySelectType {
   MAKERS = '메이커스',
 }
 
+export interface ActivityLinkType {
+  label: string;
+  href: string;
+}
+
 export interface ActivityContentType {
   img: string;
   navKor: string;
   navEng: string;
   description: TextColorType[];
+  link?: ActivityLinkType;
 }
 
 export const activity: ActivityTypeList[] = [
@@ -50,13 +56,13 @@ export const activity: ActivityTypeList[] = [
     value: ActivityType.SOPTERM,
   },
   {
-    value: ActivityType.STUDY,
+    value: ActivityType.EVENTS,
   },
   {
     value: ActivityType.SEMINAR,
   },
   {
-    value: ActivityType.EVENTS,
+    value: ActivityType.STUDY,
   },
 ];
 

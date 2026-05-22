@@ -12,8 +12,12 @@ export const Wrapper = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 0 40px;
+  padding-top: 100px;
   gap: 24px;
+
+  ${media.desktopLarge} {
+    align-items: start;
+  }
 
   ${media.mobile} {
     padding: 0 20px;

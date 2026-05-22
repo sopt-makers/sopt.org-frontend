@@ -3,7 +3,7 @@ import { useEffect, useMemo } from 'react';
 import PageLayout from '@src/components/common/PageLayout';
 import { remoteAdminAPI } from '@src/lib/api/remote/admin';
 import { GetHomepageResponse } from '@src/lib/types/admin';
-import BottomLayout from '@src/views/MainPage/components/BottomLayout';
+import AboutSOPTSection from '@src/views/MainPage/components/AboutSOPTSection';
 import IntroSection from '@src/views/MainPage/components/IntroSection';
 import TopBanner from '@src/views/MainPage/components/TopBanner';
 import usePostVisitor from '@src/views/MainPage/hooks/usePostVisitor';
@@ -64,18 +64,15 @@ function MainPage() {
       />
       <Introduce />
       <IntroSection adminData={adminData} />
-      {/* <ScrollInteractiveLogo /> */}
-      {adminData && (
-        <BottomLayout
-          generation={adminData.generation ?? 0}
-          partIntroduction={adminData.partIntroduction}
-          latestNews={adminData.latestNews}
-          mainColor={'#' + adminData.brandingColor.main}
-          highColor={'#' + adminData.brandingColor.high}
-          ctaText={ctaText}
-          isRecruitEnd={isRecruitEnd}
-        />
-      )}
+      <AboutSOPTSection
+        generation={adminData.generation ?? 0}
+        partIntroduction={adminData.partIntroduction}
+        latestNews={adminData.latestNews}
+        mainColor={'#' + adminData.brandingColor.main}
+        highColor={'#' + adminData.brandingColor.high}
+        ctaText={ctaText}
+        isRecruitEnd={isRecruitEnd}
+      />
     </PageLayout>
   );
 }
