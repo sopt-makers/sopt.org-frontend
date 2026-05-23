@@ -25,7 +25,6 @@ const CoreValueItem = ({ coreValue, order }: CoreValueProps) => {
       <S.BackgroundBlur isHovered={isHovered} />
       <S.CoreValue>
         <S.ValueTop>
-          <S.ValueNumber pointColor={'#' + point}>{order + 1}</S.ValueNumber>
           <S.ValueTitle>{coreValue.title}</S.ValueTitle>
         </S.ValueTop>
         <S.ValueDescription isHovered={isHovered}>{coreValue.description}</S.ValueDescription>
