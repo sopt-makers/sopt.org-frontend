@@ -66,11 +66,11 @@ export const GradientOverlay = styled.div<{ isActive: boolean }>`
   height: 100%;
   width: 100%;
   z-index: 10;
-  opacity: ${({ isActive }) => isActive && 0.5};
+  opacity: ${({ isActive }) => (isActive ? 1 : 0.5)};
   transition: opacity 0.3s ease;
   background: ${({ isActive }) =>
     isActive
-      ? 'linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, rgba(0, 0, 0, 0.48) 60.96%)'
+      ? 'linear-gradient(180deg, rgba(0, 0, 0, 0) 29.56%, #000 100%)'
       : 'linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%)'};
 `;
 
@@ -79,21 +79,25 @@ export const CardContent = styled.div<{ isActive: boolean }>`
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  width: 664px;
+  width: 100%;
   height: 100%;
   padding: 36px;
+  gap: 12px;
   z-index: 20;
   opacity: ${({ isActive }) => (isActive ? 1 : 0)};
-  transition: opacity 0.5s ease;
+  transition: opacity 0.2s ease;
+  transition-delay: ${({ isActive }) => (isActive ? '0.25s' : '0s')};
+  will-change: opacity;
 
   ${media.tablet} {
-    width: 296px;
+    width: 100%;
     padding: 24px;
   }
 
   ${media.mobile} {
     width: 100%;
     padding: 12px;
+    gap: 8px;
   }
 `;
 
@@ -105,14 +109,13 @@ export const CardTitle = styled.h3`
   line-height: normal;
 
   ${media.tablet} {
-    width: 270px;
+    width: 100%;
     font-size: 24px;
   }
 
   ${media.mobile} {
     position: relative;
-    width: 193px;
-    margin-bottom: 8px;
+    width: 100%;
     z-index: 1;
     ${fontsObject.HEADING_7_16_B}
   }
@@ -130,12 +133,12 @@ export const CardDetail = styled.p`
   white-space: pre-line;
 
   ${media.tablet} {
-    width: 219px;
+    width: 100%;
     font-size: 14px;
   }
 
   ${media.mobile} {
-    width: 193px;
+    width: 100%;
     ${fontsObject.LABEL_5_11_SB}
   }
 `;
@@ -156,8 +159,12 @@ export const CardValue = styled.p<{ isActive: boolean }>`
   font-weight: 700;
   letter-spacing: -0.8px;
 
-  @media (max-width: 1023px) and (min-width: 768px) {
+  ${media.tablet} {
     font-size: 24px;
+  }
+
+  ${media.mobile} {
+    ${fontsObject.HEADING_7_16_B}
   }
 `;
 
@@ -187,7 +194,13 @@ export const PrimaryColorCircle = styled.div<{ isActive: boolean; highColor: str
   opacity: ${({ isActive }) => (isActive ? 0 : 0.7)};
   transition: opacity 0.5s ease;
 
-  @media (max-width: 1023px) and (min-width: 768px) {
+  ${media.tablet} {
+    width: 24px;
+    height: 24px;
+    transform: translate(30%, -105%);
+  }
+
+  ${media.mobile} {
     width: 24px;
     height: 24px;
     transform: translate(30%, -105%);
