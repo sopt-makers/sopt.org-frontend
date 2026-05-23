@@ -1,21 +1,22 @@
 import styled from '@emotion/styled';
 import { colors } from '@sopt-makers/colors';
+import { fontsObject } from '@sopt-makers/fonts';
 import { css } from '@emotion/react';
 import { FadeInDown } from '@src/lib/styles/animation';
+import { media } from '@src/lib/styles/breakpoints';
 
 export const ItemContainer = styled.div<{ src: string; isInView: boolean; order: number }>`
-  color: white;
   position: relative;
-
-  width: 380px;
-  height: 323px;
-
-  padding: min(35.98px, 5vw) 0 min(80.5px, 4.19vw) 0;
-  border-radius: 10px;
-  background: center bottom 20px no-repeat #181818 url(${({ src }) => src});
+  width: 298px;
+  height: 330px;
+  padding: 36px 100px;
+  border-radius: 24px;
+  gap: 24px;
+  background: center bottom 36px no-repeat ${colors.gray900} url(${({ src }) => src});
   background-size: calc(120px + 7vw);
-
   opacity: 0;
+  color: ${colors.white};
+  ${fontsObject.HEADING_3_28_B};
 
   ${FadeInDown(50)}
   animation: fadeindown 0.6s forwards;
@@ -26,18 +27,28 @@ export const ItemContainer = styled.div<{ src: string; isInView: boolean; order:
     backdrop-filter: blur(3.5px);
   }
 
-  /* 태블릿 뷰 */
-  @media (max-width: 48rem) {
-    background-size: 60%;
-    background-position: center bottom 14px;
+  ${media.desktopLarge} {
+    width: 384px;
   }
 
-  /* 모바일 뷰 */
-  @media (max-width: 26.75rem) {
-    width: 269px;
-    height: 228px;
-    background-size: 70%;
-    background-position: center bottom 0px;
+  ${media.tablet} {
+    width: 213px;
+    height: 202px;
+    padding: 20px 80px;
+    gap: 8px;
+    background-size: 134px 134px;
+    background-position: center bottom 14px;
+    white-space: nowrap;
+  }
+
+  ${media.mobile} {
+    width: 100%;
+    height: 202px;
+    padding: 20px 80px;
+    gap: 8px;
+    background-size: 134px 134px;
+    background-position: center bottom 12px;
+    white-space: nowrap;
   }
 `;
 
@@ -47,8 +58,8 @@ export const BackgroundBlur = styled.div<{ isHovered: boolean }>`
   left: 0;
   width: 100%;
   height: 100%;
-  transition: 0.3s;
-  border-radius: 10px;
+  border-radius: 24px;
+  transition: 0.3s ease-in-out;
 
   ${({ isHovered }) =>
     isHovered &&
@@ -60,110 +71,71 @@ export const BackgroundBlur = styled.div<{ isHovered: boolean }>`
 
 export const CoreValue = styled.div`
   display: flex;
+  position: relative;
+  height: 100%;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
-  position: relative;
   z-index: 99;
-  height: 100%;
 `;
 
 export const ValueTop = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 11px;
+  gap: 16px;
+  white-space: nowrap;
 
-  /* 태블릿 뷰 */
-  @media (max-width: 48rem) {
-    font-size: 24rem;
+  ${media.tablet} {
+    ${fontsObject.TITLE_5_18_SB};
   }
-  /* 모바일 뷰 */
-  @media (max-width: 26.75rem) {
-    font-size: 24rem;
-    line-height: 33px;
-  }
-`;
 
-export const ValueNumber = styled.div<{ pointColor: string }>`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-shrink: 0;
-
-  width: 25.154px;
-  height: 25.154px;
-  border-radius: 6px;
-  background: ${({ pointColor }) => pointColor};
-
-  color: ${colors.white};
-  font-family: SUIT;
-  font-size: 17rem;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 17px; /* 100% */
-  letter-spacing: -0.17px;
-
-  /* 모바일 뷰 */
-  @media (max-width: 26.75rem) {
-    width: 17.791px;
-    height: 17.791px;
-
-    font-size: 12.024rem;
-    line-height: 12.024px; /* 100% */
-    letter-spacing: -0.12px;
+  ${media.mobile} {
+    ${fontsObject.TITLE_5_18_SB};
   }
 `;
 
 export const ValueTitle = styled.h2`
   color: ${colors.white};
-  font-family: SUIT;
-  font-size: 27rem;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 60px; /* 222.222% */
-  letter-spacing: -0.27px;
+  ${fontsObject.HEADING_3_28_B};
   text-align: center;
 
-  /* 모바일 뷰 */
-  @media (max-width: 26.75rem) {
-    font-size: 19.097rem;
-    line-height: 42.437px; /* 222.222% */
-    letter-spacing: -0.191px;
+  ${media.tablet} {
+    ${fontsObject.TITLE_5_18_SB};
+  }
+  ${media.mobile} {
+    ${fontsObject.TITLE_5_18_SB};
   }
 `;
 
 export const ValueDescription = styled.div<{ isHovered: boolean }>`
-  transition: 0.3s;
-  white-space: pre-line;
-  word-break: keep-all;
-
-  width: 237px;
-  height: 117px;
-
   display: flex;
+  width: 240px;
   justify-content: center;
   align-items: center;
   flex-grow: 1;
 
-  color: #fff;
+  transition: 0.3s;
+  white-space: pre-line;
+  word-break: keep-all;
+
+  color: ${colors.white};
   text-align: center;
   font-family: SUIT;
-  font-size: 23rem;
-
+  font-size: 28px;
   font-style: normal;
-  font-weight: 500;
-  line-height: min(39px, calc(29px + 0.52vw));
-  letter-spacing: -0.23px;
-
+  font-weight: 700;
+  line-height: 42px; /* 150% */
+  letter-spacing: -0.56px;
   opacity: 0;
   ${({ isHovered }) => isHovered && 'opacity: 1'};
 
-  /* 모바일 뷰 */
-  @media (max-width: 26.75rem) {
-    width: 159px;
-    font-size: 16rem;
-    line-height: 30px;
+  ${media.tablet} {
+    width: 200px;
+    ${fontsObject.HEADING_6_18_B};
+  }
+  ${media.mobile} {
+    width: 200px;
+    ${fontsObject.HEADING_6_18_B};
   }
 `;
