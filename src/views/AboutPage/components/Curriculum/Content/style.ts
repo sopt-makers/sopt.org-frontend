@@ -1,18 +1,16 @@
 import styled from '@emotion/styled';
+import { colors } from '@sopt-makers/colors';
+import { fontsObject } from '@sopt-makers/fonts';
+import { media } from '@src/lib/styles/breakpoints';
 
 export const CurriculumContent = styled.div`
   display: flex;
   flex-direction: column;
-  gap: min(33px, 1.71875vw);
+  align-items: center;
+  gap: 48px;
 
-  /* 태블릿 뷰 */
-  @media (max-width: 48rem) {
-    gap: 19px;
-  }
-
-  /* 모바일 뷰 */
-  @media (max-width: 26.75rem) {
-    gap: 13.44px;
+  ${media.mobile} {
+    gap: 24px;
   }
 `;
 
@@ -41,52 +39,61 @@ export const ImageWrapper = styled.div`
 
 export const CurriList = styled.ul`
   display: flex;
+  width: 750px;
   flex-direction: column;
-  gap: 12px;
   align-items: center;
-  padding: 70px;
+  gap: 10px;
 
-  /* 태블릿 뷰 */
-  @media (max-width: 48rem) {
+  ${media.tablet} {
+    width: 688px;
     gap: 8px;
-    padding: 30px;
   }
 
-  /* 모바일 뷰 */
-  @media (max-width: 26.75rem) {
-    gap: 6px;
-    padding: 10px;
+  ${media.mobile} {
+    width: 100%;
+    gap: 8px;
   }
 `;
 export const CurriItem = styled.li`
-  width: 80%;
   display: flex;
+  width: 100%;
+  padding: 16px 40px;
+  align-items: center;
   gap: 10px;
-  padding: 20px 41px;
-  background-color: #222528;
-  border-radius: 10px;
-  color: white;
-  font-family: SUIT;
-  font-size: 25px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
-  letter-spacing: -0.5px;
+  background-color: ${colors.gray900};
+  border-radius: 14px;
+  color: ${colors.white};
+  ${fontsObject.TITLE_4_20_SB}
 
-  /* 태블릿 뷰 */
-  @media (max-width: 48rem) {
-    font-size: 14px;
-    gap: 6px;
-    padding: 10px 20px;
+  ${media.tablet} {
+    padding: 16px 24px;
+    ${fontsObject.TITLE_6_16_SB}
   }
 
-  /* 모바일 뷰 */
-  @media (max-width: 26.75rem) {
-    font-size: 12px;
-    gap: 3px;
-    padding: 8px 12px;
+  ${media.mobile} {
+    padding: 12px 16px;
+    ${fontsObject.BODY_3_14_M}
   }
 `;
+
 export const CurriHighlight = styled.span<{ mainColor: string }>`
   color: ${({ mainColor }) => mainColor};
+  font-family: SUIT;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 20px;
+  letter-spacing: -0.4px;
+
+  ${media.tablet} {
+    font-size: 18px;
+    line-height: 18px;
+    letter-spacing: -0.36px;
+  }
+
+  ${media.mobile} {
+    font-size: 16px;
+    line-height: 16px;
+    letter-spacing: -0.32px;
+  }
 `;
