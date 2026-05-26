@@ -4,18 +4,14 @@ import axios from 'axios';
 
 const client = axios.create({ baseURL: BASE_URL });
 
-interface VisitorResponse {
-  count: number;
-}
-
-const getVisitor = async (): Promise<VisitorResponse> => {
-  const { data } = await client.get<VisitorResponse>('/visitor');
+const getVisitor = async () => {
+  const { data } = await client.get('/visitor');
 
   return data;
 };
 
 export default function useGetVisitor() {
-  const { data, isLoading } = useQuery<VisitorResponse>({
+  const { data, isLoading } = useQuery({
     queryKey: ['visitor'],
     queryFn: getVisitor,
   });

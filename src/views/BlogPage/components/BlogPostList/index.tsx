@@ -3,7 +3,7 @@ import IcSort from '@src/assets/icons/ic_sort.svg';
 import Pagination from '@src/components/common/Pagination';
 import Select from '@src/components/common/Select';
 import { sortLabel, sortValues } from '@src/lib/constants/tabs';
-import { BlogCategoryType, BlogPostType, SortType } from '@src/lib/types/blog';
+import { BlogCategoryType, SortType } from '@src/lib/types/blog';
 import BlogPost from '@src/views/BlogPage/components/BlogPost';
 import EmptyBlogPostList from '@src/views/BlogPage/components/EmptyBlogPostList';
 import OfficialVideo from '@src/views/BlogPage/components/OfficialVideo';
@@ -74,7 +74,7 @@ export default function BlogPostList({
                 </S.Layout>
               )}
               <S.BlogPostList selectedTab={selectedTab}>
-                {response?.response?.map((blogPost: BlogPostType) => (
+                {response?.response?.map((blogPost) => (
                   <BlogPost
                     key={blogPost.id}
                     blogPost={blogPost}
