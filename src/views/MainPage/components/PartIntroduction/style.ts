@@ -13,6 +13,7 @@ export const Wrapper = styled.section`
   justify-content: center;
   align-items: center;
   gap: 24px;
+  scroll-margin-top: 100px;
 
   ${media.desktopLarge} {
     align-items: start;
