@@ -1,5 +1,8 @@
 import styled from '@emotion/styled';
+import { colors } from '@sopt-makers/colors';
+import { fontsObject } from '@sopt-makers/fonts';
 import chevronRight from '@src/assets/icons/chevronRight.svg';
+import { media } from '@src/lib/styles/breakpoints';
 import { convertRadialGradient } from '@src/lib/styles/gradient';
 
 export const Wrapper = styled.section`
@@ -68,6 +71,42 @@ export const GradientWrapper = styled.div<{
       top: 50%;
       height: 30%;
     }
+  }
+`;
+
+export const Button = styled.button`
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  height: 42px;
+  padding: 12px 20px;
+  border: 1px solid ${colors.white};
+  border-radius: 10px;
+  background-color: transparent;
+  color: ${colors.white};
+  ${fontsObject.TITLE_6_16_SB}
+  white-space: nowrap;
+
+  transition: all 0.3s ease;
+  cursor: pointer;
+
+  &:hover {
+    background: ${colors.white};
+    color: ${colors.black};
+  }
+
+  ${media.tablet} {
+    height: 36px;
+    padding: 9px 14px;
+    border-radius: 8px;
+    ${fontsObject.LABEL_3_14_SB}
+  }
+
+  ${media.mobile} {
+    height: 36px;
+    padding: 9px 14px;
+    border-radius: 8px;
+    ${fontsObject.LABEL_3_14_SB}
   }
 `;
 
