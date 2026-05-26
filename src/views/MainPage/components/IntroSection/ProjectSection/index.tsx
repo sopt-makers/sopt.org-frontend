@@ -35,7 +35,7 @@ export default function ProjectSection({ mainColor }: ProjectSectionProps) {
     href: `${PATHS.PROJECT}/${p.id}`,
   }));
 
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(2);
 
   // TODO: useDevice hook breakpoint 최신화 (js활용 2차 추상화 훅 추가하기)
   const isMobile = useMediaQuery({ maxWidth: breakpoints.tablet - 1 });
