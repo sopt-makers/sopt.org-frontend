@@ -3,19 +3,16 @@ import { ALL_GENERATION, ALL_GENERATION_LABEL, OLDEST_GENERATION } from '@src/li
 
 const useGenerationCategories = () => {
   const latestGeneration = useGeneration();
-  const generations = [];
+
+  const options = [ALL_GENERATION];
+  const labels: Record<number, string> = { [ALL_GENERATION]: ALL_GENERATION_LABEL };
 
   if (latestGeneration) {
     for (let generation = latestGeneration; generation >= OLDEST_GENERATION; generation--) {
-      generations.push(generation);
+      options.push(generation);
+      labels[generation] = `${generation}기`;
     }
   }
-
-  const options = [ALL_GENERATION, ...generations];
-  const labels: Record<number, string> = {
-    [ALL_GENERATION]: ALL_GENERATION_LABEL,
-    ...Object.fromEntries(generations.map((generation) => [generation, `${generation}기`])),
-  };
 
   return { options, labels };
 };
