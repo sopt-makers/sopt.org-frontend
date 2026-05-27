@@ -5,15 +5,19 @@ import { useMediaQuery } from 'react-responsive';
 import { api } from '@src/lib/api';
 import { PATHS } from '@src/lib/constants/routes';
 import { breakpoints } from '@src/lib/styles/breakpoints';
-import { ProjectCategoryType, ProjectPlatformType } from '@src/lib/types/project';
+import { ProjectCategoryType, ProjectPlatformType, ProjectResponse } from '@src/lib/types/project';
 import SectionTop from '@src/views/AboutPage/components/@common/SectionTop';
 import Project from './Project';
-import {
-  CARD_WIDTHS,
-  CAROUSEL_GAP,
-  CONTAINER_WIDTHS,
-} from './constants';
+import { CARD_WIDTHS, CAROUSEL_GAP, CONTAINER_WIDTHS } from './constants';
 import * as S from './style';
+
+type ProjectCardItem = {
+  thumbnail: string;
+  title: string;
+  category: string;
+  description: string;
+  href: string;
+};
 
 interface ProjectSectionProps {
   mainColor: string;
@@ -21,13 +25,13 @@ interface ProjectSectionProps {
 
 export default function ProjectSection({ mainColor }: ProjectSectionProps) {
   const router = useRouter();
-  const { data: projectData } = useQuery({
+  const { data: projectData } = useQuery<ProjectResponse>({
     queryKey: ['mainAppjamProjects'],
     queryFn: () =>
       api.projectAPI.getProjectList(ProjectCategoryType.APPJAM, ProjectPlatformType.ALL, 1),
   });
 
-  const projectList = (projectData?.data ?? []).slice(0, 5).map((p) => ({
+  const projectList: ProjectCardItem[] = (projectData?.data ?? []).slice(0, 5).map((p) => ({
     thumbnail: p.thumbnailImage ?? '',
     title: p.name,
     category: p.serviceType[0] ?? '',
