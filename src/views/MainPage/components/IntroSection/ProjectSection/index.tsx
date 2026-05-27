@@ -5,7 +5,12 @@ import { useMediaQuery } from 'react-responsive';
 import { api } from '@src/lib/api';
 import { PATHS } from '@src/lib/constants/routes';
 import { breakpoints } from '@src/lib/styles/breakpoints';
-import { ProjectCategoryType, ProjectPlatformType, ProjectResponse } from '@src/lib/types/project';
+import {
+  ProjectCategoryType,
+  ProjectPlatformType,
+  ProjectResponse,
+  ProjectType,
+} from '@src/lib/types/project';
 import SectionTop from '@src/views/AboutPage/components/@common/SectionTop';
 import Project from './Project';
 import { CARD_WIDTHS, CAROUSEL_GAP, CONTAINER_WIDTHS } from './constants';
@@ -31,7 +36,7 @@ export default function ProjectSection({ mainColor }: ProjectSectionProps) {
       api.projectAPI.getProjectList(ProjectCategoryType.APPJAM, ProjectPlatformType.ALL, 1),
   });
 
-  const projectList: ProjectCardItem[] = (projectData?.data ?? []).slice(0, 5).map((p) => ({
+  const projectList: ProjectCardItem[] = (projectData?.data ?? []).slice(0, 5).map((p: ProjectType) => ({
     thumbnail: p.thumbnailImage ?? '',
     title: p.name,
     category: p.serviceType[0] ?? '',
