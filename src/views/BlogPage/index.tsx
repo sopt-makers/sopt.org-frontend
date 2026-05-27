@@ -3,7 +3,7 @@ import { css } from '@emotion/react';
 import { Suspense } from 'react';
 import PageLayout from '@src/components/common/PageLayout';
 import useStorage from '@src/hooks/useStorage';
-import { activeGenerationCategoryList } from '@src/lib/constants/tabs';
+import { ALL_GENERATION } from '@src/lib/constants/tabs';
 import { PartCategoryType, SortType } from '@src/lib/types/blog';
 import { ActivitySelectType } from '@src/lib/types/main';
 import Banner from '@src/views/BlogPage/components/Banner';
@@ -14,7 +14,7 @@ import { BlogTabType, SelectedType } from './components/BlogTab/types';
 
 const initialState: SelectedType = {
   selectedTab: BlogTabType.REVIEW,
-  selectedMajorCategory: activeGenerationCategoryList[0],
+  selectedMajorCategory: ALL_GENERATION,
   selectedSubCategory: PartCategoryType.ALL,
   selectedActivity: ActivitySelectType.ALL,
   tag: 'recruit',
