@@ -9,7 +9,7 @@ const getSampleReviews = async (): Promise<GetSampleReviewsResponse> => {
 };
 
 export default function useGetSampleReviews() {
-  const { data, isLoading } = useQuery({
+  const { data, isLoading } = useQuery<GetSampleReviewsResponse>({
     queryKey: ['sample-reviews'],
     queryFn: getSampleReviews,
   });

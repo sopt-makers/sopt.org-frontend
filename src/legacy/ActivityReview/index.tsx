@@ -5,6 +5,7 @@ import { ReactComponent as ArrowLeft } from '@src/assets/icons/arrow_left_28x28.
 import { ReactComponent as ArrowRight } from '@src/assets/icons/arrow_right_28x28.svg';
 import arrowRightWhite from '@src/assets/icons/arrow_right_white.svg';
 import { useHorizontalScroll } from '@src/hooks/useHorizontalScroll';
+import { BlogPostType } from '@src/lib/types/blog';
 import { parsePartToKorean } from '@src/lib/utils/parsePartToKorean';
 import { BrandingColorContext } from '../../views/RecruitPage';
 import {
@@ -51,7 +52,7 @@ export default function ActivityReview() {
           <ArrowLeft stroke={isLeftScrollable ? 'white' : 'grey'} />
         </ArrowWrapper>
         <Content ref={scrollableRef}>
-          {data?.reviews?.map((review) => (
+          {data?.reviews?.map((review: BlogPostType) => (
             <Link
               key={review.id}
               href={review.url}

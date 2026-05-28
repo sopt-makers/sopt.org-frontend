@@ -9,8 +9,12 @@ import { media } from '@src/lib/styles/breakpoints';
 export const RecentNews = styled.section`
   padding: 432px 0 372px 0px;
 
-  ${media.tablet}, ${media.mobile} {
-    padding-top: 100px;
+  ${media.tablet} {
+    padding: 100px 0;
+  }
+
+  ${media.mobile} {
+    padding: 100px 0;
   }
 `;
 
