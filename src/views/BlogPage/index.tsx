@@ -11,6 +11,7 @@ import BlogPostList from '@src/views/BlogPage/components/BlogPostList';
 import BlogPostSkeletonUI from '@src/views/BlogPage/components/BlogPostSkeletonUI';
 import BlogTab from '@src/views/BlogPage/components/BlogTab';
 import { BlogTabType, SelectedType } from './components/BlogTab/types';
+import useApplyBlogQueryParams from './hooks/useApplyBlogQueryParams';
 
 const initialState: SelectedType = {
   selectedTab: BlogTabType.REVIEW,
@@ -31,6 +32,8 @@ export default function BlogPage() {
     'sessionStorage',
     SortType.LATEST,
   );
+
+  useApplyBlogQueryParams(selected, setSelected);
 
   const updateSelected = <K extends keyof SelectedType>(key: K, value: SelectedType[K]) => {
     setSelected({
