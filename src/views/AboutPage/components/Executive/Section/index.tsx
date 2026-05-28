@@ -1,6 +1,6 @@
 import Flex from '@src/components/common/Flex';
 import { MemberType } from '@src/lib/types/admin';
-import MemberCard from '@src/views/AboutPage/components/Member/Card';
+import MemberCard from '@src/views/AboutPage/components/Executive/Card';
 import SectionTop from '../../@common/SectionTop';
 import * as St from './style';
 

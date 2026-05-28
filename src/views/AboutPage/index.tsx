@@ -14,7 +14,7 @@ import {
   ScheduleSection,
 } from '@src/views/AboutPage/components';
 
-const MemberSection = dynamic(() => import('@src/views/AboutPage/components/Member/Section'));
+const ExecutiveSection = dynamic(() => import('@src/views/AboutPage/components/Executive/Section'));
 
 export const BrandingColorContext = createContext({
   main: '',
@@ -46,7 +46,7 @@ const AboutPage = () => {
           />
           <ScheduleSection generation={adminData.generation} schedules={adminData.schedule ?? []} />
           <CurriculumSection curriculums={adminData.partCurriculum} />
-          <MemberSection
+          <ExecutiveSection
             members={adminData.member}
             generation={adminData.generation}
             name={adminData.name}
