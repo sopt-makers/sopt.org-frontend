@@ -8,6 +8,7 @@ import { media } from '@src/lib/styles/breakpoints';
 
 export const Wrapper = styled.section`
   width: 100%;
+  scroll-margin-top: 100px;
 `;
 
 export const Summary = styled(motion.div)<{ color: string }>`

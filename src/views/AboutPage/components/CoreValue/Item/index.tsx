@@ -1,7 +1,6 @@
-import { useContext, useState } from 'react';
+import { useState } from 'react';
 import useInView from '@src/hooks/useInView';
 import { CoreValueType } from '@src/lib/types/about';
-import { BrandingColorContext } from '@src/views/AboutPage';
 import * as S from './style';
 
 type CoreValueProps = {
@@ -12,7 +11,7 @@ type CoreValueProps = {
 const CoreValueItem = ({ coreValue, order }: CoreValueProps) => {
   const [isHovered, setIsHovered] = useState(false);
   const { isInView, ref: wrapperRef } = useInView();
-  const { point } = useContext(BrandingColorContext);
+
   return (
     <S.ItemContainer
       src={coreValue.src}
