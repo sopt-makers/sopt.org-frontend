@@ -36,14 +36,15 @@ export default function ProjectSection({ mainColor }: ProjectSectionProps) {
       api.projectAPI.getProjectList(ProjectCategoryType.APPJAM, ProjectPlatformType.ALL, 1),
   });
 
-  const projects: ProjectType[] = projectData?.data ?? [];
-  const projectList = projects.slice(0, 5).map((p) => ({
-    thumbnail: p.thumbnailImage ?? '',
-    title: p.name,
-    category: p.serviceType[0] ?? '',
-    description: p.summary,
-    href: `${PATHS.PROJECT}/${p.id}`,
-  }));
+  const projectList: ProjectCardItem[] = (projectData?.data ?? [])
+    .slice(0, 5)
+    .map((p: ProjectType) => ({
+      thumbnail: p.thumbnailImage ?? '',
+      title: p.name,
+      category: p.serviceType[0] ?? '',
+      description: p.summary,
+      href: `${PATHS.PROJECT}/${p.id}`,
+    }));
 
   const [currentIndex, setCurrentIndex] = useState(2);
 
