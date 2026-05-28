@@ -1,28 +1,23 @@
-import RecordItem from '../Item';
+import { GetAboutpageResponse } from '@src/lib/types/admin';
 import { PATHS } from '@src/lib/constants/routes';
+import RecordItem from '../Item';
 import * as St from './style';
 
-// TODO: API에 operationPeriod 필드 추가되면 activitiesRecords에서 받아올 것
-const OPERATION_PERIOD = 36;
+interface Props {
+  activitiesRecords: GetAboutpageResponse['activitiesRecords'];
+  mainColor: string;
+}
 
 const RecordList = ({
-  activitiesRecords: { activitiesMemberCount, projectCounts, studyCounts },
+  activitiesRecords: { activitiesMemberCount, projectCounts, studyCounts, operationPeriod },
   mainColor,
-}: {
-  activitiesRecords: {
-    activitiesMemberCount: number;
-    projectCounts: number;
-    studyCounts: number;
-    // operationPeriod: number;
-  };
-  mainColor: string;
-}) => {
+}: Props) => {
   return (
     <St.Wrapper>
       <RecordItem
         type="block"
         title="운영기간"
-        countNumber={OPERATION_PERIOD}
+        countNumber={operationPeriod}
         countString="년"
         mainColor={mainColor}
       />
