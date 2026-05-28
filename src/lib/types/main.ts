@@ -16,7 +16,7 @@ export type TextColorType = {
 export enum ActivityType {
   APPJAM = 'APPJAM',
   SOPKATHON = 'SOPKATHON',
-  SOPTERM = 'SOPTERM',
+  JOIN_SEMINAR = 'JOIN_SEMINAR',
   STUDY = 'STUDY',
   SEMINAR = 'SEMINAR',
   EVENTS = 'EVENTS',
@@ -35,6 +35,7 @@ export enum ActivitySelectType {
 export interface ActivityLinkType {
   label: string;
   href: string;
+  target: '_blank' | '_self';
 }
 
 export interface ActivityContentType {
@@ -53,7 +54,7 @@ export const activity: ActivityTypeList[] = [
     value: ActivityType.SOPKATHON,
   },
   {
-    value: ActivityType.SOPTERM,
+    value: ActivityType.JOIN_SEMINAR,
   },
   {
     value: ActivityType.EVENTS,

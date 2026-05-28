@@ -39,8 +39,9 @@ export const Activity: ActivityListType = {
     navKor: '앱잼',
     navEng: 'App jam',
     link: {
-      label: '37기 데모데이 스케치 보러 가기',
+      label: '앱잼 이야기 보러 가기',
       href: 'https://www.instagram.com/sopt_media_official/',
+      target: '_blank',
     },
     description: [
       {
@@ -54,6 +55,11 @@ export const Activity: ActivityListType = {
     img: Img솝커톤.src,
     navKor: '솝커톤',
     navEng: 'Sopkathon',
+    link: {
+      label: '솝커톤 후기 보러 가기',
+      href: '/blog?tab=review&tag=activity&activity=SOPKATHON',
+      target: '_self',
+    },
     description: [
       {
         content:
@@ -62,10 +68,15 @@ export const Activity: ActivityListType = {
       },
     ],
   },
-  [ActivityType.SOPTERM]: {
+  [ActivityType.JOIN_SEMINAR]: {
     img: Img합동세미나.src,
     navKor: '합동 세미나',
     navEng: 'Seminar',
+    link: {
+      label: '합동세미나 후기 보러 가기',
+      href: '/blog?tab=review&tag=activity&activity=SEMINAR',
+      target: '_self',
+    },
     description: [
       {
         content:

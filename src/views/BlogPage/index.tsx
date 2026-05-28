@@ -3,7 +3,7 @@ import { css } from '@emotion/react';
 import { Suspense } from 'react';
 import PageLayout from '@src/components/common/PageLayout';
 import useStorage from '@src/hooks/useStorage';
-import { activeGenerationCategoryList } from '@src/lib/constants/tabs';
+import { ALL_GENERATION } from '@src/lib/constants/tabs';
 import { PartCategoryType, SortType } from '@src/lib/types/blog';
 import { ActivitySelectType } from '@src/lib/types/main';
 import Banner from '@src/views/BlogPage/components/Banner';
@@ -11,10 +11,11 @@ import BlogPostList from '@src/views/BlogPage/components/BlogPostList';
 import BlogPostSkeletonUI from '@src/views/BlogPage/components/BlogPostSkeletonUI';
 import BlogTab from '@src/views/BlogPage/components/BlogTab';
 import { BlogTabType, SelectedType } from './components/BlogTab/types';
+import useApplyBlogQueryParams from './hooks/useApplyBlogQueryParams';
 
 const initialState: SelectedType = {
   selectedTab: BlogTabType.REVIEW,
-  selectedMajorCategory: activeGenerationCategoryList[0],
+  selectedMajorCategory: ALL_GENERATION,
   selectedSubCategory: PartCategoryType.ALL,
   selectedActivity: ActivitySelectType.ALL,
   tag: 'recruit',
@@ -31,6 +32,8 @@ export default function BlogPage() {
     'sessionStorage',
     SortType.LATEST,
   );
+
+  useApplyBlogQueryParams(selected, setSelected);
 
   const updateSelected = <K extends keyof SelectedType>(key: K, value: SelectedType[K]) => {
     setSelected({
