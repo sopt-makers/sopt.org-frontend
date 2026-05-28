@@ -62,7 +62,7 @@ function MainPage() {
         highColor={'#' + adminData.brandingColor.high}
         ctaText={ctaText}
       />
-      <Introduce />
+      <Introduce keyColor={'#' + adminData.brandingColor.main} />
       <IntroSection adminData={adminData} />
       <AboutSOPTSection
         generation={adminData.generation ?? 0}
