@@ -1,8 +1,8 @@
 import { css } from '@emotion/react';
+import { useRouter } from 'next/router';
 import { Suspense } from 'react';
 import PageLayout from '@src/components/common/PageLayout';
 import Select from '@src/components/common/Select';
-import useStorage from '@src/hooks/useStorage';
 import {
   activeProjectCategoryList,
   activeProjectPlatformList,
@@ -14,17 +14,25 @@ import { ProjectList } from '@src/views/ProjectPage/components/project/ProjectLi
 import ProjectListFallback from '@src/views/ProjectPage/components/project/ProjectListFallback';
 import S from './styles';
 
+const INIT_PAGE = 1;
+
 function Projects() {
-  const [selectedCategory, setCategory] = useStorage<ProjectCategoryType>(
-    'projectCategory',
-    'sessionStorage',
-    ProjectCategoryType.ALL,
-  );
-  const [selectedPlatform, setPlatform] = useStorage<ProjectPlatformType>(
-    'projectPlatform',
-    'sessionStorage',
-    ProjectPlatformType.ALL,
-  );
+  const router = useRouter();
+
+  const selectedCategory = (router.query.category as ProjectCategoryType) ?? ProjectCategoryType.ALL;
+  const selectedPlatform = (router.query.platform as ProjectPlatformType) ?? ProjectPlatformType.ALL;
+  const currentPage = Number(router.query.page ?? INIT_PAGE);
+
+  const updateQuery = (updates: Record<string, string | number>) => {
+    router.push({ pathname: router.pathname, query: { ...router.query, ...updates } }, undefined, { shallow: true });
+  };
+
+  const setCategory = (category: ProjectCategoryType) => updateQuery({ category, page: INIT_PAGE });
+  const setPlatform = (platform: ProjectPlatformType) => updateQuery({ platform, page: INIT_PAGE });
+  const setPage = (page: number) => {
+    updateQuery({ page });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   return (
     <PageLayout
@@ -57,7 +65,12 @@ function Projects() {
             />
           </S.FilterWrapper>
           <Suspense fallback={<ProjectListFallback />}>
-            <ProjectList selectedCategory={selectedCategory} selectedPlatform={selectedPlatform} />
+            <ProjectList
+              selectedCategory={selectedCategory}
+              selectedPlatform={selectedPlatform}
+              currentPage={currentPage}
+              onPageChange={setPage}
+            />
           </Suspense>
         </S.ContentWrapper>
       </S.Root>
