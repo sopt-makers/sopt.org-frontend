@@ -12,11 +12,11 @@ export const Wrapper = styled.section`
   gap: 48px;
 
   ${media.tablet} {
-    padding: 458px 0 119px 0;
+    padding: 126px 0 351px 0;
   }
 
   ${media.mobile} {
-    padding: 226px 0 358px 0;
+    padding: 126px 0 358px 0;
     gap: 24px;
   }
 `;

@@ -35,19 +35,9 @@ export const extraTabs: ExtraTabType[] = [
 
 export const tabs = extraTabs.slice(1) as TabType[];
 
-export const activeGenerationCategoryList: number[] = [0];
-
-for (let i = 35; i >= 24; i--) {
-  activeGenerationCategoryList.push(i);
-}
-
-export const generationCategoryLabel: Record<number, string> = {
-  [0]: '전체',
-};
-
-for (let i = 35; i >= 24; i--) {
-  generationCategoryLabel[i] = `${i}기`;
-}
+export const OLDEST_GENERATION = 24;
+export const ALL_GENERATION = 0;
+export const ALL_GENERATION_LABEL = '전체';
 
 export const activitySelectLabel: Record<ActivitySelectType, string> = {
   [ActivitySelectType.ALL]: '전체 활동',

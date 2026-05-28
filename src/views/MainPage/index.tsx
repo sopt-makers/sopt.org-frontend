@@ -1,8 +1,6 @@
-import { useQuery } from '@tanstack/react-query';
 import { useEffect, useMemo } from 'react';
 import PageLayout from '@src/components/common/PageLayout';
-import { remoteAdminAPI } from '@src/lib/api/remote/admin';
-import { GetHomepageResponse } from '@src/lib/types/admin';
+import { useHomepage } from '@src/views/MainPage/hooks/useHomepage';
 import AboutSOPTSection from '@src/views/MainPage/components/AboutSOPTSection';
 import IntroSection from '@src/views/MainPage/components/IntroSection';
 import TopBanner from '@src/views/MainPage/components/TopBanner';
@@ -12,10 +10,7 @@ import Banner from './components/Banner';
 import Introduce from './components/Introduce';
 
 function MainPage() {
-  const { data: adminData } = useQuery<GetHomepageResponse>({
-    queryKey: ['homepage'],
-    queryFn: remoteAdminAPI.getHomepage,
-  });
+  const { data: adminData } = useHomepage();
 
   const isOBRecruiting = checkIsTimeInRange(
     adminData?.recruitSchedule[0].schedule.applicationStartTime ?? '',

@@ -27,7 +27,7 @@ export default function ActivityCard({ img, navKor, navEng, description, link }:
             theme="black"
             rounded="lg"
             RightIcon={IconChevronRight}
-            onClick={() => window.open(link.href, '_blank')}
+            onClick={() => window.open(link.href, link.target)}
           >
             {link.label}
           </Button>

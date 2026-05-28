@@ -24,7 +24,7 @@ export const menuTapList: MenuTapList = [
   },
   {
     type: MenuTapType.SPECIAL,
-    title: '지원하기',
+    title: '모집안내',
     href: PATHS.RECRUIT,
   },
 ];

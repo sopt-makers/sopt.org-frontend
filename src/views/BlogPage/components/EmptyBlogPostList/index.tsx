@@ -1,4 +1,4 @@
-import { activeGenerationCategoryList } from '@src/lib/constants/tabs';
+import { ALL_GENERATION } from '@src/lib/constants/tabs';
 import { BlogCategoryType, PartCategoryType } from '@src/lib/types/blog';
 import { ActivitySelectType } from '@src/lib/types/main';
 import { BlogTabType, SelectedType } from '../BlogTab/types';
@@ -30,7 +30,7 @@ export default function EmptyBlogPostList({
   const showTotalApplyReview = () => {
     setSelected({
       ...selected,
-      selectedMajorCategory: activeGenerationCategoryList[0],
+      selectedMajorCategory: ALL_GENERATION,
       selectedSubCategory: PartCategoryType.ALL,
     });
   };
@@ -39,7 +39,7 @@ export default function EmptyBlogPostList({
     setSelected({
       ...selected,
       selectedActivity: ActivitySelectType.ALL,
-      selectedMajorCategory: activeGenerationCategoryList[0],
+      selectedMajorCategory: ALL_GENERATION,
       selectedSubCategory: PartCategoryType.ALL,
     });
   };

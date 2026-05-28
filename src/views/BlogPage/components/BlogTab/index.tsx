@@ -1,15 +1,15 @@
 import { track } from '@amplitude/analytics-browser';
 import Select from '@src/components/common/Select';
 import {
-  activeGenerationCategoryList,
+  ALL_GENERATION,
   activePartCategoryList,
   activities,
   activitySelectLabel,
-  generationCategoryLabel,
   partCategoryLabel,
 } from '@src/lib/constants/tabs';
 import { PartCategoryType } from '@src/lib/types/blog';
 import { ActivitySelectType } from '@src/lib/types/main';
+import useGenerationCategories from '@src/views/BlogPage/hooks/useGenerationCategories';
 import * as S from './style';
 import { BlogTabMap, BlogTabType, SelectedType } from './types';
 
@@ -31,6 +31,8 @@ export default function BlogTab({
   setSelectedActivity,
 }: BlogTabProps) {
   const { selectedTab, selectedMajorCategory, selectedSubCategory, selectedActivity } = selected;
+
+  const { options: generationOptions, labels: generationLabels } = useGenerationCategories();
 
   const handleTagClick = (tag: SelectedType['tag']) => {
     if (selected.tag === tag) return;
@@ -99,12 +101,12 @@ export default function BlogTab({
                 </S.TagContainer>
                 <S.SelectContainer>
                   <Select
-                    options={activeGenerationCategoryList}
-                    labels={generationCategoryLabel}
+                    options={generationOptions}
+                    labels={generationLabels}
                     baseLabel="기수"
                     selectedValue={selectedMajorCategory}
                     setSelectedValue={setMajorCategory}
-                    baseValue={activeGenerationCategoryList[0]}
+                    baseValue={ALL_GENERATION}
                     variant="square"
                   />
                   <Select

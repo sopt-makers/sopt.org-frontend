@@ -1,17 +1,12 @@
-import { useQuery } from '@tanstack/react-query';
 import { useEffect, useState } from 'react';
 import { useIsDesktop, useIsMobile, useIsTablet } from '@src/hooks/useDevice';
-import { remoteAdminAPI } from '@src/lib/api/remote/admin';
-import { GetHomepageResponse } from '@src/lib/types/admin';
+import { useHomepage } from '@src/views/MainPage/hooks/useHomepage';
 import DesktopHeader from './Desktop';
 import MobileHeader from './Mobile';
 import * as S from './style';
 
 export function Header() {
-  const { data: adminData } = useQuery<GetHomepageResponse>({
-    queryKey: ['homepage'],
-    queryFn: remoteAdminAPI.getHomepage,
-  });
+  const { data: adminData } = useHomepage();
 
   const isDesktop = useIsDesktop('58.75rem');
   const isTablet = useIsTablet('48rem', '58.6875rem');

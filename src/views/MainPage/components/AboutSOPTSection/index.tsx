@@ -1,10 +1,10 @@
 import useInView from '@src/hooks/useInView';
 import { LatestNewsType, PartIntroType } from '@src/lib/types/admin';
 import Activity from '@src/views/MainPage/components/Activity';
-import ReviewSection from '@src/views/MainPage/components/ReviewSection';
 import PartIntroduction from '@src/views/MainPage/components/PartIntroduction';
 import RecentNews from '@src/views/MainPage/components/RecentNews';
 import RecruitMessage from '@src/views/MainPage/components/RecruitMessage';
+import ReviewSection from '@src/views/MainPage/components/ReviewSection';
 import * as S from './style';
 
 const MenuList = [

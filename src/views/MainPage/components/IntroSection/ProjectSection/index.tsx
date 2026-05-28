@@ -8,12 +8,16 @@ import { breakpoints } from '@src/lib/styles/breakpoints';
 import { ProjectCategoryType, ProjectPlatformType, ProjectType } from '@src/lib/types/project';
 import SectionTop from '@src/views/AboutPage/components/@common/SectionTop';
 import Project from './Project';
-import {
-  CARD_WIDTHS,
-  CAROUSEL_GAP,
-  CONTAINER_WIDTHS,
-} from './constants';
+import { CARD_WIDTHS, CAROUSEL_GAP, CONTAINER_WIDTHS } from './constants';
 import * as S from './style';
+
+type ProjectCardItem = {
+  thumbnail: string;
+  title: string;
+  category: string;
+  description: string;
+  href: string;
+};
 
 interface ProjectSectionProps {
   mainColor: string;
@@ -21,7 +25,7 @@ interface ProjectSectionProps {
 
 export default function ProjectSection({ mainColor }: ProjectSectionProps) {
   const router = useRouter();
-  const { data: projectData } = useQuery({
+  const { data: projectData } = useQuery<ProjectResponse>({
     queryKey: ['mainAppjamProjects'],
     queryFn: () =>
       api.projectAPI.getProjectList(ProjectCategoryType.APPJAM, ProjectPlatformType.ALL, 1),

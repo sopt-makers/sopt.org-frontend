@@ -1,70 +1,53 @@
 import styled from '@emotion/styled';
 import { colors } from '@sopt-makers/colors';
+import { fontsObject } from '@sopt-makers/fonts';
 import { css } from '@emotion/react';
+import { media } from '@src/lib/styles/breakpoints';
 
 export const TabBar = styled.ul`
   display: flex;
-  justify-content: center;
-  gap: min(26px, 1.35vw);
   width: 100%;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
 
-  /* 태블릿 뷰 */
-  @media (max-width: 48rem) {
-    display: grid;
-    grid-template-columns: repeat(3, auto);
-    grid-template-rows: repeat(2, 1fr);
-    gap: 13px 19.3px;
+  ${media.tablet} {
+    gap: 16px;
   }
 
-  /* 모바일 뷰 */
-  @media (max-width: 26.75rem) {
-    gap: 13px 13.46px;
+  ${media.mobile} {
+    gap: 8px;
   }
 `;
 
 export const Tab = styled.li<{ selected: boolean }>`
-  max-width: 178px;
-  width: calc(80px + 5vw);
-  padding: 20px 16px;
-  border-radius: 10px;
-
-  overflow: hidden;
-  text-overflow: ellipsis;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  padding: 14px 40px;
+  border-radius: 14px;
   white-space: nowrap;
-
-  color: rgba(255, 255, 255, 0.5);
+  color: ${colors.gray500};
   text-align: center;
-  font-family: SUIT;
-  font-size: 20rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 100%; /* 20px */
-  letter-spacing: -0.4px;
+  ${fontsObject.HEADING_4_24_B}
   cursor: pointer;
 
   ${({ selected }) =>
     selected &&
     css`
-      background-color: #222220;
+      background-color: ${colors.gray800};
       color: ${colors.white};
-      font-weight: 700;
     `};
 
-  /* 태블릿 뷰 */
-  @media (max-width: 48rem) {
-    width: 130.254px;
-    padding: 14.635px 11.708px;
-    border-radius: 7.318px;
-    font-size: 14.635rem;
-    letter-spacing: -0.293px;
+  ${media.tablet} {
+    width: 108px;
+    padding: 12px 20px;
+    border-radius: 10px;
+    ${fontsObject.LABEL_2_16_SB}
   }
 
-  /* 모바일 뷰 */
-  @media (max-width: 26.75rem) {
-    width: 92.127px;
-    padding: 10.351px 8.281px;
-    border-radius: 5.176px;
-    font-size: 10.351rem;
-    letter-spacing: -0.207px;
+  ${media.mobile} {
+    padding: 9px 14px;
+    border-radius: 8px;
+    ${fontsObject.LABEL_3_14_SB}
   }
 `;
