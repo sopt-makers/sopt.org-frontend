@@ -5,7 +5,6 @@ import Image from 'next/image';
 import { ReactComponent as IcBehance } from '@src/assets/icons/ic_behance.svg';
 import { ReactComponent as IcGithub } from '@src/assets/icons/ic_github.svg';
 import { ReactComponent as IcLinkedin } from '@src/assets/icons/ic_linkedin.svg';
-import { ReactComponent as IcSchool } from '@src/assets/icons/ic_school.svg';
 import { ReactComponent as IcMail } from '@src/assets/icons/mail.svg';
 import { media } from '@src/lib/styles/breakpoints';
 
@@ -134,7 +133,7 @@ export const Desc = styled.span`
   }
 `;
 
-export const CurrentProject = styled.span`
+export const UniversityWrapper = styled.div`
   display: flex;
   width: fit-content;
   align-items: center;
@@ -172,7 +171,7 @@ export const LinkWrapper = styled.div`
   }
 
   ${media.mobile} {
-    padding-top: 8px;
+    padding-top: 12px;
     gap: 12.8px;
   }
 `;
@@ -182,30 +181,29 @@ export const AnchorIconWrapper = styled.a`
   flex-shrink: 0;
   justify-content: center;
   align-items: center;
-  width: 30px;
-  height: 30px;
+  width: 20px;
+  height: 20px;
   line-height: 0;
 
   ${media.tablet} {
-    width: 24px;
-    height: 24px;
+    width: 20px;
+    height: 20px;
   }
 
   ${media.mobile} {
     width: 16px;
     height: 16px;
   }
-
-  & > svg {
-    display: block;
-    overflow: visible;
-  }
 `;
 
-export const IcSchoolIcon = styled(IcSchool)`
-  overflow: visible;
+export const IcSchoolIconWrapper = styled.span`
+  display: inline-flex;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
   width: 24px;
   height: 24px;
+  line-height: 0;
 
   ${media.tablet} {
     width: 20px;
@@ -216,11 +214,16 @@ export const IcSchoolIcon = styled(IcSchool)`
     width: 12px;
     height: 12px;
   }
+
+  & > svg {
+    display: block;
+    width: 100%;
+  }
 `;
 
 export const IcLinkedinIcon = styled(IcLinkedin)`
-  width: 24px;
-  height: 24px;
+  width: 20px;
+  height: 20px;
 
   ${media.tablet} {
     width: 20px;
@@ -228,14 +231,14 @@ export const IcLinkedinIcon = styled(IcLinkedin)`
   }
 
   ${media.mobile} {
-    width: 14px;
-    height: 14px;
+    width: 16px;
+    height: 16px;
   }
 `;
 
 export const IcMailIcon = styled(IcMail)`
-  width: 24px;
-  height: 24px;
+  width: 20px;
+  height: 20px;
 
   ${media.tablet} {
     width: 20px;
@@ -243,37 +246,37 @@ export const IcMailIcon = styled(IcMail)`
   }
 
   ${media.mobile} {
-    width: 14px;
-    height: 14px;
+    width: 16px;
+    height: 16px;
   }
 `;
 
 export const IcGithubIcon = styled(IcGithub)`
-  width: 22px;
-  height: 22px;
+  width: 20px;
+  height: 20px;
 
   ${media.tablet} {
-    width: 18px;
-    height: 18px;
+    width: 20px;
+    height: 20px;
   }
 
   ${media.mobile} {
-    width: 13px;
-    height: 13px;
+    width: 16px;
+    height: 16px;
   }
 `;
 
 export const IcBehanceIcon = styled(IcBehance)`
-  width: 22px;
-  height: 14px;
+  width: 20px;
+  height: 20px;
 
   ${media.tablet} {
-    width: 18px;
-    height: 12px;
+    width: 20px;
+    height: 20px;
   }
 
   ${media.mobile} {
-    width: 13px;
-    height: 9px;
+    width: 16px;
+    height: 16px;
   }
 `;

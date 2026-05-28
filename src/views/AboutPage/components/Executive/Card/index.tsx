@@ -1,3 +1,4 @@
+import { ReactComponent as IcSchool } from '@src/assets/icons/ic_school.svg';
 import NullImage from '@src/assets/images/null_image.png';
 import { MemberType } from '@src/lib/types/admin';
 import * as St from './style';
@@ -29,10 +30,12 @@ const MemberCard = ({
             <St.Position>{role}</St.Position>
             <St.Name>{name}</St.Name>
           </St.NameWrapper>
-          <St.CurrentProject>
-            <St.IcSchoolIcon />
-            {affiliation}
-          </St.CurrentProject>
+          <St.UniversityWrapper>
+            <St.IcSchoolIconWrapper>
+              <IcSchool />
+            </St.IcSchoolIconWrapper>
+            <span>{affiliation}</span>
+          </St.UniversityWrapper>
           <St.Desc>{introduction || '-'}</St.Desc>
         </St.ContentWrapper>
       </St.ProfileContentWrapper>
