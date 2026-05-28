@@ -6,4 +6,5 @@ export const Wrapper = styled.div`
   gap: 24px;
   overflow: visible;
   width: 100%;
+  scroll-margin-top: 100px;
 `;
