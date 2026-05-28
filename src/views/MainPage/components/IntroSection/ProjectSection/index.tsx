@@ -5,7 +5,7 @@ import { useMediaQuery } from 'react-responsive';
 import { api } from '@src/lib/api';
 import { PATHS } from '@src/lib/constants/routes';
 import { breakpoints } from '@src/lib/styles/breakpoints';
-import { ProjectCategoryType, ProjectPlatformType } from '@src/lib/types/project';
+import { ProjectCategoryType, ProjectPlatformType, ProjectType } from '@src/lib/types/project';
 import SectionTop from '@src/views/AboutPage/components/@common/SectionTop';
 import Project from './Project';
 import {
@@ -27,7 +27,7 @@ export default function ProjectSection({ mainColor }: ProjectSectionProps) {
       api.projectAPI.getProjectList(ProjectCategoryType.APPJAM, ProjectPlatformType.ALL, 1),
   });
 
-  const projectList = (projectData?.data ?? []).slice(0, 5).map((p) => ({
+  const projectList = (projectData?.data ?? []).slice(0, 5).map((p: ProjectType) => ({
     thumbnail: p.thumbnailImage ?? '',
     title: p.name,
     category: p.serviceType[0] ?? '',
