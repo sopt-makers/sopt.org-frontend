@@ -12,6 +12,7 @@ import {
   SectionTitleTranslate,
   SectionTitleWrapper,
 } from '../../views/RecruitPage/components/common/style';
+import { BlogPostType } from '@src/lib/types/blog';
 import useGetSampleReviews from './hooks/queries/useGetSampleReviews';
 import {
   Arrow,
@@ -51,7 +52,7 @@ export default function ActivityReview() {
           <ArrowLeft stroke={isLeftScrollable ? 'white' : 'grey'} />
         </ArrowWrapper>
         <Content ref={scrollableRef}>
-          {data?.reviews?.map((review) => (
+          {data?.reviews?.map((review: BlogPostType) => (
             <Link
               key={review.id}
               href={review.url}
