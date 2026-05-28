@@ -27,7 +27,8 @@ export default function ProjectSection({ mainColor }: ProjectSectionProps) {
       api.projectAPI.getProjectList(ProjectCategoryType.APPJAM, ProjectPlatformType.ALL, 1),
   });
 
-  const projectList = (projectData?.data ?? []).slice(0, 5).map((p: ProjectType) => ({
+  const projects: ProjectType[] = projectData?.data ?? [];
+  const projectList = projects.slice(0, 5).map((p) => ({
     thumbnail: p.thumbnailImage ?? '',
     title: p.name,
     category: p.serviceType[0] ?? '',
