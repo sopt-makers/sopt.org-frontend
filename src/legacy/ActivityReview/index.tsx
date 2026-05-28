@@ -13,7 +13,6 @@ import {
   SectionTitleTranslate,
   SectionTitleWrapper,
 } from '../../views/RecruitPage/components/common/style';
-import { BlogPostType } from '@src/lib/types/blog';
 import useGetSampleReviews from './hooks/queries/useGetSampleReviews';
 import {
   Arrow,
