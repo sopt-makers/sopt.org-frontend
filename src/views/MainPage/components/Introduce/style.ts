@@ -50,7 +50,7 @@ export const MotionTitle = styled(motion.span)`
   inset: 0;
   font-size: 100%;
   white-space: pre-line;
-  background: linear-gradient(93deg, #c9d8dd 78.65%, #fff 128.82%, #c9d8dd 137.19%);
+  background: var(--introduce-key-color);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -58,7 +58,8 @@ export const MotionTitle = styled(motion.span)`
 
 export const BackgroundTitle = styled.span`
   font-size: 100%;
-  background: linear-gradient(93deg, #c9d8dd -34.77%, #fff -14.77%, #636770 6.12%);
+  background: var(--introduce-key-color);
+  opacity: 0.3;
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

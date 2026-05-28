@@ -38,6 +38,7 @@ export interface GetHomepageResponse {
     activitiesMemberCount: number;
     projectCounts: number;
     studyCounts: number;
+    operationPeriod: number;
   };
 }
 
@@ -88,6 +89,7 @@ export interface GetAboutpageResponse {
     activitiesMemberCount: number;
     projectCounts: number;
     studyCounts: number;
+    operationPeriod: number;
   };
 }
 

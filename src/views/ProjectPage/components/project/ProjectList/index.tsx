@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react';
 import Pagination from '@src/components/common/Pagination';
 import { ProjectCategoryType, ProjectPlatformType } from '@src/lib/types/project';
 import ProjectCardList from '@src/views/ProjectPage/components/project/ProjectCardList';
@@ -10,18 +9,12 @@ import * as S from './style';
 interface ProjectListProp {
   selectedCategory: ProjectCategoryType;
   selectedPlatform: ProjectPlatformType;
+  currentPage: number;
+  onPageChange: (page: number) => void;
 }
 
-const INIT_PAGE = 1;
-
-export function ProjectList({ selectedCategory, selectedPlatform }: ProjectListProp) {
-  const [currentPage, setCurrentPage] = useState(INIT_PAGE);
-
+export function ProjectList({ selectedCategory, selectedPlatform, currentPage, onPageChange }: ProjectListProp) {
   const { response } = useGetProjectList(selectedCategory, selectedPlatform, currentPage);
-
-  useEffect(() => {
-    setCurrentPage(INIT_PAGE);
-  }, [selectedCategory, selectedPlatform]);
 
   return (
     <>
@@ -32,11 +25,11 @@ export function ProjectList({ selectedCategory, selectedPlatform }: ProjectListP
       <ProjectCardList projectList={response?.data ?? []} />
 
       <Pagination
-        currentPage={response?.currentPage ?? INIT_PAGE}
-        totalPage={response?.totalPage ?? INIT_PAGE}
+        currentPage={response?.currentPage ?? currentPage}
+        totalPage={response?.totalPage ?? 1}
         hasPrevPage={response?.hasPrevPage ?? false}
         hasNextPage={response?.hasNextPage ?? false}
-        onPageChange={setCurrentPage}
+        onPageChange={onPageChange}
       />
     </>
   );

@@ -18,9 +18,10 @@ const SCROLL_CONFIG = {
 } as const;
 interface IntroduceContentProps {
   isMobileSize: boolean;
+  keyColor: string;
 }
 
-function IntroduceContent({ isMobileSize }: IntroduceContentProps) {
+function IntroduceContent({ isMobileSize, keyColor }: IntroduceContentProps) {
   const { content, offset, scrollEnd } = SCROLL_CONFIG[isMobileSize ? 'mobile' : 'desktop'];
 
   const contentRef = useRef<HTMLElement>(null);
@@ -34,7 +35,7 @@ function IntroduceContent({ isMobileSize }: IntroduceContentProps) {
   const clipPath = useTransform(scrollValue, (value) => `inset(0% ${value}% 0% 0%)`);
 
   return (
-    <S.Background ref={contentRef}>
+    <S.Background ref={contentRef} style={{ '--introduce-key-color': keyColor } as React.CSSProperties}>
       <S.Wrapper>
         <S.TextContainer style={{ scale: scaleValue }}>
           <S.MotionTitle style={{ clipPath }}>{content}</S.MotionTitle>
@@ -45,9 +46,9 @@ function IntroduceContent({ isMobileSize }: IntroduceContentProps) {
   );
 }
 
-export default function Introduce() {
+export default function Introduce({ keyColor }: { keyColor: string }) {
   const isMobileSize = useIsMobile(`${breakpoints.tablet - 1}px`);
 
   // key를 통해 화면 크기 변경 시 리마운트
-  return <IntroduceContent key={isMobileSize ? 'mobile' : 'desktop'} isMobileSize={isMobileSize} />;
+  return <IntroduceContent key={isMobileSize ? 'mobile' : 'desktop'} isMobileSize={isMobileSize} keyColor={keyColor} />;
 }

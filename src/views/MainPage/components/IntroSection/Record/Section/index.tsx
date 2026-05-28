@@ -3,7 +3,6 @@ import { useState } from 'react';
 import { PATHS } from '@src/lib/constants/routes';
 import { GetAboutpageResponse } from '@src/lib/types/admin';
 import SectionTop from '@src/views/AboutPage/components/@common/SectionTop';
-import Button from '@src/views/MainPage/components/@common/Button';
 import RecordList from '@src/views/MainPage/components/IntroSection/Record/List';
 import * as S from './style';
 
@@ -31,14 +30,14 @@ const RecordSection = ({
           mainColor={mainColor}
         />
         <RecordList activitiesRecords={activitiesRecords} mainColor={mainColor} />
-        <Button
+        <S.Button
           onClick={() => router.push(PATHS.ABOUT)}
           aria-label="소개페이지로 이동"
           onPointerEnter={() => setIsGradientActive(true)}
           onPointerLeave={() => setIsGradientActive(false)}
         >
           이번 기수가 궁금하다면 <S.RightArrowIcon />
-        </Button>
+        </S.Button>
       </S.Wrapper>
     </S.GradientWrapper>
   );
