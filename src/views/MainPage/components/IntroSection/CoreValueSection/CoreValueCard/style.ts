@@ -79,7 +79,7 @@ export const CardContent = styled.div<{ isActive: boolean }>`
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  width: 100%;
+  width: 590px;
   height: 100%;
   padding: 36px;
   gap: 12px;
@@ -89,8 +89,12 @@ export const CardContent = styled.div<{ isActive: boolean }>`
   transition-delay: ${({ isActive }) => (isActive ? '0.25s' : '0s')};
   will-change: opacity;
 
+  ${media.desktopLarge} {
+    width: 664px;
+  }
+
   ${media.tablet} {
-    width: 100%;
+    width: 386px;
     padding: 20px;
   }
 
@@ -107,6 +111,7 @@ export const CardTitle = styled.h3`
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+  word-break: keep-all;
 
   ${media.tablet} {
     width: 100%;
