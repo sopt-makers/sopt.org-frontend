@@ -91,7 +91,7 @@ export const CardContent = styled.div<{ isActive: boolean }>`
 
   ${media.tablet} {
     width: 100%;
-    padding: 24px;
+    padding: 20px;
   }
 
   ${media.mobile} {
