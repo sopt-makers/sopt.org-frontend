@@ -7,7 +7,7 @@ import { ReactComponent as IconInstagram } from '@src/assets/icons/ic_instagram.
 import { media } from '@src/lib/styles/breakpoints';
 
 export const RecentNews = styled.section`
-  padding: 432px 0 372px 0px;
+  padding: 432px 0 0 0;
 
   ${media.tablet} {
     padding: 100px 0;

@@ -10,8 +10,8 @@ export const ItemContainer = styled.div<{ src: string; isInView: boolean; order:
   width: 298px;
   height: 330px;
   padding: 36px 100px;
-  border-radius: 24px;
   gap: 24px;
+  border-radius: 24px;
   background: center bottom 36px no-repeat ${colors.gray900} url(${({ src }) => src});
   background-size: calc(120px + 7vw);
   opacity: 0;
@@ -36,6 +36,7 @@ export const ItemContainer = styled.div<{ src: string; isInView: boolean; order:
     height: 202px;
     padding: 20px 80px;
     gap: 8px;
+    border-radius: 14px;
     background-size: 134px 134px;
     background-position: center bottom 14px;
     white-space: nowrap;
@@ -46,6 +47,7 @@ export const ItemContainer = styled.div<{ src: string; isInView: boolean; order:
     height: 202px;
     padding: 20px 80px;
     gap: 8px;
+    border-radius: 14px;
     background-size: 134px 134px;
     background-position: center bottom 12px;
     white-space: nowrap;
@@ -67,6 +69,13 @@ export const BackgroundBlur = styled.div<{ isHovered: boolean }>`
       backdrop-filter: blur(3.5px);
       background-color: rgba(0, 0, 0, 60%);
     `};
+
+  ${media.tablet} {
+    border-radius: 14px;
+  }
+  ${media.mobile} {
+    border-radius: 14px;
+  }
 `;
 
 export const CoreValue = styled.div`
