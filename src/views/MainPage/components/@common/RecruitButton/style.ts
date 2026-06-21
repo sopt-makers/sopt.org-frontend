@@ -9,51 +9,43 @@ import type { RecruitButtonSize } from '@src/views/MainPage/components/@common/R
 const recruitButtonInnerSizeStyle: Record<RecruitButtonSize, ReturnType<typeof css>> = {
   md: css`
     ${media.desktopLarge} {
-      width: 600px;
       padding: 18px 40px;
       ${fontsObject.HEADING_4_24_B}
     }
 
     ${media.desktop} {
-      width: 600px;
       padding: 18px 40px;
       ${fontsObject.HEADING_4_24_B}
     }
 
     ${media.tablet} {
-      width: 256px;
-      height: 59px;
+      padding: 16px 32px;
       ${fontsObject.LABEL_1_18_SB}
     }
 
     ${media.mobile} {
-      width: 188px;
-      height: 44px;
+      padding: 12px 24px;
       ${fontsObject.LABEL_2_16_SB}
     }
   `,
 
   sm: css`
     ${media.desktopLarge} {
-      width: 289px;
       padding: 18px 40px;
       ${fontsObject.HEADING_4_24_B}
     }
 
     ${media.desktop} {
-      width: 289px;
       padding: 18px 40px 18px 32px;
       ${fontsObject.HEADING_4_24_B}
     }
 
     ${media.tablet} {
-      width: 211px;
       padding: 16px 26px;
       ${fontsObject.LABEL_1_18_SB}
     }
 
     ${media.mobile} {
-      width: 181px;
       padding: 12px 20px;
       ${fontsObject.LABEL_2_16_SB}
     }
@@ -102,6 +94,7 @@ export const MouseTrackerWrapper = styled.div<{
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
   font-size: 100%;
   white-space: nowrap;
 
