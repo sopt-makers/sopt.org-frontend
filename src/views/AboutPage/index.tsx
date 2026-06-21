@@ -34,8 +34,8 @@ const AboutPage = () => {
   return (
     <PageLayout>
       <BrandingColorContext.Provider value={adminData.brandingColor}>
+        <Banner imageSrc={adminData.headerImage} />
         <Root>
-          <Banner imageSrc={adminData.headerImage} />
           <CoreValueSection
             mainDescription={`${adminData.generation}기 ${adminData.name}가 함께 나아가고 싶은 사람입니다.`}
             coreValues={adminData.coreValue.map((coreValue: CoreValueType) => ({
