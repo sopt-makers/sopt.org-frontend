@@ -2,7 +2,6 @@ import * as amplitude from '@amplitude/analytics-browser';
 import isValidProp from '@emotion/is-prop-valid';
 import { DialogProvider, ToastProvider } from '@sopt-makers/ui';
 import '@sopt-makers/ui/dist/index.css';
-import '@sopt-makers/ui/dist/index.css';
 import { MotionConfig } from 'framer-motion';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
