@@ -99,7 +99,7 @@ export const Link = styled(NextLink)`
   position: relative;
   display: flex;
   width: 298px;
-  height: 284px;
+  height: 400px;
   flex-direction: column;
   color: inherit;
   text-decoration: none;
@@ -117,11 +117,12 @@ export const Link = styled(NextLink)`
 
   ${media.desktopLarge} {
     width: 380px;
+    height: 334px;
   }
 
   ${media.tablet} {
     width: 100%;
-    height: 220px;
+    height: 280px;
     padding: 20px;
     border-radius: 16px;
 
@@ -133,7 +134,7 @@ export const Link = styled(NextLink)`
   ${media.mobile} {
     flex-shrink: 0;
     width: 200px;
-    height: 220px;
+    height: 280px;
     padding: 16px;
     border-radius: 16px;
     scroll-snap-align: start;

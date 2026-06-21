@@ -79,7 +79,7 @@ const PartItem = ({ partIntro, mainColor }: ItemProps) => {
         >
           {PART_NAMES[partIntro.part]}
         </S.TagComponent>
-        <S.PartItemTitle>{partIntro.part}</S.PartItemTitle>
+        <S.PartItemTitle>{partIntro.part} 파트</S.PartItemTitle>
         <S.PartItemDescription>{partIntro.description}</S.PartItemDescription>
       </S.Link>
     </S.PartItem>
