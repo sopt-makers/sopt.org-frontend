@@ -56,11 +56,19 @@ export const RecruitButtonWrapper = styled.button<{
   mainColor: string;
   highColor: string;
   size: RecruitButtonSize;
+  x: number;
+  y: number;
 }>`
+  position: relative;
   display: inline-flex;
   justify-content: center;
   align-items: center;
+  border: none;
   border-radius: 99px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-align: center;
+  cursor: pointer;
 
   background: ${({ mainColor, highColor }) =>
     `linear-gradient(274deg,${mainColor}, ${highColor}, ${highColor})`};
@@ -70,71 +78,44 @@ export const RecruitButtonWrapper = styled.button<{
   ${({ size }) => recruitButtonInnerSizeStyle[size]}
 
   color: ${colors.gray800};
-  text-align: center;
-  cursor: pointer;
-
-  &:hover {
-    background: ${({ highColor }) => highColor};
-  }
-`;
-
-export const MouseTrackerWrapper = styled.div<{
-  x: number;
-  y: number;
-  mainColor: string;
-  highColor: string;
-  size: RecruitButtonSize;
-}>`
-  border-radius: 99px;
-  border: none;
-  background: transparent;
-
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  font-size: 100%;
-  white-space: nowrap;
 
   &::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    inset: 0;
+    border-radius: inherit;
     background-image: ${({ x, y, mainColor, highColor }) => `
-    radial-gradient(
+      radial-gradient(
         circle 110px at ${x}px ${y}px,
         ${mainColor},
         transparent
-      ), radial-gradient(
+      ),
+      radial-gradient(
         circle 180px at ${x}px ${y}px,
-       ${highColor},
+        ${highColor},
         transparent
       )
     `};
     opacity: 0;
-    transition-duration: 0.4s;
+    transition: opacity 0.4s;
+  }
+
+  &:hover {
+    background: ${({ highColor }) => highColor};
   }
 
   &:hover::before {
     opacity: 1;
   }
 
-  > * {
+  & > div {
+    position: relative;
+    z-index: 1;
+    color: ${colors.white};
     transition: transform 0.2s;
   }
 
-  &:hover > * {
+  &:hover > div {
     transform: scale(0.96);
-  }
-
-  & > div {
-    color: ${colors.white};
-
-    font-size: 100%;
   }
 `;

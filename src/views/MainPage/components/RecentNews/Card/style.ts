@@ -17,6 +17,16 @@ export const Background = styled.main`
 
   transition: all 0.2s linear;
 
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 14px;
+    background: linear-gradient(179deg, rgba(0, 0, 0, 0.8) 0.54%, rgba(0, 0, 0, 0) 99.46%);
+    z-index: 1;
+    pointer-events: none;
+  }
+
   ${media.tablet} {
     height: 315px;
     width: 237px;

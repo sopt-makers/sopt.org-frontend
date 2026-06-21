@@ -7,3 +7,5 @@ export const PATHS = {
   RECRUIT: '/recruit',
   RULES: '/rules',
 } as const;
+
+export const RECRUIT_URL = 'https://recruit.sopt.org';
