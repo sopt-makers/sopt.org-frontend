@@ -52,9 +52,13 @@ const recruitButtonInnerSizeStyle: Record<RecruitButtonSize, ReturnType<typeof c
   `,
 };
 
+// 35%는 대충 맞춘 값 — 버튼이 너무 밝거나 흐리면 이 % 값만 조정
+const HIGHLIGHT_WHITE_MIX = '35%';
+const highlightColor = (mainColor: string) =>
+  `color-mix(in srgb, ${mainColor}, white ${HIGHLIGHT_WHITE_MIX})`;
+
 export const RecruitButtonWrapper = styled.button<{
   mainColor: string;
-  highColor: string;
   size: RecruitButtonSize;
   x: number;
   y: number;
@@ -70,8 +74,8 @@ export const RecruitButtonWrapper = styled.button<{
   text-align: center;
   cursor: pointer;
 
-  background: ${({ mainColor, highColor }) =>
-    `linear-gradient(274deg,${mainColor}, ${highColor}, ${highColor})`};
+  background: ${({ mainColor }) =>
+    `linear-gradient(274deg,${mainColor}, ${highlightColor(mainColor)}, ${highlightColor(mainColor)})`};
   background-size: 200% 200%;
   animation: ${BackgroundMove} 1.8s ease-out infinite alternate;
 
@@ -84,7 +88,7 @@ export const RecruitButtonWrapper = styled.button<{
     position: absolute;
     inset: 0;
     border-radius: inherit;
-    background-image: ${({ x, y, mainColor, highColor }) => `
+    background-image: ${({ x, y, mainColor }) => `
       radial-gradient(
         circle 110px at ${x}px ${y}px,
         ${mainColor},
@@ -92,7 +96,7 @@ export const RecruitButtonWrapper = styled.button<{
       ),
       radial-gradient(
         circle 180px at ${x}px ${y}px,
-        ${highColor},
+        ${highlightColor(mainColor)},
         transparent
       )
     `};
@@ -101,7 +105,7 @@ export const RecruitButtonWrapper = styled.button<{
   }
 
   &:hover {
-    background: ${({ highColor }) => highColor};
+    background: ${({ mainColor }) => highlightColor(mainColor)};
   }
 
   &:hover::before {

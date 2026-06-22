@@ -25,7 +25,6 @@ export const Wrapper = styled.section`
 
 export const GradientWrapper = styled.div<{
   mainColor: string;
-  highColor: string;
   active: boolean;
 }>`
   position: relative;
@@ -44,7 +43,7 @@ export const GradientWrapper = styled.div<{
     height: 150%;
     transform: translateX(-50%);
     border-radius: 999px;
-    background: ${({ mainColor, highColor }) => convertRadialGradient(mainColor, highColor)};
+    background: ${({ mainColor }) => convertRadialGradient(mainColor)};
     opacity: ${({ active }) => (active ? 0.45 : 0)};
     filter: blur(56px);
     transition: opacity 0.3s ease;

@@ -91,9 +91,9 @@ const InfoWrapper = styled(BaseText)`
   }
 `;
 
-const FitWrapper = styled(BaseText)<{ pointColor: string }>`
+const FitWrapper = styled(BaseText)<{ mainColor: string }>`
   border-radius: 30px;
-  background: ${({ pointColor }) => pointColor};
+  background: ${({ mainColor }) => mainColor};
   padding: 60px 80px;
   display: flex;
   flex-direction: column;

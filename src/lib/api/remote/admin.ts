@@ -1,19 +1,21 @@
 import { BASE_URL } from '@src/lib/constants/client';
 import axios from 'axios';
+import { GetAboutpageResponse, GetHomepageResponse, GetRecruitpageResponse } from '@src/lib/types/admin';
+import { resolveBrandingColor } from '@src/lib/utils/brandingColor';
 
 const adminClient = axios.create({ baseURL: `${BASE_URL}` });
 
-const getHomepage = async () => {
+const getHomepage = async (): Promise<GetHomepageResponse> => {
   const { data } = await adminClient.get('/homepage');
-  return data;
+  return { ...data, brandingColor: resolveBrandingColor(data.brandingColor) };
 };
-const getAboutpage = async () => {
+const getAboutpage = async (): Promise<GetAboutpageResponse> => {
   const { data } = await adminClient.get('/homepage/about');
-  return data;
+  return { ...data, brandingColor: resolveBrandingColor(data.brandingColor) };
 };
-const getRecruitpage = async () => {
+const getRecruitpage = async (): Promise<GetRecruitpageResponse> => {
   const { data } = await adminClient.get('/homepage/recruit');
-  return data;
+  return { ...data, brandingColor: resolveBrandingColor(data.brandingColor) };
 };
 
 export const remoteAdminAPI = {

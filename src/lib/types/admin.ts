@@ -17,15 +17,25 @@ export interface LatestNewsType {
   image: string;
   link: string;
 }
+
+// 어드민 API가 그대로 내려주는 모드별 컬러. 어느 모드를 쓸지는 BRAND_COLOR_MODE로 고정
+export interface RawBrandingColorType {
+  darkModeKeyColor: string;
+  darkModeTextColor: 'dark' | 'white';
+  lightModeKeyColor: string;
+  lightModeTextColor: 'dark' | 'white';
+}
+
+// resolveBrandingColor로 모드를 골라낸 뒤 컴포넌트들이 실제로 쓰는 형태
+// 밝은 변형이 필요한 곳(그라디언트 등)은 CSS color-mix(main, white)로 그 자리에서 파생시켜 사용
+export interface BrandingColorType {
+  main: string;
+}
+
 export interface GetHomepageResponse {
   generation: number;
   name: string;
-  brandingColor: {
-    main: string;
-    low: string;
-    high: string;
-    point: string;
-  };
+  brandingColor: BrandingColorType;
   mainButton: {
     text: string;
     keyColor: string;
@@ -75,12 +85,7 @@ export interface GetAboutpageResponse {
   generation: number;
   name: string;
   headerImage: string;
-  brandingColor: {
-    main: string;
-    low: string;
-    high: string;
-    point: string;
-  };
+  brandingColor: BrandingColorType;
   coreValue: CoreValueType[];
   partCurriculum: PartCurriculumType[];
   member: MemberType[];
@@ -124,12 +129,7 @@ export interface GetRecruitpageResponse {
   generation: number;
   name: string;
   recruitHeaderImage: string;
-  brandingColor: {
-    main: string;
-    low: string;
-    high: string;
-    point: string;
-  };
+  brandingColor: BrandingColorType;
   recruitSchedule: RecruitScheduleType[];
   recruitPartCurriculum: PartInfoType[];
   recruitQuestion: PartQuestionType[];

@@ -10,7 +10,7 @@ import { SectionTitle, SectionTitleTranslate, SectionTitleWrapper } from '../com
 import * as S from './style';
 
 const ChapterInfo = ({ info, generation }: { info: PartInfoType[]; generation: number }) => {
-  const { main, point } = useContext(BrandingColorContext);
+  const { main } = useContext(BrandingColorContext);
   const [selectedTab, setSelectedTab] = useState<Part>(Part.PLAN);
   const parsedPart = parsePartToKorean(selectedTab);
 
@@ -43,7 +43,7 @@ const ChapterInfo = ({ info, generation }: { info: PartInfoType[]; generation: n
       <Flex dir="column" gap="15px">
         <S.GreenChip mainColor={'#' + main}>이런 분이면 좋아요!</S.GreenChip>
         <S.Container>
-          <S.FitWrapper pointColor={'#' + point}>{infoMap[selectedTab].preference}</S.FitWrapper>
+          <S.FitWrapper mainColor={'#' + main}>{infoMap[selectedTab].preference}</S.FitWrapper>
         </S.Container>
       </Flex>
     </S.Wrapper>

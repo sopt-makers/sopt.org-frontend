@@ -6,10 +6,10 @@ import * as S from './style';
 
 interface CoreValueCardListProps {
   cards: IntroContentType[];
-  highColor: string;
+  mainColor: string;
 }
 
-export default function CoreValueCardList({ cards, highColor }: CoreValueCardListProps) {
+export default function CoreValueCardList({ cards, mainColor }: CoreValueCardListProps) {
   const isDesktop = useIsDesktop('1024px');
   const isTablet = useIsTablet('768px', '1023px');
   const isMobile = useIsMobile('767px');
@@ -40,7 +40,7 @@ export default function CoreValueCardList({ cards, highColor }: CoreValueCardLis
           onHover={() => handleMouseEnter(card.id)}
           onClick={() => handleClick(card.id)}
           isMobile={isMobile}
-          highColor={highColor}
+          mainColor={mainColor}
         />
       ))}
     </S.CardListContainer>
