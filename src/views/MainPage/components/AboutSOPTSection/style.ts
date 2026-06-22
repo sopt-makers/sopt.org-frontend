@@ -57,18 +57,22 @@ export const FloatingMenu = styled.div`
   z-index: 10;
 `;
 
-export const MenuWrapper = styled.div<{ isInView?: boolean; mainColor: string }>`
+export const MenuWrapper = styled.div<{
+  isInView?: boolean;
+  mainColor: string;
+  textColor: string;
+}>`
   position: relative;
   border-radius: 10px;
   color: ${colors.white};
   background-color: ${colors.gray950};
   ${fontsObject.LABEL_1_18_SB}
 
-  ${({ isInView, mainColor }) =>
+  ${({ isInView, mainColor, textColor }) =>
     isInView &&
     css`
       background-color: ${mainColor};
-      color: ${colors.white};
+      color: ${textColor};
     `};
 `;
 

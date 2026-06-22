@@ -6,6 +6,7 @@ import * as S from './style';
 interface RecruitMessageProp {
   generation: number;
   mainColor: string;
+  textColor: string;
   ctaText: string;
   isRecruitEnd?: boolean;
 }
@@ -13,6 +14,7 @@ interface RecruitMessageProp {
 export default function RecruitMessage({
   generation,
   mainColor,
+  textColor,
   ctaText,
   isRecruitEnd,
 }: RecruitMessageProp) {
@@ -34,7 +36,7 @@ export default function RecruitMessage({
           </S.Description>
         )}
       </S.MessageWrapper>
-      <RecruitButton size="md" mainColor={mainColor}>
+      <RecruitButton size="md" mainColor={mainColor} textColor={textColor}>
         {ctaText}&gt;
       </RecruitButton>
     </S.Wrapper>
