@@ -1,5 +1,4 @@
 import styled from '@emotion/styled';
-import { colors } from '@sopt-makers/colors';
 import { fontsObject } from '@sopt-makers/fonts';
 import { css } from '@emotion/react';
 import { BackgroundMove } from '@src/lib/styles/animation';
@@ -59,6 +58,7 @@ const highlightColor = (mainColor: string) =>
 
 export const RecruitButtonWrapper = styled.button<{
   mainColor: string;
+  textColor: string;
   size: RecruitButtonSize;
   x: number;
   y: number;
@@ -81,7 +81,7 @@ export const RecruitButtonWrapper = styled.button<{
 
   ${({ size }) => recruitButtonInnerSizeStyle[size]}
 
-  color: ${colors.gray800};
+  color: ${({ textColor }) => textColor};
 
   &::before {
     content: '';
@@ -115,7 +115,7 @@ export const RecruitButtonWrapper = styled.button<{
   & > div {
     position: relative;
     z-index: 1;
-    color: ${colors.white};
+    color: ${({ textColor }) => textColor};
     transition: transform 0.2s;
   }
 
