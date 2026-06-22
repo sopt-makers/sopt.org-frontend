@@ -4,9 +4,10 @@ import * as S from './style';
 
 interface BannerProps {
   mainColor: string;
+  textColor: string;
   ctaText: string;
 }
-export default function Banner({ mainColor, ctaText }: BannerProps) {
+export default function Banner({ mainColor, textColor, ctaText }: BannerProps) {
   const onScrollMoveDown = () => {
     const element = document.getElementById('nextContainer');
     if (element) element.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -20,7 +21,7 @@ export default function Banner({ mainColor, ctaText }: BannerProps) {
             <S.Title mainColor={mainColor}>
               {'함께이기에 외칠 수 있는 열정\n오직 이곳 솝트에서 —'}
             </S.Title>
-            <RecruitButton size="sm" mainColor={mainColor}>
+            <RecruitButton size="sm" mainColor={mainColor} textColor={textColor}>
               {ctaText}
               &gt;
             </RecruitButton>

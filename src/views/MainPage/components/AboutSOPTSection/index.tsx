@@ -18,6 +18,7 @@ interface Props {
   partIntroduction: PartIntroType[];
   latestNews: LatestNewsType[];
   mainColor: string;
+  textColor: string;
   ctaText: string;
   isRecruitEnd: boolean;
 }
@@ -27,6 +28,7 @@ function AboutSOPTSection({
   partIntroduction,
   latestNews,
   mainColor,
+  textColor,
   ctaText,
   isRecruitEnd,
 }: Props) {
@@ -44,7 +46,12 @@ function AboutSOPTSection({
           <S.MenuOffset aria-hidden="true" />
           <S.FloatingMenu>
             {MenuList.map(({ name, id }, index) => (
-              <S.MenuWrapper key={id} isInView={minIndex === index} mainColor={mainColor}>
+              <S.MenuWrapper
+                key={id}
+                isInView={minIndex === index}
+                mainColor={mainColor}
+                textColor={textColor}
+              >
                 <S.Menu href={`#${id}`} scroll={false}>
                   {name}
                 </S.Menu>
@@ -65,6 +72,7 @@ function AboutSOPTSection({
       <RecruitMessage
         generation={generation}
         mainColor={mainColor}
+        textColor={textColor}
         ctaText={ctaText}
         isRecruitEnd={isRecruitEnd}
       />
