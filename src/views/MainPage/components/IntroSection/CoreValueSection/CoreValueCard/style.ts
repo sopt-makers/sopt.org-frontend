@@ -173,7 +173,7 @@ export const CardValue = styled.p<{ isActive: boolean }>`
   }
 `;
 
-export const MobilePrimaryColorCircle = styled.div<{ highColor: string }>`
+export const MobilePrimaryColorCircle = styled.div<{ mainColor: string }>`
   position: absolute;
   top: 12px;
   left: -10px;
@@ -181,12 +181,12 @@ export const MobilePrimaryColorCircle = styled.div<{ highColor: string }>`
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  background-color: ${({ highColor }) => highColor};
+  background-color: ${({ mainColor }) => mainColor};
   opacity: 0.8;
   z-index: -1;
 `;
 
-export const PrimaryColorCircle = styled.div<{ isActive: boolean; highColor: string }>`
+export const PrimaryColorCircle = styled.div<{ isActive: boolean; mainColor: string }>`
   position: absolute;
   top: 50%;
   left: 50%;
@@ -194,7 +194,7 @@ export const PrimaryColorCircle = styled.div<{ isActive: boolean; highColor: str
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background-color: ${({ highColor }) => highColor};
+  background-color: ${({ mainColor }) => mainColor};
   z-index: 30;
   opacity: ${({ isActive }) => (isActive ? 0 : 0.7)};
   transition: opacity 0.5s ease;

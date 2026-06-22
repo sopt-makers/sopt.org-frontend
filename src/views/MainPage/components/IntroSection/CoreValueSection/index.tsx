@@ -18,7 +18,7 @@ const CoreValueSection = ({ adminData }: Props) => {
       />
       <CoreValueCardList
         cards={INTRO_CONTENT_LIST}
-        highColor={'#' + adminData.brandingColor.high}
+        mainColor={'#' + adminData.brandingColor.main}
       />
     </S.Wrapper>
   );

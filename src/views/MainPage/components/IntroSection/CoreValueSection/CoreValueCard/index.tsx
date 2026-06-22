@@ -7,7 +7,7 @@ interface CoreValueCardProps {
   onHover: () => void;
   onClick: () => void;
   isMobile?: boolean;
-  highColor: string;
+  mainColor: string;
 }
 
 export default function CoreValueCard({
@@ -16,7 +16,7 @@ export default function CoreValueCard({
   onHover,
   onClick,
   isMobile,
-  highColor,
+  mainColor,
 }: CoreValueCardProps) {
   return (
     <S.CardContainer onMouseEnter={onHover} onClick={onClick} isActive={isActive}>
@@ -24,7 +24,7 @@ export default function CoreValueCard({
       <S.GradientOverlay isActive={isActive} />
       <S.CardContent isActive={isActive}>
         <S.CardTitle>
-          {isMobile && <S.MobilePrimaryColorCircle highColor={highColor} />}
+          {isMobile && <S.MobilePrimaryColorCircle mainColor={mainColor} />}
           {card.title}
         </S.CardTitle>
         <S.CardDetail>{card.detail}</S.CardDetail>
@@ -32,7 +32,7 @@ export default function CoreValueCard({
       {!isMobile && (
         <>
           <S.CardValue isActive={isActive}>{card.value}</S.CardValue>
-          <S.PrimaryColorCircle isActive={isActive} highColor={highColor} />
+          <S.PrimaryColorCircle isActive={isActive} mainColor={mainColor} />
         </>
       )}
     </S.CardContainer>
