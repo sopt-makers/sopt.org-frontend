@@ -19,9 +19,6 @@ import Schedule from './components/Schedule';
 
 export const BrandingColorContext = createContext({
   main: '',
-  low: '',
-  high: '',
-  point: '',
 });
 function Recruit() {
   const { data: adminData } = useQuery<GetRecruitpageResponse>({

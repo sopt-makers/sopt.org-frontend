@@ -26,9 +26,6 @@ export interface AboutInfoType {
   title: string;
   brandingColor: {
     main: string;
-    low: string;
-    high: string;
-    point: string;
   };
   bannerImage: string;
   coreValue: {
