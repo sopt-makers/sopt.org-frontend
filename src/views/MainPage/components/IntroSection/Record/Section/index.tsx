@@ -8,21 +8,15 @@ import * as S from './style';
 
 type RecordSectionProps = Pick<GetAboutpageResponse, 'generation' | 'activitiesRecords'> & {
   mainColor: string;
-  highColor: string;
 };
 
-const RecordSection = ({
-  generation,
-  activitiesRecords,
-  mainColor,
-  highColor,
-}: RecordSectionProps) => {
+const RecordSection = ({ generation, activitiesRecords, mainColor }: RecordSectionProps) => {
   const [isGradientActive, setIsGradientActive] = useState(false);
 
   const router = useRouter();
 
   return (
-    <S.GradientWrapper mainColor={mainColor} highColor={highColor} active={isGradientActive}>
+    <S.GradientWrapper mainColor={mainColor} active={isGradientActive}>
       <S.Wrapper>
         <SectionTop
           korTitle={`${generation - 1}기 활동 레코드`}

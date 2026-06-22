@@ -7,14 +7,12 @@ export type RecruitButtonSize = 'sm' | 'md';
 
 interface RecruitButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   mainColor: string;
-  highColor: string;
   size?: RecruitButtonSize;
 }
 
 export default function RecruitButton({
   children,
   mainColor,
-  highColor,
   size = 'md',
   ...props
 }: PropsWithChildren<RecruitButtonProps>) {
@@ -37,7 +35,6 @@ export default function RecruitButton({
       onMouseMove={handleMouseMove}
       size={size}
       mainColor={mainColor}
-      highColor={highColor}
       x={blurPosition.x}
       y={blurPosition.y}
       type="button"

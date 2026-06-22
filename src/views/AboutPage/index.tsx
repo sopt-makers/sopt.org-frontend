@@ -18,9 +18,6 @@ const ExecutiveSection = dynamic(() => import('@src/views/AboutPage/components/E
 
 export const BrandingColorContext = createContext({
   main: '',
-  low: '',
-  high: '',
-  point: '',
 });
 
 const AboutPage = () => {
