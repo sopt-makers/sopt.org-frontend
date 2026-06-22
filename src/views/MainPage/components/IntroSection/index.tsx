@@ -9,7 +9,6 @@ export default function IntroSection({ adminData }: { adminData: GetHomepageResp
     <S.IntroSection>
       <RecordSection
         mainColor={'#' + adminData.brandingColor.main}
-        highColor={'#' + adminData.brandingColor.high}
         generation={adminData.generation}
         activitiesRecords={
           adminData.activitiesRecords ?? {

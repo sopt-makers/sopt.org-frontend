@@ -18,7 +18,6 @@ interface Props {
   partIntroduction: PartIntroType[];
   latestNews: LatestNewsType[];
   mainColor: string;
-  highColor: string;
   ctaText: string;
   isRecruitEnd: boolean;
 }
@@ -28,7 +27,6 @@ function AboutSOPTSection({
   partIntroduction,
   latestNews,
   mainColor,
-  highColor,
   ctaText,
   isRecruitEnd,
 }: Props) {
@@ -67,7 +65,6 @@ function AboutSOPTSection({
       <RecruitMessage
         generation={generation}
         mainColor={mainColor}
-        highColor={highColor}
         ctaText={ctaText}
         isRecruitEnd={isRecruitEnd}
       />

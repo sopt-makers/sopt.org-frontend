@@ -52,11 +52,7 @@ function MainPage() {
           generation={adminData.generation ?? 0}
         />
       )}
-      <Banner
-        mainColor={'#' + adminData.brandingColor.main}
-        highColor={'#' + adminData.brandingColor.high}
-        ctaText={ctaText}
-      />
+      <Banner mainColor={'#' + adminData.brandingColor.main} ctaText={ctaText} />
       <Introduce keyColor={'#' + adminData.brandingColor.main} />
       <IntroSection adminData={adminData} />
       <AboutSOPTSection
@@ -64,7 +60,6 @@ function MainPage() {
         partIntroduction={adminData.partIntroduction}
         latestNews={adminData.latestNews}
         mainColor={'#' + adminData.brandingColor.main}
-        highColor={'#' + adminData.brandingColor.high}
         ctaText={ctaText}
         isRecruitEnd={isRecruitEnd}
       />
