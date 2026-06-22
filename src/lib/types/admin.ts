@@ -30,6 +30,8 @@ export interface RawBrandingColorType {
 // 밝은 변형이 필요한 곳(그라디언트 등)은 CSS color-mix(main, white)로 그 자리에서 파생시켜 사용
 export interface BrandingColorType {
   main: string;
+  // main을 배경으로 쓰는 곳에서 그 위에 올릴 텍스트 색상(이미 실제 CSS 색상 값으로 변환됨)
+  textColor: string;
 }
 
 export interface GetHomepageResponse {
