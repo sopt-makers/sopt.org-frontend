@@ -29,7 +29,7 @@ const CurriculumContent = ({ curriculums }: CurriculumContentProps) => {
     <S.CurriculumContent>
       <TabBar onTabClick={handleTabClick} selectedTab={currentPart} includesExtra={false} />
       <S.CurriList>
-        {curriObj[currentPart].map((v, idx) => (
+        {(curriObj[currentPart] ?? []).map((v, idx) => (
           <S.CurriItem key={`${v}_${idx}`}>
             <S.CurriHighlight mainColor={'#' + main}>
               {String(idx + 1).padStart(2, '0')}
