@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { colors } from '@sopt-makers/colors';
+import { IconArrowUpRight } from '@sopt-makers/icons';
 
 export const Root = styled.footer`
   width: 100%;
@@ -66,6 +67,11 @@ export const TitleButton = styled.button`
     margin-right: 5px;
     font-size: 100%;
   }
+`;
+
+export const ArrowIcon = styled(IconArrowUpRight)`
+  width: 20px;
+  height: 20px;
 `;
 
 export const CopyrightText = styled.p`

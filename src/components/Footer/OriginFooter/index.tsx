@@ -1,6 +1,5 @@
 import { useRouter } from 'next/router';
 import { FC } from 'react';
-import { ReactComponent as ArrowRight } from '@src/assets/icons/arrow_right_16x16.svg';
 import { PATHS, PRIVACY_POLICY_URL } from '@src/lib/constants/routes';
 import Channels from '@src/components/Footer/Channels';
 import * as St from './style';
@@ -8,7 +7,7 @@ import * as St from './style';
 const OriginFooter: FC = () => {
   const router = useRouter();
 
-  const handleClick = () => {
+  const handleRulesClick = () => {
     router.push(PATHS.RULES);
   };
 
@@ -21,13 +20,13 @@ const OriginFooter: FC = () => {
       <St.ContentWrap>
         <div>
           <St.TitleButtonWrap>
-            <St.TitleButton onClick={handleClick}>
+            <St.TitleButton onClick={handleRulesClick}>
               <span>SOPT 회칙</span>
-              <ArrowRight />
+              <St.ArrowIcon />
             </St.TitleButton>
             <St.TitleButton onClick={handlePrivacyPolicyClick}>
               <span>개인정보처리방침</span>
-              <ArrowRight />
+              <St.ArrowIcon />
             </St.TitleButton>
           </St.TitleButtonWrap>
           <St.CopyrightText>
