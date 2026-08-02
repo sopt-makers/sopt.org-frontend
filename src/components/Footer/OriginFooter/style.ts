@@ -46,6 +46,12 @@ export const ContentWrap = styled.div`
   }
 `;
 
+export const TitleButtonWrap = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 24px;
+`;
+
 export const TitleButton = styled.button`
   cursor: pointer;
   line-height: 20px;
