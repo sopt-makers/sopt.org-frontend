@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { colors } from '@sopt-makers/colors';
+import { IconArrowUpRight } from '@sopt-makers/icons';
 
 export const Root = styled.footer`
   width: 100%;
@@ -46,6 +47,12 @@ export const ContentWrap = styled.div`
   }
 `;
 
+export const TitleButtonWrap = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 24px;
+`;
+
 export const TitleButton = styled.button`
   cursor: pointer;
   line-height: 20px;
@@ -60,6 +67,11 @@ export const TitleButton = styled.button`
     margin-right: 5px;
     font-size: 100%;
   }
+`;
+
+export const ArrowIcon = styled(IconArrowUpRight)`
+  width: 20px;
+  height: 20px;
 `;
 
 export const CopyrightText = styled.p`
