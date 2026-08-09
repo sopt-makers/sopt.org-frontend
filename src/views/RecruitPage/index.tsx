@@ -26,15 +26,19 @@ function Recruit() {
     queryFn: remoteAdminAPI.getRecruitpage,
   });
 
+  const obSchedule = adminData?.recruitSchedule?.[0];
+  const ybSchedule = adminData?.recruitSchedule?.[1];
+
   const isOBRecruiting = checkIsTimeInRange(
-    adminData?.recruitSchedule[0].schedule.applicationStartTime ?? '',
-    adminData?.recruitSchedule[0].schedule.applicationEndTime ?? '',
+    obSchedule?.schedule?.applicationStartTime ?? '',
+    obSchedule?.schedule?.applicationEndTime ?? '',
   );
   const isYBRecruiting = checkIsTimeInRange(
-    adminData?.recruitSchedule[1].schedule.applicationStartTime ?? '',
-    adminData?.recruitSchedule[1].schedule.applicationEndTime ?? '',
+    ybSchedule?.schedule?.applicationStartTime ?? '',
+    ybSchedule?.schedule?.applicationEndTime ?? '',
   );
   const isRecruiting = isOBRecruiting || isYBRecruiting;
+  const selectedSchedule = isOBRecruiting ? obSchedule : ybSchedule;
 
   if (!adminData) return;
   return (
@@ -52,7 +56,7 @@ function Recruit() {
           <ContentWrapper>
             <RecruiteeInfo />
             <ChapterInfo info={adminData.recruitPartCurriculum} generation={adminData.generation} />
-            <Schedule info={adminData.recruitSchedule[isOBRecruiting ? 0 : 1]} />
+            {selectedSchedule && <Schedule info={selectedSchedule} />}
             <Suspense>
               <FaqInfo info={adminData.recruitQuestion} />
             </Suspense>

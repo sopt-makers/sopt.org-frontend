@@ -12,18 +12,20 @@ import Introduce from './components/Introduce';
 function MainPage() {
   const { data: adminData } = useHomepage();
 
+  const obSchedule = adminData?.recruitSchedule?.[0]?.schedule;
+  const ybSchedule = adminData?.recruitSchedule?.[1]?.schedule;
+
   const isOBRecruiting = checkIsTimeInRange(
-    adminData?.recruitSchedule[0].schedule.applicationStartTime ?? '',
-    adminData?.recruitSchedule[0].schedule.applicationEndTime ?? '',
+    obSchedule?.applicationStartTime ?? '',
+    obSchedule?.applicationEndTime ?? '',
   );
   const isYBRecruiting = checkIsTimeInRange(
-    adminData?.recruitSchedule[1].schedule.applicationStartTime ?? '',
-    adminData?.recruitSchedule[1].schedule.applicationEndTime ?? '',
+    ybSchedule?.applicationStartTime ?? '',
+    ybSchedule?.applicationEndTime ?? '',
   );
   const isRecruiting = isOBRecruiting || isYBRecruiting;
   const isRecruitEnd =
-    Date.now() >
-    new Date(adminData?.recruitSchedule[1].schedule.applicationEndTime ?? '').getTime();
+    Date.now() > new Date(ybSchedule?.applicationEndTime ?? '').getTime();
 
   const ctaText = useMemo(() => {
     if (adminData?.generation === undefined) return '모집 알림 신청하기 ';
@@ -46,8 +48,8 @@ function MainPage() {
         <TopBanner
           targetTime={
             isYBRecruiting
-              ? adminData.recruitSchedule[1].schedule.applicationEndTime
-              : adminData.recruitSchedule[0].schedule.applicationEndTime
+              ? ybSchedule?.applicationEndTime ?? ''
+              : obSchedule?.applicationEndTime ?? ''
           }
           generation={adminData.generation ?? 0}
         />
