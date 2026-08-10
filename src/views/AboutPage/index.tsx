@@ -61,20 +61,20 @@ const Root = styled.main`
   flex-direction: column;
   justify-content: center;
   min-height: 100vh;
-  padding: 0 40px 423px 40px;
+  padding: 80px 40px 423px 40px;
   gap: 232px;
 
   ${media.desktopLarge} {
-    padding: 0 40px 319px 40px;
+    padding: 80px 40px 319px 40px;
   }
 
   ${media.tablet} {
-    padding: 0 20px 334px 20px;
+    padding: 80px 20px 334px 20px;
     gap: 100px;
   }
 
   ${media.mobile} {
-    padding: 0 20px 41px 20px;
+    padding: 80px 20px 41px 20px;
     gap: 100px;
   }
 `;
