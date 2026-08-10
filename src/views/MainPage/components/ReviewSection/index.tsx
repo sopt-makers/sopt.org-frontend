@@ -1,8 +1,8 @@
 import { useAnimationControls } from 'framer-motion';
 import { Ref, forwardRef, useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
-import { SOPT_COMMENT_LIST } from '@src/lib/constants/main';
 import { breakpoints } from '@src/lib/styles/breakpoints';
+import { SoptCommentType } from '@src/lib/types/main';
 import ReviewCard from './Card';
 import * as S from './style';
 
@@ -34,11 +34,15 @@ const INACTIVE_CARD_WIDTHS = {
   tablet: 300, // 768px–1023px
 } as const;
 
-function ReviewSection(_props: unknown, ref: Ref<HTMLDivElement>) {
+interface ReviewSectionProps {
+  reviews: SoptCommentType[];
+}
+
+function ReviewSection({ reviews }: ReviewSectionProps, ref: Ref<HTMLDivElement>) {
   const [activeIdx, setActiveIdx] = useState(0);
   const controls = useAnimationControls();
-  const commentLength = SOPT_COMMENT_LIST.length;
-  const activeComment = SOPT_COMMENT_LIST[activeIdx];
+  const commentLength = reviews.length;
+  const activeComment = reviews[activeIdx];
 
   const isMobile = useMediaQuery({ maxWidth: breakpoints.tablet - 1 });
   const isTablet = useMediaQuery({
@@ -71,6 +75,8 @@ function ReviewSection(_props: unknown, ref: Ref<HTMLDivElement>) {
 
   const translateX = -(activeIdx * (inactiveCardWidth + CARD_GAP));
 
+  if (!activeComment) return null;
+
   return (
     <S.Wrapper id="review" ref={ref}>
       <S.Summary animate={controls} color={activeComment.color}>
@@ -90,7 +96,7 @@ function ReviewSection(_props: unknown, ref: Ref<HTMLDivElement>) {
             animate={{ x: translateX }}
             transition={{ type: 'tween', duration: 0.4, ease: 'easeInOut' }}
           >
-            {SOPT_COMMENT_LIST.map((comment, idx) => (
+            {reviews.map((comment, idx) => (
               <ReviewCard
                 key={idx}
                 isActive={activeIdx === idx}
