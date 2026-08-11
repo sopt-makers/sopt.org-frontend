@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import dynamic from 'next/dynamic';
 import { useQuery } from '@tanstack/react-query';
 import { createContext } from 'react';
 import PageLayout from '@src/components/common/PageLayout';
@@ -13,7 +14,7 @@ import {
   ScheduleSection,
 } from '@src/views/AboutPage/components';
 
-// const ExecutiveSection = dynamic(() => import('@src/views/AboutPage/components/Executive/Section'));
+const ExecutiveSection = dynamic(() => import('@src/views/AboutPage/components/Executive/Section'));
 
 export const BrandingColorContext = createContext({
   main: '',
@@ -42,11 +43,11 @@ const AboutPage = () => {
           />
           <ScheduleSection generation={adminData.generation} schedules={adminData.schedule ?? []} />
           <CurriculumSection curriculums={adminData.partCurriculum} />
-          {/* <ExecutiveSection
+          <ExecutiveSection
             members={adminData.member}
             generation={adminData.generation}
             name={adminData.name}
-          /> */}
+          />
           <InternalTeams />
         </Root>
       </BrandingColorContext.Provider>
