@@ -69,6 +69,7 @@ function MainPage() {
         textColor={adminData.brandingColor.textColor}
         ctaText={ctaText}
         isRecruitEnd={isRecruitEnd}
+        reviews={adminData.reviews}
       />
     </PageLayout>
   );
