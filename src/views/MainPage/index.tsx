@@ -1,9 +1,9 @@
 import { useEffect, useMemo } from 'react';
 import PageLayout from '@src/components/common/PageLayout';
-import { useHomepage } from '@src/views/MainPage/hooks/useHomepage';
 import AboutSOPTSection from '@src/views/MainPage/components/AboutSOPTSection';
 import IntroSection from '@src/views/MainPage/components/IntroSection';
 import TopBanner from '@src/views/MainPage/components/TopBanner';
+import { useHomepage } from '@src/views/MainPage/hooks/useHomepage';
 import usePostVisitor from '@src/views/MainPage/hooks/usePostVisitor';
 import { checkIsTimeInRange } from '../../lib/utils/date';
 import Banner from './components/Banner';
@@ -24,8 +24,7 @@ function MainPage() {
     ybSchedule?.applicationEndTime ?? '',
   );
   const isRecruiting = isOBRecruiting || isYBRecruiting;
-  const isRecruitEnd =
-    Date.now() > new Date(ybSchedule?.applicationEndTime ?? '').getTime();
+  const isRecruitEnd = Date.now() > new Date(ybSchedule?.applicationEndTime ?? '').getTime();
 
   const ctaText = useMemo(() => {
     if (adminData?.generation === undefined) return '모집 알림 신청하기 ';
@@ -55,6 +54,7 @@ function MainPage() {
         />
       )}
       <Banner
+        homeHeaderImage={adminData.homeHeaderImage}
         mainColor={'#' + adminData.brandingColor.main}
         textColor={adminData.brandingColor.textColor}
         ctaText={ctaText}

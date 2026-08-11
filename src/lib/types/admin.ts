@@ -35,6 +35,7 @@ export interface BrandingColorType {
 }
 
 export interface GetHomepageResponse {
+  homeHeaderImage: string;
   generation: number;
   name: string;
   brandingColor: BrandingColorType;
