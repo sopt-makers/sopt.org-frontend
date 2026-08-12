@@ -1,3 +1,5 @@
+import { SoptCommentType } from '@src/lib/types/main';
+
 export type PartType = '기획' | '디자인' | '안드로이드' | 'iOS' | '웹' | '서버';
 export type ExecutivesType =
   | '회장'
@@ -34,7 +36,16 @@ export interface BrandingColorType {
   textColor: string;
 }
 
+// 어드민 API가 그대로 내려주는 후기. authorInfo는 "이름 | 기수 | 파트" 형태의 문자열
+export interface RawReviewType {
+  id: number;
+  title: string;
+  content: string;
+  authorInfo: string;
+}
+
 export interface GetHomepageResponse {
+  homeHeaderImage: string;
   generation: number;
   name: string;
   brandingColor: BrandingColorType;
@@ -52,6 +63,9 @@ export interface GetHomepageResponse {
     studyCounts: number;
     operationPeriod: number;
   };
+  coreValue: HomeCoreValueType[];
+  // resolveReviews로 SoptCommentType[]로 가공된 뒤 컴포넌트들이 실제로 쓰는 형태
+  reviews: SoptCommentType[];
 }
 
 export interface MemberType {
@@ -76,6 +90,12 @@ export interface CoreValueType {
   value: string;
   description: string;
   image: string;
+}
+
+export interface HomeCoreValueType {
+  value: string;
+  description: string;
+  detailDescription: string;
 }
 export interface ActivityScheduleItemType {
   name: string;

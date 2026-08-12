@@ -1,8 +1,9 @@
-import { IntroContentType } from '@src/lib/types/main';
+import { type HomeCoreValueType } from '@src/lib/types/admin';
 import * as S from './style';
 
 interface CoreValueCardProps {
-  card: IntroContentType;
+  coreValue: HomeCoreValueType;
+  src: string;
   isActive: boolean;
   onHover: () => void;
   onClick: () => void;
@@ -11,7 +12,8 @@ interface CoreValueCardProps {
 }
 
 export default function CoreValueCard({
-  card,
+  coreValue,
+  src,
   isActive,
   onHover,
   onClick,
@@ -20,18 +22,24 @@ export default function CoreValueCard({
 }: CoreValueCardProps) {
   return (
     <S.CardContainer onMouseEnter={onHover} onClick={onClick} isActive={isActive}>
-      <S.CoreValueImage src={card.src} alt={card.title} width={540} height={360} loading="lazy" />
+      <S.CoreValueImage
+        src={src}
+        alt={coreValue.description}
+        width={540}
+        height={360}
+        loading="lazy"
+      />
       <S.GradientOverlay isActive={isActive} />
       <S.CardContent isActive={isActive}>
         <S.CardTitle>
           {isMobile && <S.MobilePrimaryColorCircle mainColor={mainColor} />}
-          {card.title}
+          {coreValue.description}
         </S.CardTitle>
-        <S.CardDetail>{card.detail}</S.CardDetail>
+        <S.CardDetail>{coreValue.detailDescription}</S.CardDetail>
       </S.CardContent>
       {!isMobile && (
         <>
-          <S.CardValue isActive={isActive}>{card.value}</S.CardValue>
+          <S.CardValue isActive={isActive}>{coreValue.value}</S.CardValue>
           <S.PrimaryColorCircle isActive={isActive} mainColor={mainColor} />
         </>
       )}

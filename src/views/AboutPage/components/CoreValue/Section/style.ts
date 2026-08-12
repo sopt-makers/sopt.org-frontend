@@ -3,6 +3,7 @@ import styled from '@emotion/styled';
 export const CoreValueSection = styled.section`
   display: flex;
   flex-direction: column;
+  padding-top: 80px;
   gap: 48px;
 
   /* 태블릿 뷰 */

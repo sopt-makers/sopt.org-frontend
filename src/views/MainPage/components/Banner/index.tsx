@@ -1,13 +1,13 @@
-import imgMainPageBanner from '@src/assets/images/img_mainBanner.png';
 import RecruitButton from '../@common/RecruitButton';
 import * as S from './style';
 
 interface BannerProps {
+  homeHeaderImage: string;
   mainColor: string;
   textColor: string;
   ctaText: string;
 }
-export default function Banner({ mainColor, textColor, ctaText }: BannerProps) {
+export default function Banner({ homeHeaderImage, mainColor, textColor, ctaText }: BannerProps) {
   const onScrollMoveDown = () => {
     const element = document.getElementById('nextContainer');
     if (element) element.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -30,7 +30,7 @@ export default function Banner({ mainColor, textColor, ctaText }: BannerProps) {
         </S.ContentWrapper>
         <S.BannerWrapper>
           <S.BannerImage
-            src={imgMainPageBanner}
+            src={homeHeaderImage}
             alt="솝트 공식홈페이지 메인페이지 배너 사진"
             fill
             priority
