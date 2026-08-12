@@ -1,5 +1,6 @@
 import useInView from '@src/hooks/useInView';
 import { LatestNewsType, PartIntroType } from '@src/lib/types/admin';
+import { SoptCommentType } from '@src/lib/types/main';
 import Activity from '@src/views/MainPage/components/Activity';
 import PartIntroduction from '@src/views/MainPage/components/PartIntroduction';
 import RecentNews from '@src/views/MainPage/components/RecentNews';
@@ -21,6 +22,7 @@ interface Props {
   textColor: string;
   ctaText: string;
   isRecruitEnd: boolean;
+  reviews: SoptCommentType[];
 }
 
 function AboutSOPTSection({
@@ -31,6 +33,7 @@ function AboutSOPTSection({
   textColor,
   ctaText,
   isRecruitEnd,
+  reviews,
 }: Props) {
   const activity = useInView();
   const part = useInView();
@@ -64,7 +67,7 @@ function AboutSOPTSection({
           <S.ScrollContainer>
             <Activity ref={activity.ref} />
             <PartIntroduction ref={part.ref} parts={partIntroduction} mainColor={mainColor} />
-            <ReviewSection ref={review.ref} />
+            <ReviewSection ref={review.ref} reviews={reviews} />
           </S.ScrollContainer>
         </S.ScrollContentLayout>
       </S.Wrapper>
