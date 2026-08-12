@@ -63,6 +63,7 @@ export interface GetHomepageResponse {
     studyCounts: number;
     operationPeriod: number;
   };
+  coreValue: HomeCoreValueType[];
   // resolveReviews로 SoptCommentType[]로 가공된 뒤 컴포넌트들이 실제로 쓰는 형태
   reviews: SoptCommentType[];
 }
@@ -89,6 +90,12 @@ export interface CoreValueType {
   value: string;
   description: string;
   image: string;
+}
+
+export interface HomeCoreValueType {
+  value: string;
+  description: string;
+  detailDescription: string;
 }
 export interface ActivityScheduleItemType {
   name: string;
