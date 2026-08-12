@@ -1,4 +1,3 @@
-import { INTRO_CONTENT_LIST } from '@src/lib/constants/main';
 import { type GetHomepageResponse } from '@src/lib/types/admin';
 import SectionTop from '@src/views/AboutPage/components/@common/SectionTop';
 import CoreValueCardList from '@src/views/MainPage/components/IntroSection/CoreValueSection/CoreValueCardList';
@@ -17,7 +16,7 @@ const CoreValueSection = ({ adminData }: Props) => {
         mainColor={'#' + adminData.brandingColor.main}
       />
       <CoreValueCardList
-        cards={INTRO_CONTENT_LIST}
+        coreValues={adminData.coreValue}
         mainColor={'#' + adminData.brandingColor.main}
       />
     </S.Wrapper>
