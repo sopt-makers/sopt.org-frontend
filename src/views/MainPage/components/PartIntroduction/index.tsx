@@ -1,7 +1,7 @@
 import { Ref, forwardRef } from 'react';
 import { useIsMobile, useIsTablet } from '@src/hooks/useDevice';
 import { PART_NAMES } from '@src/lib/constants/main';
-import { PATHS } from '@src/lib/constants/routes';
+import { RECRUIT_URL } from '@src/lib/constants/routes';
 import { breakpoints } from '@src/lib/styles/breakpoints';
 import * as S from './style';
 
@@ -68,7 +68,7 @@ const PartItem = ({ partIntro, mainColor }: ItemProps) => {
 
   return (
     <S.PartItem>
-      <S.Link href={PATHS.ABOUT}>
+      <S.Link href={`${RECRUIT_URL}/part/${PART_NAMES[partIntro.part]}`}>
         <S.HoverIconBadge aria-hidden="true" mainColor={mainColor}>
           <S.HoverIcon />
         </S.HoverIconBadge>
