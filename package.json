@@ -2,13 +2,23 @@
   "name": "sopt.org",
   "version": "0.1.0",
   "private": true,
-  "packageManager": "pnpm@10.22.0",
   "scripts": {
-    "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "dev": "next dev",
+    "format": "eslint --ignore-path .gitignore --fix . && prettier . --write",
     "lint": "eslint --ignore-path .gitignore .",
-    "format": "eslint --ignore-path .gitignore --fix . && prettier . --write"
+    "start": "next start"
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "git-cz"
+    }
   },
   "dependencies": {
     "@amplitude/analytics-browser": "^2.3.0",
@@ -78,17 +88,7 @@
     "url-loader": "^4.1.1",
     "webpack": "^5.74.0"
   },
-  "lint-staged": {
-    "*.{ts,tsx}": [
-      "eslint --fix",
-      "prettier --write"
-    ]
-  },
-  "config": {
-    "commitizen": {
-      "path": "git-cz"
-    }
-  },
+  "packageManager": "pnpm@10.22.0",
   "engines": {
     "npm": "please-use-pnpm",
     "yarn": "please-use-pnpm"
