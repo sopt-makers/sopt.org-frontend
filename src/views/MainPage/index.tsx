@@ -45,6 +45,7 @@ function MainPage() {
     <PageLayout>
       {isRecruiting && (
         <TopBanner
+          mainColor={'#' + adminData.brandingColor.main}
           targetTime={
             isYBRecruiting
               ? ybSchedule?.applicationEndTime ?? ''

@@ -7,11 +7,12 @@ import useGetVisitor from '../../hooks/useGetVisitor';
 import * as S from './style';
 
 interface TopBannerProps {
+  mainColor: string;
   targetTime?: string;
   generation: number;
 }
 
-export default function TopBanner({ targetTime, generation }: TopBannerProps) {
+export default function TopBanner({ mainColor, targetTime, generation }: TopBannerProps) {
   const TARGET_DATE = targetTime ? new Date(targetTime) : new Date();
   const isMobile = useIsMobile();
   const CHANGE_POSITION = isMobile ? 495 : 605;
@@ -33,7 +34,7 @@ export default function TopBanner({ targetTime, generation }: TopBannerProps) {
   });
 
   return (
-    <S.Container href={RECRUIT_URL} isKeyColor={isKeyColor}>
+    <S.Container href={RECRUIT_URL} isKeyColor={isKeyColor} mainColor={mainColor}>
       <S.Wrapper>
         <div>
           <S.Title>솝트의 {generation}번째 열정이 되어주세요!</S.Title>
