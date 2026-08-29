@@ -81,7 +81,10 @@ export const RecruitButtonWrapper = styled.button<{
 
   ${({ size }) => recruitButtonInnerSizeStyle[size]}
 
+  appearance: none;
+  -webkit-appearance: none;
   color: ${({ textColor }) => textColor};
+  -webkit-text-fill-color: ${({ textColor }) => textColor};
 
   &::before {
     content: '';
@@ -116,6 +119,7 @@ export const RecruitButtonWrapper = styled.button<{
     position: relative;
     z-index: 1;
     color: ${({ textColor }) => textColor};
+    -webkit-text-fill-color: ${({ textColor }) => textColor};
     transition: transform 0.2s;
   }
 
