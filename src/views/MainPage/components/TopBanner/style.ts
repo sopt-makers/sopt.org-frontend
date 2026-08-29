@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import Link from 'next/link';
 import { css } from '@emotion/react';
 
-export const Container = styled(Link)<{ isKeyColor: boolean }>`
+export const Container = styled(Link)<{ isKeyColor: boolean; mainColor: string }>`
   display: flex;
   justify-content: center;
   position: fixed;
@@ -12,10 +12,10 @@ export const Container = styled(Link)<{ isKeyColor: boolean }>`
   width: 100%;
   z-index: 95;
 
-  ${({ isKeyColor }) =>
+  ${({ isKeyColor, mainColor }) =>
     isKeyColor
       ? css`
-          background-color: #5ba3ff;
+          background-color: ${mainColor};
           color: #0f1012;
           & h1,
           p {
