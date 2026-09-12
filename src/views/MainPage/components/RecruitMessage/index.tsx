@@ -19,7 +19,7 @@ export default function RecruitMessage({
   isRecruitEnd,
 }: RecruitMessageProp) {
   const recruitGeneration = generation + (isRecruitEnd ? 1 : 0);
-  const recruitMonth = generation % 2 === 0 ? '3' : '9';
+  const recruitMonth = recruitGeneration % 2 === 0 ? '3' : '9';
 
   const isMobileSize = useIsMobile(`${breakpoints.tablet - 1}px`);
 
