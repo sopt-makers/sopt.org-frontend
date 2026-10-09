@@ -8,7 +8,6 @@ function RulesList() {
       {RULES.map((item) => {
         return <CollapseLi key={item.title} title={item.title} contents={item.contents} />;
       })}
-      ;
     </S.Ul>
   );
 }
