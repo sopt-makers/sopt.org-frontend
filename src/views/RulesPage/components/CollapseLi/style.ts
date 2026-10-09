@@ -74,7 +74,7 @@ export const Contents = styled.div<ButtonStyleProps>`
   overflow: hidden;
   line-height: 180%;
   letter-spacing: -0.03em;
-  white-space: pre-line;
+  white-space: pre-wrap;
   color: ${colors.gray10};
   font-size: 20rem;
   font-weight: 400;
