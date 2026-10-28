@@ -1,3 +1,4 @@
+import { EXTERNAL_LINKS } from '@src/lib/constants/routes';
 import facebookLogo from '@src/assets/icons/ic_facebook_filled.svg';
 import instagramLogo from '@src/assets/icons/ic_instagram_filled.svg';
 import kakaoLogo from '@src/assets/icons/ic_kakao_filled.svg';
@@ -13,19 +14,19 @@ function Channels({ isFooter = false }: ChannelsProps) {
   const handleClick = (e: React.MouseEvent) => {
     switch (e.currentTarget.id) {
       case 'mail':
-        window.location.href = 'mailto:president@sopt.org';
+        window.location.href = `mailto:${EXTERNAL_LINKS.EMAIL}`;
         break;
       case 'facebook':
-        window.open('https://www.facebook.com/clubsopt/');
+        window.open(EXTERNAL_LINKS.FACEBOOK);
         break;
       case 'instagram':
-        window.open('https://www.instagram.com/sopt_official/');
+        window.open(EXTERNAL_LINKS.INSTAGRAM);
         break;
       case 'youtube':
-        window.open('https://www.youtube.com/c/SOPTMEDIA');
+        window.open(EXTERNAL_LINKS.YOUTUBE);
         break;
       default:
-        window.open('https://pf.kakao.com/_sxaIWG');
+        window.open(EXTERNAL_LINKS.KAKAO);
         break;
     }
   };

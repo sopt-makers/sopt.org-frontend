@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router';
 import { FC } from 'react';
-import { PATHS, PRIVACY_POLICY_URL } from '@src/lib/constants/routes';
+import { EXTERNAL_LINKS, PATHS } from '@src/lib/constants/routes';
 import Channels from '@src/components/Footer/Channels';
 import * as St from './style';
 
@@ -12,7 +12,7 @@ const OriginFooter: FC = () => {
   };
 
   const handlePrivacyPolicyClick = () => {
-    window.open(PRIVACY_POLICY_URL, '_blank', 'noopener,noreferrer');
+    window.open(EXTERNAL_LINKS.PRIVACY_POLICY, '_blank', 'noopener,noreferrer');
   };
 
   return (
