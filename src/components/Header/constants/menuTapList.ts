@@ -1,4 +1,4 @@
-import { PATHS, RECRUIT_URL } from '@src/lib/constants/routes';
+import { EXTERNAL_LINKS, PATHS } from '@src/lib/constants/routes';
 import { MenuTapList, MenuTapType } from '../types';
 
 export const menuTapList: MenuTapList = [
@@ -25,6 +25,6 @@ export const menuTapList: MenuTapList = [
   {
     type: MenuTapType.SPECIAL,
     title: '모집안내',
-    href: RECRUIT_URL,
+    href: EXTERNAL_LINKS.RECRUIT,
   },
 ];

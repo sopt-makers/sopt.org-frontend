@@ -3,6 +3,7 @@ import { ReactComponent as IcEmail } from '@src/assets/icons/ic_email.svg';
 import { ReactComponent as IcFacebook } from '@src/assets/icons/ic_facebook.svg';
 import { ReactComponent as IcKakao } from '@src/assets/icons/ic_kakao.svg';
 import imgInstagram from '@src/assets/icons/img_instagram.png';
+import { EXTERNAL_LINKS } from '@src/lib/constants/routes';
 
 export enum ContactType {
   EMAIL = 'email',
@@ -40,14 +41,14 @@ type ContactItem = {
 export const contactMap: Record<ContactType, ContactItem> = {
   [ContactType.EMAIL]: {
     label: '이메일',
-    desc: 'president@sopt.org',
+    desc: EXTERNAL_LINKS.EMAIL,
     thumbnail: {
       type: 'icon',
       src: IcEmail,
     },
     link: {
       type: 'change-window',
-      href: 'mailto:president@sopt.org',
+      href: `mailto:${EXTERNAL_LINKS.EMAIL}`,
     },
   },
   [ContactType.KAKAO]: {
@@ -59,7 +60,7 @@ export const contactMap: Record<ContactType, ContactItem> = {
     },
     link: {
       type: 'open',
-      href: 'https://pf.kakao.com/_sxaIWG',
+      href: EXTERNAL_LINKS.KAKAO,
     },
   },
   [ContactType.INSTAGRAM]: {
@@ -72,7 +73,7 @@ export const contactMap: Record<ContactType, ContactItem> = {
     },
     link: {
       type: 'open',
-      href: 'https://www.instagram.com/sopt_official/',
+      href: EXTERNAL_LINKS.INSTAGRAM,
     },
   },
   [ContactType.FACEBOOK]: {
@@ -84,7 +85,7 @@ export const contactMap: Record<ContactType, ContactItem> = {
     },
     link: {
       type: 'open',
-      href: 'https://www.facebook.com/clubsopt/',
+      href: EXTERNAL_LINKS.FACEBOOK,
     },
   },
 };

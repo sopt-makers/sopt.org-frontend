@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { ReactComponent as IcTimer } from '@src/assets/icons/ic_timer.svg';
 import Timer from '@src/components/common/Timer';
 import { useIsMobile } from '@src/hooks/useDevice';
-import { RECRUIT_URL } from '@src/lib/constants/routes';
+import { EXTERNAL_LINKS } from '@src/lib/constants/routes';
 import useGetVisitor from '../../hooks/useGetVisitor';
 import * as S from './style';
 
@@ -34,7 +34,7 @@ export default function TopBanner({ mainColor, targetTime, generation }: TopBann
   });
 
   return (
-    <S.Container href={RECRUIT_URL} isKeyColor={isKeyColor} mainColor={mainColor}>
+    <S.Container href={EXTERNAL_LINKS.RECRUIT} isKeyColor={isKeyColor} mainColor={mainColor}>
       <S.Wrapper>
         <div>
           <S.Title>솝트의 {generation}번째 열정이 되어주세요!</S.Title>
