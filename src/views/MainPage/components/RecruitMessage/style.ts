@@ -1,23 +1,21 @@
 import styled from '@emotion/styled';
-import { colors } from '@sopt-makers/colors';
-import { fontsObject } from '@sopt-makers/fonts';
+import { IconChevronRight } from '@sopt-makers/icons';
 import { media } from '@src/lib/styles/breakpoints';
 
 export const Wrapper = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: 372px 0 480px 0;
   gap: 48px;
+  padding: 160px 0;
 
   ${media.tablet} {
-    padding: 126px 0 351px 0;
+    padding: 120px 40px;
   }
 
   ${media.mobile} {
-    padding: 126px 0 358px 0;
     gap: 24px;
+    padding: 80px 20px;
   }
 `;
 
@@ -25,75 +23,115 @@ export const MessageWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 12px;
+  gap: 20px;
 `;
 
-export const Title = styled.h1`
-  color: ${colors.white};
-  text-align: center;
-  font-family: SUIT;
-  font-size: 40px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 60px;
-  letter-spacing: -0.8px;
+export const Badge = styled.div<{ mainColor: string }>`
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border: 1px solid #2e2e35;
+  border-radius: 999px;
+  background: #17181c;
+  color: #c3c3c6;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 22px;
+  letter-spacing: -0.02em;
+
+  strong {
+    color: ${({ mainColor }) => mainColor};
+    font-weight: 700;
+    letter-spacing: inherit;
+  }
 
   ${media.mobile} {
-    ${fontsObject.HEADING_4_24_B}
+    font-size: 12px;
+    line-height: 18px;
+
+    strong {
+      font-weight: 600;
+    }
+  }
+`;
+
+export const Headline = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px;
+  text-align: center;
+`;
+
+export const Title = styled.h2`
+  color: #fcfcfc;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 62px;
+  letter-spacing: -0.02em;
+
+  ${media.mobile} {
+    font-size: 24px;
+    line-height: 36px;
   }
 `;
 
 export const Description = styled.p`
-  color: rgba(255, 255, 255, 0.7);
-  text-align: center;
-  white-space: pre-line;
-  ${fontsObject.TITLE_3_24_SB}
+  color: #808087;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 30px;
+  letter-spacing: -0.02em;
 
   ${media.mobile} {
-    ${fontsObject.TITLE_6_16_SB}
+    max-width: 280px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 22px;
+    word-break: keep-all;
   }
 `;
 
-export const GoToRecruit = styled.a`
-  cursor: pointer;
-  border-radius: 25px;
-  box-shadow: 0 0 0 2.218px #5b88f8 inset;
-  background: #40578d;
-  width: 281px;
-  height: 83px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  color: #e8f1ff;
-  font-family: SUIT;
-  font-size: 30rem;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 30px; /* 100% */
-  letter-spacing: -0.6px;
-
-  @media (max-width: 48rem) {
-    width: 216px;
-    height: 64px;
-
-    border-radius: 19.221px;
-    box-shadow: 0 0 0 1.705px #5b88f8 inset;
-
-    font-size: 23rem;
-    line-height: 23.065px; /* 100.282% */
-    letter-spacing: -0.46px;
+export const DesktopBreak = styled.br`
+  ${media.mobile} {
+    display: none;
   }
+`;
 
-  @media (max-width: 23.5rem) {
-    width: 124px;
-    height: 36px;
-    border-radius: 11.046px;
-    box-shadow: 0 0 0 0.98px #5b88f8 inset;
+export const RecruitLink = styled.a<{ mainColor: string; textColor: string }>`
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  height: 64px;
+  padding: 0 20px 0 32px;
+  border-radius: 100px;
+  background: ${({ mainColor }) => mainColor};
+  box-shadow: ${({ mainColor }) => `0 0 0 1px ${mainColor}52, 0 4px 14px -4px ${mainColor}61,
+    0 10px 30px -10px ${mainColor}47`};
+  color: ${({ textColor }) => textColor};
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 36px;
+  letter-spacing: -0.02em;
 
-    font-size: 13.218rem;
-    line-height: 13.256px; /* 100.282% */
-    letter-spacing: -0.264px;
+  ${media.mobile} {
+    height: 42px;
+    padding: 0 16px 0 24px;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+  }
+`;
+
+export const Arrow = styled(IconChevronRight)`
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+
+  ${media.mobile} {
+    width: 20px;
+    height: 20px;
   }
 `;

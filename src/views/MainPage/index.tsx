@@ -69,6 +69,7 @@ function MainPage() {
         mainColor={'#' + adminData.brandingColor.main}
         textColor={adminData.brandingColor.textColor}
         ctaText={ctaText}
+        isRecruiting={isRecruiting}
         isRecruitEnd={isRecruitEnd}
         reviews={adminData.reviews}
       />

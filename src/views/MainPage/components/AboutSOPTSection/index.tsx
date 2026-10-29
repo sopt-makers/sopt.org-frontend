@@ -21,6 +21,7 @@ interface Props {
   mainColor: string;
   textColor: string;
   ctaText: string;
+  isRecruiting: boolean;
   isRecruitEnd: boolean;
   reviews: SoptCommentType[];
 }
@@ -32,6 +33,7 @@ function AboutSOPTSection({
   mainColor,
   textColor,
   ctaText,
+  isRecruiting,
   isRecruitEnd,
   reviews,
 }: Props) {
@@ -77,6 +79,7 @@ function AboutSOPTSection({
         mainColor={mainColor}
         textColor={textColor}
         ctaText={ctaText}
+        isRecruiting={isRecruiting}
         isRecruitEnd={isRecruitEnd}
       />
     </>
