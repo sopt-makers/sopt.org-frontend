@@ -1,0 +1,37 @@
+import { IconArrowUpRight } from '@sopt-makers/icons';
+import Image from 'next/image';
+import SectionLabel from '@src/components/common/SectionLabel';
+import { corporatePartnerList } from '@src/views/SponsorPage/components/CorporatePartner/constants';
+import * as S from './style';
+
+export default function PartnersSection({ mainColor }: { mainColor: string }) {
+  return (
+    <S.Section>
+      <S.Heading>
+        <SectionLabel label="Partners" color={mainColor} />
+        <S.Title>SOPT와 함께하는 파트너</S.Title>
+      </S.Heading>
+
+      <S.Marquee tabIndex={0} aria-label="SOPT 파트너 목록">
+        <S.Track>
+          {['original', 'duplicate'].map((copy) => (
+            <S.LogoList key={copy} aria-hidden={copy === 'duplicate'}>
+              {corporatePartnerList.map(({ name, imgSrc }) => (
+                <S.Logo key={name}>
+                  <Image src={imgSrc} alt={name} fill sizes={S.logoImageSizes} />
+                </S.Logo>
+              ))}
+            </S.LogoList>
+          ))}
+        </S.Track>
+      </S.Marquee>
+
+      <S.Link href="https://forms.gle/9oMWsibpouzo1oAk9" target="_blank" rel="noopener noreferrer">
+        <S.LinkText>후원 문의하러 가기</S.LinkText>
+        <S.LinkIcon>
+          <IconArrowUpRight />
+        </S.LinkIcon>
+      </S.Link>
+    </S.Section>
+  );
+}
