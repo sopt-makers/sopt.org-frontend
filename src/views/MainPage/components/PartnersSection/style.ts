@@ -53,10 +53,6 @@ export const Marquee = styled.div`
   overflow: hidden;
   mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
 
-  &:hover > div, &:focus-visible > div {
-    animation-play-state: paused;
-  }
-
   @media (prefers-reduced-motion: reduce) {
     overflow-x: auto;
   }
