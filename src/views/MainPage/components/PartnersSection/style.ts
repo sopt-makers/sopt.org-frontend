@@ -1,6 +1,8 @@
-import { keyframes } from '@emotion/react';
 import styled from '@emotion/styled';
+import { IconArrowUpRight } from '@sopt-makers/icons';
 import { colors, spacing, typography } from '@sopt-mds/design-tokens';
+import Image from 'next/image';
+import { keyframes } from '@emotion/react';
 import { breakpoints, media } from '@src/lib/styles/breakpoints';
 
 const scroll = keyframes`
@@ -80,17 +82,15 @@ export const LogoList = styled.div`
 const LOGO_WIDTH = 180;
 const MOBILE_LOGO_WIDTH = 140;
 
-export const logoImageSizes = `(max-width: ${breakpoints.tablet - 1}px) ${MOBILE_LOGO_WIDTH}px, ${LOGO_WIDTH}px`;
+export const logoImageSizes = `(max-width: ${
+  breakpoints.tablet - 1
+}px) ${MOBILE_LOGO_WIDTH}px, ${LOGO_WIDTH}px`;
 
 export const Logo = styled.div`
   position: relative;
   flex: 0 0 ${LOGO_WIDTH}px;
   width: ${LOGO_WIDTH}px;
   height: 72px;
-
-  img {
-    object-fit: contain;
-  }
 
   ${media.mobile} {
     flex-basis: ${MOBILE_LOGO_WIDTH}px;
@@ -99,15 +99,15 @@ export const Logo = styled.div`
   }
 `;
 
+export const LogoImage = styled(Image)`
+  object-fit: contain;
+`;
+
 export const Link = styled.a`
   display: flex;
   gap: ${spacing.s4};
   color: ${colors.fg.neutral.bold};
   ${typography.body2}
-
-  &:hover > span {
-    background: ${colors.bg.layer.default};
-  }
 
   ${media.mobile} {
     ${typography.body3}
@@ -120,6 +120,10 @@ export const LinkText = styled.span`
   padding: ${spacing.s8} ${spacing.s16};
   border: 1px solid ${colors.stroke.neutral.subtle};
   border-radius: 10px;
+
+  ${Link}:hover & {
+    background: ${colors.bg.layer.default};
+  }
 
   ${media.mobile} {
     border-color: ${colors.stroke.neutral.default};
@@ -135,9 +139,8 @@ export const LinkIcon = styled.span`
   border: 1px solid ${colors.stroke.neutral.subtle};
   border-radius: 10px;
 
-  svg {
-    width: 16px;
-    height: 16px;
+  ${Link}:hover & {
+    background: ${colors.bg.layer.default};
   }
 
   ${media.mobile} {
@@ -145,4 +148,9 @@ export const LinkIcon = styled.span`
     height: 34px;
     border-color: ${colors.stroke.neutral.default};
   }
+`;
+
+export const Arrow = styled(IconArrowUpRight)`
+  width: 16px;
+  height: 16px;
 `;

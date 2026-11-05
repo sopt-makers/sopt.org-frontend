@@ -1,5 +1,3 @@
-import { IconArrowUpRight } from '@sopt-makers/icons';
-import Image from 'next/image';
 import SectionLabel from '@src/components/common/SectionLabel';
 import { corporatePartnerList } from '@src/views/SponsorPage/components/CorporatePartner/constants';
 import * as S from './style';
@@ -18,7 +16,7 @@ export default function PartnersSection({ mainColor }: { mainColor: string }) {
             <S.LogoList key={copy} aria-hidden={copy === 'duplicate'}>
               {corporatePartnerList.map(({ name, imgSrc }) => (
                 <S.Logo key={name}>
-                  <Image src={imgSrc} alt={name} fill sizes={S.logoImageSizes} />
+                  <S.LogoImage src={imgSrc} alt={name} fill sizes={S.logoImageSizes} />
                 </S.Logo>
               ))}
             </S.LogoList>
@@ -29,7 +27,7 @@ export default function PartnersSection({ mainColor }: { mainColor: string }) {
       <S.Link href="https://forms.gle/9oMWsibpouzo1oAk9" target="_blank" rel="noopener noreferrer">
         <S.LinkText>후원 문의하러 가기</S.LinkText>
         <S.LinkIcon>
-          <IconArrowUpRight />
+          <S.Arrow />
         </S.LinkIcon>
       </S.Link>
     </S.Section>
