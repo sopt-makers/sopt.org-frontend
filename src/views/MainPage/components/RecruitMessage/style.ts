@@ -27,7 +27,7 @@ export const MessageWrapper = styled.div`
   gap: ${spacing.s20};
 `;
 
-export const Badge = styled.div<{ mainColor: string }>`
+export const Badge = styled.div`
   display: flex;
   align-items: center;
   gap: ${spacing.s6};
@@ -38,18 +38,18 @@ export const Badge = styled.div<{ mainColor: string }>`
   color: ${colors.fg.neutral.default};
   ${typography.body2}
 
-  strong {
-    color: ${({ mainColor }) => mainColor};
-    font-weight: ${typography.weight.bold};
-    letter-spacing: inherit;
-  }
-
   ${media.mobile} {
     ${typography.body3}
+  }
+`;
 
-    strong {
-      ${typography.label4}
-    }
+export const BadgeEmphasis = styled.strong<{ mainColor: string }>`
+  color: ${({ mainColor }) => mainColor};
+  font-weight: ${typography.weight.bold};
+  letter-spacing: inherit;
+
+  ${media.mobile} {
+    ${typography.label4}
   }
 `;
 

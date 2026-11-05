@@ -28,8 +28,9 @@ export default function RecruitMessage({
     <S.Wrapper>
       <S.MessageWrapper>
         {isRecruiting && (
-          <S.Badge mainColor={mainColor}>
-            <strong>NOW</strong> SOPT {generation}기 신입 회원 모집 중
+          <S.Badge>
+            <S.BadgeEmphasis mainColor={mainColor}>NOW</S.BadgeEmphasis> SOPT {generation}기 신입
+            회원 모집 중
           </S.Badge>
         )}
         <S.Headline>
