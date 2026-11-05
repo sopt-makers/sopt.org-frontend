@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import facebook from '@src/assets/icons/ic_facebook_filled.svg';
 import instagram from '@src/assets/icons/ic_instagram_filled.svg';
 import kakao from '@src/assets/icons/ic_kakao_filled.svg';
@@ -47,45 +46,49 @@ export default function Footer() {
       <S.Columns>
         <S.Column>
           <S.Title>바로가기</S.Title>
-          <Link href={PATHS.RULES}>SOPT 회칙</Link>
-          <a href={EXTERNAL_LINKS.PRIVACY_POLICY} target="_blank" rel="noopener noreferrer">
+          <S.InternalLink href={PATHS.RULES}>SOPT 회칙</S.InternalLink>
+          <S.ExternalLink
+            href={EXTERNAL_LINKS.PRIVACY_POLICY}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             개인정보처리방침
-          </a>
-          <a href={EXTERNAL_LINKS.MAKERS} target="_blank" rel="noopener noreferrer">
+          </S.ExternalLink>
+          <S.ExternalLink href={EXTERNAL_LINKS.MAKERS} target="_blank" rel="noopener noreferrer">
             만든 사람들
-          </a>
-          <button
+          </S.ExternalLink>
+          <S.Button
             type="button"
             onClick={() => window.Kakao.Channel.chat({ channelPublicId: '_sxaIWG' })}
           >
             의견 제안하기
-          </button>
+          </S.Button>
         </S.Column>
 
         <S.Column>
           <S.Title>문의 창구</S.Title>
-          <a href={EXTERNAL_LINKS.KAKAO} target="_blank" rel="noopener noreferrer">
+          <S.ExternalLink href={EXTERNAL_LINKS.KAKAO} target="_blank" rel="noopener noreferrer">
             지원 문의
-          </a>
-          <a href={`mailto:${EXTERNAL_LINKS.EMAIL}`}>후원·제휴 문의</a>
+          </S.ExternalLink>
+          <S.ExternalLink href={`mailto:${EXTERNAL_LINKS.EMAIL}`}>후원·제휴 문의</S.ExternalLink>
         </S.Column>
 
-        <S.Column>
-          <S.Title>SOPT 채널</S.Title>
+        <S.ChannelColumn>
+          <S.ChannelTitle>SOPT 채널</S.ChannelTitle>
           <S.Channels>
             {channels.map(({ name, href, icon }) => (
-              <a
+              <S.ChannelLink
                 key={name}
                 href={href}
                 aria-label={name}
                 target={href.startsWith('mailto:') ? undefined : '_blank'}
                 rel="noopener noreferrer"
               >
-                <img src={icon} alt="" width={24} height={24} />
-              </a>
+                <S.ChannelIcon src={icon} alt="" width={24} height={24} />
+              </S.ChannelLink>
             ))}
           </S.Channels>
-        </S.Column>
+        </S.ChannelColumn>
       </S.Columns>
     </S.Container>
   );

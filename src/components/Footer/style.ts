@@ -1,5 +1,7 @@
 import styled from '@emotion/styled';
 import { colors, spacing, typography } from '@sopt-mds/design-tokens';
+import Link from 'next/link';
+import { css } from '@emotion/react';
 import { breakpoints, media } from '@src/lib/styles/breakpoints';
 
 export const Container = styled.footer`
@@ -57,53 +59,69 @@ export const Column = styled.div`
   gap: ${spacing.s12};
   white-space: nowrap;
 
-  a,
-  button {
-    color: ${colors.fg.neutral.default};
-    ${typography.body2}
-  }
-
-  button {
-    cursor: pointer;
-  }
-
   ${media.mobile} {
     gap: ${spacing.s8};
-
-    &:last-child {
-      flex-basis: 100%;
-      gap: ${spacing.s12};
-    }
-
-    &:not(:last-child) > p {
-      margin-bottom: ${spacing.s4};
-    }
-
-    a,
-    button {
-      ${typography.body3}
-    }
   }
 `;
 
 export const Title = styled.p`
   color: ${colors.fg.neutral.subtle};
   ${typography.body3}
+
+  ${media.mobile} {
+    margin-bottom: ${spacing.s4};
+  }
+`;
+
+export const ChannelColumn = styled(Column)`
+  ${media.mobile} {
+    flex-basis: 100%;
+    gap: ${spacing.s12};
+  }
+`;
+
+export const ChannelTitle = styled(Title)`
+  ${media.mobile} {
+    margin-bottom: 0;
+  }
+`;
+
+const linkStyle = css`
+  color: ${colors.fg.neutral.default};
+  ${typography.body2}
+
+  ${media.mobile} {
+    ${typography.body3}
+  }
+`;
+
+export const InternalLink = styled(Link)`
+  ${linkStyle}
+`;
+
+export const ExternalLink = styled.a`
+  ${linkStyle}
+`;
+
+export const Button = styled.button`
+  ${linkStyle}
+  cursor: pointer;
 `;
 
 export const Channels = styled.div`
   display: flex;
   gap: ${spacing.s16};
+`;
 
-  a,
-  img {
-    display: block;
-  }
+export const ChannelLink = styled.a`
+  display: block;
+`;
+
+export const ChannelIcon = styled.img`
+  display: block;
 
   ${media.mobile} {
-    img {
-      width: 20px;
-      height: 20px;
-    }
+    width: 20px;
+    height: 20px;
   }
 `;
