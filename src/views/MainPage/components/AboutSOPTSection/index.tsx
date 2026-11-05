@@ -1,5 +1,5 @@
 import useInView from '@src/hooks/useInView';
-import { LatestNewsType, PartIntroType } from '@src/lib/types/admin';
+import { PartIntroType } from '@src/lib/types/admin';
 import { SoptCommentType } from '@src/lib/types/main';
 import Activity from '@src/views/MainPage/components/Activity';
 import PartIntroduction from '@src/views/MainPage/components/PartIntroduction';
@@ -17,7 +17,6 @@ const MenuList = [
 interface Props {
   generation: number;
   partIntroduction: PartIntroType[];
-  latestNews: LatestNewsType[];
   mainColor: string;
   textColor: string;
   ctaText: string;
@@ -28,7 +27,6 @@ interface Props {
 function AboutSOPTSection({
   generation,
   partIntroduction,
-  latestNews,
   mainColor,
   textColor,
   ctaText,
@@ -71,7 +69,7 @@ function AboutSOPTSection({
           </S.ScrollContainer>
         </S.ScrollContentLayout>
       </S.Wrapper>
-      <RecentNews latestNews={latestNews} />
+      <RecentNews />
       <RecruitMessage
         generation={generation}
         mainColor={mainColor}
