@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { colors } from '@sopt-makers/colors';
+import { colors, typography } from '@sopt-mds/design-tokens';
 import { breakpoints, media } from '@src/lib/styles/breakpoints';
 
 export const Container = styled.footer`
@@ -9,7 +9,7 @@ export const Container = styled.footer`
   justify-content: space-between;
   gap: 32px;
   padding: 64px 120px;
-  background: ${colors.gray900};
+  background: ${colors.bg.layer.default};
 
   @media (min-width: ${breakpoints.desktop}px) {
     padding-bottom: 46px;
@@ -36,11 +36,8 @@ export const Logo = styled.img`
 `;
 
 export const Copyright = styled.p`
-  color: ${colors.gray300};
-  font-size: 12px;
-  font-weight: 400;
-  line-height: 18px;
-  letter-spacing: -0.02em;
+  color: ${colors.fg.neutral.subtle};
+  ${typography.body3}
 `;
 
 export const Columns = styled.div`
@@ -62,11 +59,8 @@ export const Column = styled.div`
 
   a,
   button {
-    color: ${colors.gray100};
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 22px;
-    letter-spacing: -0.02em;
+    color: ${colors.fg.neutral.default};
+    ${typography.body2}
   }
 
   button {
@@ -87,19 +81,14 @@ export const Column = styled.div`
 
     a,
     button {
-      font-size: 12px;
-      font-weight: 400;
-      line-height: 18px;
+      ${typography.body3}
     }
   }
 `;
 
 export const Title = styled.p`
-  color: ${colors.gray300};
-  font-size: 12px;
-  font-weight: 500;
-  line-height: 18px;
-  letter-spacing: -0.02em;
+  color: ${colors.fg.neutral.subtle};
+  ${typography.body3}
 `;
 
 export const Channels = styled.div`
