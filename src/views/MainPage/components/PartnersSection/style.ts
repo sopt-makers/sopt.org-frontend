@@ -1,6 +1,6 @@
 import { keyframes } from '@emotion/react';
 import styled from '@emotion/styled';
-import { colors, typography } from '@sopt-mds/design-tokens';
+import { colors, spacing, typography } from '@sopt-mds/design-tokens';
 import { breakpoints, media } from '@src/lib/styles/breakpoints';
 
 const scroll = keyframes`
@@ -13,16 +13,16 @@ export const Section = styled.section`
   align-items: center;
   gap: 49px;
   width: 100%;
-  padding: 160px 0;
+  padding: ${spacing.s160} 0;
   background: #000;
 
   ${media.tablet} {
-    padding: 120px 0;
+    padding: ${spacing.s120} 0;
   }
 
   ${media.mobile} {
-    gap: 24px;
-    padding: 80px 0;
+    gap: ${spacing.s24};
+    padding: ${spacing.s80} 0;
   }
 `;
 
@@ -30,7 +30,7 @@ export const Heading = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
+  gap: ${spacing.s8};
 `;
 
 export const Title = styled.h2`
@@ -66,14 +66,14 @@ export const Track = styled.div`
 export const LogoList = styled.div`
   display: flex;
   align-items: center;
-  gap: 48px;
-  padding: 32px 48px 32px 0;
+  gap: ${spacing.s48};
+  padding: ${spacing.s32} ${spacing.s48} ${spacing.s32} 0;
 
   ${media.mobile} {
-    gap: 32px;
-    padding-right: 32px;
-    padding-top: 40px;
-    padding-bottom: 40px;
+    gap: ${spacing.s32};
+    padding-right: ${spacing.s32};
+    padding-top: ${spacing.s40};
+    padding-bottom: ${spacing.s40};
   }
 `;
 
@@ -101,7 +101,7 @@ export const Logo = styled.div`
 
 export const Link = styled.a`
   display: flex;
-  gap: 4px;
+  gap: ${spacing.s4};
   color: ${colors.fg.neutral.bold};
   ${typography.body2}
 
@@ -117,7 +117,7 @@ export const Link = styled.a`
 export const LinkText = styled.span`
   display: flex;
   align-items: center;
-  padding: 8px 16px;
+  padding: ${spacing.s8} ${spacing.s16};
   border: 1px solid ${colors.stroke.neutral.subtle};
   border-radius: 10px;
 
