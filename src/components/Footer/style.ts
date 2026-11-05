@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { colors, typography } from '@sopt-mds/design-tokens';
+import { colors, spacing, typography } from '@sopt-mds/design-tokens';
 import { breakpoints, media } from '@src/lib/styles/breakpoints';
 
 export const Container = styled.footer`
@@ -7,8 +7,8 @@ export const Container = styled.footer`
   flex-wrap: wrap;
   align-items: flex-start;
   justify-content: space-between;
-  gap: 32px;
-  padding: 64px 120px;
+  gap: ${spacing.s32};
+  padding: ${spacing.s64} ${spacing.s120};
   background: ${colors.bg.layer.default};
 
   @media (min-width: ${breakpoints.desktop}px) {
@@ -17,14 +17,14 @@ export const Container = styled.footer`
 
   ${media.mobile} {
     flex-direction: column;
-    padding: 40px 20px;
+    padding: ${spacing.s40} ${spacing.s20};
   }
 `;
 
 export const Brand = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: ${spacing.s16};
   flex-shrink: 0;
 `;
 
@@ -42,11 +42,11 @@ export const Copyright = styled.p`
 
 export const Columns = styled.div`
   display: flex;
-  gap: 80px;
+  gap: ${spacing.s80};
 
   ${media.mobile} {
     flex-wrap: wrap;
-    gap: 32px;
+    gap: ${spacing.s32};
   }
 `;
 
@@ -54,7 +54,7 @@ export const Column = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 12px;
+  gap: ${spacing.s12};
   white-space: nowrap;
 
   a,
@@ -68,15 +68,15 @@ export const Column = styled.div`
   }
 
   ${media.mobile} {
-    gap: 8px;
+    gap: ${spacing.s8};
 
     &:last-child {
       flex-basis: 100%;
-      gap: 12px;
+      gap: ${spacing.s12};
     }
 
     &:not(:last-child) > p {
-      margin-bottom: 4px;
+      margin-bottom: ${spacing.s4};
     }
 
     a,
@@ -93,7 +93,7 @@ export const Title = styled.p`
 
 export const Channels = styled.div`
   display: flex;
-  gap: 16px;
+  gap: ${spacing.s16};
 
   a,
   img {
