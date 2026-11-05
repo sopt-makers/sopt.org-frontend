@@ -18,6 +18,7 @@
     "@sopt-makers/fonts": "^2.0.2",
     "@sopt-makers/icons": "^1.1.0",
     "@sopt-makers/ui": "^2.11.0",
+    "@sopt-mds/design-tokens": "^1.0.7",
     "@tanstack/react-query": "^5.28.9",
     "@tanstack/react-query-devtools": "^5.28.10",
     "@types/qs": "6.9.7",
