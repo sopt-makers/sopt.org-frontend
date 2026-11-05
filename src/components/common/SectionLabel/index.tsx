@@ -12,7 +12,6 @@ export default function SectionLabel({ label, color }: SectionLabelProps) {
 }
 
 const Label = styled.span<{ color: string }>`
-  // 데스크탑, 테블릿, 모바일 공통 스타일
   position: relative;
   padding: 5px 13px;
   color: ${({ color }) => color};
