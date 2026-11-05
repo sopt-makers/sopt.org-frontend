@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { css } from '@emotion/react';
 import { breakpoints, media } from '@src/lib/styles/breakpoints';
 
-export const Container = styled.footer`
+export const Container = styled.footer<{ mainColor: string }>`
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
@@ -12,6 +12,7 @@ export const Container = styled.footer`
   gap: ${spacing.s32};
   padding: ${spacing.s64} ${spacing.s120};
   background: ${colors.bg.layer.default};
+  --footer-accent: ${({ mainColor }) => mainColor};
 
   @media (min-width: ${breakpoints.desktop}px) {
     padding-bottom: 46px;
@@ -89,6 +90,20 @@ export const ChannelTitle = styled(Title)`
 const linkStyle = css`
   color: ${colors.fg.neutral.default};
   ${typography.body2}
+  background: linear-gradient(var(--footer-accent), var(--footer-accent)) right bottom / 0 1px
+    no-repeat;
+  transition: color 0.18s ease, background-size 0.18s ease;
+
+  &:hover,
+  &:focus-visible {
+    color: ${colors.fg.neutral.bold};
+    background-position: left bottom;
+    background-size: 100% 1px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+  }
 
   ${media.mobile} {
     ${typography.body3}
@@ -115,6 +130,17 @@ export const Channels = styled.div`
 
 export const ChannelLink = styled.a`
   display: block;
+  opacity: 0.85;
+  transition: opacity 0.2s ease;
+
+  &:hover,
+  &:focus-visible {
+    opacity: 1;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+  }
 `;
 
 export const ChannelIcon = styled.img`

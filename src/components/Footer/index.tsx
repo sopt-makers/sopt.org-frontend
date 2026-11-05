@@ -1,39 +1,13 @@
-import facebook from '@src/assets/icons/ic_facebook_filled.svg';
-import instagram from '@src/assets/icons/ic_instagram_filled.svg';
-import kakao from '@src/assets/icons/ic_kakao_filled.svg';
-import mail from '@src/assets/icons/ic_mail.svg';
-import youtube from '@src/assets/icons/ic_youtube_filled.svg';
 import { imgLogoSopt } from '@src/assets/mainLogo';
+import { channels } from '@src/lib/constants/channels';
 import { EXTERNAL_LINKS, PATHS } from '@src/lib/constants/routes';
+import { useHomepage } from '@src/views/MainPage/hooks/useHomepage';
 import * as S from './style';
 
-const channels = [
-  { name: '메일', href: `mailto:${EXTERNAL_LINKS.EMAIL}`, icon: mail },
-  {
-    name: '페이스북',
-    href: EXTERNAL_LINKS.FACEBOOK,
-    icon: facebook,
-  },
-  {
-    name: '인스타그램',
-    href: EXTERNAL_LINKS.INSTAGRAM,
-    icon: instagram,
-  },
-  {
-    name: '카카오톡 채널',
-    href: EXTERNAL_LINKS.KAKAO,
-    icon: kakao,
-  },
-  {
-    name: '유튜브',
-    href: EXTERNAL_LINKS.YOUTUBE,
-    icon: youtube,
-  },
-];
-
 export default function Footer() {
+  const { data: adminData } = useHomepage();
   return (
-    <S.Container>
+    <S.Container mainColor={`#${adminData?.brandingColor.main}`}>
       <S.Brand>
         <S.Logo src={imgLogoSopt.src} alt="SOPT" width={87} height={30} />
         <S.Copyright>
