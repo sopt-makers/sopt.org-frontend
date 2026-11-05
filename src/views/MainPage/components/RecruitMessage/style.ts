@@ -62,6 +62,7 @@ export const Headline = styled.div`
 `;
 
 export const Title = styled.h2`
+  // typography/display3로 되어있는데 없는 토큰이라 디자이너 확인 필요
   color: ${colors.fg.neutral.bold};
   font-size: 48px;
   font-weight: ${typography.weight.bold};
