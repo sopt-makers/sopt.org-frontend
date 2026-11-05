@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { IconChevronRight } from '@sopt-makers/icons';
+import { colors, typography } from '@sopt-mds/design-tokens';
 import { media } from '@src/lib/styles/breakpoints';
 
 export const Wrapper = styled.section`
@@ -31,27 +32,23 @@ export const Badge = styled.div<{ mainColor: string }>`
   align-items: center;
   gap: 6px;
   padding: 6px 14px;
-  border: 1px solid #2e2e35;
+  border: 1px solid ${colors.stroke.neutral.subtle};
   border-radius: 999px;
-  background: #17181c;
-  color: #c3c3c6;
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 22px;
-  letter-spacing: -0.02em;
+  background: ${colors.bg.layer.default};
+  color: ${colors.fg.neutral.default};
+  ${typography.body2}
 
   strong {
     color: ${({ mainColor }) => mainColor};
-    font-weight: 700;
+    font-weight: ${typography.weight.bold};
     letter-spacing: inherit;
   }
 
   ${media.mobile} {
-    font-size: 12px;
-    line-height: 18px;
+    ${typography.body3}
 
     strong {
-      font-weight: 600;
+      ${typography.label4}
     }
   }
 `;
@@ -65,30 +62,24 @@ export const Headline = styled.div`
 `;
 
 export const Title = styled.h2`
-  color: #fcfcfc;
+  color: ${colors.fg.neutral.bold};
   font-size: 48px;
-  font-weight: 700;
-  line-height: 62px;
-  letter-spacing: -0.02em;
+  font-weight: ${typography.weight.bold};
+  line-height: 72px;
+  letter-spacing: ${typography.letterSpacing.default};
 
   ${media.mobile} {
-    font-size: 24px;
-    line-height: 36px;
+    ${typography.heading2}
   }
 `;
 
 export const Description = styled.p`
-  color: #808087;
-  font-size: 20px;
-  font-weight: 600;
-  line-height: 30px;
-  letter-spacing: -0.02em;
+  color: ${colors.fg.neutral.subtle};
+  ${typography.title3}
 
   ${media.mobile} {
     max-width: 280px;
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 22px;
+    ${typography.body2}
     word-break: keep-all;
   }
 `;
@@ -111,17 +102,12 @@ export const RecruitLink = styled.a<{ mainColor: string; textColor: string }>`
   box-shadow: ${({ mainColor }) => `0 0 0 1px ${mainColor}52, 0 4px 14px -4px ${mainColor}61,
     0 10px 30px -10px ${mainColor}47`};
   color: ${({ textColor }) => textColor};
-  font-size: 24px;
-  font-weight: 700;
-  line-height: 36px;
-  letter-spacing: -0.02em;
+  ${typography.heading2}
 
   ${media.mobile} {
     height: 42px;
     padding: 0 16px 0 24px;
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 24px;
+    ${typography.title5}
   }
 `;
 
