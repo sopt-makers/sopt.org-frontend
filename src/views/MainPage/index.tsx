@@ -70,6 +70,9 @@ function MainPage() {
         textColor={adminData.brandingColor.textColor}
         ctaText={ctaText}
         isRecruiting={isRecruiting}
+        recruitEndTime={
+          isYBRecruiting ? ybSchedule?.applicationEndTime : obSchedule?.applicationEndTime
+        }
         isRecruitEnd={isRecruitEnd}
         reviews={adminData.reviews}
       />

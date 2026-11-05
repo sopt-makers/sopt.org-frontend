@@ -3,12 +3,36 @@ import { IconChevronRight } from '@sopt-makers/icons';
 import { colors, spacing, typography } from '@sopt-mds/design-tokens';
 import { media } from '@src/lib/styles/breakpoints';
 
-export const Wrapper = styled.section`
+export const Wrapper = styled.section<{ mainColor: string }>`
+  position: relative;
+  isolation: isolate;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: ${spacing.s48};
   padding: ${spacing.s160} 0;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background: ${({ mainColor }) =>
+      `radial-gradient(ellipse 50% 65% at 50% 55%, color-mix(in srgb, ${mainColor} 7%, transparent), transparent)`};
+    opacity: 0;
+    transition: opacity 550ms cubic-bezier(0.2, 0.8, 0.3, 1);
+  }
+
+  &:has(a:hover)::before {
+    opacity: 1;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    &::before {
+      transition: none;
+    }
+  }
 
   ${media.tablet} {
     padding: ${spacing.s120} ${spacing.s40};
@@ -94,7 +118,6 @@ export const DesktopBreak = styled.br`
 export const RecruitLink = styled.a<{ mainColor: string; textColor: string }>`
   display: inline-flex;
   align-items: center;
-  justify-content: center;
   gap: ${spacing.s2};
   height: 64px;
   padding: 0 ${spacing.s20} 0 ${spacing.s32};
@@ -104,6 +127,22 @@ export const RecruitLink = styled.a<{ mainColor: string; textColor: string }>`
     0 10px 30px -10px ${mainColor}47`};
   color: ${({ textColor }) => textColor};
   ${typography.heading2}
+
+  transition: transform 550ms cubic-bezier(0.2, 0.8, 0.3, 1),
+    box-shadow 550ms cubic-bezier(0.2, 0.8, 0.3, 1);
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: ${({ mainColor }) => `0 0 0 1px ${mainColor}52, 0 8px 20px -4px ${mainColor}61,
+      0 16px 36px -10px ${mainColor}47`};
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+    &:hover {
+      transform: none;
+    }
+  }
 
   ${media.mobile} {
     height: 42px;
