@@ -1,22 +1,22 @@
 import styled from '@emotion/styled';
 import { IconChevronRight } from '@sopt-makers/icons';
-import { colors, typography } from '@sopt-mds/design-tokens';
+import { colors, spacing, typography } from '@sopt-mds/design-tokens';
 import { media } from '@src/lib/styles/breakpoints';
 
 export const Wrapper = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 48px;
-  padding: 160px 0;
+  gap: ${spacing.s48};
+  padding: ${spacing.s160} 0;
 
   ${media.tablet} {
-    padding: 120px 40px;
+    padding: ${spacing.s120} ${spacing.s40};
   }
 
   ${media.mobile} {
-    gap: 24px;
-    padding: 80px 20px;
+    gap: ${spacing.s24};
+    padding: ${spacing.s80} ${spacing.s20};
   }
 `;
 
@@ -24,14 +24,14 @@ export const MessageWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
+  gap: ${spacing.s20};
 `;
 
 export const Badge = styled.div<{ mainColor: string }>`
   display: flex;
   align-items: center;
-  gap: 6px;
-  padding: 6px 14px;
+  gap: ${spacing.s6};
+  padding: ${spacing.s6} ${spacing.s14};
   border: 1px solid ${colors.stroke.neutral.subtle};
   border-radius: 999px;
   background: ${colors.bg.layer.default};
@@ -94,9 +94,9 @@ export const RecruitLink = styled.a<{ mainColor: string; textColor: string }>`
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 2px;
+  gap: ${spacing.s2};
   height: 64px;
-  padding: 0 20px 0 32px;
+  padding: 0 ${spacing.s20} 0 ${spacing.s32};
   border-radius: 100px;
   background: ${({ mainColor }) => mainColor};
   box-shadow: ${({ mainColor }) => `0 0 0 1px ${mainColor}52, 0 4px 14px -4px ${mainColor}61,
@@ -106,7 +106,7 @@ export const RecruitLink = styled.a<{ mainColor: string; textColor: string }>`
 
   ${media.mobile} {
     height: 42px;
-    padding: 0 16px 0 24px;
+    padding: 0 ${spacing.s16} 0 ${spacing.s24};
     ${typography.title5}
   }
 `;
