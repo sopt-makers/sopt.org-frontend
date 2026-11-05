@@ -1,4 +1,6 @@
 import styled from '@emotion/styled';
+import { typography } from '@sopt-mds/design-tokens';
+import { media } from '@src/lib/styles/breakpoints';
 
 interface SectionLabelProps {
   label: string;
@@ -14,10 +16,11 @@ const Label = styled.span<{ color: string }>`
   position: relative;
   padding: 5px 13px;
   color: ${({ color }) => color};
-  font-size: 16rem;
-  font-weight: 600;
-  line-height: 24px;
-  letter-spacing: -0.24px;
+  ${typography.body2}
+
+  ${media.mobile} {
+    ${typography.body3}
+  }
 
   &::before {
     content: '';

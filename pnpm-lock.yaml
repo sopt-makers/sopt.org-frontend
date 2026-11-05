@@ -31,6 +31,9 @@ importers:
       '@sopt-makers/ui':
         specifier: ^2.11.0
         version: 2.11.0(@types/react-dom@18.0.5)(@types/react@18.0.10)(babel-plugin-macros@3.1.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      '@sopt-mds/design-tokens':
+        specifier: ^1.0.7
+        version: 1.0.7
       '@tanstack/react-query':
         specifier: ^5.28.9
         version: 5.67.1(react@18.2.0)
@@ -1779,6 +1782,12 @@ packages:
     peerDependencies:
       react: ^18.2.0
       react-dom: ^18.2.0
+
+  '@sopt-mds/design-tokens@1.0.7':
+    resolution:
+      {
+        integrity: sha512-wSU8ZdCiytygevsExlmrOSMwFYUkVVhEXon5y85n+EVRStPfASBgAjkx74kUw94LArCE48jqk6A5srsY9QOPEg==,
+      }
 
   '@svgr/babel-plugin-add-jsx-attribute@6.5.1':
     resolution:
@@ -7508,6 +7517,8 @@ snapshots:
       - '@types/react'
       - '@types/react-dom'
       - babel-plugin-macros
+
+  '@sopt-mds/design-tokens@1.0.7': {}
 
   '@svgr/babel-plugin-add-jsx-attribute@6.5.1(@babel/core@7.26.9)':
     dependencies:

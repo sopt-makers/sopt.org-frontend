@@ -1,5 +1,6 @@
 import { keyframes } from '@emotion/react';
 import styled from '@emotion/styled';
+import { colors, typography } from '@sopt-mds/design-tokens';
 import { breakpoints, media } from '@src/lib/styles/breakpoints';
 
 const scroll = keyframes`
@@ -33,18 +34,12 @@ export const Heading = styled.div`
 `;
 
 export const Title = styled.h2`
-  color: #fcfcfc;
-  font-size: 32rem;
-  font-weight: 700;
-  line-height: 48px;
-  letter-spacing: -0.64px;
+  color: ${colors.fg.neutral.bold};
+  ${typography.heading1}
   text-align: center;
 
   ${media.mobile} {
-    font-size: 20rem;
-    font-weight: 600;
-    line-height: 30px;
-    letter-spacing: -0.4px;
+    ${typography.title3}
   }
 `;
 
@@ -107,20 +102,15 @@ export const Logo = styled.div`
 export const Link = styled.a`
   display: flex;
   gap: 4px;
-  color: #fcfcfc;
-  font-size: 14rem;
-  font-weight: 500;
-  line-height: 22px;
-  letter-spacing: -0.21px;
+  color: ${colors.fg.neutral.bold};
+  ${typography.body2}
 
   &:hover > span {
-    background: #171719;
+    background: ${colors.bg.layer.default};
   }
 
   ${media.mobile} {
-    font-size: 12rem;
-    line-height: 18px;
-    letter-spacing: -0.24px;
+    ${typography.body3}
   }
 `;
 
@@ -128,8 +118,12 @@ export const LinkText = styled.span`
   display: flex;
   align-items: center;
   padding: 8px 16px;
-  border: 1px solid #3f3f47;
+  border: 1px solid ${colors.stroke.neutral.subtle};
   border-radius: 10px;
+
+  ${media.mobile} {
+    border-color: ${colors.stroke.neutral.default};
+  }
 `;
 
 export const LinkIcon = styled.span`
@@ -138,7 +132,7 @@ export const LinkIcon = styled.span`
   justify-content: center;
   width: 40px;
   height: 40px;
-  border: 1px solid #3f3f47;
+  border: 1px solid ${colors.stroke.neutral.subtle};
   border-radius: 10px;
 
   svg {
@@ -149,5 +143,6 @@ export const LinkIcon = styled.span`
   ${media.mobile} {
     width: 34px;
     height: 34px;
+    border-color: ${colors.stroke.neutral.default};
   }
 `;
