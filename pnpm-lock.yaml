@@ -32,7 +32,7 @@ importers:
         specifier: ^2.11.0
         version: 2.11.0(@types/react-dom@18.0.5)(@types/react@18.0.10)(babel-plugin-macros@3.1.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@sopt-mds/design-tokens':
-        specifier: 1.0.7
+        specifier: ^1.0.7
         version: 1.0.7
       '@tanstack/react-query':
         specifier: ^5.28.9

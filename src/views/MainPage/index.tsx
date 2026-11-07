@@ -2,6 +2,7 @@ import { useEffect, useMemo } from 'react';
 import PageLayout from '@src/components/common/PageLayout';
 import AboutSOPTSection from '@src/views/MainPage/components/AboutSOPTSection';
 import IntroSection from '@src/views/MainPage/components/IntroSection';
+import PartnersSection from '@src/views/MainPage/components/PartnersSection';
 import TopBanner from '@src/views/MainPage/components/TopBanner';
 import { useHomepage } from '@src/views/MainPage/hooks/useHomepage';
 import usePostVisitor from '@src/views/MainPage/hooks/usePostVisitor';
@@ -68,9 +69,14 @@ function MainPage() {
         mainColor={'#' + adminData.brandingColor.main}
         textColor={adminData.brandingColor.textColor}
         ctaText={ctaText}
+        isRecruiting={isRecruiting}
+        recruitEndTime={
+          isYBRecruiting ? ybSchedule?.applicationEndTime : obSchedule?.applicationEndTime
+        }
         isRecruitEnd={isRecruitEnd}
         reviews={adminData.reviews}
       />
+      <PartnersSection mainColor={'#' + adminData.brandingColor.main} />
     </PageLayout>
   );
 }

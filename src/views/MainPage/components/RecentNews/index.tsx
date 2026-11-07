@@ -1,32 +1,21 @@
-import { ReactComponent as FacebookIcon } from './assets/facebook.svg';
-import { ReactComponent as InstagramIcon } from './assets/instagram.svg';
-import { ReactComponent as KakaoIcon } from './assets/kakao.svg';
-import { ReactComponent as MailIcon } from './assets/mail.svg';
-import { ReactComponent as YoutubeIcon } from './assets/youtube.svg';
+import Image from 'next/image';
+import { channels } from '@src/lib/constants/channels';
 import { news } from './mock';
 import * as S from './style';
-
-const channels = [
-  { name: '메일', href: 'mailto:president@sopt.org', Icon: MailIcon },
-  { name: '페이스북', href: 'https://www.facebook.com/clubsopt/', Icon: FacebookIcon },
-  { name: '인스타그램', href: 'https://www.instagram.com/sopt_official/', Icon: InstagramIcon },
-  { name: '카카오톡 채널', href: 'https://pf.kakao.com/_sxaIWG', Icon: KakaoIcon },
-  { name: '유튜브', href: 'https://www.youtube.com/c/SOPTMEDIA', Icon: YoutubeIcon },
-];
 
 export default function RecentNews() {
   return (
     <S.RecentNews id="news" aria-labelledby="news-title">
       <S.Content>
         <S.Header>
-          <>
+          <div>
             <S.Title id="news-title">NEWS</S.Title>
             <S.Subtitle>SOPT의 최신 소식</S.Subtitle>
-          </>
+          </div>
           <S.Channels aria-label="SOPT 채널">
-            {channels.map(({ name, href, Icon }) => (
+            {channels.map(({ name, href, icon }) => (
               <a key={name} href={href} aria-label={name}>
-                <Icon aria-hidden="true" />
+                <Image src={icon} alt="" width={24} height={24} />
               </a>
             ))}
           </S.Channels>
