@@ -121,31 +121,22 @@ export const NewsItem = styled.li`
   }
 `;
 
-export const ImagePlaceholder = styled.div<{ isSquare: boolean }>`
+export const NewsImage = styled.img`
+  display: block;
   width: 100%;
-  aspect-ratio: ${({ isSquare }) => (isSquare ? '1 / 1' : '282 / 177')};
+  height: auto;
   border-radius: ${radius.r12};
   background: ${colors.bg.neutral.ghost};
 `;
 
-export const NewsBody = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: ${spacing.s8};
-  margin-top: ${spacing.s16};
-`;
-
-export const Category = styled.p`
-  color: ${colors.fg.neutral.default};
-  ${typography.body3}
-`;
-
 export const NewsTitle = styled.p`
+  margin-top: ${spacing.s16};
   color: ${colors.fg.neutral.bold};
   ${typography.title4}
 `;
 
 export const Date = styled.p`
+  margin-top: ${spacing.s8};
   color: ${colors.fg.neutral.subtle};
   ${typography.body3}
 `;

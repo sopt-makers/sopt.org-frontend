@@ -1,9 +1,9 @@
 import Image from 'next/image';
 import { channels } from '@src/lib/constants/channels';
-import { news } from './mock';
+import { LatestNewsType } from '@src/lib/types/admin';
 import * as S from './style';
 
-export default function RecentNews() {
+export default function RecentNews({ latestNews }: { latestNews: LatestNewsType[] }) {
   return (
     <S.RecentNews id="news" aria-labelledby="news-title">
       <S.Content>
@@ -21,14 +21,13 @@ export default function RecentNews() {
           </S.Channels>
         </S.Header>
         <S.NewsList tabIndex={0} aria-label="최신 소식 목록">
-          {news.map(({ id, category, title, date }) => (
+          {latestNews.map(({ id, title, image, link, publishedDate }) => (
             <S.NewsItem key={id}>
-              <S.ImagePlaceholder isSquare={category === 'INSTAGRAM'} />
-              <S.NewsBody>
-                <S.Category>{category}</S.Category>
+              <a href={link} target="_blank" rel="noopener noreferrer">
+                <S.NewsImage src={image} alt="" />
                 <S.NewsTitle>{title}</S.NewsTitle>
-                <S.Date>{date}</S.Date>
-              </S.NewsBody>
+                {publishedDate && <S.Date>{publishedDate}</S.Date>}
+              </a>
             </S.NewsItem>
           ))}
         </S.NewsList>
