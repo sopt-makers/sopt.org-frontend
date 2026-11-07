@@ -1,5 +1,5 @@
 import { useIsMobile } from '@src/hooks/useDevice';
-import { RECRUIT_URL } from '@src/lib/constants/routes';
+import { EXTERNAL_LINKS } from '@src/lib/constants/routes';
 import { breakpoints } from '@src/lib/styles/breakpoints';
 import dayjs from 'dayjs';
 import * as S from './style';
@@ -58,7 +58,7 @@ export default function RecruitMessage({
           )}
         </S.Headline>
       </S.MessageWrapper>
-      <S.RecruitLink href={RECRUIT_URL} mainColor={mainColor} textColor={textColor}>
+      <S.RecruitLink href={EXTERNAL_LINKS.RECRUIT} mainColor={mainColor} textColor={textColor}>
         {isRecruiting ? '지원하기' : ctaText.trim()}
         <S.Arrow aria-hidden="true" />
       </S.RecruitLink>

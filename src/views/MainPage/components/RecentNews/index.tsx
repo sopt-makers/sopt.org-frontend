@@ -1,3 +1,4 @@
+import { EXTERNAL_LINKS } from '@src/lib/constants/routes';
 import { LatestNewsType } from '@src/lib/types/admin';
 import Card from './Card';
 import * as S from './style';
@@ -21,7 +22,7 @@ export default function RecentNews({ latestNews }: { latestNews: LatestNewsType[
       </S.SliderWrapper>
       <S.GoToInstagram>
         <S.IcInstagram />
-        <S.Description href="https://www.instagram.com/sopt_official/">
+        <S.Description href={EXTERNAL_LINKS.INSTAGRAM}>
           더 많은 소식이 궁금하다면
         </S.Description>
       </S.GoToInstagram>

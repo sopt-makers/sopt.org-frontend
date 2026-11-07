@@ -1,6 +1,6 @@
 import router from 'next/router';
 import { ButtonHTMLAttributes, PropsWithChildren, useState } from 'react';
-import { RECRUIT_URL } from '@src/lib/constants/routes';
+import { EXTERNAL_LINKS } from '@src/lib/constants/routes';
 import * as S from './style';
 
 export type RecruitButtonSize = 'sm' | 'md';
@@ -21,7 +21,7 @@ export default function RecruitButton({
   const [blurPosition, setBlurPosition] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
 
   const handleClick = () => {
-    router.push(RECRUIT_URL);
+    router.push(EXTERNAL_LINKS.RECRUIT);
   };
 
   const handleMouseMove = (event: React.MouseEvent<HTMLButtonElement>) => {
