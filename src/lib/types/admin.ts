@@ -66,6 +66,7 @@ export interface GetHomepageResponse {
   coreValue: HomeCoreValueType[];
   // resolveReviews로 SoptCommentType[]로 가공된 뒤 컴포넌트들이 실제로 쓰는 형태
   reviews: SoptCommentType[];
+  faq: { category: string; questions: QnAType[] }[];
 }
 
 export interface MemberType {
