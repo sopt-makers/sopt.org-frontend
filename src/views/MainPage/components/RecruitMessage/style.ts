@@ -19,7 +19,7 @@ export const Wrapper = styled.section<{ mainColor: string }>`
     z-index: -1;
     pointer-events: none;
     background: ${({ mainColor }) =>
-      `radial-gradient(ellipse 50% 65% at 50% 55%, color-mix(in srgb, ${mainColor} 7%, transparent), transparent)`};
+      `radial-gradient(ellipse 50% 45% at 50% 50%, color-mix(in srgb, ${mainColor} 7%, transparent), transparent)`};
     opacity: 0;
     transition: opacity 550ms cubic-bezier(0.2, 0.8, 0.3, 1);
   }
