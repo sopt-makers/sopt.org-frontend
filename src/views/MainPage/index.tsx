@@ -66,7 +66,7 @@ function MainPage() {
       <AboutSOPTSection
         generation={adminData.generation ?? 0}
         partIntroduction={adminData.partIntroduction}
-        latestNews={adminData.latestNews}
+        latestNews={adminData.latestNews ?? []}
         mainColor={'#' + adminData.brandingColor.main}
         textColor={adminData.brandingColor.textColor}
         ctaText={ctaText}
