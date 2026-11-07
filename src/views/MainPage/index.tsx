@@ -1,6 +1,7 @@
 import { useEffect, useMemo } from 'react';
 import PageLayout from '@src/components/common/PageLayout';
 import AboutSOPTSection from '@src/views/MainPage/components/AboutSOPTSection';
+import FAQSection from '@src/views/MainPage/components/FAQSection';
 import IntroSection from '@src/views/MainPage/components/IntroSection';
 import PartnersSection from '@src/views/MainPage/components/PartnersSection';
 import TopBanner from '@src/views/MainPage/components/TopBanner';
@@ -77,6 +78,7 @@ function MainPage() {
         isRecruitEnd={isRecruitEnd}
         reviews={adminData.reviews}
       />
+      <FAQSection faq={adminData.faq ?? []} />
       <PartnersSection mainColor={'#' + adminData.brandingColor.main} />
     </PageLayout>
   );
