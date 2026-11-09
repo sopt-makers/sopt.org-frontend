@@ -9,6 +9,7 @@ import { useHomepage } from '@src/views/MainPage/hooks/useHomepage';
 import usePostVisitor from '@src/views/MainPage/hooks/usePostVisitor';
 import { checkIsTimeInRange } from '../../lib/utils/date';
 import HeroSection from './components/HeroSection';
+import ProjectSection from './components/ProjectSecion';
 import RecordsSection from './components/RecordsSection';
 
 function MainPage() {
@@ -61,6 +62,7 @@ function MainPage() {
             generation={adminData.generation}
             brandingColor={adminData.brandingColor.main}
           />
+          <ProjectSection brandingColor={adminData.brandingColor.main} />
           <AboutSOPTSection
             partIntroduction={adminData.partIntroduction}
             latestNews={adminData.latestNews}
