@@ -11,14 +11,16 @@ const REVIEW_TABS = {
 } as const;
 
 interface ReviewsSectionProps {
-  reviews: RawReviewType[];
+  activityReviews: RawReviewType[];
+  recruitingReviews: RawReviewType[];
 }
 
-export default function ReviewsSection({ reviews }: ReviewsSectionProps) {
+export default function ReviewsSection({
+  activityReviews,
+  recruitingReviews,
+}: ReviewsSectionProps) {
   const [category, setCategory] = useState<string>(REVIEW_TABS.ACTIVITY);
   const [openIndex, setOpenIndex] = useState<number | null>(0);
-  const recruitingReviews = reviews.filter((review) => review.type === 'RECRUITING');
-  const activityReviews = reviews.filter((review) => review.type === 'ACTIVITY');
 
   return (
     <S.Section aria-labelledby="reviews-title">

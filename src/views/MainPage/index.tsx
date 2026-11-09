@@ -1,7 +1,5 @@
 import { useEffect } from 'react';
 import PageLayout from '@src/components/common/PageLayout';
-import { resolveReviews } from '@src/lib/utils/review';
-import AboutSOPTSection from '@src/views/MainPage/components/AboutSOPTSection';
 import ExperienceSection from '@src/views/MainPage/components/ExperienceSection';
 import FAQSection from '@src/views/MainPage/components/FAQSection';
 import PartnersSection from '@src/views/MainPage/components/PartnersSection';
@@ -11,8 +9,10 @@ import TopBanner from '@src/views/MainPage/components/TopBanner';
 import { useHomepage } from '@src/views/MainPage/hooks/useHomepage';
 import usePostVisitor from '@src/views/MainPage/hooks/usePostVisitor';
 import { checkIsTimeInRange } from '../../lib/utils/date';
+import AboutPartSection from './components/AboutPartSection';
 import HeroSection from './components/HeroSection';
 import ProjectSection from './components/ProjectSection';
+import RecentNews from './components/RecentNews';
 import RecordsSection from './components/RecordsSection';
 
 function MainPage() {
@@ -65,21 +65,20 @@ function MainPage() {
             generation={adminData.generation}
             brandingColor={adminData.brandingColor.main}
           />
-          <ProjectSection brandingColor={adminData.brandingColor.main} />
           <ExperienceSection
             coreValues={adminData.coreValue}
             mainColor={'#' + adminData.brandingColor.main}
           />
-          <AboutSOPTSection
+          <ProjectSection brandingColor={adminData.brandingColor.main} />
+          <AboutPartSection
             partIntroduction={adminData.partIntroduction}
-            latestNews={adminData.latestNews}
             mainColor={'#' + adminData.brandingColor.main}
-            textColor={adminData.brandingColor.textColor}
-            reviews={resolveReviews(
-              adminData.reviews.filter((review) => review.type === 'ACTIVITY'),
-            )}
           />
-          <ReviewsSection reviews={adminData.reviews} />
+          <RecentNews latestNews={adminData.latestNews} />
+          <ReviewsSection
+            activityReviews={adminData.reviews.filter((review) => review.type === 'ACTIVITY')}
+            recruitingReviews={adminData.reviews.filter((review) => review.type === 'RECRUITING')}
+          />
           <FAQSection faq={adminData.faq ?? []} />
           <PartnersSection mainColor={'#' + adminData.brandingColor.main} />
           <RecruitMessage
