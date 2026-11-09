@@ -75,7 +75,10 @@ function MainPage() {
             mainColor={'#' + adminData.brandingColor.main}
           />
           <RecentNews latestNews={adminData.latestNews} />
-          <ReviewsSection reviews={adminData.reviews} />
+          <ReviewsSection
+            activityReviews={adminData.reviews.filter((review) => review.type === 'ACTIVITY')}
+            recruitingReviews={adminData.reviews.filter((review) => review.type === 'RECRUITING')}
+          />
           <FAQSection faq={adminData.faq ?? []} />
           <PartnersSection mainColor={'#' + adminData.brandingColor.main} />
           <RecruitMessage

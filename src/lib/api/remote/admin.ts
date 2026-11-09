@@ -7,7 +7,6 @@ import {
   RawBrandingColorType,
 } from '@src/lib/types/admin';
 import { resolveBrandingColor } from '@src/lib/utils/brandingColor';
-import { resolveReviews } from '@src/lib/utils/review';
 import axios from 'axios';
 
 const adminClient = axios.create({ baseURL: `${BASE_URL}` });
@@ -22,7 +21,6 @@ const getHomepage = async (): Promise<GetHomepageResponse> => {
   return {
     ...data,
     brandingColor: resolveBrandingColor(data.brandingColor),
-    reviews: resolveReviews(data.reviews),
   };
 };
 const getAboutpage = async (): Promise<GetAboutpageResponse> => {
