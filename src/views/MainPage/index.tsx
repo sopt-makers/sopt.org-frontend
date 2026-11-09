@@ -11,7 +11,7 @@ import { useHomepage } from '@src/views/MainPage/hooks/useHomepage';
 import usePostVisitor from '@src/views/MainPage/hooks/usePostVisitor';
 import { checkIsTimeInRange } from '../../lib/utils/date';
 import HeroSection from './components/HeroSection';
-import ProjectSection from './components/ProjectSecion';
+import ProjectSection from './components/ProjectSection';
 import RecordsSection from './components/RecordsSection';
 
 function MainPage() {
