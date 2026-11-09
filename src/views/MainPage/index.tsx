@@ -10,6 +10,7 @@ import { useHomepage } from '@src/views/MainPage/hooks/useHomepage';
 import usePostVisitor from '@src/views/MainPage/hooks/usePostVisitor';
 import { checkIsTimeInRange } from '../../lib/utils/date';
 import AboutPartSection from './components/AboutPartSection';
+import ActivitiesSection from './components/ActivitiesSection';
 import HeroSection from './components/HeroSection';
 import ProjectSection from './components/ProjectSection';
 import RecentNews from './components/RecentNews';
@@ -70,6 +71,7 @@ function MainPage() {
             mainColor={'#' + adminData.brandingColor.main}
           />
           <ProjectSection brandingColor={adminData.brandingColor.main} />
+          <ActivitiesSection mainColor={'#' + adminData.brandingColor.main} />
           <AboutPartSection
             partIntroduction={adminData.partIntroduction}
             mainColor={'#' + adminData.brandingColor.main}
