@@ -52,16 +52,16 @@ export default function RecruitMessage({
             <S.Description>
               아직 모집기간이 아니에요. {recruitGeneration}기 모집은 {isMobileSize ? <br /> : ' '}
               {recruitMonth}월에 시작돼요.
-              <S.DesktopBreak /> 알림을 신청하면 가장 먼저{isMobileSize ? <br /> : ' '}
-              소식을 전해드려요.
             </S.Description>
           )}
         </S.Headline>
       </S.MessageWrapper>
-      <S.RecruitLink href={EXTERNAL_LINKS.RECRUIT} mainColor={mainColor} textColor={textColor}>
-        {isRecruiting ? '지원하기' : ctaText.trim()}
-        <S.Arrow aria-hidden="true" />
-      </S.RecruitLink>
+      {ctaText && (
+        <S.RecruitLink href={EXTERNAL_LINKS.RECRUIT} mainColor={mainColor} textColor={textColor}>
+          {ctaText}
+          <S.Arrow aria-hidden="true" />
+        </S.RecruitLink>
+      )}
     </S.Wrapper>
   );
 }

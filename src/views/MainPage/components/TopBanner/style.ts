@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import Link from 'next/link';
 import { css } from '@emotion/react';
+import { ReactComponent as IcTimer } from '@src/assets/icons/ic_timer.svg';
 
 export const Container = styled(Link)<{ isKeyColor: boolean; mainColor: string }>`
   display: flex;
@@ -17,14 +18,6 @@ export const Container = styled(Link)<{ isKeyColor: boolean; mainColor: string }
       ? css`
           background-color: ${mainColor};
           color: #0f1012;
-          & h1,
-          p {
-            color: #0f1012;
-          }
-          & path,
-          circle {
-            stroke: #0f1012;
-          }
         `
       : css`
           background-color: #222220;
@@ -33,13 +26,6 @@ export const Container = styled(Link)<{ isKeyColor: boolean; mainColor: string }
 
   /* 색 변환 부드럽게 */
   transition: background-color 0.5s, color 0.5s;
-  & h1 {
-    transition: color 0.5s;
-  }
-  & path,
-  circle {
-    transition: stroke 0.5s;
-  }
 
   /* 태블릿 뷰 */
   @media (max-width: 48rem) and (min-width: 26.8125rem) {
@@ -69,6 +55,7 @@ export const Wrapper = styled.section`
 `;
 
 export const Title = styled.h1`
+  color: inherit;
   text-align: center;
   line-height: 130%;
   font-size: 16rem;
@@ -108,14 +95,6 @@ export const Timer = styled.div`
   gap: 10px;
   justify-content: flex-start;
 
-  /* 태블릿 뷰 */
-  @media (max-width: 48rem) and (min-width: 26.8125rem) {
-    & > svg {
-      width: 24px;
-      height: 24px;
-    }
-  }
-
   /* 모바일 뷰 */
   @media (max-width: 26.75rem) {
     gap: 4px;
@@ -123,7 +102,15 @@ export const Timer = styled.div`
 `;
 
 export const View = styled.p`
+  color: inherit;
   display: flex;
   align-items: center;
   gap: 10px;
+`;
+
+export const TimerIcon = styled(IcTimer)`
+  @media (max-width: 48rem) and (min-width: 26.8125rem) {
+    width: 24px;
+    height: 24px;
+  }
 `;
