@@ -109,12 +109,6 @@ export const Description = styled.p`
   }
 `;
 
-export const DesktopBreak = styled.br`
-  ${media.mobile} {
-    display: none;
-  }
-`;
-
 export const RecruitLink = styled.a<{ mainColor: string; textColor: string }>`
   display: inline-flex;
   align-items: center;
