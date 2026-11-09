@@ -5,6 +5,7 @@ import FAQSection from '@src/views/MainPage/components/FAQSection';
 import IntroSection from '@src/views/MainPage/components/IntroSection';
 import PartnersSection from '@src/views/MainPage/components/PartnersSection';
 import RecruitMessage from '@src/views/MainPage/components/RecruitMessage';
+import ReviewsSection from '@src/views/MainPage/components/ReviewsSection';
 import TopBanner from '@src/views/MainPage/components/TopBanner';
 import { useHomepage } from '@src/views/MainPage/hooks/useHomepage';
 import usePostVisitor from '@src/views/MainPage/hooks/usePostVisitor';
@@ -64,6 +65,7 @@ function MainPage() {
             textColor={adminData.brandingColor.textColor}
             reviews={adminData.reviews}
           />
+          <ReviewsSection reviews={adminData.reviews} />
           <FAQSection faq={adminData.faq ?? []} />
           <PartnersSection mainColor={'#' + adminData.brandingColor.main} />
           <RecruitMessage
