@@ -1,164 +1,148 @@
 import styled from '@emotion/styled';
-import { colors } from '@sopt-makers/colors';
-import { fontsObject } from '@sopt-makers/fonts';
 import { IconChevronLeft, IconChevronRight } from '@sopt-makers/icons';
+import { colorBg, colorFg, typography } from '@sopt-mds/design-tokens';
 import { media } from '@src/lib/styles/breakpoints';
-import { CAROUSEL_GAP, CONTAINER_WIDTHS } from './constants';
+import { FEATURED_CARD_HEIGHT, SLIDE_TRANSITION } from './ProjectCard/style';
 
-export const Wrapper = styled.section`
+export const Root = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 48px;
+  gap: 35px;
   width: 100%;
+  padding: 160px 0;
+  overflow: hidden;
 
   ${media.tablet} {
+    gap: 32px;
+    padding: 120px 0;
+  }
+
+  ${media.mobile} {
     gap: 24px;
-  }
-
-  ${media.mobile} {
-    gap: 16px;
+    padding: 80px 0;
   }
 `;
 
-export const CarouselSection = styled.div`
-  position: relative;
+export const Body = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 64px;
   width: 100%;
-  height: 448px;
-  margin: 0 auto;
-
-  ${media.desktopLarge} {
-    max-width: ${CONTAINER_WIDTHS.desktopLarge}px;
-  }
-
-  ${media.desktop} {
-    max-width: ${CONTAINER_WIDTHS.desktop}px;
-  }
 
   ${media.tablet} {
-    max-width: ${CONTAINER_WIDTHS.tablet}px;
+    gap: 48px;
   }
 
   ${media.mobile} {
-    max-width: ${CONTAINER_WIDTHS.mobile}px;
-    height: auto;
+    gap: 32px;
   }
 `;
 
-export const CarouselClip = styled.div`
+export const Header = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+`;
+
+export const Title = styled.h2`
+  color: ${colorFg.neutral.bold};
+  ${typography.heading1}
+
+  ${media.mobile} {
+    ${typography.heading2}
+  }
+`;
+
+export const Carousel = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
   width: 100%;
-  height: 100%;
+`;
+
+export const Viewport = styled.div`
+  --side-width: 324px;
+  --featured-width: 500px;
+  --gap: 24px;
+
+  width: 100%;
+  height: ${FEATURED_CARD_HEIGHT};
+
+  ${media.tablet} {
+    --side-width: 240px;
+    --featured-width: 400px;
+    --gap: 20px;
+  }
 
   ${media.mobile} {
-    overflow: hidden;
-    height: auto;
+    --side-width: 160px;
+    --featured-width: 280px;
+    --gap: 12px;
   }
 `;
 
-export const CarouselTrack = styled.div`
+export const Track = styled.div`
   display: flex;
   align-items: center;
+  gap: var(--gap);
   height: 100%;
-  gap: ${CAROUSEL_GAP}px;
-  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  will-change: transform;
+  width: max-content;
+  /* 트랙 시작점을 화면 가운데에 두고, 가운데 카드의 중심이 화면 가운데 오도록 당긴다 */
+  margin-left: 50%;
+  transform: translateX(
+    calc(-1 * (var(--position) * (var(--side-width) + var(--gap)) + var(--featured-width) / 2))
+  );
+  transition: transform ${SLIDE_TRANSITION};
 `;
 
-export const NavButton = styled.button<{ $direction: 'prev' | 'next' }>`
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  ${({ $direction }) => ($direction === 'prev' ? 'left: 0;' : 'right: 0;')}
+export const Controls = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 40px;
+`;
 
-  width: 32px;
-  height: 32px;
-  border-radius: 999px;
-  background-color: ${colors.gray700};
-  box-shadow: 0px 6px 20px 0px rgba(0, 0, 0, 0.2);
+export const ArrowButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: ${colorBg.neutral.ghost};
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
   cursor: pointer;
-  border: none;
-  z-index: 1;
-
-  ${media.mobile} {
-    ${({ $direction }) =>
-      $direction === 'prev' ? 'left: calc(50% - 182px);' : 'right: calc(50% - 182px);'}
-  }
 `;
 
-export const ChevronRight = styled(IconChevronRight)`
+const iconStyle = `
   width: 24px;
   height: 24px;
-  flex-shrink: 0;
+  color: ${colorFg.neutral.bold};
 `;
 
-export const ChevronLeft = styled(IconChevronLeft)`
-  width: 24px;
-  height: 24px;
-  flex-shrink: 0;
+export const PrevIcon = styled(IconChevronLeft)`
+  ${iconStyle}
 `;
 
-export const IndicatorList = styled.div`
+export const NextIcon = styled(IconChevronRight)`
+  ${iconStyle}
+`;
+
+export const Dots = styled.div`
   display: flex;
   align-items: center;
   gap: 6px;
 `;
 
-export const Indicator = styled.button<{ $active: boolean }>`
+export const Dot = styled.button<{ $isActive: boolean }>`
+  width: ${({ $isActive }) => ($isActive ? 24 : 12)}px;
   height: 12px;
   border-radius: 99px;
-  border: none;
+  background-color: ${({ $isActive }) =>
+    $isActive ? colorFg.neutral.bold : colorBg.neutral.default};
   cursor: pointer;
-  padding: 0;
-  transition: width 0.3s ease, background-color 0.3s ease;
-  background-color: ${({ $active }) => ($active ? colors.white : colors.gray400)};
-  width: ${({ $active }) => ($active ? '24px' : '12px')};
-
-  ${media.mobile} {
-    height: 8px;
-    width: ${({ $active }) => ($active ? '16px' : '8px')};
-  }
-`;
-
-export const MoreButton = styled.button`
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  height: 42px;
-  padding: 12px 20px;
-  border: 1px solid ${colors.white};
-  border-radius: 10px;
-  background-color: transparent;
-  color: ${colors.white};
-  ${fontsObject.TITLE_6_16_SB}
-  white-space: nowrap;
-
-  transition: all 0.3s ease;
-  cursor: pointer;
-  &:hover {
-    background: ${colors.white};
-    color: ${colors.black};
-  }
-
-  ${media.tablet} {
-    height: 36px;
-    padding: 9px 14px;
-    border-radius: 8px;
-    ${fontsObject.LABEL_3_14_SB}
-  }
-
-  ${media.mobile} {
-    height: 36px;
-    padding: 9px 14px;
-    border-radius: 8px;
-    ${fontsObject.LABEL_3_14_SB}
-  }
-`;
-
-export const RightArrowIcon = styled(ChevronRight)`
-  width: 16px;
-  height: 16px;
-  flex-shrink: 0;
+  transition: width ${SLIDE_TRANSITION}, background-color ${SLIDE_TRANSITION};
 `;
