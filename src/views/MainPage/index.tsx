@@ -4,6 +4,7 @@ import AboutSOPTSection from '@src/views/MainPage/components/AboutSOPTSection';
 import FAQSection from '@src/views/MainPage/components/FAQSection';
 import IntroSection from '@src/views/MainPage/components/IntroSection';
 import PartnersSection from '@src/views/MainPage/components/PartnersSection';
+import RecruitMessage from '@src/views/MainPage/components/RecruitMessage';
 import TopBanner from '@src/views/MainPage/components/TopBanner';
 import { useHomepage } from '@src/views/MainPage/hooks/useHomepage';
 import usePostVisitor from '@src/views/MainPage/hooks/usePostVisitor';
@@ -57,9 +58,16 @@ function MainPage() {
         <>
           <IntroSection adminData={adminData} />
           <AboutSOPTSection
-            generation={adminData.generation ?? 0}
             partIntroduction={adminData.partIntroduction}
             latestNews={adminData.latestNews}
+            mainColor={'#' + adminData.brandingColor.main}
+            textColor={adminData.brandingColor.textColor}
+            reviews={adminData.reviews}
+          />
+          <FAQSection faq={adminData.faq ?? []} />
+          <PartnersSection mainColor={'#' + adminData.brandingColor.main} />
+          <RecruitMessage
+            generation={adminData.generation ?? 0}
             mainColor={'#' + adminData.brandingColor.main}
             textColor={adminData.brandingColor.textColor}
             ctaText={ctaText}
@@ -68,10 +76,7 @@ function MainPage() {
               isYBRecruiting ? ybSchedule?.applicationEndTime : obSchedule?.applicationEndTime
             }
             isRecruitEnd={isRecruitEnd}
-            reviews={adminData.reviews}
           />
-          <FAQSection faq={adminData.faq ?? []} />
-          <PartnersSection mainColor={'#' + adminData.brandingColor.main} />
         </>
       )}
     </PageLayout>

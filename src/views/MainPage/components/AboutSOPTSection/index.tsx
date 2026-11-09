@@ -4,7 +4,6 @@ import { SoptCommentType } from '@src/lib/types/main';
 import Activity from '@src/views/MainPage/components/Activity';
 import PartIntroduction from '@src/views/MainPage/components/PartIntroduction';
 import RecentNews from '@src/views/MainPage/components/RecentNews';
-import RecruitMessage from '@src/views/MainPage/components/RecruitMessage';
 import ReviewSection from '@src/views/MainPage/components/ReviewSection';
 import * as S from './style';
 
@@ -15,28 +14,18 @@ const MenuList = [
 ] as const;
 
 interface Props {
-  generation: number;
   partIntroduction: PartIntroType[];
   latestNews: LatestNewsType[];
   mainColor: string;
   textColor: string;
-  ctaText: string;
-  isRecruiting: boolean;
-  recruitEndTime?: string;
-  isRecruitEnd: boolean;
   reviews: SoptCommentType[];
 }
 
 function AboutSOPTSection({
-  generation,
   partIntroduction,
   latestNews,
   mainColor,
   textColor,
-  ctaText,
-  isRecruiting,
-  recruitEndTime,
-  isRecruitEnd,
   reviews,
 }: Props) {
   const activity = useInView();
@@ -76,15 +65,6 @@ function AboutSOPTSection({
         </S.ScrollContentLayout>
       </S.Wrapper>
       <RecentNews latestNews={latestNews} />
-      <RecruitMessage
-        generation={generation}
-        mainColor={mainColor}
-        textColor={textColor}
-        ctaText={ctaText}
-        isRecruiting={isRecruiting}
-        recruitEndTime={recruitEndTime}
-        isRecruitEnd={isRecruitEnd}
-      />
     </>
   );
 }
