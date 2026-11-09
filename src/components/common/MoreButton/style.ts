@@ -1,23 +1,35 @@
 import styled from '@emotion/styled';
-import { colors } from '@sopt-makers/colors';
-import { fontsObject } from '@sopt-makers/fonts';
+import { colorFg, colorStroke, typography } from '@sopt-mds/design-tokens';
 import { ReactComponent as IcArrowMore } from '@src/assets/icons/ic_arrow_more.svg';
 
+const EASE = 'cubic-bezier(0.2, 0.8, 0.3, 1)';
+const DURATION = '0.55s';
+
 const boxBase = `
-  border: 1px solid ${colors.gray600};
+  border: 1px solid ${colorStroke.neutral.default};
   border-radius: 10px;
-  transition: background 0.2s ease;
+  transition:
+    border-color ${DURATION} ${EASE},
+    background ${DURATION} ${EASE};
 `;
 
 export const LabelBox = styled.div`
   ${boxBase}
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
   height: 40px;
   padding: 8px 16px;
-  color: ${colors.gray10};
-  ${fontsObject.BODY_3_14_M}
+  color: ${colorFg.neutral.bold};
+  ${typography.body2}
   white-space: nowrap;
+
+  &::after {
+    content: attr(data-label);
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+  }
 `;
 
 export const IconBox = styled.div`
@@ -30,25 +42,38 @@ export const IconBox = styled.div`
   flex-shrink: 0;
 `;
 
-export const Root = styled.button`
+export const Arrow = styled(IcArrowMore)`
+  width: 13px;
+  height: 13px;
+  color: ${colorFg.neutral.bold};
+  flex-shrink: 0;
+  transition: transform ${DURATION} ${EASE};
+`;
+
+export const Root = styled.button<{ mainColor: string }>`
+  position: relative;
+  isolation: isolate;
   display: flex;
   align-items: center;
   gap: 4px;
   cursor: pointer;
 
-  &:hover ${LabelBox},
-  &:hover ${IconBox} {
-    background: rgba(255, 255, 255, 0.08);
+  &::before {
+    content: '';
+    position: absolute;
+    inset: -160px -240px;
+    z-index: -1;
+    background: radial-gradient(closest-side, ${({ mainColor }) => mainColor}, transparent);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity ${DURATION} ${EASE};
   }
 
-  &:hover ${LabelBox} {
-    ${fontsObject.LABEL_3_14_SB}
+  &:hover::before {
+    opacity: 0.05;
   }
-`;
 
-export const Arrow = styled(IcArrowMore)`
-  width: 13px;
-  height: 13px;
-  color: ${colors.gray10};
-  flex-shrink: 0;
+  &:hover ${Arrow} {
+    transform: translate(2px, -2px);
+  }
 `;
