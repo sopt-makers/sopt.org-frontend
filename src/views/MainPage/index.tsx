@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import PageLayout from '@src/components/common/PageLayout';
+import { resolveReviews } from '@src/lib/utils/review';
 import AboutSOPTSection from '@src/views/MainPage/components/AboutSOPTSection';
 import ExperienceSection from '@src/views/MainPage/components/ExperienceSection';
 import FAQSection from '@src/views/MainPage/components/FAQSection';
@@ -74,7 +75,9 @@ function MainPage() {
             latestNews={adminData.latestNews}
             mainColor={'#' + adminData.brandingColor.main}
             textColor={adminData.brandingColor.textColor}
-            reviews={adminData.reviews}
+            reviews={resolveReviews(
+              adminData.reviews.filter((review) => review.type === 'ACTIVITY'),
+            )}
           />
           <ReviewsSection reviews={adminData.reviews} />
           <FAQSection faq={adminData.faq ?? []} />
