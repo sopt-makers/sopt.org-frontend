@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import { ReactComponent as IcTimer } from '@src/assets/icons/ic_timer.svg';
 import Timer from '@src/components/common/Timer';
 import { useIsMobile } from '@src/hooks/useDevice';
 import { EXTERNAL_LINKS } from '@src/lib/constants/routes';
@@ -20,18 +19,18 @@ export default function TopBanner({ mainColor, targetTime, generation }: TopBann
 
   const [isKeyColor, setIsKeyColor] = useState<boolean>(false);
 
-  useEffect(() => {
+  useEffect(function synchronizeBannerColorWithScroll() {
     const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-      scrollPosition <= CHANGE_POSITION ? setIsKeyColor(false) : setIsKeyColor(true);
+      setIsKeyColor(window.scrollY > CHANGE_POSITION);
     };
 
+    handleScroll();
     window.addEventListener('scroll', handleScroll);
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  });
+  }, [CHANGE_POSITION]);
 
   return (
     <S.Container href={EXTERNAL_LINKS.RECRUIT} isKeyColor={isKeyColor} mainColor={mainColor}>
@@ -41,7 +40,7 @@ export default function TopBanner({ mainColor, targetTime, generation }: TopBann
         </div>
         <S.Description>
           <S.Timer>
-            {isMobile ? <IcTimer width={14} height={14} viewBox="0 0 24 24" /> : <IcTimer />}
+            <S.TimerIcon width={isMobile ? 14 : 24} height={isMobile ? 14 : 24} aria-hidden="true" />
             <Timer targetDate={TARGET_DATE} endMessage="모집 마감" />
           </S.Timer>
           {data && (
