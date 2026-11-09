@@ -2,7 +2,6 @@ import { useEffect } from 'react';
 import PageLayout from '@src/components/common/PageLayout';
 import AboutSOPTSection from '@src/views/MainPage/components/AboutSOPTSection';
 import FAQSection from '@src/views/MainPage/components/FAQSection';
-import IntroSection from '@src/views/MainPage/components/IntroSection';
 import PartnersSection from '@src/views/MainPage/components/PartnersSection';
 import RecruitMessage from '@src/views/MainPage/components/RecruitMessage';
 import TopBanner from '@src/views/MainPage/components/TopBanner';
@@ -10,6 +9,7 @@ import { useHomepage } from '@src/views/MainPage/hooks/useHomepage';
 import usePostVisitor from '@src/views/MainPage/hooks/usePostVisitor';
 import { checkIsTimeInRange } from '../../lib/utils/date';
 import HeroSection from './components/HeroSection';
+import RecordsSection from './components/RecordsSection';
 
 function MainPage() {
   const { data: adminData } = useHomepage();
@@ -56,7 +56,11 @@ function MainPage() {
 
       {adminData && (
         <>
-          <IntroSection adminData={adminData} />
+          <RecordsSection
+            activitiesRecords={adminData.activitiesRecords}
+            generation={adminData.generation}
+            brandingColor={adminData.brandingColor.main}
+          />
           <AboutSOPTSection
             partIntroduction={adminData.partIntroduction}
             latestNews={adminData.latestNews}

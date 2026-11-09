@@ -62,6 +62,8 @@ export interface GetHomepageResponse {
     activitiesMemberCount: number;
     projectCounts: number;
     studyCounts: number;
+    foundingTeamCount: number;
+    availableServiceCount: number;
     operationPeriod: number;
   };
   coreValue: HomeCoreValueType[];
