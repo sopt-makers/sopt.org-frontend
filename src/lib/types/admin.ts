@@ -100,6 +100,7 @@ export interface HomeCoreValueType {
   value: string;
   description: string;
   detailDescription: string;
+  image?: string;
 }
 export interface ActivityScheduleItemType {
   name: string;
