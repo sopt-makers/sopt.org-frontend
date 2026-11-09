@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import { colors, spacing, typography } from '@sopt-mds/design-tokens';
 import Image from 'next/image';
+import CommonTab from '@src/components/common/Tab';
 import { breakpoints, media } from '@src/lib/styles/breakpoints';
 
 export const Section = styled.section`
@@ -74,7 +75,7 @@ export const Subtitle = styled.p`
     ${typography.body3}
   }
 `;
-export const Tabs = styled.div`
+export const Tabs = styled(CommonTab.List)`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -87,11 +88,14 @@ export const Tabs = styled.div`
     gap: 12px;
   }
 `;
-export const Tab = styled.button<{ selected: boolean }>`
+export const Tab = styled(CommonTab.Item)`
   position: relative;
   padding-bottom: 8px;
   cursor: pointer;
-  color: ${({ selected }) => (selected ? colors.fg.neutral.bold : colors.fg.neutral.ghost)};
+  color: ${colors.fg.neutral.ghost};
+  &[aria-selected='true'] {
+    color: ${colors.fg.neutral.bold};
+  }
   ${typography.title4}
   transition: color 250ms ease;
   &::after {
@@ -102,8 +106,11 @@ export const Tab = styled.button<{ selected: boolean }>`
     height: 2px;
     background: ${colors.bg.neutral.inverse};
     content: '';
-    transform: scaleX(${({ selected }) => (selected ? 1 : 0)});
+    transform: scaleX(0);
     transition: transform 250ms ease;
+  }
+  &[aria-selected='true']::after {
+    transform: scaleX(1);
   }
   &:hover {
     color: ${colors.fg.neutral.default};
@@ -122,7 +129,7 @@ export const Tab = styled.button<{ selected: boolean }>`
     }
   }
 `;
-export const List = styled.div`
+export const List = styled(CommonTab.Panel)`
   display: flex;
   flex: 1;
   min-width: 0;
