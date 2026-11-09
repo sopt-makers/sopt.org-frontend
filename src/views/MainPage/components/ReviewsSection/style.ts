@@ -211,14 +211,6 @@ export const Trigger = styled.button`
     inset: 0;
     content: '';
   }
-  &[aria-expanded='false']:hover {
-    ${ReviewTitle} {
-      color: ${colors.fg.neutral.bold};
-    }
-    ${Arrow} {
-      background: ${colors.fg.neutral.bold};
-    }
-  }
   &:focus-visible::after {
     outline: 2px solid ${colors.fg.neutral.bold};
     outline-offset: -2px;
