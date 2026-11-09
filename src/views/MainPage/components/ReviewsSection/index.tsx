@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Tab from '@src/components/common/Tab';
-import { SoptCommentType } from '@src/lib/types/main';
+import { RawReviewType } from '@src/lib/types/admin';
 import handleTabKeyDown from '@src/views/MainPage/utils/handleTabKeyDown';
 import ReviewItem from './ReviewItem';
 import * as S from './style';
@@ -11,12 +11,14 @@ const REVIEW_TABS = {
 } as const;
 
 interface ReviewsSectionProps {
-  reviews: SoptCommentType[];
+  reviews: RawReviewType[];
 }
 
 export default function ReviewsSection({ reviews }: ReviewsSectionProps) {
   const [category, setCategory] = useState<string>(REVIEW_TABS.ACTIVITY);
   const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const recruitingReviews = reviews.filter((review) => review.type === 'RECRUITING');
+  const activityReviews = reviews.filter((review) => review.type === 'ACTIVITY');
 
   return (
     <S.Section aria-labelledby="reviews-title">
@@ -39,14 +41,21 @@ export default function ReviewsSection({ reviews }: ReviewsSectionProps) {
             </S.Tabs>
           </S.Header>
           <S.List tab={REVIEW_TABS.APPLICATION}>
-            {/* @TODO: /homepage API에 지원 후기 구분이 추가되면 데이터를 연결합니다. (장정훈) */}
-            <S.Empty>등록된 지원 후기가 없습니다.</S.Empty>
+            {recruitingReviews.length === 0 && <S.Empty>등록된 지원 후기가 없습니다.</S.Empty>}
+            {recruitingReviews.map((review, index) => (
+              <ReviewItem
+                key={review.id}
+                review={review}
+                isOpen={openIndex === index}
+                onToggle={() => setOpenIndex(openIndex === index ? null : index)}
+              />
+            ))}
           </S.List>
           <S.List tab={REVIEW_TABS.ACTIVITY}>
-            {reviews.length === 0 && <S.Empty>등록된 활동 후기가 없습니다.</S.Empty>}
-            {reviews.map((review, index) => (
+            {activityReviews.length === 0 && <S.Empty>등록된 활동 후기가 없습니다.</S.Empty>}
+            {activityReviews.map((review, index) => (
               <ReviewItem
-                key={index}
+                key={review.id}
                 review={review}
                 isOpen={openIndex === index}
                 onToggle={() => setOpenIndex(openIndex === index ? null : index)}
