@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import PageLayout from '@src/components/common/PageLayout';
 import AboutSOPTSection from '@src/views/MainPage/components/AboutSOPTSection';
+import ExperienceSection from '@src/views/MainPage/components/ExperienceSection';
 import FAQSection from '@src/views/MainPage/components/FAQSection';
 import PartnersSection from '@src/views/MainPage/components/PartnersSection';
 import RecruitMessage from '@src/views/MainPage/components/RecruitMessage';
@@ -61,6 +62,10 @@ function MainPage() {
             activitiesRecords={adminData.activitiesRecords}
             generation={adminData.generation}
             brandingColor={adminData.brandingColor.main}
+          />
+          <ExperienceSection
+            coreValues={adminData.coreValue}
+            mainColor={'#' + adminData.brandingColor.main}
           />
           <AboutSOPTSection
             partIntroduction={adminData.partIntroduction}
