@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import { colors, spacing, typography } from '@sopt-mds/design-tokens';
 import reviewArrow from '@src/assets/icons/ic_arrow_up_right.svg';
+import CommonTab from '@src/components/common/Tab';
 import { breakpoints, media } from '@src/lib/styles/breakpoints';
 
 const REVIEW_ACCENT = '#F77234';
@@ -75,7 +76,7 @@ export const Subtitle = styled.p`
   }
 `;
 
-export const Tabs = styled.div`
+export const Tabs = styled(CommonTab.List)`
   display: flex;
   flex: none;
   gap: 18px;
@@ -89,10 +90,13 @@ export const Tabs = styled.div`
   }
 `;
 
-export const Tab = styled.button<{ selected: boolean }>`
+export const Tab = styled(CommonTab.Item)`
   position: relative;
   padding-bottom: ${spacing.s8};
-  color: ${({ selected }) => (selected ? colors.fg.neutral.bold : colors.fg.neutral.ghost)};
+  color: ${colors.fg.neutral.ghost};
+  &[aria-selected='true'] {
+    color: ${colors.fg.neutral.bold};
+  }
   ${typography.title4}
   cursor: pointer;
   transition: color 550ms ease;
@@ -104,8 +108,11 @@ export const Tab = styled.button<{ selected: boolean }>`
     height: 2px;
     background: ${colors.bg.neutral.inverse};
     content: '';
-    transform: scaleX(${({ selected }) => (selected ? 1 : 0)});
+    transform: scaleX(0);
     transition: transform 550ms cubic-bezier(0.2, 0.8, 0.3, 1);
+  }
+  &[aria-selected='true']::after {
+    transform: scaleX(1);
   }
   &:hover {
     color: ${colors.fg.neutral.default};
@@ -125,7 +132,7 @@ export const Tab = styled.button<{ selected: boolean }>`
   }
 `;
 
-export const List = styled.div`
+export const List = styled(CommonTab.Panel)`
   min-width: 0;
   border-top: 1px solid ${colors.stroke.neutral.subtle};
   @media (max-width: ${breakpoints.desktop - 1}px) {
