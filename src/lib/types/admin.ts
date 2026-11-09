@@ -18,6 +18,7 @@ export interface LatestNewsType {
   title: string;
   image: string;
   link: string;
+  publishedDate?: string;
 }
 
 // 어드민 API가 그대로 내려주는 모드별 컬러. 어느 모드를 쓸지는 BRAND_COLOR_MODE로 고정

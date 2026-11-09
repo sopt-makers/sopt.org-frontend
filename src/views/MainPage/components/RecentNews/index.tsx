@@ -1,31 +1,37 @@
-import { EXTERNAL_LINKS } from '@src/lib/constants/routes';
+import Image from 'next/image';
+import { channels } from '@src/lib/constants/channels';
 import { LatestNewsType } from '@src/lib/types/admin';
-import Card from './Card';
 import * as S from './style';
 
 export default function RecentNews({ latestNews }: { latestNews: LatestNewsType[] }) {
-  const newsList = latestNews.concat(latestNews);
-
   return (
-    <S.RecentNews id="news">
-      <S.Title>솝트의 최신 소식이 궁금하다면!</S.Title>
-      <S.SliderWrapper>
-        <S.LeftGradient />
-        <S.View>
-          <S.SliderList>
-            {newsList.map(({ title, link, image }, idx) => {
-              return <Card key={`${title}-${idx}`} title={title} url={link} src={image} />;
-            })}
-          </S.SliderList>
-        </S.View>
-        <S.RightGradient />
-      </S.SliderWrapper>
-      <S.GoToInstagram>
-        <S.IcInstagram />
-        <S.Description href={EXTERNAL_LINKS.INSTAGRAM}>
-          더 많은 소식이 궁금하다면
-        </S.Description>
-      </S.GoToInstagram>
+    <S.RecentNews id="news" aria-labelledby="news-title">
+      <S.Content>
+        <S.Header>
+          <div>
+            <S.Title id="news-title">NEWS</S.Title>
+            <S.Subtitle>SOPT의 최신 소식</S.Subtitle>
+          </div>
+          <S.Channels aria-label="SOPT 채널">
+            {channels.map(({ name, href, icon }) => (
+              <a key={name} href={href} aria-label={name}>
+                <Image src={icon} alt="" width={24} height={24} />
+              </a>
+            ))}
+          </S.Channels>
+        </S.Header>
+        <S.NewsList tabIndex={0} aria-label="최신 소식 목록">
+          {latestNews.map(({ id, title, image, link, publishedDate }) => (
+            <S.NewsItem key={id}>
+              <a href={link} target="_blank" rel="noopener noreferrer">
+                <S.NewsImage src={image} alt="" />
+                <S.NewsTitle>{title}</S.NewsTitle>
+                {publishedDate && <S.Date>{publishedDate}</S.Date>}
+              </a>
+            </S.NewsItem>
+          ))}
+        </S.NewsList>
+      </S.Content>
     </S.RecentNews>
   );
 }
