@@ -1,145 +1,142 @@
 import styled from '@emotion/styled';
-import { colors } from '@sopt-makers/colors';
-import { fontsObject } from '@sopt-makers/fonts';
-import Link from 'next/link';
-import Slider from 'react-slick';
-import { ReactComponent as IconInstagram } from '@src/assets/icons/ic_instagram.svg';
+import { colors, radius, spacing, typography } from '@sopt-mds/design-tokens';
 import { media } from '@src/lib/styles/breakpoints';
 
 export const RecentNews = styled.section`
-  padding: 432px 0 0 0;
-
-  ${media.tablet} {
-    padding: 100px 0;
-  }
-
-  ${media.mobile} {
-    padding: 100px 0;
-  }
-`;
-
-export const Title = styled.h1`
-  color: ${colors.white};
-  font-family: SUIT;
-  font-size: 40px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 60px;
-  letter-spacing: -0.8px;
-  text-align: center;
-
-  ${media.tablet} {
-    ${fontsObject.HEADING_2_32_B}
-  }
-
-  ${media.mobile} {
-    ${fontsObject.HEADING_5_20_B}
-  }
-`;
-
-export const View = styled.div`
-  display: flex;
-  flex-direction: column;
+  padding: ${spacing.s160} 0;
   overflow: hidden;
-  margin-bottom: 60px;
-
-  ${media.mobile} {
-    margin-bottom: 40px;
-  }
-`;
-
-export const SliderList = styled.ul`
-  display: flex;
-  position: relative;
-  width: max-content;
-  animation: autoPlay 60s linear infinite;
-
-  @keyframes autoPlay {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-50%);
-    }
-  }
-`;
-
-export const SliderWrapper = styled.section`
-  position: relative;
-`;
-
-export const StyledSlider = styled(Slider)`
-  .slick-track {
-    margin-bottom: 60px;
-
-    ${media.mobile} {
-      margin-bottom: 40px;
-    }
-  }
-
-  .slick-slide > div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-`;
-
-export const GoToInstagram = styled.section`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-
-export const IcInstagram = styled(IconInstagram)`
-  width: 20px;
-  height: 20px;
-`;
-
-export const Description = styled(Link)`
-  color: #ededed;
-  font-family: SUIT;
-  font-size: 16rem;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 26.859px; /* 167.895% */
-  letter-spacing: -0.64px;
-  text-decoration-line: underline;
-  margin-left: 8px;
-
-  cursor: pointer;
-
-  ${media.mobile} {
-    font-size: 9.194rem;
-    line-height: 15.436px; /* 167.895% */
-    letter-spacing: -0.368px;
-    margin-left: 4px;
-  }
-`;
-
-export const Gradient = styled.div`
-  width: 44.967px;
-  height: 382px;
-  position: absolute;
-  top: -1px;
-  z-index: 50;
-  margin-top: 51px;
 
   ${media.tablet} {
-    height: 315px;
+    padding: ${spacing.s120} 0;
   }
 
   ${media.mobile} {
-    margin-top: 24px;
-    height: 182px;
+    padding: ${spacing.s80} 0;
   }
 `;
 
-export const LeftGradient = styled(Gradient)`
-  background: linear-gradient(90deg, #0d1120 12.15%, rgba(13, 17, 32, 0.01) 82.86%);
-  left: -1px;
+export const Content = styled.div`
+  max-width: 1201px;
+  margin: 0 auto;
+
+  @media (max-width: 1280px) {
+    margin: 0 ${spacing.s40};
+  }
+
+  ${media.mobile} {
+    margin: 0 ${spacing.s20};
+  }
 `;
 
-export const RightGradient = styled(Gradient)`
-  background: linear-gradient(270deg, #0d1120 12.15%, rgba(13, 17, 32, 0.01) 82.86%);
-  right: -1px;
+export const Header = styled.div`
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding-bottom: ${spacing.s8};
+  margin-bottom: 58px;
+
+  ${media.tablet} {
+    margin-bottom: ${spacing.s32};
+  }
+
+  ${media.mobile} {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: ${spacing.s32};
+    margin-bottom: ${spacing.s8};
+  }
+`;
+
+export const Title = styled.h2`
+  color: ${colors.fg.neutral.bold};
+  /* typography/display2 토큰이 없어 임시로 직접 지정합니다. */
+  font-size: 56px;
+  font-weight: ${typography.weight.bold};
+  line-height: 72px;
+  letter-spacing: ${typography.letterSpacing.default};
+
+  ${media.mobile} {
+    ${typography.heading1}
+  }
+`;
+
+export const Subtitle = styled.p`
+  margin-top: ${spacing.s4};
+  color: ${colors.fg.neutral.default};
+  /* typography/lead1 토큰이 없어 기본 타이포그래피 토큰으로 조합합니다. */
+  font-size: ${typography.size.t20};
+  line-height: ${typography.lineHeight.t30};
+  letter-spacing: ${typography.letterSpacing.wide};
+
+  ${media.mobile} {
+    ${typography.body3}
+  }
+`;
+
+export const Channels = styled.nav`
+  display: flex;
+  gap: ${spacing.s16};
+
+  a {
+    display: block;
+    width: 24px;
+    height: 24px;
+  }
+`;
+
+export const NewsList = styled.ul`
+  display: flex;
+  gap: ${spacing.s24};
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x proximity;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  @media (max-width: 1023px) {
+    margin-right: -40px;
+    padding-right: 40px;
+  }
+
+  ${media.mobile} {
+    margin-right: -20px;
+    padding-right: 20px;
+  }
+`;
+
+export const NewsItem = styled.li`
+  flex: 0 0 calc((100% - 72px) / 4);
+  min-width: 0;
+  scroll-snap-align: start;
+
+  ${media.tablet} {
+    flex-basis: 332px;
+  }
+
+  ${media.mobile} {
+    flex-basis: 240px;
+  }
+`;
+
+export const NewsImage = styled.img`
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: ${radius.r12};
+  background: ${colors.bg.neutral.ghost};
+`;
+
+export const NewsTitle = styled.p`
+  margin-top: ${spacing.s16};
+  color: ${colors.fg.neutral.bold};
+  ${typography.title4}
+`;
+
+export const Date = styled.p`
+  margin-top: ${spacing.s8};
+  color: ${colors.fg.neutral.subtle};
+  ${typography.body3}
 `;

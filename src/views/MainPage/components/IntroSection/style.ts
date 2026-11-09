@@ -3,6 +3,7 @@ import { media } from '@src/lib/styles/breakpoints';
 
 export const IntroSection = styled.section`
   position: relative;
+  z-index: 1;
   display: flex;
   flex-direction: column;
   gap: 232px;

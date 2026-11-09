@@ -1,6 +1,7 @@
 import { useIsMobile } from '@src/hooks/useDevice';
+import { EXTERNAL_LINKS } from '@src/lib/constants/routes';
 import { breakpoints } from '@src/lib/styles/breakpoints';
-import RecruitButton from '../@common/RecruitButton';
+import dayjs from 'dayjs';
 import * as S from './style';
 
 interface RecruitMessageProp {
@@ -8,6 +9,8 @@ interface RecruitMessageProp {
   mainColor: string;
   textColor: string;
   ctaText: string;
+  isRecruiting: boolean;
+  recruitEndTime?: string;
   isRecruitEnd?: boolean;
 }
 
@@ -16,29 +19,49 @@ export default function RecruitMessage({
   mainColor,
   textColor,
   ctaText,
+  isRecruiting,
+  recruitEndTime,
   isRecruitEnd,
 }: RecruitMessageProp) {
   const recruitGeneration = generation + (isRecruitEnd ? 1 : 0);
   const recruitMonth = recruitGeneration % 2 === 0 ? '3' : '9';
-
+  const recruitEndDate = dayjs(recruitEndTime ?? null);
+  const daysLeft = recruitEndDate.isValid()
+    ? recruitEndDate.startOf('day').diff(dayjs().startOf('day'), 'day')
+    : null;
   const isMobileSize = useIsMobile(`${breakpoints.tablet - 1}px`);
 
   return (
-    <S.Wrapper>
+    <S.Wrapper mainColor={mainColor}>
       <S.MessageWrapper>
-        <S.Title>SOPT의 열정이 되어주세요!</S.Title>
-        {ctaText === '모집 알림 신청하기 ' && (
-          <S.Description>
-            아직 모집기간이 아니에요.{isMobileSize ? <br /> : ' '}
-            {recruitGeneration}기 모집은 {recruitMonth}월에 시작돼요.
-            <br />
-            알림을 신청하면 가장 먼저 소식을 전해드려요.
-          </S.Description>
-        )}
+        <S.Badge>
+          <S.BadgeEmphasis mainColor={mainColor}>NOW</S.BadgeEmphasis> SOPT{' '}
+          {isRecruiting ? generation : recruitGeneration}기 신입 회원 모집{' '}
+          {isRecruiting ? '중' : '예정'}
+        </S.Badge>
+        <S.Headline>
+          <S.Title>SOPT의 열정이 되어주세요!</S.Title>
+          {isRecruiting ? (
+            <S.Description>
+              {generation}기 모집이 시작됐어요. {daysLeft === 0 && '오늘 마감이에요.'}
+              {daysLeft !== null && daysLeft > 0 && `마감까지 ${daysLeft}일 남았어요.`}
+              <br />
+              지금 바로 지원해 주세요.
+            </S.Description>
+          ) : (
+            <S.Description>
+              아직 모집기간이 아니에요. {recruitGeneration}기 모집은 {isMobileSize ? <br /> : ' '}
+              {recruitMonth}월에 시작돼요.
+            </S.Description>
+          )}
+        </S.Headline>
       </S.MessageWrapper>
-      <RecruitButton size="md" mainColor={mainColor} textColor={textColor}>
-        {ctaText}&gt;
-      </RecruitButton>
+      {ctaText && (
+        <S.RecruitLink href={EXTERNAL_LINKS.RECRUIT} mainColor={mainColor} textColor={textColor}>
+          {ctaText}
+          <S.Arrow aria-hidden="true" />
+        </S.RecruitLink>
+      )}
     </S.Wrapper>
   );
 }

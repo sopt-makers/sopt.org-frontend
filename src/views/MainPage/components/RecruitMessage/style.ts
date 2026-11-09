@@ -1,23 +1,46 @@
 import styled from '@emotion/styled';
-import { colors } from '@sopt-makers/colors';
-import { fontsObject } from '@sopt-makers/fonts';
+import { IconChevronRight } from '@sopt-makers/icons';
+import { colors, spacing, typography } from '@sopt-mds/design-tokens';
 import { media } from '@src/lib/styles/breakpoints';
 
-export const Wrapper = styled.section`
+export const Wrapper = styled.section<{ mainColor: string }>`
+  position: relative;
+  isolation: isolate;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: 372px 0 480px 0;
-  gap: 48px;
+  gap: ${spacing.s48};
+  padding: ${spacing.s160} 0;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background: ${({ mainColor }) =>
+      `radial-gradient(ellipse 50% 45% at 50% 50%, color-mix(in srgb, ${mainColor} 7%, transparent), transparent)`};
+    opacity: 0;
+    transition: opacity 550ms cubic-bezier(0.2, 0.8, 0.3, 1);
+  }
+
+  &:has(a:hover)::before {
+    opacity: 1;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    &::before {
+      transition: none;
+    }
+  }
 
   ${media.tablet} {
-    padding: 126px 0 351px 0;
+    padding: ${spacing.s120} ${spacing.s40};
   }
 
   ${media.mobile} {
-    padding: 126px 0 358px 0;
-    gap: 24px;
+    gap: ${spacing.s24};
+    padding: ${spacing.s80} ${spacing.s20};
   }
 `;
 
@@ -25,75 +48,110 @@ export const MessageWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 12px;
+  gap: ${spacing.s20};
 `;
 
-export const Title = styled.h1`
-  color: ${colors.white};
-  text-align: center;
-  font-family: SUIT;
-  font-size: 40px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 60px;
-  letter-spacing: -0.8px;
+export const Badge = styled.div`
+  display: flex;
+  align-items: center;
+  gap: ${spacing.s6};
+  padding: ${spacing.s6} ${spacing.s14};
+  border: 1px solid ${colors.stroke.neutral.subtle};
+  border-radius: 999px;
+  background: ${colors.bg.layer.default};
+  color: ${colors.fg.neutral.default};
+  ${typography.body2}
 
   ${media.mobile} {
-    ${fontsObject.HEADING_4_24_B}
+    ${typography.body3}
+  }
+`;
+
+export const BadgeEmphasis = styled.strong<{ mainColor: string }>`
+  color: ${({ mainColor }) => mainColor};
+  font-weight: ${typography.weight.bold};
+  letter-spacing: inherit;
+
+  ${media.mobile} {
+    ${typography.label4}
+  }
+`;
+
+export const Headline = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px;
+  text-align: center;
+`;
+
+export const Title = styled.h2`
+  // typography/display3로 되어있는데 없는 토큰이라 디자이너 확인 필요
+  color: ${colors.fg.neutral.bold};
+  font-size: 48px;
+  font-weight: ${typography.weight.bold};
+  line-height: 72px;
+  letter-spacing: ${typography.letterSpacing.default};
+
+  ${media.mobile} {
+    ${typography.heading2}
   }
 `;
 
 export const Description = styled.p`
-  color: rgba(255, 255, 255, 0.7);
-  text-align: center;
-  white-space: pre-line;
-  ${fontsObject.TITLE_3_24_SB}
+  color: ${colors.fg.neutral.subtle};
+  ${typography.title3}
 
   ${media.mobile} {
-    ${fontsObject.TITLE_6_16_SB}
+    max-width: 280px;
+    ${typography.body2}
+    word-break: keep-all;
   }
 `;
 
-export const GoToRecruit = styled.a`
-  cursor: pointer;
-  border-radius: 25px;
-  box-shadow: 0 0 0 2.218px #5b88f8 inset;
-  background: #40578d;
-  width: 281px;
-  height: 83px;
-  display: flex;
-  justify-content: center;
+export const RecruitLink = styled.a<{ mainColor: string; textColor: string }>`
+  display: inline-flex;
   align-items: center;
+  gap: ${spacing.s2};
+  height: 64px;
+  padding: 0 ${spacing.s20} 0 ${spacing.s32};
+  border-radius: 100px;
+  background: ${({ mainColor }) => mainColor};
+  box-shadow: ${({ mainColor }) => `0 0 0 1px ${mainColor}52, 0 4px 14px -4px ${mainColor}61,
+    0 10px 30px -10px ${mainColor}47`};
+  color: ${({ textColor }) => textColor};
+  ${typography.heading2}
 
-  color: #e8f1ff;
-  font-family: SUIT;
-  font-size: 30rem;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 30px; /* 100% */
-  letter-spacing: -0.6px;
+  transition: transform 550ms cubic-bezier(0.2, 0.8, 0.3, 1),
+    box-shadow 550ms cubic-bezier(0.2, 0.8, 0.3, 1);
 
-  @media (max-width: 48rem) {
-    width: 216px;
-    height: 64px;
-
-    border-radius: 19.221px;
-    box-shadow: 0 0 0 1.705px #5b88f8 inset;
-
-    font-size: 23rem;
-    line-height: 23.065px; /* 100.282% */
-    letter-spacing: -0.46px;
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: ${({ mainColor }) => `0 0 0 1px ${mainColor}52, 0 8px 20px -4px ${mainColor}61,
+      0 16px 36px -10px ${mainColor}47`};
   }
 
-  @media (max-width: 23.5rem) {
-    width: 124px;
-    height: 36px;
-    border-radius: 11.046px;
-    box-shadow: 0 0 0 0.98px #5b88f8 inset;
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+    &:hover {
+      transform: none;
+    }
+  }
 
-    font-size: 13.218rem;
-    line-height: 13.256px; /* 100.282% */
-    letter-spacing: -0.264px;
+  ${media.mobile} {
+    height: 42px;
+    padding: 0 ${spacing.s16} 0 ${spacing.s24};
+    ${typography.title5}
+  }
+`;
+
+export const Arrow = styled(IconChevronRight)`
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+
+  ${media.mobile} {
+    width: 20px;
+    height: 20px;
   }
 `;

@@ -18,6 +18,7 @@ export interface LatestNewsType {
   title: string;
   image: string;
   link: string;
+  publishedDate?: string;
 }
 
 // 어드민 API가 그대로 내려주는 모드별 컬러. 어느 모드를 쓸지는 BRAND_COLOR_MODE로 고정
@@ -66,6 +67,7 @@ export interface GetHomepageResponse {
   coreValue: HomeCoreValueType[];
   // resolveReviews로 SoptCommentType[]로 가공된 뒤 컴포넌트들이 실제로 쓰는 형태
   reviews: SoptCommentType[];
+  faq: { category: string; questions: QnAType[] }[];
 }
 
 export interface MemberType {

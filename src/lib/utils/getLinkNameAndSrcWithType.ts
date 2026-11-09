@@ -3,7 +3,7 @@ import github from '@src/assets/icons/github_icon.svg';
 import googleplay from '@src/assets/icons/googleplay_icon.svg';
 import media from '@src/assets/icons/ic_media.svg';
 import website from '@src/assets/icons/ic_website.svg';
-import instagram from '@src/assets/icons/instagram.svg';
+import instagram from '@src/assets/icons/ic_instagram_filled.svg';
 import { LinkDetailType } from '../../views/ProjectDetailPage/types';
 
 const LinkMap: Record<LinkDetailType, { name: string; src: string }> = {

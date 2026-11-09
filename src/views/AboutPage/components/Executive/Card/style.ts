@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { ReactComponent as IcBehance } from '@src/assets/icons/ic_behance.svg';
 import { ReactComponent as IcGithub } from '@src/assets/icons/ic_github.svg';
 import { ReactComponent as IcLinkedin } from '@src/assets/icons/ic_linkedin.svg';
-import { ReactComponent as IcMail } from '@src/assets/icons/mail.svg';
+import { ReactComponent as IcMail } from '@src/assets/icons/ic_mail.svg';
 import { media } from '@src/lib/styles/breakpoints';
 
 export const Card = styled.article`

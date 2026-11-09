@@ -1,19 +1,20 @@
-import { useEffect, useMemo } from 'react';
+import { useEffect } from 'react';
 import PageLayout from '@src/components/common/PageLayout';
 import AboutSOPTSection from '@src/views/MainPage/components/AboutSOPTSection';
+import FAQSection from '@src/views/MainPage/components/FAQSection';
 import IntroSection from '@src/views/MainPage/components/IntroSection';
+import PartnersSection from '@src/views/MainPage/components/PartnersSection';
 import TopBanner from '@src/views/MainPage/components/TopBanner';
 import { useHomepage } from '@src/views/MainPage/hooks/useHomepage';
 import usePostVisitor from '@src/views/MainPage/hooks/usePostVisitor';
 import { checkIsTimeInRange } from '../../lib/utils/date';
-import Banner from './components/Banner';
-import Introduce from './components/Introduce';
+import HeroSection from './components/HeroSection';
 
 function MainPage() {
   const { data: adminData } = useHomepage();
 
-  const obSchedule = adminData?.recruitSchedule?.[0]?.schedule;
-  const ybSchedule = adminData?.recruitSchedule?.[1]?.schedule;
+  const obSchedule = adminData?.recruitSchedule?.find((item) => item.type === 'OB')?.schedule;
+  const ybSchedule = adminData?.recruitSchedule?.find((item) => item.type === 'YB')?.schedule;
 
   const isOBRecruiting = checkIsTimeInRange(
     obSchedule?.applicationStartTime ?? '',
@@ -26,12 +27,9 @@ function MainPage() {
   const isRecruiting = isOBRecruiting || isYBRecruiting;
   const isRecruitEnd = Date.now() > new Date(ybSchedule?.applicationEndTime ?? '').getTime();
 
-  const ctaText = useMemo(() => {
-    if (adminData?.generation === undefined) return '모집 알림 신청하기 ';
-    if (isOBRecruiting) return `${adminData.generation}기 OB 지원하기 `;
-    if (isYBRecruiting) return `${adminData.generation}기 YB 지원하기 `;
-    return '모집 알림 신청하기 ';
-  }, [isOBRecruiting, isYBRecruiting, adminData]);
+  let ctaText = '';
+  if (isOBRecruiting) ctaText = 'OB 지원하기';
+  else if (isYBRecruiting) ctaText = 'YB 지원하기';
 
   const postVisiter = usePostVisitor();
 
@@ -40,10 +38,9 @@ function MainPage() {
     postVisiter();
   }, [isRecruiting, postVisiter]);
 
-  if (!adminData) return;
   return (
     <PageLayout>
-      {isRecruiting && (
+      {adminData && isRecruiting && (
         <TopBanner
           mainColor={'#' + adminData.brandingColor.main}
           targetTime={
@@ -54,24 +51,29 @@ function MainPage() {
           generation={adminData.generation ?? 0}
         />
       )}
-      <Banner
-        homeHeaderImage={adminData.homeHeaderImage}
-        mainColor={'#' + adminData.brandingColor.main}
-        textColor={adminData.brandingColor.textColor}
-        ctaText={ctaText}
-      />
-      <Introduce keyColor={'#' + adminData.brandingColor.main} />
-      <IntroSection adminData={adminData} />
-      <AboutSOPTSection
-        generation={adminData.generation ?? 0}
-        partIntroduction={adminData.partIntroduction}
-        latestNews={adminData.latestNews}
-        mainColor={'#' + adminData.brandingColor.main}
-        textColor={adminData.brandingColor.textColor}
-        ctaText={ctaText}
-        isRecruitEnd={isRecruitEnd}
-        reviews={adminData.reviews}
-      />
+      <HeroSection ctaText={ctaText} />
+
+      {adminData && (
+        <>
+          <IntroSection adminData={adminData} />
+          <AboutSOPTSection
+            generation={adminData.generation ?? 0}
+            partIntroduction={adminData.partIntroduction}
+            latestNews={adminData.latestNews}
+            mainColor={'#' + adminData.brandingColor.main}
+            textColor={adminData.brandingColor.textColor}
+            ctaText={ctaText}
+            isRecruiting={isRecruiting}
+            recruitEndTime={
+              isYBRecruiting ? ybSchedule?.applicationEndTime : obSchedule?.applicationEndTime
+            }
+            isRecruitEnd={isRecruitEnd}
+            reviews={adminData.reviews}
+          />
+          <FAQSection faq={adminData.faq ?? []} />
+          <PartnersSection mainColor={'#' + adminData.brandingColor.main} />
+        </>
+      )}
     </PageLayout>
   );
 }
