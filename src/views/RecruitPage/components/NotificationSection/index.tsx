@@ -2,14 +2,9 @@ import { track } from '@amplitude/analytics-browser';
 import styled from '@emotion/styled';
 import { useToast } from '@sopt-makers/ui';
 import { useRef, useState } from 'react';
-import { createApiClient } from '@src/lib/api/client';
-import { BASE_URL, DEFAULT_TIMEOUT } from '@src/lib/constants/client';
+import { api } from '@src/lib/api/instance';
+import { DEFAULT_TIMEOUT } from '@src/lib/constants/client';
 import axios from 'axios';
-
-const client = createApiClient({
-  baseURL: BASE_URL,
-  timeout: DEFAULT_TIMEOUT,
-});
 
 const NotificationSection = () => {
   const [isRegistered, setIsRegistered] = useState(false);
@@ -24,10 +19,14 @@ const NotificationSection = () => {
 
     setIsLoading(true);
     try {
-      await client.post('/notification/register', {
-        generation: 39, // 리크루팅 시기 이후 변경되어야 함.
-        email,
-      });
+      await api.post(
+        '/notification/register',
+        {
+          generation: 39, // 리크루팅 시기 이후 변경되어야 함.
+          email,
+        },
+        { timeout: DEFAULT_TIMEOUT },
+      );
       if (emailInputRef.current) {
         emailInputRef.current.value = '';
       }

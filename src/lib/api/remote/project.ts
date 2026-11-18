@@ -1,5 +1,4 @@
-import { createApiClient } from '@src/lib/api/client';
-import { BASE_URL } from '@src/lib/constants/client';
+import { api } from '@src/lib/api/instance';
 import qs from 'qs';
 import {
   GetProjectDetailResponse,
@@ -9,10 +8,8 @@ import {
   ProjectResponse,
 } from '../../types/project';
 
-const client = createApiClient({ baseURL: BASE_URL });
-
 const getProjectDetail = async (projectId: number): Promise<GetProjectDetailResponse> => {
-  const { data } = await client.get(`/projects/${projectId}`);
+  const { data } = await api.get(`/projects/${projectId}`);
   const dataServiceType = data.serviceType;
 
   const serviceType = Array.isArray(dataServiceType) ? dataServiceType : [dataServiceType];
@@ -28,7 +25,7 @@ const getProjectList = async (
   const categoryParameter = category === ProjectCategoryType.ALL ? {} : { filter: category };
   const platformParameter = platform === ProjectPlatformType.ALL ? {} : { platform };
   const parameter = qs.stringify({ ...categoryParameter, ...platformParameter, pageNo });
-  const { data } = await client.get(`/projects?${parameter}`);
+  const { data } = await api.get(`/projects?${parameter}`);
   return data;
 };
 

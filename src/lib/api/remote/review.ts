@@ -1,14 +1,9 @@
-import { createApiClient } from '@src/lib/api/client';
-import { BASE_URL, DEFAULT_TIMEOUT } from '@src/lib/constants/client';
+import { api } from '@src/lib/api/instance';
+import { DEFAULT_TIMEOUT } from '@src/lib/constants/client';
 import { BlogCategoryType, BlogResponse, PartCategoryType } from '@src/lib/types/blog';
 import { ActivitySelectType } from '@src/lib/types/main';
 import { GetSampleReviewsResponse, ReviewAPI } from '@src/lib/types/review';
 import qs from 'qs';
-
-const client = createApiClient({
-  baseURL: BASE_URL,
-  timeout: DEFAULT_TIMEOUT,
-});
 
 export const getResponse = async (
   category: BlogCategoryType,
@@ -28,7 +23,7 @@ export const getResponse = async (
   };
 
   const parameter = qs.stringify(parameters);
-  const { data } = await client.get(`/reviews?${parameter}`);
+  const { data } = await api.get(`/reviews?${parameter}`, { timeout: DEFAULT_TIMEOUT });
 
   return {
     hasNextPage: data.hasNextPage,
@@ -42,7 +37,7 @@ export const getResponse = async (
 };
 
 const getSampleReviews = async (): Promise<GetSampleReviewsResponse> => {
-  const { data } = await client.get('/reviews/random');
+  const { data } = await api.get('/reviews/random', { timeout: DEFAULT_TIMEOUT });
 
   return data;
 };

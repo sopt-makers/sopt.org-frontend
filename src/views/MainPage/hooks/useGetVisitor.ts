@@ -1,11 +1,8 @@
 import { useQuery } from '@tanstack/react-query';
-import { createApiClient } from '@src/lib/api/client';
-import { BASE_URL } from '@src/lib/constants/client';
-
-const client = createApiClient({ baseURL: BASE_URL });
+import { api } from '@src/lib/api/instance';
 
 const getVisitor = async () => {
-  const { data } = await client.get('/visitor');
+  const { data } = await api.get('/visitor');
 
   return data;
 };

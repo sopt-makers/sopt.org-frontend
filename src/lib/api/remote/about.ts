@@ -1,19 +1,15 @@
-import { createApiClient } from '@src/lib/api/client';
-import { BASE_URL, DEFAULT_TIMEOUT } from '@src/lib/constants/client';
+import { api } from '@src/lib/api/instance';
+import { DEFAULT_TIMEOUT } from '@src/lib/constants/client';
 import { GetAboutInfoResponse } from '@src/lib/types/about';
 import { CoreValueType } from '@src/lib/types/admin';
 import { remoteAdminAPI } from './admin';
 
-const client = createApiClient({
-  baseURL: BASE_URL,
-  timeout: DEFAULT_TIMEOUT,
-});
-
 const getAboutInfo = async (): Promise<GetAboutInfoResponse> => {
   const dataCurrent = await remoteAdminAPI.getAboutpage();
   // TODO: 기존 API 의존성 떼기
-  const { data: dataPrev } = await client.get(
+  const { data: dataPrev } = await api.get(
     `/aboutsopt?generation=${dataCurrent.generation - 1}`,
+    { timeout: DEFAULT_TIMEOUT },
   );
 
   return {
