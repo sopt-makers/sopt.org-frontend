@@ -42,3 +42,6 @@ yarn-error.log*
 
 # omc
 .omc
+
+# local agent instructions
+AGENTS.md
