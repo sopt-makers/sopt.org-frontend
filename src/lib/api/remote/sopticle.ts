@@ -24,21 +24,21 @@ export const getResponse = async (
   const parameter = qs.stringify({ ...sortParameter, ...pageParameter, ...limitParameter });
 
   const { data } = await client.get<{
-    hasNextPage: boolean;
+    hasNext: boolean;
     content: BlogPostType[];
     currentPage: number;
-    hasPrevPage: boolean;
-    totalPage: number;
+    hasPrevious: boolean;
+    totalPages: number;
     isLikedByUser: boolean;
     totalCount: number;
   }>(`/soptstory?${parameter}`, { headers: { 'session-id': sessionId } });
 
   return {
-    hasNextPage: data.hasNextPage,
+    hasNextPage: data.hasNext,
     response: data.content,
     currentPage: data.currentPage,
-    hasPrevPage: data.hasPrevPage,
-    totalPage: data.totalPage,
+    hasPrevPage: data.hasPrevious,
+    totalPage: data.totalPages,
     isLikedByUser: data.isLikedByUser,
     totalCount: data.totalCount,
   };

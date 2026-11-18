@@ -21,10 +21,10 @@ jobs:
           node-version: '18'
 
       - name: Install pnpm
-        run: npm install -g pnpm@7.28.0
+        run: npm install -g pnpm@9.15.0
 
       - name: Install dependencies
-        run: pnpm install --no-frozen-lockfile
+        run: pnpm install --frozen-lockfile
 
       - name: Install Vercel CLI
         run: npm install --global vercel@latest
