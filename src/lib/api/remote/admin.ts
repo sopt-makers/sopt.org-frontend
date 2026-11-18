@@ -1,4 +1,4 @@
-import { BASE_URL } from '@src/lib/constants/client';
+import { api } from '@src/lib/api/instance';
 import {
   BrandingColorType,
   GetAboutpageResponse,
@@ -7,28 +7,25 @@ import {
   RawBrandingColorType,
 } from '@src/lib/types/admin';
 import { resolveBrandingColor } from '@src/lib/utils/brandingColor';
-import axios from 'axios';
-
-const adminClient = axios.create({ baseURL: `${BASE_URL}` });
 
 const getBrandingColor = async (): Promise<BrandingColorType> => {
-  const { data } = await adminClient.get<RawBrandingColorType>('/homepage/branding-color');
+  const { data } = await api.get<RawBrandingColorType>('/homepage/branding-color');
   return resolveBrandingColor(data);
 };
 
 const getHomepage = async (): Promise<GetHomepageResponse> => {
-  const { data } = await adminClient.get('/homepage');
+  const { data } = await api.get('/homepage');
   return {
     ...data,
     brandingColor: resolveBrandingColor(data.brandingColor),
   };
 };
 const getAboutpage = async (): Promise<GetAboutpageResponse> => {
-  const { data } = await adminClient.get('/homepage/about');
+  const { data } = await api.get('/homepage/about');
   return { ...data, brandingColor: resolveBrandingColor(data.brandingColor) };
 };
 const getRecruitpage = async (): Promise<GetRecruitpageResponse> => {
-  const { data } = await adminClient.get('/homepage/recruit');
+  const { data } = await api.get('/homepage/recruit');
   return { ...data, brandingColor: resolveBrandingColor(data.brandingColor) };
 };
 

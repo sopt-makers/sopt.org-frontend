@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { colors } from '@sopt-makers/colors';
 
-export const Like = styled.div`
+export const Like = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -13,6 +13,7 @@ export const Like = styled.div`
 
   height: 28px;
   padding: 2px 8px;
+  border: none;
   border-radius: 6px;
   background: ${colors.grayAlpha100};
 

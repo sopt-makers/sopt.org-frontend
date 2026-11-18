@@ -1,14 +1,8 @@
-import { BASE_URL, DEFAULT_TIMEOUT } from '@src/lib/constants/client';
+import { api } from '@src/lib/api/instance';
 import { BlogCategoryType, BlogResponse, PartCategoryType } from '@src/lib/types/blog';
 import { ActivitySelectType } from '@src/lib/types/main';
 import { GetSampleReviewsResponse, ReviewAPI } from '@src/lib/types/review';
-import axios from 'axios';
 import qs from 'qs';
-
-const client = axios.create({
-  baseURL: BASE_URL,
-  timeout: DEFAULT_TIMEOUT,
-});
 
 export const getResponse = async (
   category: BlogCategoryType,
@@ -28,7 +22,7 @@ export const getResponse = async (
   };
 
   const parameter = qs.stringify(parameters);
-  const { data } = await client.get(`/reviews?${parameter}`);
+  const { data } = await api.get(`/reviews?${parameter}`);
 
   return {
     hasNextPage: data.hasNextPage,
@@ -42,7 +36,7 @@ export const getResponse = async (
 };
 
 const getSampleReviews = async (): Promise<GetSampleReviewsResponse> => {
-  const { data } = await client.get('/reviews/random');
+  const { data } = await api.get('/reviews/random');
 
   return data;
 };

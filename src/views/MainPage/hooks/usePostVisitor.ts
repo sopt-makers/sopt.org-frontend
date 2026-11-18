@@ -1,12 +1,9 @@
 import { useMutation } from '@tanstack/react-query';
-import { BASE_URL } from '@src/lib/constants/client';
+import { api } from '@src/lib/api/instance';
 import { queryClient } from '@src/pages/_app';
-import axios from 'axios';
-
-const client = axios.create({ baseURL: BASE_URL });
 
 const postVisitor = async () => {
-  await client.post('/visitor');
+  await api.post('/visitor');
 };
 
 const usePostVisitor = () => {
