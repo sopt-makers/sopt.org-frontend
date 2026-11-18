@@ -1,10 +1,10 @@
+import { createApiClient } from '@src/lib/api/client';
 import { BASE_URL, DEFAULT_TIMEOUT } from '@src/lib/constants/client';
 import { GetAboutInfoResponse } from '@src/lib/types/about';
 import { CoreValueType } from '@src/lib/types/admin';
-import axios from 'axios';
 import { remoteAdminAPI } from './admin';
 
-const client = axios.create({
+const client = createApiClient({
   baseURL: BASE_URL,
   timeout: DEFAULT_TIMEOUT,
 });

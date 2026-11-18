@@ -1,11 +1,11 @@
+import { createApiClient } from '@src/lib/api/client';
 import { BASE_URL, DEFAULT_TIMEOUT } from '@src/lib/constants/client';
 import { BlogCategoryType, BlogResponse, PartCategoryType } from '@src/lib/types/blog';
 import { ActivitySelectType } from '@src/lib/types/main';
 import { GetSampleReviewsResponse, ReviewAPI } from '@src/lib/types/review';
-import axios from 'axios';
 import qs from 'qs';
 
-const client = axios.create({
+const client = createApiClient({
   baseURL: BASE_URL,
   timeout: DEFAULT_TIMEOUT,
 });

@@ -2,10 +2,11 @@ import { track } from '@amplitude/analytics-browser';
 import styled from '@emotion/styled';
 import { useToast } from '@sopt-makers/ui';
 import { useRef, useState } from 'react';
+import { createApiClient } from '@src/lib/api/client';
 import { BASE_URL, DEFAULT_TIMEOUT } from '@src/lib/constants/client';
 import axios from 'axios';
 
-const client = axios.create({
+const client = createApiClient({
   baseURL: BASE_URL,
   timeout: DEFAULT_TIMEOUT,
 });

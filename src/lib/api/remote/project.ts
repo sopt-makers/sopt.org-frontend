@@ -1,5 +1,5 @@
+import { createApiClient } from '@src/lib/api/client';
 import { BASE_URL } from '@src/lib/constants/client';
-import axios from 'axios';
 import qs from 'qs';
 import {
   GetProjectDetailResponse,
@@ -9,7 +9,7 @@ import {
   ProjectResponse,
 } from '../../types/project';
 
-const client = axios.create({ baseURL: BASE_URL });
+const client = createApiClient({ baseURL: BASE_URL });
 
 const getProjectDetail = async (projectId: number): Promise<GetProjectDetailResponse> => {
   const { data } = await client.get(`/projects/${projectId}`);

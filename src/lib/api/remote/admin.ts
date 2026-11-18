@@ -1,3 +1,4 @@
+import { createApiClient } from '@src/lib/api/client';
 import { BASE_URL } from '@src/lib/constants/client';
 import {
   BrandingColorType,
@@ -7,9 +8,8 @@ import {
   RawBrandingColorType,
 } from '@src/lib/types/admin';
 import { resolveBrandingColor } from '@src/lib/utils/brandingColor';
-import axios from 'axios';
 
-const adminClient = axios.create({ baseURL: `${BASE_URL}` });
+const adminClient = createApiClient({ baseURL: `${BASE_URL}` });
 
 const getBrandingColor = async (): Promise<BrandingColorType> => {
   const { data } = await adminClient.get<RawBrandingColorType>('/homepage/branding-color');

@@ -1,12 +1,12 @@
+import { createApiClient } from '@src/lib/api/client';
 import { BASE_URL, DEFAULT_TIMEOUT } from '@src/lib/constants/client';
 import { BlogPostType, BlogResponse, SortType } from '@src/lib/types/blog';
 import { SopticleAPI } from '@src/lib/types/sopticle';
 import { getStorageHandler } from '@src/lib/utils/storageHandler';
-import axios from 'axios';
 import { nanoid } from 'nanoid';
 import qs from 'qs';
 
-const client = axios.create({
+const client = createApiClient({
   baseURL: BASE_URL,
   timeout: DEFAULT_TIMEOUT,
 });
