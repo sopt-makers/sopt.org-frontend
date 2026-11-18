@@ -1,47 +1,46 @@
 import { track } from '@amplitude/analytics-browser';
 import styled from '@emotion/styled';
 import { useToast } from '@sopt-makers/ui';
+import { useMutation } from '@tanstack/react-query';
 import { useRef, useState } from 'react';
 import { api } from '@src/lib/api/instance';
-import { DEFAULT_TIMEOUT } from '@src/lib/constants/client';
 import axios from 'axios';
 
 const NotificationSection = () => {
   const [isRegistered, setIsRegistered] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
   const emailInputRef = useRef<HTMLInputElement | null>(null);
   const { open } = useToast();
 
-  const onRegister = async () => {
-    if (isLoading) return;
-    const email = emailInputRef.current?.value;
-    if (!email) return;
-
-    setIsLoading(true);
-    try {
-      await api.post(
-        '/notification/register',
-        {
-          generation: 39, // 리크루팅 시기 이후 변경되어야 함.
-          email,
-        },
-        { timeout: DEFAULT_TIMEOUT },
-      );
+  const { mutate: registerNotification, isPending } = useMutation({
+    mutationFn: (email: string) =>
+      api.post('/notification/register', {
+        generation: 39, // 리크루팅 시기 이후 변경되어야 함.
+        email,
+      }),
+    onSuccess: () => {
       if (emailInputRef.current) {
         emailInputRef.current.value = '';
       }
       open({ icon: 'success', content: '알림 신청이 완료되었어요.' });
       setIsRegistered(true);
-    } catch (e) {
-      if (axios.isAxiosError(e) && e.response?.status === 409) {
+    },
+    onError: (error) => {
+      if (axios.isAxiosError(error) && error.response?.status === 409) {
         open({ icon: 'alert', content: '이미 신청된 이메일이에요.' });
       } else {
-        console.error(e);
+        console.error(error);
         open({ icon: 'error', content: '알림 신청에 실패했어요.' });
       }
-    } finally {
-      setIsLoading(false);
-    }
+    },
+  });
+
+  const onRegister = () => {
+    if (isPending) return;
+
+    const email = emailInputRef.current?.value;
+    if (!email) return;
+
+    registerNotification(email);
   };
 
   return (
@@ -67,6 +66,7 @@ const NotificationSection = () => {
         <SubmitButton
           type="submit"
           value="알림 신청하기"
+          disabled={isPending}
           onClick={() => track('click_recruit_notification_apply')}
         />
       </FormWrapper>

@@ -1,5 +1,4 @@
 import { api } from '@src/lib/api/instance';
-import { DEFAULT_TIMEOUT } from '@src/lib/constants/client';
 import { BlogCategoryType, BlogResponse, PartCategoryType } from '@src/lib/types/blog';
 import { ActivitySelectType } from '@src/lib/types/main';
 import { GetSampleReviewsResponse, ReviewAPI } from '@src/lib/types/review';
@@ -23,7 +22,7 @@ export const getResponse = async (
   };
 
   const parameter = qs.stringify(parameters);
-  const { data } = await api.get(`/reviews?${parameter}`, { timeout: DEFAULT_TIMEOUT });
+  const { data } = await api.get(`/reviews?${parameter}`);
 
   return {
     hasNextPage: data.hasNextPage,
@@ -37,7 +36,7 @@ export const getResponse = async (
 };
 
 const getSampleReviews = async (): Promise<GetSampleReviewsResponse> => {
-  const { data } = await api.get('/reviews/random', { timeout: DEFAULT_TIMEOUT });
+  const { data } = await api.get('/reviews/random');
 
   return data;
 };
