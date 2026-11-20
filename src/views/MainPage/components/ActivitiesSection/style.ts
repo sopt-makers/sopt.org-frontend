@@ -91,9 +91,20 @@ export const Tabs = styled(CommonTab.List)`
   ${media.mobile} {
     flex-wrap: wrap;
     justify-content: center;
-    gap: 4px 12px;
+    gap: 0 12px;
     width: 100%;
     padding: 0;
+
+    &::after {
+      order: 1;
+      flex-basis: 100%;
+      height: 4px;
+      content: '';
+    }
+
+    & > :nth-of-type(n + 5) {
+      order: 2;
+    }
   }
 `;
 
@@ -175,7 +186,6 @@ export const Viewport = styled.div`
   ${media.mobile} {
     --card-width: 100cqw;
     --active-width: var(--card-width);
-    --shot-height: 152px;
     margin-right: 0;
   }
 

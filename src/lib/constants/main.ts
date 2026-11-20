@@ -39,8 +39,8 @@ export const Activity: ActivityListType = {
     navKor: '앱잼',
     navEng: 'App jam',
     link: {
-      label: '앱잼 이야기 보러 가기',
-      href: 'https://www.instagram.com/sopt_media_official/',
+      label: '38기 데모데이 스케치 보러 가기',
+      href: 'https://www.youtube.com/watch?v=Fnf_exsuhOw',
       target: '_blank',
     },
     description: [
