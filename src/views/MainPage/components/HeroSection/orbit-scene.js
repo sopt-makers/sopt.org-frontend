@@ -1,11 +1,10 @@
 import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
 import { OutputPass } from 'three/addons/postprocessing/OutputPass.js';
 import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
-import { ShaderPass } from 'three/addons/postprocessing/ShaderPass.js';
 import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js';
-import { FXAAShader } from 'three/addons/shaders/FXAAShader.js';
 import {
   ACESFilmicToneMapping,
+  AdditiveBlending,
   BackSide,
   CanvasTexture,
   CircleGeometry,
@@ -411,6 +410,16 @@ export function createOrbitScene(canvas, onReady) {
         m.depthWrite = false;
         m.depthTest = false;
         built.mesh.renderOrder = 10; // 투과 패스 뒤에 그려 항상 맨 위에 얹는다
+      } else {
+        // 뒤 단어는 모든 원판보다 뒤에 있어 그 뒤에는 어두운 배경광뿐이다. 잘라내기의
+        // 1비트 가장자리 대신 가산 혼합으로 알파를 살려 계단 현상을 없애고, 불투명
+        // 목록에는 그대로 남겨 투과 원판에 계속 비치게 한다.
+        const m = built.mesh.material;
+        m.alphaTest = 0;
+        m.alphaToCoverage = false;
+        m.blending = AdditiveBlending;
+        m.depthWrite = false;
+        built.mesh.renderOrder = 1; // 배경광을 먼저 그린 뒤 그 위에 더한다
       }
       return {
         mesh: built.mesh,
@@ -614,19 +623,18 @@ export function createOrbitScene(canvas, onReady) {
       const nextQuality = Math.max(0.1, Math.min(1, v));
       if (qualityScale === nextQuality) return;
       qualityScale = nextQuality;
-      // CSS 블러가 완성된 배경에는 가장자리 보정이 필요 없다.
-      fxaa.enabled = qualityScale === 1;
       requestResize();
     },
   };
 
   // 후처리
-  // 수퍼샘플링 없이 렌더 해상도 그대로 처리하고 가장자리는 FXAA로 보정한다.
+  // 수퍼샘플링 없이 렌더 해상도 그대로 처리한다.
   const ssW = () => Math.round(innerWidth * renderScale());
   const ssH = () => Math.round(innerHeight * renderScale());
 
-  // 반정밀도 버퍼의 다중 샘플 해소 비용을 줄이기 위해 MSAA 대신 FXAA를 사용한다.
-  // FXAA는 알파 잘라내기로 생기는 글자의 고대비 가장자리에도 적합하다.
+  // 안티에일리어싱 패스는 두지 않는다. 글자는 텍스처 필터로 이미 부드럽고,
+  // FXAA는 낮은 해상도에서 확대되며 글자 세로획을 울퉁불퉁하게 만들었다.
+  // MSAA는 원판 테두리만 다듬는 대신 프레임 비용이 약 25% 늘었다.
   const msaa = new WebGLRenderTarget(ssW(), ssH(), {
     type: HalfFloatType,
     samples: 0,
@@ -642,12 +650,6 @@ export function createOrbitScene(canvas, onReady) {
   bloom.setSize = (w, h) => bloomSetSize(Math.round(w / 2), Math.round(h / 2));
   composer.addPass(bloom);
   composer.addPass(new OutputPass());
-  // 톤 매핑 이후의 가장자리를 보정하도록 OutputPass 뒤에 배치한다.
-  // resolution은 렌더 크기의 역수로 갱신한다.
-  const fxaa = new ShaderPass(FXAAShader);
-  composer.addPass(fxaa);
-  const syncFxaa = () => fxaa.material.uniforms.resolution.value.set(1 / ssW(), 1 / ssH());
-  syncFxaa();
 
   // 스크롤 상태
   let scrollTarget = 0;
@@ -661,7 +663,6 @@ export function createOrbitScene(canvas, onReady) {
     if (renderer.getPixelRatio() !== renderScale()) renderer.setPixelRatio(renderScale());
     renderer.setSize(innerWidth, innerHeight);
     composer.setSize(ssW(), ssH());
-    syncFxaa();
   }
   // 캔버스 크기 변경은 버퍼를 비우므로, 렌더 루프 밖에서 바로 바꾸면 검은 프레임이 보인다.
   // 다음 렌더 직전에 적용하도록 미룬다.
