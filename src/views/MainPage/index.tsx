@@ -72,12 +72,12 @@ function MainPage() {
               partIntroduction={adminData.partIntroduction}
               mainColor={'#' + adminData.brandingColor.main}
             />
-            <RecentNews latestNews={adminData.latestNews} />
             <ReviewsSection
               activityReviews={adminData.reviews.filter((review) => review.type === 'ACTIVITY')}
               recruitingReviews={adminData.reviews.filter((review) => review.type === 'RECRUITING')}
             />
             <FAQSection faq={adminData.faq ?? []} />
+            <RecentNews latestNews={adminData.latestNews} />
             <PartnersSection mainColor={'#' + adminData.brandingColor.main} />
             {isRecruiting && (
               <FloatingRecruitCTA
