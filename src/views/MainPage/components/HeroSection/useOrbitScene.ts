@@ -15,22 +15,26 @@ interface OrbitScene {
 }
 
 export default function useOrbitScene(
+  rawScrollProgress: MotionValue<number>,
   scrollYProgress: MotionValue<number>,
-  sceneOpacity: MotionValue<number>,
+  isSceneInView: boolean,
+  reduceMotion: boolean | null,
 ) {
   const orbitRef = useRef<HTMLCanvasElement>(null);
   const sceneRef = useRef<OrbitScene | null>(null);
 
   const [isOrbitReady, setIsOrbitReady] = useState(false);
   const [isSceneBlurred, setIsSceneBlurred] = useState(false);
+  const shouldPauseAmbientOrbit = reduceMotion === true && isSceneBlurred;
 
-  useMotionValueEvent(scrollYProgress, 'change', (progress) => {
+  useMotionValueEvent(rawScrollProgress, 'change', (progress) => {
     const shouldBlurScene = progress >= percentToProgress(HERO_TIMELINE_PERCENT.orbit.blurStart);
     if (isSceneBlurred !== shouldBlurScene) setIsSceneBlurred(shouldBlurScene);
+  });
 
-    const scene = sceneRef.current;
-    scene?.setScroll(
-      Math.min(1, progress / percentToProgress(HERO_TIMELINE_PERCENT.orbit.motionEnd)),
+  useMotionValueEvent(scrollYProgress, 'change', (progress) => {
+    sceneRef.current?.setScroll(
+      progress / percentToProgress(HERO_TIMELINE_PERCENT.orbit.motionEnd),
     );
   });
 
@@ -38,12 +42,9 @@ export default function useOrbitScene(
     function synchronizeOrbitActivity() {
       if (!isOrbitReady) return;
 
-      const scene = sceneRef.current;
-      scene?.setActive(sceneOpacity.get() > 0);
-
-      return sceneOpacity.on('change', (opacity) => scene?.setActive(opacity > 0));
+      sceneRef.current?.setActive(isSceneInView && !shouldPauseAmbientOrbit);
     },
-    [isOrbitReady, sceneOpacity],
+    [isOrbitReady, isSceneInView, shouldPauseAmbientOrbit],
   );
 
   useEffect(
@@ -63,10 +64,7 @@ export default function useOrbitScene(
 
           sceneRef.current = scene;
           scene.setScroll(
-            Math.min(
-              1,
-              scrollYProgress.get() / percentToProgress(HERO_TIMELINE_PERCENT.orbit.motionEnd),
-            ),
+            scrollYProgress.get() / percentToProgress(HERO_TIMELINE_PERCENT.orbit.motionEnd),
           );
           dispose = () => scene.dispose();
         })
@@ -96,11 +94,13 @@ export default function useOrbitScene(
         return;
       }
 
+      if (shouldPauseAmbientOrbit) return;
+
       const timer = window.setTimeout(() => scene?.setQuality(0.45), 1000);
       return () => window.clearTimeout(timer);
     },
-    [isOrbitReady, isSceneBlurred],
+    [isOrbitReady, isSceneBlurred, shouldPauseAmbientOrbit],
   );
 
-  return { orbitRef, isOrbitReady, isSceneBlurred };
+  return { orbitRef, isSceneBlurred, isOrbitVisible: isOrbitReady && !shouldPauseAmbientOrbit };
 }

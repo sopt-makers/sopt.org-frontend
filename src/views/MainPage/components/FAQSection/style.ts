@@ -6,7 +6,6 @@ import { breakpoints, media } from '@src/lib/styles/breakpoints';
 
 export const Section = styled.section`
   padding: ${spacing.s160} 30px;
-  background: ${colors.bg.layer.basement};
 
   ${media.tablet} {
     padding: ${spacing.s120} 40px;

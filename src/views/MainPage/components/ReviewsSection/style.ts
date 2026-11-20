@@ -9,7 +9,6 @@ const REVIEW_TRANSITION = '750ms cubic-bezier(.2, .8, .3, 1)';
 
 export const Section = styled.section`
   padding: ${spacing.s160} 30px;
-  background: ${colors.bg.layer.basement};
   ${media.tablet} {
     padding: ${spacing.s120} ${spacing.s40};
   }

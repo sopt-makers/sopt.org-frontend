@@ -16,18 +16,8 @@ export default function useHeroScrollAnimation(reduceMotion: boolean | null) {
     restDelta: 0.0001,
   });
   const scrollYProgress = reduceMotion ? rawScrollProgress : smoothScrollProgress;
-  const { scrollYProgress: sceneProgress } = useScroll({
-    target: sectionRef,
-    offset: ['start start', 'end start'],
-  });
-
   const { button, intro } = HERO_TIMELINE_PERCENT;
 
-  const sceneOpacity = useTransform(
-    sceneProgress,
-    [percentToProgress(HERO_TIMELINE_PERCENT.sceneFadeStart), 1],
-    [1, 0],
-  );
   const buttonOpacity = useTransform(
     scrollYProgress,
     [button.fadeInStart, button.fadeInEnd, button.fadeOutStart, button.fadeOutEnd].map(
@@ -58,6 +48,9 @@ export default function useHeroScrollAnimation(reduceMotion: boolean | null) {
   const introOpacity = useTransform([smoothIntroOpacity, introExitOpacity], ([opacity, exit]) =>
     Math.min(Number(opacity), Number(exit)),
   );
+  const introVisibility = useTransform(introOpacity, (opacity) =>
+    opacity > 0 ? 'visible' : 'hidden',
+  );
   const firstLineFill = useTransform(
     scrollYProgress,
     [intro.fadeInEnd, intro.firstLineFillEnd].map(percentToProgress),
@@ -71,9 +64,9 @@ export default function useHeroScrollAnimation(reduceMotion: boolean | null) {
 
   return {
     sectionRef,
+    rawScrollProgress,
     scrollYProgress,
-    sceneOpacity,
     buttonStyle: { opacity: buttonOpacity, visibility: buttonVisibility },
-    intro: { opacity: introOpacity, firstLineFill, secondLineFill },
+    intro: { opacity: introOpacity, visibility: introVisibility, firstLineFill, secondLineFill },
   };
 }

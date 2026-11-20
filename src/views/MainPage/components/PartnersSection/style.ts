@@ -15,7 +15,6 @@ export const Section = styled.section`
   gap: 49px;
   width: 100%;
   padding: ${spacing.s160} 0;
-  background: ${colors.bg.layer.basement};
 
   ${media.tablet} {
     padding: ${spacing.s120} 0;

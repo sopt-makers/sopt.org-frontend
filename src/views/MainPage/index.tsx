@@ -15,6 +15,7 @@ import HeroSection from './components/HeroSection';
 import ProjectSection from './components/ProjectSection';
 import RecentNews from './components/RecentNews';
 import RecordsSection from './components/RecordsSection';
+import * as S from './style';
 
 function MainPage() {
   const { data: adminData } = useHomepage();
@@ -57,45 +58,47 @@ function MainPage() {
           generation={adminData.generation ?? 0}
         />
       )}
-      <HeroSection ctaText={ctaText} />
+      <S.Main>
+        <HeroSection ctaText={ctaText} />
 
-      {adminData && (
-        <>
-          <RecordsSection
-            activitiesRecords={adminData.activitiesRecords}
-            generation={adminData.generation}
-            brandingColor={adminData.brandingColor.main}
-          />
-          <ExperienceSection
-            coreValues={adminData.coreValue}
-            mainColor={'#' + adminData.brandingColor.main}
-          />
-          <ProjectSection brandingColor={adminData.brandingColor.main} />
-          <ActivitiesSection mainColor={'#' + adminData.brandingColor.main} />
-          <AboutPartSection
-            partIntroduction={adminData.partIntroduction}
-            mainColor={'#' + adminData.brandingColor.main}
-          />
-          <RecentNews latestNews={adminData.latestNews} />
-          <ReviewsSection
-            activityReviews={adminData.reviews.filter((review) => review.type === 'ACTIVITY')}
-            recruitingReviews={adminData.reviews.filter((review) => review.type === 'RECRUITING')}
-          />
-          <FAQSection faq={adminData.faq ?? []} />
-          <PartnersSection mainColor={'#' + adminData.brandingColor.main} />
-          <RecruitMessage
-            generation={adminData.generation ?? 0}
-            mainColor={'#' + adminData.brandingColor.main}
-            textColor={adminData.brandingColor.textColor}
-            ctaText={ctaText}
-            isRecruiting={isRecruiting}
-            recruitEndTime={
-              isYBRecruiting ? ybSchedule?.applicationEndTime : obSchedule?.applicationEndTime
-            }
-            isRecruitEnd={isRecruitEnd}
-          />
-        </>
-      )}
+        {adminData && (
+          <S.Content>
+            <RecordsSection
+              activitiesRecords={adminData.activitiesRecords}
+              generation={adminData.generation}
+              brandingColor={adminData.brandingColor.main}
+            />
+            <ExperienceSection
+              coreValues={adminData.coreValue}
+              mainColor={'#' + adminData.brandingColor.main}
+            />
+            <ProjectSection brandingColor={adminData.brandingColor.main} />
+            <ActivitiesSection mainColor={'#' + adminData.brandingColor.main} />
+            <AboutPartSection
+              partIntroduction={adminData.partIntroduction}
+              mainColor={'#' + adminData.brandingColor.main}
+            />
+            <RecentNews latestNews={adminData.latestNews} />
+            <ReviewsSection
+              activityReviews={adminData.reviews.filter((review) => review.type === 'ACTIVITY')}
+              recruitingReviews={adminData.reviews.filter((review) => review.type === 'RECRUITING')}
+            />
+            <FAQSection faq={adminData.faq ?? []} />
+            <PartnersSection mainColor={'#' + adminData.brandingColor.main} />
+            <RecruitMessage
+              generation={adminData.generation ?? 0}
+              mainColor={'#' + adminData.brandingColor.main}
+              textColor={adminData.brandingColor.textColor}
+              ctaText={ctaText}
+              isRecruiting={isRecruiting}
+              recruitEndTime={
+                isYBRecruiting ? ybSchedule?.applicationEndTime : obSchedule?.applicationEndTime
+              }
+              isRecruitEnd={isRecruitEnd}
+            />
+          </S.Content>
+        )}
+      </S.Main>
     </PageLayout>
   );
 }
