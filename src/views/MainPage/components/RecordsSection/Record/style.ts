@@ -19,7 +19,8 @@ export const ValueRow = styled.div`
 
   ${media.mobile} {
     gap: 8px;
-    padding-left: 16px;
+    padding: 0px;
+    align-items: center;
   }
 `;
 
