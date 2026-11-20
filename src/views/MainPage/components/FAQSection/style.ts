@@ -2,13 +2,13 @@ import styled from '@emotion/styled';
 import { colors, spacing, typography } from '@sopt-mds/design-tokens';
 import Image from 'next/image';
 import CommonTab from '@src/components/common/Tab';
-import { breakpoints, media } from '@src/lib/styles/breakpoints';
+import { media } from '@src/lib/styles/breakpoints';
+import { MAIN_DESKTOP_MIN, TABLET_CONTENT_WIDTH, tablet } from '@src/views/MainPage/breakpoints';
 
 export const Section = styled.section`
   padding: ${spacing.s160} 30px;
-  background: ${colors.bg.layer.basement};
 
-  ${media.tablet} {
+  ${tablet} {
     padding: ${spacing.s120} 40px;
   }
   ${media.mobile} {
@@ -21,7 +21,8 @@ export const Content = styled.div`
   max-width: 1200px;
   margin: 0 auto;
 
-  @media (max-width: ${breakpoints.desktop - 1}px) {
+  @media (max-width: ${MAIN_DESKTOP_MIN - 1}px) {
+    max-width: ${TABLET_CONTENT_WIDTH};
     flex-direction: column;
     gap: 40px;
   }
@@ -37,7 +38,7 @@ export const Header = styled.div`
   align-items: flex-start;
   gap: 46px;
 
-  @media (max-width: ${breakpoints.desktop - 1}px) {
+  @media (max-width: ${MAIN_DESKTOP_MIN - 1}px) {
     flex: none;
     flex-direction: row;
     align-items: flex-end;
@@ -80,7 +81,7 @@ export const Tabs = styled(CommonTab.List)`
   flex-direction: column;
   align-items: center;
   gap: 8px;
-  @media (max-width: ${breakpoints.desktop - 1}px) {
+  @media (max-width: ${MAIN_DESKTOP_MIN - 1}px) {
     flex-direction: row;
     gap: 24px;
   }

@@ -1,5 +1,4 @@
 const HERO_SCROLL_SCREENS = 8.7;
-const HERO_SECTION_SCREENS = 9.7;
 
 const scrollPercent = (screens: number) => (screens / HERO_SCROLL_SCREENS) * 100;
 
@@ -10,8 +9,6 @@ export const HERO_TIMELINE_PERCENT = {
     blurStart: scrollPercent(2.8),
   },
   button: {
-    fadeInStart: scrollPercent(0.9),
-    fadeInEnd: scrollPercent(1.2),
     fadeOutStart: scrollPercent(3),
     fadeOutEnd: scrollPercent(3.4),
   },
@@ -23,7 +20,6 @@ export const HERO_TIMELINE_PERCENT = {
     fadeOutStart: scrollPercent(6.7),
     fadeOutEnd: scrollPercent(7.5),
   },
-  sceneFadeStart: (HERO_SCROLL_SCREENS / HERO_SECTION_SCREENS) * 100,
 } as const;
 
 export const percentToProgress = (percent: number) => percent / 100;

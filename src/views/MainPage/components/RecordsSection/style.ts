@@ -1,13 +1,14 @@
 import styled from '@emotion/styled';
 import { colorFg, typography } from '@sopt-mds/design-tokens';
 import { media } from '@src/lib/styles/breakpoints';
+import { TABLET_CONTENT_WIDTH, tablet } from '@src/views/MainPage/breakpoints';
 
 export const Root = styled.section`
   display: flex;
   justify-content: center;
   padding: 160px 120px;
 
-  ${media.tablet} {
+  ${tablet} {
     padding: 120px 40px;
   }
 
@@ -23,6 +24,10 @@ export const Body = styled.div`
   gap: 64px;
   width: 100%;
   max-width: 1200px;
+
+  ${tablet} {
+    max-width: ${TABLET_CONTENT_WIDTH};
+  }
 
   ${media.mobile} {
     gap: 24px;

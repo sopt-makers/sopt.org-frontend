@@ -3,6 +3,7 @@ import { IconArrowUpRight } from '@sopt-makers/icons';
 import { baseColor, colorBg, colorFg, typography } from '@sopt-mds/design-tokens';
 import { css, keyframes } from '@emotion/react';
 import { media } from '@src/lib/styles/breakpoints';
+import { tablet } from '@src/views/MainPage/breakpoints';
 
 const HOVER = '0.3s ease-out';
 const REVEAL = '0.55s cubic-bezier(0.2, 0.8, 0.3, 1)';
@@ -71,7 +72,7 @@ export const Surface = styled.span`
   background-color: ${SURFACE};
   transition: border-radius ${HOVER};
 
-  ${media.tablet} {
+  ${tablet} {
     border-radius: ${RADIUS.tablet - 1}px;
   }
 
@@ -110,7 +111,7 @@ export const Content = styled.div`
   align-items: flex-start;
   gap: 8px;
 
-  ${media.tablet} {
+  ${tablet} {
     gap: 6px;
   }
 
@@ -126,7 +127,7 @@ export const Tag = styled.span`
   color: ${PART_GREEN};
   ${typography.title5}
 
-  ${media.tablet} {
+  ${tablet} {
     padding: 2px 6px;
     ${typography.body3}
     font-weight: 500;
@@ -144,7 +145,7 @@ export const Title = styled.h3`
   white-space: nowrap;
   ${typography.heading1}
 
-  ${media.tablet} {
+  ${tablet} {
     ${typography.title5}
   }
 
@@ -161,7 +162,7 @@ export const Description = styled.p`
   line-height: 30px;
   letter-spacing: -0.015em;
 
-  ${media.tablet} {
+  ${tablet} {
     ${typography.body3}
   }
 
@@ -176,7 +177,7 @@ export const CtaIcon = styled(IconArrowUpRight)`
   color: ${colorFg.neutral.bold};
   transition: translate ${HOVER};
 
-  ${media.tablet} {
+  ${tablet} {
     width: 20px;
     height: 20px;
   }
@@ -202,7 +203,7 @@ export const Cta = styled.span`
   transform: scale(0.7);
   transition: opacity ${HOVER}, transform 0.35s cubic-bezier(0.3, 1.4, 0.5, 1);
 
-  ${media.tablet} {
+  ${tablet} {
     right: 14px;
     bottom: 14px;
     width: 40px;
@@ -263,12 +264,7 @@ export const Card = styled.a`
   transform: none;
   transition: border-radius ${HOVER}, transform ${REVEAL};
 
-  @media (min-width: 1024px) and (max-width: 1239px) {
-    height: 284px;
-    padding: 28px;
-  }
-
-  ${media.tablet} {
+  ${tablet} {
     height: 210px;
     padding: 40px;
     border-radius: ${RADIUS.tablet}px;

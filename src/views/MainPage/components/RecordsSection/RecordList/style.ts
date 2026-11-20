@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { media } from '@src/lib/styles/breakpoints';
+import { tablet } from '@src/views/MainPage/breakpoints';
 
 export const Root = styled.div`
   display: flex;
@@ -11,7 +12,7 @@ export const Root = styled.div`
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 
-  ${media.tablet} {
+  ${tablet} {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 24px;
