@@ -5,6 +5,7 @@ import PageLayout from '@src/components/common/PageLayout';
 import { remoteAdminAPI } from '@src/lib/api/remote/admin';
 import { GetRecruitpageResponse } from '@src/lib/types/admin';
 import { checkIsTimeInRange } from '@src/lib/utils/date';
+import { getNotificationRecruitment } from '@src/lib/utils/recruitment';
 import ApplySection from './components/ApplySection';
 import ChapterInfo from './components/ChapterInfo';
 import Contact from './components/Contact';
@@ -26,8 +27,8 @@ function Recruit() {
     queryFn: remoteAdminAPI.getRecruitpage,
   });
 
-  const obSchedule = adminData?.recruitSchedule?.[0];
-  const ybSchedule = adminData?.recruitSchedule?.[1];
+  const obSchedule = adminData?.recruitSchedule?.find(({ type }) => type === 'OB');
+  const ybSchedule = adminData?.recruitSchedule?.find(({ type }) => type === 'YB');
 
   const isOBRecruiting = checkIsTimeInRange(
     obSchedule?.schedule?.applicationStartTime ?? '',
@@ -41,6 +42,10 @@ function Recruit() {
   const selectedSchedule = isOBRecruiting ? obSchedule : ybSchedule;
 
   if (!adminData) return;
+  const notificationRecruitment = getNotificationRecruitment(
+    adminData.generation,
+    ybSchedule?.schedule,
+  );
   return (
     <PageLayout showScrollTopButton>
       <BrandingColorContext.Provider value={adminData.brandingColor}>
@@ -51,7 +56,7 @@ function Recruit() {
               generation={adminData.generation}
             />
           ) : (
-            <NotificationSection />
+            <NotificationSection generation={notificationRecruitment.generation} />
           )}
           <ContentWrapper>
             <RecruiteeInfo />

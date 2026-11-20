@@ -9,8 +9,6 @@ export const HERO_TIMELINE_PERCENT = {
     blurStart: scrollPercent(2.8),
   },
   button: {
-    fadeInStart: scrollPercent(0.9),
-    fadeInEnd: scrollPercent(1.2),
     fadeOutStart: scrollPercent(3),
     fadeOutEnd: scrollPercent(3.4),
   },

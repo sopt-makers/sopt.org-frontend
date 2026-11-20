@@ -20,13 +20,10 @@ export default function useHeroScrollAnimation(reduceMotion: boolean | null) {
 
   const buttonOpacity = useTransform(
     scrollYProgress,
-    [button.fadeInStart, button.fadeInEnd, button.fadeOutStart, button.fadeOutEnd].map(
-      percentToProgress,
-    ),
-    [0, 1, 1, 0],
+    [button.fadeOutStart, button.fadeOutEnd].map(percentToProgress),
+    [1, 0],
   );
   const buttonVisibility = useTransform([scrollYProgress, rawScrollProgress], ([value, raw]) =>
-    Number(value) >= percentToProgress(button.fadeInStart) &&
     Number(value) < percentToProgress(button.fadeOutEnd) &&
     Number(raw) < percentToProgress(button.fadeOutEnd)
       ? 'visible'

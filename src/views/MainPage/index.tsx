@@ -1,5 +1,6 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import PageLayout from '@src/components/common/PageLayout';
+import { getNotificationRecruitment } from '@src/lib/utils/recruitment';
 import ExperienceSection from '@src/views/MainPage/components/ExperienceSection';
 import FAQSection from '@src/views/MainPage/components/FAQSection';
 import PartnersSection from '@src/views/MainPage/components/PartnersSection';
@@ -15,10 +16,13 @@ import HeroSection from './components/HeroSection';
 import ProjectSection from './components/ProjectSection';
 import RecentNews from './components/RecentNews';
 import RecordsSection from './components/RecordsSection';
+import FloatingRecruitCTA from './components/RecruitMessage/FloatingRecruitCTA';
 import * as S from './style';
 
 function MainPage() {
   const { data: adminData } = useHomepage();
+  const recordsSectionRef = useRef<HTMLElement>(null);
+  const recruitSectionRef = useRef<HTMLElement>(null);
 
   const obSchedule = adminData?.recruitSchedule?.find((item) => item.type === 'OB')?.schedule;
   const ybSchedule = adminData?.recruitSchedule?.find((item) => item.type === 'YB')?.schedule;
@@ -32,18 +36,21 @@ function MainPage() {
     ybSchedule?.applicationEndTime ?? '',
   );
   const isRecruiting = isOBRecruiting || isYBRecruiting;
-  const isRecruitEnd = Date.now() > new Date(ybSchedule?.applicationEndTime ?? '').getTime();
+  const notificationRecruitment =
+    adminData && getNotificationRecruitment(adminData.generation, ybSchedule);
 
-  let ctaText = '';
-  if (isOBRecruiting) ctaText = 'OB 지원하기';
-  else if (isYBRecruiting) ctaText = 'YB 지원하기';
+  let heroCtaText = '';
+  if (isOBRecruiting) heroCtaText = 'OB 지원하기';
+  else if (isYBRecruiting) heroCtaText = 'YB 지원하기';
 
-  const postVisiter = usePostVisitor();
+  const postVisitor = usePostVisitor();
 
-  useEffect(() => {
-    if (!isRecruiting) return;
-    postVisiter();
-  }, [isRecruiting, postVisiter]);
+  useEffect(
+    function recordRecruitmentVisit() {
+      if (isRecruiting) postVisitor();
+    },
+    [isRecruiting, postVisitor],
+  );
 
   return (
     <PageLayout>
@@ -59,11 +66,12 @@ function MainPage() {
         />
       )}
       <S.Main>
-        <HeroSection ctaText={ctaText} />
+        <HeroSection ctaText={heroCtaText} />
 
-        {adminData && (
+        {adminData && notificationRecruitment && (
           <S.Content>
             <RecordsSection
+              sectionRef={recordsSectionRef}
               activitiesRecords={adminData.activitiesRecords}
               generation={adminData.generation}
               brandingColor={adminData.brandingColor.main}
@@ -85,16 +93,25 @@ function MainPage() {
             />
             <FAQSection faq={adminData.faq ?? []} />
             <PartnersSection mainColor={'#' + adminData.brandingColor.main} />
+            {isRecruiting && (
+              <FloatingRecruitCTA
+                recordsRef={recordsSectionRef}
+                recruitSectionRef={recruitSectionRef}
+                mainColor={'#' + adminData.brandingColor.main}
+                textColor={adminData.brandingColor.textColor}
+              />
+            )}
             <RecruitMessage
+              sectionRef={recruitSectionRef}
               generation={adminData.generation ?? 0}
               mainColor={'#' + adminData.brandingColor.main}
               textColor={adminData.brandingColor.textColor}
-              ctaText={ctaText}
               isRecruiting={isRecruiting}
               recruitEndTime={
                 isYBRecruiting ? ybSchedule?.applicationEndTime : obSchedule?.applicationEndTime
               }
-              isRecruitEnd={isRecruitEnd}
+              notificationGeneration={notificationRecruitment.generation}
+              notificationMonth={notificationRecruitment.month}
             />
           </S.Content>
         )}
