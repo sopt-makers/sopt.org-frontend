@@ -3,6 +3,7 @@ import { colorBg, colorFg, colorStroke, spacing, typography } from '@sopt-mds/de
 import { css } from '@emotion/react';
 import icArrowComment from '@src/assets/icons/ic_arrow_comment.svg';
 import { media } from '@src/lib/styles/breakpoints';
+import { TABLET_CONTENT_WIDTH, tablet } from '@src/views/MainPage/breakpoints';
 
 const transition = '550ms cubic-bezier(.2, .8, .3, 1)';
 const reducedMotion = css`
@@ -21,9 +22,10 @@ export const Container = styled.section<{ mainColor: string }>`
   margin: 0 auto;
   padding: ${spacing.s160} ${spacing.s120};
 
-  ${media.tablet} {
+  ${tablet} {
+    max-width: ${TABLET_CONTENT_WIDTH};
     gap: ${spacing.s32};
-    padding: ${spacing.s120} ${spacing.s40};
+    padding: ${spacing.s120} 0;
   }
 
   ${media.mobile} {
@@ -54,11 +56,7 @@ export const Content = styled.div`
   align-items: start;
   gap: 78px;
 
-  ${media.desktop} {
-    gap: ${spacing.s40};
-  }
-
-  ${media.tablet} {
+  ${tablet} {
     grid-template-columns: minmax(0, 1fr);
     justify-items: center;
     gap: ${spacing.s24};
@@ -66,6 +64,7 @@ export const Content = styled.div`
 
   ${media.mobile} {
     grid-template-columns: minmax(0, 1fr);
+    justify-items: center;
     gap: ${spacing.s24};
   }
 `;
@@ -78,11 +77,14 @@ export const ImagePanel = styled.div`
   border-radius: 12px;
   background: ${colorBg.layer.default};
 
-  ${media.tablet} {
-    max-width: 510px;
+  ${tablet} {
+    width: 510px;
   }
 
   ${media.mobile} {
+    width: 280px;
+    max-width: 100%;
+    aspect-ratio: 280 / 239;
     border-radius: 6px;
   }
 `;

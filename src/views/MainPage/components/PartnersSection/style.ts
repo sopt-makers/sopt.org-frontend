@@ -3,6 +3,7 @@ import { colors, spacing, typography } from '@sopt-mds/design-tokens';
 import Image from 'next/image';
 import { keyframes } from '@emotion/react';
 import { breakpoints, media } from '@src/lib/styles/breakpoints';
+import { tablet } from '@src/views/MainPage/breakpoints';
 
 const scroll = keyframes`
   to { transform: translateX(-50%); }
@@ -16,7 +17,7 @@ export const Section = styled.section`
   width: 100%;
   padding: ${spacing.s160} 0;
 
-  ${media.tablet} {
+  ${tablet} {
     padding: ${spacing.s120} 0;
   }
 

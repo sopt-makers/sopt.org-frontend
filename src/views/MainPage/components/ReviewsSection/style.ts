@@ -2,14 +2,15 @@ import styled from '@emotion/styled';
 import { colors, spacing, typography } from '@sopt-mds/design-tokens';
 import reviewArrow from '@src/assets/icons/ic_arrow_up_right.svg';
 import CommonTab from '@src/components/common/Tab';
-import { breakpoints, media } from '@src/lib/styles/breakpoints';
+import { media } from '@src/lib/styles/breakpoints';
+import { MAIN_DESKTOP_MIN, TABLET_CONTENT_WIDTH, tablet } from '@src/views/MainPage/breakpoints';
 
 const REVIEW_ACCENT = '#F77234';
 const REVIEW_TRANSITION = '750ms cubic-bezier(.2, .8, .3, 1)';
 
 export const Section = styled.section`
   padding: ${spacing.s160} 30px;
-  ${media.tablet} {
+  ${tablet} {
     padding: ${spacing.s120} ${spacing.s40};
   }
   ${media.mobile} {
@@ -23,7 +24,8 @@ export const Content = styled.div`
   gap: ${spacing.s64};
   max-width: 1200px;
   margin: 0 auto;
-  ${media.tablet} {
+  ${tablet} {
+    max-width: ${TABLET_CONTENT_WIDTH};
     gap: ${spacing.s32};
     padding-top: 51px;
   }
@@ -80,7 +82,7 @@ export const Tabs = styled(CommonTab.List)`
   flex: none;
   gap: 18px;
   padding: ${spacing.s12} 0;
-  ${media.tablet} {
+  ${tablet} {
     flex-direction: row-reverse;
     padding: 0;
   }
@@ -134,7 +136,7 @@ export const Tab = styled(CommonTab.Item)`
 export const List = styled(CommonTab.Panel)`
   min-width: 0;
   border-top: 1px solid ${colors.stroke.neutral.subtle};
-  @media (max-width: ${breakpoints.desktop - 1}px) {
+  @media (max-width: ${MAIN_DESKTOP_MIN - 1}px) {
     border-top: 0;
   }
 `;
@@ -147,7 +149,7 @@ export const Item = styled.div<{ open: boolean }>`
   padding: ${({ open }) => (open ? spacing.s32 : spacing.s24)} ${spacing.s24};
   border-bottom: 1px solid ${colors.stroke.neutral.subtle};
   transition: padding ${REVIEW_TRANSITION};
-  @media (max-width: ${breakpoints.desktop - 1}px) {
+  @media (max-width: ${MAIN_DESKTOP_MIN - 1}px) {
     grid-template-columns: minmax(0, 1fr);
   }
   ${media.mobile} {
@@ -243,7 +245,7 @@ export const Body = styled.div`
   display: flex;
   flex-direction: column;
   gap: ${spacing.s24};
-  @media (max-width: ${breakpoints.desktop - 1}px) {
+  @media (max-width: ${MAIN_DESKTOP_MIN - 1}px) {
     padding-top: ${spacing.s16};
   }
   ${media.mobile} {

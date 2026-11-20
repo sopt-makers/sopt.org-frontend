@@ -1,13 +1,14 @@
 import styled from '@emotion/styled';
 import { colorFg, typography } from '@sopt-mds/design-tokens';
 import { media } from '@src/lib/styles/breakpoints';
+import { TABLET_CONTENT_WIDTH, tablet } from '@src/views/MainPage/breakpoints';
 
 export const Root = styled.section`
   display: flex;
   justify-content: center;
   padding: 160px 40px;
 
-  ${media.tablet} {
+  ${tablet} {
     padding: 120px 40px;
   }
 
@@ -23,7 +24,8 @@ export const Body = styled.div`
   width: 100%;
   max-width: 1200px;
 
-  ${media.tablet} {
+  ${tablet} {
+    max-width: ${TABLET_CONTENT_WIDTH};
     gap: 40px;
   }
 
@@ -38,7 +40,7 @@ export const Header = styled.div`
   justify-content: space-between;
   gap: 48px;
 
-  ${media.tablet} {
+  ${tablet} {
     flex-direction: column;
     align-items: flex-start;
     gap: 16px;
@@ -73,7 +75,7 @@ export const Description = styled.p`
   white-space: pre-line;
   ${typography.title5}
 
-  ${media.tablet} {
+  ${tablet} {
     display: none;
   }
 
@@ -87,11 +89,7 @@ export const Grid = styled.div`
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 32px;
 
-  @media (min-width: 1024px) and (max-width: 1239px) {
-    gap: 24px;
-  }
-
-  ${media.tablet} {
+  ${tablet} {
     gap: 8px;
   }
 
