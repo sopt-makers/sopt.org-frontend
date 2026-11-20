@@ -18,7 +18,6 @@ export const ValueRow = styled.div`
   padding-left: 30px;
 
   ${media.mobile} {
-    gap: 8px;
     padding: 0px;
     align-items: center;
   }
@@ -44,7 +43,7 @@ export const Number = styled.div`
   }
 
   ${media.mobile} {
-    width: 100px;
+    width: 90px;
     height: 80px;
     font-size: 48px;
     line-height: 72px;
