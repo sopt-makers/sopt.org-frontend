@@ -95,12 +95,17 @@ export function createOrbitScene(canvas, onReady) {
   const BG = 0x000000; // 참조 배경은 순수한 검정
 
   // 렌더러 설정
-  // 선명한 장면은 기기 성능에 맞춰 조절하되 레티나 화면에서 최소 DPR 1.5를 유지한다.
+  // 픽셀마다 장면·투과 배경·블룸을 거치므로, 렌더 해상도는 창 크기와 DPR이 아니라 면적으로 제한한다.
+  // 원본 프로토타입과 같은 예산(약 1900x1270)이며, 큰 창이나 레티나에서 4~8배 픽셀을 요구하던 것이 버벅임의 원인이었다.
+  const PIXEL_BUDGET = 1.2e6;
   let qualityScale = 1;
+  // 예산 안에서도 프레임이 계속 느린 기기만 추가로 낮춘다.
   let adaptiveScale = 1;
   function renderScale() {
     const dpr = Math.min(devicePixelRatio, 2);
-    return Math.max(Math.min(dpr, 1.5), dpr * adaptiveScale) * qualityScale;
+    const want = innerWidth * innerHeight * dpr * dpr;
+    const fit = want > PIXEL_BUDGET ? dpr * Math.sqrt(PIXEL_BUDGET / want) : dpr;
+    return fit * adaptiveScale * qualityScale;
   }
 
   // 매 프레임 후면 버퍼를 복사하는 비용을 피하려고 preserveDrawingBuffer를 사용하지 않는다.
@@ -611,15 +616,14 @@ export function createOrbitScene(canvas, onReady) {
       qualityScale = nextQuality;
       // CSS 블러가 완성된 배경에는 가장자리 보정이 필요 없다.
       fxaa.enabled = qualityScale === 1;
-      applySize();
+      requestResize();
     },
   };
 
   // 후처리
-  // 레티나는 기기 해상도와 FXAA로 가장자리를 보정하고, DPR 1에서만 추가 샘플링한다.
-  const ssScale = () => renderScale() * (devicePixelRatio > 1 ? 1 : 1.15);
-  const ssW = () => Math.round(innerWidth * ssScale());
-  const ssH = () => Math.round(innerHeight * ssScale());
+  // 수퍼샘플링 없이 렌더 해상도 그대로 처리하고 가장자리는 FXAA로 보정한다.
+  const ssW = () => Math.round(innerWidth * renderScale());
+  const ssH = () => Math.round(innerHeight * renderScale());
 
   // 반정밀도 버퍼의 다중 샘플 해소 비용을 줄이기 위해 MSAA 대신 FXAA를 사용한다.
   // FXAA는 알파 잘라내기로 생기는 글자의 고대비 가장자리에도 적합하다.
@@ -659,7 +663,13 @@ export function createOrbitScene(canvas, onReady) {
     composer.setSize(ssW(), ssH());
     syncFxaa();
   }
-  addEventListener('resize', applySize);
+  // 캔버스 크기 변경은 버퍼를 비우므로, 렌더 루프 밖에서 바로 바꾸면 검은 프레임이 보인다.
+  // 다음 렌더 직전에 적용하도록 미룬다.
+  let needsResize = false;
+  const requestResize = () => {
+    needsResize = true;
+  };
+  addEventListener('resize', requestResize);
 
   // 프레임 저하가 지속될 때만 해상도를 낮추고, 여유가 오래 유지되면 천천히 복구한다.
   let lastFrameAt = 0,
@@ -684,8 +694,9 @@ export function createOrbitScene(canvas, onReady) {
     if (now - lastScrollAt < 250 || Math.abs(scrollTarget - scroll) > 0.001) return;
     const previousScale = renderScale();
     if (averageFrameMs > 30) {
-      const minimumScale = Math.min(1, 1.5 / Math.min(devicePixelRatio, 2));
-      adaptiveScale = Math.max(minimumScale, adaptiveScale * 0.9);
+      // 렌더 비용은 해상도 배율의 제곱에 비례하므로 목표 프레임 시간(20ms)에 맞춰 한 번에 낮춘다.
+      const step = Math.max(0.7, Math.sqrt(20 / averageFrameMs));
+      adaptiveScale = Math.max(0.7, adaptiveScale * step);
       fastWindows = 0;
     } else if (averageFrameMs < 20) {
       if (++fastWindows >= 3) {
@@ -728,7 +739,7 @@ export function createOrbitScene(canvas, onReady) {
     adaptResolution(now);
     renderElapsed += dt;
     // 60/120Hz 화면에서 일정한 간격으로 갱신하고, 누적 오차는 다음 프레임에 넘긴다.
-    const interval = 1000 / 30;
+    const interval = 1000 / 24;
     if (ambient && now - lastRender < interval - 0.5) return;
     if (ambient) lastRender += Math.floor((now - lastRender + 0.5) / interval) * interval;
     else lastRender = now;
@@ -817,6 +828,10 @@ export function createOrbitScene(canvas, onReady) {
       w.mesh.visible = lit > 0.02;
     }
 
+    if (needsResize) {
+      needsResize = false;
+      applySize();
+    }
     composer.render();
     if (isTypeReady && !hasAnnouncedReady) {
       hasAnnouncedReady = true;
@@ -829,7 +844,7 @@ export function createOrbitScene(canvas, onReady) {
     dispose() {
       disposed = true;
       cancelAnimationFrame(frameId);
-      removeEventListener('resize', applySize);
+      removeEventListener('resize', requestResize);
       canvas.removeEventListener('webglcontextlost', handleContextLost);
       canvas.removeEventListener('webglcontextrestored', handleContextRestored);
       const resources = new Set();

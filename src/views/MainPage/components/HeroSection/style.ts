@@ -40,6 +40,8 @@ export const OrbitCanvas = styled.canvas<{ $isVisible: boolean; $isBlurred: bool
   height: 100%;
   border: 0;
   pointer-events: none;
+  /* 블러 전환 순간 합성 레이어가 새로 만들어지며 검게 깜빡이지 않도록 미리 분리해 둡니다. */
+  will-change: filter, transform;
   transition: filter 0.9s ease, transform 0.9s ease;
 
   @media (prefers-reduced-motion: reduce) {
