@@ -1,4 +1,5 @@
 import { useRouter } from 'next/router';
+import { RefObject } from 'react';
 import MoreButton from '@src/components/common/MoreButton';
 import SectionLabel from '@src/components/common/SectionLabel';
 import { PATHS } from '@src/lib/constants/routes';
@@ -7,16 +8,22 @@ import RecordList from './RecordList';
 import * as S from './style';
 
 interface RecordsSectionProps {
+  sectionRef: RefObject<HTMLElement>;
   brandingColor: string;
   generation: number;
   activitiesRecords: GetHomepageResponse['activitiesRecords'];
 }
 
-function RecordsSection({ brandingColor, generation, activitiesRecords }: RecordsSectionProps) {
+function RecordsSection({
+  sectionRef,
+  brandingColor,
+  generation,
+  activitiesRecords,
+}: RecordsSectionProps) {
   const router = useRouter();
   const mainColor = '#' + brandingColor;
   return (
-    <S.Root>
+    <S.Root ref={sectionRef}>
       <S.Body>
         <S.Content>
           <S.Header>

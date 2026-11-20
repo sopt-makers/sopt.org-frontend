@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 import { colors } from '@sopt-makers/colors';
 import { colorFg, typography } from '@sopt-mds/design-tokens';
 import { media } from '@src/lib/styles/breakpoints';
+import { tablet } from '@src/views/MainPage/breakpoints';
 
 export const Root = styled.div`
   display: flex;
@@ -37,7 +38,7 @@ export const Number = styled.div`
   letter-spacing: -2px;
   color: ${colorFg.neutral.bold};
 
-  ${media.tablet} {
+  ${tablet} {
     width: 120px;
     height: 80px;
   }
@@ -73,7 +74,7 @@ export const Label = styled.p`
   color: ${colors.gray100};
   white-space: nowrap;
 
-  ${media.tablet} {
+  ${tablet} {
     font-size: 16px;
     line-height: 24px;
   }

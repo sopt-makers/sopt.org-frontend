@@ -10,7 +10,11 @@ const client = axios.create({
   timeout: DEFAULT_TIMEOUT,
 });
 
-const NotificationSection = () => {
+interface NotificationSectionProps {
+  generation: number;
+}
+
+const NotificationSection = ({ generation }: NotificationSectionProps) => {
   const [isRegistered, setIsRegistered] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const emailInputRef = useRef<HTMLInputElement | null>(null);
@@ -24,7 +28,7 @@ const NotificationSection = () => {
     setIsLoading(true);
     try {
       await client.post('/notification/register', {
-        generation: 39, // 리크루팅 시기 이후 변경되어야 함.
+        generation,
         email,
       });
       if (emailInputRef.current) {
@@ -59,6 +63,8 @@ const NotificationSection = () => {
       >
         <Input
           type="email"
+          aria-label="이메일"
+          required
           placeholder="메일을 입력해주세요"
           pattern="[a-zA-Z0-9]+([.][a-zA-Z0-9]+)*[@][a-zA-Z0-9]+([.][a-zA-Z]+)*"
           ref={emailInputRef}
@@ -66,11 +72,12 @@ const NotificationSection = () => {
         />
         <SubmitButton
           type="submit"
+          disabled={isLoading}
           value="알림 신청하기"
           onClick={() => track('click_recruit_notification_apply')}
         />
       </FormWrapper>
-      <ConfirmText visible={isRegistered}>신청 완료되었습니다!</ConfirmText>
+      <ConfirmText role="status">{isRegistered && '신청 완료되었습니다!'}</ConfirmText>
     </Wrapper>
   );
 };
@@ -196,13 +203,13 @@ const SubmitButton = styled.input`
   }
 `;
 
-const ConfirmText = styled.div<{ visible: boolean }>`
-  visibility: ${({ visible }) => (visible ? 'visible' : 'hidden')};
+const ConfirmText = styled.div`
   font-style: normal;
   font-weight: 400;
   line-height: 100%; /* 22px */
   letter-spacing: -0.22px;
   font-size: 22rem;
+  min-height: 1em;
   color: rgba(255, 255, 255, 0.5);
 
   /* 태블릿 뷰 */

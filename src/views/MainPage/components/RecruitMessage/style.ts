@@ -1,7 +1,9 @@
 import styled from '@emotion/styled';
 import { IconChevronRight } from '@sopt-makers/icons';
 import { colors, spacing, typography } from '@sopt-mds/design-tokens';
+import Link from 'next/link';
 import { media } from '@src/lib/styles/breakpoints';
+import { tablet } from '@src/views/MainPage/breakpoints';
 
 export const Wrapper = styled.section<{ mainColor: string }>`
   position: relative;
@@ -24,7 +26,7 @@ export const Wrapper = styled.section<{ mainColor: string }>`
     transition: opacity 550ms cubic-bezier(0.2, 0.8, 0.3, 1);
   }
 
-  &:has(a:hover)::before {
+  &:has([data-recruit-cta]:hover)::before {
     opacity: 1;
   }
 
@@ -34,7 +36,8 @@ export const Wrapper = styled.section<{ mainColor: string }>`
     }
   }
 
-  ${media.tablet} {
+  ${tablet} {
+    gap: ${spacing.s32};
     padding: ${spacing.s120} ${spacing.s40};
   }
 
@@ -85,8 +88,14 @@ export const Headline = styled.div`
   text-align: center;
 `;
 
+export const DesktopLineBreak = styled.br`
+  ${media.mobile} {
+    display: none;
+  }
+`;
+
 export const Title = styled.h2`
-  // typography/display3로 되어있는데 없는 토큰이라 디자이너 확인 필요
+  /* typography/display3 토큰이 없어 임시로 직접 지정합니다. */
   color: ${colors.fg.neutral.bold};
   font-size: 48px;
   font-weight: ${typography.weight.bold};
@@ -103,13 +112,16 @@ export const Description = styled.p`
   ${typography.title3}
 
   ${media.mobile} {
-    max-width: 280px;
+    max-width: 252px;
     ${typography.body2}
     word-break: keep-all;
   }
 `;
 
-export const RecruitLink = styled.a<{ mainColor: string; textColor: string }>`
+export const RecruitLink = styled(Link, {
+  shouldForwardProp: (prop) =>
+    prop !== 'mainColor' && prop !== 'textColor' && prop !== '$isVisible',
+})<{ mainColor: string; textColor: string }>`
   display: inline-flex;
   align-items: center;
   gap: ${spacing.s2};
@@ -153,5 +165,42 @@ export const Arrow = styled(IconChevronRight)`
   ${media.mobile} {
     width: 20px;
     height: 20px;
+  }
+`;
+
+const FLOATING_CTA_DURATION = '420ms';
+
+export const FloatingRecruitLink = styled(RecruitLink)<{ $isVisible: boolean }>`
+  position: fixed;
+  z-index: 50;
+  inset-inline: 0;
+  bottom: calc(${spacing.s40} + env(safe-area-inset-bottom));
+  width: fit-content;
+  margin-inline: auto;
+  visibility: ${({ $isVisible }) => ($isVisible ? 'visible' : 'hidden')};
+  pointer-events: ${({ $isVisible }) => ($isVisible ? 'auto' : 'none')};
+  opacity: ${({ $isVisible }) => ($isVisible ? 1 : 0)};
+  translate: 0 ${({ $isVisible }) => ($isVisible ? '0' : '20px')};
+  transition: opacity ${FLOATING_CTA_DURATION} cubic-bezier(0.2, 0.7, 0.3, 1),
+    translate ${FLOATING_CTA_DURATION} cubic-bezier(0.2, 0.7, 0.3, 1), box-shadow 550ms ease,
+    transform 550ms cubic-bezier(0.2, 0.8, 0.3, 1),
+    visibility 0s ${({ $isVisible }) => ($isVisible ? '0s' : FLOATING_CTA_DURATION)};
+
+  ${media.mobile} {
+    bottom: calc(${spacing.s24} + env(safe-area-inset-bottom));
+    height: 64px;
+    padding: 0 ${spacing.s20} 0 ${spacing.s32};
+    white-space: nowrap;
+    ${typography.heading2}
+
+    & ${Arrow} {
+      width: 32px;
+      height: 32px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+    translate: none;
   }
 `;

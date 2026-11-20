@@ -5,11 +5,9 @@ import { motion } from 'framer-motion';
 export const Section = styled.section`
   height: 970vh;
   position: relative;
-  background: #0f1012;
 `;
 
-export const Sticky = styled.div<{ $isLoading: boolean }>`
-  visibility: ${({ $isLoading }) => ($isLoading ? 'hidden' : 'visible')};
+export const Sticky = styled.div`
   position: sticky;
   z-index: 1;
   top: 0;
@@ -17,18 +15,22 @@ export const Sticky = styled.div<{ $isLoading: boolean }>`
   overflow: hidden;
 `;
 
-export const Scene = styled(motion.div)<{ $isLoading: boolean }>`
-  visibility: ${({ $isLoading }) => ($isLoading ? 'hidden' : 'visible')};
-  position: fixed;
-  z-index: 0;
+export const SceneExtent = styled.div`
+  position: absolute;
   inset: 0;
-  overflow: hidden;
+  z-index: -1;
   pointer-events: none;
-  background: radial-gradient(ellipse at center, #001044 0%, #0f1012 70%);
 `;
 
-export const OrbitCanvas = styled.canvas<{ $isReady: boolean; $isBlurred: boolean }>`
-  opacity: ${({ $isReady }) => ($isReady ? 1 : 0)};
+export const Scene = styled.div`
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+`;
+
+export const OrbitCanvas = styled.canvas<{ $isVisible: boolean; $isBlurred: boolean }>`
+  visibility: ${({ $isVisible }) => ($isVisible ? 'visible' : 'hidden')};
   filter: ${({ $isBlurred }) =>
     $isBlurred ? 'blur(43px) saturate(1.3) brightness(1.25)' : 'none'};
   transform: ${({ $isBlurred }) => ($isBlurred ? 'scale(1.35)' : 'none')};
@@ -38,7 +40,13 @@ export const OrbitCanvas = styled.canvas<{ $isReady: boolean; $isBlurred: boolea
   height: 100%;
   border: 0;
   pointer-events: none;
+  /* 블러 전환 순간 합성 레이어가 새로 만들어지며 검게 깜빡이지 않도록 미리 분리해 둡니다. */
+  will-change: filter, transform;
   transition: filter 0.9s ease, transform 0.9s ease;
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+  }
 `;
 
 export const VisuallyHiddenHeading = styled.h1`

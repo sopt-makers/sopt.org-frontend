@@ -2,9 +2,10 @@ import styled from '@emotion/styled';
 import { useQuery } from '@tanstack/react-query';
 import { Suspense, createContext } from 'react';
 import PageLayout from '@src/components/common/PageLayout';
+import useRecruitmentSchedule from '@src/hooks/useRecruitmentSchedule';
 import { remoteAdminAPI } from '@src/lib/api/remote/admin';
 import { GetRecruitpageResponse } from '@src/lib/types/admin';
-import { checkIsTimeInRange } from '@src/lib/utils/date';
+import { getNotificationRecruitment } from '@src/lib/utils/recruitment';
 import ApplySection from './components/ApplySection';
 import ChapterInfo from './components/ChapterInfo';
 import Contact from './components/Contact';
@@ -26,32 +27,28 @@ function Recruit() {
     queryFn: remoteAdminAPI.getRecruitpage,
   });
 
-  const obSchedule = adminData?.recruitSchedule?.[0];
-  const ybSchedule = adminData?.recruitSchedule?.[1];
-
-  const isOBRecruiting = checkIsTimeInRange(
-    obSchedule?.schedule?.applicationStartTime ?? '',
-    obSchedule?.schedule?.applicationEndTime ?? '',
+  const { activeRecruitment, ybRecruitment, now } = useRecruitmentSchedule(
+    adminData?.recruitSchedule,
   );
-  const isYBRecruiting = checkIsTimeInRange(
-    ybSchedule?.schedule?.applicationStartTime ?? '',
-    ybSchedule?.schedule?.applicationEndTime ?? '',
-  );
-  const isRecruiting = isOBRecruiting || isYBRecruiting;
-  const selectedSchedule = isOBRecruiting ? obSchedule : ybSchedule;
+  const selectedSchedule = activeRecruitment ?? ybRecruitment;
 
   if (!adminData) return;
+  const notificationRecruitment = getNotificationRecruitment(
+    adminData.generation,
+    now,
+    ybRecruitment?.schedule,
+  );
   return (
     <PageLayout showScrollTopButton>
       <BrandingColorContext.Provider value={adminData.brandingColor}>
         <Root>
-          {isRecruiting ? (
+          {activeRecruitment ? (
             <ApplySection
               headerImg={adminData.recruitHeaderImage}
               generation={adminData.generation}
             />
           ) : (
-            <NotificationSection />
+            <NotificationSection generation={notificationRecruitment.generation} />
           )}
           <ContentWrapper>
             <RecruiteeInfo />

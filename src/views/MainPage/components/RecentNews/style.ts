@@ -1,12 +1,13 @@
 import styled from '@emotion/styled';
 import { colors, radius, spacing, typography } from '@sopt-mds/design-tokens';
 import { media } from '@src/lib/styles/breakpoints';
+import { TABLET_CONTENT_WIDTH, tablet } from '@src/views/MainPage/breakpoints';
 
 export const RecentNews = styled.section`
   padding: ${spacing.s160} 0;
   overflow: hidden;
 
-  ${media.tablet} {
+  ${tablet} {
     padding: ${spacing.s120} 0;
   }
 
@@ -19,8 +20,8 @@ export const Content = styled.div`
   max-width: 1201px;
   margin: 0 auto;
 
-  @media (max-width: 1280px) {
-    margin: 0 ${spacing.s40};
+  ${tablet} {
+    width: ${TABLET_CONTENT_WIDTH};
   }
 
   ${media.mobile} {
@@ -35,7 +36,7 @@ export const Header = styled.div`
   padding-bottom: ${spacing.s8};
   margin-bottom: 58px;
 
-  ${media.tablet} {
+  ${tablet} {
     margin-bottom: ${spacing.s32};
   }
 
@@ -76,12 +77,12 @@ export const Subtitle = styled.p`
 export const Channels = styled.nav`
   display: flex;
   gap: ${spacing.s16};
+`;
 
-  a {
-    display: block;
-    width: 24px;
-    height: 24px;
-  }
+export const ChannelLink = styled.a`
+  display: block;
+  width: 24px;
+  height: 24px;
 `;
 
 export const NewsList = styled.ul`
@@ -96,9 +97,9 @@ export const NewsList = styled.ul`
     display: none;
   }
 
-  @media (max-width: 1023px) {
-    margin-right: -40px;
-    padding-right: 40px;
+  ${tablet} {
+    margin-right: calc((${TABLET_CONTENT_WIDTH} - 100vw) / 2);
+    padding-right: calc((100vw - ${TABLET_CONTENT_WIDTH}) / 2);
   }
 
   ${media.mobile} {
@@ -112,7 +113,7 @@ export const NewsItem = styled.li`
   min-width: 0;
   scroll-snap-align: start;
 
-  ${media.tablet} {
+  ${tablet} {
     flex-basis: 332px;
   }
 
@@ -129,8 +130,15 @@ export const NewsImage = styled.img`
   background: ${colors.bg.neutral.ghost};
 `;
 
-export const NewsTitle = styled.p`
+export const NewsCategory = styled.p`
   margin-top: ${spacing.s16};
+  min-height: ${typography.body3.lineHeight};
+  color: ${colors.fg.neutral.default};
+  ${typography.body3}
+`;
+
+export const NewsTitle = styled.p`
+  margin-top: ${spacing.s8};
   color: ${colors.fg.neutral.bold};
   ${typography.title4}
 `;

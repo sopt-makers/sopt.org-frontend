@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 import { colorBg, colorFg, typography } from '@sopt-mds/design-tokens';
 import CommonTab from '@src/components/common/Tab';
 import { media } from '@src/lib/styles/breakpoints';
+import { TABLET_CONTENT_WIDTH, tablet } from '@src/views/MainPage/breakpoints';
 import { SLIDE_TRANSITION } from './ActivitiesCard/style';
 
 const TAB_TRANSITION = '0.55s cubic-bezier(0.2, 0.8, 0.3, 1)';
@@ -12,7 +13,7 @@ export const Root = styled.section`
   padding: 160px 40px;
   overflow: hidden;
 
-  ${media.tablet} {
+  ${tablet} {
     padding: 120px 40px;
   }
 
@@ -26,6 +27,10 @@ export const Body = styled.div`
   flex-direction: column;
   width: 100%;
   max-width: 1200px;
+
+  ${tablet} {
+    max-width: ${TABLET_CONTENT_WIDTH};
+  }
 `;
 
 export const Header = styled.div`
@@ -35,7 +40,7 @@ export const Header = styled.div`
   gap: 32px;
   margin-bottom: 34px;
 
-  ${media.tablet} {
+  ${tablet} {
     flex-direction: column;
     align-items: flex-start;
     gap: 16px;
@@ -79,7 +84,7 @@ export const Tabs = styled(CommonTab.List)`
   gap: 18px;
   padding-top: 12px;
 
-  ${media.tablet} {
+  ${tablet} {
     padding: 12px 0;
   }
 
@@ -143,7 +148,7 @@ export const Tab = styled(CommonTab.Item)`
     outline-offset: 3px;
   }
 
-  ${media.tablet} {
+  ${tablet} {
     ${typography.title4}
   }
 
@@ -173,7 +178,7 @@ export const Viewport = styled.div`
   touch-action: pan-y;
   user-select: none;
 
-  ${media.tablet} {
+  ${tablet} {
     --active-width: 688px;
     margin-right: 0;
   }
@@ -204,7 +209,7 @@ export const Controls = styled.div`
   gap: 8px;
   margin-top: 24px;
 
-  ${media.tablet} {
+  ${tablet} {
     margin-top: 32px;
   }
 

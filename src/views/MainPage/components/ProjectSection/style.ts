@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 import { IconChevronLeft, IconChevronRight } from '@sopt-makers/icons';
 import { colorBg, colorFg, typography } from '@sopt-mds/design-tokens';
 import { media } from '@src/lib/styles/breakpoints';
+import { TABLET_CONTENT_WIDTH, tablet } from '@src/views/MainPage/breakpoints';
 import { FEATURED_CARD_HEIGHT, SLIDE_TRANSITION } from './ProjectCard/style';
 
 export const Root = styled.section`
@@ -13,7 +14,7 @@ export const Root = styled.section`
   padding: 160px 0;
   overflow: hidden;
 
-  ${media.tablet} {
+  ${tablet} {
     gap: 32px;
     padding: 120px 0;
   }
@@ -31,7 +32,8 @@ export const Body = styled.div`
   gap: 64px;
   width: 100%;
 
-  ${media.tablet} {
+  ${tablet} {
+    max-width: ${TABLET_CONTENT_WIDTH};
     gap: 48px;
   }
 
@@ -41,6 +43,8 @@ export const Body = styled.div`
 `;
 
 export const Header = styled.div`
+  width: 100%;
+  text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -61,7 +65,7 @@ export const Carousel = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 32px;
-  width: 100%;
+  width: 100vw;
 `;
 
 export const Viewport = styled.div`
@@ -72,7 +76,7 @@ export const Viewport = styled.div`
   width: 100%;
   height: ${FEATURED_CARD_HEIGHT};
 
-  ${media.tablet} {
+  ${tablet} {
     --side-width: 240px;
     --featured-width: 400px;
     --gap: 20px;
