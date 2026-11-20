@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 import PageLayout from '@src/components/common/PageLayout';
+import useRecruitmentSchedule from '@src/hooks/useRecruitmentSchedule';
 import { getNotificationRecruitment } from '@src/lib/utils/recruitment';
 import ExperienceSection from '@src/views/MainPage/components/ExperienceSection';
 import FAQSection from '@src/views/MainPage/components/FAQSection';
@@ -9,7 +10,6 @@ import ReviewsSection from '@src/views/MainPage/components/ReviewsSection';
 import TopBanner from '@src/views/MainPage/components/TopBanner';
 import { useHomepage } from '@src/views/MainPage/hooks/useHomepage';
 import usePostVisitor from '@src/views/MainPage/hooks/usePostVisitor';
-import { checkIsTimeInRange } from '../../lib/utils/date';
 import AboutPartSection from './components/AboutPartSection';
 import ActivitiesSection from './components/ActivitiesSection';
 import HeroSection from './components/HeroSection';
@@ -24,24 +24,14 @@ function MainPage() {
   const recordsSectionRef = useRef<HTMLElement>(null);
   const recruitSectionRef = useRef<HTMLElement>(null);
 
-  const obSchedule = adminData?.recruitSchedule?.find((item) => item.type === 'OB')?.schedule;
-  const ybSchedule = adminData?.recruitSchedule?.find((item) => item.type === 'YB')?.schedule;
-
-  const isOBRecruiting = checkIsTimeInRange(
-    obSchedule?.applicationStartTime ?? '',
-    obSchedule?.applicationEndTime ?? '',
+  const { activeRecruitment, ybRecruitment, now } = useRecruitmentSchedule(
+    adminData?.recruitSchedule,
   );
-  const isYBRecruiting = checkIsTimeInRange(
-    ybSchedule?.applicationStartTime ?? '',
-    ybSchedule?.applicationEndTime ?? '',
-  );
-  const isRecruiting = isOBRecruiting || isYBRecruiting;
+  const isRecruiting = Boolean(activeRecruitment);
+  const recruitEndTime = activeRecruitment?.schedule.applicationEndTime;
+  const heroCtaText = activeRecruitment ? `${activeRecruitment.type} 지원하기` : '';
   const notificationRecruitment =
-    adminData && getNotificationRecruitment(adminData.generation, ybSchedule);
-
-  let heroCtaText = '';
-  if (isOBRecruiting) heroCtaText = 'OB 지원하기';
-  else if (isYBRecruiting) heroCtaText = 'YB 지원하기';
+    adminData && getNotificationRecruitment(adminData.generation, now, ybRecruitment?.schedule);
 
   const postVisitor = usePostVisitor();
 
@@ -57,11 +47,7 @@ function MainPage() {
       {adminData && isRecruiting && (
         <TopBanner
           mainColor={'#' + adminData.brandingColor.main}
-          targetTime={
-            isYBRecruiting
-              ? ybSchedule?.applicationEndTime ?? ''
-              : obSchedule?.applicationEndTime ?? ''
-          }
+          targetTime={recruitEndTime}
           generation={adminData.generation ?? 0}
         />
       )}
@@ -107,9 +93,7 @@ function MainPage() {
               mainColor={'#' + adminData.brandingColor.main}
               textColor={adminData.brandingColor.textColor}
               isRecruiting={isRecruiting}
-              recruitEndTime={
-                isYBRecruiting ? ybSchedule?.applicationEndTime : obSchedule?.applicationEndTime
-              }
+              recruitEndTime={recruitEndTime}
               notificationGeneration={notificationRecruitment.generation}
               notificationMonth={notificationRecruitment.month}
             />

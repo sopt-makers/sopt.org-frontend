@@ -1,8 +1,12 @@
 import { ScheduleType } from '@src/lib/types/admin';
 
-export function getNotificationRecruitment(generation: number, ybSchedule?: ScheduleType) {
+export function getNotificationRecruitment(
+  generation: number,
+  now: number,
+  ybSchedule?: ScheduleType,
+) {
   const endTime = new Date(ybSchedule?.applicationEndTime ?? '').getTime();
-  const hasEnded = Date.now() > endTime;
+  const hasEnded = now > endTime;
   const targetGeneration = hasEnded ? generation + 1 : generation;
   const startTime = new Date(ybSchedule?.applicationStartTime ?? '').getTime();
   const month =
