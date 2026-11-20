@@ -46,6 +46,8 @@ export const Shot = styled.div`
   background-color: ${colorBg.neutral.ghost};
 
   ${media.mobile} {
+    height: auto;
+    aspect-ratio: 280 / 152;
     border-radius: 6px;
   }
 `;
