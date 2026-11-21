@@ -643,11 +643,17 @@ export function createOrbitScene(canvas, onReady) {
   composer.setPixelRatio(1);
   composer.setSize(ssW(), ssH());
   composer.addPass(new RenderPass(scene, camera));
-  const bloom = new UnrealBloomPass(new Vector2(ssW() / 2, ssH() / 2), P.bloom, 0.85, 1.02);
-  // 블룸은 부드러운 광원 효과이므로 절반 해상도로 처리한다.
-  // 크기 변경 때도 같은 비율을 유지하도록 setSize를 보정한다.
-  const bloomSetSize = bloom.setSize.bind(bloom);
-  bloom.setSize = (w, h) => bloomSetSize(Math.round(w / 2), Math.round(h / 2));
+  // 블룸은 내부에서 이미 절반 크기부터 단계를 줄여 나가므로 렌더 해상도를 그대로 넘긴다.
+  // 여기서 한 번 더 절반으로 줄이면 가장 작은 단계가 가로 20여 픽셀까지 작아져,
+  // 하이라이트 주변 빛 번짐이 네모 덩어리로 보이고 움직일 때 깜빡였다.
+  const bloom = new UnrealBloomPass(new Vector2(ssW(), ssH()), P.bloom, 0.85, 1.02);
+  // 유리 반사의 1~2픽셀 하이라이트는 HDR 값이 매우 커서, 픽셀 사이를 오갈 때마다 빛 번짐 전체가
+  // 켜졌다 꺼지며 깜빡인다. 블룸에 들어가는 밝기에만 상한을 둬 최종 하이라이트는 그대로 둔다.
+  const highPass = bloom.materialHighPassFilter;
+  highPass.fragmentShader = highPass.fragmentShader.replace(
+    'gl_FragColor = mix( outputColor, texel, alpha );',
+    'gl_FragColor = mix( outputColor, min( texel, vec4( 4.0 ) ), alpha );',
+  );
   composer.addPass(bloom);
   composer.addPass(new OutputPass());
 
