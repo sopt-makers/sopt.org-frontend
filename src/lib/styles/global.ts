@@ -85,6 +85,8 @@ export const global = css`
     background-color: ${colors.background};
     line-height: 1;
     overflow-x: clip;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   button {
