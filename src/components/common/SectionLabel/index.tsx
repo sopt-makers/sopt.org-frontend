@@ -15,7 +15,7 @@ const Label = styled.span<{ color: string }>`
   position: relative;
   padding: 5px 13px;
   color: ${({ color }) => color};
-  ${typography.body2}
+  ${typography.title5}
 
   ${media.mobile} {
     ${typography.body3}
