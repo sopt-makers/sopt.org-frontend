@@ -12,7 +12,7 @@ const teams = [
       '미디어팀은 SOPT의 이야기를 기록하고 알리는 팀입니다. 블로그, 인스타그램, 유튜브 콘텐츠를 기획하고 제작하며, 기수의 활동이 더 많은 사람에게 닿도록 돕습니다.',
     team: 'media' as const,
     logo: mediaLogo,
-    href: EXTERNAL_LINKS.INSTAGRAM,
+    href: EXTERNAL_LINKS.MEDIA_INSTAGRAM,
   },
   {
     name: '메이커스팀',
@@ -21,7 +21,7 @@ const teams = [
       '메이커스팀은 SOPT 구성원을 위한 서비스를 직접 만드는 프로덕트 팀입니다. 공식 홈페이지와 내부 플랫폼을 기획·디자인·개발하고, 출시 이후 운영까지 책임집니다.',
     team: 'makers' as const,
     logo: makersLogo,
-    href: EXTERNAL_LINKS.MAKERS,
+    href: EXTERNAL_LINKS.MAKERS_INSTAGRAM,
   },
 ];
 

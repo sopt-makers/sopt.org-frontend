@@ -16,5 +16,7 @@ export const EXTERNAL_LINKS = {
   MAKERS: 'https://playground.sopt.org/makers',
   FACEBOOK: 'https://www.facebook.com/clubsopt/',
   INSTAGRAM: 'https://www.instagram.com/sopt_official/',
+  MEDIA_INSTAGRAM: 'https://www.instagram.com/sopt_media_official/',
+  MAKERS_INSTAGRAM: 'https://www.instagram.com/sopt_makers/',
   YOUTUBE: 'https://www.youtube.com/c/SOPTMEDIA',
 } as const;
