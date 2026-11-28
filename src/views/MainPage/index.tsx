@@ -17,6 +17,7 @@ import ProjectSection from './components/ProjectSection';
 import RecentNews from './components/RecentNews';
 import RecordsSection from './components/RecordsSection';
 import FloatingRecruitCTA from './components/RecruitMessage/FloatingRecruitCTA';
+import TeamsSection from './components/TeamsSection';
 import * as S from './style';
 
 function MainPage() {
@@ -78,6 +79,7 @@ function MainPage() {
             />
             <FAQSection faq={adminData.faq ?? []} />
             <RecentNews latestNews={adminData.latestNews} />
+            <TeamsSection mainColor={'#' + adminData.brandingColor.main} />
             <PartnersSection mainColor={'#' + adminData.brandingColor.main} />
             {isRecruiting && (
               <FloatingRecruitCTA
