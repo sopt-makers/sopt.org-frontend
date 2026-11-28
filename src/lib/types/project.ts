@@ -61,7 +61,11 @@ export interface StaticProjectType {
 }
 
 export interface GetProjectDetailResponse {
-  project: ProjectType;
+  project: ProjectType & {
+    category?: {
+      project: Exclude<ProjectCategoryType, ProjectCategoryType.ALL>;
+    };
+  };
 }
 
 export type ProjectResponse = {
